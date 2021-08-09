@@ -1,0 +1,11 @@
+pdfminer.six
+jupyterlab
+boto3
+pandas
+camelot-py[cv]
+requests
+beautifulsoup4
+dateparser
+tqdm
+tabula-py
+pydecor

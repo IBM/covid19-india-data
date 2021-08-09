@@ -1,0 +1,23 @@
+{
+  "metadata" : {
+    "data_server"   : "https://covid-19-data-india-storage.mybluemix.net",
+    "link_to_data"  : null,
+    "link_to_slack" : null,
+    "link_to_code"  : null
+  },
+  "config" : {
+    "sampling_rate" : 10
+  },
+  "states": {
+    "DL": {
+      "name" : "Delhi",
+      "link_to_data" : null,
+      "short_name" : "DL"
+    },
+    "WB": {
+      "name" : "West Bengal",
+      "link_to_data" : null,
+      "short_name" : "WB"
+    }
+  }
+}

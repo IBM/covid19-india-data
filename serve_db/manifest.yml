@@ -1,0 +1,6 @@
+applications:
+- name: covid-19-data-india-storage
+  memory: 2G
+  path: .
+  buildpacks: 
+    - python_buildpack

@@ -1,0 +1,1 @@
+web: python3 serve_db.py > stdout.txt 2>stderr.txt

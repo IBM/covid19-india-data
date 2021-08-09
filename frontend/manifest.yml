@@ -1,0 +1,6 @@
+---
+applications:
+  - name: india-covid-19-data
+    memory: 64M
+    buildpack: https://github.com/cloudfoundry/staticfile-buildpack.git
+    env:
