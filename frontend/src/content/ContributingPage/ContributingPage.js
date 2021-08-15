@@ -2,10 +2,16 @@ import React from 'react';
 import { Contributing, Resource } from '../../components/Info';
 import { LogoGithub32, LogoSlack32, Sql32 } from '@carbon/icons-react';
 
+let config = require('../../config.json');
+console.log(config['metadata']['link_to_code']);
 let resource_list = [
   {
-    name: 'CVOID 19 India',
+    name: 'COVID 19 India',
     link: 'https://www.covid19india.org/',
+  },
+  {
+    name: "IBM's response to COVID-19",
+    link: 'https://www.ibm.com/impact/covid-19',
   },
   {
     name: 'Our World in Data',
@@ -16,8 +22,16 @@ let resource_list = [
     link: 'http://www.devdatalab.org/covid',
   },
   {
+    name: 'WNTRAC: Worldwide Non-pharmaceutical Interventions Tracker',
+    link: 'https://ibm.github.io/wntrac/',
+  },
+  {
     name: 'India COVID SOS',
     link: 'https://www.indiacovidsos.org/',
+  },
+  {
+    name: 'AI Against COVID EXPO @ NeurIPS 2020',
+    link: 'https://nips.cc/Conferences/2020/ScheduleMultitrack?event=21301',
   },
 ];
 
@@ -42,11 +56,27 @@ class ContributingPage extends React.Component {
           <hr />
           <br />
           <div className="bx--row">
-            <Contributing props={{ icon: <LogoGithub32 />, title: 'GitHub' }} />
             <Contributing
-              props={{ icon: <LogoSlack32 />, title: 'Community' }}
+              props={{
+                icon: <LogoGithub32 />,
+                title: 'GitHub',
+                link: config['metadata']['link_to_code'],
+              }}
             />
-            <Contributing props={{ icon: <Sql32 />, title: 'Data' }} />
+            <Contributing
+              props={{
+                icon: <LogoSlack32 />,
+                title: 'Community',
+                link: config['metadata']['link_to_slack'],
+              }}
+            />
+            <Contributing
+              props={{
+                icon: <Sql32 />,
+                title: 'Data',
+                link: config['metadata']['link_to_data'],
+              }}
+            />
           </div>
 
           <br />

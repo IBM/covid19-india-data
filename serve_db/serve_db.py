@@ -25,7 +25,7 @@ def __process_names(names: Union[List, Tuple]) -> Tuple:
 
 @app.route("/")
 def hello():
-    return "COVID-19 Data from India. 7/31"
+    return "COVID-19 Data from India. 8/15"
 
 
 @app.route("/fetch_data", methods=['POST'])
