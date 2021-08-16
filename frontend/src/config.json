@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "data_server"   : "https://covid-19-data-india-storage.mybluemix.net",
-    "link_to_data"  : "https://ibm.box.com/s/3d5qzl3e6mdnh9eel7l8nub3p6hfsjrd",
+    "link_to_data"  : "https://www.dropbox.com/s/hbe04q6vtzapdam/covid-india.db?dl=1",
     "link_to_slack" : "https://join.slack.com/t/covid-19-india-data/shared_invite/zt-uej5v98i-mjggggkLMASKFbZRXzq4xw",
     "link_to_code"  : "https://github.com/IBM/covid19-india-data"
   },
