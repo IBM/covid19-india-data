@@ -49,23 +49,23 @@ Analyze the data for insights, irregularities, etc. You can put up results of yo
 
 ## Current state roster
 
-| State | Link to Daily Bulletin | Owner (backend) | Owner (frontend) | Status |
-|-------|------------------------|-----------------|------------------|--------|
-| Delhi | | [Mayank Agarwal](https://github.com/MayankAgarwal) | [Tathagata Chakraborti](https://github.com/TathagataChakraborti) | COMPLETE |
-| West Bengal | | [Mayank Agarwal](https://github.com/MayankAgarwal) | [Tathagata Chakraborti](https://github.com/TathagataChakraborti) | COMPLETE |
-| Telengana | | [Mayank Agarwal](https://github.com/MayankAgarwal) | [Tathagata Chakraborti](https://github.com/TathagataChakraborti) | IN PROGRESS |
-|  | | [Own it!](https://github.com/IBM/covid19-india-data/pulls) |  | | 
-|  | | [Own it!](https://github.com/IBM/covid19-india-data/pulls) |  | | 
-|  | | [Own it!](https://github.com/IBM/covid19-india-data/pulls) |  | | 
-|  | | [Own it!](https://github.com/IBM/covid19-india-data/pulls) |  | | 
-|  | | [Own it!](https://github.com/IBM/covid19-india-data/pulls) |  | | 
-|  | | [Own it!](https://github.com/IBM/covid19-india-data/pulls) |  | | 
-|  | | [Own it!](https://github.com/IBM/covid19-india-data/pulls) |  | | 
-|  | | [Own it!](https://github.com/IBM/covid19-india-data/pulls) |  | | 
-|  | | [Own it!](https://github.com/IBM/covid19-india-data/pulls) |  | | 
-|  | | [Own it!](https://github.com/IBM/covid19-india-data/pulls) |  | | 
-|  | | [Own it!](https://github.com/IBM/covid19-india-data/pulls) |  | | 
-|  | | [Own it!](https://github.com/IBM/covid19-india-data/pulls) |  | | 
+| State | Link to Daily Bulletin | Owner (backend) | Owner (frontend) | Status | Wiki |
+|-------|------------------------|-----------------|------------------|--------|------|
+| Delhi (DL) | [Link](http://health.delhigovt.nic.in/wps/wcm/connect/doit_health/Health/Home/Covid19/Bulletin+August+2021) | [Mayank Agarwal](https://github.com/MayankAgarwal) | [Tathagata Chakraborti](https://github.com/TathagataChakraborti) | :white_check_mark: COMPLETE | [Wiki](https://github.com/IBM/covid19-india-data/wiki/States#delhi-dl-database-schema) |
+| West Bengal (WB) | [Link](https://www.wbhealth.gov.in/pages/corona/bulletin) | [Mayank Agarwal](https://github.com/MayankAgarwal) | [Tathagata Chakraborti](https://github.com/TathagataChakraborti) | :white_check_mark: COMPLETE | [Wiki](https://github.com/IBM/covid19-india-data/wiki/States#west-bengal-wb-database-schema) |
+| Telengana (TG) | [Link](https://covid19.telangana.gov.in/announcements/media-bulletins/) | [Mayank Agarwal](https://github.com/MayankAgarwal) | [Tathagata Chakraborti](https://github.com/TathagataChakraborti) | :construction: IN PROGRESS | [TBD]() |
+| Karnataka (KA) | [Link](https://covid19.karnataka.gov.in/govt_bulletin/en) | [Own it!](https://github.com/IBM/covid19-india-data/pulls) |  | |  [TBD]() |
+| Tamil Nadu (TN) | [Link](https://stopcorona.tn.gov.in/daily-bulletin/) | [Own it!](https://github.com/IBM/covid19-india-data/pulls) |  | |  [TBD]() |
+| Kerala (KL) | [Link](https://dhs.kerala.gov.in/%e0%b4%a1%e0%b5%86%e0%b4%af%e0%b4%bf%e0%b4%b2%e0%b4%bf-%e0%b4%ac%e0%b5%81%e0%b4%b3%e0%b5%8d%e0%b4%b3%e0%b4%b1%e0%b5%8d%e0%b4%b1%e0%b4%bf%e0%b4%a8%e0%b5%8d%e2%80%8d/) | [Own it!](https://github.com/IBM/covid19-india-data/pulls) |  | |  [TBD]() |
+| Madhya Pradesh (MP) | [Link](http://sarthak.nhmmp.gov.in/covid/health-bulletin/) | [Own it!](https://github.com/IBM/covid19-india-data/pulls) |  | |  [TBD]() |
+| Punjab (PB) | [Link](http://pbhealth.gov.in/media-bulletin.htm) | [Own it!](https://github.com/IBM/covid19-india-data/pulls) |  | |  [TBD]() |
+| Uttarakhand (UK) | [Link1](https://health.uk.gov.in/pages/view/134-covid19-health-bulletin-for-uttarakhand-page-01), [Link2](https://health.uk.gov.in/pages/view/151-covid19-health-bulletin-for-uttarakhand-page-10)| [Own it!](https://github.com/IBM/covid19-india-data/pulls) |  | |  [TBD]() |
+|  | | [Own it!](https://github.com/IBM/covid19-india-data/pulls) |  | |  [TBD]() |
+|  | | [Own it!](https://github.com/IBM/covid19-india-data/pulls) |  | |  [TBD]() |
+|  | | [Own it!](https://github.com/IBM/covid19-india-data/pulls) |  | |  [TBD]() |
+|  | | [Own it!](https://github.com/IBM/covid19-india-data/pulls) |  | |  [TBD]() |
+|  | | [Own it!](https://github.com/IBM/covid19-india-data/pulls) |  | |  [TBD]() |
+|  | | [Own it!](https://github.com/IBM/covid19-india-data/pulls) |  | |  [TBD]() |
 
 As you might have noticed, this is an incomplete list of Indian states. 
 Not all states produce this form of data. ☹️
