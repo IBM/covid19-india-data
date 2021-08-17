@@ -83,7 +83,7 @@ const Contributing = props => (
   <div className="bx--col-lg-4">
     <ClickableTile
       className="contributing-card-inner"
-      href={props.props.title}
+      href={props.props.link}
       target="_blank">
       <div style={{ padding: '10px' }}>
         <p style={{ fontSize: 'inherit' }}> {props.props.title} </p>
