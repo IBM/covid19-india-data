@@ -62,10 +62,6 @@ Analyze the data for insights, irregularities, etc. You can put up results of yo
 | Uttarakhand (UK) | [Link1](https://health.uk.gov.in/pages/view/134-covid19-health-bulletin-for-uttarakhand-page-01), [Link2](https://health.uk.gov.in/pages/view/151-covid19-health-bulletin-for-uttarakhand-page-10)| [Own it!](https://github.com/IBM/covid19-india-data/pulls) |  | |  [TBD]() |
 |  | | [Own it!](https://github.com/IBM/covid19-india-data/pulls) |  | |  [TBD]() |
 |  | | [Own it!](https://github.com/IBM/covid19-india-data/pulls) |  | |  [TBD]() |
-|  | | [Own it!](https://github.com/IBM/covid19-india-data/pulls) |  | |  [TBD]() |
-|  | | [Own it!](https://github.com/IBM/covid19-india-data/pulls) |  | |  [TBD]() |
-|  | | [Own it!](https://github.com/IBM/covid19-india-data/pulls) |  | |  [TBD]() |
-|  | | [Own it!](https://github.com/IBM/covid19-india-data/pulls) |  | |  [TBD]() |
 
 As you might have noticed, this is an incomplete list of Indian states. 
 Not all states produce this form of data. ☹️
