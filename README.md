@@ -61,7 +61,7 @@ Analyze the data for insights, irregularities, etc. You can put up results of yo
 | Madhya Pradesh (MP) | [Link](http://sarthak.nhmmp.gov.in/covid/health-bulletin/) | [Own it!](https://github.com/IBM/covid19-india-data/pulls) |  | |  [TBD]() |
 | Punjab (PB) | [Link](http://pbhealth.gov.in/media-bulletin.htm) | [Own it!](https://github.com/IBM/covid19-india-data/pulls) |  | |  [TBD]() |
 | Uttarakhand (UK) | [Link1](https://health.uk.gov.in/pages/view/134-covid19-health-bulletin-for-uttarakhand-page-01), [Link2](https://health.uk.gov.in/pages/view/151-covid19-health-bulletin-for-uttarakhand-page-10)| [Own it!](https://github.com/IBM/covid19-india-data/pulls) |  | |  [TBD]() |
-| Add new state | |  |  | |  |
+| `Add new state` | |  |  | |  |
 
 As you might have noticed, this is an incomplete list of Indian states. 
 Not all states produce this form of data. ☹️
@@ -70,9 +70,3 @@ Not all states produce this form of data. ☹️
 ### Interested? Join the Community 
 
 [`slack`](https://join.slack.com/t/covid-19-india-data/shared_invite/zt-uej5v98i-mjggggkLMASKFbZRXzq4xw)
-
-<!-- We currently index and extract information for the following states of India. We are in the process of adding more states and will update the database and the documentations as and when new states are made available.
-
-1. [Delhi (DL)](./docs/DL.md)
-2. [West Bengal (WB)](./docs/WB.md)
- -->
