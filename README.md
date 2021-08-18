@@ -65,7 +65,7 @@ Analyze the data for insights, irregularities, etc. You can put up results of yo
 
 As you might have noticed, this is an incomplete list of Indian states. 
 Not all states produce this form of data. ☹️
-&nbsp; We will continue adding new sources over time.
+&nbsp; We will continue adding new sources over time. A comprehensive list of sources can be found at [https://api.covid19india.org/csv/latest/sources_list.csv](https://api.covid19india.org/csv/latest/sources_list.csv)
 
 ### Interested? Join the Community 
 
