@@ -3,7 +3,6 @@ import { Contributing, Resource } from '../../components/Info';
 import { LogoGithub32, LogoSlack32, Sql32 } from '@carbon/icons-react';
 
 let config = require('../../config.json');
-console.log(config['metadata']['link_to_code']);
 let resource_list = [
   {
     name: 'COVID 19 India',
