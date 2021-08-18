@@ -59,7 +59,7 @@ Analyze the data for insights, irregularities, etc. You can put up results of yo
 | Karnataka (KA) | [Link](https://covid19.karnataka.gov.in/govt_bulletin/en) |  |  | ⌛ Own it! ([#6](https://github.com/IBM/covid19-india-data/issues/6)) |
 | Kerala (KL) | [Link](https://dhs.kerala.gov.in/%e0%b4%a1%e0%b5%86%e0%b4%af%e0%b4%bf%e0%b4%b2%e0%b4%bf-%e0%b4%ac%e0%b5%81%e0%b4%b3%e0%b5%8d%e0%b4%b3%e0%b4%b1%e0%b5%8d%e0%b4%b1%e0%b4%bf%e0%b4%a8%e0%b5%8d%e2%80%8d/) |  | | ⌛ Own it! ([#7](https://github.com/IBM/covid19-india-data/issues/7)) |
 | Madhya Pradesh (MP) | [Link](http://sarthak.nhmmp.gov.in/covid/health-bulletin/) | | | ⌛ Own it! ([#8](https://github.com/IBM/covid19-india-data/issues/8)) |
-| Punjab (PB) | [Link](http://pbhealth.gov.in/media-bulletin.htm) | | | ⌛ Own it! ([#9](https://github.com/IBM/covid19-india-data/issues/9)) |
+| Punjab (PB) | [Link](http://covaprod.punjab.gov.in/covid-response.html?language=e) | | | ⌛ Own it! ([#9](https://github.com/IBM/covid19-india-data/issues/9)) |
 | Uttarakhand (UK) | [Link1](https://health.uk.gov.in/pages/view/134-covid19-health-bulletin-for-uttarakhand-page-01), [Link2](https://health.uk.gov.in/pages/view/151-covid19-health-bulletin-for-uttarakhand-page-10)|  | | ⌛ Own it! ([#10](https://github.com/IBM/covid19-india-data/issues/10)) |
 | `Add new state` | |  |  | |  |
 
