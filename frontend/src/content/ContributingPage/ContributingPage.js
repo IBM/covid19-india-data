@@ -17,6 +17,10 @@ let resource_list = [
     link: 'https://ourworldindata.org/',
   },
   {
+    name: 'COVID-19 Data Repository from Johns Hopkins University',
+    link: 'https://github.com/CSSEGISandData/COVID-19',
+  },
+  {
     name: 'DDL COVID India',
     link: 'http://www.devdatalab.org/covid',
   },
