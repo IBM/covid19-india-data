@@ -28,6 +28,9 @@ class PageHeader extends React.Component {
 
   componentDidMount = () => {
     let current_header = window.location.href.split('#/')[1];
+
+    if (!current_header) current_header = 'introduction';
+
     this.onClickTab(generateStateID(current_header));
   };
 

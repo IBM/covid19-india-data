@@ -25,10 +25,10 @@ sampling_rate: 10
 
 2. List of states to display:
 
-Each state in the configuration is key-ed by its `short_name` which is the same as that used by the state 
+Each state in the configuration is key-ed by its `short_name` which is the same as that used by the state
 in its entry in the database (and is used for all calls to fetch data from it).
 The full name is used for display purposes only.
-The `short_name` is also visible in the [table schemas](https://github.com/IBM/covid19-india-data/wiki/States), 
+The `short_name` is also visible in the [table schemas](https://github.com/IBM/covid19-india-data/wiki/States),
 the raw link to this image from the [wiki](https://github.com/IBM/covid19-india-data/wiki)
 is also provided in the config.
 
