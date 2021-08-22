@@ -341,7 +341,7 @@ class BasicElement extends React.Component {
             </Tab>
             <Tab label="View Data Schema">
               <div className="some-content">
-                <img src={this.state.link_to_db_schema} width="100%" />
+                <img alt="" src={this.state.link_to_db_schema} width="100%" />
                 <br />
                 <br />
                 <Link
