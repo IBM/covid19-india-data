@@ -8,6 +8,8 @@ import {
   Loading,
   NumberInput,
   Link,
+  Tabs,
+  Tab,
 } from 'carbon-components-react';
 
 let config = require('../../config.json');
@@ -60,6 +62,7 @@ class BasicElement extends React.Component {
     this.state = {
       name: props.props.name,
       short_name: props.props.short_name,
+      link_to_db_schema: props.props.link_to_db_schema,
       data: [],
       schema: [],
       status_flags: {
@@ -220,102 +223,137 @@ class BasicElement extends React.Component {
           width: '100%',
           minHeight: '100vh',
         }}>
-        <div className="bx--col-lg-8">
-          <h1>{this.state.name}</h1>
-          <hr />
+        <div className="bx--col-lg-16">
+          <Tabs scrollIntoView={false}>
+            <Tab label="Visualize">
+              <div className="bx--row">
+                <div className="bx--col-lg-8">
+                  <p>
+                    The data for visualization is being sampled at every{' '}
+                    <span className="text-blue">
+                      {this.state.status_flags.sampling_rate}
+                    </span>{' '}
+                    days to save you data. To access and analyze the full data,
+                    click <Link href="/#/contributing">here</Link>.
+                  </p>
 
-          <p>
-            The data for visualization is being sampled at every{' '}
-            <span className="text-blue">
-              {this.state.status_flags.sampling_rate}
-            </span>{' '}
-            days to save you data. To access and analyze the full data, click{' '}
-            <Link href="/#/contributing">here</Link>.
-          </p>
+                  <br />
+                  <NumberInput
+                    id="sampling_rate"
+                    light
+                    size="sm"
+                    min={1}
+                    value={this.state.status_flags.sampling_rate}
+                    onChange={this.handleInputChange.bind(this)}
+                    ref={input => {
+                      this.textInput = input;
+                    }}
+                  />
 
-          <br />
-          <NumberInput
-            id="sampling_rate"
-            light
-            size="sm"
-            min={1}
-            value={this.state.status_flags.sampling_rate}
-            onChange={this.handleInputChange.bind(this)}
-            ref={input => {
-              this.textInput = input;
-            }}
-          />
+                  <MultiSelect
+                    id="table_name"
+                    items={listOfTables(this.state.schema)}
+                    itemToString={item => (item ? item.text : '')}
+                    onChange={value => {
+                      this.logTableSelection(value.selectedItems);
+                    }}
+                    label={PrimaryLabel}
+                  />
 
-          <MultiSelect
-            id="table_name"
-            items={listOfTables(this.state.schema)}
-            itemToString={item => (item ? item.text : '')}
-            onChange={value => {
-              this.logTableSelection(value.selectedItems);
-            }}
-            label={PrimaryLabel}
-          />
+                  <MultiSelect
+                    id="column_name"
+                    key={this.state.status_flags.selectedKey}
+                    items={this.state.status_flags.columns_available}
+                    initialSelectedItems={
+                      this.state.status_flags.columns_selected
+                    }
+                    itemToString={item => (item ? item.text : '')}
+                    onChange={value => {
+                      this.logColumnSelection(value.selectedItems);
+                    }}
+                    label={SecondaryLabel}
+                    disabled={
+                      this.state.status_flags.tables_selected.length === 0
+                    }
+                  />
 
-          <MultiSelect
-            id="column_name"
-            key={this.state.status_flags.selectedKey}
-            items={this.state.status_flags.columns_available}
-            initialSelectedItems={this.state.status_flags.columns_selected}
-            itemToString={item => (item ? item.text : '')}
-            onChange={value => {
-              this.logColumnSelection(value.selectedItems);
-            }}
-            label={SecondaryLabel}
-            disabled={this.state.status_flags.tables_selected.length === 0}
-          />
+                  <br />
 
-          <br />
+                  <Button
+                    kind="primary"
+                    disabled={
+                      this.state.status_flags.tables_selected.length === 0
+                    }
+                    size="sm"
+                    onClick={this.drawSelected.bind(this)}
+                    style={{ marginRight: '10px' }}>
+                    Draw Selected
+                  </Button>
+                  <Button
+                    kind="secondary"
+                    size="sm"
+                    onClick={this.drawAll.bind(this)}>
+                    Draw All
+                  </Button>
 
-          <Button
-            kind="primary"
-            disabled={this.state.status_flags.tables_selected.length === 0}
-            size="sm"
-            onClick={this.drawSelected.bind(this)}
-            style={{ marginRight: '10px' }}>
-            Draw Selected
-          </Button>
-          <Button kind="secondary" size="sm" onClick={this.drawAll.bind(this)}>
-            Draw All
-          </Button>
+                  <br />
+                  <br />
+                </div>
 
-          <br />
-          <br />
-
-          {this.state.status_flags.fetching_data && (
-            <>
-              <Loading description="Active loading indicator" withOverlay />
-            </>
-          )}
-
-          {this.state.data.map(function(item, key) {
-            return (
-              <div key={key}>
-                {item.columns.map(function(e, i) {
-                  return (
-                    <React.Fragment key={i}>
-                      {e !== 'Date' && (
-                        <>
-                          <LineChart
-                            key={i}
-                            data={prepareData(item.data, e, i)}
-                            options={prepareOptions(item.title, e)}></LineChart>
-
-                          <br />
-                          <hr />
-                          <br />
-                        </>
-                      )}
-                    </React.Fragment>
-                  );
-                })}
+                <div className="bx--col-lg-8 state-header">
+                  <h1>{this.state.name}</h1>
+                </div>
               </div>
-            );
-          })}
+
+              {this.state.status_flags.fetching_data && (
+                <>
+                  <Loading description="Active loading indicator" withOverlay />
+                </>
+              )}
+
+              {this.state.data.map(function(item, key) {
+                return (
+                  <div key={key}>
+                    {item.columns.map(function(e, i) {
+                      return (
+                        <React.Fragment key={i}>
+                          {e !== 'Date' && (
+                            <>
+                              <LineChart
+                                key={i}
+                                data={prepareData(item.data, e, i)}
+                                options={prepareOptions(
+                                  item.title,
+                                  e
+                                )}></LineChart>
+
+                              <br />
+                              <hr />
+                              <br />
+                            </>
+                          )}
+                        </React.Fragment>
+                      );
+                    })}
+                  </div>
+                );
+              })}
+            </Tab>
+            <Tab label="View Data Schema">
+              <div className="some-content">
+                <img src={this.state.link_to_db_schema} width="100%" />
+                <br />
+                <br />
+                <Link
+                  href={config['metadata']['link_to_schemas']}
+                  target="_blank">
+                  <Button size="small" kind="secondary">
+                    Details
+                  </Button>
+                </Link>
+              </div>
+            </Tab>
+          </Tabs>
         </div>
       </div>
     );
