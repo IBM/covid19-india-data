@@ -7,8 +7,9 @@ from flask_cors import CORS, cross_origin
 import json
 import sqlite3
 import os
+import dateparser
 
-__path_to_db_file = "covid-india.db"
+__path_to_db_file = "../localstore/covid-india.db"
 
 app = Flask(__name__)
 cors = CORS(app)
@@ -21,6 +22,12 @@ def __process_name(name: str) -> str:
 
 def __process_names(names: Union[List, Tuple]) -> Tuple:
     return tuple([__process_name(item) for item in names])
+
+
+def __process_date(date: str) -> str:
+    date = dateparser.parse(date)
+    datestr = f'{date.year}-{date.month}-{date.day}'
+    return datestr
 
 
 @app.route("/")
@@ -177,6 +184,60 @@ def fetch_schema(state_short_name: str = None) -> StateSchema:
     con.close()
     return json.dumps(response, indent=4)
 
+
+@app.route("/fetch_days_data", methods=['POST'])
+def fetch_days_data(
+        state_short_name: str = None, 
+        date: str = None
+    ) -> StateData:
+
+    payload = json.loads(request.get_data().decode('utf-8'))
+
+    if state_short_name is None:
+        state_short_name = payload["state_short_name"]
+    if date is None:
+        date = payload["date"]
+    
+    date = __process_date(date)
+
+    con = sqlite3.connect(__path_to_db_file)
+    cursor = con.cursor()
+    cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
+    tables = cursor.fetchall()
+
+    table_names = [table[0] for table in tables]
+    state_tables = [tablename for tablename in table_names if tablename.startswith(state_short_name)]
+    
+    response = StateData(data=[])
+
+    for table_name in state_tables:
+        query = "SELECT * FROM {} WHERE date='{}';".format(table_name, date)
+        cursor.execute(query)
+
+        records = cursor.fetchall()
+        columns = next(zip(*cursor.description))
+
+        response["data"].append(
+            DataTable(
+                title = table_name,
+                columns = columns,
+                data = records
+            )
+        )
+
+    # TODO: Add bulletin link info
+    response["data"].append(
+        DataTable(
+            title = "bulletin",
+            columns = ["url"],
+            data = ["#"]
+        )
+    )
+    
+    con.close()
+    return json.dumps(response, indent=4)
+
+        
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=int(os.getenv('PORT', 3456)))
