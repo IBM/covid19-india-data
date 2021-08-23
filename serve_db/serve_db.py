@@ -9,7 +9,7 @@ import sqlite3
 import os
 import dateparser
 
-__path_to_db_file = "../localstore/covid-india.db"
+__path_to_db_file = "covid-india.db"
 
 app = Flask(__name__)
 cors = CORS(app)
