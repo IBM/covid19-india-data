@@ -26,7 +26,7 @@ def __process_names(names: Union[List, Tuple]) -> Tuple:
 
 def __process_date(date: str) -> str:
     date = dateparser.parse(date)
-    datestr = f'{date.year}-{date.month}-{date.day}'
+    datestr = f'{date.year}-{date.month:02d}-{date.day:02d}'
     return datestr
 
 
@@ -207,8 +207,19 @@ def fetch_days_data(
 
     table_names = [table[0] for table in tables]
     state_tables = [tablename for tablename in table_names if tablename.startswith(state_short_name)]
+
+    # Fetch bulletin link
+    query = "SELECT bulletin_link from Metadata_Bulletin_Links where date='{}' AND state='{}';".format(date, state_short_name)
+    cursor.execute(query)
+    records = cursor.fetchall()
+    bulletin_link = records[0][0] if records else '#'
     
-    response = StateData(data=[])
+    response = DailyData(
+        date=date, 
+        state=state_short_name, 
+        bulletin_link=bulletin_link, 
+        data=[]
+    )
 
     for table_name in state_tables:
         query = "SELECT * FROM {} WHERE date='{}';".format(table_name, date)
@@ -224,17 +235,9 @@ def fetch_days_data(
                 data = records
             )
         )
-
-    # TODO: Add bulletin link info
-    # response["data"].append(
-    #     DataTable(
-    #         title = "bulletin",
-    #         columns = ["url"],
-    #         data = ["#"]
-    #     )
-    # )
     
     con.close()
+    
     return json.dumps(response, indent=4)
 
         
