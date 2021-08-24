@@ -59,7 +59,7 @@ class Bulletin(object):
         if date is None:
             return None
             
-        datestr = f'{date.year}-{date.month}-{date.day}'
+        datestr = f'{date.year}-{date.month:02d}-{date.day:02d}'
         return datestr
 
     def download_bulletins(self, bulletin_links):
