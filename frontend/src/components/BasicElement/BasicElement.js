@@ -1,7 +1,12 @@
 import React from 'react';
 import '@carbon/charts/styles.css';
 import { LineChart } from '@carbon/charts-react';
-import { prepareData, prepareOptions, fetchData } from '../Info';
+import {
+  prepareData,
+  prepareOptions,
+  fetchData,
+  DataTableElement,
+} from '../Info';
 import {
   Button,
   MultiSelect,
@@ -10,6 +15,8 @@ import {
   Link,
   Tabs,
   Tab,
+  DatePicker,
+  DatePickerInput,
 } from 'carbon-components-react';
 
 let config = require('../../config.json');
@@ -55,17 +62,30 @@ function processName(name) {
   return capitalizeFirstLetter(name).replaceAll('_', ' ');
 }
 
+function formatDate(date) {
+  return (
+    date.getUTCFullYear() +
+    '/' +
+    (date.getUTCMonth() + 1) +
+    '/' +
+    date.getUTCDate()
+  );
+}
+
 class BasicElement extends React.Component {
   constructor(props) {
-    console.log();
     super(props);
     this.state = {
       name: props.props.name,
       short_name: props.props.short_name,
       link_to_db_schema: props.props.link_to_db_schema,
       data: [],
+      dataOnDate: [],
       schema: [],
       status_flags: {
+        date: null,
+        date_picker_invalid: false,
+        date_picker_status: null,
         fetched_data: true,
         fetching_data: false,
         tables_selected: [],
@@ -115,6 +135,59 @@ class BasicElement extends React.Component {
     });
   };
 
+  logDateSelection = e => {
+    let selected_date = new Date(e);
+    let formatted_date_string = formatDate(selected_date);
+
+    this.setState({
+      ...this.state,
+      status_flags: {
+        ...this.state.status_flags,
+        date: formatted_date_string,
+        date_picker_invalid: false,
+        date_picker_status: null,
+      },
+    });
+  };
+
+  fetchDataOnDate = () => {
+    if (!this.state.status_flags.date) {
+      this.setState({
+        ...this.state,
+        status_flags: {
+          ...this.state.status_flags,
+          date_picker_invalid: true,
+          date_picker_status: 'No date selected',
+        },
+      });
+    } else {
+      this.setState(
+        {
+          ...this.state,
+          dataOnDate: [],
+        },
+        () => {
+          this.showTables();
+        }
+      );
+    }
+  };
+
+  showTables = () => {
+    fetchData(
+      'fetch_days_data',
+      this.state.short_name,
+      {},
+      -1,
+      this.state.status_flags.date
+    ).then(data => {
+      this.setState({
+        ...this.state,
+        dataOnDate: data['data'],
+      });
+    });
+  };
+
   drawSelected = () => {
     this.setState({
       ...this.state,
@@ -149,7 +222,6 @@ class BasicElement extends React.Component {
       selectedItems,
       this.state.status_flags.sampling_rate
     ).then(data => {
-      console.log(data);
       this.setState(
         {
           ...this.state,
@@ -295,15 +367,44 @@ class BasicElement extends React.Component {
                     onClick={this.drawAll.bind(this)}>
                     Draw All
                   </Button>
-
-                  <br />
-                  <br />
                 </div>
 
                 <div className="bx--col-lg-8 state-header">
-                  <h1>{this.state.name}</h1>
+                  <h1>
+                    {this.state.name}{' '}
+                    <span style={{ fontSize: 'x-large' }}>data</span>
+                  </h1>
+
+                  <br />
+
+                  <DatePicker
+                    dateFormat="Y/m/d"
+                    datePickerType="single"
+                    value={this.state.status_flags.date}
+                    onChange={this.logDateSelection.bind(this)}>
+                    <DatePickerInput
+                      id="date-picker-calendar-id"
+                      placeholder="yyyy/mm/dd"
+                      labelText="Date picker"
+                      type="text"
+                      invalid={this.state.status_flags.date_picker_invalid}
+                      invalidText={this.state.status_flags.date_picker_status}
+                      size="sm"
+                    />
+                  </DatePicker>
+
+                  <br />
+                  <Button
+                    kind="secondary"
+                    size="sm"
+                    onClick={this.fetchDataOnDate.bind(this)}>
+                    Fetch Data
+                  </Button>
                 </div>
               </div>
+
+              <br />
+              <br />
 
               {this.state.status_flags.fetching_data && (
                 <>
@@ -338,6 +439,10 @@ class BasicElement extends React.Component {
                   </div>
                 );
               })}
+
+              {this.state.dataOnDate.map(function(item, key) {
+                return <DataTableElement key={key} props={item} />;
+              })}
             </Tab>
             <Tab label="View Data Schema">
               <div className="some-content">
@@ -360,4 +465,4 @@ class BasicElement extends React.Component {
   }
 }
 
-export { BasicElement };
+export { BasicElement, processName };

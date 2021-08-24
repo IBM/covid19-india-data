@@ -226,13 +226,13 @@ def fetch_days_data(
         )
 
     # TODO: Add bulletin link info
-    response["data"].append(
-        DataTable(
-            title = "bulletin",
-            columns = ["url"],
-            data = ["#"]
-        )
-    )
+    # response["data"].append(
+    #     DataTable(
+    #         title = "bulletin",
+    #         columns = ["url"],
+    #         data = ["#"]
+    #     )
+    # )
     
     con.close()
     return json.dumps(response, indent=4)
