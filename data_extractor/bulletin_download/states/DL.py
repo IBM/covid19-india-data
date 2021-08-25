@@ -50,6 +50,8 @@ class Delhi(Bulletin):
     
     def run(self):
 
+        all_links = {}
+
         for year in self._years:
             for month in self._months:
 
@@ -65,7 +67,11 @@ class Delhi(Bulletin):
                 bulletin_links = self.get_bulletin_links(html)
                 self.download_bulletins(bulletin_links)
 
+                all_links.update(bulletin_links)
+
         self._save_state_()
+        
+        return all_links
 
 
 if __name__ == '__main__':
