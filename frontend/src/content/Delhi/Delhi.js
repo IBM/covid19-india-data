@@ -1,5 +1,7 @@
 import React from 'react';
 import { BasicElement } from '../../components/BasicElement';
+import { HighlightsElement } from '../../components/HighlightsElement';
+import { QUERIES } from './query.js';
 
 let config = require('../../config.json');
 let state_config = config['states']['DL'];
@@ -16,6 +18,7 @@ class Delhi extends React.Component {
     return (
       <>
         <BasicElement props={this.state} />
+        <HighlightsElement props={QUERIES} />
       </>
     );
   }
