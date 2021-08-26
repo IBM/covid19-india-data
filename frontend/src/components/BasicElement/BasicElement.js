@@ -403,7 +403,7 @@ class BasicElement extends React.Component {
                   {this.state.linkToDailyBulletin && (
                     <Link href={this.state.linkToDailyBulletin} target="_blank">
                       <Button kind="primary" size="sm">
-                        Fetch Data
+                        View Bulletin
                       </Button>
                     </Link>
                   )}
