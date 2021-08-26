@@ -10,6 +10,7 @@ dist: bionic
 branches:
   only:
   - main
+  - iss14-deployment
 
 
 env:
