@@ -30,6 +30,22 @@ def __process_date(date: str) -> str:
     return datestr
 
 
+def __scale_down_data(records: List[Tuple], scale_down: int) -> List:
+    new_records = list()
+    log_record = True
+    day_count = 0 
+
+    for record in records[:-1]: 
+
+        if day_count % scale_down == 0:
+            new_records.append(record)
+
+        day_count +=1
+
+    new_records.append(records[-1])
+    return new_records
+
+
 @app.route("/")
 def hello():
     return "COVID-19 Data from India. 8/15"
@@ -43,22 +59,6 @@ def fetch_data(
     ) -> StateData:
 
     
-    def __scale_down_data(records: List[Tuple], scale_down: int) -> List:
-        new_records = list()
-        log_record = True
-        day_count = 0 
-
-        for record in records[:-1]: 
-
-            if day_count % scale_down == 0:
-                new_records.append(record)
-
-            day_count +=1
-
-        new_records.append(records[-1])
-        return new_records
-
-
     if not state_short_name:
 
         payload = json.loads(request.get_data().decode('utf-8'))
@@ -151,6 +151,26 @@ def fetch_data(
     return json.dumps(response, indent=4)
 
 
+@app.route("/query", methods=['POST'])
+def query(query: str = None) -> TimeSeries:
+
+    if not query:
+
+        payload = json.loads(request.get_data().decode('utf-8'))
+        query = payload["query"]
+
+    response = TimeSeries(data=list())
+
+    con = sqlite3.connect(__path_to_db_file)
+    cursor = con.cursor()
+    cursor.execute(query)
+
+    response["data"] = cursor.fetchall()
+    con.close()
+
+    return json.dumps(response, indent=4)
+
+
 @app.route("/fetch_schema", methods=['POST'])
 def fetch_schema(state_short_name: str = None) -> StateSchema:
     
@@ -240,10 +260,8 @@ def fetch_days_data(
     
     return json.dumps(response, indent=4)
 
-        
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=int(os.getenv('PORT', 3456)))
-
 
 

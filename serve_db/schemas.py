@@ -1,5 +1,9 @@
 from typing import List, Tuple, TypedDict
 
+class TimeSeries(TypedDict):
+    data: List[Tuple] 
+
+
 class TableSchema(TypedDict):
     title: str = None
     columns: Tuple[str]
@@ -8,7 +12,7 @@ class TableSchema(TypedDict):
 class DataTable(TypedDict):
     title: str = None
     columns: Tuple[str]
-    data: List[Tuple] 
+    data: TimeSeries
        
 
 class StateSchema(TypedDict):

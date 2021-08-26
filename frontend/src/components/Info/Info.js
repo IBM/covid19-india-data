@@ -71,7 +71,14 @@ function prepareOptions(title, key) {
   return new_options;
 }
 
-async function fetchData(URL, short_name, filter_data, sampling_rate, date) {
+async function fetchData({
+  URL,
+  short_name,
+  filter_data,
+  sampling_rate,
+  date,
+  query,
+} = {}) {
   var response = await fetch(
     data_server + '/' + URL,
     (requestOptions = {
@@ -81,6 +88,7 @@ async function fetchData(URL, short_name, filter_data, sampling_rate, date) {
         filter_data: filter_data,
         scale_down: sampling_rate,
         date: date,
+        query: query,
       }),
     })
   );

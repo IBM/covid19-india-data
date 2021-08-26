@@ -98,12 +98,14 @@ class BasicElement extends React.Component {
   }
 
   componentDidMount = () => {
-    fetchData('fetch_schema', this.state.short_name, {}).then(data => {
-      this.setState({
-        ...this.state,
-        schema: data['data'],
-      });
-    });
+    fetchData({ URL: 'fetch_schema', short_name: this.state.short_name }).then(
+      data => {
+        this.setState({
+          ...this.state,
+          schema: data['data'],
+        });
+      }
+    );
   };
 
   drawAll = () => {
@@ -117,12 +119,11 @@ class BasicElement extends React.Component {
       },
     });
 
-    fetchData(
-      'fetch_data',
-      this.state.short_name,
-      {},
-      this.state.status_flags.sampling_rate
-    ).then(data => {
+    fetchData({
+      URL: 'fetch_data',
+      short_name: this.state.short_name,
+      sampling_rate: this.state.status_flags.sampling_rate,
+    }).then(data => {
       this.setState(
         {
           ...this.state,
@@ -174,13 +175,11 @@ class BasicElement extends React.Component {
   };
 
   showTables = () => {
-    fetchData(
-      'fetch_days_data',
-      this.state.short_name,
-      {},
-      -1,
-      this.state.status_flags.date
-    ).then(data => {
+    fetchData({
+      URL: 'fetch_days_data',
+      short_name: this.state.short_name,
+      date: this.state.status_flags.date,
+    }).then(data => {
       this.setState({
         ...this.state,
         dataOnDate: data['data'],
@@ -216,12 +215,12 @@ class BasicElement extends React.Component {
       return selectedItems;
     });
 
-    fetchData(
-      'fetch_data',
-      this.state.short_name,
-      selectedItems,
-      this.state.status_flags.sampling_rate
-    ).then(data => {
+    fetchData({
+      URL: 'fetch_data',
+      short_name: this.state.short_name,
+      filter_data: selectedItems,
+      sampling_rate: this.state.status_flags.sampling_rate,
+    }).then(data => {
       this.setState(
         {
           ...this.state,
@@ -291,10 +290,7 @@ class BasicElement extends React.Component {
     return (
       <div
         className="bx--grid bx--grid--full-width bx--container"
-        style={{
-          width: '100%',
-          minHeight: '100vh',
-        }}>
+        style={{ width: '100%' }}>
         <div className="bx--col-lg-16">
           <Tabs scrollIntoView={false}>
             <Tab label="Visualize">
