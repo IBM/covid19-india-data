@@ -21,6 +21,7 @@ env:
 install:
   - sudo apt update
   - sudo apt install nodejs
+  - sudo apt upgrade nodejs
   - node -v
   - curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
   - ibmcloud --version
