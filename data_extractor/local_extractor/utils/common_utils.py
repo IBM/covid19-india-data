@@ -86,7 +86,7 @@ def extract_info_from_table_by_keywords(df_dict, keymap):
 def parse_dates(datestr):
 
     date = dateparser.parse(datestr)
-    datestr = f'{date.year}-{date.month}-{date.day}'
+    datestr = f'{date.year}-{date.month:02d}-{date.day:02d}'
     return datestr
 
 
