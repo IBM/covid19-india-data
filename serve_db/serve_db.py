@@ -232,7 +232,7 @@ def fetch_days_data(
     query = "SELECT bulletin_link from Metadata_Bulletin_Links where date='{}' AND state='{}';".format(date, state_short_name)
     cursor.execute(query)
     records = cursor.fetchall()
-    bulletin_link = records[0][0] if records else '#'
+    bulletin_link = records[0][0] if records else None
     
     response = DailyData(
         date=date, 

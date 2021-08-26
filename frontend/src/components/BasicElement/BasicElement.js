@@ -81,6 +81,7 @@ class BasicElement extends React.Component {
       link_to_db_schema: props.props.link_to_db_schema,
       data: [],
       dataOnDate: [],
+      linkToDailyBulletin: null,
       schema: [],
       status_flags: {
         date: null,
@@ -166,6 +167,7 @@ class BasicElement extends React.Component {
         {
           ...this.state,
           dataOnDate: [],
+          linkToDailyBulletin: null,
         },
         () => {
           this.showTables();
@@ -183,6 +185,7 @@ class BasicElement extends React.Component {
       this.setState({
         ...this.state,
         dataOnDate: data['data'],
+        linkToDailyBulletin: data['bulletin_link'],
       });
     });
   };
@@ -396,6 +399,14 @@ class BasicElement extends React.Component {
                     onClick={this.fetchDataOnDate.bind(this)}>
                     Fetch Data
                   </Button>
+
+                  {this.state.linkToDailyBulletin && (
+                    <Link href={this.state.linkToDailyBulletin} target="_blank">
+                      <Button kind="primary" size="sm">
+                        Fetch Data
+                      </Button>
+                    </Link>
+                  )}
                 </div>
               </div>
 
