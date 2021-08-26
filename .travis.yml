@@ -1,0 +1,26 @@
+# Define the following environment variables in the Travis config
+#   - IBM_CLOUD_APIKEY
+#   - IBM_CLOUD_ORG
+
+language: python
+python: 
+  - "3.8"
+dist: bionic
+
+
+env:
+  - IBM_CLOUD_REGION="us-south"
+
+
+install:
+ - curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
+ - ibmcloud --version
+ - ibmcloud cf install
+ - ibmcloud login --apikey ${IBM_CLOUD_APIKEY} -r ${IBM_CLOUD_REGION}
+ 
+ 
+script:
+  - chmod +x ".deploy/deploy_frontend.sh"
+  - chmod +x ".deploy/deploy_dbserver.sh"
+  - sh .deploy/deploy_frontend.sh
+  - sh .deploy/deploy_dbserver.sh
