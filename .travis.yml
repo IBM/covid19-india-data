@@ -2,6 +2,7 @@
 #   - IBM_CLOUD_APIKEY
 #   - IBM_CLOUD_ORG
 
+sudo: required
 language: python
 python: 
   - "3.8"
@@ -18,16 +19,16 @@ env:
 
 
 install:
- - curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
- - ibmcloud --version
- - ibmcloud cf install
- - ibmcloud login --apikey ${IBM_CLOUD_APIKEY} -r ${IBM_CLOUD_REGION}
- 
+  - sudo apt update
+  - sudo apt install nodejs
+  - node -v
+  - curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
+  - ibmcloud --version
+  - ibmcloud cf install
+  - ibmcloud login --apikey ${IBM_CLOUD_APIKEY} -r ${IBM_CLOUD_REGION}
+  - export NODE_OPTIONS=--max_old_space_size=8192
 
-before_script:
-  - export NODE_OPTIONS=--max_old_space_size=4096
 
-  
 script:
   - chmod +x ".deploy/deploy_frontend.sh"
   - chmod +x ".deploy/deploy_dbserver.sh"
