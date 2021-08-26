@@ -23,7 +23,11 @@ install:
  - ibmcloud cf install
  - ibmcloud login --apikey ${IBM_CLOUD_APIKEY} -r ${IBM_CLOUD_REGION}
  
- 
+
+before_script:
+  - export NODE_OPTIONS=--max_old_space_size=4096
+
+  
 script:
   - chmod +x ".deploy/deploy_frontend.sh"
   - chmod +x ".deploy/deploy_dbserver.sh"
