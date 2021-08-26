@@ -130,24 +130,38 @@ class DataTableElement extends React.Component {
 
   componentDidMount = () => {
     var current_data = this.state.data;
+    var collect_header_data = true;
     var headers = [];
     var rows = [];
 
     if (!current_data.data[0]) {
       headers = [{ header: 'No data for this date', key: 'date' }];
     } else {
-      headers = [
-        { header: 'Date', key: 'date' },
-        { header: current_data.data[0][0], key: 'value' },
-      ];
+      headers = [{ header: 'Date', key: 'first_column' }];
 
       current_data.columns.forEach(function(e, i) {
         if (e !== 'date') {
-          rows.push({
-            id: i.toString(),
-            date: processName(e),
-            value: current_data.data[0][i],
+          var new_row = { id: i.toString(), first_column: processName(e) };
+
+          current_data.data.forEach(function(item, index) {
+            var new_column_key = 'column_' + index;
+
+            new_row[new_column_key] = item[i];
+
+            if (collect_header_data) {
+              if (index > 0) {
+                headers.push({ header: '', key: new_column_key });
+              } else {
+                headers.push({
+                  header: current_data.data[0][0],
+                  key: new_column_key,
+                });
+              }
+            }
           });
+
+          rows.push(new_row);
+          collect_header_data = false;
         }
       });
     }
