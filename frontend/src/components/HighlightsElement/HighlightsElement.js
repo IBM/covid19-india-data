@@ -1,7 +1,7 @@
 import React from 'react';
 import '@carbon/charts/styles.css';
 import { LineChart } from '@carbon/charts-react';
-import { Accordion, AccordionItem } from 'carbon-components-react';
+import { Accordion, AccordionItem, Loading } from 'carbon-components-react';
 import { prepareData, prepareOptions, fetchData } from '../Info';
 
 class HighlightsElement extends React.Component {
@@ -18,7 +18,11 @@ class HighlightsElement extends React.Component {
     var promises = [];
 
     this.state.query.forEach(function(q, index) {
-      var promise = fetchData({ URL: 'query', query: q.query }).then(data => {
+      var promise = fetchData({
+        URL: 'query',
+        query: q.query,
+        sampling_rate: 5,
+      }).then(data => {
         query_data[index] = data['data'];
       });
 
@@ -41,7 +45,12 @@ class HighlightsElement extends React.Component {
         <div className="bx--col-lg-16">
           {Object.keys(this.state.query_data).length > 0 && (
             <div>
-              <h3>Highlights</h3>
+              <h3>
+                Highlights{' '}
+                <span style={{ fontSize: 'large', fontWeight: '100' }}>
+                  sampled every 5 days
+                </span>
+              </h3>
               <br />
 
               <Accordion align="start">
@@ -62,7 +71,8 @@ class HighlightsElement extends React.Component {
                           data={prepareData(data, q.subject, 1)}
                           options={prepareOptions(
                             data[0][0],
-                            data[data.length - 1][0]
+                            data[data.length - 1][0],
+                            q.subject
                           )}></LineChart>
                       )}
                     </AccordionItem>
@@ -71,6 +81,13 @@ class HighlightsElement extends React.Component {
               </Accordion>
             </div>
           )}
+
+          {this.state.query.length > 0 &&
+            Object.keys(this.state.query_data).length === 0 && (
+              <>
+                <Loading description="Loading highlights" withOverlay />
+              </>
+            )}
         </div>
       </div>
     );

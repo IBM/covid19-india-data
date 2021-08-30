@@ -51,6 +51,11 @@ def hello():
     return "COVID-19 Data from India. 8/15"
 
 
+@app.route("/last_updated", methods=['POST'])
+def last_updated():
+    return json.dumps({"last_updated" : "8/30/2020"}, indent=4)
+
+
 @app.route("/fetch_data", methods=['POST'])
 def fetch_data(
         state_short_name: str = None, 
@@ -152,12 +157,13 @@ def fetch_data(
 
 
 @app.route("/query", methods=['POST'])
-def query(query: str = None) -> TimeSeries:
+def query(query: str = None, sampling_rate: int = 1) -> TimeSeries:
 
     if not query:
 
         payload = json.loads(request.get_data().decode('utf-8'))
         query = payload["query"]
+        sampling_rate = int(payload["scale_down"])
 
     response = TimeSeries(data=list())
 
@@ -165,9 +171,10 @@ def query(query: str = None) -> TimeSeries:
     cursor = con.cursor()
     cursor.execute(query)
 
-    response["data"] = cursor.fetchall()
-    con.close()
+    temp_data = cursor.fetchall()
+    response["data"] = __scale_down_data(temp_data, sampling_rate)
 
+    con.close()
     return json.dumps(response, indent=4)
 
 

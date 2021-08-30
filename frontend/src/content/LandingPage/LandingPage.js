@@ -1,13 +1,23 @@
 import React from 'react';
 import { Link, Button } from 'carbon-components-react';
+import { fetchData } from '../../components/Info';
 
 class LandingPage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      last_updated: null,
+    };
   }
 
-  componentDidMount(props) {}
+  componentDidMount(props) {
+    fetchData({ URL: 'last_updated' }).then(data => {
+      this.setState({
+        ...this.state,
+        last_updated: data['last_updated'],
+      });
+    });
+  }
 
   render() {
     return (
@@ -26,6 +36,10 @@ class LandingPage extends React.Component {
             COVID-19 Data <br />
             from <span className="text-blue">India</span>
           </h1>
+          <br />
+          <span className="text-blue">
+            <em>Last Updated: {this.state.last_updated}</em>
+          </span>
           <hr />
           <br />
           <p>
