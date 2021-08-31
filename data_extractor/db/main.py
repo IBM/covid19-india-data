@@ -3,6 +3,7 @@ import sys
 from .DL import DelhiDB
 from .WB import WestBengalDB
 from .TG import TelanganaDB
+from .TN import TamilNaduDB
 
 
 class DBMain(object):
@@ -16,7 +17,8 @@ class DBMain(object):
         self.states = {
             'DL': DelhiDB(datadir=self.datadir),
             'WB': WestBengalDB(datadir=self.datadir),
-            'TG': TelanganaDB(datadir=self.datadir)
+            'TG': TelanganaDB(datadir=self.datadir),
+            'TN': TamilNaduDB(datadir=self.datadir)
         }
 
     def insert_for_state(self, state, data):

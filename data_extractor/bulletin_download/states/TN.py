@@ -51,7 +51,7 @@ class TamilNadu(Bulletin):
         linkdict1 = self.get_bulletin_links(self.bulletin_url)
         linkdict2 = self.get_bulletin_links(self.archive_bulletin_url)
         
-        bulletin_links = linkdict1.update(linkdict2)
-        
+        linkdict1.update(linkdict2)
+        bulletin_links = linkdict1
         self.download_bulletins(bulletin_links)
         self._save_state_()

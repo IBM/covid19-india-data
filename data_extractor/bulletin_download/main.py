@@ -9,7 +9,10 @@ from bulletin_download.states.TN import TamilNadu
 def run(basedir):
 
     state_downloaders = [
-        Telangana, WestBengal, Delhi, TamilNadu
+        #Telangana,
+        WestBengal,
+        #Delhi,
+        TamilNadu
     ]
 
     for state in state_downloaders:
