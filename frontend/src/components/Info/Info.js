@@ -55,7 +55,7 @@ function prepareData(data, legend, key) {
   return new_data;
 }
 
-function prepareOptions(title, key) {
+function prepareOptions(title, key, axis) {
   var new_options = {
     ...axis_plot_options,
     title: title + ' | ' + key,
@@ -63,7 +63,7 @@ function prepareOptions(title, key) {
       ...axis_plot_options.axes,
       left: {
         ...axis_plot_options.axes.left,
-        title: key,
+        title: axis,
       },
     },
   };

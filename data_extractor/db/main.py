@@ -1,5 +1,7 @@
 import sys
 
+from datetime import datetime
+
 from .DL import DelhiDB
 from .WB import WestBengalDB
 from .TG import TelanganaDB
@@ -59,6 +61,16 @@ class DBMain(object):
                 }
                 row = {'bulletin-links': tablerow}
                 self.insert_metadata(row)
+
+    def record_db_metadata(self):
+        """ Record DB Metadata """
+
+        # Store last updated
+        currtime = datetime.now()
+        timestr = f'{currtime.year}-{currtime.month:02d}-{currtime.day:02d}'
+        tablerow = {'key': 'last-updated', 'value': timestr}
+        row = {'db-properties': tablerow}
+        self.insert_metadata(row)
 
 
 if __name__ == '__main__':

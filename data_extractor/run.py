@@ -32,6 +32,7 @@ def run(args):
     # Setup tables
     db_obj = DBMain(args.datadir)
     db_obj.record_bulletin_links(bulletin_links)
+    db_obj.record_db_metadata()
 
     # Start extraction
     state_pbar = tqdm(STATES, desc="States")

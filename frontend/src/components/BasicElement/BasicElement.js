@@ -432,7 +432,8 @@ class BasicElement extends React.Component {
                                 data={prepareData(item.data, e, i)}
                                 options={prepareOptions(
                                   item.title,
-                                  e
+                                  e,
+                                  item.title
                                 )}></LineChart>
 
                               <br />

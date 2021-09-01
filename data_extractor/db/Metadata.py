@@ -1,5 +1,5 @@
 from .db import Database
-from .Metadata_tables import TableOverview, BulletinLinks
+from .Metadata_tables import TableOverview, BulletinLinks, DBProperties
 
 class MetadataDB(Database):
 
@@ -16,6 +16,7 @@ class MetadataDB(Database):
 
         self.tables = {
             'table-overview': TableOverview.TableOverview(),
-            'bulletin-links': BulletinLinks.BulletinLinks()
+            'bulletin-links': BulletinLinks.BulletinLinks(),
+            'db-properties': DBProperties.DBProperties()
         }
         
