@@ -53,7 +53,15 @@ def hello():
 
 @app.route("/last_updated", methods=['POST'])
 def last_updated():
-    return json.dumps({"last_updated" : "8/30/2020"}, indent=4)
+    
+    con = sqlite3.connect(__path_to_db_file)
+    cursor = con.cursor()
+    query = f"SELECT value from Metadata_DB_Properties where key='last-updated'"
+    cursor.execute(query)
+    records = cursor.fetchall()
+    last_updated_date = records[0][0] if records else None
+    
+    return json.dumps({"last_updated" : last_updated_date}, indent=4)
 
 
 @app.route("/fetch_data", methods=['POST'])
