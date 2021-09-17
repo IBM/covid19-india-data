@@ -22,7 +22,7 @@ class DistrictDetailsTable(DB):
             'today_imported_cases': 'INT',
             'total_cases_till_today': 'INT',
             'total_cases_discharged': 'INT',
-            'total_deaths': 'INT',
+            'total_deaths': 'INT'
         }
 
         return cols

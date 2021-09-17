@@ -10,7 +10,8 @@ class AirportSurveillanceDetailedTable(DB):
     def getcolumns(self):
         cols = {
             'date': 'DATE NOT NULL',
-            'flight': 'STRING',
+            'airport': 'STRING NOT NULL'
+            'flight': 'STRING NOT NULL',
             'total_passengers': 'INT',
             'passengers_tested': 'INT',
             'tests_under_process': 'INT',
@@ -24,5 +25,5 @@ class AirportSurveillanceDetailedTable(DB):
     def create_table(self):
         colstr = [f'{column_name} {column_type}' for column_name, column_type in self.cols.items()]
         colstr = ', '.join(colstr)
-        query = f"CREATE TABLE IF NOT EXISTS `{self.table_name}` ({colstr}, PRIMARY KEY (date, flight))"
+        query = f"CREATE TABLE IF NOT EXISTS `{self.table_name}` ({colstr}, PRIMARY KEY (date, airport, flight))"
         return query

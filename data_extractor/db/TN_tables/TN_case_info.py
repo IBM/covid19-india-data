@@ -3,7 +3,7 @@ from .db import DB
 
 class CumulativeInfoTable(DB):
     def __init__(self):
-        self.table_name = "TN_health_measures"
+        self.table_name = "TN_cumulative_info"
         self.table_desc = "Tamil Nadu cumulative info, table 1 on page 1 of bulletin"
         self.cols = self.getcolumns()
 

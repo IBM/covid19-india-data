@@ -95,9 +95,11 @@ def n_pages_in_pdf(pdf_fpath):
     return len(pages)
 
 
-def get_tables_from_pdf_camelot(pdf_fpath, pages=None):
+def get_tables_from_pdf_camelot(pdf_fpath, pages=None, use_stream=False):
+
     pagerange = "1-end" if pages is None else ','.join(map(str, pages))
-    tables = camelot.read_pdf(pdf_fpath, pages=pagerange, strip_text='\n', split_text=True)
+    _flavor = "stream" if use_stream else "lattice"
+    tables = camelot.read_pdf(pdf_fpath, pages=pagerange, flavor=_flavor, strip_text='\n', split_text=True)
     return tables
 
 
@@ -107,9 +109,9 @@ def get_tables_from_pdf_tabula(pdf_fpath, pages=None):
     return tables
 
 
-def get_tables_from_pdf(library, pdf_fpath, pages=None):
+def get_tables_from_pdf(library, pdf_fpath, pages=None, use_stream=False):
 
     if library.lower().strip() == 'camelot':
-        return get_tables_from_pdf_camelot(pdf_fpath, pages)
+        return get_tables_from_pdf_camelot(pdf_fpath, pages, use_stream)
     elif library.lower().strip() == 'tabula':
         return get_tables_from_pdf_tabula(pdf_fpath, pages)

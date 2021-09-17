@@ -12,7 +12,7 @@ class IncomingPassengersTable(DB):
             'date': 'DATE NOT NULL',
             'mode_of_travel': 'STRING',
             'total_passengers': 'INT',
-            'total_positive_cases': 'INT',
+            'total_positive_cases': 'INT'
         }
 
         return cols
