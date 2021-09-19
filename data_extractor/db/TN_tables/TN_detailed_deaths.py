@@ -17,10 +17,12 @@ class DeathMorbiditiesTable(DB):
             'comorbidities_government_dms': 'INT',
             'comorbidities_private': 'INT',
             'comorbidities_other_government_institutions': 'INT',
+            'comorbidities_total': 'INT',
             'no_comorbidities_government_dme': 'INT',
             'no_comorbidities_government_dms': 'INT',
             'no_comorbidities_private': 'INT',
             'no_comorbidities_other_government_institutions': 'INT',
+            'no_comorbidities_total': 'INT'
         }
 
         return cols

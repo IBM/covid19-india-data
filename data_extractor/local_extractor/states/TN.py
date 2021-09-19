@@ -89,7 +89,6 @@ class TamilNaduExtractor(object):
 
         result = common_utils.extract_info_from_table_by_keywords(df_dict, keymap)
         result['date'] = self.date
-        print(result)
 
         # cleaning up numbers
         new_cols =  ["government_testing_facilities", "private_testing_facilities"] 
@@ -134,7 +133,6 @@ class TamilNaduExtractor(object):
             "deaths_today": ["deaths", "today", "till"]
         }
 
-        # TODO: check the number of total_new_cases as the row has just value in the file
         result = common_utils.extract_info_from_table_by_keywords(df_dict, keymap)
         # copying a specific case which is not being copied
         result['date'] = self.date
@@ -466,6 +464,46 @@ class TamilNaduExtractor(object):
 
         return result
 
+    def extract_death_comorbidities_analysis(self, death_detail_tables):
+        keywords = ["no", "comorbidities"]
+        df_page10a = common_utils.find_table_by_keywords(death_detail_tables, keywords)
+
+        keywords = ["with", "comorbidities"]
+        df_page10b = common_utils.find_table_by_keywords(death_detail_tables, keywords)
+
+        keymap_no_comorbidities = {
+            "no_comorbidities_government_dme": ["government", "dme"],
+            "no_comorbidities_government_dms": ["government", "dms"],
+            "no_comorbidities_private": ["private"],
+            "no_comorbidities_other_government": ["other", "railway", "government", "institutions"],
+            "no_comorbidities_total": ["total"]
+        }
+
+        keymap_comorbidities = {
+            "comorbidities_government_dme": ["government", "dme"],
+            "comorbidities_government_dms": ["government", "dms"],
+            "comorbidities_private": ["private"],
+            "comorbidities_other_government": ["other", "railway", "government", "institutions"],
+            "comorbidities_total": ["total"]
+        }
+
+        df_dict_page10a = common_utils.convert_df_to_dict(df_page10a, key_idx=0, val_idx=1)
+        df_dict_page10b = common_utils.convert_df_to_dict(df_page10b, key_idx=0, val_idx=1)
+        result = common_utils.extract_info_from_table_by_keywords(df_dict_page10a, keymap_no_comorbidities)
+        tmp = common_utils.extract_info_from_table_by_keywords(df_dict_page10b, keymap_comorbidities)
+
+        result.update(tmp)
+        result['date'] = self.date
+
+        cols = list(result.keys())
+        for col in cols:
+            if col == "date":
+                continue
+
+            result[col] = locale.atoi(result[col])
+
+        return result
+
 
     def extract(self):
         n = common_utils.n_pages_in_pdf(self.report_fpath)
@@ -474,19 +512,22 @@ class TamilNaduExtractor(object):
         tables_page1 = common_utils.get_tables_from_pdf(library='camelot', pdf_fpath=self.report_fpath, pages=[1])
         tables_page2 = common_utils.get_tables_from_pdf(library='camelot', pdf_fpath=self.report_fpath, pages=[2], use_stream=True)
         # gettting all district case tables
-        tables_district = common_utils.get_tables_from_pdf(library='camelot', pdf_fpath=self.report_fpath, pages=[3, 4, 6, 7, 8, 9, 10], use_stream=False)
+        tables_district = common_utils.get_tables_from_pdf(library='camelot', pdf_fpath=self.report_fpath, pages=[3, 4, 6, 7, 8, 9], use_stream=False)
+        tables_comorbidities = common_utils.get_tables_from_pdf(library='camelot', pdf_fpath=self.report_fpath, pages=[10], use_stream=False)
 
         # send first table to extract the cummulative case details
         cummulative_case_info = self.extract_case_info(tables_page1)
         detailed_case_info = self.extract_detailed_cases(tables_page2)
         district_cases = self.extract_district_cases(tables_district)
         bed_details = self.extract_district_facilities_details(tables_district)
+        death_details = self.extract_death_comorbidities_analysis(tables_comorbidities)
 
         result = {
             'cummulative-case-info': cummulative_case_info,
             'detailed_case_info': detailed_case_info,
             'district_details': district_cases,
-            'district_bed_details': bed_details
+            'district_bed_details': bed_details,
+            'deaths_comorbidities': death_details
         }
 
         print(result)
