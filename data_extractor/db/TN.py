@@ -1,7 +1,8 @@
 import sqlite3
 
 from .db import Database
-from .TN_tables import TN
+from .TN_tables import TN_case_info, TN_detailed_cases, TN_district_detailed_cases, TN_bed_vacancy_details, \
+    TN_detailed_deaths
 
 class TamilNaduDB(Database):
 
@@ -17,8 +18,26 @@ class TamilNaduDB(Database):
         """
 
         self.tables = {
-            'asymptomatic-status': TG_symptomatic.SymptomaticCases(),
-            'comorbidities-fatality': TG_comorbidities.ComorbiditiesFatalityCount(),
-            'agewise-info': TG_agedist.AgeGenderDist()
+            'case-info': TN_case_info.CumulativeInfoTable(),
+            'detail-info': TN_detailed_cases.DetailedInfoTable(),
+            'district-info': TN_district_detailed_cases.DistrictDetailsTable(),
+            'district-bed-info': TN_bed_vacancy_details.DistrictHospitalBedDetailsTable(),
+            'death-info': TN_detailed_deaths.DeathMorbitiesTable()
         }
-        
+
+    def insert_row(self, data):
+        cursor = self.conn.cursor()
+
+        for id, tableobj in self.tables.items():
+            if id not in data:
+                continue
+
+            vals = data[id]
+
+            if isinstance(vals, dict):
+                tableobj.insert_row(cursor=cursor, **vals)
+            elif isinstance(vals, list):
+                for valitem in vals:
+                    tableobj.insert_row(cursor=cursor, **valitem)
+
+        self.conn.commit()
