@@ -29,7 +29,7 @@ class DistrictHospitalBedDetailsTable(DB):
             'iccc_total_beds_available_rural': 'INT',
             'iccc_beds_occupied_rural': 'INT',
             'iccc_proposed_urban': 'INT',
-            'iccc_beds_urban': 'INT'
+            'iccc_beds_proposed_urban': 'INT'
         }
 
         return cols
