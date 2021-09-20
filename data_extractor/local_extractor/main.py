@@ -1,6 +1,6 @@
 from local_extractor.states.DL import DelhiExtractor
 from local_extractor.states.WB import WestBengalExtractor
-
+from local_extractor.states.TN import TamilNaduExtractor
 
 STATE_LIST = {
     'DL': DelhiExtractor,

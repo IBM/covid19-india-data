@@ -507,7 +507,7 @@ class TamilNaduExtractor(object):
 
     def extract(self):
         n = common_utils.n_pages_in_pdf(self.report_fpath)
-        print("number of pages ", n)
+        #print("number of pages ", n)
         # file consists of a table on page 1 and an advertisement :D
         tables_page1 = common_utils.get_tables_from_pdf(library='camelot', pdf_fpath=self.report_fpath, pages=[1])
         tables_page2 = common_utils.get_tables_from_pdf(library='camelot', pdf_fpath=self.report_fpath, pages=[2], use_stream=True)
@@ -530,7 +530,7 @@ class TamilNaduExtractor(object):
             'deaths_comorbidities': death_details
         }
 
-        print(result)
+        #print(result)
         return result
 
 
