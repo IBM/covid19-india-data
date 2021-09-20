@@ -4,7 +4,8 @@ from local_extractor.states.WB import WestBengalExtractor
 
 STATE_LIST = {
     'DL': DelhiExtractor,
-    'WB': WestBengalExtractor
+    'WB': WestBengalExtractor,
+    'TN': TamilNaduExtractor
 }
 
 
