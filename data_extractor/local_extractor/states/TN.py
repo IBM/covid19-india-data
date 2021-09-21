@@ -633,8 +633,146 @@ class TamilNaduExtractor(object):
     def extract_airport_flight_table(self, travel_info_tables):
         # this table is across 3 pages, it usually starts on one page with only 2
         # rows. 3rd page table might not be there, so I have an extra check for it.
+        df_header = None
+        df_body = None
+        df_footer = None
 
-        return None
+        keywords_header = ["airport", "total", "process"]
+        df_header = common_utils.find_table_by_keywords(travel_info_tables, keywords_header)
+
+        keywords_body = ["coimbatore", "madurai", "from", "sub"]
+        df_body = common_utils.find_table_by_keywords(travel_info_tables, keywords_body)
+
+        keywords_footer = ["chartered", "other"]
+        df_footer = common_utils.find_table_by_keywords(travel_info_tables, keywords_footer)
+
+        if df_header is None and df_body is None and df_footer is None:
+            return None
+
+        result = list()
+        # setting it to a value as it is not supposed to be null in the table
+        airport = "chennai"
+
+        # no header means there is no table as that has the column names
+        if df_header is None:
+            return None
+
+        stop_loop = False
+        df_header = df_header.iloc[2:]
+        for i, row in df_header.iterrows():
+            if stop_loop:
+                break
+
+            row = [x for x in list(row) if x]
+            if len(row) == 1:
+                airport = self._get_airport(row)
+                continue
+
+            tmp = self._get_flight_detail(row)
+            tmp['airport'] = airport
+
+            result.append(tmp)
+
+        if df_body is not None:
+            for i, row in df_body.iterrows():
+                row = [x for x in list(row) if x]
+                if len(row) == 1:
+                    airport = self._get_airport(row)
+                    continue
+
+                tmp = self._get_flight_detail(row)
+                if 'airport' not in tmp:
+                    tmp['airport'] = airport
+
+                result.append(tmp)
+
+        # this ensures that the footer data is new and no same
+        # rows are being parsed
+        if df_footer is not None and df_body.size != df_footer.size:
+            for i, row in df_footer.iterrows():
+                row = [x for x in list(row) if x]
+                if len(row) == 1:
+                    airport = self._get_airport(row)
+                    continue
+
+                tmp = self._get_flight_detail(row, 0)
+                # assumption is that after other the only row left is grand total
+                if 'airport' not in tmp:
+                    tmp['airport'] = airport
+
+                result.append(tmp)
+
+        for row in result:
+            for k, v in row.items():
+                if k == "date" or k == "flight" or k == "airport":
+                    continue
+
+                row[k] = locale.atoi(v)
+
+        return result
+
+    def _get_airport(self, row):
+        airport = row[0].strip().lower()
+        # matching the name to the other table
+        if "airport" in airport:
+            airport = airport.replace(" airport", "")
+
+        return airport
+
+    def _get_flight_detail(self, row, counter_other = 1):
+        if "other" in row[0].strip().lower():
+            if len(row) == 3:
+                tmp = {
+                    "airport": "other",
+                    "flight": row[0].strip().lower(),
+                    "positive_during_entry_screening": row[1 + counter_other].strip(),
+                    "positive_during_exit_screening": row[2 + counter_other].strip()
+                }
+            else:
+                tmp = {
+                    "airport": "other",
+                    "flight": row[0].strip().lower(),
+                    "total_passengers": row[1 + counter_other].strip(),
+                    "passengers_tested": row[2 + counter_other].strip(),
+                    "tests_under_process": row[3 + counter_other].strip(),
+                    "negative": row[4 + counter_other].strip(),
+                    "positive_during_entry_screening": row[5 + counter_other].strip(),
+                    "positive_during_exit_screening": row[6 + counter_other].strip()
+                }
+            tmp['date'] = self.date
+
+            return tmp
+
+        if 'total' in row[0].strip().lower() or "/" in row[0].strip():
+            counter = 0
+        else:
+            counter = 1
+
+        flight = row[0 + counter].strip().lower()
+        total = row[1 + counter].strip()
+        tested = row[2 + counter].strip()
+        under_process = row[3 + counter].strip()
+        tmp = {
+            "flight": flight,
+            "total_passengers": total,
+            "passengers_tested": tested,
+            "tests_under_process": under_process
+        }
+        tmp['date'] = self.date
+
+        if len(row) > 5:
+            tmp["negative"] = row[4 + counter].strip()
+
+        if len(row) > 6:
+            tmp["positive_during_entry_screening"] = row[5 + counter].strip()
+            tmp["positive_during_exit_screening"] = row[6 + counter].strip()
+
+        # matching airport to the other table
+        if flight == "grand total":
+            tmp["airport"] = flight
+
+        return tmp
+
 
     def extract_train_surveillance_table(self, travel_info_tables):
         df = None
@@ -654,7 +792,7 @@ class TamilNaduExtractor(object):
             trains = row[0].strip()
             passengers = row[1].strip()
             negative = row[2].strip()
-            positive = row[1].strip()
+            positive = row[3].strip()
 
             tmp = {
                 'trains': trains,
@@ -760,12 +898,12 @@ class TamilNaduExtractor(object):
         seaport_details = self.extract_seaport_surveillance_table(tables_travel_data)
 
         result = {
-            'cummulative-case-info': cummulative_case_info,
-            'detailed_case_info': detailed_case_info,
-            'district_details': district_cases,
-            'district_bed_details': bed_details,
-            'deaths_comorbidities': death_details,
-            'travel_mode': travel_mode_details,
+            'case-info': cummulative_case_info,
+            'detailed-info': detailed_case_info,
+            'district-info': district_cases,
+            'district-bed-info': bed_details,
+            'death-info': death_details,
+            'travel-info': travel_mode_details,
             'airport': airport_details,
             'flights': flight_details,
             'trains': train_details,

@@ -1,9 +1,9 @@
 import sqlite3
 from .db import DB
 
-class AirportSurveillanceDetailedTable(DB):
+class FlightSurveillanceTable(DB):
     def __init__(self):
-        self.table_name = "TN_airport_surveillance_details"
+        self.table_name = "TN_flight_details"
         self.table_desc = "Tamil Nadu 4 airports domestic flights passenger testing details till previous day, table number 3 from the top on third last page which continues to second last page"
         self.cols = self.getcolumns()
 
