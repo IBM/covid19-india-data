@@ -10,7 +10,7 @@ class AirportSurveillanceTable(DB):
     def getcolumns(self):
         cols = {
             'date': 'DATE NOT NULL',
-            'airport': 'STRING',
+            'airport': 'STRING NOT NULL',
             'flights_arrived': 'INT',
             'passengers': 'INT',
             'positive_cases': 'INT'

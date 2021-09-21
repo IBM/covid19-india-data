@@ -10,9 +10,9 @@ class IncomingPassengersTable(DB):
     def getcolumns(self):
         cols = {
             'date': 'DATE NOT NULL',
-            'mode_of_travel': 'STRING',
-            'total_passengers': 'INT',
-            'total_positive_cases': 'INT'
+            'travel_mode': 'STRING NOT NULL',
+            'passengers': 'INT',
+            'positive_cases': 'INT'
         }
 
         return cols
@@ -20,5 +20,5 @@ class IncomingPassengersTable(DB):
     def create_table(self):
         colstr = [f'{column_name} {column_type}' for column_name, column_type in self.cols.items()]
         colstr = ', '.join(colstr)
-        query = f"CREATE TABLE IF NOT EXISTS `{self.table_name}` ({colstr}, PRIMARY KEY (date, mode_of_travel))"
+        query = f"CREATE TABLE IF NOT EXISTS `{self.table_name}` ({colstr}, PRIMARY KEY (date, travel_mode))"
         return query

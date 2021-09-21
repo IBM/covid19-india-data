@@ -187,6 +187,9 @@ class TamilNaduExtractor(object):
         return result
 
     def extract_district_cases(self, district_tables):
+        df_page3 = None
+        df_page4 = None
+        df_page6 = None
         keywords_page3 = ["home",  "death", "treatment", "discharged"]
         df_page3 = common_utils.find_table_by_keywords(district_tables, keywords_page3)
 
@@ -198,110 +201,113 @@ class TamilNaduExtractor(object):
 
         result = []
         district_numbers = dict()
-        df_page3 = df_page3.iloc[1:]
         stop_loop = False
 
         # parsing table 3
-        for i, row in df_page3.iterrows():
-            if stop_loop:
-                break
+        if df_page3 is not None:
+            df_page3 = df_page3.iloc[1:]
+            for i, row in df_page3.iterrows():
+                if stop_loop:
+                    break
 
-            row = [x for x in list(row) if x]
+                row = [x for x in list(row) if x]
 
-            if row[0].strip().lower() == 'grand total':
-                counter = 0
-                stop_loop = True
-            else:
-                counter = 1
+                if row[0].strip().lower() == 'grand total':
+                    counter = 0
+                    stop_loop = True
+                else:
+                    counter = 1
 
-            district = row[0 + counter].strip().lower()
+                district = row[0 + counter].strip().lower()
 
-            active_cases_till_yesterday = row[1 + counter].strip()
-            new_cases_today = row[2 + counter].strip()
-            discharged_cases_today = row[3 + counter].strip()
-            deaths_today = row[4 + counter].strip()
-            total_active_cases = row[5 + counter].strip()
+                active_cases_till_yesterday = row[1 + counter].strip()
+                new_cases_today = row[2 + counter].strip()
+                discharged_cases_today = row[3 + counter].strip()
+                deaths_today = row[4 + counter].strip()
+                total_active_cases = row[5 + counter].strip()
 
-            tmp = {
-                'date': self.date,
-                "district": district,
-                "total_active_cases_till_yesterday": active_cases_till_yesterday,
-                "new_cases_today": new_cases_today,
-                "discharged_cases_today": discharged_cases_today,
-                "deaths_today": deaths_today,
-                "total_active_cases_including_today": total_active_cases,
-            }
+                tmp = {
+                    'date': self.date,
+                    "district": district,
+                    "total_active_cases_till_yesterday": active_cases_till_yesterday,
+                    "new_cases_today": new_cases_today,
+                    "discharged_cases_today": discharged_cases_today,
+                    "deaths_today": deaths_today,
+                    "total_active_cases_including_today": total_active_cases,
+                }
 
-            district_numbers[district] = tmp
-
-        stop_loop = False
-        df_page4 = df_page4.iloc[2:]
-        for i, row in df_page4.iterrows():
-            if stop_loop:
-                break
-
-            row = [x for x in list(row) if x]
-
-            if row[0].strip().lower() == 'grand total':
-                counter = 0
-                stop_loop = True
-            else:
-                counter = 1
-
-            district = row[0 + counter].strip().lower()
-            indegenous_cases_yesterday = row[1 + counter].strip()
-            indegenous_cases_today = row[2 + counter].strip()
-            imported_cases_yesterday = row[3 + counter].strip()
-            imported_cases_today = row[4 + counter].strip()
-            total_cases_today = row[5 + counter].strip()
-            tmp = {
-                'total_indegenous_cases_till_yesterday': indegenous_cases_yesterday,
-                'indegenous_cases_today': indegenous_cases_today,
-                'total_imported_cases_till_yesterday': imported_cases_yesterday,
-                'imported_cases_today': imported_cases_today,
-                'total_cases_till_today': total_cases_today
-            }
-
-            if district in district_numbers:
-                district_numbers[district].update(tmp)
-            else:
-                # this should never happen but in case there is an error
-                print("district not found page 4", district)
-                tmp['district'] = district
-                tmp['date'] = self.date
-                distrct_numbers[district] = tmp
-
-        stop_loop = False
-        df_page6 = df_page6.iloc[1:]
-        for i, row in df_page6.iterrows():
-            if stop_loop:
-                break
-
-            row = [x for x in list(row) if x]
-
-            if row[0].strip().lower() == 'grand total':
-                counter = 0
-                stop_loop = True
-            else:
-                counter = 1
-
-            district = row[0 + counter].strip().lower()
-            total_discharged = row[2 + counter].strip()
-            total_deaths = row[4 + counter].strip()
-
-            tmp = {
-                'total_cases_discharged': total_discharged,
-                'total_deaths': total_deaths
-            }
-
-            if district in district_numbers:
-                district_numbers[district].update(tmp)
-            else:
-                # this should never happen in case there is an error
-                print("district not found page 6", district)
-                tmp['district'] = district
-                tmp['date'] = self.date
                 district_numbers[district] = tmp
+
+        stop_loop = False
+        if df_page4 is not None:
+            df_page4 = df_page4.iloc[2:]
+            for i, row in df_page4.iterrows():
+                if stop_loop:
+                    break
+
+                row = [x for x in list(row) if x]
+
+                if row[0].strip().lower() == 'grand total':
+                    counter = 0
+                    stop_loop = True
+                else:
+                    counter = 1
+
+                district = row[0 + counter].strip().lower()
+                indegenous_cases_yesterday = row[1 + counter].strip()
+                indegenous_cases_today = row[2 + counter].strip()
+                imported_cases_yesterday = row[3 + counter].strip()
+                imported_cases_today = row[4 + counter].strip()
+                total_cases_today = row[5 + counter].strip()
+                tmp = {
+                    'total_indegenous_cases_till_yesterday': indegenous_cases_yesterday,
+                    'indegenous_cases_today': indegenous_cases_today,
+                    'total_imported_cases_till_yesterday': imported_cases_yesterday,
+                    'imported_cases_today': imported_cases_today,
+                    'total_cases_till_today': total_cases_today
+                }
+
+                if district in district_numbers:
+                    district_numbers[district].update(tmp)
+                else:
+                    # this should never happen but in case there is an error
+                    print("district not found page 4", district)
+                    tmp['district'] = district
+                    tmp['date'] = self.date
+                    distrct_numbers[district] = tmp
+
+        stop_loop = False
+        if df_page6 is not None:
+            df_page6 = df_page6.iloc[1:]
+            for i, row in df_page6.iterrows():
+                if stop_loop:
+                    break
+
+                row = [x for x in list(row) if x]
+
+                if row[0].strip().lower() == 'grand total':
+                    counter = 0
+                    stop_loop = True
+                else:
+                    counter = 1
+
+                district = row[0 + counter].strip().lower()
+                total_discharged = row[2 + counter].strip()
+                total_deaths = row[4 + counter].strip()
+
+                tmp = {
+                    'total_cases_discharged': total_discharged,
+                    'total_deaths': total_deaths
+                }
+
+                if district in district_numbers:
+                    district_numbers[district].update(tmp)
+                else:
+                    # this should never happen in case there is an error
+                    print("district not found page 6", district)
+                    tmp['district'] = district
+                    tmp['date'] = self.date
+                    district_numbers[district] = tmp
 
         for k, v in district_numbers.items():
             for key, value in v.items():
@@ -310,6 +316,7 @@ class TamilNaduExtractor(object):
 
                 v[key] = locale.atoi(value)
 
+        # converting district wise dictionary to a list of rows
         for _, v in district_numbers.items():
             result.append(v)
 
@@ -317,6 +324,9 @@ class TamilNaduExtractor(object):
 
 
     def extract_district_facilities_details(self, district_tables):
+        df_page7 = None
+        df_page8 = None
+        df_page9 = None
         keywords_page7 = ["o2", "occupancy", "vacancy", "earmarked", "icu"]
         df_page7 = common_utils.find_table_by_keywords(district_tables, keywords_page7)
 
@@ -328,126 +338,129 @@ class TamilNaduExtractor(object):
 
         result = []
         district_numbers = dict()
-        df_page7 = df_page7.iloc[3:]
         stop_loop = False
 
         # parsing table 3
-        for i, row in df_page7.iterrows():
-            if stop_loop:
-                break
+        if df_page7 is not None:
+            df_page7 = df_page7.iloc[3:]
+            for i, row in df_page7.iterrows():
+                if stop_loop:
+                    break
 
-            row = [x for x in list(row) if x]
+                row = [x for x in list(row) if x]
 
-            if row[0].strip().lower() == 'grand total':
-                counter = 0
-                stop_loop = True
-            else:
-                counter = 1
+                if row[0].strip().lower() == 'grand total':
+                    counter = 0
+                    stop_loop = True
+                else:
+                    counter = 1
 
-            district = row[0 + counter].strip().lower()
-
-            covid_o2 = row[1 + counter].strip()
-            covid_non_o2 = row[2 + counter].strip()
-            covid_icu = row[3 + counter].strip()
-            occupancy_o2 = row[4 + counter].strip()
-            occupancy_non_o2 = row[5 + counter].strip()
-            occupancy_icu = row[6 + counter].strip()
-            vacancy_o2 = row[7 + counter].strip()
-            vacancy_non_o2 = row[8 + counter].strip()
-            vacancy_icu = row[9 + counter].strip()
-            total_vacancy = row[10 + counter].strip()
-
-            tmp = {
-                'date': self.date,
-                "district": district,
-                'total_covid_o2': covid_o2,
-                'total_covid_non_o2': covid_non_o2,
-                'total_covid_icu': covid_icu,
-                'today_occupancy_o2': occupancy_o2,
-                'today_occupancy_non_o2': occupancy_non_o2,
-                'today_occupancy_icu': occupancy_icu,
-                'total_vacancy_o2': vacancy_o2,
-                'total_vacancy_non_o2': vacancy_non_o2,
-                'total_vacancy_icu': vacancy_icu,
-                'total_vacancy': total_vacancy
-            }
-
-            district_numbers[district] = tmp
-
-        stop_loop = False
-        df_page8 = df_page8.iloc[2:]
-        for i, row in df_page8.iterrows():
-            if stop_loop:
-                break
-
-            row = [x for x in list(row) if x]
-
-            if row[0].strip().lower() == 'grand total':
-                counter = 0
-                stop_loop = True
-            else:
-                counter = 1
-
-            district = row[0 + counter].strip().lower()
-            embarked_covid = row[1 + counter].strip()
-            embarked_occupancy = row[2 + counter].strip()
-            embarked_vacancy = row[3 + counter].strip()
-            tmp = {
-                'embarked_covid_beds': embarked_covid,
-                'embarked_covid_occupancy': embarked_occupancy,
-                'embarked_covid_vacancy': embarked_vacancy
-            }
-
-            if district in district_numbers:
-                district_numbers[district].update(tmp)
-            else:
-                # this should never happen but in case there is an error
-                print("district not found page 8", district)
-                tmp['district'] = district
-                tmp['date'] = self.date
-                distrct_numbers[district] = tmp
-
-        stop_loop = False
-        df_page9 = df_page9.iloc[3:]
-        for i, row in df_page9.iterrows():
-            if stop_loop:
-                break
-
-            row = [x for x in list(row) if x]
-
-            if row[0].strip().lower() == 'total':
-                counter = 0
-                stop_loop = True
-                # for some reason here they write total at the end :facepalm
-                district = "grand total"
-            else:
-                counter = 1
                 district = row[0 + counter].strip().lower()
 
-            proposed_rural = row[1 + counter].strip()
-            beds_proposed_rural = row[2 + counter].strip()
-            beds_available_rural = row[3 + counter].strip()
-            beds_occupied_rural = row[4 + counter].strip()
-            proposed_urban = row[5 + counter].strip()
-            beds_urban = row[6 + counter].strip()
+                covid_o2 = row[1 + counter].strip()
+                covid_non_o2 = row[2 + counter].strip()
+                covid_icu = row[3 + counter].strip()
+                occupancy_o2 = row[4 + counter].strip()
+                occupancy_non_o2 = row[5 + counter].strip()
+                occupancy_icu = row[6 + counter].strip()
+                vacancy_o2 = row[7 + counter].strip()
+                vacancy_non_o2 = row[8 + counter].strip()
+                vacancy_icu = row[9 + counter].strip()
+                total_vacancy = row[10 + counter].strip()
 
-            tmp = {
-                'iccc_proposed_rural': proposed_rural,
-                'iccc_beds_proposed_rural': beds_proposed_rural,
-                'iccc_total_beds_available_rural': beds_available_rural,
-                'iccc_beds_occupied_rural': beds_occupied_rural,
-                'iccc_proposed_urban': proposed_urban,
-                'iccc_beds_proposed_urban': beds_urban
-            }
+                tmp = {
+                    'date': self.date,
+                    "district": district,
+                    'total_covid_o2': covid_o2,
+                    'total_covid_non_o2': covid_non_o2,
+                    'total_covid_icu': covid_icu,
+                    'today_occupancy_o2': occupancy_o2,
+                    'today_occupancy_non_o2': occupancy_non_o2,
+                    'today_occupancy_icu': occupancy_icu,
+                    'total_vacancy_o2': vacancy_o2,
+                    'total_vacancy_non_o2': vacancy_non_o2,
+                    'total_vacancy_icu': vacancy_icu,
+                    'total_vacancy': total_vacancy
+                }
 
-            if district in district_numbers:
-                district_numbers[district].update(tmp)
-            else:
-                # this should never happen in case there is an error
-                print("district not found page 9", district)
-                tmp['district'] = district
-                tmp['date'] = self.date
                 district_numbers[district] = tmp
+
+        stop_loop = False
+        if df_page8 is not None:
+            df_page8 = df_page8.iloc[2:]
+            for i, row in df_page8.iterrows():
+                if stop_loop:
+                    break
+
+                row = [x for x in list(row) if x]
+
+                if row[0].strip().lower() == 'grand total':
+                    counter = 0
+                    stop_loop = True
+                else:
+                    counter = 1
+
+                district = row[0 + counter].strip().lower()
+                embarked_covid = row[1 + counter].strip()
+                embarked_occupancy = row[2 + counter].strip()
+                embarked_vacancy = row[3 + counter].strip()
+                tmp = {
+                    'embarked_covid_beds': embarked_covid,
+                    'embarked_covid_occupancy': embarked_occupancy,
+                    'embarked_covid_vacancy': embarked_vacancy
+                }
+
+                if district in district_numbers:
+                    district_numbers[district].update(tmp)
+                else:
+                    # this should never happen but in case there is an error
+                    print("district not found page 8", district)
+                    tmp['district'] = district
+                    tmp['date'] = self.date
+                    distrct_numbers[district] = tmp
+
+        stop_loop = False
+        if df_page9 is not None:
+            df_page9 = df_page9.iloc[3:]
+            for i, row in df_page9.iterrows():
+                if stop_loop:
+                    break
+
+                row = [x for x in list(row) if x]
+
+                if row[0].strip().lower() == 'total':
+                    counter = 0
+                    stop_loop = True
+                    # for some reason here they write total at the end :facepalm
+                    district = "grand total"
+                else:
+                    counter = 1
+                    district = row[0 + counter].strip().lower()
+
+                proposed_rural = row[1 + counter].strip()
+                beds_proposed_rural = row[2 + counter].strip()
+                beds_available_rural = row[3 + counter].strip()
+                beds_occupied_rural = row[4 + counter].strip()
+                proposed_urban = row[5 + counter].strip()
+                beds_urban = row[6 + counter].strip()
+
+                tmp = {
+                    'iccc_proposed_rural': proposed_rural,
+                    'iccc_beds_proposed_rural': beds_proposed_rural,
+                    'iccc_total_beds_available_rural': beds_available_rural,
+                    'iccc_beds_occupied_rural': beds_occupied_rural,
+                    'iccc_proposed_urban': proposed_urban,
+                    'iccc_beds_proposed_urban': beds_urban
+                }
+
+                if district in district_numbers:
+                    district_numbers[district].update(tmp)
+                else:
+                    # this should never happen in case there is an error
+                    print("district not found page 9", district)
+                    tmp['district'] = district
+                    tmp['date'] = self.date
+                    district_numbers[district] = tmp
 
         for k, v in district_numbers.items():
             for key, value in v.items():
@@ -459,17 +472,23 @@ class TamilNaduExtractor(object):
 
                 v[key] = locale.atoi(value)
 
+        # converting district wise dictionary to a list of rows
         for _, v in district_numbers.items():
             result.append(v)
 
         return result
 
-    def extract_death_comorbidities_analysis(self, death_detail_tables):
+    def extract_death_comorbidities_table(self, death_detail_tables):
+        df_page10a = None
+        df_page10b = None
         keywords = ["no", "comorbidities"]
         df_page10a = common_utils.find_table_by_keywords(death_detail_tables, keywords)
 
         keywords = ["with", "comorbidities"]
         df_page10b = common_utils.find_table_by_keywords(death_detail_tables, keywords)
+
+        if df_page10a is None and df_page10b is None:
+            return None
 
         keymap_no_comorbidities = {
             "no_comorbidities_government_dme": ["government", "dme"],
@@ -487,12 +506,21 @@ class TamilNaduExtractor(object):
             "comorbidities_total": ["total"]
         }
 
-        df_dict_page10a = common_utils.convert_df_to_dict(df_page10a, key_idx=0, val_idx=1)
-        df_dict_page10b = common_utils.convert_df_to_dict(df_page10b, key_idx=0, val_idx=1)
-        result = common_utils.extract_info_from_table_by_keywords(df_dict_page10a, keymap_no_comorbidities)
-        tmp = common_utils.extract_info_from_table_by_keywords(df_dict_page10b, keymap_comorbidities)
+        if df_page10a is not None:
+            df_dict_page10a = common_utils.convert_df_to_dict(df_page10a, key_idx=0, val_idx=1)
+            result = common_utils.extract_info_from_table_by_keywords(df_dict_page10a, keymap_no_comorbidities)
 
-        result.update(tmp)
+        if df_page10b is not None:
+            df_dict_page10b = common_utils.convert_df_to_dict(df_page10b, key_idx=0, val_idx=1)
+            tmp = common_utils.extract_info_from_table_by_keywords(df_dict_page10b, keymap_comorbidities)
+
+        if df_page10a is None:
+            result = tmp
+        elif df_page10b is None:
+            result = result
+        else:
+            result.update(tmp)
+
         result['date'] = self.date
 
         cols = list(result.keys())
@@ -504,6 +532,209 @@ class TamilNaduExtractor(object):
 
         return result
 
+    def extract_travel_mode_table(self, travel_info_tables):
+        df = None
+        keywords = ["mode", "travel", "since"]
+        df = common_utils.find_table_by_keywords(travel_info_tables, keywords)
+
+        if df is None:
+            return None
+
+        stop_loop = False
+        result = list()
+        df = df.iloc[1:]
+        for i, row in df.iterrows():
+            if stop_loop:
+                break
+
+            row = [x for x in list(row) if x]
+
+            if row[0].strip().lower() == 'total':
+                counter = 0
+                stop_loop = True
+                # keeping the same name for total in case something comes up
+                # later
+                travel_mode = "grand total"
+            else:
+                counter = 1
+                travel_mode = row[1].strip().lower()
+
+            passengers = row[1 + counter].strip()
+
+            tmp = {
+                'travel_mode': travel_mode,
+                'passengers': passengers,
+            }
+
+            if len(row) == 3 + counter:
+                tmp['positive_cases'] = row[2 + counter].strip()
+
+            tmp['date'] = self.date
+            result.append(tmp)
+
+        for mode in result:
+            for key, value in mode.items():
+                if key == "date" or key == "travel_mode":
+                    continue
+
+                mode[key] = locale.atoi(value)
+
+        return result
+
+    def extract_airport_surveillance_table(self, travel_info_tables):
+        df = None
+        keywords = ["flights", "arrived", "passengers"]
+        df = common_utils.find_table_by_keywords(travel_info_tables, keywords)
+
+        if df is None:
+            return None
+
+        stop_loop = False
+        result = list()
+        df = df.iloc[1:]
+        for i, row in df.iterrows():
+            if stop_loop:
+                break
+
+            row = [x for x in list(row) if x]
+
+            if row[0].strip().lower() == 'total':
+                counter = 0
+                stop_loop = True
+                # keeping the same name for total in case something comes up
+                # later
+                airport = "grand total"
+            else:
+                counter = 1
+                airport = row[1].strip().lower()
+
+            flights = row[1 + counter].strip()
+            passengers = row[2 + counter].strip()
+            positive = row[3 + counter].strip()
+            tmp = {
+                'airport': airport,
+                'flights_arrived': flights,
+                'passengers': passengers,
+                'positive_cases': positive
+            }
+
+            tmp['date'] = self.date
+            result.append(tmp)
+
+        for airport in result:
+            for key, value in airport.items():
+                if key == "date" or key == "airport":
+                    continue
+
+                airport[key] = locale.atoi(value)
+
+        return result
+
+    def extract_airport_flight_table(self, travel_info_tables):
+        # this table is across 3 pages, it usually starts on one page with only 2
+        # rows. 3rd page table might not be there, so I have an extra check for it.
+
+        return None
+
+    def extract_train_surveillance_table(self, travel_info_tables):
+        df = None
+        keywords = ["trains", "negative", "positive"]
+        df = common_utils.find_table_by_keywords(travel_info_tables, keywords)
+
+        # null check
+        if df is None:
+            return None
+
+        df = df.iloc[1:]
+        result = list()
+        rows = 0
+        for i, row in df.iterrows():
+            row = [x for x in list(row) if x]
+
+            trains = row[0].strip()
+            passengers = row[1].strip()
+            negative = row[2].strip()
+            positive = row[1].strip()
+
+            tmp = {
+                'trains': trains,
+                'passengers': passengers,
+                'negative_cases': negative,
+                'positive_cases': positive
+            }
+            tmp['date'] = self.date
+
+            rows += 1
+            result.append(tmp)
+
+        # usually there is only one row of info in the table
+        # just to be cautious we first add the info to list
+        # then change the type only if the number of rows is 1
+        if rows == 1:
+            result = tmp
+            for key, value in result.items():
+                if key == "date" or key == "trains":
+                    continue
+
+                result[key] = locale.atoi(value)
+        else:
+            for train_info in result:
+                for key, value in train_info.items():
+                    if key == "date":
+                        continue
+
+                    train_info[key] = locale.atoi(value)
+
+        return result
+
+    def extract_seaport_surveillance_table(self, travel_info_tables):
+        df = None
+        keywords = ["sea", "port", "ships", "arrived"]
+        df = common_utils.find_table_by_keywords(travel_info_tables, keywords)
+
+        if df is None:
+            return None
+
+        df = df.iloc[1:]
+        result = list()
+        stop_loop = False
+        for i, row in df.iterrows():
+            if stop_loop:
+                break
+
+            row = [x for x in list(row) if x]
+
+            if row[0].strip().lower() == 'total':
+                counter = 0
+                stop_loop = True
+                # keeping the same name for total in case something comes up
+                # later
+                seaport = "grand total"
+            else:
+                counter = 1
+                seaport = row[1].strip().lower()
+
+            ships = row[1 + counter].strip()
+            passengers = row[2 + counter].strip()
+            positive = row[3 + counter].strip()
+            tmp = {
+                'seaport': seaport,
+                'ships_arrived': ships,
+                'passengers': passengers,
+                'positive_cases': positive
+            }
+
+            tmp['date'] = self.date
+            result.append(tmp)
+
+        for port in result:
+            for key, value in port.items():
+                if key == "date" or key == "seaport":
+                    continue
+
+                port[key] = locale.atoi(value)
+
+        return result
 
     def extract(self):
         n = common_utils.n_pages_in_pdf(self.report_fpath)
@@ -514,20 +745,31 @@ class TamilNaduExtractor(object):
         # gettting all district case tables
         tables_district = common_utils.get_tables_from_pdf(library='camelot', pdf_fpath=self.report_fpath, pages=[3, 4, 6, 7, 8, 9], use_stream=False)
         tables_comorbidities = common_utils.get_tables_from_pdf(library='camelot', pdf_fpath=self.report_fpath, pages=[10], use_stream=False)
+        tables_travel_data = common_utils.get_tables_from_pdf(library='camelot', pdf_fpath=self.report_fpath, pages=[n-2, n-1, n], use_stream=False)
 
         # send first table to extract the cummulative case details
         cummulative_case_info = self.extract_case_info(tables_page1)
         detailed_case_info = self.extract_detailed_cases(tables_page2)
         district_cases = self.extract_district_cases(tables_district)
         bed_details = self.extract_district_facilities_details(tables_district)
-        death_details = self.extract_death_comorbidities_analysis(tables_comorbidities)
+        death_details = self.extract_death_comorbidities_table(tables_comorbidities)
+        travel_mode_details = self.extract_travel_mode_table(tables_travel_data)
+        airport_details = self.extract_airport_surveillance_table(tables_travel_data)
+        flight_details = self.extract_airport_flight_table(tables_travel_data)
+        train_details = self.extract_train_surveillance_table(tables_travel_data)
+        seaport_details = self.extract_seaport_surveillance_table(tables_travel_data)
 
         result = {
             'cummulative-case-info': cummulative_case_info,
             'detailed_case_info': detailed_case_info,
             'district_details': district_cases,
             'district_bed_details': bed_details,
-            'deaths_comorbidities': death_details
+            'deaths_comorbidities': death_details,
+            'travel_mode': travel_mode_details,
+            'airport': airport_details,
+            'flights': flight_details,
+            'trains': train_details,
+            'ships': seaport_details
         }
 
         #print(result)

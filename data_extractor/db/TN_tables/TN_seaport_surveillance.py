@@ -10,7 +10,7 @@ class SeaportSurveillanceTable(DB):
     def getcolumns(self):
         cols = {
             'date': 'DATE NOT NULL',
-            'seaport': 'STRING',
+            'seaport': 'STRING NOT NULL',
             'ships_arrived': 'INT',
             'passengers': 'INT',
             'positive_cases': 'INT'
