@@ -30,7 +30,7 @@ install:
 
 
 script:
-  - chmod +x ".deploy/deploy_frontend.sh"
-  - chmod +x ".deploy/deploy_dbserver.sh"
-  - sh .deploy/deploy_dbserver.sh
-  - sh .deploy/deploy_frontend.sh
+  - chmod +x ".deploy/frontend/deploy_frontend.sh"
+  - chmod +x ".deploy/dbserver/deploy_dbserver.sh"
+  - sh .deploy/dbserver/deploy_dbserver.sh
+  - sh .deploy/frontend/deploy_frontend.sh
