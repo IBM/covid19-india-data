@@ -55,3 +55,5 @@ class TamilNadu(Bulletin):
         bulletin_links = linkdict1
         self.download_bulletins(bulletin_links)
         self._save_state_()
+
+        return bulletin_links

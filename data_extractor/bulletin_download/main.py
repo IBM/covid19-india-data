@@ -8,17 +8,22 @@ from bulletin_download.states.TN import TamilNadu
 
 def run(basedir):
 
-    state_downloaders = [
-        #Telangana,
-        WestBengal,
-        #Delhi,
-        TamilNadu
-    ]
+    state_downloaders = {
+        'TG': Telangana,
+        'WB': WestBengal,
+        'DL': Delhi,
+        'TN': TamilNadu
+    }
+    
+    bulletin_links = {}
 
-    for state in state_downloaders:
-        print(f'Downloading bulletins for state {state}')
-        obj = state(basedir)
-        obj.run()
+    for state_name, state_obj in state_downloaders.items():
+        print(f'Downloading bulletins for state {state_name}')
+        obj = state_obj(basedir)
+        state_bulletin_links = obj.run()
+        bulletin_links[state_name] = state_bulletin_links
+
+    return bulletin_links
 
 
 if __name__ == '__main__':

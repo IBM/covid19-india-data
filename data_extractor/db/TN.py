@@ -23,7 +23,7 @@ class TamilNaduDB(Database):
             'detail-info': TN_detailed_cases.DetailedInfoTable(),
             'district-info': TN_district_detailed_cases.DistrictDetailsTable(),
             'district-bed-info': TN_bed_vacancy_details.DistrictHospitalBedDetailsTable(),
-            'death-info': TN_detailed_deaths.DeathMorbitiesTable(),
+            'death-info': TN_detailed_deaths.DeathMorbiditiesTable(),
             'travel-info': TN_incoming_passengers_testing.IncomingPassengersTable(),
             'airport': TN_airport_surveillance.AirportSurveillanceTable(),
             'flights': TN_flight_surveillance.FlightSurveillanceTable(),

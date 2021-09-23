@@ -4,12 +4,12 @@ import sys
 import json
 
 from tqdm import tqdm
-from bulletin_download import main as downloader_main
+from bulletin_download import main as bulletin_downloader
 from db.main import DBMain
 from local_extractor import main as extractor_main
 
 
-STATES = ['WB', 'DL', 'TN']
+STATES = ['DL', 'TG', 'TN', 'WB']
 
 
 def get_parser():
@@ -27,10 +27,12 @@ def run(args):
 
     
     # Download bulletins
-    downloader_main.run(args.datadir)
+    bulletin_links = bulletin_downloader.run(args.datadir)
 
     # Setup tables
     db_obj = DBMain(args.datadir)
+    db_obj.record_bulletin_links(bulletin_links)
+    db_obj.record_db_metadata()
 
     # Start extraction
     state_pbar = tqdm(STATES, desc="States")

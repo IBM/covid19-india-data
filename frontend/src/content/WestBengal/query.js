@@ -1,0 +1,3 @@
+const QUERIES = [];
+
+export { QUERIES };

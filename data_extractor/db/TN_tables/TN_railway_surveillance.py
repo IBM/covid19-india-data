@@ -9,7 +9,7 @@ class RailwaySurveillanceTable(DB):
 
     def getcolumns(self):
         cols = {
-            'date': 'DATE NOT NULL PRIVATE KEY',
+            'date': 'DATE NOT NULL PRIMARY KEY',
             'trains': 'INT',
             'passengers': 'INT',
             'negative_cases': 'INT',

@@ -1,0 +1,36 @@
+# Define the following environment variables in the Travis config
+#   - IBM_CLOUD_APIKEY
+#   - IBM_CLOUD_ORG
+
+sudo: required
+language: python
+python: 
+  - "3.8"
+dist: bionic
+
+branches:
+  only:
+    - main
+
+
+env:
+  - IBM_CLOUD_REGION="us-south"
+
+
+install:
+  - sudo apt update
+  - sudo apt install nodejs
+  - sudo apt upgrade nodejs
+  - node -v
+  - curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
+  - ibmcloud --version
+  - ibmcloud cf install
+  - ibmcloud login --apikey ${IBM_CLOUD_APIKEY} -r ${IBM_CLOUD_REGION}
+  - export NODE_OPTIONS=--max_old_space_size=8192
+
+
+script:
+  - chmod +x ".deploy/frontend/deploy_frontend.sh"
+  - chmod +x ".deploy/dbserver/deploy_dbserver.sh"
+  - sh .deploy/dbserver/deploy_dbserver.sh
+  - sh .deploy/frontend/deploy_frontend.sh

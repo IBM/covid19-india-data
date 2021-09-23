@@ -25,15 +25,24 @@ sampling_rate: 10
 
 2. List of states to display:
 
+Each state in the configuration is key-ed by its `short_name` which is the same as that used by the state
+in its entry in the database (and is used for all calls to fetch data from it).
+The full name is used for display purposes only.
+The `short_name` is also visible in the [table schemas](https://github.com/IBM/covid19-india-data/wiki/States),
+the raw link to this image from the [wiki](https://github.com/IBM/covid19-india-data/wiki)
+is also provided in the config.
+
 ```json
 "states": {
   "DL": {
     "name" : "Delhi",
-    "short_name" : "DL"
+    "short_name" : "DL",
+    "link_to_db_schema" : "https://raw.githubusercontent.com/IBM/covid19-india-data/main/docs/images/DL_tables.png"
   },
   "WB": {
     "name" : "West Bengal",
-    "short_name" : "WB"
+    "short_name" : "WB",
+    "link_to_db_schema" : "https://raw.githubusercontent.com/IBM/covid19-india-data/main/docs/images/WB_tables.png"
   }
 }
 ```

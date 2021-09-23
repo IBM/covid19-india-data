@@ -7,6 +7,7 @@ from flask_cors import CORS, cross_origin
 import json
 import sqlite3
 import os
+import dateparser
 
 __path_to_db_file = "covid-india.db"
 
@@ -23,9 +24,44 @@ def __process_names(names: Union[List, Tuple]) -> Tuple:
     return tuple([__process_name(item) for item in names])
 
 
+def __process_date(date: str) -> str:
+    date = dateparser.parse(date)
+    datestr = f'{date.year}-{date.month:02d}-{date.day:02d}'
+    return datestr
+
+
+def __scale_down_data(records: List[Tuple], scale_down: int) -> List:
+    new_records = list()
+    log_record = True
+    day_count = 0 
+
+    for record in records[:-1]: 
+
+        if day_count % scale_down == 0:
+            new_records.append(record)
+
+        day_count +=1
+
+    new_records.append(records[-1])
+    return new_records
+
+
 @app.route("/")
 def hello():
     return "COVID-19 Data from India. 8/15"
+
+
+@app.route("/last_updated", methods=['POST'])
+def last_updated():
+    
+    con = sqlite3.connect(__path_to_db_file)
+    cursor = con.cursor()
+    query = f"SELECT value from Metadata_DB_Properties where key='last-updated'"
+    cursor.execute(query)
+    records = cursor.fetchall()
+    last_updated_date = records[0][0] if records else None
+    
+    return json.dumps({"last_updated" : last_updated_date}, indent=4)
 
 
 @app.route("/fetch_data", methods=['POST'])
@@ -36,22 +72,6 @@ def fetch_data(
     ) -> StateData:
 
     
-    def __scale_down_data(records: List[Tuple], scale_down: int) -> List:
-        new_records = list()
-        log_record = True
-        day_count = 0 
-
-        for record in records[:-1]: 
-
-            if day_count % scale_down == 0:
-                new_records.append(record)
-
-            day_count +=1
-
-        new_records.append(records[-1])
-        return new_records
-
-
     if not state_short_name:
 
         payload = json.loads(request.get_data().decode('utf-8'))
@@ -144,6 +164,28 @@ def fetch_data(
     return json.dumps(response, indent=4)
 
 
+@app.route("/query", methods=['POST'])
+def query(query: str = None, sampling_rate: int = 1) -> TimeSeries:
+
+    if not query:
+
+        payload = json.loads(request.get_data().decode('utf-8'))
+        query = payload["query"]
+        sampling_rate = int(payload["scale_down"])
+
+    response = TimeSeries(data=list())
+
+    con = sqlite3.connect(__path_to_db_file)
+    cursor = con.cursor()
+    cursor.execute(query)
+
+    temp_data = cursor.fetchall()
+    response["data"] = __scale_down_data(temp_data, sampling_rate)
+
+    con.close()
+    return json.dumps(response, indent=4)
+
+
 @app.route("/fetch_schema", methods=['POST'])
 def fetch_schema(state_short_name: str = None) -> StateSchema:
     
@@ -178,8 +220,63 @@ def fetch_schema(state_short_name: str = None) -> StateSchema:
     return json.dumps(response, indent=4)
 
 
+@app.route("/fetch_days_data", methods=['POST'])
+def fetch_days_data(
+        state_short_name: str = None, 
+        date: str = None
+    ) -> StateData:
+
+    payload = json.loads(request.get_data().decode('utf-8'))
+
+    if state_short_name is None:
+        state_short_name = payload["state_short_name"]
+    if date is None:
+        date = payload["date"]
+    
+    date = __process_date(date)
+
+    con = sqlite3.connect(__path_to_db_file)
+    cursor = con.cursor()
+    cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
+    tables = cursor.fetchall()
+
+    table_names = [table[0] for table in tables]
+    state_tables = [tablename for tablename in table_names if tablename.startswith(state_short_name)]
+
+    # Fetch bulletin link
+    query = "SELECT bulletin_link from Metadata_Bulletin_Links where date='{}' AND state='{}';".format(date, state_short_name)
+    cursor.execute(query)
+    records = cursor.fetchall()
+    bulletin_link = records[0][0] if records else None
+    
+    response = DailyData(
+        date=date, 
+        state=state_short_name, 
+        bulletin_link=bulletin_link, 
+        data=[]
+    )
+
+    for table_name in state_tables:
+        query = "SELECT * FROM {} WHERE date='{}';".format(table_name, date)
+        cursor.execute(query)
+
+        records = cursor.fetchall()
+        columns = next(zip(*cursor.description))
+
+        response["data"].append(
+            DataTable(
+                title = table_name,
+                columns = columns,
+                data = records
+            )
+        )
+    
+    con.close()
+    
+    return json.dumps(response, indent=4)
+
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=int(os.getenv('PORT', 3456)))
-
 
 

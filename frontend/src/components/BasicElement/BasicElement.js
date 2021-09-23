@@ -1,13 +1,22 @@
 import React from 'react';
 import '@carbon/charts/styles.css';
 import { LineChart } from '@carbon/charts-react';
-import { prepareData, prepareOptions, fetchData } from '../Info';
+import {
+  prepareData,
+  prepareOptions,
+  fetchData,
+  DataTableElement,
+} from '../Info';
 import {
   Button,
   MultiSelect,
   Loading,
   NumberInput,
   Link,
+  Tabs,
+  Tab,
+  DatePicker,
+  DatePickerInput,
 } from 'carbon-components-react';
 
 let config = require('../../config.json');
@@ -53,16 +62,31 @@ function processName(name) {
   return capitalizeFirstLetter(name).replaceAll('_', ' ');
 }
 
+function formatDate(date) {
+  return (
+    date.getUTCFullYear() +
+    '/' +
+    (date.getUTCMonth() + 1) +
+    '/' +
+    date.getUTCDate()
+  );
+}
+
 class BasicElement extends React.Component {
   constructor(props) {
-    console.log();
     super(props);
     this.state = {
       name: props.props.name,
       short_name: props.props.short_name,
+      link_to_db_schema: props.props.link_to_db_schema,
       data: [],
+      dataOnDate: [],
+      linkToDailyBulletin: null,
       schema: [],
       status_flags: {
+        date: null,
+        date_picker_invalid: false,
+        date_picker_status: null,
         fetched_data: true,
         fetching_data: false,
         tables_selected: [],
@@ -75,12 +99,14 @@ class BasicElement extends React.Component {
   }
 
   componentDidMount = () => {
-    fetchData('fetch_schema', this.state.short_name, {}).then(data => {
-      this.setState({
-        ...this.state,
-        schema: data['data'],
-      });
-    });
+    fetchData({ URL: 'fetch_schema', short_name: this.state.short_name }).then(
+      data => {
+        this.setState({
+          ...this.state,
+          schema: data['data'],
+        });
+      }
+    );
   };
 
   drawAll = () => {
@@ -94,12 +120,11 @@ class BasicElement extends React.Component {
       },
     });
 
-    fetchData(
-      'fetch_data',
-      this.state.short_name,
-      {},
-      this.state.status_flags.sampling_rate
-    ).then(data => {
+    fetchData({
+      URL: 'fetch_data',
+      short_name: this.state.short_name,
+      sampling_rate: this.state.status_flags.sampling_rate,
+    }).then(data => {
       this.setState(
         {
           ...this.state,
@@ -109,6 +134,59 @@ class BasicElement extends React.Component {
           this.resetRefresh();
         }
       );
+    });
+  };
+
+  logDateSelection = e => {
+    let selected_date = new Date(e);
+    let formatted_date_string = formatDate(selected_date);
+
+    this.setState({
+      ...this.state,
+      status_flags: {
+        ...this.state.status_flags,
+        date: formatted_date_string,
+        date_picker_invalid: false,
+        date_picker_status: null,
+      },
+    });
+  };
+
+  fetchDataOnDate = () => {
+    if (!this.state.status_flags.date) {
+      this.setState({
+        ...this.state,
+        status_flags: {
+          ...this.state.status_flags,
+          date_picker_invalid: true,
+          date_picker_status: 'No date selected',
+        },
+      });
+    } else {
+      this.setState(
+        {
+          ...this.state,
+          dataOnDate: [],
+          linkToDailyBulletin: null,
+        },
+        () => {
+          this.showTables();
+        }
+      );
+    }
+  };
+
+  showTables = () => {
+    fetchData({
+      URL: 'fetch_days_data',
+      short_name: this.state.short_name,
+      date: this.state.status_flags.date,
+    }).then(data => {
+      this.setState({
+        ...this.state,
+        dataOnDate: data['data'],
+        linkToDailyBulletin: data['bulletin_link'],
+      });
     });
   };
 
@@ -140,13 +218,12 @@ class BasicElement extends React.Component {
       return selectedItems;
     });
 
-    fetchData(
-      'fetch_data',
-      this.state.short_name,
-      selectedItems,
-      this.state.status_flags.sampling_rate
-    ).then(data => {
-      console.log(data);
+    fetchData({
+      URL: 'fetch_data',
+      short_name: this.state.short_name,
+      filter_data: selectedItems,
+      sampling_rate: this.state.status_flags.sampling_rate,
+    }).then(data => {
       this.setState(
         {
           ...this.state,
@@ -216,110 +293,184 @@ class BasicElement extends React.Component {
     return (
       <div
         className="bx--grid bx--grid--full-width bx--container"
-        style={{
-          width: '100%',
-          minHeight: '100vh',
-        }}>
-        <div className="bx--col-lg-8">
-          <h1>{this.state.name}</h1>
-          <hr />
+        style={{ width: '100%' }}>
+        <div className="bx--col-lg-16">
+          <Tabs scrollIntoView={false}>
+            <Tab label="Visualize">
+              <div className="bx--row">
+                <div className="bx--col-lg-8">
+                  <p>
+                    The data for visualization is being sampled at every{' '}
+                    <span className="text-blue">
+                      {this.state.status_flags.sampling_rate}
+                    </span>{' '}
+                    days to save you data. To access and analyze the full data,
+                    click <Link href="/#/contributing">here</Link>.
+                  </p>
 
-          <p>
-            The data for visualization is being sampled at every{' '}
-            <span className="text-blue">
-              {this.state.status_flags.sampling_rate}
-            </span>{' '}
-            days to save you data. To access and analyze the full data, click{' '}
-            <Link href="/#/contributing">here</Link>.
-          </p>
+                  <br />
+                  <NumberInput
+                    id="sampling_rate"
+                    light
+                    size="sm"
+                    min={1}
+                    value={this.state.status_flags.sampling_rate}
+                    onChange={this.handleInputChange.bind(this)}
+                    ref={input => {
+                      this.textInput = input;
+                    }}
+                  />
 
-          <br />
-          <NumberInput
-            id="sampling_rate"
-            light
-            size="sm"
-            min={1}
-            value={this.state.status_flags.sampling_rate}
-            onChange={this.handleInputChange.bind(this)}
-            ref={input => {
-              this.textInput = input;
-            }}
-          />
+                  <MultiSelect
+                    id="table_name"
+                    items={listOfTables(this.state.schema)}
+                    itemToString={item => (item ? item.text : '')}
+                    onChange={value => {
+                      this.logTableSelection(value.selectedItems);
+                    }}
+                    label={PrimaryLabel}
+                  />
 
-          <MultiSelect
-            id="table_name"
-            items={listOfTables(this.state.schema)}
-            itemToString={item => (item ? item.text : '')}
-            onChange={value => {
-              this.logTableSelection(value.selectedItems);
-            }}
-            label={PrimaryLabel}
-          />
+                  <MultiSelect
+                    id="column_name"
+                    key={this.state.status_flags.selectedKey}
+                    items={this.state.status_flags.columns_available}
+                    initialSelectedItems={
+                      this.state.status_flags.columns_selected
+                    }
+                    itemToString={item => (item ? item.text : '')}
+                    onChange={value => {
+                      this.logColumnSelection(value.selectedItems);
+                    }}
+                    label={SecondaryLabel}
+                    disabled={
+                      this.state.status_flags.tables_selected.length === 0
+                    }
+                  />
 
-          <MultiSelect
-            id="column_name"
-            key={this.state.status_flags.selectedKey}
-            items={this.state.status_flags.columns_available}
-            initialSelectedItems={this.state.status_flags.columns_selected}
-            itemToString={item => (item ? item.text : '')}
-            onChange={value => {
-              this.logColumnSelection(value.selectedItems);
-            }}
-            label={SecondaryLabel}
-            disabled={this.state.status_flags.tables_selected.length === 0}
-          />
+                  <br />
 
-          <br />
+                  <Button
+                    kind="primary"
+                    disabled={
+                      this.state.status_flags.tables_selected.length === 0
+                    }
+                    size="sm"
+                    onClick={this.drawSelected.bind(this)}
+                    style={{ marginRight: '10px' }}>
+                    Draw Selected
+                  </Button>
+                  <Button
+                    kind="secondary"
+                    size="sm"
+                    onClick={this.drawAll.bind(this)}>
+                    Draw All
+                  </Button>
+                </div>
 
-          <Button
-            kind="primary"
-            disabled={this.state.status_flags.tables_selected.length === 0}
-            size="sm"
-            onClick={this.drawSelected.bind(this)}
-            style={{ marginRight: '10px' }}>
-            Draw Selected
-          </Button>
-          <Button kind="secondary" size="sm" onClick={this.drawAll.bind(this)}>
-            Draw All
-          </Button>
+                <div className="bx--col-lg-8 state-header">
+                  <h1>
+                    {this.state.name}{' '}
+                    <span style={{ fontSize: 'x-large' }}>data</span>
+                  </h1>
 
-          <br />
-          <br />
+                  <br />
 
-          {this.state.status_flags.fetching_data && (
-            <>
-              <Loading description="Active loading indicator" withOverlay />
-            </>
-          )}
+                  <DatePicker
+                    dateFormat="Y/m/d"
+                    datePickerType="single"
+                    value={this.state.status_flags.date}
+                    onChange={this.logDateSelection.bind(this)}>
+                    <DatePickerInput
+                      id="date-picker-calendar-id"
+                      placeholder="yyyy/mm/dd"
+                      labelText="Date picker"
+                      type="text"
+                      invalid={this.state.status_flags.date_picker_invalid}
+                      invalidText={this.state.status_flags.date_picker_status}
+                      size="sm"
+                    />
+                  </DatePicker>
 
-          {this.state.data.map(function(item, key) {
-            return (
-              <div key={key}>
-                {item.columns.map(function(e, i) {
-                  return (
-                    <React.Fragment key={i}>
-                      {e !== 'Date' && (
-                        <>
-                          <LineChart
-                            key={i}
-                            data={prepareData(item.data, e, i)}
-                            options={prepareOptions(item.title, e)}></LineChart>
+                  <br />
+                  <Button
+                    kind="secondary"
+                    size="sm"
+                    onClick={this.fetchDataOnDate.bind(this)}>
+                    Fetch Data
+                  </Button>
 
-                          <br />
-                          <hr />
-                          <br />
-                        </>
-                      )}
-                    </React.Fragment>
-                  );
-                })}
+                  {this.state.linkToDailyBulletin && (
+                    <Link href={this.state.linkToDailyBulletin} target="_blank">
+                      <Button kind="primary" size="sm">
+                        View Bulletin
+                      </Button>
+                    </Link>
+                  )}
+                </div>
               </div>
-            );
-          })}
+
+              <br />
+              <br />
+
+              {this.state.status_flags.fetching_data && (
+                <>
+                  <Loading description="Active loading indicator" withOverlay />
+                </>
+              )}
+
+              {this.state.data.map(function(item, key) {
+                return (
+                  <div key={key}>
+                    {item.columns.map(function(e, i) {
+                      return (
+                        <React.Fragment key={i}>
+                          {e !== 'Date' && (
+                            <>
+                              <LineChart
+                                key={i}
+                                data={prepareData(item.data, e, i)}
+                                options={prepareOptions(
+                                  item.title,
+                                  e,
+                                  item.title
+                                )}></LineChart>
+
+                              <br />
+                              <hr />
+                              <br />
+                            </>
+                          )}
+                        </React.Fragment>
+                      );
+                    })}
+                  </div>
+                );
+              })}
+
+              {this.state.dataOnDate.map(function(item, key) {
+                return <DataTableElement key={key} props={item} />;
+              })}
+            </Tab>
+            <Tab label="View Data Schema">
+              <div className="some-content">
+                <img alt="" src={this.state.link_to_db_schema} width="100%" />
+                <br />
+                <br />
+                <Link
+                  href={config['metadata']['link_to_schemas']}
+                  target="_blank">
+                  <Button size="small" kind="secondary">
+                    Details
+                  </Button>
+                </Link>
+              </div>
+            </Tab>
+          </Tabs>
         </div>
       </div>
     );
   }
 }
 
-export { BasicElement };
+export { BasicElement, processName };

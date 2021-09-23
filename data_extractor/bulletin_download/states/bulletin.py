@@ -59,7 +59,7 @@ class Bulletin(object):
         if date is None:
             return None
             
-        datestr = f'{date.year}-{date.month}-{date.day}'
+        datestr = f'{date.year}-{date.month:02d}-{date.day:02d}'
         return datestr
 
     def download_bulletins(self, bulletin_links):
@@ -69,8 +69,13 @@ class Bulletin(object):
                 continue
 
             fname = f'{self.statename}-Bulletin-{date}.pdf'
-            self.download_and_save_bulletin(link, self._bulletin_savedir, fname)
-            self._state['downloaded-bulletins'].append(date)
-            self._state['bulletin-paths'][date] = os.path.join(self._bulletin_savedir, fname)
+
+            try:
+                self.download_and_save_bulletin(link, self._bulletin_savedir, fname)
+            except:
+                pass
+            else:
+                self._state['downloaded-bulletins'].append(date)
+                self._state['bulletin-paths'][date] = os.path.join(self._bulletin_savedir, fname)
         
         self._save_state_()
