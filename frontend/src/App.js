@@ -11,6 +11,7 @@ import ContributingPage from './content/ContributingPage';
 
 import Delhi from './content/Delhi';
 import WestBengal from './content/WestBengal';
+import TamilNadu from './content/TamilNadu';
 
 // let config = require('./config.json');
 // let states = config['states'];
@@ -35,6 +36,7 @@ class App extends Component {
 
             <Route exact path="/Delhi" component={Delhi} />
             <Route exact path="/WestBengal" component={WestBengal} />
+            <Route exact path="/TamilNadu" component={TamilNadu} />
 
             {/*
               {Object.keys(states).map((key, index) => (
