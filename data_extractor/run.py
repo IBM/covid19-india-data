@@ -9,7 +9,8 @@ from db.main import DBMain
 from local_extractor import main as extractor_main
 
 
-STATES = ['WB', 'DL']
+COMPLETE_STATES = ['WB', 'DL']
+INCOMPLETE_STATES = ['TG']
 
 
 def get_parser():
@@ -35,6 +36,8 @@ def run(args):
     db_obj.record_db_metadata()
 
     # Start extraction
+    STATES = COMPLETE_STATES + INCOMPLETE_STATES
+
     state_pbar = tqdm(STATES, desc="States")
     for state in state_pbar:
 
@@ -61,7 +64,8 @@ def run(args):
             except Exception as err:
                 print(f'Error in parsing date: {date}. Error: {err}')
             else:
-                data[PROCESSED_DATES_STR].append(date)
+                if state not in INCOMPLETE_STATES:
+                    data[PROCESSED_DATES_STR].append(date)
         
         with open(metadata_path, 'w') as f:
             json.dump(data, f)
