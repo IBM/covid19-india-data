@@ -83,6 +83,17 @@ class PageHeader extends React.Component {
                     isActive={this.state.contributing}>
                     Contributing
                   </SideNavLink>
+
+                  <SideNavDivider />
+
+                  <SideNavLink
+                    large
+                    href="/#/analysis"
+                    onClick={this.onClickTab.bind(this, 'analysis')}
+                    isActive={this.state.analysis}>
+                    Inter-State Comparison
+                  </SideNavLink>
+
                   <SideNavDivider />
 
                   {Object.keys(states).map((key, index) => (

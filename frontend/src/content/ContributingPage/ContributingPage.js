@@ -1,6 +1,7 @@
 import React from 'react';
 import { Contributing, Resource } from '../../components/Info';
 import { LogoGithub32, LogoSlack32, Sql32 } from '@carbon/icons-react';
+import { Link, Button, CodeSnippet } from 'carbon-components-react';
 
 let config = require('../../config.json');
 let resource_list = [
@@ -38,6 +39,14 @@ let resource_list = [
   },
 ];
 
+let citation_text = `@article{agarwal2021covid,
+  title={COVID-19 India Dataset: Parsing Detailed COVID-19 Data
+         in Daily Health Bulletins from States in India},
+  author={Agarwal, Mayank and Chakraborti, Tathagata and Grover, Sachin},
+  journal={arXiv:2110.02311},
+  year={2021}
+}`;
+
 class ContributingPage extends React.Component {
   constructor(props) {
     super(props);
@@ -69,18 +78,44 @@ class ContributingPage extends React.Component {
             <Contributing
               props={{
                 icon: <LogoSlack32 />,
-                title: 'Community',
+                title: 'Join our Community',
                 link: config['metadata']['link_to_slack'],
               }}
             />
             <Contributing
               props={{
                 icon: <Sql32 />,
-                title: 'Data',
+                title: 'Download the Data',
                 link: config['metadata']['link_to_data'],
               }}
             />
           </div>
+
+          <br />
+          <br />
+          <br />
+
+          <h3>Read the Paper</h3>
+          <hr />
+          <br />
+
+          <p>
+            If you are the data in your reserach, please cite us as follows.{' '}
+          </p>
+          <br />
+
+          <CodeSnippet type="multi">{citation_text}</CodeSnippet>
+
+          <br />
+
+          <Link
+            href="https://arxiv.org/abs/2110.02311"
+            target="_blank"
+            className="button-generic">
+            <Button size="field" kind="secondary">
+              Read
+            </Button>
+          </Link>
 
           <br />
           <br />
