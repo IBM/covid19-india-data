@@ -4,7 +4,6 @@ import { Link } from 'carbon-components-react';
 const QUERIES = [
   {
     subject: 'Hospitalization percentage query',
-    compare_across_states: true,
     description: (
       <>
         {' '}
@@ -20,7 +19,6 @@ const QUERIES = [
   },
   {
     subject: 'Ratio of RTPCR tests',
-    compare_across_states: false,
     description: (
       <>
         Delhi state uses the cheaper, quicker, but less accurate Rapid Antigen
@@ -46,7 +44,6 @@ const QUERIES = [
   },
   {
     subject: 'Vacant beds to new active cases ratio',
-    compare_across_states: true,
     description: (
       <>
         This plot looks at the ratio of vacant hospital beds to the number of

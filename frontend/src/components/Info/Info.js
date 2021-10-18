@@ -39,17 +39,19 @@ const axis_plot_options = {
   width: '80vw',
 };
 
-function prepareData(data, legend, key) {
+function prepareData(data, legends, keys) {
   var new_data = [];
 
-  data.forEach(function(item, id) {
-    var new_item = {
-      group: legend,
-      date: item[0],
-      value: item[key],
-    };
+  keys.forEach(function(key, pos) {
+    data.forEach(function(item, id) {
+      var new_item = {
+        group: legends[pos],
+        date: item[0],
+        value: item[key],
+      };
 
-    new_data.push(new_item);
+      new_data.push(new_item);
+    });
   });
 
   return new_data;
