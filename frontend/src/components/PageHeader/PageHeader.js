@@ -1,6 +1,7 @@
 import React from 'react';
 import { generateStateID } from '../../components/Info';
 import { Link } from 'react-router-dom';
+import { Tag } from 'carbon-components-react';
 import {
   Header,
   HeaderMenuButton,
@@ -108,6 +109,20 @@ class PageHeader extends React.Component {
                           this.state[generateStateID(states[key]['name'])]
                         }>
                         {states[key]['name']}
+
+                        {states[key]['is_complete'] && (
+                          <Tag type="blue" className="compressed-tag">
+                            {' '}
+                            completed{' '}
+                          </Tag>
+                        )}
+
+                        {!states[key]['is_complete'] && (
+                          <Tag type="gray" className="compressed-tag">
+                            {' '}
+                            in progress{' '}
+                          </Tag>
+                        )}
                       </SideNavLink>
                     </React.Fragment>
                   ))}

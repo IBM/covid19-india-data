@@ -8,6 +8,7 @@ import {
   DataTableElement,
 } from '../Info';
 import {
+  Tag,
   Button,
   MultiSelect,
   Loading,
@@ -84,6 +85,7 @@ class BasicElement extends React.Component {
       linkToDailyBulletin: null,
       schema: [],
       status_flags: {
+        is_complete: props.props.is_complete,
         date: null,
         date_picker_invalid: false,
         date_picker_status: null,
@@ -373,6 +375,22 @@ class BasicElement extends React.Component {
                     {this.state.name}{' '}
                     <span style={{ fontSize: 'x-large' }}>data</span>
                   </h1>
+
+                  {this.state.status_flags.is_complete && (
+                    <Tag type="green" className="flattened-tag">
+                      {' '}
+                      completed{' '}
+                    </Tag>
+                  )}
+
+                  {!this.state.status_flags.is_complete && (
+                    <Tag type="gray" className="flattened-tag">
+                      {' '}
+                      in progress{' '}
+                    </Tag>
+                  )}
+
+                  <br />
 
                   <br />
 
