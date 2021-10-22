@@ -147,11 +147,13 @@ class TelanganaExtractor(object):
 
     def extract(self):
 
-        all_tables_tabula = common_utils.get_tables_from_pdf(library='tabula', pdf_fpath=self.report_fpath)
+        all_tables_camelot = common_utils.get_tables_from_pdf(
+            library='camelot', pdf_fpath=self.report_fpath, smart_boundary_detection=True
+        )
 
-        symptomatic_info = self.extract_symptomatic_asymptomatic_info(all_tables_tabula)
-        comorbities_info = self.extract_comorbidities_fatality_info(all_tables_tabula)
-        agewise_info = self.extract_age_wise_info(all_tables_tabula)
+        symptomatic_info = self.extract_symptomatic_asymptomatic_info(all_tables_camelot)
+        comorbities_info = self.extract_comorbidities_fatality_info(all_tables_camelot)
+        agewise_info = self.extract_age_wise_info(all_tables_camelot)
 
         result = {
             'asymptomatic-status': symptomatic_info,

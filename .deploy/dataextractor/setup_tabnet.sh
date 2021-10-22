@@ -1,8 +1,11 @@
 #!/bin/bash
 
-CURR_DIR=`pwd`;
-HOME_DIR=`realpath ../..`;
-TABNET_DIR=`${HOME_DIR}/tabnet_model`
+set -eux
+
+CURR_FILEPATH=`realpath $0`
+CURR_DIR=`dirname ${CURR_FILEPATH}`;
+HOME_DIR=`realpath ${CURR_DIR}/../..`;
+TABNET_DIR="${HOME_DIR}/tabnet_model"
 
 # Install TabNet dependencies
 pip install torch==1.5.1+cpu torchvision==0.6.1+cpu -f https://download.pytorch.org/whl/torch_stable.html

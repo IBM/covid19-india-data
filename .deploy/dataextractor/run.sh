@@ -1,7 +1,10 @@
 #!/bin/bash
 
-CURR_DIR=`pwd`;
-HOME_DIR=`realpath ../..`;
+set -eux
+
+CURR_FILEPATH=`realpath $0`
+CURR_DIR=`dirname ${CURR_FILEPATH}`;
+HOME_DIR=`realpath ${CURR_DIR}/../..`;
 DATAEXTRACTOR_DIR="${HOME_DIR}/data_extractor"
 LOCALSTORE_DIR="${HOME_DIR}/localstore"
 

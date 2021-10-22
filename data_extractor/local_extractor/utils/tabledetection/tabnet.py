@@ -15,7 +15,9 @@ class ExtractTable(object):
     specific regions that they would've otherwise missed.
     """
     
-    def __init__(self, pdf_fpath, pagenums=None, resolution=200, threshold=0.85, model_device='cpu', stretch_bounds=0.05):
+    def __init__(self, pdf_fpath, pagenums=None, resolution=200, 
+                threshold=0.85, model_device='cpu', stretch_bounds=0.05,
+                origin='top-left'):
         
         self.pdf_fpath = pdf_fpath
         self.pagenums = pagenums
@@ -23,6 +25,7 @@ class ExtractTable(object):
         self.threshold = threshold
         self.model_device = model_device
         self.stretch_bounds = stretch_bounds
+        self.origin = origin
 
         self.load_model()
 
@@ -76,22 +79,40 @@ class ExtractTable(object):
             coords.append((x1, y1, x2, y2))
 
         return coords
-    
-    def covert_tabnet_coords_to_camelot(self, coords, width, height):
+
+
+    def correct_for_origin(self, coords, width, height):
         """
-        Tabnet defines (0, 0) as top-left corner, whereas, camelot defines
-        (0, 0) as bottom-left. This function converts coordinates in tabnet
-        space to camelot space
+        Computed coordinates from the model assumes "top-left"
+        as the origin. Some libraries though define "bottom-left"
+        as the origin, and therefore, this method corrects the 
+        computed coordinates
         """
 
         result = []
-        for boundary in coords:
-            x1, y1, x2, y2 = boundary
-            y1 = height - y1
-            y2 = height - y2
+        for coordinate in coords:
+            x1, y1, x2, y2 = coordinate
+
+            if self.origin == 'top-left':
+                pass        # do nothing since the model has the same origin
+            elif self.origin == 'bottom-left':
+                y1 = height - y1
+                y2 = height - y2
+            elif self.origin == 'top-right':
+                x1 = width - x1
+                x2 = width - x2
+            elif self.origin == 'bottom-right':
+                x1 = width - x1
+                x2 = width - x2
+                y1 = height - y1
+                y2 = height - y2
+            else:
+                raise AttributeError('origin can only be [top-left, top-right, bottom-left, bottom-right]')
+            
             result.append((x1, y1, x2, y2))
 
         return result
+
     
     def get_table_boundaries(self, fpath, imgsize):
 
@@ -159,7 +180,7 @@ class ExtractTable(object):
                 table_boundaries = self.get_table_boundaries(fpath, imgshape)                       # normalized boundaries
                 width, height = self.get_page_props(pagenum)                                        # shape of PDF
                 table_boundaries = self.unnormalize_boundaries(table_boundaries, width, height)     # boundaries in the PDF space
-                table_boundaries = self.covert_tabnet_coords_to_camelot(table_boundaries, width, height)
+                table_boundaries = self.correct_for_origin(table_boundaries, width, height)
                 table_boundaries = self.stretch_boundaries(table_boundaries, width, height)
 
                 tables[pagenum] = table_boundaries
