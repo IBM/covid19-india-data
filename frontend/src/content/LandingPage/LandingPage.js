@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, Button } from 'carbon-components-react';
 import { fetchData } from '../../components/Info';
+import { Download16 } from '@carbon/icons-react';
 
 class LandingPage extends React.Component {
   constructor(props) {
@@ -91,8 +92,18 @@ class LandingPage extends React.Component {
             <br />
           </p>
 
-          <Link href="/#/contributing">
-            <Button size="field">Contribute</Button>
+          <Link href="/#/contributing" className="button-generic">
+            <Button size="field">
+              Contribute &nbsp; <Download16 />
+            </Button>
+          </Link>
+          <Link
+            href="https://arxiv.org/abs/2110.02311"
+            target="_blank"
+            className="button-generic">
+            <Button size="field" kind="secondary">
+              Read
+            </Button>
           </Link>
         </div>
       </div>

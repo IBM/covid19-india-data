@@ -12,7 +12,7 @@ user:~$ pip3 install -r requirements.txt
 
 > Download DB and point to it from the [serve_db.py](https://github.com/IBM/covid19-india-data/blob/main/serve_db/serve_db.py#L11).
 
-[`Download`](https://www.dropbox.com/s/hbe04q6vtzapdam/covid-india.db?dl=1)
+[`Download`](https://ibm.biz/covid19-india-db)
 
 ```python
 __path_to_db_file = "/path/to/db"
