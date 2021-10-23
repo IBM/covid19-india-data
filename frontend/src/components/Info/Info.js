@@ -81,7 +81,6 @@ async function fetchData({
   date,
   query,
 } = {}) {
-  console.log(666, filter_data);
   var response = await fetch(
     data_server + '/' + URL,
     (requestOptions = {

@@ -253,13 +253,29 @@ class DataAccessPage extends React.Component {
           </p>
           <br />
           <CodeSnippet type="single">
-            GET {config['metadata']['data_server']}
-            /get_data?state=DL&table=DL_case_info&rate=10
+            GET{' '}
+            <Link
+              href={
+                config['metadata']['data_server'] +
+                '/get_data?state=DL&table=DL_case_info&rate=10'
+              }
+              target="_blank">
+              {config['metadata']['data_server']}
+              /get_data?state=DL&table=DL_case_info&rate=10
+            </Link>
           </CodeSnippet>
           <br />
           <CodeSnippet type="single">
-            GET {config['metadata']['data_server']}
-            /get_data?state=DL&table=DL_case_info&column=cases_positive
+            GET{' '}
+            <Link
+              href={
+                config['metadata']['data_server'] +
+                '/get_data?state=DL&table=DL_case_info&column=cases_positive'
+              }
+              target="_blank">
+              {config['metadata']['data_server']}
+              /get_data?state=DL&table=DL_case_info&column=cases_positive
+            </Link>
           </CodeSnippet>
           <br />
           <h4>3. Complex Queries</h4>

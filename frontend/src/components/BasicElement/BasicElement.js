@@ -18,6 +18,7 @@ import {
   Tab,
   DatePicker,
   DatePickerInput,
+  CodeSnippet,
 } from 'carbon-components-react';
 
 let config = require('../../config.json');
@@ -474,7 +475,7 @@ class BasicElement extends React.Component {
                 return <DataTableElement key={key} props={item} />;
               })}
             </Tab>
-            <Tab label="View Data Schema">
+            <Tab label="View Schema">
               <div className="some-content">
                 <img alt="" src={this.state.link_to_db_schema} width="100%" />
                 <br />
@@ -486,6 +487,51 @@ class BasicElement extends React.Component {
                     Details
                   </Button>
                 </Link>
+              </div>
+            </Tab>
+            <Tab label="View API">
+              <div className="some-content">
+                {this.state.schema.map((item, id) => {
+                  const table_link =
+                    config['metadata']['data_server'] +
+                    '/get_data?state=' +
+                    this.state.short_name +
+                    '&table=' +
+                    item.title;
+
+                  return (
+                    <>
+                      <CodeSnippet
+                        type="single"
+                        style={{ marginBottom: '10px', maxWidth: '100%' }}>
+                        GET &nbsp;
+                        <Link href={table_link} target="_blank">
+                          {table_link}
+                        </Link>
+                      </CodeSnippet>
+
+                      {item.columns.map((c, i) => {
+                        const column_link = table_link + '&column=' + c;
+
+                        if (c !== 'date')
+                          return (
+                            <CodeSnippet
+                              type="single"
+                              style={{
+                                marginBottom: '10px',
+                                maxWidth: '100%',
+                              }}>
+                              GET &nbsp;
+                              <Link href={column_link} target="_blank">
+                                {column_link}
+                              </Link>
+                            </CodeSnippet>
+                          );
+                        return null;
+                      })}
+                    </>
+                  );
+                })}
               </div>
             </Tab>
           </Tabs>
