@@ -77,12 +77,20 @@ class PageHeader extends React.Component {
                     isActive={this.state.introduction}>
                     Introduction
                   </SideNavLink>
+
+                  <SideNavDivider />
+
                   <SideNavLink
-                    large
                     href="/#/contributing"
                     onClick={this.onClickTab.bind(this, 'contributing')}
                     isActive={this.state.contributing}>
                     Contributing
+                  </SideNavLink>
+                  <SideNavLink
+                    href="/#/data"
+                    onClick={this.onClickTab.bind(this, 'data')}
+                    isActive={this.state.data}>
+                    Data Access
                   </SideNavLink>
 
                   <SideNavDivider />
@@ -92,7 +100,7 @@ class PageHeader extends React.Component {
                     href="/#/analysis"
                     onClick={this.onClickTab.bind(this, 'analysis')}
                     isActive={this.state.analysis}>
-                    Inter-State Comparison
+                    Analysis
                   </SideNavLink>
 
                   <SideNavDivider />

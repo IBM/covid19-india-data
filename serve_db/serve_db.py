@@ -164,6 +164,28 @@ def fetch_data(
     return json.dumps(response, indent=4)
 
 
+@app.route("/get_data", methods=['GET'])
+def get_data(
+        state_short_name: str = None, 
+        table_name: str = None, 
+        column_name: str = None, 
+        sampling_rate: int = 1
+    ) -> StateData:
+
+    if not state_short_name:
+        state_short_name = request.args.get('state')
+        table_name = request.args.get('table')
+
+        column_name = request.args.get('column')
+        column_name = [column_name] if column_name else []
+
+        sampling_rate = request.args.get('rate')
+        sampling_rate = int(sampling_rate) if sampling_rate else 1
+
+    response = fetch_data(state_short_name, [{"title": table_name, "columns": column_name}], sampling_rate)
+    return response
+
+
 @app.route("/query", methods=['POST'])
 def query(query: str = None, sampling_rate: int = 1) -> TimeSeries:
 
@@ -171,7 +193,12 @@ def query(query: str = None, sampling_rate: int = 1) -> TimeSeries:
 
         payload = json.loads(request.get_data().decode('utf-8'))
         query = payload["query"]
-        sampling_rate = int(payload["scale_down"])
+
+        if "scale_down" in payload:
+            sampling_rate = int(payload["scale_down"])
+
+        else:
+            sampling_rate = 1
 
     response = TimeSeries(data=list())
 

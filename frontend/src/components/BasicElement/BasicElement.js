@@ -376,8 +376,12 @@ class BasicElement extends React.Component {
                     <span style={{ fontSize: 'x-large' }}>data</span>
                   </h1>
 
+                  <Tag type="green" className="flattened-tag">
+                    {this.state.short_name}
+                  </Tag>
+
                   {this.state.status_flags.is_complete && (
-                    <Tag type="green" className="flattened-tag">
+                    <Tag type="blue" className="flattened-tag">
                       {' '}
                       completed{' '}
                     </Tag>
@@ -447,7 +451,7 @@ class BasicElement extends React.Component {
                             <>
                               <LineChart
                                 key={i}
-                                data={prepareData(item.data, e, i)}
+                                data={prepareData(item.data, [e], [i])}
                                 options={prepareOptions(
                                   item.title,
                                   e,

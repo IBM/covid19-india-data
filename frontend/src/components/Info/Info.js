@@ -81,6 +81,7 @@ async function fetchData({
   date,
   query,
 } = {}) {
+  console.log(666, filter_data);
   var response = await fetch(
     data_server + '/' + URL,
     (requestOptions = {
@@ -106,8 +107,8 @@ const Contributing = props => (
     <ClickableTile
       className="contributing-card-inner"
       href={props.props.link}
-      target="_blank">
-      <div style={{ padding: '10px' }}>
+      target={!props.props.internal && '_blank'}>
+      <div>
         <p style={{ fontSize: 'inherit' }}> {props.props.title} </p>
       </div>
       <div className="contributing-card">{props.props.icon}</div>

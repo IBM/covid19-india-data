@@ -1,13 +1,17 @@
 import React from 'react';
 import { Contributing, Resource } from '../../components/Info';
-import { LogoGithub32, LogoSlack32, Sql32 } from '@carbon/icons-react';
-import { Link, Button, CodeSnippet } from 'carbon-components-react';
+import { LogoGithub32, LogoSlack32, Sql32, Api_132 } from '@carbon/icons-react';
+import { Tag, Link, Button, CodeSnippet } from 'carbon-components-react';
 
 let config = require('../../config.json');
 let resource_list = [
   {
     name: 'COVID 19 India',
     link: 'https://www.covid19india.org/',
+  },
+  {
+    name: 'COVID Today',
+    link: 'https://covidtoday.in/',
   },
   {
     name: "IBM's response to COVID-19",
@@ -78,15 +82,30 @@ class ContributingPage extends React.Component {
             <Contributing
               props={{
                 icon: <LogoSlack32 />,
-                title: 'Join our Community',
+                title: 'Join our Community on Slack',
                 link: config['metadata']['link_to_slack'],
               }}
             />
             <Contributing
               props={{
                 icon: <Sql32 />,
-                title: 'Download the Data',
+                title: (
+                  <>
+                    Download the Data{' '}
+                    <Tag type="green" className="compressed-tag flattened-tag">
+                      free
+                    </Tag>
+                  </>
+                ),
                 link: config['metadata']['link_to_data'],
+              }}
+            />
+            <Contributing
+              props={{
+                icon: <Api_132 />,
+                title: 'Connect with the API',
+                link: '/#/data',
+                internal: true,
               }}
             />
           </div>
@@ -99,8 +118,11 @@ class ContributingPage extends React.Component {
           <hr />
           <br />
 
-          <p>
-            If you are the data in your reserach, please cite us as follows.{' '}
+          <p className="bx--col-lg-8">
+            If you are using this data in your reserach, please remember to cite
+            us. &#128591; Note that the list of authors will continue to grow
+            over time with our OSS contributors. Please make sure to update your
+            citations in your future papers accordingly.
           </p>
           <br />
 
@@ -125,7 +147,7 @@ class ContributingPage extends React.Component {
           <hr />
           <br />
 
-          <div className="bx--row">
+          <div className="bx--row" style={{ marginBottom: '100px' }}>
             {resource_list.map(function(item, key) {
               return (
                 <Resource
