@@ -8,6 +8,7 @@ import {
   DataTableElement,
 } from '../Info';
 import {
+  Tag,
   Button,
   MultiSelect,
   Loading,
@@ -17,6 +18,7 @@ import {
   Tab,
   DatePicker,
   DatePickerInput,
+  CodeSnippet,
 } from 'carbon-components-react';
 
 let config = require('../../config.json');
@@ -84,6 +86,7 @@ class BasicElement extends React.Component {
       linkToDailyBulletin: null,
       schema: [],
       status_flags: {
+        is_complete: props.props.is_complete,
         date: null,
         date_picker_invalid: false,
         date_picker_status: null,
@@ -374,6 +377,26 @@ class BasicElement extends React.Component {
                     <span style={{ fontSize: 'x-large' }}>data</span>
                   </h1>
 
+                  <Tag type="green" className="flattened-tag">
+                    {this.state.short_name}
+                  </Tag>
+
+                  {this.state.status_flags.is_complete && (
+                    <Tag type="blue" className="flattened-tag">
+                      {' '}
+                      completed{' '}
+                    </Tag>
+                  )}
+
+                  {!this.state.status_flags.is_complete && (
+                    <Tag type="gray" className="flattened-tag">
+                      {' '}
+                      in progress{' '}
+                    </Tag>
+                  )}
+
+                  <br />
+
                   <br />
 
                   <DatePicker
@@ -429,7 +452,7 @@ class BasicElement extends React.Component {
                             <>
                               <LineChart
                                 key={i}
-                                data={prepareData(item.data, e, i)}
+                                data={prepareData(item.data, [e], [i])}
                                 options={prepareOptions(
                                   item.title,
                                   e,
@@ -452,7 +475,7 @@ class BasicElement extends React.Component {
                 return <DataTableElement key={key} props={item} />;
               })}
             </Tab>
-            <Tab label="View Data Schema">
+            <Tab label="View Schema">
               <div className="some-content">
                 <img alt="" src={this.state.link_to_db_schema} width="100%" />
                 <br />
@@ -464,6 +487,51 @@ class BasicElement extends React.Component {
                     Details
                   </Button>
                 </Link>
+              </div>
+            </Tab>
+            <Tab label="View API">
+              <div className="some-content">
+                {this.state.schema.map((item, id) => {
+                  const table_link =
+                    config['metadata']['data_server'] +
+                    '/get_data?state=' +
+                    this.state.short_name +
+                    '&table=' +
+                    item.title;
+
+                  return (
+                    <>
+                      <CodeSnippet
+                        type="single"
+                        style={{ marginBottom: '10px', maxWidth: '100%' }}>
+                        GET &nbsp;
+                        <Link href={table_link} target="_blank">
+                          {table_link}
+                        </Link>
+                      </CodeSnippet>
+
+                      {item.columns.map((c, i) => {
+                        const column_link = table_link + '&column=' + c;
+
+                        if (c !== 'date')
+                          return (
+                            <CodeSnippet
+                              type="single"
+                              style={{
+                                marginBottom: '10px',
+                                maxWidth: '100%',
+                              }}>
+                              GET &nbsp;
+                              <Link href={column_link} target="_blank">
+                                {column_link}
+                              </Link>
+                            </CodeSnippet>
+                          );
+                        return null;
+                      })}
+                    </>
+                  );
+                })}
               </div>
             </Tab>
           </Tabs>

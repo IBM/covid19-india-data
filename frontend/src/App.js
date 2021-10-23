@@ -8,6 +8,8 @@ import { Route, Switch } from 'react-router-dom';
 import PageHeader from './components/PageHeader';
 import LandingPage from './content/LandingPage';
 import ContributingPage from './content/ContributingPage';
+import DataAccessPage from './content/DataAccessPage';
+import AnalysisPage from './content/AnalysisPage';
 
 import Delhi from './content/Delhi';
 import WestBengal from './content/WestBengal';
@@ -33,7 +35,8 @@ class App extends Component {
             <Route exact path="/" component={LandingPage} />
             <Route exact path="/introduction" component={LandingPage} />
             <Route exact path="/contributing" component={ContributingPage} />
-
+            <Route exact path="/data" component={DataAccessPage} />
+            <Route exact path="/analysis" component={AnalysisPage} />
             <Route exact path="/Delhi" component={Delhi} />
             <Route exact path="/WestBengal" component={WestBengal} />
             <Route exact path="/Telangana" component={Telangana} />

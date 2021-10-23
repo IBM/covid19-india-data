@@ -3,7 +3,7 @@ import { Link } from 'carbon-components-react';
 
 const QUERIES = [
   {
-    subject: 'DL Hospitalization percentage query',
+    subject: 'Hospitalization percentage query',
     description: (
       <>
         {' '}
@@ -18,7 +18,7 @@ const QUERIES = [
       'SELECT D1.date, (D2.hospital_beds_occupied + D2.covid_care_center_beds_occupied + D2.covid_health_center_beds_occupied) *1.0/ D1.active_cases AS perc_hospitalized from DL_cumulative D1 JOIN DL_patient_mgmt D2 ON D1.date == D2.date WHERE perc_hospitalized is NOT NULL',
   },
   {
-    subject: 'DL ratio of RTPCR tests',
+    subject: 'Ratio of RTPCR tests',
     description: (
       <>
         Delhi state uses the cheaper, quicker, but less accurate Rapid Antigen
@@ -43,7 +43,7 @@ const QUERIES = [
       'Select D1.date, D1.rtpcr_test_24h *1.0/ D2.tests_conducted AS rtpcr_ratio FROM DL_testing_status D1 JOIN DL_case_info D2 ON D1.date == D2.date WHERE rtpcr_ratio is NOT NULL',
   },
   {
-    subject: 'DL vacant beds to new active cases ratio',
+    subject: 'Vacant beds to new active cases ratio',
     description: (
       <>
         This plot looks at the ratio of vacant hospital beds to the number of

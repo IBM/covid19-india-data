@@ -59,3 +59,13 @@ a.bx--side-nav__link--current {
   min-width: 18rem;
   min-height: 100vh;
 }
+
+.compressed-tag {
+  height: 1rem;
+  min-height: 1rem;
+  font-size: 0.5rem;
+}
+
+.flattened-tag {
+  border-radius: 0;
+}

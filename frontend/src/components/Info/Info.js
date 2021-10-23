@@ -39,17 +39,19 @@ const axis_plot_options = {
   width: '80vw',
 };
 
-function prepareData(data, legend, key) {
+function prepareData(data, legends, keys) {
   var new_data = [];
 
-  data.forEach(function(item, id) {
-    var new_item = {
-      group: legend,
-      date: item[0],
-      value: item[key],
-    };
+  keys.forEach(function(key, pos) {
+    data.forEach(function(item, id) {
+      var new_item = {
+        group: legends[pos],
+        date: item[0],
+        value: item[key],
+      };
 
-    new_data.push(new_item);
+      new_data.push(new_item);
+    });
   });
 
   return new_data;
@@ -104,8 +106,8 @@ const Contributing = props => (
     <ClickableTile
       className="contributing-card-inner"
       href={props.props.link}
-      target="_blank">
-      <div style={{ padding: '10px' }}>
+      target={!props.props.internal && '_blank'}>
+      <div>
         <p style={{ fontSize: 'inherit' }}> {props.props.title} </p>
       </div>
       <div className="contributing-card">{props.props.icon}</div>
