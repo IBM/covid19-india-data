@@ -1,7 +1,10 @@
 #!/bin/bash
 
-CURR_DIR=`pwd`;
-HOME_DIR=`realpath ../..`;
+set -eux
+
+CURR_FILEPATH=`realpath $0`
+CURR_DIR=`dirname ${CURR_FILEPATH}`;
+HOME_DIR=`realpath ${CURR_DIR}/../..`;
 DATAEXTRACTOR_DIR="${HOME_DIR}/data_extractor"
 LOCALSTORE_DIR="${HOME_DIR}/localstore"
 
@@ -15,6 +18,8 @@ cd ${HOME_DIR}
 git checkout main
 git pull origin main
 
+# Setup TabNet
+sh "${CURR_DIR}/setup_tabnet.sh"
 
 # Run the data extractor
 cd ${DATAEXTRACTOR_DIR}
