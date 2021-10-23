@@ -130,7 +130,7 @@ def get_tables_from_pdf_with_smart_boundary_detection(library, pdf_fpath, pages)
         for pageno, table_bounds in tablesdict.items():
             bound_str = [','.join(map(str, bound)) for bound in table_bounds]
             pagetables = camelot.read_pdf(
-                pdf_fpath, pages=f'{pageno+1}', strip_text='\n', split_text=True, table_areas=bound_str
+                pdf_fpath, pages=f'{pageno+1}', strip_text='\n', split_text=True, table_regions=bound_str
             )
             result.extend(pagetables._tables)
 
