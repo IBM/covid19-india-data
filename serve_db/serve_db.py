@@ -10,6 +10,7 @@ import os
 import dateparser
 
 __path_to_db_file = "covid-india.db"
+__db_uri = f'file:{__path_to_db_file}?mode=ro'
 
 app = Flask(__name__)
 cors = CORS(app)
@@ -54,7 +55,7 @@ def hello():
 @app.route("/last_updated", methods=['POST'])
 def last_updated():
     
-    con = sqlite3.connect(__path_to_db_file)
+    con = sqlite3.connect(__db_uri, uri=True)
     cursor = con.cursor()
     query = f"SELECT value from Metadata_DB_Properties where key='last-updated'"
     cursor.execute(query)
@@ -88,7 +89,7 @@ def fetch_data(
 
     response = StateData(data=list())
 
-    con = sqlite3.connect(__path_to_db_file)
+    con = sqlite3.connect(__db_uri, uri=True)
     cursor = con.cursor()
     cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
     tables = cursor.fetchall()
@@ -202,7 +203,7 @@ def query(query: str = None, sampling_rate: int = 1) -> TimeSeries:
 
     response = TimeSeries(data=list())
 
-    con = sqlite3.connect(__path_to_db_file)
+    con = sqlite3.connect(__db_uri, uri=True)
     cursor = con.cursor()
     cursor.execute(query)
 
@@ -223,7 +224,7 @@ def fetch_schema(state_short_name: str = None) -> StateSchema:
 
     response = StateData(data=list())
 
-    con = sqlite3.connect(__path_to_db_file)
+    con = sqlite3.connect(__db_uri, uri=True)
     cursor = con.cursor()
     cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
     tables = cursor.fetchall()
@@ -262,7 +263,7 @@ def fetch_days_data(
     
     date = __process_date(date)
 
-    con = sqlite3.connect(__path_to_db_file)
+    con = sqlite3.connect(__db_uri, uri=True)
     cursor = con.cursor()
     cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
     tables = cursor.fetchall()
