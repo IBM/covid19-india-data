@@ -8,7 +8,15 @@ import camelot
 import pdfminer
 from pdfminer.high_level import extract_pages
 
-from state_utils import TG_utils
+try:
+    from local_extractor.states.state_utils import TG_utils
+except ImportError:
+    import sys, os, pathlib
+    path = pathlib.Path(__file__).absolute().parents[2]
+    path = os.path.join(path, 'local_extractor', 'states')
+    if path not in sys.path:
+        sys.path.insert(0, path)
+    from state_utils import TG_utils
 
 try:
     from local_extractor.utils import common_utils

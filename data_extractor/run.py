@@ -9,7 +9,7 @@ from db.main import DBMain
 from local_extractor import main as extractor_main
 
 
-COMPLETE_STATES = ['WB', 'DL', 'TG']
+COMPLETE_STATES = ['TG', 'WB', 'DL']
 INCOMPLETE_STATES = []
 
 

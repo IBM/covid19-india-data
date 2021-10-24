@@ -14,7 +14,7 @@ class DistrictCaseInformation(DB):
     def getcolumns(self):
 
         cols = {
-            'date': 'DATE NOT NULL PRIMARY KEY',
+            'date': 'DATE NOT NULL',
             'district': 'STRING NOT NULL',
             'cases_new': 'INT'
         }
