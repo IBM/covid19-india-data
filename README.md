@@ -39,6 +39,9 @@ ends on Oct 31. 🤞
 
 ### 😒 Data Cleaning
 
+Data at this volume and timeline is bound to suffer from inconsistencies. We will be documenting these as and when we find them on
+the dedicated [Anomalies Page](https://india-covid-19-data.mybluemix.net/#/anomalies). Help us:
+
 1. Remove missing data / deal with missing for the plots.
 2. Idenitify possible outliers and errors. 
 
@@ -46,7 +49,7 @@ ends on Oct 31. 🤞
 
 Analyze the data for insights, irregularities, etc. You can put up results of your analysis in your papers, blogs, etc. 
 (and point to that from our [landing page](https://ibm.biz/covid-data-india)) or directly add it to our landing page as a 
-[new page](frontend/README.md#adding-a-new-page).
+[standalone new page](frontend/README.md#adding-a-new-page) or in the [existing Analysis Page](https://india-covid-19-data.mybluemix.net/#/analysis).
 
 ## Current state roster
 
