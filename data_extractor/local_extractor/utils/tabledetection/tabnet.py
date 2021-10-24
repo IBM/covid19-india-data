@@ -16,7 +16,7 @@ class ExtractTable(object):
     """
     
     def __init__(self, pdf_fpath, pagenums=None, resolution=200, 
-                threshold=0.85, model_device='cpu', stretch_bounds=0.05,
+                threshold=0.85, model_device='cpu', stretch_bounds=0.1,
                 origin='top-left'):
         
         self.pdf_fpath = pdf_fpath
@@ -180,8 +180,8 @@ class ExtractTable(object):
                 table_boundaries = self.get_table_boundaries(fpath, imgshape)                       # normalized boundaries
                 width, height = self.get_page_props(pagenum)                                        # shape of PDF
                 table_boundaries = self.unnormalize_boundaries(table_boundaries, width, height)     # boundaries in the PDF space
-                table_boundaries = self.correct_for_origin(table_boundaries, width, height)
                 table_boundaries = self.stretch_boundaries(table_boundaries, width, height)
+                table_boundaries = self.correct_for_origin(table_boundaries, width, height)
 
                 tables[pagenum] = table_boundaries
         
