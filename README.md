@@ -68,7 +68,7 @@ For general instructions on how to contribute to the landing page, see [here](./
 | Madhya Pradesh (MP) | [Link](http://sarthak.nhmmp.gov.in/covid/health-bulletin/) | | | ⌛ Own it! ([#8](https://github.com/IBM/covid19-india-data/issues/8)) |
 | Punjab (PB) | [Link](http://covaprod.punjab.gov.in/covid-response.html?language=e) | | | ⌛ Own it! ([#9](https://github.com/IBM/covid19-india-data/issues/9)) |
 | Uttarakhand (UK) | [Link1](https://health.uk.gov.in/pages/view/134-covid19-health-bulletin-for-uttarakhand-page-01), [Link2](https://health.uk.gov.in/pages/view/151-covid19-health-bulletin-for-uttarakhand-page-10)|  | | ⌛ Own it! ([#10](https://github.com/IBM/covid19-india-data/issues/10)) |
-| `Add new state` | |  |  | |  |
+| [`Add new state`](https://github.com/IBM/covid19-india-data/issues/new?assignees=&labels=new+state&template=new-state-template.md&title=New+State%3A+%5BENTER+NAME+HERE%5D) | |  |  | |  |
 
 As you might have noticed, this is an incomplete list of Indian states. 
 Not all states produce this form of data. ☹️
