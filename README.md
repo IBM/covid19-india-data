@@ -51,14 +51,18 @@ Analyze the data for insights, irregularities, etc. You can put up results of yo
 (and point to that from our [landing page](https://ibm.biz/covid-data-india)) or directly add it to our landing page as a 
 [standalone new page](frontend/README.md#adding-a-new-page) or in the [existing Analysis Page](https://india-covid-19-data.mybluemix.net/#/analysis).
 
+### 🧐 Landing Page
+
+For general instructions on how to contribute to the landing page, see [here](./frontend/README.md).
+
 ## Current state roster
 
 | State | Link to Daily Bulletin | Owner (backend) | Owner (frontend) | Status |
 |-------|------------------------|-----------------|------------------|--------|
 | Delhi (DL) | [Link](http://health.delhigovt.nic.in/wps/wcm/connect/doit_health/Health/Home/Covid19/Bulletin+August+2021) | [Mayank Agarwal](https://github.com/MayankAgarwal) | [Tathagata Chakraborti](https://github.com/TathagataChakraborti) | :white_check_mark: &nbsp; COMPLETE ([Wiki](https://github.com/IBM/covid19-india-data/wiki/States#delhi-dl-database-schema)) |
 | West Bengal (WB) | [Link](https://www.wbhealth.gov.in/pages/corona/bulletin) | [Mayank Agarwal](https://github.com/MayankAgarwal) | [Tathagata Chakraborti](https://github.com/TathagataChakraborti) | :white_check_mark: &nbsp; COMPLETE ([Wiki](https://github.com/IBM/covid19-india-data/wiki/States#west-bengal-wb-database-schema)) | 
-| Telengana (TG) | [Link](https://covid19.telangana.gov.in/announcements/media-bulletins/) | [Mayank Agarwal](https://github.com/MayankAgarwal) | [Tathagata Chakraborti](https://github.com/TathagataChakraborti) | :construction: &nbsp; IN PROGRESS ([#4](https://github.com/IBM/covid19-india-data/issues/4)) | 
-| Tamil Nadu (TN) | [Link](https://stopcorona.tn.gov.in/daily-bulletin/) | | | ⌛ Own it! ([#5](https://github.com/IBM/covid19-india-data/issues/5)) |
+| Telengana (TG) | [Link](https://covid19.telangana.gov.in/announcements/media-bulletins/) | [Mayank Agarwal](https://github.com/MayankAgarwal) | [Mayank Agarwal](https://github.com/MayankAgarwal) | :construction: &nbsp; IN PROGRESS ([#4](https://github.com/IBM/covid19-india-data/issues/4)) | 
+| Tamil Nadu (TN) | [Link](https://stopcorona.tn.gov.in/daily-bulletin/) | [Sachin Grover](https://github.com/sachingrover211) | [Sachin Grover](https://github.com/sachingrover211) | :construction: &nbsp; IN PROGRESS ([#5](https://github.com/IBM/covid19-india-data/issues/5)) |
 | Karnataka (KA) | [Link](https://covid19.karnataka.gov.in/govt_bulletin/en) |  |  | ⌛ Own it! ([#6](https://github.com/IBM/covid19-india-data/issues/6)) |
 | Kerala (KL) | [Link](https://dhs.kerala.gov.in/%e0%b4%a1%e0%b5%86%e0%b4%af%e0%b4%bf%e0%b4%b2%e0%b4%bf-%e0%b4%ac%e0%b5%81%e0%b4%b3%e0%b5%8d%e0%b4%b3%e0%b4%b1%e0%b5%8d%e0%b4%b1%e0%b4%bf%e0%b4%a8%e0%b5%8d%e2%80%8d/) |  | | ⌛ Own it! ([#7](https://github.com/IBM/covid19-india-data/issues/7)) |
 | Madhya Pradesh (MP) | [Link](http://sarthak.nhmmp.gov.in/covid/health-bulletin/) | | | ⌛ Own it! ([#8](https://github.com/IBM/covid19-india-data/issues/8)) |
