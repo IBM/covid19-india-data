@@ -39,6 +39,9 @@ ends on Oct 31. 🤞
 
 ### 😒 Data Cleaning
 
+Data at this volume and timeline is bound to suffer from inconsistencies. We will be documenting these as and when we find them on
+the dedicated [Anomalies Page](https://india-covid-19-data.mybluemix.net/#/anomalies). Help us:
+
 1. Remove missing data / deal with missing for the plots.
 2. Idenitify possible outliers and errors. 
 
@@ -46,7 +49,11 @@ ends on Oct 31. 🤞
 
 Analyze the data for insights, irregularities, etc. You can put up results of your analysis in your papers, blogs, etc. 
 (and point to that from our [landing page](https://ibm.biz/covid-data-india)) or directly add it to our landing page as a 
-[new page](frontend/README.md#adding-a-new-page).
+[standalone new page](frontend/README.md#adding-a-new-page) or in the [existing Analysis Page](https://india-covid-19-data.mybluemix.net/#/analysis).
+
+### 🧐 Landing Page
+
+For general instructions on how to contribute to the landing page, see [here](./frontend/README.md).
 
 ## Current state roster
 
@@ -54,14 +61,14 @@ Analyze the data for insights, irregularities, etc. You can put up results of yo
 |-------|------------------------|-----------------|------------------|--------|
 | Delhi (DL) | [Link](http://health.delhigovt.nic.in/wps/wcm/connect/doit_health/Health/Home/Covid19/Bulletin+August+2021) | [Mayank Agarwal](https://github.com/MayankAgarwal) | [Tathagata Chakraborti](https://github.com/TathagataChakraborti) | :white_check_mark: &nbsp; COMPLETE ([Wiki](https://github.com/IBM/covid19-india-data/wiki/States#delhi-dl-database-schema)) |
 | West Bengal (WB) | [Link](https://www.wbhealth.gov.in/pages/corona/bulletin) | [Mayank Agarwal](https://github.com/MayankAgarwal) | [Tathagata Chakraborti](https://github.com/TathagataChakraborti) | :white_check_mark: &nbsp; COMPLETE ([Wiki](https://github.com/IBM/covid19-india-data/wiki/States#west-bengal-wb-database-schema)) | 
-| Telengana (TG) | [Link](https://covid19.telangana.gov.in/announcements/media-bulletins/) | [Mayank Agarwal](https://github.com/MayankAgarwal) | [Tathagata Chakraborti](https://github.com/TathagataChakraborti) | :construction: &nbsp; IN PROGRESS ([#4](https://github.com/IBM/covid19-india-data/issues/4)) | 
-| Tamil Nadu (TN) | [Link](https://stopcorona.tn.gov.in/daily-bulletin/) | | | ⌛ Own it! ([#5](https://github.com/IBM/covid19-india-data/issues/5)) |
+| Telengana (TG) | [Link](https://covid19.telangana.gov.in/announcements/media-bulletins/) | [Mayank Agarwal](https://github.com/MayankAgarwal) | [Mayank Agarwal](https://github.com/MayankAgarwal) | :construction: &nbsp; IN PROGRESS ([#4](https://github.com/IBM/covid19-india-data/issues/4)) | 
+| Tamil Nadu (TN) | [Link](https://stopcorona.tn.gov.in/daily-bulletin/) | [Sachin Grover](https://github.com/sachingrover211) | [Sachin Grover](https://github.com/sachingrover211) | :construction: &nbsp; IN PROGRESS ([#5](https://github.com/IBM/covid19-india-data/issues/5)) |
 | Karnataka (KA) | [Link](https://covid19.karnataka.gov.in/govt_bulletin/en) |  |  | ⌛ Own it! ([#6](https://github.com/IBM/covid19-india-data/issues/6)) |
 | Kerala (KL) | [Link](https://dhs.kerala.gov.in/%e0%b4%a1%e0%b5%86%e0%b4%af%e0%b4%bf%e0%b4%b2%e0%b4%bf-%e0%b4%ac%e0%b5%81%e0%b4%b3%e0%b5%8d%e0%b4%b3%e0%b4%b1%e0%b5%8d%e0%b4%b1%e0%b4%bf%e0%b4%a8%e0%b5%8d%e2%80%8d/) |  | | ⌛ Own it! ([#7](https://github.com/IBM/covid19-india-data/issues/7)) |
 | Madhya Pradesh (MP) | [Link](http://sarthak.nhmmp.gov.in/covid/health-bulletin/) | | | ⌛ Own it! ([#8](https://github.com/IBM/covid19-india-data/issues/8)) |
 | Punjab (PB) | [Link](http://covaprod.punjab.gov.in/covid-response.html?language=e) | | | ⌛ Own it! ([#9](https://github.com/IBM/covid19-india-data/issues/9)) |
 | Uttarakhand (UK) | [Link1](https://health.uk.gov.in/pages/view/134-covid19-health-bulletin-for-uttarakhand-page-01), [Link2](https://health.uk.gov.in/pages/view/151-covid19-health-bulletin-for-uttarakhand-page-10)|  | | ⌛ Own it! ([#10](https://github.com/IBM/covid19-india-data/issues/10)) |
-| `Add new state` | |  |  | |  |
+| [`Add new state`](https://github.com/IBM/covid19-india-data/issues/new?assignees=&labels=new+state&template=new-state-template.md&title=New+State%3A+%5BENTER+NAME+HERE%5D) | |  |  | |  |
 
 As you might have noticed, this is an incomplete list of Indian states. 
 Not all states produce this form of data. ☹️
