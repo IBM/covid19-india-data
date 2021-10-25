@@ -10,16 +10,16 @@ let resource_list = [
     link: 'https://www.covid19india.org/',
   },
   {
+    name: 'COVID 19 Tracker | Followup to COVID19India',
+    link: 'https://covid19tracker.in',
+  },
+  {
     name: 'COVID Today',
     link: 'https://covidtoday.in/',
   },
   {
     name: "IBM's response to COVID-19",
     link: 'https://www.ibm.com/impact/covid-19',
-  },
-  {
-    name: 'Our World in Data',
-    link: 'https://ourworldindata.org/',
   },
   {
     name: 'COVID-19 Data Repository from Johns Hopkins University',
@@ -41,6 +41,14 @@ let resource_list = [
     name: 'AI Against COVID EXPO @ NeurIPS 2020',
     link: 'https://nips.cc/Conferences/2020/ScheduleMultitrack?event=21301',
   },
+  {
+    name: 'Our World in Data',
+    link: 'https://ourworldindata.org',
+  },
+  {
+    name: 'DataKind',
+    link: 'https://www.datakind.org',
+  }
 ];
 
 let citation_text = `@article{agarwal2021covid,
@@ -120,9 +128,9 @@ class ContributingPage extends React.Component {
 
           <p className="bx--col-lg-8">
             If you are using this data in your reserach, please remember to cite
-            us. &#128591; Note that the list of authors will continue to grow
-            over time with our OSS contributors. Please make sure to update your
-            citations in your future papers accordingly.
+            us. &#128591; <strong>Note that the list of authors will continue to grow
+            over time with our OSS contributors.</strong> Please make sure to update the
+            citation text in your future papers accordingly.
           </p>
           <br />
 
@@ -139,6 +147,8 @@ class ContributingPage extends React.Component {
             </Button>
           </Link>
 
+          <br />
+          <br />
           <br />
           <br />
           <br />

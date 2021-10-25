@@ -36,7 +36,7 @@ class AnomaliesPage extends React.Component {
                   ones please get in touch.
                 </span>
               }
-              title="Is the data reliable? You ask."
+              title="Is the data reliable, you ask?"
             />
           </div>
         </div>
