@@ -1,5 +1,23 @@
 const QUERIES = [
   {
+    subject: 'Daily new cases',
+    description: <></>,
+    query:
+      'SELECT date, cases_new FROM WB_case_info WHERE cases_new is NOT NULL ORDER BY date',
+  },
+  {
+    subject: 'Daily new fatalities',
+    description: <></>,
+    query:
+      'SELECT date, deaths_new FROM WB_case_info WHERE deaths_new is NOT NULL ORDER BY date',
+  },
+  {
+    subject: 'Cases in home isolation',
+    description: <></>,
+    query:
+      'SELECT date, current_patients_home_isolation FROM WB_hospital WHERE current_patients_home_isolation is NOT NULL ORDER BY date',
+  },
+  {
     subject: 'Total COVID-19 beds in the state',
     description: (
       <>
@@ -35,6 +53,12 @@ const QUERIES = [
     ),
     query:
       'SELECT date, ambulances_assigned_24h FROM WB_counselling where ambulances_assigned_24h is not NULL ORDER BY date',
+  },
+  {
+    subject: 'Ratio of RT-PCR to Antigen tests',
+    description: <></>,
+    query:
+      'SELECT date, rtpcr_antigen_ratio FROM WB_testing WHERE rtpcr_antigen_ratio is NOT NULL',
   },
 ];
 
