@@ -1,6 +1,7 @@
 import React from 'react';
 import { generateStateID } from '../../components/Info';
 import { Link } from 'react-router-dom';
+import { Tag } from 'carbon-components-react';
 import {
   Header,
   HeaderMenuButton,
@@ -76,13 +77,32 @@ class PageHeader extends React.Component {
                     isActive={this.state.introduction}>
                     Introduction
                   </SideNavLink>
+
+                  <SideNavDivider />
+
                   <SideNavLink
-                    large
                     href="/#/contributing"
                     onClick={this.onClickTab.bind(this, 'contributing')}
                     isActive={this.state.contributing}>
                     Contributing
                   </SideNavLink>
+                  <SideNavLink
+                    href="/#/data"
+                    onClick={this.onClickTab.bind(this, 'data')}
+                    isActive={this.state.data}>
+                    Data Access
+                  </SideNavLink>
+
+                  <SideNavDivider />
+
+                  <SideNavLink
+                    large
+                    href="/#/analysis"
+                    onClick={this.onClickTab.bind(this, 'analysis')}
+                    isActive={this.state.analysis}>
+                    Analysis
+                  </SideNavLink>
+
                   <SideNavDivider />
 
                   {Object.keys(states).map((key, index) => (
@@ -97,6 +117,20 @@ class PageHeader extends React.Component {
                           this.state[generateStateID(states[key]['name'])]
                         }>
                         {states[key]['name']}
+
+                        {states[key]['is_complete'] && (
+                          <Tag type="blue" className="compressed-tag">
+                            {' '}
+                            completed{' '}
+                          </Tag>
+                        )}
+
+                        {!states[key]['is_complete'] && (
+                          <Tag type="gray" className="compressed-tag">
+                            {' '}
+                            in progress{' '}
+                          </Tag>
+                        )}
                       </SideNavLink>
                     </React.Fragment>
                   ))}

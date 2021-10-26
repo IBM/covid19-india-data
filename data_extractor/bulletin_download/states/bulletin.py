@@ -43,6 +43,7 @@ class Bulletin(object):
 
         fpath = os.path.join(savedir, fname)
         req = requests.get(link)
+        req.raise_for_status()
 
         with open(fpath, 'wb') as f:
             f.write(req.content)
@@ -69,13 +70,12 @@ class Bulletin(object):
                 continue
 
             fname = f'{self.statename}-Bulletin-{date}.pdf'
-
             try:
                 self.download_and_save_bulletin(link, self._bulletin_savedir, fname)
-            except:
+            except Exception:
                 pass
             else:
                 self._state['downloaded-bulletins'].append(date)
                 self._state['bulletin-paths'][date] = os.path.join(self._bulletin_savedir, fname)
-        
+                
         self._save_state_()

@@ -1,7 +1,7 @@
 {
   "metadata" : {
     "data_server"     : "https://covid-19-data-india-storage.mybluemix.net",
-    "link_to_data"    : "https://www.dropbox.com/s/hbe04q6vtzapdam/covid-india.db?dl=1",
+    "link_to_data"    : "https://ibm.biz/covid19-india-db",
     "link_to_slack"   : "https://join.slack.com/t/covid-19-india-data/shared_invite/zt-uej5v98i-mjggggkLMASKFbZRXzq4xw",
     "link_to_code"    : "https://github.com/IBM/covid19-india-data",
     "link_to_schemas" : "https://github.com/IBM/covid19-india-data/wiki/States"
@@ -13,17 +13,25 @@
     "DL": {
       "name" : "Delhi",
       "short_name" : "DL",
+      "is_complete": true,
       "link_to_db_schema" : "https://raw.githubusercontent.com/IBM/covid19-india-data/main/docs/images/DL_tables.png"
     },
     "WB": {
       "name" : "West Bengal",
       "short_name" : "WB",
+      "is_complete": true,
       "link_to_db_schema" : "https://raw.githubusercontent.com/IBM/covid19-india-data/main/docs/images/WB_tables.png"
     },
     "TN": {
       "name" : "Tamil Nadu",
       "short_name" : "TN",
       "link_to_db_schema" : "https://raw.githubusercontent.com/IBM/covid19-india-data/main/docs/images/TN_tables.png"
+    },
+    "TG": {
+      "name": "Telangana",
+      "short_name": "TG",
+      "is_complete": true,
+      "link_to_db_schema": "https://raw.githubusercontent.com/IBM/covid19-india-data/main/docs/images/TG_tables.png"
     }
   }
 }

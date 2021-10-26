@@ -150,3 +150,5 @@ serve_db/covid-india.db
 
 # skip vim swap files
 .*.*.swp
+
+.idea
