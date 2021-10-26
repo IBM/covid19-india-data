@@ -242,6 +242,7 @@ class TelanganaExtractor(object):
             return None
 
         result = TG_utils.process_agewise_table(datatable)
+        result['date'] = self.date
         return result
 
 
@@ -263,6 +264,10 @@ class TelanganaExtractor(object):
             
 
     def extract(self):
+
+        # Bulletins prior to this date included images, which we bypass for now
+        if self.date < "2020-09-01":
+            return dict()
 
         # Only process first 4 pages of TG since that's where all the information we aim
         # to extract resides. Additionally, it saves a lot of time in unnecessarily processing
@@ -307,8 +312,8 @@ class TelanganaExtractor(object):
 
     
 if __name__ == '__main__':
-    date = '01-may-2021'
-    path = "/home/mayankag/covid19-india-data/localstore/bulletins/TG/TG-Bulletin-2021-08-14.pdf"
+    date = '2021-01-01'
+    path = "/home/mayankag/covid19-india-data/localstore/bulletins/TG/TG-Bulletin-2021-09-23.pdf"
     # path = "/home/mayankag/covid19-india-data/localstore/bulletins/TG/TG-Bulletin-2020-09-01.pdf"
     obj = TelanganaExtractor(date, path)
     
