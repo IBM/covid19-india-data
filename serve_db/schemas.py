@@ -28,3 +28,13 @@ class DailyData(TypedDict):
     state: str
     bulletin_link: str
     data: List[DataTable]
+
+
+class StateDashboardData(TypedDict):
+    state_fullname: str
+    state_shortname: str
+    data: List[str]
+
+class DashboardData(TypedDict):
+    columns: List[str]
+    data: List[StateDashboardData]

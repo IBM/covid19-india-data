@@ -304,6 +304,44 @@ def fetch_days_data(
     return json.dumps(response, indent=4)
 
 
+@app.route("/fetch_dashboard_data", methods=["GET"])
+def fetch_dashboard_data() -> None:
+
+    with open("./configs/dashboard.sql.json", "r") as f:
+        queriesdata = json.load(f)
+    
+    columns = queriesdata['column.names']
+    queries = queriesdata['queries']
+
+    con = sqlite3.connect(__db_uri, uri=True)
+    cursor = con.cursor()
+    response = DashboardData(
+        columns=columns,
+        data=[]
+    )
+
+    for state_query in queries:
+        state_fullname = state_query['state.full.name']
+        state_shortname = state_query['state.short.name']
+        querystr = ' '.join(state_query['query'])
+
+        cursor.execute(querystr)
+        data = list(cursor.fetchone())
+        data.insert(0, state_fullname)
+
+        response["data"].append(
+            StateDashboardData(
+                state_fullname = state_fullname,
+                state_shortname = state_shortname,
+                data = data
+            )
+        )
+
+    con.close()
+
+    return json.dumps(response, indent=4)
+
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=int(os.getenv('PORT', 3456)))
 
