@@ -242,6 +242,7 @@ class TelanganaExtractor(object):
             return None
 
         result = TG_utils.process_agewise_table(datatable)
+        result['date'] = self.date
         return result
 
 
