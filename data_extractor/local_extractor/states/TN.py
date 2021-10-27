@@ -20,7 +20,7 @@ class TamilNaduExtractor(object):
         self.report_fpath = report_fpath
 
         # for matching facilities string -- example 269 (69 Govt+200 Private)
-        self.facilities_nums_regex = re.compile(r'([\d,]+)[ ]*\(([\d,]+)[ ]*([\D]+)[ ]*([\d,]+)[ ]*([\D]+)\)')
+        self.facilities_nums_regex = re.compile(r'([\d,]+)[ ]*[\(]*([\d,]+)[ ]*([\D]+)[ ]*([\d,]+)[ ]*([\D]+)[\)]*')
 
     def _parse_facilities_num_(self, data, col, new_cols):
         parsing_successful = False
@@ -40,9 +40,16 @@ class TamilNaduExtractor(object):
                         for index, s in enumerate(grps):
                             if "Private" in s:
                                 data[new_col] = grps[index - 1]
+                                break
 
                 data[col] = grps[0]
                 parsing_successful = True
+
+        if parsing_successful:
+            new_cols.append(col)
+            for column in new_cols:
+                if ")" in data[column]:
+                    data[column] = data[column].replace(")", "")
 
         return data, parsing_successful
 
@@ -53,6 +60,7 @@ class TamilNaduExtractor(object):
         """
         delimeter = "/"
         parsing_successful = False
+        #print(data[col])
         if col in data and delimeter in data[col]:
             numbers = data[col].split(delimeter)
             for index, num in enumerate(numbers):
@@ -60,6 +68,11 @@ class TamilNaduExtractor(object):
                     data[new_cols[index]] = num.strip()
 
             parsing_successful = True
+
+        if parsing_successful:
+            for column in new_cols:
+                if ")" in data[column]:
+                    data[column] = data[column].replace(")", "")
 
         return data, parsing_successful
 
@@ -100,6 +113,9 @@ class TamilNaduExtractor(object):
             atoi_cols.extend(new_cols)
 
         for col in atoi_cols:
+            if isinstance(result[col], int):
+                continue
+
             result[col] = locale.atoi(result[col])
 
         return result
@@ -112,6 +128,7 @@ class TamilNaduExtractor(object):
             keywords = {'positive', 'deaths', 'rt-pcr', 'isolation', 'transgender', 'male', 'female'}
             detailed_info_table = common_utils.find_table_by_keywords(tables, keywords)
 
+        #print(detailed_info_table.size, detailed_info_table.shape)
         # in case no such table found
         if detailed_info_table is None:
             return None
@@ -144,10 +161,11 @@ class TamilNaduExtractor(object):
         # first rtcpr samples tested row 4
         new_cols = ["rt_pcr_today", "total_rt_pcr"]
         result, parsing_successful = self._parse_num_(result, "rt_pcr_today", new_cols)
-        if parsing_successful: atoi_cols.append(new_cols[1])
+        if parsing_successful:
+            atoi_cols.append(new_cols[1])
 
-        if "@" in result["total_rt_pcr"]:
-            result["total_rt_pcr"] = result["total_rt_pcr"].replace("@", "")
+            if "@" in result["total_rt_pcr"]:
+                result["total_rt_pcr"] = result["total_rt_pcr"].replace("@", "")
 
         # rtpcr persons tested row 5
         new_cols = ["persons_tested_rt_pcr_today", "total_persons_tested_rt_pcr"]
@@ -180,13 +198,14 @@ class TamilNaduExtractor(object):
 
         # converting from strings to numbers
         for col in atoi_cols:
-            if type(result[col]) != str:
-                result[col] = str(result[col])
+            if isinstance(result[col], int):
+                continue
+
             result[col] = locale.atoi(result[col])
 
         return result
 
-    def extract_district_cases(self, district_tables):
+    def extract_district_cases(self, district_tables, is_page5_present=False):
         df_page3 = None
         df_page4 = None
         df_page6 = None
@@ -765,6 +784,7 @@ class TamilNaduExtractor(object):
 
         if len(row) > 6:
             tmp["positive_during_entry_screening"] = row[5 + counter].strip()
+        if len(row) > 7:
             tmp["positive_during_exit_screening"] = row[6 + counter].strip()
 
         # matching airport to the other table
@@ -881,7 +901,11 @@ class TamilNaduExtractor(object):
         tables_page1 = common_utils.get_tables_from_pdf(library='camelot', pdf_fpath=self.report_fpath, pages=[1])
         tables_page2 = common_utils.get_tables_from_pdf(library='camelot', pdf_fpath=self.report_fpath, pages=[2], use_stream=True)
         # gettting all district case tables
-        tables_district = common_utils.get_tables_from_pdf(library='camelot', pdf_fpath=self.report_fpath, pages=[3, 4, 6, 7, 8, 9], use_stream=False)
+        """
+        pd.set_option('display.max_columns', None)
+        pd.set_option('display.width', None)
+        """
+        tables_district = common_utils.get_tables_from_pdf(library='camelot', pdf_fpath=self.report_fpath, pages=[3, 4, 5, 7, 9, 10], use_stream=False)
         tables_comorbidities = common_utils.get_tables_from_pdf(library='camelot', pdf_fpath=self.report_fpath, pages=[10], use_stream=False)
         tables_travel_data = common_utils.get_tables_from_pdf(library='camelot', pdf_fpath=self.report_fpath, pages=[n-2, n-1, n], use_stream=False)
 
@@ -915,7 +939,7 @@ class TamilNaduExtractor(object):
 
 
 if __name__ == "__main__":
-    date = "02-jun-2021"
-    path = "../../downloads/bulletins/TN/TN-Bulletin-2021-6-2.pdf"
+    date = "17-sep-2021"
+    path = "../../../downloads/bulletins/TN/TN-Bulletin-2021-09-17.pdf"
     reader = TamilNaduExtractor(date, path)
     reader.extract()
