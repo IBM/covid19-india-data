@@ -15,8 +15,8 @@ echo `which python3`
 
 # Install dependencies of python packages
 echo "Installing 'ghostscript' and 'tcl-tk' for camelot python package"
-brew install ghostcript tcl-tk
-javac --version
+brew install ghostscript tcl-tk
+java --version
 
 if [ $? -ne 0 ]
 then

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -eux
+# set -eux
 
 CURR_FILEPATH=`realpath $0`
 CURR_DIR=`dirname ${CURR_FILEPATH}`;
@@ -15,8 +15,9 @@ echo `which python3`
 
 # Install dependencies of python packages
 echo "Installing 'ghostscript' and 'tcl-tk' for camelot python package"
-apt install ghostcript python3-tk
-javac --version
+echo "We might require sudo access for this"
+sudo apt-get install ghostscript python3-tk
+java --version
 
 if [ $? -ne 0 ]
 then
