@@ -10,9 +10,9 @@ class Haryana(Bulletin):
         statename = 'HR'
         super().__init__(basedir, statename)
 
-        # this URL works only for dates >= 01/01/2021
-        self.bulletin_url = 'http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on {:02d}-{:02d}-{}.pdf'
-        self.startdate = datetime.date(2021, 1, 1)      # Jan 1, 2021
+        self.bulletin_url_2020 = 'http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on {:02d}-{:02d}-20.pdf'
+        self.bulletin_url_2021 = 'http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on {:02d}-{:02d}-{}.pdf'
+        self.startdate = datetime.date(2020, 7, 15)      # July 15, 2021
 
     def get_bulletin_links(self):
 
@@ -25,7 +25,11 @@ class Haryana(Bulletin):
             month = currdate.month
             year = currdate.year
 
-            url = self.bulletin_url.format(day, month, year)
+            if year == 2020:
+                url = self.bulletin_url_2020.format(day, month)
+            else:
+                url = self.bulletin_url_2021.format(day, month, year)
+
             datestr = self.get_date_str(str(currdate))
             link_dict[datestr] = url
 

@@ -1,21 +1,7 @@
-import enum
-from json import load
 import locale
-
-from numpy import clongdouble
 locale.setlocale( locale.LC_ALL, 'en_US.UTF-8' )
 
 import re
-
-# try:
-#     from local_extractor.states.state_utils import TG_utils
-# except ImportError:
-#     import sys, os, pathlib
-#     path = pathlib.Path(__file__).absolute().parents[2]
-#     path = os.path.join(path, 'local_extractor', 'states')
-#     if path not in sys.path:
-#         sys.path.insert(0, path)
-#     from state_utils import TG_utils
 
 try:
     from local_extractor.utils import common_utils
@@ -51,12 +37,10 @@ class HaryanaExtractor(object):
         
         nums = self._get_all_nums_(datadict[colname])
 
-        if len(nums) != len(new_cols):
-            datadict[new_cols[0]] = nums[0]
-        
-        else:
-            for i, col in enumerate(new_cols):
-                datadict[col] = nums[i]
+        n = min(len(nums), len(new_cols))
+
+        for i in range(n):
+            datadict[new_cols[i]] = nums[i]
 
         if del_old:
             del datadict[colname]
@@ -178,7 +162,6 @@ class HaryanaExtractor(object):
         }
 
         return result
-
 
 
 if __name__ == '__main__':
