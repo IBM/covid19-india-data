@@ -4,8 +4,11 @@ import camelot
 import tabula
 import pandas as pd
 import math
+import gc
 
 from pdfminer.high_level import extract_pages
+from camelot.core import TableList
+from utils.tabledetection.tabnet import ExtractTable
 
 
 def clean_numbers_str(text):
@@ -33,6 +36,7 @@ def are_keywords_in_table(df, keywords):
                 break
     
     return len(keywords) == len(found)
+
 
 def find_table_by_keywords(tables, keywords):
 
@@ -105,6 +109,7 @@ def add_values_from_neighbors(df, df_dict, key_idx, val_idx):
 
     return df_dict
 
+
 def extract_info_from_table_by_keywords(df_dict, keymap):
 
     result = {}
@@ -115,6 +120,7 @@ def extract_info_from_table_by_keywords(df_dict, keymap):
             result[id] = val
 
     return result
+
 
 def parse_dates(datestr):
 
@@ -142,9 +148,61 @@ def get_tables_from_pdf_tabula(pdf_fpath, pages=None):
     return tables
 
 
-def get_tables_from_pdf(library, pdf_fpath, pages=None, use_stream=False):
+def get_tables_from_pdf_with_smart_boundary_detection(library, pdf_fpath, pages):
 
     if library.lower().strip() == 'camelot':
-        return get_tables_from_pdf_camelot(pdf_fpath, pages, use_stream)
+        # Use CascadeTabNet model to identify table boundaries in the PDF
+        # Use the detected boundaries to extract tables using Camelot library
+        # for better extraction
+
+        boundary_detection = ExtractTable(pdf_fpath, pagenums=pages, origin='bottom-left')
+        tablesdict = boundary_detection.extract()       # dictionary of page nums -> list of table boundaries
+        result = []
+
+        del boundary_detection
+        gc.collect()
+
+        for pageno, table_bounds in tablesdict.items():
+            bound_str = [','.join(map(str, bound)) for bound in table_bounds]
+            pagetables = camelot.read_pdf(
+                pdf_fpath, pages=f'{pageno+1}', strip_text='\n', split_text=True, table_regions=bound_str
+            )
+            result.extend(pagetables._tables)
+
+        result = TableList(result)
+        return result
+
     elif library.lower().strip() == 'tabula':
-        return get_tables_from_pdf_tabula(pdf_fpath, pages)
+
+        boundary_detection = ExtractTable(pdf_fpath, pagenums=pages, origin='top-left')
+        tablesdict = boundary_detection.extract()
+        result = []
+
+        del boundary_detection
+        gc.collect()
+
+        for pageno, table_bounds in tablesdict.items():
+
+            tabula_bounds = [[y1, x1, y2, x2] for (x1, y1, x2, y2) in table_bounds]
+            pagetables = tabula.read_pdf(
+                pdf_fpath, pages=pageno+1, area=tabula_bounds
+            )
+            result.extend(pagetables)
+            
+        return result
+
+    else:
+        raise NotImplementedError('Smart boundary understanding with library other than Camelot not yet implemented')
+
+
+def get_tables_from_pdf(library, pdf_fpath, pages=None, smart_boundary_detection=False):
+
+    if smart_boundary_detection:
+        return get_tables_from_pdf_with_smart_boundary_detection(
+            library, pdf_fpath, pages
+        )
+    else:
+        if library.lower().strip() == 'camelot':
+            return get_tables_from_pdf_camelot(pdf_fpath, pages)
+        elif library.lower().strip() == 'tabula':
+            return get_tables_from_pdf_tabula(pdf_fpath, pages)

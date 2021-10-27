@@ -1,12 +1,17 @@
 import React from 'react';
 import { Contributing, Resource } from '../../components/Info';
-import { LogoGithub32, LogoSlack32, Sql32 } from '@carbon/icons-react';
+import { LogoGithub32, LogoSlack32, Sql32, Api_132 } from '@carbon/icons-react';
+import { Tag, Link, Button, CodeSnippet } from 'carbon-components-react';
 
 let config = require('../../config.json');
 let resource_list = [
   {
     name: 'COVID 19 India',
     link: 'https://www.covid19india.org/',
+  },
+  {
+    name: 'COVID Today',
+    link: 'https://covidtoday.in/',
   },
   {
     name: "IBM's response to COVID-19",
@@ -37,6 +42,14 @@ let resource_list = [
     link: 'https://nips.cc/Conferences/2020/ScheduleMultitrack?event=21301',
   },
 ];
+
+let citation_text = `@article{agarwal2021covid,
+  title={COVID-19 India Dataset: Parsing Detailed COVID-19 Data
+         in Daily Health Bulletins from States in India},
+  author={Agarwal, Mayank and Chakraborti, Tathagata and Grover, Sachin},
+  journal={arXiv:2110.02311},
+  year={2021}
+}`;
 
 class ContributingPage extends React.Component {
   constructor(props) {
@@ -69,18 +82,62 @@ class ContributingPage extends React.Component {
             <Contributing
               props={{
                 icon: <LogoSlack32 />,
-                title: 'Community',
+                title: 'Join our Community on Slack',
                 link: config['metadata']['link_to_slack'],
               }}
             />
             <Contributing
               props={{
                 icon: <Sql32 />,
-                title: 'Data',
+                title: (
+                  <>
+                    Download the Data{' '}
+                    <Tag type="green" className="compressed-tag flattened-tag">
+                      free
+                    </Tag>
+                  </>
+                ),
                 link: config['metadata']['link_to_data'],
               }}
             />
+            <Contributing
+              props={{
+                icon: <Api_132 />,
+                title: 'Connect with the API',
+                link: '/#/data',
+                internal: true,
+              }}
+            />
           </div>
+
+          <br />
+          <br />
+          <br />
+
+          <h3>Read the Paper</h3>
+          <hr />
+          <br />
+
+          <p className="bx--col-lg-8">
+            If you are using this data in your reserach, please remember to cite
+            us. &#128591; Note that the list of authors will continue to grow
+            over time with our OSS contributors. Please make sure to update your
+            citations in your future papers accordingly.
+          </p>
+          <br />
+
+          <CodeSnippet type="multi">{citation_text}</CodeSnippet>
+
+          <br />
+
+          <Link
+            href="https://arxiv.org/abs/2110.02311"
+            target="_blank"
+            className="button-generic">
+            <Button size="field" kind="secondary">
+              Read
+            </Button>
+          </Link>
 
           <br />
           <br />
@@ -90,7 +147,7 @@ class ContributingPage extends React.Component {
           <hr />
           <br />
 
-          <div className="bx--row">
+          <div className="bx--row" style={{ marginBottom: '100px' }}>
             {resource_list.map(function(item, key) {
               return (
                 <Resource

@@ -1,7 +1,12 @@
 import React from 'react';
 import '@carbon/charts/styles.css';
 import { LineChart } from '@carbon/charts-react';
-import { Accordion, AccordionItem, Loading } from 'carbon-components-react';
+import {
+  Accordion,
+  AccordionItem,
+  Loading,
+  CodeSnippet,
+} from 'carbon-components-react';
 import { prepareData, prepareOptions, fetchData } from '../Info';
 
 class HighlightsElement extends React.Component {
@@ -15,9 +20,17 @@ class HighlightsElement extends React.Component {
 
   componentDidMount = () => {
     let query_data = {};
+
+    var temp_query = this.state.query;
     var promises = [];
 
-    this.state.query.forEach(function(q, index) {
+    temp_query.forEach(function(q, index) {
+      if (!q['legend']) q['legend'] = [q['subject']];
+
+      q['keys'] = q['legend'].map((item, id) => {
+        return id + 1;
+      });
+
       var promise = fetchData({
         URL: 'query',
         query: q.query,
@@ -32,6 +45,7 @@ class HighlightsElement extends React.Component {
     Promise.all(promises).then(() => {
       this.setState({
         ...this.state,
+        query: temp_query,
         query_data: query_data,
       });
     });
@@ -62,13 +76,15 @@ class HighlightsElement extends React.Component {
                       key={i}
                       open>
                       <p>{q.description}</p>
+                      <br />
+                      <CodeSnippet type="single">{q.query}</CodeSnippet>
 
                       <br />
                       <br />
                       {data && (
                         <LineChart
                           key={i}
-                          data={prepareData(data, q.subject, 1)}
+                          data={prepareData(data, q.legend, q.keys)}
                           options={prepareOptions(
                             data[0][0],
                             data[data.length - 1][0],
