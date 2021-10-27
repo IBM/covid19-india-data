@@ -287,6 +287,8 @@ class BasicElement extends React.Component {
       filter_data: selectedItems,
       sampling_rate: this.state.status_flags.sampling_rate,
     }).then(data => {
+      console.log(data, data);
+
       this.setState(
         {
           ...this.state,
@@ -588,6 +590,13 @@ class BasicElement extends React.Component {
             </Tab>
             <Tab label="View API">
               <div className="some-content">
+                <p>
+                  To access the full API, please refer to the documentation{' '}
+                  <Link href="/#/data">here</Link>.
+                </p>
+                <hr />
+                <br />
+
                 {this.state.schema.map((item, id) => {
                   const table_link =
                     config['metadata']['data_server'] +
