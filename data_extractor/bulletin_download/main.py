@@ -3,11 +3,13 @@ import sys
 from bulletin_download.states.DL import Delhi
 from bulletin_download.states.WB import WestBengal
 from bulletin_download.states.TG import Telangana
+from bulletin_download.states.HR import Haryana
 
 
 def run(basedir):
 
     state_downloaders = {
+        'HR': Haryana,
         'TG': Telangana,
         'WB': WestBengal,
         'DL': Delhi

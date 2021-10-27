@@ -1,12 +1,14 @@
 from local_extractor.states.DL import DelhiExtractor
 from local_extractor.states.WB import WestBengalExtractor
 from local_extractor.states.TG import TelanganaExtractor
+from local_extractor.states.HR import HaryanaExtractor
 
 
 STATE_LIST = {
     'DL': DelhiExtractor,
     'WB': WestBengalExtractor,
-    'TG': TelanganaExtractor
+    'TG': TelanganaExtractor,
+    'HR': HaryanaExtractor
 }
 
 
