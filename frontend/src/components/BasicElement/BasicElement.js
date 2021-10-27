@@ -19,6 +19,13 @@ import {
   DatePicker,
   DatePickerInput,
   CodeSnippet,
+  DataTable,
+  Table,
+  TableHead,
+  TableRow,
+  TableHeader,
+  TableBody,
+  TableCell,
 } from 'carbon-components-react';
 
 let config = require('../../config.json');
@@ -81,6 +88,7 @@ class BasicElement extends React.Component {
       name: props.props.name,
       short_name: props.props.short_name,
       link_to_db_schema: props.props.link_to_db_schema,
+      dashboard_data: {},
       data: [],
       dataOnDate: [],
       linkToDailyBulletin: null,
@@ -102,6 +110,13 @@ class BasicElement extends React.Component {
   }
 
   componentDidMount = () => {
+    fetchData({ URL: 'fetch_dashboard_data' }).then(data => {
+      this.setState({
+        ...this.state,
+        dashboard_data: this.constructDashboardData(data),
+      });
+    });
+
     fetchData({ URL: 'fetch_schema', short_name: this.state.short_name }).then(
       data => {
         this.setState({
@@ -110,6 +125,51 @@ class BasicElement extends React.Component {
         });
       }
     );
+  };
+
+  constructDashboardData = e => {
+    const headerData = [];
+    const rowData = [];
+
+    e.data.forEach((dataItem, i) => {
+      if (dataItem['state_shortname'] === this.state.short_name) {
+        const data = dataItem['data'];
+
+        e.columns.forEach((item, idx) => {
+          if (item !== 'State') {
+            if (item === 'Last updated') {
+              headerData.push({
+                header: item,
+                key: 'name',
+              });
+
+              headerData.push({
+                header: data[idx],
+                key: 'value',
+              });
+            } else {
+              if (item === 'Bulletin')
+                data[idx] = (
+                  <Link href={data[idx]} target="_blank">
+                    Link
+                  </Link>
+                );
+
+              rowData.push({
+                id: idx.toString(),
+                name: item,
+                value: data[idx],
+              });
+            }
+          }
+        });
+      }
+    });
+
+    return {
+      headerData: headerData,
+      rowData: rowData,
+    };
   };
 
   drawAll = () => {
@@ -298,10 +358,68 @@ class BasicElement extends React.Component {
         className="bx--grid bx--grid--full-width bx--container"
         style={{ width: '100%' }}>
         <div className="bx--col-lg-16">
-          <Tabs scrollIntoView={false}>
+          <h1>
+            {this.state.name}
+
+            <Tag type="green" className="flattened-tag">
+              {this.state.short_name}
+            </Tag>
+
+            {this.state.status_flags.is_complete && (
+              <Tag type="blue" className="flattened-tag">
+                {' '}
+                completed{' '}
+              </Tag>
+            )}
+
+            {!this.state.status_flags.is_complete && (
+              <Tag type="gray" className="flattened-tag">
+                {' '}
+                in progress{' '}
+              </Tag>
+            )}
+          </h1>
+          <br />
+          <br />
+
+          <Tabs scrollIntoView={false} type="container">
             <Tab label="Visualize">
-              <div className="bx--row">
+              <div className="bx--row" style={{ marginTop: '20px' }}>
+                <div className="bx--col-lg-4 state-header">
+                  {Object.keys(this.state.dashboard_data).length > 0 && (
+                    <DataTable
+                      rows={this.state.dashboard_data.rowData}
+                      headers={this.state.dashboard_data.headerData}>
+                      {({ rows, headers, getHeaderProps, getTableProps }) => (
+                        <Table {...getTableProps()} size="short">
+                          <TableHead>
+                            <TableRow>
+                              {headers.map(header => (
+                                <TableHeader {...getHeaderProps({ header })}>
+                                  {header.header}
+                                </TableHeader>
+                              ))}
+                            </TableRow>
+                          </TableHead>
+                          <TableBody>
+                            {rows.map(row => (
+                              <TableRow key={row.id}>
+                                {row.cells.map(cell => (
+                                  <TableCell key={cell.id}>
+                                    {cell.value}
+                                  </TableCell>
+                                ))}
+                              </TableRow>
+                            ))}
+                          </TableBody>
+                        </Table>
+                      )}
+                    </DataTable>
+                  )}
+                </div>
                 <div className="bx--col-lg-8">
+                  <h4>Visualize {this.state.name} data as time series</h4>
+                  <hr />
                   <p>
                     The data for visualization is being sampled at every{' '}
                     <span className="text-blue">
@@ -369,35 +487,14 @@ class BasicElement extends React.Component {
                     onClick={this.drawAll.bind(this)}>
                     Draw All
                   </Button>
-                </div>
-
-                <div className="bx--col-lg-8 state-header">
-                  <h1>
-                    {this.state.name}{' '}
-                    <span style={{ fontSize: 'x-large' }}>data</span>
-                  </h1>
-
-                  <Tag type="green" className="flattened-tag">
-                    {this.state.short_name}
-                  </Tag>
-
-                  {this.state.status_flags.is_complete && (
-                    <Tag type="blue" className="flattened-tag">
-                      {' '}
-                      completed{' '}
-                    </Tag>
-                  )}
-
-                  {!this.state.status_flags.is_complete && (
-                    <Tag type="gray" className="flattened-tag">
-                      {' '}
-                      in progress{' '}
-                    </Tag>
-                  )}
 
                   <br />
-
                   <br />
+                  <br />
+                  <br />
+
+                  <h4>Fetch {this.state.name} data on a particular date</h4>
+                  <hr />
 
                   <DatePicker
                     dateFormat="Y/m/d"
@@ -516,6 +613,7 @@ class BasicElement extends React.Component {
                         if (c !== 'date')
                           return (
                             <CodeSnippet
+                              key={i}
                               type="single"
                               style={{
                                 marginBottom: '10px',

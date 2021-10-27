@@ -1,7 +1,6 @@
 // import React from 'react';
 // import { Link } from 'carbon-components-react';
 
-const QUERIES = [
-];
+const QUERIES = [];
 
 export { QUERIES };

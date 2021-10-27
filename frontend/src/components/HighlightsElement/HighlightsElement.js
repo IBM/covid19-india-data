@@ -55,7 +55,7 @@ class HighlightsElement extends React.Component {
     return (
       <div
         className="bx--grid bx--grid--full-width bx--container"
-        style={{ width: '100%' }}>
+        style={{ width: '100%', paddingTop: '0' }}>
         <div className="bx--col-lg-16">
           {Object.keys(this.state.query_data).length > 0 && (
             <div>

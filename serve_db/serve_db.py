@@ -304,7 +304,7 @@ def fetch_days_data(
     return json.dumps(response, indent=4)
 
 
-@app.route("/fetch_dashboard_data", methods=["GET"])
+@app.route("/fetch_dashboard_data", methods=["POST"])
 def fetch_dashboard_data() -> None:
 
     with open("./configs/dashboard.sql.json", "r") as f:
@@ -338,11 +338,9 @@ def fetch_dashboard_data() -> None:
         )
 
     con.close()
-
     return json.dumps(response, indent=4)
 
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=int(os.getenv('PORT', 3456)))
-
 
