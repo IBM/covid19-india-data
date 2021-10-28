@@ -47,7 +47,6 @@ class App extends Component {
             <Route exact path="/Haryana" component={Haryana} />
             <Route exact path="/Telangana" component={Telangana} />
             <Route exact path="/WestBengal" component={WestBengal} />
-            
 
             {/*
               {Object.keys(states).map((key, index) => (

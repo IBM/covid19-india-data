@@ -30,13 +30,15 @@ const QUERIES = [
     subject: 'Difference in number of male and female sampled',
     description: (
       <>
-        We compute the cumulative difference in samples tested for males and females in the state. As is evident, there is a growing
-        difference between the two quantities, indicating that over time, more men were tested for COVID-19 then women.
+        We compute the cumulative difference in samples tested for males and
+        females in the state. As is evident, there is a growing difference
+        between the two quantities, indicating that over time, more men were
+        tested for COVID-19 then women.
       </>
     ),
     query:
       'select date, samples_positive_cumulative_male  - samples_positive_cumulative_female  AS tests_gender_diff from HR_case_info WHERE tests_gender_diff is not null ORDER BY date ASC',
-  }
+  },
 ];
 
 export { QUERIES };
