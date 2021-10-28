@@ -1,4 +1,5 @@
-from typing import List, Tuple, TypedDict
+from typing import List, Tuple, Any, TypedDict
+
 
 class TimeSeries(TypedDict):
     data: List[Tuple] 
@@ -33,8 +34,12 @@ class DailyData(TypedDict):
 class StateDashboardData(TypedDict):
     state_fullname: str
     state_shortname: str
-    data: List[str]
+    table_data: List[Any]
+    graph_data: List[List[Any]]
+
 
 class DashboardData(TypedDict):
     columns: List[str]
     data: List[StateDashboardData]
+
+    

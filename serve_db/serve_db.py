@@ -305,7 +305,7 @@ def fetch_days_data(
 
 
 @app.route("/fetch_dashboard_data", methods=["POST"])
-def fetch_dashboard_data() -> None:
+def fetch_dashboard_data() -> DashboardData:
 
     with open("./configs/dashboard.sql.json", "r") as f:
         queriesdata = json.load(f)
@@ -323,17 +323,24 @@ def fetch_dashboard_data() -> None:
     for state_query in queries:
         state_fullname = state_query['state.full.name']
         state_shortname = state_query['state.short.name']
-        querystr = ' '.join(state_query['query'])
 
+        # TABLE data
+        querystr = ' '.join(state_query['query'])
         cursor.execute(querystr)
-        data = list(cursor.fetchone())
-        data.insert(0, state_fullname)
+        table_data = list(cursor.fetchone())
+        table_data.insert(0, state_fullname)
+
+        # GRAPH data
+        querystr = ' '.join(state_query['query'][:-1])
+        cursor.execute(querystr)
+        graph_data = __scale_down_data(list(cursor.fetchall()), 10)
 
         response["data"].append(
             StateDashboardData(
                 state_fullname = state_fullname,
                 state_shortname = state_shortname,
-                data = data
+                table_data = table_data,
+                graph_data = graph_data
             )
         )
 

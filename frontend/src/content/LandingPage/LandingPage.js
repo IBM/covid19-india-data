@@ -1,6 +1,11 @@
 import React from 'react';
 import { Download16 } from '@carbon/icons-react';
-import { fetchData } from '../../components/Info';
+import { LineChart } from '@carbon/charts-react';
+import {
+  fetchData,
+  generateStateID,
+  prepareOptions,
+} from '../../components/Info';
 import {
   Link,
   Button,
@@ -11,6 +16,7 @@ import {
   TableHeader,
   TableBody,
   TableCell,
+  Loading,
 } from 'carbon-components-react';
 
 class LandingPage extends React.Component {
@@ -18,7 +24,8 @@ class LandingPage extends React.Component {
     super(props);
     this.state = {
       last_updated: null,
-      dashboard_data: {},
+      dashboard_table_data: {},
+      dashboard_graph_data: [],
     };
   }
 
@@ -26,7 +33,8 @@ class LandingPage extends React.Component {
     fetchData({ URL: 'fetch_dashboard_data' }).then(data => {
       this.setState({
         ...this.state,
-        dashboard_data: this.prepareData(data),
+        dashboard_table_data: this.prepareTableData(data),
+        dashboard_graph_data: this.prepareGraphData(data),
       });
     });
 
@@ -38,7 +46,39 @@ class LandingPage extends React.Component {
     });
   }
 
-  prepareData = e => {
+  prepareGraphData = e => {
+    var total_response = [];
+
+    e.columns.forEach(function(item, idx) {
+      if (['State', 'Last updated', 'Bulletin'].indexOf(item) < 0) {
+        var response = [];
+
+        e.data.forEach(function(state_item, state_idx) {
+          state_item.graph_data.forEach(function(
+            state_date_item,
+            state_date_idx
+          ) {
+            var new_plot_item = {
+              group: state_item.state_fullname,
+              date: state_date_item[0],
+              value: state_date_item[idx - 1],
+            };
+
+            response.push(new_plot_item);
+          });
+        });
+
+        total_response.push({
+          data: response,
+          title: item,
+        });
+      }
+    });
+
+    return total_response;
+  };
+
+  prepareTableData = e => {
     const rowData = [];
     const headerData = e.columns.map((elem, i) => {
       return {
@@ -49,8 +89,15 @@ class LandingPage extends React.Component {
 
     e.data.forEach(function(item, idx) {
       var new_row_data = { id: idx.toString() };
-      item.data.forEach(function(data_item, data_idx) {
+      item.table_data.forEach(function(data_item, data_idx) {
         var key = e.columns[data_idx];
+
+        if (key === 'State')
+          data_item = (
+            <Link href={'/#/' + generateStateID(data_item)}>
+              {generateStateID(data_item)}
+            </Link>
+          );
 
         if (key === 'Bulletin')
           data_item = (
@@ -86,15 +133,16 @@ class LandingPage extends React.Component {
               from <span className="text-blue">India</span>
             </h1>
             <br />
-            <span className="text-blue">
-              &nbsp;&nbsp;<em>Last Updated: {this.state.last_updated}</em>
+            <span>
+              &nbsp;&nbsp;Last Updated:{' '}
+              <span className="text-blue">{this.state.last_updated}</span>
             </span>
 
-            {Object.keys(this.state.dashboard_data).length > 0 && (
+            {Object.keys(this.state.dashboard_table_data).length > 0 && (
               <>
                 <DataTable
-                  rows={this.state.dashboard_data.rowData}
-                  headers={this.state.dashboard_data.headerData}
+                  rows={this.state.dashboard_table_data.rowData}
+                  headers={this.state.dashboard_table_data.headerData}
                   isSortable>
                   {({ rows, headers, getHeaderProps, getTableProps }) => (
                     <Table
@@ -175,7 +223,7 @@ class LandingPage extends React.Component {
               (other than to respond to changes in schema).
               <br />
               <br />
-              Contributions are most welcome!
+              Contributions are most welcome! &#129303;
               <br />
               <br />
             </p>
@@ -195,6 +243,37 @@ class LandingPage extends React.Component {
             </Link>
           </div>
         </div>
+
+        <br />
+        <br />
+        <br />
+        <br />
+
+        {this.state.dashboard_graph_data.length === 0 && (
+          <Loading description="Loading highlights" withOverlay />
+        )}
+
+        {this.state.dashboard_graph_data.length > 0 && (
+          <>
+            {this.state.dashboard_graph_data.map(function(e, i) {
+              return (
+                <>
+                  <br />
+                  <hr />
+                  <LineChart
+                    key={i}
+                    data={e.data}
+                    options={prepareOptions(
+                      e.title,
+                      'Sampled every 10 days',
+                      e.title
+                    )}></LineChart>
+                  <br />
+                </>
+              );
+            })}
+          </>
+        )}
       </div>
     );
   }

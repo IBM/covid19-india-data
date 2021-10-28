@@ -133,7 +133,7 @@ class BasicElement extends React.Component {
 
     e.data.forEach((dataItem, i) => {
       if (dataItem['state_shortname'] === this.state.short_name) {
-        const data = dataItem['data'];
+        const data = dataItem['table_data'];
 
         e.columns.forEach((item, idx) => {
           if (item !== 'State') {
@@ -287,8 +287,6 @@ class BasicElement extends React.Component {
       filter_data: selectedItems,
       sampling_rate: this.state.status_flags.sampling_rate,
     }).then(data => {
-      console.log(data, data);
-
       this.setState(
         {
           ...this.state,
