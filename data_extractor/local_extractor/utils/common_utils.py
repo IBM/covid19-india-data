@@ -101,9 +101,9 @@ def n_pages_in_pdf(pdf_fpath):
     return len(pages)
 
 
-def get_tables_from_pdf_camelot(pdf_fpath, pages=None):
+def get_tables_from_pdf_camelot(pdf_fpath, pages=None, split_text=True):
     pagerange = "1-end" if pages is None else ','.join(map(str, pages))
-    tables = camelot.read_pdf(pdf_fpath, pages=pagerange, strip_text='\n', split_text=True)
+    tables = camelot.read_pdf(pdf_fpath, pages=pagerange, strip_text='\n', split_text=split_text)
     return tables
 
 
@@ -160,7 +160,7 @@ def get_tables_from_pdf_with_smart_boundary_detection(library, pdf_fpath, pages)
         raise NotImplementedError('Smart boundary understanding with library other than Camelot not yet implemented')
 
 
-def get_tables_from_pdf(library, pdf_fpath, pages=None, smart_boundary_detection=False):
+def get_tables_from_pdf(library, pdf_fpath, pages=None, smart_boundary_detection=False, **kwargs):
 
     if smart_boundary_detection:
         return get_tables_from_pdf_with_smart_boundary_detection(
@@ -168,6 +168,6 @@ def get_tables_from_pdf(library, pdf_fpath, pages=None, smart_boundary_detection
         )
     else:
         if library.lower().strip() == 'camelot':
-            return get_tables_from_pdf_camelot(pdf_fpath, pages)
+            return get_tables_from_pdf_camelot(pdf_fpath, pages, **kwargs)
         elif library.lower().strip() == 'tabula':
             return get_tables_from_pdf_tabula(pdf_fpath, pages)
