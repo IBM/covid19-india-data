@@ -12,7 +12,8 @@ def run(basedir):
         'HR': Haryana,
         'TG': Telangana,
         'WB': WestBengal,
-        'DL': Delhi
+        'DL': Delhi,
+        'KA': Karnataka
     }
     
     bulletin_links = {}

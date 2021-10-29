@@ -10,7 +10,7 @@ from local_extractor import main as extractor_main
 
 
 COMPLETE_STATES = ['TG', 'WB', 'DL']
-INCOMPLETE_STATES = ['HR']
+INCOMPLETE_STATES = ['HR', 'KA']
 
 
 def get_parser():
