@@ -6,6 +6,7 @@ from .DL import DelhiDB
 from .WB import WestBengalDB
 from .TG import TelanganaDB
 from .HR import HaryanaDB
+from .KA import KarnatakaDB
 
 from .Metadata import MetadataDB
 
@@ -23,7 +24,8 @@ class DBMain(object):
             'DL': DelhiDB(datadir=self.datadir),
             'WB': WestBengalDB(datadir=self.datadir),
             'TG': TelanganaDB(datadir=self.datadir),
-            'HR': HaryanaDB(datadir=self.datadir)
+            'HR': HaryanaDB(datadir=self.datadir),
+            'KA': KarnatakaDB(datadir=self.datadir)
         }
 
         self.metatable = MetadataDB(datadir=self.datadir)
