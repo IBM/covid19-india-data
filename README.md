@@ -37,6 +37,8 @@ We hope we can get to good coverage before support for
 [covid19india.org](https://blog.covid19india.org/2021/08/07/end/)
 ends on Oct 31. 🤞
 
+> To set up your system for development, please follow the steps mentioned in the [.setup](/.setup) folder
+
 ### 😒 Data Cleaning
 
 Data at this volume and timeline is bound to suffer from inconsistencies. We will be documenting these as and when we find them on
