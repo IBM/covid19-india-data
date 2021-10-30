@@ -16,7 +16,8 @@ INCOMPLETE_STATES = ['HR']
 def get_parser():
     parser = argparse.ArgumentParser()
 
-    parser.add_argument('--datadir', type=str, required=True, help="Data directory path to store bulletins and database")
+    parser.add_argument('--datadir', type=str, required=True, help='Data directory path to store bulletins and database')
+    parser.add_argument('--run_only', type=str, required=False, default=None, help='Comma-separated values of states to run data extraction for')
 
     return parser
 
@@ -26,9 +27,13 @@ def run(args):
     BULLETIN_PATH_STR = 'bulletin-paths'
     PROCESSED_DATES_STR = 'processed-dates'
 
+    # Get list of states to execute extraction procedure for
+    states_to_execute = None
+    if args.run_only is not None:
+        states_to_execute = [x.strip() for x in args.run_only.split(',')]
     
     # Download bulletins
-    bulletin_links = bulletin_downloader.run(args.datadir)
+    bulletin_links = bulletin_downloader.run(args.datadir, state_to_execute=states_to_execute)
 
     # Setup tables
     db_obj = DBMain(args.datadir)
@@ -40,6 +45,9 @@ def run(args):
 
     state_pbar = tqdm(STATES, desc="States")
     for state in state_pbar:
+
+        if states_to_execute is not None and state not in states_to_execute:
+            continue
 
         state_pbar.set_description(f'State: {state}')
 

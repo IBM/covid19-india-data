@@ -6,7 +6,7 @@ from bulletin_download.states.TG import Telangana
 from bulletin_download.states.HR import Haryana
 
 
-def run(basedir):
+def run(basedir, state_to_execute=None):
 
     state_downloaders = {
         'HR': Haryana,
@@ -18,6 +18,10 @@ def run(basedir):
     bulletin_links = {}
 
     for state_name, state_obj in state_downloaders.items():
+
+        if state_to_execute is not None and state_name not in state_to_execute:
+            continue
+
         print(f'Downloading bulletins for state {state_name}')
         obj = state_obj(basedir)
         state_bulletin_links = obj.run()
