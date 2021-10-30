@@ -9,8 +9,7 @@ from db.main import DBMain
 from local_extractor import main as extractor_main
 
 
-COMPLETE_STATES = ['TG', 'WB', 'DL']
-INCOMPLETE_STATES = ['HR']
+STATES = ['HR', 'TG', 'WB', 'DL']
 
 
 def get_parser():
@@ -18,6 +17,7 @@ def get_parser():
 
     parser.add_argument('--datadir', type=str, required=True, help='Data directory path to store bulletins and database')
     parser.add_argument('--run_only', type=str, required=False, default=None, help='Comma-separated values of states to run data extraction for')
+    parser.add_argument('--force_run_states', type=str, required=False, default=None, help='Comma-separated values of states to force re-run data extraction procedure for')
 
     return parser
 
@@ -31,6 +31,11 @@ def run(args):
     states_to_execute = None
     if args.run_only is not None:
         states_to_execute = [x.strip() for x in args.run_only.split(',')]
+
+    # Get list of states to force a re-run
+    force_rerun_states = []
+    if args.force_run_states is not None:
+        force_rerun_states = [x.strip() for x in args.force_run_states.split(',')]
     
     # Download bulletins
     bulletin_links = bulletin_downloader.run(args.datadir, state_to_execute=states_to_execute)
@@ -41,8 +46,6 @@ def run(args):
     db_obj.record_db_metadata()
 
     # Start extraction
-    STATES = COMPLETE_STATES + INCOMPLETE_STATES
-
     state_pbar = tqdm(STATES, desc="States")
     for state in state_pbar:
 
@@ -63,7 +66,7 @@ def run(args):
 
             date_pbar.set_description(f'Date: {date}')
 
-            if date in data[PROCESSED_DATES_STR]:
+            if state not in force_rerun_states and date in data[PROCESSED_DATES_STR]:
                 continue
             
             try:
@@ -72,8 +75,7 @@ def run(args):
             except Exception as err:
                 print(f'Error in parsing date: {date}. Error: {err}')
             else:
-                if state not in INCOMPLETE_STATES:
-                    data[PROCESSED_DATES_STR].append(date)
+                data[PROCESSED_DATES_STR].append(date)
         
         with open(metadata_path, 'w') as f:
             json.dump(data, f)
