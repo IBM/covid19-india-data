@@ -37,6 +37,8 @@ We hope we can get to good coverage before support for
 [covid19india.org](https://blog.covid19india.org/2021/08/07/end/)
 ends on Oct 31. 🤞
 
+> To set up your system for development, please follow the steps mentioned in the [.setup](/.setup) folder
+
 ### 😒 Data Cleaning
 
 Data at this volume and timeline is bound to suffer from inconsistencies. We will be documenting these as and when we find them on
@@ -62,6 +64,8 @@ For general instructions on how to contribute to the landing page, see [here](./
 | Delhi (DL) | [Link](http://health.delhigovt.nic.in/wps/wcm/connect/doit_health/Health/Home/Covid19/Bulletin+August+2021) | [Mayank Agarwal](https://github.com/MayankAgarwal) | [Tathagata Chakraborti](https://github.com/TathagataChakraborti) | :white_check_mark: &nbsp; COMPLETE ([Wiki](https://github.com/IBM/covid19-india-data/wiki/States#delhi-dl-database-schema)) |
 | West Bengal (WB) | [Link](https://www.wbhealth.gov.in/pages/corona/bulletin) | [Mayank Agarwal](https://github.com/MayankAgarwal) | [Tathagata Chakraborti](https://github.com/TathagataChakraborti) | :white_check_mark: &nbsp; COMPLETE ([Wiki](https://github.com/IBM/covid19-india-data/wiki/States#west-bengal-wb-database-schema)) | 
 | Telengana (TG) | [Link](https://covid19.telangana.gov.in/announcements/media-bulletins/) | [Mayank Agarwal](https://github.com/MayankAgarwal) | [Tathagata Chakraborti](https://github.com/TathagataChakraborti) | :white_check_mark: &nbsp; COMPLETE ([Wiki](https://github.com/IBM/covid19-india-data/wiki/States#telangana-tg-database-schema)) | 
+| Haryana (HR) | [Link](http://nhmharyana.gov.in/page?id=208) | [Mayank Agarwal](https://github.com/MayankAgarwal) | [Mayank Agarwal](https://github.com/MayankAgarwal) | :white_check_mark: &nbsp; COMPLETE ([Wiki](https://github.com/IBM/covid19-india-data/wiki/States#haryana-hr-database-schema)) | 
+| Maharashtra (MH) | [Link](http://arogya.maharashtra.gov.in/1175/Novel--Corona-Virus) | [Mayank Agarwal](https://github.com/MayankAgarwal) | [Mayank Agarwal](https://github.com/MayankAgarwal) | :white_check_mark: &nbsp; COMPLETE ([Wiki](https://github.com/IBM/covid19-india-data/wiki/States#maharashtra-mh-database-schema)) | 
 | Tamil Nadu (TN) | [Link](https://stopcorona.tn.gov.in/daily-bulletin/) | [Sachin Grover](https://github.com/sachingrover211) | [Sachin Grover](https://github.com/sachingrover211) | :construction: &nbsp; IN PROGRESS ([#5](https://github.com/IBM/covid19-india-data/issues/5)) |
 | Karnataka (KA) | [Link](https://covid19.karnataka.gov.in/govt_bulletin/en) |  |  | ⌛ Own it! ([#6](https://github.com/IBM/covid19-india-data/issues/6)) |
 | Kerala (KL) | [Link](https://dhs.kerala.gov.in/%e0%b4%a1%e0%b5%86%e0%b4%af%e0%b4%bf%e0%b4%b2%e0%b4%bf-%e0%b4%ac%e0%b5%81%e0%b4%b3%e0%b5%8d%e0%b4%b3%e0%b4%b1%e0%b5%8d%e0%b4%b1%e0%b4%bf%e0%b4%a8%e0%b5%8d%e2%80%8d/) |  | | ⌛ Own it! ([#7](https://github.com/IBM/covid19-india-data/issues/7)) |

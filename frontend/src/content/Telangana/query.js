@@ -6,19 +6,19 @@ const QUERIES = [
     subject: 'Daily new cases',
     description: <></>,
     query:
-      'SELECT date, cases_new FROM TG_case_info WHERE cases_new is NOT NULL',
+      'SELECT date, cases_new FROM TG_case_info WHERE cases_new is NOT NULL ORDER BY date ASC',
   },
   {
     subject: 'Daily new fatalities',
     description: <></>,
     query:
-      'SELECT date, deaths_new FROM TG_case_info WHERE deaths_new is NOT NULL',
+      'SELECT date, deaths_new FROM TG_case_info WHERE deaths_new is NOT NULL ORDER BY date ASC',
   },
   {
     subject: 'Tests conducted daily',
     description: <></>,
     query:
-      'SELECT date, tests_today FROM TG_testing_info WHERE tests_today is NOT NULL',
+      'SELECT date, tests_today FROM TG_testing_info WHERE tests_today is NOT NULL ORDER BY date ASC',
   },
   {
     subject: 'Percentage of symptomatic cases',
@@ -30,13 +30,13 @@ const QUERIES = [
       </>
     ),
     query:
-      'SELECT date, perc_symptomatic FROM TG_symptomatic WHERE perc_symptomatic is NOT NULL',
+      'SELECT date, perc_symptomatic FROM TG_symptomatic WHERE perc_symptomatic is NOT NULL ORDER BY date ASC',
   },
   {
     subject: 'Cases in home isolation',
     description: <></>,
     query:
-      'SELECT date, cases_in_isolation FROM TG_case_info WHERE cases_in_isolation is NOT NULL',
+      'SELECT date, cases_in_isolation FROM TG_case_info WHERE cases_in_isolation is NOT NULL ORDER BY date ASC',
   },
   {
     subject: 'Percentage of active cases in home isolation',

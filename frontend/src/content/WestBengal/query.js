@@ -58,7 +58,7 @@ const QUERIES = [
     subject: 'Ratio of RT-PCR to Antigen tests',
     description: <></>,
     query:
-      'SELECT date, rtpcr_antigen_ratio FROM WB_testing WHERE rtpcr_antigen_ratio is NOT NULL',
+      'SELECT date, rtpcr_antigen_ratio FROM WB_testing WHERE rtpcr_antigen_ratio is NOT NULL ORDER BY date ASC',
   },
 ];
 

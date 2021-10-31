@@ -1,32 +1,32 @@
 #!/bin/bash
 
-set -eux
-
 CURR_FILEPATH=`realpath $0`
 CURR_DIR=`dirname ${CURR_FILEPATH}`;
-HOME_DIR=`realpath ${CURR_DIR}/../..`;
+HOME_DIR=`realpath ${CURR_DIR}/..`;
 DATAEXTRACTOR_DIR="${HOME_DIR}/data_extractor"
-LOCALSTORE_DIR="${HOME_DIR}/localstore"
 TABNET_DIR="${HOME_DIR}/tabnet_model"
 
 
-conda activate covid
-which pip3
-which python3
+echo `which pip3`
+echo `which python3`
 
-# Install dropbox library
-pip3 install dropbox
-pip3 install -r "${DATAEXTRACTOR_DIR}/requirements.txt"
 
-# Fetch the latest code from github
-cd ${HOME_DIR}
-git checkout main
-git pull origin main
+# Install dependencies of python packages
+echo "Installing 'ghostscript' and 'tcl-tk' for camelot python package"
+brew install ghostscript tcl-tk
+java --version
 
-# Setup TabNet
+if [ $? -ne 0 ]
+then
+    echo "ERROR: Java Runtime not found on the system. Please install it to make 'tabula' package working"
+fi
+
+# Install native dependencies
+python3 -m pip install -r "${DATAEXTRACTOR_DIR}/requirements.txt"
+
 
 # Install TabNet dependencies
-pip install torch==1.5.1+cpu torchvision==0.6.1+cpu -f https://download.pytorch.org/whl/torch_stable.html
+pip install torch==1.5.1 torchvision==0.6.1 -f https://download.pytorch.org/whl/torch_stable.html
 pip install mmcv-full==1.0.5 -f https://download.openmmlab.com/mmcv/dist/cpu/torch1.5.0/index.html
 pip install mmdet==2.3.0
 pip install Wand pycocotools PyPDF2
@@ -51,12 +51,11 @@ if [ ! -f "${TABNET_MODELPATH}" ]; then
 fi
 
 
-# Run the data extractor
-cd ${DATAEXTRACTOR_DIR}
-python3 run.py --datadir "${LOCALSTORE_DIR}"
-
-# Upload the new database to dropbox
-DB_PATH="${LOCALSTORE_DIR}/covid-india.db"
-cd "${CURR_DIR}"
-
-python3 upload_to_dropbox.py "${DB_PATH}"
+echo "============================================================================"
+echo "  Add the following lines to your ~/.bashrc or ~/.bash_profile files"
+echo "  These variables set path to TabNet model and config files to be used"
+echo "  later by the data extractor"
+echo "============================================================================"
+echo ""
+echo "export TABNET_CONFIGPATH=\"${TABNET_CONFIGPATH}\""
+echo "export TABNET_MODELMATH=\"${TABNET_MODELPATH}\""
