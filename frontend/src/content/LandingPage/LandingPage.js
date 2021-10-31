@@ -1,11 +1,7 @@
 import React from 'react';
 import { Download16 } from '@carbon/icons-react';
 import { LineChart } from '@carbon/charts-react';
-import {
-  fetchData,
-  generateStateID,
-  prepareOptions,
-} from '../../components/Info';
+import { fetchData, generateStateID } from '../../components/Info';
 import {
   Link,
   Button,
@@ -18,6 +14,44 @@ import {
   TableCell,
   Loading,
 } from 'carbon-components-react';
+
+const axis_plot_options = {
+  title: null,
+  axes: {
+    bottom: {
+      title: 'Date',
+      mapsTo: 'date',
+      scaleType: 'time',
+    },
+    left: {
+      mapsTo: 'value',
+      title: null,
+      scaleType: 'linear',
+    },
+  },
+  curve: 'curveMonotoneX',
+  points: {
+    radius: 1,
+  },
+  height: '300px',
+  width: '100%',
+};
+
+function prepareOptions(title, axis) {
+  var new_options = {
+    ...axis_plot_options,
+    title: title,
+    axes: {
+      ...axis_plot_options.axes,
+      left: {
+        ...axis_plot_options.axes.left,
+        title: axis,
+      },
+    },
+  };
+
+  return new_options;
+}
 
 class LandingPage extends React.Component {
   constructor(props) {
@@ -253,27 +287,25 @@ class LandingPage extends React.Component {
           <Loading description="Loading highlights" withOverlay />
         )}
 
-        {this.state.dashboard_graph_data.length > 0 && (
-          <>
-            {this.state.dashboard_graph_data.map(function(e, i) {
-              return (
-                <>
-                  <br />
-                  <hr />
-                  <LineChart
-                    key={i}
-                    data={e.data}
-                    options={prepareOptions(
-                      e.title,
-                      'Sampled every 10 days',
-                      e.title
-                    )}></LineChart>
-                  <br />
-                </>
-              );
-            })}
-          </>
-        )}
+        <div className="bx--row">
+          {this.state.dashboard_graph_data.length > 0 && (
+            <>
+              {this.state.dashboard_graph_data.map(function(e, i) {
+                return (
+                  <div className="bx--col-lg-4">
+                    <br />
+                    <hr />
+                    <LineChart
+                      key={i}
+                      data={e.data}
+                      options={prepareOptions(e.title, e.title)}></LineChart>
+                    <br />
+                  </div>
+                );
+              })}
+            </>
+          )}
+        </div>
       </div>
     );
   }
