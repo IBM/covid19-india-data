@@ -9,7 +9,7 @@ from db.main import DBMain
 from local_extractor import main as extractor_main
 
 
-STATES = ['HR', 'TG', 'WB', 'DL']
+STATES = ['MH', 'HR', 'TG', 'WB', 'DL']
 
 
 def get_parser():
