@@ -1,7 +1,7 @@
 import sqlite3
 
 from .db import Database
-from .MH_tables import MH_corporation_info, MH_district_info
+from .MH_tables import MH_corporation_info, MH_district_info, MH_case_info
 
 
 class MaharashtraDB(Database):
@@ -18,6 +18,7 @@ class MaharashtraDB(Database):
         """
 
         self.tables = {
+            'case-info': MH_case_info.CaseInformation(),
             'active-case-info': MH_district_info.DistrictInformation(),
             'district-case-info': MH_corporation_info.CorporationInformation()
         }

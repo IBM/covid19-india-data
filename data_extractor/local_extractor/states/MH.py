@@ -2,6 +2,7 @@ import locale
 locale.setlocale( locale.LC_ALL, 'en_US.UTF-8' )
 
 import re
+import pdfplumber
 import pandas as pd
 
 
@@ -24,6 +25,12 @@ class MaharashtraExtractor(object):
         self.date = date
         self.report_fpath = report_fpath
 
+    def __get_text__(self, page):
+
+        with pdfplumber.open(self.report_fpath) as pdf:
+            first_page = pdf.pages[page]
+            text = first_page.extract_text()
+        return text
 
     def join_tables(self, tables):
         
@@ -52,6 +59,72 @@ class MaharashtraExtractor(object):
 
         return tables_concatenated
 
+    def get_regex_match(self, text, regex):
+
+        vals = regex.findall(text)
+        if vals:
+            val = vals[0]
+            text = regex.sub('', text, 1)
+            return text, val
+        
+        return text, None
+
+
+    def get_case_info(self):
+
+        cols = [
+            ('discharged_today', re.compile(r'([\d,]+)[ ]+patients[ ]+discharged[ ]+today', re.IGNORECASE)),
+            ('discharged_total', re.compile(r'([\d,]+)[ ]+[ ]+patients[ ]+discharged', re.IGNORECASE)),
+            ('recovery_rate', re.compile(r'recovery[ ]+rate\D+([\d\.,]+)', re.IGNORECASE)),
+            ('cases_new', re.compile(r'([\d,]+) new cases', re.IGNORECASE)),
+            ('deaths_new', re.compile(r'([\d,]+)\D+deaths', re.IGNORECASE)),
+            ('cfr', re.compile(r'case fatality rate\D+([\d\.,]+)', re.IGNORECASE)),
+            ('tests_cumulative', re.compile(r'([\d,]+)[ ]+laboratory[ ]+samples', re.IGNORECASE)),
+            ('tests_positive_cumulative', re.compile(r'([\d,]+)\D+tested[ ]+positive', re.IGNORECASE)),
+            ('current_home_quarantine', re.compile(r'([\d,]+)\D+home[ ]+quarantine', re.IGNORECASE)),
+            ('current_institutional_quarantine', re.compile(r'([\d,]+)\D+institutional[ ]+quarantine', re.IGNORECASE)),
+            ('active_cases', re.compile(r'([\d,]+)[ ]+active[ ]+cases', re.IGNORECASE))
+        ]
+
+        page0_text = self.__get_text__(0)
+        lines = page0_text.split('\n')
+
+        filteredlines = []
+        keepline = False
+
+        for line in lines:
+            if 'at a glance' in line.lower():
+                keepline = True
+                continue
+
+            if 'sr. no.' in line.lower():
+                keepline = False
+                break
+
+            if keepline:
+                filteredlines.append(line)
+
+        text = ' '.join(filteredlines).lower()
+        text = text.replace('covid-19', '')
+
+        data = {}
+        for colname, colregex in cols:
+
+            text, val = self.get_regex_match(text, colregex)
+
+            if val is None:
+                continue
+
+            try:
+                val = locale.atoi(val)
+            except Exception:
+                val = locale.atof(val)
+
+            data[colname] = val
+
+        data['date'] = self.date
+
+        return data
 
     def extract_citycase_info(self, tables):
 
@@ -156,10 +229,12 @@ class MaharashtraExtractor(object):
         all_tables = common_utils.get_tables_from_pdf(library='camelot', pdf_fpath=self.report_fpath)
         all_tables = self.join_tables(all_tables)
 
+        case_info = self.get_case_info()
         active_case_info = self.extract_citycase_info(all_tables)
         district_case_info = self.extract_district_level_info(all_tables)
 
         result = {
+            'case-info': case_info,
             'active-case-info': active_case_info,
             'district-case-info': district_case_info
         }
@@ -170,9 +245,7 @@ class MaharashtraExtractor(object):
 if __name__ == '__main__':
 
     date = '2021-01-01'
-    # path = "/Users/mayank/Documents/projects/opensource/covid19-india-data/localstore/bulletins/HR/HR-Bulletin-2021-10-01.pdf"
-    # path = "/Users/mayank/Documents/projects/opensource/covid19-india-data/localstore/bulletins/HR/HR-Bulletin-2021-04-20.pdf"
-    path = "/Users/mayank/Documents/projects/opensource/covid19-india-data/localstore/bulletins/MH/MH-Bulletin-2021-01-02.pdf"
+    path = "/Users/mayank/Documents/projects/opensource/covid19-india-data/localstore/bulletins/MH/MH-Bulletin-2021-10-30.pdf"
 
     obj = MaharashtraExtractor(date, path)
 
