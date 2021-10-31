@@ -9,4 +9,3 @@ dateparser
 tqdm
 tabula-py
 pydecor
-pdfplumber
