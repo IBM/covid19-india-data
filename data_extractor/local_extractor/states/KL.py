@@ -167,7 +167,7 @@ if __name__ == '__main__':
     date = '2021-10-29'
     path = "/Users/tchakra2/Desktop/Bulletin-HFWD-English-October-29.pdf"
 
-    obj = HaryanaExtractor(date, path)
+    obj = KeralaExtractor(date, path)
 
     from pprint import pprint
     pprint(obj.extract())
