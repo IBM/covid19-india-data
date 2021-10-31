@@ -28,19 +28,16 @@ const QUERIES = [
   },
   {
     subject: 'Percentage of male samples tested ',
-    description: (
-      <></>
-    ),
+    description: <></>,
     query:
       'select date, samples_positive_cumulative_male / CAST(samples_positive_cumulative_total AS REAL)  AS perc_male_samples from HR_case_info WHERE perc_male_samples is not null ORDER BY date ASC',
   },
   {
     subject: 'Patients on Oxygen support',
-    description: (
-      <></>
-    ),
-    query: 'SELECT date, patients_on_oxygen_support FROM HR_critical_case_info WHERE facility_name == "total" ORDER BY date ASC',
-  }
+    description: <></>,
+    query:
+      'SELECT date, patients_on_oxygen_support FROM HR_critical_case_info WHERE facility_name == "total" ORDER BY date ASC',
+  },
 ];
 
 export { QUERIES };

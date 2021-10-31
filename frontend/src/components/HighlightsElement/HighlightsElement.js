@@ -1,13 +1,13 @@
 import React from 'react';
 import '@carbon/charts/styles.css';
 import { LineChart } from '@carbon/charts-react';
+import { prepareData, prepareOptions, fetchData } from '../Info';
 import {
   Accordion,
   AccordionItem,
   Loading,
   CodeSnippet,
 } from 'carbon-components-react';
-import { prepareData, prepareOptions, fetchData } from '../Info';
 
 class HighlightsElement extends React.Component {
   constructor(props) {
@@ -34,7 +34,7 @@ class HighlightsElement extends React.Component {
       var promise = fetchData({
         URL: 'query',
         query: q.query,
-        sampling_rate: 5,
+        sampling_rate: 3,
       }).then(data => {
         query_data[index] = data['data'];
       });
@@ -55,14 +55,14 @@ class HighlightsElement extends React.Component {
     return (
       <div
         className="bx--grid bx--grid--full-width bx--container"
-        style={{ width: '100%' }}>
+        style={{ width: '100%', paddingTop: '0' }}>
         <div className="bx--col-lg-16">
           {Object.keys(this.state.query_data).length > 0 && (
             <div>
               <h3>
                 Highlights{' '}
                 <span style={{ fontSize: 'large', fontWeight: '100' }}>
-                  sampled every 5 days
+                  sampled every 3 days
                 </span>
               </h3>
               <br />

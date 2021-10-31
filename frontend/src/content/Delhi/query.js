@@ -11,7 +11,8 @@ const QUERIES = [
   {
     subject: 'Daily new fatalities',
     description: <></>,
-    query: 'SELECT date, deaths from DL_case_info WHERE deaths is NOT NULL ORDER BY date ASC',
+    query:
+      'SELECT date, deaths from DL_case_info WHERE deaths is NOT NULL ORDER BY date ASC',
   },
   {
     subject: 'Ratio of RTPCR tests',

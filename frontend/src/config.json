@@ -19,7 +19,7 @@
     "HR": {
       "name": "Haryana",
       "short_name": "HR",
-      "is_complete": false,
+      "is_complete": true,
       "link_to_db_schema": "https://raw.githubusercontent.com/IBM/covid19-india-data/main/docs/images/HR_tables.png"
     },
     "MH": {
