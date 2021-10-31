@@ -22,142 +22,199 @@ class KeralaExtractor(object):
         self.date = date
         self.report_fpath = report_fpath
 
-
-    def _get_all_nums_(self, text):
-        regex = re.compile(r'(\d+)')
-        m = regex.findall(text)
-        nums = [x for x in m]
-        return nums
-
-
-    def _process_column_(self, datadict, colname, new_cols, del_old):
-
-        if colname not in datadict:
-            return datadict
-        
-        nums = self._get_all_nums_(datadict[colname])
-
-        n = min(len(nums), len(new_cols))
-
-        for i in range(n):
-            datadict[new_cols[i]] = nums[i]
-
-        if del_old:
-            del datadict[colname]
-        
-        return datadict
-
-    
-    def _process_vax_column_(self, datadict, colname, new_cols, del_old):
-
-        if colname not in datadict:
-            return datadict
-        
-        val = datadict[colname]
-        val = val.replace('1st', '').replace('2nd', '')
-        nums = self._get_all_nums_(val)
-
-        if len(nums) != len(new_cols):
-            datadict[new_cols[0]] = nums[0]
-        else:
-            for i, col in enumerate(new_cols):
-                datadict[col] = nums[i]
-
-        if del_old:
-            del datadict[colname]
-
-        return datadict
+        self.list_of_districts = [
+            "Thiruvananthapuram",
+            "Kollam",
+            "Pathanamthitta",
+            "Alappuzha",
+            "Kottayam",
+            "Idukki",
+            "Ernakulam",
+            "Thrissur",
+            "Palakkad",
+            "Malappuram",
+            "Kozhikode",
+            "Wayanad",
+            "Kannur",
+            "Kasaragod"
+        ]
 
 
-    def extract_caseinfo(self):
+    def extract_cumulative_summary_t_minus_one(self, tables):
+        result = {}
 
-        tables_page1 = common_utils.get_tables_from_pdf(
-            library='camelot', pdf_fpath=self.report_fpath, pages=[1], split_text=False
-        )
+        # for table in tables:
+        #     print(666, table, dir(table))
 
-        if len(tables_page1) == 0:
-            return None
+        # datatable = None
+        # keywords = {'Positive cases'}
+        # datatable = common_utils.find_table_by_keywords(tables, keywords)
 
-        table = tables_page1[0].df
-
-        df_dict = common_utils.convert_df_to_dict(table, key_idx=0, val_idx=1)
-        keymap = {
-            'samples_taken_today': ['sample', 'taken', 'today'],
-            'samples_sent_cumulative': ['sample', 'sent', 'till', 'date'],
-            'samples_negative_cumulative': ['sample', 'found', 'negative'],
-            'samples_positive_cumulative': ['sample', 'found', 'positive'],
-            'samples_result_awaited': ['sample', 'result', 'awaited'],
-            'cases_new': ['positive', 'case', 'today'],
-            'people_put_on_surveillance_cumulative': ['person', 'cumulative', 'surveillance'],
-            'people_completed_surveillance_cumulative': ['person', 'complete', 'surveillance'],
-            'people_currently_under_surveillance': ['person', 'current', 'surveillance'],
-            'people_home_isolation': ['home', 'isolation'],
-            'recoveries_cumulative': ['total', 'patient', 'recover', 'discharge'],
-            'active_cases': ['active', 'patient'],
-            'deaths': ['deaths'],
-            'vax_today': ['people', 'vaccinat', 'today'],        
-            'vax_cumulative': ['cumulative', 'vaccination', 'coverage'],
-            'positivity_rate_today': ['today', 'positi', 'rate'],
-            'positivity_rate_cumulative': ['cumulative', 'positiv', 'rate'],
-            'recovery_rate': ['recovery', 'rate'],
-            'fatality_rate': ['fatality', 'rate'],
-            'tests_per_million': ['test', 'million']
-        }
-        result = common_utils.extract_info_from_table_by_keywords(df_dict, keymap)
-        result['date'] = self.date
-
-        # Process `samples_positive_cumulative`
-        result = self._process_column_(
-            result, 'samples_positive_cumulative', 
-            [
-                'samples_positive_cumulative_total', 
-                'samples_positive_cumulative_male', 
-                'samples_positive_cumulative_female',
-                'samples_positive_cumulative_transgender'
-            ],
-            del_old=True
-        )
-
-        result = self._process_column_(
-            result, 'deaths',
-            ['deaths_total', 'deaths_male', 'deaths_female', 'deaths_transgender'],
-            del_old=True
-        )
-
-        result['fatality_rate'] = common_utils.clean_numbers_str(result.get('fatality_rate', None))
-        result['recovery_rate'] = common_utils.clean_numbers_str(result.get('recovery_rate', None))
-
-        result = self._process_vax_column_(
-            result, 'vax_today', [
-                'vax_today_total', 'vax_today_first_dose', 'vax_today_second_dose'
-            ], del_old=True
-        )
-
-        for key, val in result.items():
-            if key == 'date':
-                continue
-
-            try:
-                result[key] = common_utils.clean_numbers_str(val)
-            except:
-                pass
-
-            try:
-                result[key] = locale.atoi(val)
-            except Exception:
-                result[key] = locale.atof(val)
-
+        # if datatable is None:
+        #     return None
 
         return result
 
-    
+
+    def extract_daily_summary(self, tables):
+        result = {}
+        return result
+
+
+    def extract_cumulative_summary(self, tables):
+        result = {}
+        return result
+
+
+    def extract_district_case_info(self, tables):
+        result = {}
+        return result
+
+
+    def extract_district_death_info(self, tables):
+        result = {}
+        return result
+
+
+    def extract_contact_travel_cumulative(self, tables):
+        result = {}
+        return result
+
+
+    def extract_contact_travel_new(self, tables):
+        result = {}
+        return result
+
+
+    def extract_individual_death_info(self, tables):
+        result = {}
+        return result
+
+
+    def extract_critical_patients(self, tables):
+        result = {}
+        return result
+
+
+    def extract_cumulative_tests(self, tables):
+        result = {}
+        return result
+
+
+    def extract_new_tests(self, tables):
+        result = {}
+        return result
+
+
+    def extract_surveillance_info(self, tables):
+        result = {}
+        return result
+
+
+    def extract_travel_surveillance(self, tables):
+        result = {}
+        return result
+
+
+    def extract_psychosocial_support(self, tables):
+
+        keywords = {'psychosocial', 'children', 'alone'}
+        datatable = common_utils.find_table_by_keywords(tables, keywords)
+
+        if datatable is None:
+            return None
+
+        else:
+
+            df_dict = common_utils.convert_df_to_dict(datatable, key_idx=0, val_idx=1)
+            keymap = {
+                'psychosocial_workers': ['psychosocial', 'workers', 'no.'],
+                'calls_to_persons_in_surveillance': ['quarantine', 'isolation'],
+                'followup_calls': ['follow-up'],
+                'post_covid_calls': ['post covid'],
+                'calls_special': ['migrant', 'alone'],
+                'calls_to_school_children': ['school'],
+                'calls_to_health_care_workers': ['health care workers'],
+                'calls_received_helpline': ['helpline'],
+                'calls_total': ['all categories']
+            }
+
+            result = common_utils.extract_info_from_table_by_keywords(df_dict, keymap)
+
+            for key in result.keys():
+                result[key] = locale.atoi(result[key])
+
+            result['date'] = self.date
+            return result
+
+
+    def extract_district_abstract(self, tables):
+
+        keywords = {'wipr (> 10)'}
+        datatable = common_utils.find_table_by_keywords(tables, keywords)
+
+        if datatable is None:
+            return None
+
+        else:
+
+            result = []
+            datatable = datatable.iloc[2:]
+
+            df_dict_lsg = common_utils.convert_df_to_dict(datatable, key_idx=1, val_idx=2)
+            df_dict_ward = common_utils.convert_df_to_dict(datatable, key_idx=1, val_idx=3)
+
+            for district in self.list_of_districts:
+                keymap = {district: [district.lower()]}
+
+                new_result = {
+                    'date'     : self.date,
+                    'district' : district,
+                    'LSG'      : locale.atoi(common_utils.extract_info_from_table_by_keywords(df_dict_lsg, keymap).get(district, None)),
+                    'Wards'    : locale.atoi(common_utils.extract_info_from_table_by_keywords(df_dict_ward, keymap).get(district, None)),
+                }
+
+                result.append(new_result)
+
+            # adding total column
+            datatable = datatable.iloc[-1:]
+
+            df_dict_lsg = common_utils.convert_df_to_dict(datatable, key_idx=0, val_idx=2)
+            df_dict_ward = common_utils.convert_df_to_dict(datatable, key_idx=0, val_idx=3)
+
+            keymap = {'total': ['grand total']}
+            new_result = {
+
+                'date'     : self.date,
+                'district' : 'Grand Total',
+                'LSG'      : locale.atoi(common_utils.extract_info_from_table_by_keywords(df_dict_lsg, keymap).get('total', None)),
+                'Wards'    : locale.atoi(common_utils.extract_info_from_table_by_keywords(df_dict_ward, keymap).get('total', None)),
+            }
+
+            result.append(new_result)
+            return result
+
 
     def extract(self):
 
-        # all_tables_camelot = common_utils.get_tables_from_pdf(library='camelot', pdf_fpath=self.report_fpath)
-        # caseinfo = self.extract_caseinfo()
-
-        result = {}
+        all_tables_camelot = common_utils.get_tables_from_pdf(library='camelot', pdf_fpath=self.report_fpath)
+        result = {
+            'cumulative-summary-t-minus-one': self.extract_cumulative_summary_t_minus_one(all_tables_camelot),
+            'daily-summary': self.extract_daily_summary(all_tables_camelot),
+            'cumulative-summary': self.extract_cumulative_summary(all_tables_camelot),
+            'district-case-info': self.extract_district_case_info(all_tables_camelot),
+            'district-death-info': self.extract_district_death_info(all_tables_camelot),
+            'contact-travel-cumulative': self.extract_contact_travel_cumulative(all_tables_camelot),
+            'contact-travel-new': self.extract_contact_travel_new(all_tables_camelot),
+            'individual-death-info': self.extract_individual_death_info(all_tables_camelot),
+            'critical-patients': self.extract_critical_patients(all_tables_camelot),
+            'testing-cumulative': self.extract_cumulative_tests(all_tables_camelot),
+            'testing-new': self.extract_new_tests(all_tables_camelot),
+            'surveillance-info': self.extract_surveillance_info(all_tables_camelot),
+            'travel-surveillance': self.extract_travel_surveillance(all_tables_camelot),
+            'psychosocial-support': self.extract_psychosocial_support(all_tables_camelot),
+            'district-abstract': self.extract_district_abstract(all_tables_camelot),
+        }
 
         return result
 
@@ -171,3 +228,4 @@ if __name__ == '__main__':
 
     from pprint import pprint
     pprint(obj.extract())
+

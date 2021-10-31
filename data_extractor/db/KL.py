@@ -1,7 +1,23 @@
 import sqlite3
 
 from .db import Database
-from .KL_tables import KL_surveillance_info
+from .KL_tables import (
+        KL_cumulative_summary_t_minus_one,
+        KL_daily_summary,
+        KL_cumulative_summary,
+        KL_district_case_info,
+        KL_district_death_info,
+        KL_contact_travel_cumulative,
+        KL_contact_travel_new,
+        KL_individual_death_info,
+        KL_critical_patients,
+        KL_cumulative_tests,
+        KL_new_tests,
+        KL_surveillance_info,
+        KL_travel_surveillance,
+        KL_psychosocial_support,
+        KL_surveillance_info,
+    )
 
 class KeralaDB(Database):
 
