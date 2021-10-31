@@ -39,11 +39,58 @@ class KeralaExtractor(object):
             "Kasaragod"
         ]
 
-    def __extract_district_tables(self, datatable, keymap = None, keywords = None):
-        pass
+    def __extract_district_tables(self, datatable, keyidxmap=None, major_key=0, find_total=False):
+
+        if datatable is not None:
+            result = []
+
+            for district in self.list_of_districts:
+                keymap = {district: [district.lower()]}
+
+                new_result = {
+                    'date'     : self.date,
+                    'district' : district,
+                }
+
+                for key in keyidxmap:
+
+                    minor_key = keyidxmap[key]
+                    df_dict = common_utils.convert_df_to_dict(datatable, key_idx=major_key, val_idx=minor_key)
+
+                    new_result[key] = common_utils.extract_info_from_table_by_keywords(df_dict, keymap).get(district, None)
+
+                    try: new_result[key] = locale.atoi(new_result[key])
+                    except: pass
+
+                result.append(new_result)
+
+            if find_total:
+
+                total_key='total'
+                keymap = {total_key: [total_key]}
+
+                datatable = datatable.iloc[-1:]
+                new_result = {
+                    'date'     : self.date,
+                    'district' : total_key,
+                }
+
+                for key in keyidxmap:
+
+                    minor_key = keyidxmap[key]
+                    df_dict = common_utils.convert_df_to_dict(datatable, key_idx=major_key, val_idx=minor_key)
+
+                    new_result[key] = common_utils.extract_info_from_table_by_keywords(df_dict, keymap).get(total_key, None)
+
+                    try: new_result[key] = locale.atoi(new_result[key])
+                    except: pass
+
+                result.append(new_result)
+
+            return result
 
 
-    def __extract_generic_datatable(self, datatable, keymap, transpose = False):
+    def __extract_generic_datatable(self, datatable, keymap, transpose=False):
 
         if datatable is not None:
 
@@ -60,7 +107,7 @@ class KeralaExtractor(object):
             return result
 
 
-    def __extract_generic_datatables(self, datatables, key, keymap, transpose = False):
+    def __extract_generic_datatables(self, datatables, key, keymap, transpose=False):
 
         if datatables: 
             return self.__extract_generic_datatable(datatables[key], keymap, transpose)
@@ -125,13 +172,33 @@ class KeralaExtractor(object):
 
 
     def extract_district_case_info(self, tables):
-        result = {}
-        return result
+
+        keywords = {'positive cases declared today', 'declared negative today'}
+        datatable = common_utils.find_table_by_keywords(tables, keywords)
+
+        keyidxmap = {
+            'declared_positive': 1,
+            'declared_negative': 2,
+            'positive_cases_admitted': 3,
+            'other_districts': 4
+        }
+
+        return self.__extract_district_tables(datatable, keyidxmap, major_key=0, find_total=True)
 
 
     def extract_district_death_info(self, tables):
-        result = {}
-        return result
+
+        keywords = {'no of deaths reported daily', 'district'}
+        datatable = common_utils.find_table_by_keywords(tables, keywords)
+
+        keyidxmap = {
+            'deaths_reported': 1,
+            'death_through_appeal': 2,
+            'pending_deaths': 3,
+            'death_cases_approved': 4
+        }
+
+        return self.__extract_district_tables(datatable, keyidxmap, major_key=0, find_total=True)
 
 
     def extract_contact_travel_cumulative(self, tables):
@@ -220,8 +287,18 @@ class KeralaExtractor(object):
 
 
     def extract_surveillance_info(self, tables):
-        result = {}
-        return result
+
+        keywords = {'quarantine', 'observation', 'isolation', 'district'}
+        datatable = common_utils.find_table_by_keywords(tables, keywords)
+
+        keyidxmap = {
+            'cumulative_under_observation': 1,
+            'cumulative_under_home_isolation': 2,
+            'cumulative_hospitalized': 3,
+            'new_hospitalized': 4
+        }
+
+        return self.__extract_district_tables(datatable, keyidxmap, major_key=0, find_total=True)
 
 
     def extract_travel_surveillance(self, tables):
@@ -263,46 +340,15 @@ class KeralaExtractor(object):
         keywords = {'wipr (> 10)'}
         datatable = common_utils.find_table_by_keywords(tables, keywords)
 
-        if datatable is None:
-            return None
-
-        else:
-
-            result = []
+        if datatable is not None:
             datatable = datatable.iloc[2:]
 
-            df_dict_lsg = common_utils.convert_df_to_dict(datatable, key_idx=1, val_idx=2)
-            df_dict_ward = common_utils.convert_df_to_dict(datatable, key_idx=1, val_idx=3)
-
-            for district in self.list_of_districts:
-                keymap = {district: [district.lower()]}
-
-                new_result = {
-                    'date'     : self.date,
-                    'district' : district,
-                    'LSG'      : locale.atoi(common_utils.extract_info_from_table_by_keywords(df_dict_lsg, keymap).get(district, None)),
-                    'Wards'    : locale.atoi(common_utils.extract_info_from_table_by_keywords(df_dict_ward, keymap).get(district, None)),
-                }
-
-                result.append(new_result)
-
-            # adding total column
-            datatable = datatable.iloc[-1:]
-
-            df_dict_lsg = common_utils.convert_df_to_dict(datatable, key_idx=0, val_idx=2)
-            df_dict_ward = common_utils.convert_df_to_dict(datatable, key_idx=0, val_idx=3)
-
-            keymap = {'total': ['grand total']}
-            new_result = {
-
-                'date'     : self.date,
-                'district' : 'Grand Total',
-                'LSG'      : locale.atoi(common_utils.extract_info_from_table_by_keywords(df_dict_lsg, keymap).get('total', None)),
-                'Wards'    : locale.atoi(common_utils.extract_info_from_table_by_keywords(df_dict_ward, keymap).get('total', None)),
+            keyidxmap = {
+                'LSG': 2,
+                'Wards': 3
             }
 
-            result.append(new_result)
-            return result
+            return self.__extract_district_tables(datatable, keyidxmap, major_key=1, find_total=True)
 
 
     def extract(self):
