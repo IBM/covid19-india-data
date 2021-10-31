@@ -4,6 +4,7 @@ from bulletin_download.states.DL import Delhi
 from bulletin_download.states.WB import WestBengal
 from bulletin_download.states.TG import Telangana
 from bulletin_download.states.HR import Haryana
+from bulletin_download.states.MH import Maharashtra
 
 
 def run(basedir, state_to_execute=None):
@@ -12,7 +13,8 @@ def run(basedir, state_to_execute=None):
         'HR': Haryana,
         'TG': Telangana,
         'WB': WestBengal,
-        'DL': Delhi
+        'DL': Delhi,
+        'MH': Maharashtra
     }
     
     bulletin_links = {}
