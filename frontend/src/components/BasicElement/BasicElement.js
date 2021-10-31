@@ -385,7 +385,7 @@ class BasicElement extends React.Component {
           <Tabs scrollIntoView={false} type="container">
             <Tab label="Visualize">
               <div className="bx--row" style={{ marginTop: '20px' }}>
-                <div className="bx--col-lg-4 state-header">
+                <div className="bx--col-lg-5 state-header">
                   {Object.keys(this.state.dashboard_data).length > 0 && (
                     <DataTable
                       rows={this.state.dashboard_data.rowData}
@@ -417,7 +417,7 @@ class BasicElement extends React.Component {
                     </DataTable>
                   )}
                 </div>
-                <div className="bx--col-lg-8">
+                <div className="bx--col-lg-7">
                   <h4>Visualize {this.state.name} data as time series</h4>
                   <hr />
                   <p>

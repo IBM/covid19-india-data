@@ -34,7 +34,7 @@ class HighlightsElement extends React.Component {
       var promise = fetchData({
         URL: 'query',
         query: q.query,
-        sampling_rate: 5,
+        sampling_rate: 3,
       }).then(data => {
         query_data[index] = data['data'];
       });
@@ -62,7 +62,7 @@ class HighlightsElement extends React.Component {
               <h3>
                 Highlights{' '}
                 <span style={{ fontSize: 'large', fontWeight: '100' }}>
-                  sampled every 5 days
+                  sampled every 3 days
                 </span>
               </h3>
               <br />
