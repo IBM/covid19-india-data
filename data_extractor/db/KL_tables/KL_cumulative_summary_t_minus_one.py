@@ -15,7 +15,6 @@ class TMinusOneCumulativeSummary(DB):
         cols = {
             'date': 'DATE NOT NULL',
             'positive_cases': 'INT',
-            'active_cases': 'INT',
             'recovered': 'INT',
             'new_persons_in_surveillance': 'INT',
             'new_persons_in_home_ins_isolation': 'INT',

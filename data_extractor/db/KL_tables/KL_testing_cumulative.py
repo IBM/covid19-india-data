@@ -21,6 +21,6 @@ class TestingCumulative(DB):
             'True_NAT': 'INT',
             'POCT_PCR': 'INT',
             'RT_LAMP': 'INT',
-            'Antigen Assay': 'INT'
+            'Antigen_Assay': 'INT'
         }
         return cols

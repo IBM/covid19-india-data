@@ -15,7 +15,8 @@ class TravelSurveillance(DB):
         cols = {
             'date': 'DATE NOT NULL',
             'international_cumulative': 'INT',
-            'domestic_cumulative': 'INT'
+            'domestic_cumulative': 'INT',
+            'total': 'INT'
         }
         return cols
 
