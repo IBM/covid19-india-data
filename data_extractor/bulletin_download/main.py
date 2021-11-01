@@ -4,7 +4,7 @@ from bulletin_download.states.DL import Delhi
 from bulletin_download.states.WB import WestBengal
 from bulletin_download.states.TG import Telangana
 from bulletin_download.states.HR import Haryana
-
+from bulletin_download.states.KA import Karnataka
 
 def run(basedir):
 
