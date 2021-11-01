@@ -7,9 +7,14 @@ from tqdm import tqdm
 from bulletin_download import main as bulletin_downloader
 from db.main import DBMain
 from local_extractor import main as extractor_main
+from local_extractor.utils import custom_exceptions
 
 
 STATES = ['MH', 'HR', 'TG', 'WB', 'DL']
+
+DOWNLOADED_BULLETINS_STR = 'downloaded-bulletins'
+BULLETIN_PATH_STR = 'bulletin-paths'
+PROCESSED_DATES_STR = 'processed-dates'
 
 
 def get_parser():
@@ -23,9 +28,6 @@ def get_parser():
 
 
 def run(args):
-
-    BULLETIN_PATH_STR = 'bulletin-paths'
-    PROCESSED_DATES_STR = 'processed-dates'
 
     # Get list of states to execute extraction procedure for
     states_to_execute = None
@@ -72,6 +74,12 @@ def run(args):
             try:
                 stateinfo = extractor_main.extract_info(state, date, fpath)
                 db_obj.insert_for_state(state, stateinfo)
+            except custom_exceptions.UnprocessedBulletinException as err:
+                # Bulletin failed validation checks. Remove from metadata
+                print(f'{state} Bulletin for date {date} failed validation checks')
+
+                if date in data[DOWNLOADED_BULLETINS_STR]:
+                    data[DOWNLOADED_BULLETINS_STR].remove(date)
             except Exception as err:
                 print(f'Error in parsing date: {date}. Error: {err}')
             else:
