@@ -39,6 +39,7 @@ class KeralaExtractor(object):
             "Kasaragod"
         ]
 
+
     def __extract_district_tables(self, datatable, keyidxmap=None, major_key=0, find_total=False):
 
         if datatable is not None:
@@ -231,8 +232,24 @@ class KeralaExtractor(object):
 
 
     def extract_individual_death_info(self, tables):
-        result = {}
-        return result
+
+        keywords = {'gender', 'death date'}
+        datatable = common_utils.find_table_by_keywords(tables, keywords)
+
+        if datatable is not None:
+            result = []
+
+            for index, row in datatable.iterrows():
+                result.append({
+                        'name': row[2],
+                        'district': row[1],
+                        'place': row[3],
+                        'age': row[4],
+                        'gender': row[5],
+                        'death_date': row[6]
+                    })
+
+            return result
 
 
     def extract_critical_patients(self, tables):
@@ -379,7 +396,6 @@ if __name__ == '__main__':
 
     date = '2021-10-29'
     path = "/Users/tchakra2/Desktop/Bulletin-HFWD-English-October-29.pdf"
-    path = "/Users/tchakra2/Desktop/Bulletin-HFWD-English-October-30.pdf"
 
     obj = KeralaExtractor(date, path)
 
