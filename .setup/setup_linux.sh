@@ -32,6 +32,11 @@ pip install mmcv-full==1.0.5 -f https://download.openmmlab.com/mmcv/dist/cpu/tor
 pip install mmdet==2.3.0
 pip install Wand pycocotools PyPDF2
 
+# Install pdfplumber
+# Cannot install through requirements file because of a version conflict with pdfminer
+# Need to use the upgrade option to ensure PDFs are read correctly
+pip install pdfplumber --upgrade
+
 # Download tabnet configuration and model
 export TABNET_CONFIGPATH="${TABNET_DIR}/config.py"
 export TABNET_MODELPATH="${TABNET_DIR}/general_model.pth"

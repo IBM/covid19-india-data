@@ -2,6 +2,17 @@ import locale
 locale.setlocale( locale.LC_ALL, 'en_US.UTF-8' )
 
 import re
+import pandas as pd
+
+try:
+    from local_extractor.states.state_utils import HR_utils
+except ImportError:
+    import sys, os, pathlib
+    path = pathlib.Path(__file__).absolute().parents[2]
+    path = os.path.join(path, 'local_extractor', 'states')
+    if path not in sys.path:
+        sys.path.insert(0, path)
+    from state_utils import HR_utils
 
 try:
     from local_extractor.utils import common_utils
@@ -138,7 +149,7 @@ class HaryanaExtractor(object):
                 continue
 
             try:
-                result[key] = common_utils.clean_numbers_str(val)
+                val = common_utils.clean_numbers_str(val)
             except:
                 pass
 
@@ -150,15 +161,102 @@ class HaryanaExtractor(object):
 
         return result
 
-    
+
+    def extract_district_info(self):
+
+        tables_page2 = common_utils.get_tables_from_pdf(
+            library='camelot', pdf_fpath=self.report_fpath, pages=[2], split_text=False
+        )
+
+        if len(tables_page2) == 0:
+            return None
+
+        table = tables_page2[0].df
+        datadict = HR_utils.convert_district_table_to_dict(table)
+        datalist = HR_utils.process_district_data(datadict)
+
+        for datadict in datalist:
+            datadict = self._process_column_(
+                datadict, 'recovered_total', ['recovered_total', 'recovered_new'], False
+            )
+            datadict = self._process_column_(
+                datadict, 'deaths_total', ['deaths_total', 'deaths_new'], False
+            )
+
+            datadict['date'] = self.date
+
+            # Convert values to int
+            for key, val in datadict.items():
+
+                if key in ['date', 'district_name']:
+                    continue
+                    
+                try:
+                    val = common_utils.clean_numbers_str(val)
+                except:
+                    pass
+
+                try:
+                    datadict[key] = locale.atoi(val)
+                except Exception:
+                    datadict[key] = locale.atof(val)
+         
+        return datalist
+
+
+    def extract_critical_case_info(self):
+
+        npages = common_utils.n_pages_in_pdf(self.report_fpath)
+        keywords = {'oxygen', 'support', 'patient'}
+        
+        for pageno in range(3, npages + 1):
+            pagetables = common_utils.get_tables_from_pdf(
+                library='camelot', pdf_fpath=self.report_fpath, pages=[pageno], split_text=False
+            )
+
+            datatable = common_utils.find_table_by_keywords(pagetables, keywords)
+            if datatable is None:
+                continue
+            else:
+                # table found. Try to find the remaining part of the table
+                next_pageno = pageno + 1
+                if next_pageno > npages:
+                    break
+
+                nextpage_tables = common_utils.get_tables_from_pdf(
+                    library='camelot', pdf_fpath=self.report_fpath, pages=[next_pageno], split_text=False
+                )
+
+                if len(nextpage_tables) == 0:
+                    break
+
+                nextpage_table = nextpage_tables[0].df
+
+                if nextpage_table.shape[1] == datatable.shape[1]:
+                    datatable = pd.concat([datatable, nextpage_table])
+                    break
+
+        if datatable is None:
+            return None
+
+        datalist = HR_utils.process_critical_covid_info(datatable)
+
+        for row in datalist:
+            row['date'] = self.date
+            row['facility_name'] = common_utils.clean_numbers_str(row['facility_name']).lower()
+
+        return datalist
 
     def extract(self):
 
-        # all_tables_camelot = common_utils.get_tables_from_pdf(library='camelot', pdf_fpath=self.report_fpath)
         caseinfo = self.extract_caseinfo()
+        districtinfo = self.extract_district_info()
+        criticalcaseinfo = self.extract_critical_case_info()
 
         result = {
-            'case-information': caseinfo
+            'case-information': caseinfo,
+            'district-information': districtinfo,
+            'critical-case-information': criticalcaseinfo
         }
 
         return result
@@ -167,8 +265,9 @@ class HaryanaExtractor(object):
 if __name__ == '__main__':
 
     date = '2021-01-01'
-    # path = "/Users/mayank/Documents/projects/opensource/covid19-india-data/localstore/bulletins/HR/HR-Bulletin-2021-01-01.pdf"
-    path = "/Users/mayank/Documents/projects/opensource/covid19-india-data/localstore/bulletins/HR/HR-Bulletin-2021-05-20.pdf"
+    # path = "/Users/mayank/Documents/projects/opensource/covid19-india-data/localstore/bulletins/HR/HR-Bulletin-2021-10-01.pdf"
+    # path = "/Users/mayank/Documents/projects/opensource/covid19-india-data/localstore/bulletins/HR/HR-Bulletin-2021-04-20.pdf"
+    path = "/Users/mayank/Documents/projects/opensource/covid19-india-data/localstore/bulletins/HR/HR-Bulletin-2020-07-20.pdf"
 
     obj = HaryanaExtractor(date, path)
 
