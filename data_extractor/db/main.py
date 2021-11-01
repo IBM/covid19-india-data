@@ -5,6 +5,7 @@ from datetime import datetime
 from .DL import DelhiDB
 from .WB import WestBengalDB
 from .TG import TelanganaDB
+from .UK import UttarakhandDB
 
 from .Metadata import MetadataDB
 
@@ -21,7 +22,8 @@ class DBMain(object):
         self.states = {
             'DL': DelhiDB(datadir=self.datadir),
             'WB': WestBengalDB(datadir=self.datadir),
-            'TG': TelanganaDB(datadir=self.datadir)
+            'TG': TelanganaDB(datadir=self.datadir),
+            'UK': UttarakhandDB(datadir=self.datadir)
         }
 
         self.metatable = MetadataDB(datadir=self.datadir)

@@ -27,7 +27,7 @@ def are_keywords_in_table(df, keywords):
 
     found = []
     table = [df.columns.values.tolist()] + df.values.tolist()
-    table = [x.lower().strip() for x in np.array(table).flatten()]
+    table = [x.lower().strip().replace("\n", "") for x in np.array(table).flatten()]
 
     for word in keywords:
         for text in table:
@@ -101,9 +101,9 @@ def n_pages_in_pdf(pdf_fpath):
     return len(pages)
 
 
-def get_tables_from_pdf_camelot(pdf_fpath, pages=None):
+def get_tables_from_pdf_camelot(pdf_fpath, pages=None, strip_text='\n', split_text=True):
     pagerange = "1-end" if pages is None else ','.join(map(str, pages))
-    tables = camelot.read_pdf(pdf_fpath, pages=pagerange, strip_text='\n', split_text=True)
+    tables = camelot.read_pdf(pdf_fpath, pages=pagerange, strip_text=strip_text, split_text=split_text)
     return tables
 
 
@@ -160,7 +160,7 @@ def get_tables_from_pdf_with_smart_boundary_detection(library, pdf_fpath, pages)
         raise NotImplementedError('Smart boundary understanding with library other than Camelot not yet implemented')
 
 
-def get_tables_from_pdf(library, pdf_fpath, pages=None, smart_boundary_detection=False):
+def get_tables_from_pdf(library, pdf_fpath, pages=None, smart_boundary_detection=False, camelot_strip_text='\n', camelot_split_text=True):
 
     if smart_boundary_detection:
         return get_tables_from_pdf_with_smart_boundary_detection(
@@ -168,6 +168,6 @@ def get_tables_from_pdf(library, pdf_fpath, pages=None, smart_boundary_detection
         )
     else:
         if library.lower().strip() == 'camelot':
-            return get_tables_from_pdf_camelot(pdf_fpath, pages)
+            return get_tables_from_pdf_camelot(pdf_fpath, pages, camelot_strip_text, camelot_split_text)
         elif library.lower().strip() == 'tabula':
             return get_tables_from_pdf_tabula(pdf_fpath, pages)
