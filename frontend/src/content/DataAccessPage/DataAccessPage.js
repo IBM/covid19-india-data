@@ -483,7 +483,6 @@ class DataAccessPage extends React.Component {
                   GitHub
                 </Link>
               }
-              iconDescription="describes the close button"
               subtitle={
                 <span>
                   If you would like to expand the API, please reach out.
