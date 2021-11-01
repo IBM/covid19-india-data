@@ -25,7 +25,7 @@
     "MH": {
       "name": "Maharashtra",
       "short_name": "MH",
-      "is_complete": false,
+      "is_complete": true,
       "link_to_db_schema": "https://raw.githubusercontent.com/IBM/covid19-india-data/main/docs/images/MH_tables.png"
     },
     "TG": {
