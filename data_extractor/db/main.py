@@ -6,9 +6,11 @@ from .DL import DelhiDB
 from .WB import WestBengalDB
 from .TG import TelanganaDB
 from .HR import HaryanaDB
+from .MH import MaharashtraDB
 from .KA import KarnatakaDB
 
 from .Metadata import MetadataDB
+
 
 class DBMain(object):
 
@@ -19,12 +21,13 @@ class DBMain(object):
         self.record_table_metadata()
 
     def setup_tables(self):
-        
+
         self.states = {
             'DL': DelhiDB(datadir=self.datadir),
             'WB': WestBengalDB(datadir=self.datadir),
             'TG': TelanganaDB(datadir=self.datadir),
             'HR': HaryanaDB(datadir=self.datadir),
+            'MH': MaharashtraDB(datadir=self.datadir),
             'KA': KarnatakaDB(datadir=self.datadir)
         }
 

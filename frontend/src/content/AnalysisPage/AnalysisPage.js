@@ -40,6 +40,8 @@ class AnalysisPage extends React.Component {
             />
           </div>
         </div>
+        <br />
+        <br />
 
         <HighlightsElement props={QUERIES} />
       </>
