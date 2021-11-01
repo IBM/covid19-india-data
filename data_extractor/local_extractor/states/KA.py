@@ -88,7 +88,8 @@ class KarnatakaExtractor(object):
                     len(squished_text) < 2 or
                     squished_text.startswith('Districtwise Abstract') or
                     squished_text.startswith('Total') or
-                    squished_text.startswith('Sl.')):
+                    squished_text.startswith('Sl.') or
+                    squished_text.startswith('*')):
                 continue
 
             tmp = {
