@@ -130,7 +130,7 @@ class KarnatakaExtractor(object):
             tables_page4)
 
         result = {
-            'case_info': case_info,
+            'case-info': case_info,
             'district-cases': districtwise_info
         }
 
