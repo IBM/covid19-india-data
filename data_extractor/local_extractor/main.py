@@ -10,7 +10,7 @@ STATE_LIST = {
     'WB': WestBengalExtractor,
     'TG': TelanganaExtractor,
     'HR': HaryanaExtractor,
-    'KA': HaryanaExtractor
+    'KA': KarnatakaExtractor
 }
 
 
