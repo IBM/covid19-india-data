@@ -56,10 +56,8 @@ class Karnataka(Bulletin):
         return link_dict
 
     def run(self):
-
         print(f'\t Downloading Karnataka bulletins')
         bulletin_links = self.get_bulletin_links()
-        print('found these links: %d' % len(bulletin_links))
         self.download_bulletins(bulletin_links)
         self._save_state_()
 
