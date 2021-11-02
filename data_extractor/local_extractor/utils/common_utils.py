@@ -113,7 +113,7 @@ def get_tables_from_pdf_tabula(pdf_fpath, pages=None):
     return tables
 
 
-def get_tables_from_pdf_with_smart_boundary_detection(library, pdf_fpath, pages):
+def get_tables_from_pdf_with_smart_boundary_detection(library, pdf_fpath, pages, kwargs):
 
     if library.lower().strip() == 'camelot':
         # Use CascadeTabNet model to identify table boundaries in the PDF
@@ -127,10 +127,12 @@ def get_tables_from_pdf_with_smart_boundary_detection(library, pdf_fpath, pages)
         del boundary_detection
         gc.collect()
 
+        camelot_splittext = kwargs.get('split_text', True)
+
         for pageno, table_bounds in tablesdict.items():
             bound_str = [','.join(map(str, bound)) for bound in table_bounds]
             pagetables = camelot.read_pdf(
-                pdf_fpath, pages=f'{pageno+1}', strip_text='\n', split_text=True, table_regions=bound_str
+                pdf_fpath, pages=f'{pageno+1}', strip_text='\n', split_text=camelot_splittext, table_regions=bound_str
             )
             result.extend(pagetables._tables)
 
@@ -164,7 +166,7 @@ def get_tables_from_pdf(library, pdf_fpath, pages=None, smart_boundary_detection
 
     if smart_boundary_detection:
         return get_tables_from_pdf_with_smart_boundary_detection(
-            library, pdf_fpath, pages
+            library, pdf_fpath, pages, kwargs
         )
     else:
         if library.lower().strip() == 'camelot':

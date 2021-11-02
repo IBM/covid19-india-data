@@ -22,6 +22,12 @@
       "is_complete": true,
       "link_to_db_schema": "https://raw.githubusercontent.com/IBM/covid19-india-data/main/docs/images/HR_tables.png"
     },
+    "KA": {
+      "name": "Karnataka",
+      "short_name": "KA",
+      "is_complete": false,
+      "link_to_db_schema": "https://raw.githubusercontent.com/IBM/covid19-india-data/main/docs/images/KA_tables.png"
+    },
     "MH": {
       "name": "Maharashtra",
       "short_name": "MH",
