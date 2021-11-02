@@ -5,6 +5,7 @@ from bulletin_download.states.WB import WestBengal
 from bulletin_download.states.TG import Telangana
 from bulletin_download.states.HR import Haryana
 from bulletin_download.states.MH import Maharashtra
+from bulletin_download.states.KA import Karnataka
 
 
 def run(basedir, state_to_execute=None):
@@ -14,9 +15,10 @@ def run(basedir, state_to_execute=None):
         'TG': Telangana,
         'WB': WestBengal,
         'DL': Delhi,
-        'MH': Maharashtra
+        'MH': Maharashtra,
+        'KA': Karnataka
     }
-    
+
     bulletin_links = {}
 
     for state_name, state_obj in state_downloaders.items():
