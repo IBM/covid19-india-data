@@ -15,10 +15,10 @@ class CaseInfoTable(DB):
             'discharged_new': 'INT',
             'discharged_total': 'INT',
             'cases_new': 'INT',
-            'cases_active_new': 'INT',
+            'cases_active': 'INT',
             'deaths_new': 'INT',
             'deaths_total': 'INT',
-            'cases_active_total': 'INT',
+            'cases_total': 'INT',
             'positivity_rate_percent': 'FLOAT',
             'fatality_rate_percent': 'FLOAT',
             'active_cases_icu': 'INT'
