@@ -11,7 +11,7 @@ class Maharashtra(Bulletin):
         super().__init__(basedir, statename)
 
         self.bulletin_url = 'https://arogya.maharashtra.gov.in/pdf/ncovidepressnote{}{:02d}.pdf'
-        self.startdate = datetime.date(2021, 1, 1)      # Jan 1, 2021
+        self.startdate = datetime.date(2020, 11, 1)      # November 1, 2021
 
     def get_bulletin_links(self):
 
