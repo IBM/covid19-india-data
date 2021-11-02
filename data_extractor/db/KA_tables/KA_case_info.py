@@ -20,6 +20,7 @@ class CaseInfoTable(DB):
             'deaths_total': 'INT',
             'cases_active_total': 'INT',
             'positivity_rate_percent': 'FLOAT',
-            'fatality_rate_percent': 'FLOAT'
+            'fatality_rate_percent': 'FLOAT',
+            'active_cases_icu': 'INT'
         }
         return cols

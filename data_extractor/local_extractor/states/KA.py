@@ -31,7 +31,8 @@ class KarnatakaExtractor(object):
             'Total Covid Deaths': 'deaths_total',
             'Total Positive Cases': 'cases_active_total',
             'Positivity rate for the day': 'positivity_rate_percent',
-            'Case fatality rate': 'fatality_rate_percent'
+            'Case fatality rate': 'fatality_rate_percent',
+            'Admitted in ICU': 'active_cases_icu'
         }
         detected_term = None
         detected_value = None
@@ -122,10 +123,12 @@ class KarnatakaExtractor(object):
         case_info = self.extract_case_info(tables_page0[0])
 
         # Then, we get the district-wise numbers. This needs smart boundary detection.
+        # Since older bulletins have this table on page 3 while newer bulletins have
+        # this on page 4, we extract tables from both pages
         tables_page4 = common_utils.get_tables_from_pdf(library='camelot',
                                                         pdf_fpath=self.report_fpath,
                                                         smart_boundary_detection=True,
-                                                        pages=[4])
+                                                        pages=[3, 4])
         districtwise_info = self.extract_district_case_information(
             tables_page4)
 

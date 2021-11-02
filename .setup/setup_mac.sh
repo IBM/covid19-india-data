@@ -1,11 +1,10 @@
 #!/bin/bash
 
-CURR_FILEPATH=`realpath $0`
-CURR_DIR=`dirname ${CURR_FILEPATH}`;
-HOME_DIR=`realpath ${CURR_DIR}/..`;
+
+CURR_DIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+HOME_DIR="$( cd "${CURR_DIR}/.." > /dev/null 2>&1 ; pwd -P )"
 DATAEXTRACTOR_DIR="${HOME_DIR}/data_extractor"
 TABNET_DIR="${HOME_DIR}/tabnet_model"
-
 
 echo `which pip3`
 echo `which python3`
@@ -58,4 +57,4 @@ echo "  later by the data extractor"
 echo "============================================================================"
 echo ""
 echo "export TABNET_CONFIGPATH=\"${TABNET_CONFIGPATH}\""
-echo "export TABNET_MODELMATH=\"${TABNET_MODELPATH}\""
+echo "export TABNET_MODELPATH=\"${TABNET_MODELPATH}\""

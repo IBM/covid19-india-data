@@ -20,23 +20,4 @@ class KarnatakaDB(Database):
             'case-info': KA_case_info.CaseInfoTable(),
             'district-cases': KA_district_cases.DistrictCasesTable(),
         }
-
-    def insert_row(self, data):
-        
-        cursor = self.conn.cursor()
-
-        # Insert data in all the relevant tables
-        for id, tableobj in self.tables.items():
-            if id not in data:
-                continue
-
-            vals = data[id]
-
-            if isinstance(vals, dict):
-                tableobj.insert_row(cursor=cursor, **vals)
-            elif isinstance(vals, list):
-                for valitem in vals:
-                    tableobj.insert_row(cursor=cursor, **valitem)
-
-        self.conn.commit()
         
