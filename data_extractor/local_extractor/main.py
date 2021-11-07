@@ -4,6 +4,7 @@ from local_extractor.states.TG import TelanganaExtractor
 from local_extractor.states.HR import HaryanaExtractor
 from local_extractor.states.KA import KarnatakaExtractor
 from local_extractor.states.MH import MaharashtraExtractor
+from local_extractor.states.GA import GoaExtractor
 
 
 STATE_LIST = {
@@ -12,7 +13,8 @@ STATE_LIST = {
     'TG': TelanganaExtractor,
     'HR': HaryanaExtractor,
     'MH': MaharashtraExtractor,
-    'KA': KarnatakaExtractor
+    'KA': KarnatakaExtractor,
+    'GA': GoaExtractor
 }
 
 
