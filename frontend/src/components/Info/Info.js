@@ -58,9 +58,11 @@ function prepareData(data, legends, keys) {
 }
 
 function prepareOptions(title, key, axis) {
+  if (key) title = title + ' | ' + key;
+
   var new_options = {
     ...axis_plot_options,
-    title: title + ' | ' + key,
+    title: title,
     axes: {
       ...axis_plot_options.axes,
       left: {

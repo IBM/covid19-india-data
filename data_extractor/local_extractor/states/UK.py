@@ -360,7 +360,7 @@ class UttarakhandExtractor(object):
 
         n = common_utils.n_pages_in_pdf(self.report_fpath)
 
-        all_tables = common_utils.get_tables_from_pdf(library='camelot', pdf_fpath=self.report_fpath, camelot_strip_text="", camelot_split_text=False)
+        all_tables = common_utils.get_tables_from_pdf(library='camelot', pdf_fpath=self.report_fpath, strip_text="", split_text=False)
 
         district_testing = self.extract_district_testing_info(all_tables)
         district_cases = self.extract_district_cases_info(all_tables)

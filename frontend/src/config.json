@@ -16,17 +16,35 @@
       "is_complete": true,
       "link_to_db_schema" : "https://raw.githubusercontent.com/IBM/covid19-india-data/main/docs/images/DL_tables.png"
     },
-    "WB": {
-      "name" : "West Bengal",
-      "short_name" : "WB",
+    "HR": {
+      "name": "Haryana",
+      "short_name": "HR",
       "is_complete": true,
-      "link_to_db_schema" : "https://raw.githubusercontent.com/IBM/covid19-india-data/main/docs/images/WB_tables.png"
+      "link_to_db_schema": "https://raw.githubusercontent.com/IBM/covid19-india-data/main/docs/images/HR_tables.png"
+    },
+    "KA": {
+      "name": "Karnataka",
+      "short_name": "KA",
+      "is_complete": false,
+      "link_to_db_schema": "https://raw.githubusercontent.com/IBM/covid19-india-data/main/docs/images/KA_tables.png"
+    },
+    "MH": {
+      "name": "Maharashtra",
+      "short_name": "MH",
+      "is_complete": true,
+      "link_to_db_schema": "https://raw.githubusercontent.com/IBM/covid19-india-data/main/docs/images/MH_tables.png"
     },
     "TG": {
       "name": "Telangana",
       "short_name": "TG",
       "is_complete": true,
       "link_to_db_schema": "https://raw.githubusercontent.com/IBM/covid19-india-data/main/docs/images/TG_tables.png"
+    },
+    "WB": {
+      "name" : "West Bengal",
+      "short_name" : "WB",
+      "is_complete": true,
+      "link_to_db_schema" : "https://raw.githubusercontent.com/IBM/covid19-india-data/main/docs/images/WB_tables.png"
     }
   }
 }
