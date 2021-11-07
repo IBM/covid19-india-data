@@ -1,7 +1,6 @@
-from bulletin import Bulletin
-from bs4 import BeautifulSoup
+from .bulletin import Bulletin
 
-import datetime
+from bs4 import BeautifulSoup
 from dateutil import parser
 
 class Goa(Bulletin):
