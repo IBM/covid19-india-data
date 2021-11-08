@@ -1,22 +1,25 @@
 import sys
 
 from bulletin_download.states.DL import Delhi
-from bulletin_download.states.WB import WestBengal
-from bulletin_download.states.TG import Telangana
 from bulletin_download.states.HR import Haryana
 from bulletin_download.states.MH import Maharashtra
 from bulletin_download.states.KA import Karnataka
 from bulletin_download.states.MP import MadhyaPradesh
+from bulletin_download.states.TG import Telangana
+from bulletin_download.states.UK import Uttarakhand
+from bulletin_download.states.WB import WestBengal
+
 
 def run(basedir, state_to_execute=None):
 
     state_downloaders = {
-        'HR': Haryana,
-        'TG': Telangana,
-        'WB': WestBengal,
         'DL': Delhi,
-        'MH': Maharashtra,
+        'HR': Haryana,
         'KA': Karnataka,
+        'MH': Maharashtra,
+        'TG': Telangana,
+        'UK': Uttarakhand,
+        'WB': WestBengal,
         'MP': MadhyaPradesh,
     }
 

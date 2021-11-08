@@ -85,6 +85,17 @@
                 "LEFT OUTER JOIN Metadata_Bulletin_Links MD ON MD.date == K1.date AND MD.state == \"KA\" ORDER BY K1.date",
                 "DESC LIMIT 1"
             ]
+        },
+        {
+            "state.full.name": "Uttarakhand",
+            "state.short.name": "UK",
+            "query": [
+                "SELECT U1.date, U1.cases_total, U1.cases_new, U1.discharged_total, NULL,  U1.deaths_total, NULL, U1.active_cases,",
+                "NULL,  NULL, NULL, NULL, U1.tests_total, U1.tests_today, NULL, MD.bulletin_link",
+                "FROM UK_case_info U1",
+                "LEFT OUTER JOIN Metadata_Bulletin_Links MD ON MD.date == U1.date AND MD.state == \"UK\"  ORDER BY U1.date ",
+                "DESC LIMIT 1"
+            ]
         }
     ]
 }

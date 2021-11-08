@@ -27,7 +27,7 @@ def are_keywords_in_table(df, keywords):
 
     found = []
     table = [df.columns.values.tolist()] + df.values.tolist()
-    table = [x.lower().strip() for x in np.array(table).flatten()]
+    table = [x.lower().strip().replace("\n", "") for x in np.array(table).flatten()]
 
     for word in keywords:
         for text in table:
@@ -101,9 +101,9 @@ def n_pages_in_pdf(pdf_fpath):
     return len(pages)
 
 
-def get_tables_from_pdf_camelot(pdf_fpath, pages=None, split_text=True):
+def get_tables_from_pdf_camelot(pdf_fpath, pages=None, strip_text='\n', split_text=True):
     pagerange = "1-end" if pages is None else ','.join(map(str, pages))
-    tables = camelot.read_pdf(pdf_fpath, pages=pagerange, strip_text='\n', split_text=split_text)
+    tables = camelot.read_pdf(pdf_fpath, pages=pagerange, strip_text=strip_text, split_text=split_text)
     return tables
 
 
