@@ -61,15 +61,15 @@ class UttarakhandExtractor(object):
         district_case_info_table = district_case_info_table.replace('-', None)
         df_record_list = district_case_info_table.to_dict(orient='records')
         result = []
-        for idx, row in enumerate(df_record_list[1:-1]):
+        for idx, row in enumerate(df_record_list[1:]):
             result.append({
                 'date': self.date,
                 'district': row[0],
-                'cases_total': row[1],
-                'recovered_total': row[2],
-                'active_cases': row[3],
-                'deaths_total': row[4],
-                'migrated_total': row[5]
+                'cases_total': UK_utils.str2int(row[1]),
+                'recovered_total': UK_utils.str2int(row[2]),
+                'active_cases': UK_utils.str2int(row[3]),
+                'deaths_total': UK_utils.str2int(row[4]),
+                'migrated_total': UK_utils.str2int(row[5])
             })
 
         return result
@@ -364,7 +364,7 @@ class UttarakhandExtractor(object):
 
 if __name__ == '__main__':
     date = '01-may-2021'
-    # path = "/Users/mayank/Documents/projects/opensource/covid19-india-data/localstore_UK/bulletins/UK/UK-Bulletin-2021-10-01.pdf"
-    path = "/Users/mayank/Documents/projects/opensource/covid19-india-data/localstore_UK/bulletins/UK/UK-Bulletin-2020-10-01.pdf"
+    path = "/Users/mayank/Documents/projects/opensource/covid19-india-data/localstore_UK/bulletins/UK/UK-Bulletin-2021-10-01.pdf"
+    # path = "/Users/mayank/Documents/projects/opensource/covid19-india-data/localstore_UK/bulletins/UK/UK-Bulletin-2020-10-01.pdf"
     obj = UttarakhandExtractor(date, path)
     obj.extract()
