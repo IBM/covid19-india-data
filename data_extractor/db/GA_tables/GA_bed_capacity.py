@@ -14,7 +14,7 @@ class BedCapacity(DB):
     def getcolumns(self):
         cols = {
             'date': 'DATE NOT NULL',
-            'district': 'STRING',
+            'district': 'STRING NOT NULL',
             'total_capacity': 'INT',
             'vacant_capacity': 'INT'
         }

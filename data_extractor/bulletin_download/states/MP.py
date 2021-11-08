@@ -44,6 +44,9 @@ class MadhyaPradesh(Bulletin):
                         date_time_obj = parser.parse(date_time_str)
                         datestr = self.get_date_str(str(date_time_obj))
 
+                        if datestr in bulletin_links and "hindi" in anchor_href.lower():
+                            continue
+
                         bulletin_links[datestr] = anchor_href
 
                     except: pass

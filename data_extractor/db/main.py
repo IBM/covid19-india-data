@@ -9,9 +9,9 @@ from .HR import HaryanaDB
 from .MH import MaharashtraDB
 from .KA import KarnatakaDB
 from .GA import GoaDB
+from .MP import MadhyaPradeshDB
 
 from .Metadata import MetadataDB
-
 
 class DBMain(object):
 
@@ -30,7 +30,8 @@ class DBMain(object):
             'HR': HaryanaDB(datadir=self.datadir),
             'MH': MaharashtraDB(datadir=self.datadir),
             'KA': KarnatakaDB(datadir=self.datadir),
-            'GA': GoaDB(datadir=self.datadir)
+            'GA': GoaDB(datadir=self.datadir),
+            'MP': MadhyaPradeshDB(datadir=self.datadir),
         }
 
         self.metatable = MetadataDB(datadir=self.datadir)
