@@ -64,7 +64,7 @@ class UttarakhandExtractor(object):
         for idx, row in enumerate(df_record_list[1:]):
             result.append({
                 'date': self.date,
-                'district': row[0],
+                'district_name': row[0],
                 'cases_total': UK_utils.str2int(row[1]),
                 'recovered_total': UK_utils.str2int(row[2]),
                 'active_cases': UK_utils.str2int(row[3]),
@@ -299,6 +299,64 @@ class UttarakhandExtractor(object):
 
         return result
 
+    def extract_case_info(self, district_testing, district_cases, district_vaccination):
+
+        result = {
+            'date': self.date,
+        }
+
+        # extract information from `district_testing` data
+        total_data = None
+        if district_testing is not None:
+            for data in district_testing:
+                if data['district_name'].strip().lower() == 'total':
+                    total_data = data
+                    break
+
+        if total_data is not None:
+            result['cases_new'] = total_data.get('positive_results_today', None)
+            result['tests_today'] = total_data.get('samples_collected_today', None)
+            result['tests_total'] = total_data.get('samples_collected_cumulative', None)
+
+        
+        # extract information from `district_cases` data
+        total_data = None
+        if district_cases is not None:
+            for data in district_cases:
+                if data['district_name'].strip().lower() == 'total':
+                    total_data = data
+                    break
+
+        if total_data is not None:
+            result['cases_total'] = total_data.get('cases_total', None)
+            result['discharged_total'] = total_data.get('recovered_total', None)
+            result['deaths_total'] = total_data.get('deaths_total', None)
+            result['active_cases'] = total_data.get('active_cases', None)
+
+        
+        # extract information from `district_vaccination` data
+        total_data = None
+        if district_vaccination is not None:
+            for data in district_vaccination:
+                if data['district_name'].strip().lower() == 'total':
+                    total_data = data
+                    break
+
+        if total_data is not None:
+            keymap = {
+                'vax_today': ['citizen_24h', 'HCW_24h', 'FLW_24h']
+            }
+
+            for k, vals in keymap.items():
+                result[k] = 0
+                for v in vals:
+                    if v not in total_data or total_data[v] is None:
+                        continue
+                    result[k] += total_data[v]
+
+        return result
+
+
     def extract(self):
 
         n = common_utils.n_pages_in_pdf(self.report_fpath)
@@ -310,12 +368,14 @@ class UttarakhandExtractor(object):
         # hospital_deaths = self.extract_hospital_deaths_info(all_tables)
         district_mucormycosis_cases = self.extract_district_mucormycosis_cases_info(all_tables)
         district_vaccination = self.extract_district_vaccination_cases_info(all_tables)
+        case_info = self.extract_case_info(district_testing, district_cases, district_vaccination)
 
         result = {
             'district-testing': district_testing,
             'district-cases': district_cases,
             'district-mucormycosis-cases': district_mucormycosis_cases,
             'district-vaccination': district_vaccination,
+            'case-information': case_info,
             # 'hospital-deaths': hospital_deaths,
         }
 
@@ -324,7 +384,7 @@ class UttarakhandExtractor(object):
 
 if __name__ == '__main__':
     date = '01-may-2021'
-    path = "/Users/mayank/Documents/projects/opensource/covid19-india-data/localstore_UK/bulletins/UK/UK-Bulletin-2021-02-10.pdf"
+    path = "/Users/mayank/Documents/projects/opensource/covid19-india-data/localstore_UK/bulletins/UK/UK-Bulletin-2021-10-01.pdf"
     # path = "/Users/mayank/Documents/projects/opensource/covid19-india-data/localstore_UK/bulletins/UK/UK-Bulletin-2021-03-09.pdf"
     # path = "/Users/mayank/Documents/projects/opensource/covid19-india-data/localstore_UK/bulletins/UK/UK-Bulletin-2020-10-01.pdf"
     obj = UttarakhandExtractor(date, path)
