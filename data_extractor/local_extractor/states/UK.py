@@ -145,23 +145,23 @@ class UttarakhandExtractor(object):
 
         col_ids_to_parse = {
 
-            'health_care_worker_24h_col_id': None,
-            'health_care_worker_first_dose_total_col_id': None,
-            'health_care_worker_second_dose_total_col_id': None,
+            'HCW_24h_col_id': None,
+            'HCW_dose1_total_col_id': None,
+            'HCW_dose2_total_col_id': None,
 
-            'front_line_worker_24h_col_id': None,
-            'front_line_worker_first_dose_total_col_id': None,
-            'front_line_worker_second_dose_total_col_id': None,
+            'FLW_24h_col_id': None,
+            'FLW_dose1_total_col_id': None,
+            'FLW_dose2_total_col_id': None,
 
             'citizen_24h_col_id': None,
             'citizen_60_plus_24h_col_id': None,
-            'citizen_60_plus_first_dose_total_col_id': None,
+            'citizen_60_plus_dose1_total_col_id': None,
             'citizen_45_to_59_24h_col_id': None,
-            'citizen_45_to_59_first_dose_total_col_id': None,
-            'citizen_45_plus_first_dose_total_col_id': None,
-            'citizen_45_plus_second_dose_total_col_id': None,
-            'citizen_18_to_44_first_dose_total_col_id': None,
-            'citizen_18_to_44_second_dose_total_col_id': None,
+            'citizen_45_to_59_dose1_total_col_id': None,
+            'citizen_45_plus_dose1_total_col_id': None,
+            'citizen_45_plus_dose2_total_col_id': None,
+            'citizen_18_to_44_dose1_total_col_id': None,
+            'citizen_18_to_44_dose2_total_col_id': None,
 
             'sessions_24h_col_id': None,
             'sessions_total_col_id': None,
@@ -171,21 +171,21 @@ class UttarakhandExtractor(object):
         for col_id, col_name in enumerate(df.iloc[0]):
             if 'care' in col_name.lower():
                 if col_name[-1] == '1':
-                    col_ids_to_parse['health_care_worker_24h_col_id'] = col_id
+                    col_ids_to_parse['HCW_24h_col_id'] = col_id
                 elif col_name[-1] == '2':
-                    col_ids_to_parse['health_care_worker_first_dose_total_col_id'] = col_id
+                    col_ids_to_parse['HCW_dose1_total_col_id'] = col_id
                 elif col_name[-1] == '3':
-                    col_ids_to_parse['health_care_worker_second_dose_total_col_id'] = col_id
+                    col_ids_to_parse['HCW_dose2_total_col_id'] = col_id
 
         # if front line found - 2021-02-08 onwards
         for col_id, col_name in enumerate(df.iloc[0]):
             if 'line' in col_name.lower():
                 if col_name[-1] == '1':
-                    col_ids_to_parse['front_line_worker_24h_col_id'] = col_id
+                    col_ids_to_parse['FLW_24h_col_id'] = col_id
                 elif col_name[-1] == '2':
-                    col_ids_to_parse['front_line_worker_first_dose_total_col_id'] = col_id
+                    col_ids_to_parse['FLW_dose1_total_col_id'] = col_id
                 elif col_name[-1] == '3':
-                    col_ids_to_parse['front_line_worker_second_dose_total_col_id'] = col_id
+                    col_ids_to_parse['FLW_dose2_total_col_id'] = col_id
 
         # if citizen found - 2021-04-05 onwards
         for col_id, col_name in enumerate(df.iloc[0]):
@@ -193,13 +193,13 @@ class UttarakhandExtractor(object):
                 if col_name[-1] == '1':
                     col_ids_to_parse['citizen_24h_col_id'] = col_id
                 elif col_name[-1] == '2':
-                    col_ids_to_parse['citizen_45_plus_first_dose_total_col_id'] = col_id
+                    col_ids_to_parse['citizen_45_plus_dose1_total_col_id'] = col_id
                 elif col_name[-1] == '3':
-                    col_ids_to_parse['citizen_45_plus_second_dose_total_col_id'] = col_id
+                    col_ids_to_parse['citizen_45_plus_dose2_total_col_id'] = col_id
                 elif col_name[-1] == '4':
-                    col_ids_to_parse['citizen_18_to_44_first_dose_total_col_id'] = col_id
+                    col_ids_to_parse['citizen_18_to_44_dose1_total_col_id'] = col_id
                 elif col_name[-1] == '5':
-                    col_ids_to_parse['citizen_18_to_44_second_dose_total_col_id'] = col_id
+                    col_ids_to_parse['citizen_18_to_44_dose2_total_col_id'] = col_id
 
         # remember 03-01, 03-02, 03-08, 04-04
         # if 60+ found
@@ -211,16 +211,16 @@ class UttarakhandExtractor(object):
                     if col_name[-1] == '1':
                         col_ids_to_parse['citizen_60_plus_24h_col_id'] = col_id
                     elif col_name[-1] == '2':
-                        col_ids_to_parse['citizen_60_plus_first_dose_total_col_id'] = col_id
+                        col_ids_to_parse['citizen_60_plus_dose1_total_col_id'] = col_id
 
                 if '45-' in col_name.lower():
                     if col_name[-1] == '1':
                         col_ids_to_parse['citizen_45_to_59_24h_col_id'] = col_id
                     elif col_name[-1] == '2':
-                        col_ids_to_parse['citizen_45_to_59_first_dose_total_col_id'] = col_id
+                        col_ids_to_parse['citizen_45_to_59_dose1_total_col_id'] = col_id
 
             # TODO: if above two found, use their col_id to populate
-            #  citizen_45_plus_first_dose_total_col_id and citizen_45_plus_second_dose_total_col_id
+            #  citizen_45_plus_dose1_total_col_id and citizen_45_plus_dose2_total_col_id
 
         # if session held today found
         # if session held cumulative found
@@ -232,13 +232,13 @@ class UttarakhandExtractor(object):
                     col_ids_to_parse['sessions_total_col_id'] = col_id
 
         # if vaccinated today found - till 2021-02-07 - only health workers
-        if not col_ids_to_parse['health_care_worker_24h_col_id']:
+        if not col_ids_to_parse['HCW_24h_col_id']:
             for col_id, col_name in enumerate(df.iloc[0]):
                 if 'vaccinated' in col_name.lower():
                     if 'today' in col_name.lower():
-                        col_ids_to_parse['health_care_worker_24h_col_id'] = col_id
+                        col_ids_to_parse['HCW_24h_col_id'] = col_id
                     elif 'cumulative' in col_name.lower():
-                        col_ids_to_parse['health_care_worker_first_dose_total_col_id'] = col_id
+                        col_ids_to_parse['HCW_dose1_total_col_id'] = col_id
 
         return col_ids_to_parse
 
@@ -258,37 +258,44 @@ class UttarakhandExtractor(object):
 
         col_ids_to_parse = self.process_col_ids_to_parse(district_vaccination_cases_info_table)
 
-        if col_ids_to_parse['health_care_worker_24h_col_id']:
+        if col_ids_to_parse['HCW_24h_col_id']:
             del df_record_list[1]
 
-        for idx, row in enumerate(df_record_list[1:-1]):
+        for idx, row in enumerate(df_record_list[1:]):
 
-            result.append({
+            tmp = {
                 'date': self.date,
-                'district': row[0],
+                'district_name': row[0],
 
-                'sessions_24h': row[col_ids_to_parse['sessions_24h_col_id']] if col_ids_to_parse['sessions_24h_col_id'] else 0,
-                'sessions_total': row[col_ids_to_parse['sessions_24h_col_id']] if col_ids_to_parse['sessions_total_col_id'] else 0,
+                'sessions_24h': row[col_ids_to_parse['sessions_24h_col_id']] if col_ids_to_parse['sessions_24h_col_id'] else None,
+                'sessions_total': row[col_ids_to_parse['sessions_24h_col_id']] if col_ids_to_parse['sessions_total_col_id'] else None,
 
-                'citizen_24h': row[col_ids_to_parse['citizen_24h_col_id']] if col_ids_to_parse['citizen_24h_col_id'] else 0,
-                'citizen_60_plus_24h': row[col_ids_to_parse['citizen_60_plus_24h_col_id']] if col_ids_to_parse['citizen_60_plus_24h_col_id'] else 0,
-                'citizen_60_plus_first_dose_total': row[col_ids_to_parse['citizen_60_plus_first_dose_total_col_id']] if col_ids_to_parse['citizen_60_plus_first_dose_total_col_id'] else 0,
-                'citizen_45_to_59_24h': row[col_ids_to_parse['citizen_45_to_59_24h_col_id']] if col_ids_to_parse['citizen_45_to_59_24h_col_id'] else 0,
-                'citizen_45_to_59_first_dose_total': row[col_ids_to_parse['citizen_45_to_59_first_dose_total_col_id']] if col_ids_to_parse['citizen_45_to_59_first_dose_total_col_id'] else 0,
-                'citizen_45_plus_first_dose_total': row[col_ids_to_parse['citizen_45_plus_first_dose_total_col_id']] if col_ids_to_parse['citizen_45_plus_first_dose_total_col_id'] else 0,
-                'citizen_45_plus_second_dose_total': row[col_ids_to_parse['citizen_45_plus_second_dose_total_col_id']] if col_ids_to_parse['citizen_45_plus_second_dose_total_col_id'] else 0,
-                'citizen_18_to_44_first_dose_total': row[col_ids_to_parse['citizen_18_to_44_first_dose_total_col_id']] if col_ids_to_parse['citizen_18_to_44_first_dose_total_col_id'] else 0,
-                'citizen_18_to_44_second_dose_total': row[col_ids_to_parse['citizen_18_to_44_second_dose_total_col_id']] if col_ids_to_parse['citizen_18_to_44_second_dose_total_col_id'] else 0,
+                'citizen_24h': row[col_ids_to_parse['citizen_24h_col_id']] if col_ids_to_parse['citizen_24h_col_id'] else None,
+                'citizen_60_plus_24h': row[col_ids_to_parse['citizen_60_plus_24h_col_id']] if col_ids_to_parse['citizen_60_plus_24h_col_id'] else None,
+                'citizen_60_plus_dose1_total': row[col_ids_to_parse['citizen_60_plus_dose1_total_col_id']] if col_ids_to_parse['citizen_60_plus_dose1_total_col_id'] else None,
+                'citizen_45_to_59_24h': row[col_ids_to_parse['citizen_45_to_59_24h_col_id']] if col_ids_to_parse['citizen_45_to_59_24h_col_id'] else None,
+                'citizen_45_to_59_dose1_total': row[col_ids_to_parse['citizen_45_to_59_dose1_total_col_id']] if col_ids_to_parse['citizen_45_to_59_dose1_total_col_id'] else None,
+                'citizen_45_plus_dose1_total': row[col_ids_to_parse['citizen_45_plus_dose1_total_col_id']] if col_ids_to_parse['citizen_45_plus_dose1_total_col_id'] else None,
+                'citizen_45_plus_dose2_total': row[col_ids_to_parse['citizen_45_plus_dose2_total_col_id']] if col_ids_to_parse['citizen_45_plus_dose2_total_col_id'] else None,
+                'citizen_18_to_44_dose1_total': row[col_ids_to_parse['citizen_18_to_44_dose1_total_col_id']] if col_ids_to_parse['citizen_18_to_44_dose1_total_col_id'] else None,
+                'citizen_18_to_44_dose2_total': row[col_ids_to_parse['citizen_18_to_44_dose2_total_col_id']] if col_ids_to_parse['citizen_18_to_44_dose2_total_col_id'] else None,
 
-                'health_care_worker_24h': row[col_ids_to_parse['health_care_worker_24h_col_id']] if col_ids_to_parse['health_care_worker_24h_col_id'] else 0,
-                'health_care_worker_first_dose_total': row[col_ids_to_parse['health_care_worker_first_dose_total_col_id']] if col_ids_to_parse['health_care_worker_first_dose_total_col_id'] else 0,
-                'health_care_worker_second_dose_total': row[col_ids_to_parse['health_care_worker_second_dose_total_col_id']] if col_ids_to_parse['health_care_worker_second_dose_total_col_id'] else 0,
+                'HCW_24h': row[col_ids_to_parse['HCW_24h_col_id']] if col_ids_to_parse['HCW_24h_col_id'] else None,
+                'HCW_dose1_total': row[col_ids_to_parse['HCW_dose1_total_col_id']] if col_ids_to_parse['HCW_dose1_total_col_id'] else None,
+                'HCW_dose2_total': row[col_ids_to_parse['HCW_dose2_total_col_id']] if col_ids_to_parse['HCW_dose2_total_col_id'] else None,
 
-                'front_line_worker_24h': row[col_ids_to_parse['front_line_worker_24h_col_id']] if col_ids_to_parse['front_line_worker_24h_col_id'] else 0,
-                'front_line_worker_first_dose_total': row[col_ids_to_parse['front_line_worker_first_dose_total_col_id']] if col_ids_to_parse['front_line_worker_first_dose_total_col_id'] else 0,
-                'front_line_worker_second_dose_total': row[col_ids_to_parse['front_line_worker_second_dose_total_col_id']] if col_ids_to_parse['front_line_worker_second_dose_total_col_id'] else 0,
+                'FLW_24h': row[col_ids_to_parse['FLW_24h_col_id']] if col_ids_to_parse['FLW_24h_col_id'] else None,
+                'FLW_dose1_total': row[col_ids_to_parse['FLW_dose1_total_col_id']] if col_ids_to_parse['FLW_dose1_total_col_id'] else None,
+                'FLW_dose2_total': row[col_ids_to_parse['FLW_dose2_total_col_id']] if col_ids_to_parse['FLW_dose2_total_col_id'] else None,
 
-            })
+            }
+
+            for k, v in tmp.items():
+                if k in ['date', 'district_name'] or v is None:
+                    continue
+                tmp[k] = UK_utils.str2int(v)
+
+            result.append(tmp)
 
         return result
 
@@ -317,8 +324,8 @@ class UttarakhandExtractor(object):
 
 if __name__ == '__main__':
     date = '01-may-2021'
-    # path = "/Users/mayank/Documents/projects/opensource/covid19-india-data/localstore_UK/bulletins/UK/UK-Bulletin-2021-10-01.pdf"
-    path = "/Users/mayank/Documents/projects/opensource/covid19-india-data/localstore_UK/bulletins/UK/UK-Bulletin-2021-06-01.pdf"
+    path = "/Users/mayank/Documents/projects/opensource/covid19-india-data/localstore_UK/bulletins/UK/UK-Bulletin-2021-02-10.pdf"
+    # path = "/Users/mayank/Documents/projects/opensource/covid19-india-data/localstore_UK/bulletins/UK/UK-Bulletin-2021-03-09.pdf"
     # path = "/Users/mayank/Documents/projects/opensource/covid19-india-data/localstore_UK/bulletins/UK/UK-Bulletin-2020-10-01.pdf"
     obj = UttarakhandExtractor(date, path)
     obj.extract()

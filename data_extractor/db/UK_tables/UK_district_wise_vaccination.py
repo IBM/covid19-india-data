@@ -14,24 +14,24 @@ class DistrictVaccinationTable(DB):
     def getcolumns(self):
         cols = {
             'date': 'DATE NOT NULL',
-            'district': 'STRING NOT NULL',
+            'district_name': 'STRING NOT NULL',
             'sessions_24h': 'INT',
             'sessions_total': 'INT',
             'citizen_24h': 'INT',
             'citizen_60_plus_24h': 'INT',
-            'citizen_60_plus_first_dose_total': 'INT',
+            'citizen_60_plus_dose1_total': 'INT',
             'citizen_45_to_59_24h': 'INT',
-            'citizen_45_to_59_first_dose_total': 'INT',
-            'citizen_45_plus_first_dose_total': 'INT',
-            'citizen_45_plus_second_dose_total': 'INT',
-            'citizen_18_to_44_first_dose_total': 'INT',
-            'citizen_18_to_44_second_dose_total': 'INT',
-            'health_care_worker_24h': 'INT',
-            'health_care_worker_first_dose_total': 'INT',
-            'health_care_worker_second_dose_total': 'INT',
-            'front_line_worker_24h': 'INT',
-            'front_line_worker_first_dose_total': 'INT',
-            'front_line_worker_second_dose_total': 'INT'
+            'citizen_45_to_59_dose1_total': 'INT',
+            'citizen_45_plus_dose1_total': 'INT',
+            'citizen_45_plus_dose2_total': 'INT',
+            'citizen_18_to_44_dose1_total': 'INT',
+            'citizen_18_to_44_dose2_total': 'INT',
+            'HCW_24h': 'INT',
+            'HCW_dose1_total': 'INT',
+            'HCW_dose2_total': 'INT',
+            'FLW_24h': 'INT',
+            'FLW_dose1_total': 'INT',
+            'FLW_dose2_total': 'INT'
         }
         return cols
 
