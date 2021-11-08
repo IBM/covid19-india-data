@@ -24,7 +24,7 @@ class GoaExtractor(object):
 
 
     def extract_active_cases(self, tables):
-        datatable = common_utils.find_table_by_keywords(tables, "travellers by (road,flight,train)")
+        datatable = common_utils.find_table_by_keywords(tables, {"travellers by (road,flight,train)"})
 
         if datatable is not None:
 

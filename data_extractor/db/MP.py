@@ -3,7 +3,12 @@ import sqlite3
 from .db import Database
 from .MP_tables import (
     MP_overview,
-    VaccinationCoverage,
+    MP_district_info,
+    MP_calls,
+    MP_centers,
+    MP_teams,
+    MP_testing,
+    MP_vaccination_coverage,
 )
 
 
@@ -22,6 +27,11 @@ class MadhyaPradeshDB(Database):
 
         self.tables = {
             'overview': MP_overview.Overview(),
+            'district-info': MP_district_info.DistrictInfo(),
+            'calls': MP_calls.Calls(),
+            'centers': MP_centers.Centers(),
+            'teams': MP_teams.Teams(),
+            'testing': MP_testing.Testing(),
             'vaccination-coverage': MP_vaccination_coverage.VaccinationCoverage(),
         }
         
