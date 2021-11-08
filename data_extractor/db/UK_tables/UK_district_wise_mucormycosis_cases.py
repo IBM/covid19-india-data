@@ -14,7 +14,7 @@ class DistrictMucormycosisCasesTable(DB):
     def getcolumns(self):
         cols = {
             'date': 'DATE NOT NULL',
-            'district': 'STRING NOT NULL',
+            'district_name': 'STRING NOT NULL',
             'hospital_name': 'STRING NOT NULL',
             'cases_new': 'INT',
             'deaths_new': 'INT',
@@ -30,5 +30,5 @@ class DistrictMucormycosisCasesTable(DB):
 
         colstr = [f'`{colname}` {coltype}' for colname, coltype in self.cols.items()]
         colstr = ', '.join(colstr)
-        query = f"CREATE TABLE IF NOT EXISTS `{self.table_name}` ({colstr}, PRIMARY KEY (date, district, hospital_name))"
+        query = f"CREATE TABLE IF NOT EXISTS `{self.table_name}` ({colstr}, PRIMARY KEY (date, district_name, hospital_name))"
         return query

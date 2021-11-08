@@ -3,6 +3,7 @@ locale.setlocale( locale.LC_ALL, 'en_US.UTF-8' )
 
 import re
 import pandas as pd
+import numpy as np
 
 
 def clean_numbers_str(text):
@@ -196,3 +197,65 @@ def process_district_testing_table(table):
     datadict = convert_datadict_to_datalist(datadict)
 
     return datadict
+
+
+def process_mucormycosis_table(table, old_format):
+
+    header_idx = identify_header_rows(table)
+    datalist = [list(row) for _, row in table.iterrows()]
+
+    for idx in range(header_idx - 1):
+        datalist[idx] = forward_fill_row(datalist[idx])
+    
+    datalist = merge_header_rows(datalist, header_idx)
+    
+    df = pd.DataFrame(datalist[1:], columns=datalist[0])
+    df[df == ''] = np.NaN
+    df.fillna(method='ffill', axis=0, inplace=True)
+
+    datalist = []
+
+    if old_format:
+        n = df.shape[0]
+
+        for idx, row in df.iterrows():
+
+            if idx == n-1:
+                tmp = {
+                    'district_name': row[0].strip(),
+                    'hospital_name': None,
+                    'cases_total': str2int(row[3]),
+                    'deaths_total': str2int(row[4]),
+                    'discharged_total': str2int(row[5])
+                }
+            else:
+                tmp = {
+                    'district_name': row[1].strip(),
+                    'hospital_name': row[2].strip(),
+                    'cases_total': str2int(row[3]),
+                    'deaths_total': str2int(row[4]),
+                    'discharged_total': str2int(row[5])
+                }
+
+            datalist.append(tmp)
+
+    else:
+        for _, row in df.iterrows():
+            tmp = {
+                'district_name': row[0].strip(),
+                'hospital_name': row[1].strip(),
+                'cases_new': str2int(row[2]),
+                'deaths_new': str2int(row[3]),
+                'discharged_new': str2int(row[4]),
+                'cases_total': str2int(row[5]),
+                'deaths_total': str2int(row[6]),
+                'discharged_total': str2int(row[7]),
+                'migrated_total': str2int(row[8])
+            }
+            
+            if tmp['district_name'] == 'Total':
+                tmp['hospital_name'] = None
+
+            datalist.append(tmp)
+
+    return datalist
