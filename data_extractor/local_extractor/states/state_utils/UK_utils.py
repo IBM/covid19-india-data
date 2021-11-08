@@ -135,19 +135,32 @@ def _combine_negative_today_cols(df):
 
 def _drop_positive_govt_pvt_cols(df):
     cols = [x.lower().strip() for x in df.columns]
-    idx1, idx2 = None, None
+    idx1, idx2, idx3 = None, None, None
 
     for idx, colname in enumerate(cols):
-        if colname.startswith('positive') and colname.endswith('govt. lab'):
+        
+        if False not in [key in colname.lower() for key in ['positive', 'today', 'govt', 'lab']]:
             idx1 = idx
-        if colname.startswith('positive') and colname.endswith('pvt. lab'):
+        
+        if False not in [key in colname.lower() for key in ['positive', 'today', 'pvt', 'lab']]:
             idx2 = idx
+
+        if False not in [key in colname.lower() for key in ['positive', 'total', 'today']]:
+            idx3 = idx
 
     if idx1 is None and idx2 is None:
         return df
 
     col1 = df.columns[idx1]
     col2 = df.columns[idx2]
+
+    if idx3 is None:
+        # earlier bulletins don't have total positive column. add it manually
+        df['positive in last 24 hours'] = df[col1] + df[col2]
+    else:
+        col3 = df.columns[idx3]
+        df = df.rename(columns={col3: 'positive in last 24 hours'})
+
     df = df.drop([col1, col2], axis=1)
     return df
 
@@ -189,7 +202,7 @@ def process_district_testing_table(table):
         ('negative_results_today', ['negative', '24', 'hour']),
         ('negative_results_total', ['negative', 'cumulative']),
         ('positive_results_total', ['positive', 'cumulative']),
-        ('positive_results_today', ['positive']),
+        ('positive_results_today', ['positive', '24', 'hour']),
         ('rejected_samples', ['reject', 'repeat', 'sample'])
     ]
 
