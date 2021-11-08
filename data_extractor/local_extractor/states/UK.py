@@ -11,6 +11,7 @@ from pdfminer.high_level import extract_pages
 
 try:
     from local_extractor.utils import common_utils
+    from local_extractor.states.state_utils import UK_utils
 except ImportError:
     import sys, os, pathlib
     path = pathlib.Path(__file__).absolute().parents[2]
@@ -18,6 +19,7 @@ except ImportError:
     if path not in sys.path:
         sys.path.insert(0, path)
     from utils import common_utils
+    from states.state_utils import UK_utils
 
 
 class UttarakhandExtractor(object):
@@ -30,40 +32,21 @@ class UttarakhandExtractor(object):
 
         self.nums_regex = re.compile(r'([\d,+-]+)[ ]*\(([\d,+-]+)\)')
 
-    def process_district_testing_df(self, df):
-        df = df.replace('-', None)
-        for col_id, col_name in enumerate(df.iloc[1]):
-            if col_name:
-                df.iloc[0][col_id] = col_name
-        df = df.drop([1]).reset_index(drop=True)
-        return df.to_dict(orient='records')
-
     def extract_district_testing_info(self, tables):
 
         # Identify case info table
         keywords = {'district', 'samples', 'negative', 'positive', 'cumulative', 'awaited'}
 
-        case_info_table = common_utils.find_table_by_keywords(tables, keywords)
-        if case_info_table is None:
+        datatable = common_utils.find_table_by_keywords(tables, keywords)
+        if datatable is None:
             return None
 
-        # Extract information from relevant columns
-        df_record_list = self.process_district_testing_df(case_info_table)
-        result = []
-        for row in df_record_list[1:-1]:
-            result.append({
-                'date': self.date,
-                'district': row[0],  # df['Districts'],
-                'samples_tested_today': row[1],  # df['Samples Sent to Labs Today'],
-                'negative_results_24h': row[2],  # df['Negative in last 24 hours'],
-                'negative_results_total': row[3],  # df['Negative Cumulative (including Pvt. Lab)'],
-                'positive_results_24h': row[4],  # df['Positive in last 24 hours'],
-                'positive_results_total': row[5],  # df['Positive Cumulative (including Pvt. Lab)'],
-                'samples_tested_total': row[6],  # df['Cumulative Samples Tested'],
-                'samples_results_awaited': row[7],  # df['Results Awaited (including sample sent to labs today)'
-            })
+        datalist = UK_utils.process_district_testing_table(datatable)
 
-        return result
+        for datadict in datalist:
+            datadict['date'] = self.date
+
+        return datalist
 
     def extract_district_cases_info(self, tables):
 
@@ -360,7 +343,7 @@ class UttarakhandExtractor(object):
 
         n = common_utils.n_pages_in_pdf(self.report_fpath)
 
-        all_tables = common_utils.get_tables_from_pdf(library='camelot', pdf_fpath=self.report_fpath, strip_text="", split_text=False)
+        all_tables = common_utils.get_tables_from_pdf(library='camelot', pdf_fpath=self.report_fpath, split_text=False)
 
         district_testing = self.extract_district_testing_info(all_tables)
         district_cases = self.extract_district_cases_info(all_tables)
@@ -381,5 +364,7 @@ class UttarakhandExtractor(object):
 
 if __name__ == '__main__':
     date = '01-may-2021'
-    path = "all_data/bulletins/UK/UK-Bulletin-2021-10-01.pdf"
+    # path = "/Users/mayank/Documents/projects/opensource/covid19-india-data/localstore_UK/bulletins/UK/UK-Bulletin-2021-10-01.pdf"
+    path = "/Users/mayank/Documents/projects/opensource/covid19-india-data/localstore_UK/bulletins/UK/UK-Bulletin-2020-10-01.pdf"
     obj = UttarakhandExtractor(date, path)
+    obj.extract()

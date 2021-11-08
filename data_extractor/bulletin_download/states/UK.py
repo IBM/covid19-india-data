@@ -9,18 +9,20 @@ class Uttarakhand(Bulletin):
         statename = 'UK'
         super().__init__(basedir, statename)
 
+        # NOTE: Need to update this list of URLs every 2-3 months or so
         self.bulletin_urls = [
-            "https://health.uk.gov.in/pages/view/151-covid19-health-bulletin-for-uttarakhand-page-10",
-            "https://health.uk.gov.in/pages/view/148-covid19-health-bulletin-for-uttarakhand-page-9",
-            "https://health.uk.gov.in/pages/view/142-covid19-health-bulletin-for-uttarakhand-page-8",
-            "https://health.uk.gov.in/pages/view/135-covid19-health-bulletin-for-uttarakhand-page-7",
-            "https://health.uk.gov.in/pages/view/133-covid19-health-bulletin-for-uttarakhand-page-from-december-2020-onwards",
             "https://health.uk.gov.in/pages/view/101-covid19-health-bulletin-for-uttarakhand-6",
             "https://health.uk.gov.in/pages/view/110-covid19-health-bulletin-for-uttarakhand-page-5",
             "https://health.uk.gov.in/pages/view/111-covid19-health-bulletin-for-uttarakhand-page-4",
             "https://health.uk.gov.in/pages/view/129-covid19-health-bulletin-for-uttarakhand-page-3",
             "https://health.uk.gov.in/pages/view/131-covid19-health-bulletin-for-uttarakhand-page-2",
+            "https://health.uk.gov.in/pages/view/133-covid19-health-bulletin-for-uttarakhand-page-from-december-2020-onwards",
             "https://health.uk.gov.in/pages/view/134-covid19-health-bulletin-for-uttarakhand-page-01",
+            "https://health.uk.gov.in/pages/view/135-covid19-health-bulletin-for-uttarakhand-page-7",
+            "https://health.uk.gov.in/pages/view/142-covid19-health-bulletin-for-uttarakhand-page-8",
+            "https://health.uk.gov.in/pages/view/148-covid19-health-bulletin-for-uttarakhand-page-9",
+            "https://health.uk.gov.in/pages/view/151-covid19-health-bulletin-for-uttarakhand-page-10",
+            "https://health.uk.gov.in/pages/view/154-covid19-health-bulletin-for-uttarakhand-page-11"
         ]
         self.match_text = "Health Bulletin COVID 19_Uttarakhand_"
 

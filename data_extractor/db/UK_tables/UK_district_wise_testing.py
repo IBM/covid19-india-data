@@ -14,14 +14,15 @@ class DistrictTestingTable(DB):
     def getcolumns(self):
         cols = {
             'date': 'DATE NOT NULL',
-            'district': 'STRING NOT NULL',
-            'samples_tested_today': 'INT',
-            'negative_results_24h': 'INT',
+            'district_name': 'STRING NOT NULL',
+            'samples_collected_today': 'INT',
+            'samples_collected_cumulative': 'INT',
+            'negative_results_today': 'INT',
             'negative_results_total': 'INT',
-            'positive_results_24h': 'INT',
+            'positive_results_today': 'INT',
             'positive_results_total': 'INT',
-            'samples_tested_total': 'INT',
-            'samples_results_awaited': 'INT'
+            'samples_results_awaited': 'INT',
+            'rejected_samples': 'INT'
         }
         return cols
 
@@ -29,5 +30,5 @@ class DistrictTestingTable(DB):
 
         colstr = [f'`{colname}` {coltype}' for colname, coltype in self.cols.items()]
         colstr = ', '.join(colstr)
-        query = f"CREATE TABLE IF NOT EXISTS `{self.table_name}` ({colstr}, PRIMARY KEY (date, district))"
+        query = f"CREATE TABLE IF NOT EXISTS `{self.table_name}` ({colstr}, PRIMARY KEY (date, district_name))"
         return query
