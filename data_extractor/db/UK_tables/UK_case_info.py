@@ -16,7 +16,7 @@ class CaseInfoTable(DB):
             'date': 'DATE NOT NULL PRIMARY KEY',
             'cases_new': 'INT',
             'tests_today': 'INT',
-            'tests_today': 'INT',
+            'tests_total': 'INT',
             'cases_total': 'INT',
             'discharged_total': 'INT',
             'deaths_total': 'INT',

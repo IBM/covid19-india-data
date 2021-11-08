@@ -359,6 +359,10 @@ class UttarakhandExtractor(object):
 
     def extract(self):
 
+        # Bulletins prior to this date were not formalized enough to extract data from
+        if self.date < "2020-05-01":
+            return dict()
+
         n = common_utils.n_pages_in_pdf(self.report_fpath)
 
         all_tables = common_utils.get_tables_from_pdf(library='camelot', pdf_fpath=self.report_fpath, split_text=False)

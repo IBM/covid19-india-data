@@ -19,6 +19,7 @@ import Telangana from './content/Telangana';
 import Haryana from './content/Haryana';
 import Maharashtra from './content/Maharashtra/Maharashtra';
 import Karnataka from './content/Karnataka/Karnataka';
+import Uttarakhand from './content/Uttarakhand';
 
 // let config = require('./config.json');
 // let states = config['states'];
@@ -51,6 +52,7 @@ class App extends Component {
             <Route exact path="/WestBengal" component={WestBengal} />
             <Route exact path="/Maharashtra" component={Maharashtra} />
             <Route exact path="/Karnataka" component={Karnataka} />
+            <Route exact path="/Uttarakhand" component={Uttarakhand} />
 
             {/*
               {Object.keys(states).map((key, index) => (
