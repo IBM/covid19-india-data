@@ -3,11 +3,12 @@ import sys
 from datetime import datetime
 
 from .DL import DelhiDB
-from .WB import WestBengalDB
-from .TG import TelanganaDB
 from .HR import HaryanaDB
-from .MH import MaharashtraDB
 from .KA import KarnatakaDB
+from .MH import MaharashtraDB
+from .TG import TelanganaDB
+from .UK import UttarakhandDB
+from .WB import WestBengalDB
 
 from .Metadata import MetadataDB
 
@@ -24,11 +25,12 @@ class DBMain(object):
 
         self.states = {
             'DL': DelhiDB(datadir=self.datadir),
-            'WB': WestBengalDB(datadir=self.datadir),
-            'TG': TelanganaDB(datadir=self.datadir),
             'HR': HaryanaDB(datadir=self.datadir),
+            'KA': KarnatakaDB(datadir=self.datadir),
             'MH': MaharashtraDB(datadir=self.datadir),
-            'KA': KarnatakaDB(datadir=self.datadir)
+            'TG': TelanganaDB(datadir=self.datadir),
+            'UK': UttarakhandDB(datadir=self.datadir),
+            'WB': WestBengalDB(datadir=self.datadir),
         }
 
         self.metatable = MetadataDB(datadir=self.datadir)

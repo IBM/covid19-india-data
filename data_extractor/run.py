@@ -10,7 +10,11 @@ from local_extractor import main as extractor_main
 from local_extractor.utils import custom_exceptions
 
 
-STATES = ['MH', 'HR', 'TG', 'WB', 'DL', 'KA']
+STATES = [
+    'MH', 'HR', 'TG', 
+    'WB', 'DL', 'KA', 
+    'UK'
+]
 
 DOWNLOADED_BULLETINS_STR = 'downloaded-bulletins'
 BULLETIN_PATH_STR = 'bulletin-paths'

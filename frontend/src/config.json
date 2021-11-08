@@ -45,6 +45,12 @@
       "short_name" : "WB",
       "is_complete": true,
       "link_to_db_schema" : "https://raw.githubusercontent.com/IBM/covid19-india-data/main/docs/images/WB_tables.png"
+    },
+    "UK": {
+      "name" : "Uttarakhand",
+      "short_name" : "UK",
+      "is_complete": true,
+      "link_to_db_schema" : "https://raw.githubusercontent.com/IBM/covid19-india-data/main/docs/images/UK_tables.png"
     }
   }
 }
