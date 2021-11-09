@@ -4,10 +4,12 @@ locale.setlocale( locale.LC_ALL, 'en_US.UTF-8' )
 import re
 import pdfplumber
 import pandas as pd
+import dateparser
 
 
 try:
     from local_extractor.utils import common_utils
+    from local_extractor.utils import custom_exceptions
 except ImportError:
     import sys, os, pathlib
     path = pathlib.Path(__file__).absolute().parents[2]
@@ -15,6 +17,7 @@ except ImportError:
     if path not in sys.path:
         sys.path.insert(0, path)
     from utils import common_utils
+    from utils import custom_exceptions
 
 
 class MaharashtraExtractor(object):
@@ -24,6 +27,36 @@ class MaharashtraExtractor(object):
 
         self.date = date
         self.report_fpath = report_fpath
+
+    
+    def __day_suffix__(self, day):
+        
+        if 4 <= day <= 20 or 24 <= day <= 30:
+            suffix = "th"
+        else:
+            suffix = ["st", "nd", "rd"][day % 10 - 1]
+        
+        return suffix
+
+
+    def __verify_bulletin_correct_date__(self):
+
+        text_page0 = self.__get_text__(0)
+        datestr = '{}{}[ ]+{}[ ]+{}'
+        date = dateparser.parse(self.date)
+
+        day = date.day
+        suffix = self.__day_suffix__(day)
+        month = date.strftime('%B').lower()
+        year = date.year
+
+        re_str = datestr.format(day, suffix, month, year)
+        regex = re.compile(re_str, re.IGNORECASE)
+        match = regex.search(text_page0)
+
+        if match:
+            return True
+        return False
 
     def __get_text__(self, page):
 
@@ -225,6 +258,9 @@ class MaharashtraExtractor(object):
 
 
     def extract(self):
+
+        if not self.__verify_bulletin_correct_date__():
+            raise custom_exceptions.UnprocessedBulletinException('Bulletin failed to match current date')
 
         all_tables = common_utils.get_tables_from_pdf(library='camelot', pdf_fpath=self.report_fpath)
         all_tables = self.join_tables(all_tables)

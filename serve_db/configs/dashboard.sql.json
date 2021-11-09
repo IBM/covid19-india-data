@@ -2,8 +2,7 @@
     "column.names": [
         "State", "Last updated", "Cases (total)", "Cases (new)", "Recoveries (total)", "Recoveries (new)",
         "Deceased (total)", "Deceased (new)", "Active cases", "First dose (total)", "First dose (new)",
-        "Second doses (total)", "Second doses (new)", "Tests (total)", "Tests (new)", "Vacant hospital beds",
-        "Home isolation count", "Bulletin"
+        "Second doses (total)", "Second doses (new)", "Tests (total)", "Tests (new)", "Home isolation count", "Bulletin"
     ],
     
     "queries": [
@@ -14,7 +13,7 @@
                 "SELECT D1.date, D2.cumulative_positive_cases, D1.cases_positive, D2.cumulative_recovered,",
                 "D1.cases_recovered, D2.cumulative_deaths, D1.deaths,  D2.active_cases, D3.vax_cumulative_first_dose,",
                 "D3.vax_first_dose_24h, D3.vax_cumulative_sec_dose,  D3.vax_sec_dose_24h, D4.total_tests,",
-                "D1.tests_conducted, D5.hospital_beds_vacant, D5.home_isolation_count, MD.bulletin_link",
+                "D1.tests_conducted, D5.home_isolation_count, MD.bulletin_link",
                 "FROM DL_case_info D1 LEFT OUTER JOIN DL_cumulative D2 on D1.date == D2.date",
                 "LEFT OUTER JOIN DL_vaccination D3 on D1.date == D3.date LEFT OUTER JOIN DL_testing_status D4 on D1.date == D4.date", 
                 "LEFT OUTER JOIN DL_patient_mgmt D5 ON D1.date == D5.date ",
@@ -29,7 +28,7 @@
                 "SELECT W1.date, W1.cases_total, W1.cases_new, W1.discharged_total, W1.discharged_new, ",
                 "W1.deaths_total, W1.deaths_new, W1.cases_active_total, W2.cumulative_vax_first_dose, ",
                 "W2.first_dose_today, W2.cumulative_vax_sec_dose, W2.second_dose_today, W3.total_samples_tested, ",
-                "W3.samples_tested_today, CAST(W4.covid19_beds * (100.0 - W4.covid19_bed_occupancy)/100 AS INTEGER), ",
+                "W3.samples_tested_today,",
                 "W4.current_patients_home_isolation, MD.bulletin_link FROM WB_case_info W1 LEFT OUTER JOIN WB_vaccination W2 on W1.date == W2.date",
                 "LEFT OUTER JOIN WB_testing W3 on W1.date == W3.date LEFT OUTER JOIN WB_hospital W4 on W1.date == W4.date ",
                 "LEFT OUTER JOIN Metadata_Bulletin_Links MD ON MD.date == W1.date AND MD.state == \"WB\" ORDER BY W1.date",
@@ -42,7 +41,7 @@
             "query": [
                 "SELECT T1.date, T1.cases_total, T1.cases_new, T1.recovered_total, T1.recovered_new, T1.deaths_total, ",
                 "T1.deaths_new, (T1.cases_total - T1.deaths_total - T1.recovered_total), NULL, NULL, NULL, NULL, ",
-                "T2.tests_cumulative, T2.tests_today, NULL, T1.cases_in_isolation, MD.bulletin_link ",
+                "T2.tests_cumulative, T2.tests_today, T1.cases_in_isolation, MD.bulletin_link ",
                 "FROM TG_case_info T1 LEFT OUTER JOIN TG_testing_info T2 ON T1.date == T2.date ",
                 "LEFT OUTER JOIN Metadata_Bulletin_Links MD ON MD.date == T1.date AND MD.state == \"TG\" ORDER BY T1.date",
                 "DESC LIMIT 1"
@@ -54,11 +53,47 @@
             "query": [
                 "SELECT H1.date, H1.samples_positive_cumulative_total, H1.cases_new, H1.recoveries_cumulative, H2.recovered_new, ",
                 "H1.deaths_total, H2.deaths_new, H1.active_cases, NULL, H1.vax_today_first_dose, NULL, H1.vax_today_second_dose,",
-                "H1.samples_sent_cumulative, H1.samples_taken_today, NULL, H1.people_home_isolation, MD.bulletin_link",
+                "H1.samples_sent_cumulative, H1.samples_taken_today, H1.people_home_isolation, MD.bulletin_link",
                 "FROM HR_case_info H1",
                 "LEFT OUTER JOIN Metadata_Bulletin_Links MD ON MD.date == H1.date AND MD.state == \"HR\"",
                 "LEFT OUTER JOIN HR_district_info H2 ON H1.date == H2.date",
                 "WHERE LOWER(H2.district_name) == \"total\" ORDER BY H1.date",
+                "DESC LIMIT 1"
+            ]
+        },
+        {
+            "state.full.name": "Maharashtra",
+            "state.short.name": "MH",
+            "query": [
+                "SELECT M1.date, M2.cases_total, M1.cases_new, M2.recoveries_total, M1.discharged_today, M2.deaths_total, M1.deaths_new,",
+                "M1.active_cases, NULL, NULL, NULL, NULL, tests_cumulative, NULL, M1.current_home_quarantine, MD.bulletin_link",
+                "FROM MH_case_info M1",
+                "LEFT OUTER JOIN Metadata_Bulletin_Links MD ON MD.date == M1.date AND MD.state == \"MH\"",
+                "LEFT OUTER JOIN MH_district_caseinfo M2 ON M1.date == M2.date",
+                "WHERE LOWER(M2.district_name) == \"total\" ORDER BY M1.date",
+                "DESC LIMIT 1"
+            ]
+        },
+        {
+            "state.full.name": "Karnataka",
+            "state.short.name": "KA",
+            "query": [
+                "SELECT K1.date, K1.cases_total, K1.cases_new, K1.discharged_total, K1.discharged_new,",
+                "K1.deaths_total, K1.deaths_new, K1.cases_active, NULL, NULL, NULL, NULL, ",
+                "NULL, NULL, NULL, MD.bulletin_link",
+                "FROM KA_case_info K1",
+                "LEFT OUTER JOIN Metadata_Bulletin_Links MD ON MD.date == K1.date AND MD.state == \"KA\" ORDER BY K1.date",
+                "DESC LIMIT 1"
+            ]
+        },
+        {
+            "state.full.name": "Uttarakhand",
+            "state.short.name": "UK",
+            "query": [
+                "SELECT U1.date, U1.cases_total, U1.cases_new, U1.discharged_total, NULL,  U1.deaths_total, NULL, U1.active_cases,",
+                "NULL,  NULL, NULL, NULL, U1.tests_total, U1.tests_today, NULL, MD.bulletin_link",
+                "FROM UK_case_info U1",
+                "LEFT OUTER JOIN Metadata_Bulletin_Links MD ON MD.date == U1.date AND MD.state == \"UK\"  ORDER BY U1.date ",
                 "DESC LIMIT 1"
             ]
         }
