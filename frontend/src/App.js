@@ -9,12 +9,18 @@ import PageHeader from './components/PageHeader';
 import LandingPage from './content/LandingPage';
 import ContributingPage from './content/ContributingPage';
 import DataAccessPage from './content/DataAccessPage';
+
 import AnalysisPage from './content/AnalysisPage';
+import AnomaliesPage from './content/AnomaliesPage';
 
 import Delhi from './content/Delhi';
 import WestBengal from './content/WestBengal';
 import TamilNadu from './content/TamilNadu';
 import Telangana from './content/Telangana';
+import Haryana from './content/Haryana';
+import Maharashtra from './content/Maharashtra/Maharashtra';
+import Karnataka from './content/Karnataka/Karnataka';
+import Uttarakhand from './content/Uttarakhand';
 
 // let config = require('./config.json');
 // let states = config['states'];
@@ -37,11 +43,18 @@ class App extends Component {
             <Route exact path="/introduction" component={LandingPage} />
             <Route exact path="/contributing" component={ContributingPage} />
             <Route exact path="/data" component={DataAccessPage} />
+
             <Route exact path="/analysis" component={AnalysisPage} />
+            <Route exact path="/anomalies" component={AnomaliesPage} />
+
             <Route exact path="/Delhi" component={Delhi} />
-            <Route exact path="/WestBengal" component={WestBengal} />
             <Route exact path="/TamilNadu" component={TamilNadu} />
+            <Route exact path="/Haryana" component={Haryana} />
             <Route exact path="/Telangana" component={Telangana} />
+            <Route exact path="/WestBengal" component={WestBengal} />
+            <Route exact path="/Maharashtra" component={Maharashtra} />
+            <Route exact path="/Karnataka" component={Karnataka} />
+            <Route exact path="/Uttarakhand" component={Uttarakhand} />
 
             {/*
               {Object.keys(states).map((key, index) => (

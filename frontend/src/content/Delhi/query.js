@@ -6,12 +6,13 @@ const QUERIES = [
     subject: 'Daily new cases',
     description: <></>,
     query:
-      'SELECT date, cases_positive from DL_case_info WHERE cases_positive is NOT NULL',
+      'SELECT date, cases_positive from DL_case_info WHERE cases_positive is NOT NULL ORDER BY date ASC',
   },
   {
     subject: 'Daily new fatalities',
     description: <></>,
-    query: 'SELECT date, deaths from DL_case_info WHERE deaths is NOT NULL',
+    query:
+      'SELECT date, deaths from DL_case_info WHERE deaths is NOT NULL ORDER BY date ASC',
   },
   {
     subject: 'Ratio of RTPCR tests',
@@ -36,19 +37,19 @@ const QUERIES = [
       </>
     ),
     query:
-      'Select D1.date, D1.rtpcr_test_24h *1.0/ D2.tests_conducted AS rtpcr_ratio FROM DL_testing_status D1 JOIN DL_case_info D2 ON D1.date == D2.date WHERE rtpcr_ratio is NOT NULL',
+      'Select D1.date, D1.rtpcr_test_24h *1.0/ D2.tests_conducted AS rtpcr_ratio FROM DL_testing_status D1 JOIN DL_case_info D2 ON D1.date == D2.date WHERE rtpcr_ratio is NOT NULL ORDER BY D1.date ASC',
   },
   {
     subject: 'Vacant hospital beds',
     description: <>Number of hospital beds vacant in the state</>,
     query:
-      'SELECT date, hospital_beds_vacant FROM DL_patient_mgmt WHERE hospital_beds_vacant is NOT NULL',
+      'SELECT date, hospital_beds_vacant FROM DL_patient_mgmt WHERE hospital_beds_vacant is NOT NULL ORDER BY date ASC',
   },
   {
     subject: 'Number of individuals in home isolation',
     description: <></>,
     query:
-      'SELECT date, home_isolation_count FROM DL_patient_mgmt WHERE home_isolation_count is NOT NULL',
+      'SELECT date, home_isolation_count FROM DL_patient_mgmt WHERE home_isolation_count is NOT NULL ORDER BY date ASC',
   },
   {
     subject: 'Hospitalization percentage query',
@@ -63,13 +64,13 @@ const QUERIES = [
       </>
     ),
     query:
-      'SELECT D1.date, (D2.hospital_beds_occupied + D2.covid_care_center_beds_occupied + D2.covid_health_center_beds_occupied) *1.0/ D1.active_cases AS perc_hospitalized from DL_cumulative D1 JOIN DL_patient_mgmt D2 ON D1.date == D2.date WHERE perc_hospitalized is NOT NULL',
+      'SELECT D1.date, (D2.hospital_beds_occupied + D2.covid_care_center_beds_occupied + D2.covid_health_center_beds_occupied) *1.0/ D1.active_cases AS perc_hospitalized from DL_cumulative D1 JOIN DL_patient_mgmt D2 ON D1.date == D2.date WHERE perc_hospitalized is NOT NULL ORDER BY D1.date ASC',
   },
   {
     subject: 'Number of containment zones',
     description: <></>,
     query:
-      'SELECT date, containment_zones FROM DL_containment WHERE containment_zones is NOT NULL',
+      'SELECT date, containment_zones FROM DL_containment WHERE containment_zones is NOT NULL ORDER BY date ASC',
   },
 ];
 
