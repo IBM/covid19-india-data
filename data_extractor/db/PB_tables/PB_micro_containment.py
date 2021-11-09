@@ -5,8 +5,8 @@ from .db import DB
 class CaseInfoTable(DB):
 
     def __init__(self):
-        self.table_name = 'PB_containment_zone'
-        self.table_desc = 'Punjab larger containment zones. Tables on page 5, which can extend over pages.'
+        self.table_name = 'PB_micro_containment_zone'
+        self.table_desc = 'Punjab micro containment zones in district. Tables on page 5 before containment zones, which can extend over pages.'
         self.cols = self.getcolumns()
 
     def getcolumns(self):

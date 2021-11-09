@@ -17,11 +17,12 @@ class DistrictCasesTable(DB):
             'district': 'STRING NOT NULL',
             'cases_today': 'INT',
             'percentage_tests_positive': 'FLOAT',
+            'outside_source_details': 'STRING',
             'case_details': 'STRING',
             'remarks': 'STRING',
             'cases_total': 'INT',
-            'active_cases_total': 'INT',
-            'total_cured': 'INT',
+            'active_cases': 'INT',
+            'recovered_total': 'INT',
             'deaths_total': 'INT'
         }
         return cols
