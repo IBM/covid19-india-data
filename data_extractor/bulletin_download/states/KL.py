@@ -57,13 +57,9 @@ class Kerala(Bulletin):
             url = self.parse_url(html)
 
             if url:
-
                 url = self.baseurl + self.parse_url(html)
-
                 datestr = self.get_date_str(str(currdate))
                 bulletin_links[datestr] = url
-
-                print(f'\t Downloaded {datestr}')
 
             currdate = currdate + datetime.timedelta(days=1)
         

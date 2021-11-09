@@ -372,21 +372,21 @@ class KeralaExtractor(object):
 
         all_tables_camelot = common_utils.get_tables_from_pdf(library='camelot', pdf_fpath=self.report_fpath)
         result = {
-            'cumulative-summary-t-minus-one': self.extract_cumulative_summary_t_minus_one(all_tables_camelot),
-            'daily-summary': self.extract_daily_summary(all_tables_camelot),
-            'cumulative-summary': self.extract_cumulative_summary(all_tables_camelot),
-            'district-case-info': self.extract_district_case_info(all_tables_camelot),
-            'district-death-info': self.extract_district_death_info(all_tables_camelot),
             'contact-travel-cumulative': self.extract_contact_travel_cumulative(all_tables_camelot),
             'contact-travel-new': self.extract_contact_travel_new(all_tables_camelot),
-            'individual-death-info': self.extract_individual_death_info(all_tables_camelot),
             'critical-patients': self.extract_critical_patients(all_tables_camelot),
+            'cumulative-summary-t-minus-one': self.extract_cumulative_summary_t_minus_one(all_tables_camelot),
+            'cumulative-summary': self.extract_cumulative_summary(all_tables_camelot),
+            'daily-summary': self.extract_daily_summary(all_tables_camelot),
+            'district-abstract': self.extract_district_abstract(all_tables_camelot),
+            'district-case-info': self.extract_district_case_info(all_tables_camelot),
+            'district-death-info': self.extract_district_death_info(all_tables_camelot),
+            'individual-death-info': self.extract_individual_death_info(all_tables_camelot),
+            'psychosocial-support': self.extract_psychosocial_support(all_tables_camelot),
+            'surveillance-info': self.extract_surveillance_info(all_tables_camelot),
             'testing-cumulative': self.extract_cumulative_tests(all_tables_camelot),
             'testing-new': self.extract_new_tests(all_tables_camelot),
-            'surveillance-info': self.extract_surveillance_info(all_tables_camelot),
             'travel-surveillance': self.extract_travel_surveillance(all_tables_camelot),
-            'psychosocial-support': self.extract_psychosocial_support(all_tables_camelot),
-            'district-abstract': self.extract_district_abstract(all_tables_camelot),
         }
 
         return result
@@ -395,7 +395,7 @@ class KeralaExtractor(object):
 if __name__ == '__main__':
 
     date = '2021-10-29'
-    path = "/Users/tchakra2/Desktop/Bulletin-HFWD-English-October-29.pdf"
+    path = "../localstore_KL/bulletins/KL/KL-Bulletin-2021-10-01.pdf"
 
     obj = KeralaExtractor(date, path)
 
