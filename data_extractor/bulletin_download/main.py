@@ -8,6 +8,7 @@ from bulletin_download.states.MP import MadhyaPradesh
 from bulletin_download.states.TG import Telangana
 from bulletin_download.states.UK import Uttarakhand
 from bulletin_download.states.WB import WestBengal
+from bulletin_download.states.GA import Goa
 
 
 def run(basedir, state_to_execute=None):
@@ -20,6 +21,7 @@ def run(basedir, state_to_execute=None):
         'TG': Telangana,
         'UK': Uttarakhand,
         'WB': WestBengal,
+        'GA': Goa,
         'MP': MadhyaPradesh,
     }
 
