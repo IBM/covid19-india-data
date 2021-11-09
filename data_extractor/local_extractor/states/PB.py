@@ -7,6 +7,7 @@ import camelot
 
 import pdfminer
 from pdfminer.high_level import extract_pages
+import pdb
 
 try:
     from local_extractor.utils import common_utils
@@ -43,7 +44,7 @@ class PunjabExtractor(object):
             if del_old:
                 del data[col]
 
-            return data
+        return data
 
     def _clean_empty_values_(self, data, cols = None, _format = "INT"):
         # format is integer for INT or STR for string
@@ -70,7 +71,7 @@ class PunjabExtractor(object):
 
         return data
 
-    def _find_index_by_column_(tables, keywords):
+    def _find_index_by_column_(self, tables, keywords):
         # matches keywords from the table columns
         # returns the index in the list of tables
         # returns -1 if table not found
@@ -80,7 +81,7 @@ class PunjabExtractor(object):
             copy_keywords = keywords.copy()
             for col in df_tab:
                 for i, keyword in enumerate(copy_keywords):
-                    if keyword in df_tab[col][0]:
+                    if keyword in df_tab[col][0].strip().lower():
                         copy_keywords.remove(copy_keywords[i])
                         break
 
@@ -94,7 +95,7 @@ class PunjabExtractor(object):
         info_table = None
         keywords = {'samples', 'vaccination', 'conducted', 'discharged'}
 
-        info_table = common_utils.find_table_by_keywords(tabels, keywords)
+        info_table = common_utils.find_table_by_keywords(tables, keywords)
 
         if info_table is None:
             return None
@@ -136,7 +137,7 @@ class PunjabExtractor(object):
 
         # clean result
         cols = result.keys()
-        result = self._clean_empty_values(result)
+        result = self._clean_empty_values_(result)
         result = self._clear_extra_char_(result, cols)
 
         for col in result.keys():
@@ -150,7 +151,7 @@ class PunjabExtractor(object):
         info_table = None
         keywords = {"icu", "ventilator", "discharged", "deaths"}
 
-        info_table = common_utils.find_table_by_keywords(tabels, keywords)
+        info_table = common_utils.find_table_by_keywords(tables, keywords)
 
         if info_table is None:
             return None
@@ -170,7 +171,7 @@ class PunjabExtractor(object):
         result = self._process_district_info_(result, 'icu_patients_today', ["icu_patients_today", "icu_patients_today_districts"])
         result = self._process_district_info_(result, 'ventilator_patients_today', ["ventilator_patients_today", "ventilator_patients_today_districts"])
         result = self._process_district_info_(result, 'discharged_patients_today', ["discharged_patients_today", "discharged_patients_today_districts"])
-        result = self._process_district_info_(result, 'death_today', ["deaths_today", "deaths_today_districts"])
+        result = self._process_district_info_(result, 'deaths_today', ["deaths_today", "deaths_today_districts"])
 
         cols = keymap.keys()
         result = self._clean_empty_values_(result, cols, "INT")
@@ -219,16 +220,13 @@ class PunjabExtractor(object):
             number_cols = df_init.shape[1]
 
             while not all_sub_tables_parsed:
-                df_init = tables[index_df + tab_counter]
+                df_init = tables[index_df + tab_counter].df
                 # sanity check whether the next table is the same shape
                 # if it is not the same shape that would mean it is cumulative data
                 if number_cols != df_init.shape[1]:
                     break
 
                 for i, row in df_init.iterrows():
-                    if stop_loop:
-                        break
-
                     row = [x for x in list(row) if x]
 
                     if "day" in row[0].strip().lower():
@@ -256,7 +254,7 @@ class PunjabExtractor(object):
                     else:
                         tmp["percentage_tests_positive"] = source_positive_percentage
 
-                    tmp = self._clean_empty_values(tmp, ["case_details", "remarks"])
+                    tmp = self._clean_empty_values_(tmp, ["case_details", "remarks"])
                     district_data[district] = tmp
 
                 tab_counter += 1
@@ -324,11 +322,11 @@ class PunjabExtractor(object):
         df_micro = None
         df_micro = common_utils.find_table_by_keywords(tables, keywords)
 
-        if not df_micro:
+        if df_micro is None:
             df_micro = common_utils.find_table_by_keywords(tables, keywords_old)
             keywords = keywords_old
 
-        if not df_micro:
+        if df_micro is None:
             return None
 
         index = self._find_index_by_column_(tables, keywords)
@@ -351,13 +349,14 @@ class PunjabExtractor(object):
     def extract_large_containment_zone_info(self, tables):
         keywords = ["containment", "population", "total"]
         keywords_old = ["large", "outbreak", "total"]
+        df_containe = None
         df_contain = common_utils.find_table_by_keywords(tables, keywords)
 
-        if not df_contain:
+        if df_contain is None:
             df_contain = common_utils.find_table_by_keywords(tables, keywords_old)
             keywords = keywords_old
 
-        if not df_contain:
+        if df_contain is None:
             return None
 
         index = self._find_index_by_column_(tables, keywords)
@@ -367,7 +366,7 @@ class PunjabExtractor(object):
         stop_loop = False
         counter = 1
         result = list()
-        df_micro = df_micro.iloc[1:]
+        df_contain = df_contain.iloc[1:]
         current_district = ""
         while stop_loop:
             # this iterates over tables
@@ -412,18 +411,7 @@ class PunjabExtractor(object):
     def extract(self):
         n = common_utils.n_pages_in_pdf(self.report_fpath) 
         tables = common_utils.get_tables_from_pdf(library='camelot', pdf_fpath=self.report_fpath)
-        #tables_page2 = common_utils.get_tables_from_pdf(library='camelot', pdf_fpath=self.report_fpath, pages[2])
-
         case_vaccination_info = self.extract_cases_info(tables)
-        """is_page2_parsed = True
-        if len(tables_page1) > 1:
-            # this means second table with patient info is on the same page
-            table_patients = tables_page1
-            is_page2_parsed = False
-        else:
-            table_patients = tables_page2
-        """
-
         patients_info = self.extract_patient_info(tables)
         district_info = self.extract_district_info(tables)
         micro_containment_info = self.extract_micro_containment_zone_info(tables)
@@ -441,6 +429,6 @@ class PunjabExtractor(object):
         
 if __name__ == '__main__':
     date = '25-jul-2021'
-    path = "../../downloads/bulletins/PB/Media Bulletin COVID-19_ 25-July-2021.pdf"
+    path = "../../../downloads/bulletins/PB/Media Bulletin COVID-19_ 25-July-2021.pdf"
     obj = PunjabExtractor(date, path)
     print(obj.extract())
