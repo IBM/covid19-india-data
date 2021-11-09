@@ -96,7 +96,6 @@ class PageHeader extends React.Component {
                   <SideNavDivider />
 
                   <SideNavLink
-                    small
                     href="/#/analysis"
                     onClick={this.onClickTab.bind(this, 'analysis')}
                     isActive={this.state.analysis}>
@@ -104,7 +103,6 @@ class PageHeader extends React.Component {
                   </SideNavLink>
 
                   <SideNavLink
-                    small
                     href="/#/anomalies"
                     onClick={this.onClickTab.bind(this, 'anomalies')}
                     isActive={this.state.anomalies}>
