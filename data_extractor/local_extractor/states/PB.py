@@ -55,7 +55,7 @@ class PunjabExtractor(object):
             for col in cols:
                 if col in data and keyword in data[col].strip().lower():
                     if _format == "INT":
-                        data[col] = 0
+                        data[col] = str(0)
                     elif _format == "STR":
                         data[col] = ""
 
@@ -79,8 +79,9 @@ class PunjabExtractor(object):
             df_tab = table.df
             copy_keywords = []
             copy_keywords = keywords.copy()
-            for col in df_tab:
-                for i, keyword in enumerate(copy_keywords):
+            for i in range(len(copy_keywords) -1, -1, -1):
+                for col in df_tab:
+                    keyword = copy_keywords[i]
                     if keyword in df_tab[col][0].strip().lower():
                         copy_keywords.remove(copy_keywords[i])
                         break
@@ -220,7 +221,6 @@ class PunjabExtractor(object):
             number_cols = df_init.shape[1]
 
             while not all_sub_tables_parsed:
-                df_init = tables[index_df + tab_counter].df
                 # sanity check whether the next table is the same shape
                 # if it is not the same shape that would mean it is cumulative data
                 if number_cols != df_init.shape[1]:
@@ -238,8 +238,12 @@ class PunjabExtractor(object):
                     district = row[0].strip().lower()
                     cases_today = row[1].strip()
                     source_positive_percentage = row[2].strip()
-                    details = row[3].strip().lower()
-                    remarks = row[4].strip().lower()
+                    if not all_sub_tables_parsed:
+                        details = row[3].strip().lower()
+                        remarks = row[4].strip().lower()
+                    else:
+                        details = ""
+                        remarks = ""
 
                     tmp = {
                         "date": self.date,
@@ -254,10 +258,11 @@ class PunjabExtractor(object):
                     else:
                         tmp["percentage_tests_positive"] = source_positive_percentage
 
-                    tmp = self._clean_empty_values_(tmp, ["case_details", "remarks"])
+                    tmp = self._clean_empty_values_(tmp, ["case_details", "remarks", "outside_source_details"], "STR")
                     district_data[district] = tmp
 
                 tab_counter += 1
+                df_init = tables[index_df + tab_counter].df
 
         keywords_cumulative = ["confirmed", "active", "cured", "deaths"]
         df_cumulative = None
@@ -302,7 +307,9 @@ class PunjabExtractor(object):
         # clean the complete data
         int_cols = ["cases_today", "cases_total", "active_cases", "recovered_total", "deaths_total"]
         str_cols = ["outside_source_details", "case_details", "remarks"]
-        char_cols = int_cols.append("percentage_tests_positive")
+        float_cols = ["percentage_tests_positive"]
+        char_cols = int_cols.copy()
+        char_cols.extend(float_cols)
         result = list()
         for key, val in district_data.items():
             val = self._clear_extra_char_(val, char_cols)
@@ -310,9 +317,14 @@ class PunjabExtractor(object):
             val = self._clean_empty_values_(val, str_cols, "STR")
 
             for col in int_cols:
-                val[col] = locale.atoi(val[col])
+                if col in val:
+                    val[col] = locale.atoi(val[col])
 
             result.append(val)
+
+            for col in float_cols:
+                if col in val:
+                    val[col] = locale.atof(val[col])
 
         return result
 
@@ -331,16 +343,16 @@ class PunjabExtractor(object):
 
         index = self._find_index_by_column_(tables, keywords)
         if index == -1:
-            print("something went wrong, table not found")
+            print("something went wrong, micro containment table index not found")
 
         stop_loop = False
         counter = 1
         result = list()
         df_micro = df_micro.iloc[1:]
         current_district = ""
-        while stop_loop:
+        while not stop_loop:
             # this iterates over tables
-            tmp, current_district, stop_loop = self._parse_containment_info_(df_micro, current_district, "micro")
+            tmp, current_district, stop_loop = self._parse_containment_info_(df_micro, current_district)
             result.extend(tmp)
             df_micro = tables[index + counter].df
 
@@ -361,23 +373,23 @@ class PunjabExtractor(object):
 
         index = self._find_index_by_column_(tables, keywords)
         if index == -1:
-            print("something went wrong, table not found")
+            print("something went wrong, containment table index not found")
 
         stop_loop = False
         counter = 1
         result = list()
         df_contain = df_contain.iloc[1:]
         current_district = ""
-        while stop_loop:
+        while not stop_loop:
             # this iterates over tables
-            tmp, current_district, stop_loop = self._parse_containment_info_(df_micro, current_district, "micro")
+            tmp, current_district, stop_loop = self._parse_containment_info_(df_contain, current_district)
             result.extend(tmp)
-            df_micro = tables[index + counter].df
+            df_contain = tables[index + counter].df
 
         return result
 
 
-    def _parse_containment_info_(self, table, _district = "", _type = "micro"):
+    def _parse_containment_info_(self, table, _district = ""):
         # type is the containment type can be micro or large
         stop_loop = False
         number_cols = table.shape[1]
@@ -387,7 +399,7 @@ class PunjabExtractor(object):
         for i, row in table.iterrows():
             row = [x for x in list(row) if x]
 
-            if "total" in row[1].strip().lower():
+            if "total" in row[1].strip().lower() or "total" in row[0].strip().lower():
                 stop_loop = True
                 break
 
@@ -402,6 +414,12 @@ class PunjabExtractor(object):
                 "containment": zone,
                 "population_contained": population
             }
+
+            cols = ["population_contained"]
+            tmp = self._clean_empty_values_(tmp, cols, "INT")
+
+            for col in cols:
+                tmp[col] = locale.atoi(tmp[col])
 
             result.append(tmp)
 
