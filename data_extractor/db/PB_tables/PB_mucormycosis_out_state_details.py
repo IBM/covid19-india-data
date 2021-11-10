@@ -2,10 +2,10 @@ import sqlite3
 from .db import DB
 
 
-class CaseInfoTable(DB):
+class OutStateTable(DB):
 
     def __init__(self):
-        self.table_name = 'PB_mucormycosi_out_of_state_details'
+        self.table_name = 'PB_mucormycosis_out_of_state_details'
         self.table_desc = 'Punjab mucormycosis details of patients from out of state. Table on the last page of bulletins from June 2021'
         self.cols = self.getcolumns()
 

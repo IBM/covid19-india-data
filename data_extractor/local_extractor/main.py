@@ -5,6 +5,7 @@ from local_extractor.states.MH import MaharashtraExtractor
 from local_extractor.states.TG import TelanganaExtractor
 from local_extractor.states.UK import UttarakhandExtractor
 from local_extractor.states.WB import WestBengalExtractor
+from local_extractor.states.PB import PunjabExtractor
 
 
 STATE_LIST = {
@@ -16,6 +17,7 @@ STATE_LIST = {
     'HR': HaryanaExtractor,
     'UK': UttarakhandExtractor,
     'WB': WestBengalExtractor,
+    'PB': PunjabExtractor,
 }
 
 

@@ -2,13 +2,13 @@ import sqlite3
 from .db import DB
 
 
-class DistrictCasesTable(DB):
+class DistrictDetailsTable(DB):
 
     def __init__(self):
         super().__init__()
 
-        self.table_name = 'WB_district_cases'
-        self.table_desc = 'West Bengal district wise case info'
+        self.table_name = 'PB_district_cases'
+        self.table_desc = 'Punjab district wise case info'
         self.cols = self.getcolumns()
 
     def getcolumns(self):

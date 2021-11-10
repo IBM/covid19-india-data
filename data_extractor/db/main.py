@@ -9,6 +9,7 @@ from .MH import MaharashtraDB
 from .TG import TelanganaDB
 from .UK import UttarakhandDB
 from .WB import WestBengalDB
+from .PB import PunjabDB
 
 from .Metadata import MetadataDB
 
@@ -31,6 +32,7 @@ class DBMain(object):
             'TG': TelanganaDB(datadir=self.datadir),
             'UK': UttarakhandDB(datadir=self.datadir),
             'WB': WestBengalDB(datadir=self.datadir),
+            'PB': PunjabDB(datadir=self.datadir),
         }
 
         self.metatable = MetadataDB(datadir=self.datadir)

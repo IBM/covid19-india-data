@@ -2,7 +2,7 @@ import sqlite3
 from .db import DB
 
 
-class CaseInfoTable(DB):
+class ContainmentZonesTable(DB):
 
     def __init__(self):
         self.table_name = 'PB_containment_zone'
