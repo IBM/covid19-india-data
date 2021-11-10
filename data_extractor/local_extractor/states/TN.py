@@ -1,12 +1,25 @@
 import locale
 locale.setlocale( locale.LC_ALL, 'en_US.UTF-8' )
 
+import pdfplumber
 import re
 import pandas as pd
 
 try:
+    from local_extractor.states.state_utils import TN_utils
+except ImportError:
+
+    import sys, os, pathlib
+    path = pathlib.Path(__file__).absolute().parents[2]
+    path = os.path.join(path, 'local_extractor', 'states')
+    if path not in sys.path:
+        sys.path.insert(0, path)
+    from state_utils import TN_utils
+
+try:
     from local_extractor.utils import common_utils
 except ImportError:
+
     import sys, os, pathlib
     path = pathlib.Path(__file__).absolute().parents[2]
     path = os.path.join(path, 'local_extractor')
@@ -14,10 +27,12 @@ except ImportError:
         sys.path.insert(0, path)
     from utils import common_utils
 
+
 class TamilNaduExtractor(object):
     def __init__(self, date, report_fpath):
         self.date = date
         self.report_fpath = report_fpath
+        self.case_parser = TN_utils.CaseInfo
 
         # for matching facilities string -- example 269 (69 Govt+200 Private)
         self.facilities_nums_regex = re.compile(r'([\d,]+)[ ]*[\(]*([\d,]+)[ ]*([\D]+)[ ]*([\d,]+)[ ]*([\D]+)[\)]*')
@@ -894,6 +909,40 @@ class TamilNaduExtractor(object):
 
         return result
 
+    def extract_individual_case_info(self):
+
+        with pdfplumber.open(self.report_fpath) as pdf:
+            result = []
+            category = None
+
+            for i, page in enumerate(pdf.pages):
+                text = page.extract_text()
+
+                if "Death Case" in text:
+                    match = re.split(r"Death\s+in", text)
+
+                    for item in match:
+
+                        new_category = item.lower().split("death case")[0]
+                        new_category = " ".join(new_category.split())
+
+                        if not new_category:
+                            new_category = category
+
+                        item = re.split(r"\s*\n+\s*\n+\s*", item)
+
+                        for i in item:
+
+                            i = " ".join(i.split("  "))
+
+                            try: result.append(self.case_parser.extract(i, category=new_category))
+                            except: pass
+
+                        category = new_category
+
+            return result
+
+
     def extract(self):
         n = common_utils.n_pages_in_pdf(self.report_fpath)
         #print("number of pages ", n)
@@ -921,6 +970,8 @@ class TamilNaduExtractor(object):
         train_details = self.extract_train_surveillance_table(tables_travel_data)
         seaport_details = self.extract_seaport_surveillance_table(tables_travel_data)
 
+        individual_case_info = self.extract_individual_case_info()
+
         result = {
             'case-info': cummulative_case_info,
             'detailed-info': detailed_case_info,
@@ -931,7 +982,8 @@ class TamilNaduExtractor(object):
             'airport': airport_details,
             'flights': flight_details,
             'trains': train_details,
-            'ships': seaport_details
+            'ships': seaport_details,
+            'individual-case-info': individual_case_info
         }
 
         #print(result)
@@ -939,7 +991,18 @@ class TamilNaduExtractor(object):
 
 
 if __name__ == "__main__":
-    date = "17-sep-2021"
-    path = "../../../downloads/bulletins/TN/TN-Bulletin-2021-09-17.pdf"
+
+    # date = "17-sep-2021"
+    # path = "../../../downloads/bulletins/TN/TN-Bulletin-2021-09-17.pdf"
+
+    date = "07-nov-2021"
+    path = "/Users/tchakra2/Desktop/bulletins/Media-Bulletin-07-11-21-COVID-19.pdf"
+
+    # date = "07-nov-2021"
+    # path = "/Users/tchakra2/Desktop/bulletins/Media-Bulletin-08-09-21-COVID-19.pdf"
+
     reader = TamilNaduExtractor(date, path)
-    reader.extract()
+
+    from pprint import pprint
+    pprint(reader.extract())
+

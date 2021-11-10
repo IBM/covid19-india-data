@@ -1,28 +1,30 @@
 # Individual Cases Text Parser
 # From Tamil Nadu Bulletins
 
-
 from __future__ import annotations
-from typing import TypedDict, Dict, Optional
 
-
+import sys
 import pathlib
 import argparse
 import os
 import re
 import json
 
+if sys.version_info >= (3, 8):
+    from typing import TypedDict, Dict, Optional
+else:
+    from typing_extensions import TypedDict
 
 _path_this_dir = pathlib.Path(__file__).parent
 _path_to_examples = _path_this_dir.joinpath("./case_examples")
 
 
-def read_test_text(test_text: str) -> CaseInfo:
-    return CaseInfo.extract(test_text)
+def read_text(test_text: str, category: str = None) -> CaseInfo:
+    return CaseInfo.extract(test_text, category)
 
 
 def read_test_file(filename: str) -> CaseInfo:
-    return read_test_text(open(filename).read())
+    return read_text(open(filename).read())
 
 
 def process_data(cls, data: Dict):
@@ -147,6 +149,7 @@ class DeathInfo(TypedDict):
 
 class CaseInfo(TypedDict):
     case_id: int
+    category: str
     age: int
     gender: str
     location: str
@@ -161,16 +164,18 @@ class CaseInfo(TypedDict):
         return process_data(cls, data)
 
     @classmethod
-    def extract(cls, text: str) -> CaseInfo:
+    def extract(cls, text: str, category: str) -> CaseInfo:
 
         input_text = text.strip()
-        derived_dict = dict()
+        derived_dict = {
+            "category" : category,
+        }
 
         regex = r'\D*((?P<case_id>\d+)*\D*\n+)*(?P<raw_data>.*)$'
         template = re.compile(regex, re.IGNORECASE|re.DOTALL)
         matches = re.match(template, input_text).groupdict()
 
-        matches["raw_data"] = matches["raw_data"].replace('\n', ' ')
+        matches["raw_data"] = " ".join(matches["raw_data"].split())
 
         derived_dict = {**derived_dict, **matches}
 

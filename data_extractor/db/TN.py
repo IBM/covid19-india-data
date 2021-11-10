@@ -3,7 +3,7 @@ import sqlite3
 from .db import Database
 from .TN_tables import TN_case_info, TN_detailed_cases, TN_district_detailed_cases, TN_bed_vacancy_details, \
     TN_detailed_deaths, TN_incoming_passengers_testing, TN_airport_surveillance, TN_flight_surveillance, \
-    TN_railway_surveillance, TN_seaport_surveillance
+    TN_railway_surveillance, TN_seaport_surveillance, TN_individual_case_info
 
 class TamilNaduDB(Database):
 
@@ -28,7 +28,8 @@ class TamilNaduDB(Database):
             'airport': TN_airport_surveillance.AirportSurveillanceTable(),
             'flights': TN_flight_surveillance.FlightSurveillanceTable(),
             'trains': TN_railway_surveillance.RailwaySurveillanceTable(),
-            'ships': TN_seaport_surveillance.SeaportSurveillanceTable()
+            'ships': TN_seaport_surveillance.SeaportSurveillanceTable(),
+            'individual-case-info': TN_individual_case_info.IndividualCaseInfo()
         }
 
     def insert_row(self, data):
