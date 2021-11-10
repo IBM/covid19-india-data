@@ -350,7 +350,11 @@ class PunjabExtractor(object):
         result = list()
         df_micro = df_micro.iloc[1:]
         current_district = ""
+        number_cols = df_micro.shape[1]
         while not stop_loop:
+            if number_cols != df_micro.shape[1]:
+                break
+
             # this iterates over tables
             tmp, current_district, stop_loop = self._parse_containment_info_(df_micro, current_district)
             result.extend(tmp)
@@ -380,7 +384,11 @@ class PunjabExtractor(object):
         result = list()
         df_contain = df_contain.iloc[1:]
         current_district = ""
+        number_cols = df_contain.shape[1]
         while not stop_loop:
+            if number_cols != df_contain.shape[1]:
+                break
+
             # this iterates over tables
             tmp, current_district, stop_loop = self._parse_containment_info_(df_contain, current_district)
             result.extend(tmp)
@@ -426,6 +434,137 @@ class PunjabExtractor(object):
         return result, district, stop_loop
 
 
+    def extract_mucormycosis_info(self, tables):
+        df_table = None
+        keywords = ["lama", "treatment", "cured", "deaths", "reported"]
+        df_table = common_utils.find_table_by_keywords(tables, keywords)
+
+        if df_table is None:
+            return None
+
+        df_dict = common_utils.convert_df_to_dict(df_table, key_idx=1, val_idx=2)
+
+        keymap = {
+            'new_cases': ["day", "new", "cases"],
+            'deaths_today': ["day", "new", "deaths"],
+            'cured_today': ["day", "cured"],
+            'cases_total': ["total", "cases", "reported"],
+            'cases_belonging_punjab': ["3.1", "cases", "belonging", "punjab"],
+            'cases_belonging_other_states': ["3.2", "cases", "other","states"],
+            'under_treatment_total': ["cases", "under", "treatment"],
+            'under_treatment_belonging_punjab': ["4.1", "cases", "belonging", "punjab"],
+            'under_treatment_beloging_other_states': ["4.2", "cases", "other", "states"],
+            'cured_total': ["cured", "till", "date"],
+            'cured_total_belonging_punjab': ["5.1", "cases", "belonging", "punjab"],
+            'cured_total_belonging_other_states': ["5.2", "cases", "other", "states"],
+            'deaths_total': ["deaths", "reported", "till", "date"],
+            'deaths_total_belonging_punjab': ["deaths", "belonging", "punjab"],
+            'deaths_total_belonging_other_states': ["deaths", "other", "states"],
+            'lama': ["lama", "cases"],
+            'lama_belonging_punjab': ["lama", "belonging", "punjab"],
+            'lama_belonging_other_states': ["lama", "other", "states"]
+        }
+
+        result = common_utils.extract_info_from_table_by_keywords(df_dict, keymap)
+
+        # clean the data
+        cols = keymap.keys()
+        result = self._clean_empty_values_(result, cols, "INT")
+        result = self._clear_extra_char_(result, cols)
+
+        for col in cols:
+            if col in result:
+                result[col] = locale.atoi(result[col])
+
+        return result
+
+    def extract_mucormycosis_district_info(self, tables):
+        df_district = None
+        keywords = ["no.", "cases", "day", "reported", "deaths", "till", "date", "under", "treatment"]
+        df_district = common_utils.find_table_by_keywords(tables, keywords)
+        district_data = dict()
+        district_total_key = ""
+        cols_in = list()
+        result = None
+
+        if df_district is not None:
+            df_district = df_district.iloc[1:]
+            result = list()
+            for i, row in df_district.iterrows():
+                row = [x for x in list(row) if x]
+
+                district = row[0].strip().lower()
+                if "total" in district:
+                    district_total_key = district
+
+                reported_today = row[1].strip() if len(row) > 1 else "0"
+                deaths_today = row[2].strip() if len(row) > 2 else "0"
+                total_cases = row[3].strip() if len(row) > 3 else "0"
+                total_deaths = row[4].strip() if len(row) > 4 else "0"
+                total_treatment = row[5].strip() if len(row) > 5 else "0"
+                total_cured = row[6].strip() if len(row) > 6 else "0"
+
+                tmp = {
+                    "date": self.date,
+                    "district": district,
+                    "cases_today": reported_today,
+                    "deaths_today": deaths_today,
+                    "cases_total": total_cases,
+                    "deaths_total": total_deaths,
+                    "under_treatment": total_treatment,
+                    "cured_total": total_cured
+                }
+
+                cols = ["cases_today", "deaths_today", "cases_total", "deaths_total", "under_treatment", "cured_total"]
+                # clean the data
+                tmp = self._clean_empty_values_(tmp, cols, "INT")
+                tmp = self._clear_extra_char_(tmp, cols)
+
+                for col in cols:
+                    if col in tmp:
+                        tmp[col] = locale.atoi(tmp[col])
+
+                result.append(tmp)
+
+        return result
+
+
+    def extract_mucormycosis_out_state_info(self, tables):
+        # parsing second table
+        df_out_state = None
+        keywords = ["count", "patient", "name", "deaths"]
+        df_out_state = common_utils.find_table_by_keywords(tables, keywords)
+        result = None
+
+        if df_out_state is not None:
+            df_out_state = df_out_state.iloc[1:]
+            result = list()
+            for i, row in df_out_state.iterrows():
+                row = [x for x in list(row) if x]
+
+                city = row[0].strip().lower()
+                patients = row[1].strip() if len(row) > 1 else "0"
+                deaths = row[2].strip() if len(row) > 2 else "0"
+
+                tmp = {
+                    "date": self.date,
+                    "city": city,
+                    "patients": patients,
+                    "deaths": deaths
+                }
+
+                cols = ["patients", "deaths"]
+
+                tmp = self._clean_empty_values_(tmp, cols, "INT")
+                tmp = self._clear_extra_char_(tmp, cols)
+                for col in cols:
+                    if col in tmp:
+                        tmp[col] = locale.atoi(tmp[col])
+
+                result.append(tmp)
+
+        return result
+
     def extract(self):
         n = common_utils.n_pages_in_pdf(self.report_fpath) 
         tables = common_utils.get_tables_from_pdf(library='camelot', pdf_fpath=self.report_fpath)
@@ -434,13 +573,19 @@ class PunjabExtractor(object):
         district_info = self.extract_district_info(tables)
         micro_containment_info = self.extract_micro_containment_zone_info(tables)
         large_containment_info = self.extract_large_containment_zone_info(tables)
+        muco_info = self.extract_mucormycosis_info(tables)
+        muco_district_info = self.extract_mucormycosis_district_info(tables)
+        muco_out_of_state_info = self.extract_mucormycosis_out_state_info(tables)
 
         result = {
             'cases_vaccination_details': case_vaccination_info,
             'patient_details': patients_info,
             'district_details': district_info,
             'micro_containment_details': micro_containment_info,
-            'containment_details': large_containment_info
+            'containment_details': large_containment_info,
+            'mucormycorsis_details': muco_info,
+            'mucormycorsis_district_details': muco_district_info,
+            'mucormycosis_out_state_city_details': muco_out_of_state_info
         }
 
         return result
