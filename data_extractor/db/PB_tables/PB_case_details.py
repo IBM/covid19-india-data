@@ -5,8 +5,8 @@ from .db import DB
 class CaseInfoTable(DB):
 
     def __init__(self):
-        self.table_name = 'PB_cases'
-        self.table_desc = 'Punjab samples, cases, and vaccination information. Table page 1'
+        self.table_name = 'PB_case_details'
+        self.table_desc = 'Punjab patients discharged, ventilators, icu and death details. Table page 1 or 2'
         self.cols = self.getcolumns()
 
     def getcolumns(self):

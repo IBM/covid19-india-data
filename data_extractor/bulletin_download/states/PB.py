@@ -83,7 +83,6 @@ class Punjab(Bulletin):
         return links
 
     def get_date_url(self, html_str):
-        print(html_str)
         html_str = html_str.strip()[0:-1] + "\"}"
         obj = json.loads(html_str)
         anchor = BeautifulSoup(obj["html"], "html.parser").find_all("a")[0]
@@ -98,7 +97,6 @@ class Punjab(Bulletin):
 
         print(f'\t Downloading Punjab bulletins')
         bulletin_links = self.get_bulletin_links()
-        print(bulletin_links)
         self.download_bulletins(bulletin_links)
         self._save_state_()
         
