@@ -229,6 +229,9 @@ class PunjabExtractor(object):
                 for i, row in df_init.iterrows():
                     row = [x for x in list(row) if x]
 
+                    if len(row) <= 1:
+                        continue
+
                     if "day" in row[0].strip().lower():
                         # this will tell me that whether next table
                         # is table with district cases or not
@@ -277,6 +280,9 @@ class PunjabExtractor(object):
                     break
 
                 row = [x for x in list(row) if x]
+
+                if len(row) <= 1:
+                    continue
 
                 if "total" in row[1].strip().lower():
                     stop_loop = True
@@ -330,7 +336,7 @@ class PunjabExtractor(object):
 
     def extract_micro_containment_zone_info(self, tables):
         keywords = ["micro", "containment", "population"]
-        keyword_old = ["high", "priority", "population"]
+        keywords_old = ["high", "priority", "population"]
         df_micro = None
         df_micro = common_utils.find_table_by_keywords(tables, keywords)
 
@@ -406,6 +412,9 @@ class PunjabExtractor(object):
 
         for i, row in table.iterrows():
             row = [x for x in list(row) if x]
+
+            if len(row) <= 1:
+                continue
 
             if "total" in row[1].strip().lower() or "total" in row[0].strip().lower():
                 stop_loop = True
@@ -591,7 +600,7 @@ class PunjabExtractor(object):
         return result
         
 if __name__ == '__main__':
-    date = '25-jul-2021'
-    path = "../../../downloads/bulletins/PB/Media Bulletin COVID-19_ 25-July-2021.pdf"
+    date = '24-jul-2021'
+    path = "../../../downloads/bulletins/PB/PB-Bulletin-2021-07-20.pdf"
     obj = PunjabExtractor(date, path)
     print(obj.extract())
