@@ -75,7 +75,7 @@ class PageHeader extends React.Component {
                     href="/#/introduction"
                     onClick={this.onClickTab.bind(this, 'introduction')}
                     isActive={this.state.introduction}>
-                    Introduction
+                    Dashboard
                   </SideNavLink>
 
                   <SideNavDivider />

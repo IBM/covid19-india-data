@@ -1,22 +1,19 @@
-// import React from 'react';
-// import { Link } from 'carbon-components-react';
-
 const QUERIES = [
   {
     subject: 'Daily new cases',
-    description: <></>,
+    description: null,
     query:
       'SELECT date, cases_new FROM TG_case_info WHERE cases_new is NOT NULL ORDER BY date ASC',
   },
   {
     subject: 'Daily new fatalities',
-    description: <></>,
+    description: null,
     query:
       'SELECT date, deaths_new FROM TG_case_info WHERE deaths_new is NOT NULL ORDER BY date ASC',
   },
   {
     subject: 'Tests conducted daily',
-    description: <></>,
+    description: null,
     query:
       'SELECT date, tests_today FROM TG_testing_info WHERE tests_today is NOT NULL ORDER BY date ASC',
   },
@@ -34,13 +31,13 @@ const QUERIES = [
   },
   {
     subject: 'Cases in home isolation',
-    description: <></>,
+    description: null,
     query:
       'SELECT date, cases_in_isolation FROM TG_case_info WHERE cases_in_isolation is NOT NULL ORDER BY date ASC',
   },
   {
     subject: 'Percentage of active cases in home isolation',
-    description: <></>,
+    description: null,
     query:
       'WITH TG_caseinfo AS (SELECT date, cases_in_isolation, cases_total - recovered_total - deaths_total AS active FROM TG_case_info) SELECT date, cases_in_isolation/CAST(active AS REAL) FROM TG_caseinfo ORDER BY date ASC',
   },
