@@ -27,5 +27,5 @@ class DistrictInfoTable(DB):
     def create_table(self):
         colstr = [f'`{colname}` {coltype}' for colname, coltype in self.cols.items()]
         colstr = ', '.join(colstr)
-        query = f"CREATE TABLE IF NOT EXISTS `{self.table_name}` ({colstr}, PRIMARY KEY date, district))"
+        query = f"CREATE TABLE IF NOT EXISTS `{self.table_name}` ({colstr}, PRIMARY KEY (date, district))"
         return query
