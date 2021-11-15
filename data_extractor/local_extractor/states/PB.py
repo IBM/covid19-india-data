@@ -29,8 +29,8 @@ class PunjabExtractor(object):
         self.report_fpath = report_fpath
 
         # for matching 3(Amritsar-1, Ludhiana-2)
-        self.district_regex = re.compile(r'([\d]+)\(([\d,\D,\s]+)\)')
-        self.empty_keywords = ["nil", "----"]
+        self.district_regex = re.compile(r'([\d]+)[ ]*\(*([\d,\D,\s]+)\)*')
+        self.empty_keywords = ["nil", "----", "---", "--", "—"]
         self.extra_char = ['*', '%']
 
     def _process_district_info_(self, data, col, new_cols, del_old=False):
@@ -75,6 +75,7 @@ class PunjabExtractor(object):
         # matches keywords from the table columns
         # returns the index in the list of tables
         # returns -1 if table not found
+        keywords = list(keywords)
         for index, table in enumerate(tables):
             df_tab = table.df
             copy_keywords = []
@@ -94,7 +95,7 @@ class PunjabExtractor(object):
 
     def extract_cases_info(self, tables):
         info_table = None
-        keywords = {'samples', 'vaccination', 'conducted', 'discharged'}
+        keywords = {'samples', 'tested', 'discharged', 'oxygen', 'ventilator', 'deaths'}
 
         info_table = common_utils.find_table_by_keywords(tables, keywords)
 
@@ -107,6 +108,7 @@ class PunjabExtractor(object):
             'samples_new': ['sample', 'collected', 'day'],
             'tests_new': ['test', 'conducted', 'day'],
             'cases_total': ['patiens', 'tested', 'positive'],
+            'isolation': ['institutional', 'isolation'],
             'discharged_total': ['patients', 'discharged'],
             'active_cases': ['number', 'active', 'cases'],
             'deaths_total': ['total', 'deaths', 'reported'],
@@ -193,13 +195,13 @@ class PunjabExtractor(object):
         if not tables:
             return None
 
-        keywords_recent = ["positivity", "remarks", "details"]
-        keywords_old = ["source", "infection", "remarks", "details"]
+        keywords = {"positivity", "remarks", "details", "case"}
+        keywords_old = {"source", "infection", "remarks", "local"}
         is_source_present = True # true means the second column is a string
         # in recent bulletins it is a different column with float value
 
         df_init = None
-        df_init = common_utils.find_table_by_keywords(tables, keywords_recent)
+        df_init = common_utils.find_table_by_keywords(tables, keywords)
         district_data = dict()
         all_sub_tables_parsed = False
 
@@ -208,7 +210,6 @@ class PunjabExtractor(object):
             keywords = keywords_old
         else:
             is_source_present = False
-            keywords = keywords_recent
 
         total_district = ""
 
@@ -216,11 +217,14 @@ class PunjabExtractor(object):
             df_init = df_init.iloc[1:]
             tab_counter = 0
             index_df = self._find_index_by_column_(tables, keywords)
-            if index_df == -1:
-                print("something went wrong, init table not found")
             number_cols = df_init.shape[1]
 
             while not all_sub_tables_parsed:
+                if index_df == -1:
+                    print("something went wrong, init table not found")
+                    # added so that code continues
+                    all_sub_tables_parsed = True
+
                 # sanity check whether the next table is the same shape
                 # if it is not the same shape that would mean it is cumulative data
                 if number_cols != df_init.shape[1]:
@@ -272,27 +276,29 @@ class PunjabExtractor(object):
         df_cumulative = common_utils.find_table_by_keywords(tables, keywords_cumulative)
 
         stop_loop = False
-        if df_cumulative is None:
+        if df_cumulative is not None:
             df_cumulative = df_cumulative.iloc[1:]
 
             for i, row in df_cumulative.iterrows():
                 if stop_loop:
                     break
 
+                counter = 0
                 row = [x for x in list(row) if x]
 
                 if len(row) <= 1:
                     continue
 
-                if "total" in row[1].strip().lower():
+                if "total" in row[0].strip().lower():
                     stop_loop = True
                     cumulative_total = row[1].strip().lower()
+                    counter = 1
 
-                district = row[1].strip().lower()
-                confirmed = row[2].strip()
-                active = row[3].strip()
-                cured = row[4].strip()
-                deaths = row[5].cases()
+                district = row[1 - counter].strip().lower()
+                confirmed = row[2 - counter].strip()
+                active = row[3 - counter].strip()
+                cured = row[4 - counter].strip()
+                deaths = row[5 - counter].strip()
 
                 tmp = {
                     "date": self.date,
@@ -305,7 +311,7 @@ class PunjabExtractor(object):
 
                 if district in district_data:
                     district_data[district].update(tmp)
-                elif stop_loop and not total_district:
+                elif stop_loop and not total_district and total_district in district_data:
                     district_data[total_district].update(tmp)
                 else:
                     district_data[district] = tmp
@@ -335,8 +341,8 @@ class PunjabExtractor(object):
         return result
 
     def extract_micro_containment_zone_info(self, tables):
-        keywords = ["micro", "containment", "population"]
-        keywords_old = ["high", "priority", "population"]
+        keywords = {"micro", "containment", "population"}
+        keywords_old = {"high", "priority", "population"}
         df_micro = None
         df_micro = common_utils.find_table_by_keywords(tables, keywords)
 
@@ -348,9 +354,6 @@ class PunjabExtractor(object):
             return None
 
         index = self._find_index_by_column_(tables, keywords)
-        if index == -1:
-            print("something went wrong, micro containment table index not found")
-
         stop_loop = False
         counter = 1
         result = list()
@@ -364,13 +367,21 @@ class PunjabExtractor(object):
             # this iterates over tables
             tmp, current_district, stop_loop = self._parse_containment_info_(df_micro, current_district)
             result.extend(tmp)
+            # tables ended
+            if index + counter >= self.number_of_tables:
+                break
+
             df_micro = tables[index + counter].df
+            counter += 1
+            if index == -1:
+                print("something went wrong, micro containment table index not found")
+                stop_loop = True
 
         return result
 
     def extract_large_containment_zone_info(self, tables):
-        keywords = ["containment", "population", "total"]
-        keywords_old = ["large", "outbreak", "total"]
+        keywords = {"containment", "population", "total"}
+        keywords_old = {"large", "outbreak", "total"}
         df_containe = None
         df_contain = common_utils.find_table_by_keywords(tables, keywords)
 
@@ -382,8 +393,6 @@ class PunjabExtractor(object):
             return None
 
         index = self._find_index_by_column_(tables, keywords)
-        if index == -1:
-            print("something went wrong, containment table index not found")
 
         stop_loop = False
         counter = 1
@@ -398,7 +407,16 @@ class PunjabExtractor(object):
             # this iterates over tables
             tmp, current_district, stop_loop = self._parse_containment_info_(df_contain, current_district)
             result.extend(tmp)
+            # tables ended
+            if index + counter >= self.number_of_tables:
+                break
+
             df_contain = tables[index + counter].df
+            counter += 1
+            if index == -1:
+                print("something went wrong, micro containment table index not found")
+                stop_loop = True
+
 
         return result
 
@@ -413,8 +431,17 @@ class PunjabExtractor(object):
         for i, row in table.iterrows():
             row = [x for x in list(row) if x]
 
+            # Ideally the row should be atleast size 3
             if len(row) <= 1:
                 continue
+
+            # this happens in microcontainment case
+            if row[-1].isnumeric():
+                population = row[-1].strip().lower()
+                zone = row[-2].strip().lower()
+            else:
+                population = str(0)
+                zone = row[-1].strip().lower()
 
             if "total" in row[1].strip().lower() or "total" in row[0].strip().lower():
                 stop_loop = True
@@ -423,8 +450,7 @@ class PunjabExtractor(object):
             if len(row) == number_cols:
                 district = row[1].strip().lower()
 
-            zone = row[-2].strip().lower()
-            population = row[-1].strip().lower()
+
             tmp = {
                 "date": self.date,
                 "district": district,
@@ -445,7 +471,7 @@ class PunjabExtractor(object):
 
     def extract_mucormycosis_info(self, tables):
         df_table = None
-        keywords = ["lama", "treatment", "cured", "deaths", "reported"]
+        keywords = {"lama", "treatment", "cured", "deaths", "reported"}
         df_table = common_utils.find_table_by_keywords(tables, keywords)
 
         if df_table is None:
@@ -489,7 +515,7 @@ class PunjabExtractor(object):
 
     def extract_mucormycosis_district_info(self, tables):
         df_district = None
-        keywords = ["no.", "cases", "day", "reported", "deaths", "till", "date", "under", "treatment"]
+        keywords = {"no.", "cases", "day", "reported", "deaths", "till", "date", "under", "treatment"}
         df_district = common_utils.find_table_by_keywords(tables, keywords)
         district_data = dict()
         district_total_key = ""
@@ -541,7 +567,7 @@ class PunjabExtractor(object):
     def extract_mucormycosis_out_state_info(self, tables):
         # parsing second table
         df_out_state = None
-        keywords = ["count", "patient", "name", "deaths"]
+        keywords = {"count", "patient", "name", "deaths"}
         df_out_state = common_utils.find_table_by_keywords(tables, keywords)
         result = None
 
@@ -577,6 +603,7 @@ class PunjabExtractor(object):
     def extract(self):
         n = common_utils.n_pages_in_pdf(self.report_fpath) 
         tables = common_utils.get_tables_from_pdf(library='camelot', pdf_fpath=self.report_fpath)
+        self.number_of_tables = len(tables)
         case_vaccination_info = self.extract_cases_info(tables)
         patients_info = self.extract_patient_info(tables)
         district_info = self.extract_district_info(tables)
@@ -600,7 +627,7 @@ class PunjabExtractor(object):
         return result
         
 if __name__ == '__main__':
-    date = '24-jul-2021'
-    path = "../../../downloads/bulletins/PB/PB-Bulletin-2021-07-20.pdf"
+    date = '2021-01-21'
+    path = "../../../downloads/bulletins/PB/PB-Bulletin-2021-01-21.pdf"
     obj = PunjabExtractor(date, path)
     print(obj.extract())

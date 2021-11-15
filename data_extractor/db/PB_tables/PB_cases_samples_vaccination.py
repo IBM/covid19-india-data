@@ -16,6 +16,7 @@ class CaseDetailsTable(DB):
             'samples_new': 'INT',
             'tests_new': 'INT',
             'cases_total': 'INT',
+            'isolation': 'INT',
             'discharged_total': 'INT',
             'active_cases': 'INT',
             'deaths_total': 'INT',
