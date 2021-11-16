@@ -80,9 +80,9 @@ class PunjabExtractor(object):
             df_tab = table.df
             copy_keywords = []
             copy_keywords = keywords.copy()
-            for i in range(len(copy_keywords) -1, -1, -1):
+            for i in range(len(keywords) -1, -1, -1):
+                keyword = copy_keywords[i]
                 for col in df_tab:
-                    keyword = copy_keywords[i]
                     if keyword in df_tab[col][0].strip().lower():
                         copy_keywords.remove(copy_keywords[i])
                         break
@@ -221,7 +221,7 @@ class PunjabExtractor(object):
 
             while not all_sub_tables_parsed:
                 if index_df == -1:
-                    print("something went wrong, init table not found")
+                    print(self.date, "| something went wrong, init table index not found")
                     # added so that code continues
                     all_sub_tables_parsed = True
 
@@ -374,13 +374,13 @@ class PunjabExtractor(object):
             df_micro = tables[index + counter].df
             counter += 1
             if index == -1:
-                print("something went wrong, micro containment table index not found")
+                print(self.date, "| something went wrong, micro containment table index not found")
                 stop_loop = True
 
         return result
 
     def extract_large_containment_zone_info(self, tables):
-        keywords = {"containment", "population", "total"}
+        keywords = {"containment", "population", "punjab", "total"}
         keywords_old = {"large", "outbreak", "total"}
         df_containe = None
         df_contain = common_utils.find_table_by_keywords(tables, keywords)
@@ -388,6 +388,8 @@ class PunjabExtractor(object):
         if df_contain is None:
             df_contain = common_utils.find_table_by_keywords(tables, keywords_old)
             keywords = keywords_old
+        else:
+            keywords.remove("punjab")
 
         if df_contain is None:
             return None
@@ -414,9 +416,8 @@ class PunjabExtractor(object):
             df_contain = tables[index + counter].df
             counter += 1
             if index == -1:
-                print("something went wrong, micro containment table index not found")
+                print(self.date, "| something went wrong, containment table index not found")
                 stop_loop = True
-
 
         return result
 
@@ -627,7 +628,7 @@ class PunjabExtractor(object):
         return result
         
 if __name__ == '__main__':
-    date = '2021-01-21'
-    path = "../../../downloads/bulletins/PB/PB-Bulletin-2021-01-21.pdf"
+    date = '2021-07-19'
+    path = "../../../downloads/bulletins/PB/PB-Bulletin-2021-07-19.pdf"
     obj = PunjabExtractor(date, path)
     print(obj.extract())
