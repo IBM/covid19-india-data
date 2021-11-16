@@ -615,14 +615,14 @@ class PunjabExtractor(object):
         muco_out_of_state_info = self.extract_mucormycosis_out_state_info(tables)
 
         result = {
-            'cases_vaccination_details': case_vaccination_info,
-            'patient_details': patients_info,
-            'district_details': district_info,
-            'micro_containment_details': micro_containment_info,
-            'containment_details': large_containment_info,
-            'mucormycorsis_details': muco_info,
-            'mucormycorsis_district_details': muco_district_info,
-            'mucormycosis_out_state_city_details': muco_out_of_state_info
+            'cases-samples-vaccination': case_vaccination_info,
+            'cases': patients_info,
+            'district': district_info,
+            'micro-containment': micro_containment_info,
+            'containment': large_containment_info,
+            'muco-details': muco_info,
+            'muco-district-info': muco_district_info,
+            'out-state-info': muco_out_of_state_info
         }
 
         return result
