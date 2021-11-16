@@ -1,13 +1,34 @@
+import pandas as pd
+
 from camelot.core import TableList, Table
 
 
 def _merge_tables_samewidth(table1, table2):
-    pass
+
+    # return were_tables_merged = False if either of tables is None
+    if table1 is None or table2 is None:
+        return False, None
+    
+    ncols1 = table1.shape[1]
+    ncols2 = table2.shape[1]
+
+    if ncols1 != ncols2:
+        return False, None
+
+    merged_table = pd.concat([table1, table2])
+    return True, merged_table
 
 
 def merge_tables(table1, table2, heuristic):
 
     assert heuristic in ['same-table-width']
+
+    fn_map = {
+        'same-table-width': _merge_tables_samewidth
+    }
+
+    were_tabled_merged, merged_table = fn_map[heuristic](table1, table2)
+    return were_tabled_merged, merged_table
 
 
 
@@ -24,6 +45,18 @@ def filter_tables(tables, start_page=None, end_page=None):
         tables_filtered.append(table)
 
 
+def group_tables_by_page(tables):
+    
+    tables_grouped = []
+    for table in tables:
+        page = table.page
+        while len(tables_grouped) < page:
+            tables_grouped.append([])
+        tables_grouped[page].append(table.df)   # Insert only the pandas dataframe here
+
+    return tables_grouped
+
+
 def concatenate_tables(tables, heuristic, start_page=None, end_page=None):
     """
     Concatenates multi-page tables into a common tables
@@ -36,36 +69,29 @@ def concatenate_tables(tables, heuristic, start_page=None, end_page=None):
     tables_filtered = filter_tables(tables, start_page, end_page)
 
     # group tables by page number. creates a list of list with each list being tables on a page
-    tables_pages = []
-    for table in tables_filtered:
-        page = table.page
-        while len(tables_pages) < page:
-            tables_pages.append([])
-        tables_pages[page].append(table)
-
+    tables_grouped = group_tables_by_page(tables_filtered)
 
     tables_concatenated = []
+    for pageno in range(len(tables_grouped)):
 
-    for idx, pagetables in enumerate(tables_pages):
+        current_page_tables = tables_grouped[pageno]
+        if len(current_page_tables) == 0:
+            current_page_tables = [None]
 
-        # last page tables. then just add all tables and break
-        if idx == len(tables_pages) - 1:
-            tables_concatenated.extend(pagetables)
-            break
-        
-        # add current page tables to tables_concatenated
-        tables_concatenated.extend(pagetables)
-        were_tables_merged, merged_table = merge_tables(tables_concatenated[-1], tables_pages[idx+1], heuristic)
+        if pageno > 0:
+            table1 = tables_concatenated[-1]
+            table2 = current_page_tables[0]
 
-        # tables were merged. two things need to happen
-        #   1) last table in `tables_concatenated` need to be delete
-        #   2) first table from next page tables need to be deleted
-        #   3) merged table needs to be added to tables_concatenated
-        
-        if were_tables_merged:
-            tables_concatenated.pop()
-            tables_pages[idx+1].pop(0)
-            tables_concatenated.append(merged_table)
+            were_tables_merged, merged_table = merge_tables(table1, table2, heuristic)
+
+            if were_tables_merged:
+                tables_concatenated[-1] = merged_table
+                current_page_tables.pop(0)
+
+        tables_concatenated.extend(current_page_tables)
+
+    # filter tables to remove None elements
+    tables_concatenated = [tbl for tbl in tables_concatenated if tbl is not None]
 
     tablelist = TableList(tables_concatenated)
     return tablelist
