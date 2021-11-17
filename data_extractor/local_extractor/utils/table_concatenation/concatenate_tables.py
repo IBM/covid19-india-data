@@ -44,13 +44,15 @@ def filter_tables(tables, start_page=None, end_page=None):
             continue
         tables_filtered.append(table)
 
+    return tables_filtered
+
 
 def group_tables_by_page(tables):
     
     tables_grouped = []
     for table in tables:
-        page = table.page
-        while len(tables_grouped) < page:
+        page = table.page - 1
+        while len(tables_grouped) <= page:
             tables_grouped.append([])
         tables_grouped[page].append(table.df)   # Insert only the pandas dataframe here
 
