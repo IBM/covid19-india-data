@@ -140,6 +140,8 @@ class KarnatakaExtractor(object):
 
         for row in result:
 
+            row['date'] = self.date
+
             if row['district_name']:
                 row['district_name'] = common_utils.clean_numbers_str(row['district_name'])
 
@@ -151,14 +153,17 @@ class KarnatakaExtractor(object):
                     date = dateparser.parse(row['doa'], ['%d-%m-%Y'])
                     row['doa'] = f'{date.year}-{date.month:02d}-{date.day:02d}'
                 except:
-                    pass
+                    row['notes'] = row.get('notes', '') + '/doa:' + str(row['doa'])
+                    row['doa'] = None
+                    
 
             if row['dod']:
                 try:
                     date = dateparser.parse(row['dod'], ['%d-%m-%Y'])
                     row['dod'] = f'{date.year}-{date.month:02d}-{date.day:02d}'
                 except:
-                    pass
+                    row['notes'] = row.get('notes', '') + '/dod:' + str(row['dod'])
+                    row['dod'] = None
 
 
         return result

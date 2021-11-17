@@ -11,6 +11,7 @@ class FatalitiesTable(DB):
 
     def getcolumns(self):
         cols = {
+            'date': 'DATE NOT NULL',
             'patient_no': 'STRING NOT NULL PRIMARY KEY',
             'district_name': 'STRING',
             'age': 'INT',
@@ -20,6 +21,7 @@ class FatalitiesTable(DB):
             'comorbidities': 'STRING',
             'doa': 'DATE',
             'dod': 'DATE',
-            'place_of_death': 'STRING'
+            'place_of_death': 'STRING',
+            'notes': 'STRING'
         }
         return cols
