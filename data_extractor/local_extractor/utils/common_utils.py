@@ -2,6 +2,7 @@ import numpy as np
 import dateparser
 import camelot
 import tabula
+import pdfplumber
 import pandas as pd
 import math
 import gc
@@ -184,3 +185,27 @@ def get_tables_from_pdf(library, pdf_fpath, pages=None, smart_boundary_detection
             return get_tables_from_pdf_camelot(pdf_fpath, pages, **kwargs)
         elif library.lower().strip() == 'tabula':
             return get_tables_from_pdf_tabula(pdf_fpath, pages)
+
+
+def get_pageno_with_text(pdf_fpath, keywords, start_page=None, end_page=None):
+
+    with pdfplumber.open(pdf_fpath) as pdf:
+        for page in pdf.pages:
+
+            pageno = page.page_number
+
+            if start_page is not None and pageno < start_page:
+                continue
+            if end_page is not None and pageno > end_page:
+                continue
+
+            pagetext = page.extract_text().lower()
+            keywords_found = [
+                keyword.lower() in pagetext 
+                for keyword in keywords
+            ]
+
+            if False not in keywords_found:     # all keywords found:
+                return pageno
+
+    return None
