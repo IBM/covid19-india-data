@@ -246,8 +246,8 @@ class PunjabExtractor(object):
                     cases_today = row[1].strip()
                     source_positive_percentage = row[2].strip()
                     if not all_sub_tables_parsed:
-                        details = row[3].strip().lower()
-                        remarks = row[4].strip().lower()
+                        details = row[3].strip().lower() if len(row) > 3 else ""
+                        remarks = row[4].strip().lower() if len(row) > 4 else ""
                     else:
                         details = ""
                         remarks = ""
@@ -602,8 +602,17 @@ class PunjabExtractor(object):
         return result
 
     def extract(self):
-        n = common_utils.n_pages_in_pdf(self.report_fpath) 
-        tables = common_utils.get_tables_from_pdf(library='camelot', pdf_fpath=self.report_fpath)
+        n = common_utils.n_pages_in_pdf(self.report_fpath)
+        args = {
+            "split_text": True,
+            "strip_text": "\n"
+        }
+        _pages = range(0, n)
+        tables = common_utils.get_tables_from_pdf_with_smart_boundary_detection( \
+            library='camelot', pdf_fpath=self.report_fpath, pages=_pages, \
+            kwargs=args)
+        # tables = common_utils.get_tables_from_pdf(library='camelot', \
+        #    pdf_fpath=self.report_fpath)
         self.number_of_tables = len(tables)
         case_vaccination_info = self.extract_cases_info(tables)
         patients_info = self.extract_patient_info(tables)
@@ -628,7 +637,7 @@ class PunjabExtractor(object):
         return result
         
 if __name__ == '__main__':
-    date = '2021-07-19'
-    path = "../../../downloads/bulletins/PB/PB-Bulletin-2021-07-19.pdf"
+    date = '2020-06-25'
+    path = "../../../downloads/bulletins/PB/PB-Bulletin-2020-06-25.pdf"
     obj = PunjabExtractor(date, path)
     print(obj.extract())
