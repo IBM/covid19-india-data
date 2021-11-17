@@ -1,9 +1,14 @@
 import locale
+import dateparser
+
+from camelot.utils import split_textline
 locale.setlocale(locale.LC_ALL, 'en_US.UTF-8')
 
 
 try:
     from local_extractor.utils import common_utils
+    from local_extractor.utils.table_concatenation import concatenate_tables
+    from local_extractor.states.state_utils import KA_utils
 except ImportError:
     import sys
     import os
@@ -12,7 +17,10 @@ except ImportError:
     path = os.path.join(path, 'local_extractor')
     if path not in sys.path:
         sys.path.insert(0, path)
+    
     from utils import common_utils
+    from utils.table_concatenation import concatenate_tables
+    from state_utils import KA_utils
 
 
 class KarnatakaExtractor(object):
@@ -119,6 +127,43 @@ class KarnatakaExtractor(object):
             result.append(tmp)
         return result
 
+    
+    def extract_individual_fatalities_data(self, tables):
+
+        keywords = {'dod', 'doa', 'symptom', 'morbidities'}
+        datatable = common_utils.find_table_by_keywords(tables, keywords)
+
+        if datatable is None:
+            return None
+
+        result = KA_utils.process_individual_fatality_info(datatable)
+
+        for row in result:
+
+            if row['district_name']:
+                row['district_name'] = common_utils.clean_numbers_str(row['district_name'])
+
+            if row['age']:
+                row['age'] = locale.atoi(common_utils.clean_numbers_str(row['age']))
+
+            if row['doa']:
+                try:
+                    date = dateparser.parse(row['doa'], ['%d-%m-%Y'])
+                    row['doa'] = f'{date.year}-{date.month:02d}-{date.day:02d}'
+                except:
+                    pass
+
+            if row['dod']:
+                try:
+                    date = dateparser.parse(row['dod'], ['%d-%m-%Y'])
+                    row['dod'] = f'{date.year}-{date.month:02d}-{date.day:02d}'
+                except:
+                    pass
+
+
+        return result
+        
+
     def extract(self):
         n = common_utils.n_pages_in_pdf(self.report_fpath)
 
@@ -142,9 +187,19 @@ class KarnatakaExtractor(object):
         
         districtwise_info = self.extract_district_case_information(tables_page4)
 
+        # Here, we get all individual fatalities data
+        tables_all = common_utils.get_tables_from_pdf(library='camelot', 
+                                                        pdf_fpath=self.report_fpath, 
+                                                        split_text=False)
+        tables_concatenated = concatenate_tables.concatenate_tables(tables_all, heuristic='same-table-width')
+
+        individual_fatality_info = self.extract_individual_fatalities_data(tables_concatenated)
+
+
         result = {
             'case-info': case_info,
-            'district-cases': districtwise_info
+            'district-cases': districtwise_info,
+            'individual-fatalities': individual_fatality_info
         }
 
         return result
