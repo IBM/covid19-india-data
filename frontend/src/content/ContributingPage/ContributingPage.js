@@ -51,21 +51,59 @@ let resource_list = [
   },
 ];
 
-let citation_text = `@article{agarwal2021covid,
+let default_contributors = ['stevemar', 'ImgBotApp'];
+
+let citation_text = `@inproceedings{agarwal2021covid,
   title={COVID-19 India Dataset: Parsing Detailed COVID-19 Data
          in Daily Health Bulletins from States in India},
-  author={Agarwal, Mayank and Chakraborti, Tathagata and Grover, Sachin},
-  journal={arXiv:2110.02311},
+  author={Mayank Agarwal and Tathagata Chakraborti and Sachin Grover 
+          and Arunima Chaudhary},
+  booktitle={NeurIPS 2021 Workshop on Machine Learning in Public Health},
   year={2021}
 }`;
+
+async function fetchRepoData() {
+  var response = await fetch(
+    'https://api.github.com/repos/IBM/covid19-india-data/contributors'
+  );
+  return response.json();
+}
+
+function filterContributors(contributorsList) {
+  var new_contributors_list = new Array();
+
+  Array.from(contributorsList).forEach(function(item, index) {
+    if (default_contributors.indexOf(item.login) < 0)
+      new_contributors_list.push(item);
+  });
+
+  return new_contributors_list;
+}
+
+const Contributor = props => (
+  <div className="bx--col-lg-2" style={{ padding: '10px' }}>
+    <Link href={props.props.html_url} target="_blank">
+      <img src={props.props.avatar_url} className="contributors" />
+    </Link>
+  </div>
+);
 
 class ContributingPage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      contributors: [],
+    };
   }
 
-  componentDidMount(props) {}
+  componentDidMount(props) {
+    fetchRepoData().then(data => {
+      this.setState({
+        ...this.state,
+        contributors: filterContributors(data),
+      });
+    });
+  }
 
   render() {
     return (
@@ -122,34 +160,62 @@ class ContributingPage extends React.Component {
           <br />
           <br />
 
-          <h3>Read the Paper</h3>
-          <hr />
-          <br />
+          <div className="bx--row">
+            <div className="bx--col-lg-8">
+              <h3>Read the Paper</h3>
+              <hr />
+              <br />
 
-          <p className="bx--col-lg-8">
-            If you are using this data in your reserach, please remember to cite
-            us. &#128591;{' '}
-            <strong>
-              Note that the list of authors will continue to grow over time with
-              our OSS contributors.
-            </strong>{' '}
-            Please make sure to update the citation text in your future papers
-            accordingly.
-          </p>
-          <br />
+              <p>
+                If you are using this data in your reserach, please remember to
+                cite us. &#128591;{' '}
+                <strong>
+                  Note that the list of authors will continue to grow over time
+                  with our OSS contributors.
+                </strong>{' '}
+                Please make sure to update the citation text in your future
+                papers accordingly.
+              </p>
+              <br />
 
-          <CodeSnippet type="multi">{citation_text}</CodeSnippet>
+              <CodeSnippet type="multi">{citation_text}</CodeSnippet>
 
-          <br />
+              <br />
 
-          <Link
-            href="https://arxiv.org/abs/2110.02311"
-            target="_blank"
-            className="button-generic">
-            <Button size="field" kind="secondary">
-              Read
-            </Button>
-          </Link>
+              <Link
+                href="https://arxiv.org/abs/2110.02311"
+                target="_blank"
+                className="button-generic">
+                <Button size="field" kind="secondary">
+                  Read
+                </Button>
+              </Link>
+            </div>
+            <div className="bx--col-lg-8">
+              <h3>
+                Top Contributors{' '}
+                <span style={{ fontSize: 'large', fontWeight: '100' }}>
+                  <Link
+                    href={config['metadata']['link_to_code']}
+                    target="_blank">
+                    See all
+                  </Link>
+                </span>
+              </h3>
+              <hr />
+              <br />
+
+              <div className="bx--row">
+                {this.state.contributors.map((item, index) => {
+                  return (
+                    <>
+                      <Contributor props={item} />
+                    </>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
 
           <br />
           <br />
