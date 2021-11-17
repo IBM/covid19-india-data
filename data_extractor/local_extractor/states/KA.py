@@ -127,8 +127,19 @@ class KarnatakaExtractor(object):
             result.append(tmp)
         return result
 
-    
-    def extract_individual_fatalities_data(self, tables):
+    def extract_individual_fatalities_data(self):
+
+        page_keywords = {'covid', 'death', 'symptom', 'today'}
+        pageno = common_utils.get_pageno_with_text(self.report_fpath, page_keywords)
+
+        if pageno is None:
+            return None
+
+        tables_all = common_utils.get_tables_from_pdf(library='camelot', 
+                                                        pdf_fpath=self.report_fpath, 
+                                                        split_text=False,
+                                                        pages=[f'{pageno}-end'])
+        tables = concatenate_tables.concatenate_tables(tables_all, heuristic='same-table-width')
 
         keywords = {'dod', 'doa', 'symptom', 'morbidities'}
         datatable = common_utils.find_table_by_keywords(tables, keywords)
@@ -192,13 +203,7 @@ class KarnatakaExtractor(object):
         
         districtwise_info = self.extract_district_case_information(tables_page4)
 
-        # Here, we get all individual fatalities data
-        tables_all = common_utils.get_tables_from_pdf(library='camelot', 
-                                                        pdf_fpath=self.report_fpath, 
-                                                        split_text=False)
-        tables_concatenated = concatenate_tables.concatenate_tables(tables_all, heuristic='same-table-width')
-
-        individual_fatality_info = self.extract_individual_fatalities_data(tables_concatenated)
+        individual_fatality_info = self.extract_individual_fatalities_data()
 
 
         result = {
