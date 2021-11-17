@@ -130,13 +130,21 @@ def get_tables_from_pdf_with_smart_boundary_detection(library, pdf_fpath, pages,
         camelot_splittext = kwargs.get('split_text', True)
         camelot_flavor = kwargs.get('flavor', 'lattice')
 
+        camelot_kwargs = {
+            'split_text': camelot_splittext,
+            'flavor': camelot_flavor,
+            'strip_text': '\n'
+        }
+
         for pageno, table_bounds in tablesdict.items():
             bound_str = [','.join(map(str, bound)) for bound in table_bounds]
-            pagetables = camelot.read_pdf(
-                pdf_fpath, pages=f'{pageno+1}', strip_text='\n', 
-                split_text=camelot_splittext, table_regions=bound_str,
-                flavor=camelot_flavor
-            )
+
+            if camelot_flavor == 'stream':
+                camelot_kwargs['table_areas'] = bound_str
+            elif camelot_flavor == 'lattice':
+                camelot_kwargs['table_regions'] = bound_str
+
+            pagetables = camelot.read_pdf(pdf_fpath, pages=f'{pageno+1}', **camelot_kwargs)
             result.extend(pagetables._tables)
 
         result = TableList(result)
