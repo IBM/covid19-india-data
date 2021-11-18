@@ -1,5 +1,6 @@
 import locale
 import dateparser
+import gc
 
 from camelot.utils import split_textline
 locale.setlocale(locale.LC_ALL, 'en_US.UTF-8')
@@ -87,7 +88,19 @@ class KarnatakaExtractor(object):
                         return t
         return None
 
-    def extract_district_case_information(self, tables):
+    def extract_district_case_information(self):
+
+        page_keywords = {'district', 'abstract', 'wise'}
+        pageno = common_utils.get_pageno_with_text(self.report_fpath, page_keywords)
+
+        if pageno is None:
+            return None
+
+        tables = common_utils.get_tables_from_pdf(library='camelot',
+                                                    pdf_fpath=self.report_fpath,
+                                                    smart_boundary_detection=True,
+                                                    pages=[pageno], split_text=False)
+
         if tables is None:
             return None
             
@@ -135,10 +148,15 @@ class KarnatakaExtractor(object):
         if pageno is None:
             return None
 
+        gc.collect()
+
         tables_all = common_utils.get_tables_from_pdf(library='camelot', 
                                                         pdf_fpath=self.report_fpath, 
                                                         split_text=False,
                                                         pages=[f'{pageno}-end'])
+
+        gc.collect()
+
         tables = concatenate_tables.concatenate_tables(tables_all, heuristic='same-table-width')
 
         keywords = {'dod', 'doa', 'symptom', 'morbidities'}
@@ -194,14 +212,12 @@ class KarnatakaExtractor(object):
                                                         pages=[1])
         case_info = self.extract_case_info(tables_page0)
 
+        gc.collect()
+
         # Then, we get the district-wise numbers. This needs smart boundary detection.
         # Since bulletins have this on different pages, we extract tables from multiple pages
-        tables_page4 = common_utils.get_tables_from_pdf(library='camelot',
-                                                        pdf_fpath=self.report_fpath,
-                                                        smart_boundary_detection=True,
-                                                        pages=[2, 3, 4, 5], split_text=False)  
-        
-        districtwise_info = self.extract_district_case_information(tables_page4)
+        districtwise_info = self.extract_district_case_information()
+        gc.collect()
 
         individual_fatality_info = self.extract_individual_fatalities_data()
 
@@ -218,7 +234,6 @@ class KarnatakaExtractor(object):
 if __name__ == '__main__':
     import os
     date = '08-oct-2021'
-    path = os.getenv("HOME") + \
-        '/covlocal/bulletins/KA/KA-Bulletin-2021-10-12.pdf'
+    path = '/home/mayankag/covid19-india-data/localstore/bulletins/KA/KA-Bulletin-2021-05-15.pdf'
     obj = KarnatakaExtractor(date, path)
     print(obj.extract())

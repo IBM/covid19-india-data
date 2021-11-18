@@ -105,12 +105,14 @@ def n_pages_in_pdf(pdf_fpath):
 def get_tables_from_pdf_camelot(pdf_fpath, pages=None, strip_text='\n', split_text=True):
     pagerange = "1-end" if pages is None else ','.join(map(str, pages))
     tables = camelot.read_pdf(pdf_fpath, pages=pagerange, strip_text=strip_text, split_text=split_text)
+    gc.collect()
     return tables
 
 
 def get_tables_from_pdf_tabula(pdf_fpath, pages=None):
     pagerange = "all" if pages is None else pages
     tables = tabula.read_pdf(pdf_fpath, pages=pagerange)
+    gc.collect()
     return tables
 
 
@@ -149,6 +151,7 @@ def get_tables_from_pdf_with_smart_boundary_detection(library, pdf_fpath, pages,
             result.extend(pagetables._tables)
 
         result = TableList(result)
+        gc.collect()
         return result
 
     elif library.lower().strip() == 'tabula':
@@ -167,7 +170,8 @@ def get_tables_from_pdf_with_smart_boundary_detection(library, pdf_fpath, pages,
                 pdf_fpath, pages=pageno+1, area=tabula_bounds
             )
             result.extend(pagetables)
-            
+        
+        gc.collect()
         return result
 
     else:
