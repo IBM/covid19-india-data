@@ -16,7 +16,7 @@ class ExtractTable(object):
     """
     
     def __init__(self, pdf_fpath, pagenums=None, resolution=200, 
-                threshold=0.85, model_device='cpu', stretch_bounds=0.1,
+                threshold=0.85, model_device='cpu', stretch_bounds=0.05,
                 origin='top-left'):
         
         self.pdf_fpath = pdf_fpath

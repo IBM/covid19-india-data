@@ -100,6 +100,9 @@ def process_district_case_table(df):
 
     for row in dflist:
 
+        if row[-1].strip() == '' or row[-2].strip() == '':
+            continue
+
         tmp = {
             'district': row[-2].lower(),
             'cases_new': locale.atoi(row[-1])
