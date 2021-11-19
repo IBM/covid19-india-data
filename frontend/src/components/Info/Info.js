@@ -99,6 +99,10 @@ async function fetchData({
   return response.json();
 }
 
+function generateURL(file, ext, dir) {
+  return `${process.env.PUBLIC_URL}${dir}/${file}.${ext}`;
+}
+
 const generateStateID = stateName => {
   return stateName.replaceAll(' ', '');
 };
@@ -226,6 +230,7 @@ export {
   prepareOptions,
   fetchData,
   generateStateID,
+  generateURL,
   Contributing,
   Resource,
   DataTableElement,

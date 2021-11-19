@@ -70,7 +70,7 @@ async function fetchRepoData() {
 }
 
 function filterContributors(contributorsList) {
-  var new_contributors_list = new Array();
+  var new_contributors_list = [];
 
   Array.from(contributorsList).forEach(function(item, index) {
     if (default_contributors.indexOf(item.login) < 0)
@@ -83,7 +83,11 @@ function filterContributors(contributorsList) {
 const Contributor = props => (
   <div className="bx--col-lg-2" style={{ padding: '10px' }}>
     <Link href={props.props.html_url} target="_blank">
-      <img src={props.props.avatar_url} className="contributors" />
+      <img
+        alt="Contributor Info"
+        src={props.props.avatar_url}
+        className="contributors"
+      />
     </Link>
   </div>
 );
@@ -223,7 +227,7 @@ class ContributingPage extends React.Component {
           <br />
           <br />
 
-          <h3>Additional Resources</h3>
+          <h3 id="resources">Additional Resources</h3>
           <hr />
           <br />
 

@@ -94,6 +94,15 @@ class PageHeader extends React.Component {
                     isActive={this.state.data}>
                     Data Access
                   </SideNavLink>
+                  <SideNavLink
+                    href="/#/tasks"
+                    onClick={this.onClickTab.bind(this, 'tasks')}
+                    isActive={this.state.tasks}>
+                    Datathon{' '}
+                    <Tag type="green" className="compressed-tag">
+                      new
+                    </Tag>
+                  </SideNavLink>
 
                   <SideNavDivider />
 
