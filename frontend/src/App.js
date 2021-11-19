@@ -18,6 +18,7 @@ import WestBengal from './content/WestBengal';
 import Telangana from './content/Telangana';
 import Haryana from './content/Haryana';
 import Maharashtra from './content/Maharashtra/Maharashtra';
+import Kerala from './content/Kerala';
 import Karnataka from './content/Karnataka/Karnataka';
 import Uttarakhand from './content/Uttarakhand';
 import Punjab from './content/Punjab';
@@ -52,6 +53,7 @@ class App extends Component {
             <Route exact path="/Telangana" component={Telangana} />
             <Route exact path="/WestBengal" component={WestBengal} />
             <Route exact path="/Maharashtra" component={Maharashtra} />
+            <Route exact path="/Kerala" component={Kerala} />
             <Route exact path="/Karnataka" component={Karnataka} />
             <Route exact path="/Uttarakhand" component={Uttarakhand} />
             <Route exact path="/Punjab" component={Punjab} />
