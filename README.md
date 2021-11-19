@@ -52,6 +52,13 @@ the dedicated [Anomalies Page](https://india-covid-19-data.mybluemix.net/#/anoma
 Analyze the data for insights, irregularities, etc. You can put up results of your analysis in your papers, blogs, etc. 
 (and point to that from our [landing page](https://ibm.biz/covid-data-india)) or directly add it to our landing page as a 
 [standalone new page](frontend/README.md#adding-a-new-page) or in the [existing Analysis Page](https://india-covid-19-data.mybluemix.net/#/analysis).
+You can use the data to validate or extend models developed for other
+countries to India [[1](https://www.cdc.gov/mmwr/volumes/70/wr/mm7019e3.htm)] [[2](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7685335)] [[3](https://dl.acm.org/doi/10.5555/3463952.3464047)]; developing epidemiological models which
+integrate additional variables [[4](https://pubmed.ncbi.nlm.nih.gov/33144763)] [[5](https://europepmc.org/article/PPR/PPR276812)] [[6](https://pubmed.ncbi.nlm.nih.gov/32995829)] [[7](https://epubs.siam.org/doi/abs/10.1137/s0036144500371907)];
+understanding various aspects of the pandemic in detail [[8](https://pubmed.ncbi.nlm.nih.gov/34173439)] [[1]()] [[9]()], among others.
+
+💡 If you are looking for some concrete tasks to get started, 
+find out more about "Challenge Tasks" [here](https://india-covid-19-data.mybluemix.net/#/tasks).
 
 ### 🧐 Landing Page
 
