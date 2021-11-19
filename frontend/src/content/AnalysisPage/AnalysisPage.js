@@ -29,7 +29,6 @@ class AnalysisPage extends React.Component {
                   GitHub
                 </Link>
               }
-              iconDescription="describes the close button"
               subtitle={
                 <span>
                   If you would like to add your own analysis, please open an

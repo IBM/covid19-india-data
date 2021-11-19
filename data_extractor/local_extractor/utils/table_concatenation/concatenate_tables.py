@@ -1,4 +1,5 @@
 import pandas as pd
+import gc
 
 from camelot.core import TableList, Table
 
@@ -28,9 +29,9 @@ def merge_tables(table1, table2, heuristic):
     }
 
     were_tabled_merged, merged_table = fn_map[heuristic](table1, table2)
+    gc.collect()
+
     return were_tabled_merged, merged_table
-
-
 
 
 def filter_tables(tables, start_page=None, end_page=None):
@@ -69,9 +70,11 @@ def concatenate_tables(tables, heuristic, start_page=None, end_page=None):
 
     # filter tables that lie between the start and the end page
     tables_filtered = filter_tables(tables, start_page, end_page)
+    gc.collect()
 
     # group tables by page number. creates a list of list with each list being tables on a page
     tables_grouped = group_tables_by_page(tables_filtered)
+    gc.collect()
 
     tables_concatenated = []
     for pageno in range(len(tables_grouped)):
@@ -91,9 +94,12 @@ def concatenate_tables(tables, heuristic, start_page=None, end_page=None):
                 current_page_tables.pop(0)
 
         tables_concatenated.extend(current_page_tables)
+        gc.collect()
 
     # filter tables to remove None elements
     tables_concatenated = [tbl for tbl in tables_concatenated if tbl is not None]
 
     tablelist = TableList(tables_concatenated)
+    gc.collect()
+    
     return tablelist

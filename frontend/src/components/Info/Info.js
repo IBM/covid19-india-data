@@ -1,6 +1,7 @@
 import React from 'react';
 import { processName } from '../BasicElement';
 import {
+  Tile,
   ClickableTile,
   DataTable,
   TableContainer,
@@ -10,6 +11,8 @@ import {
   TableRow,
   TableHeader,
   TableCell,
+  Button,
+  Link,
 } from 'carbon-components-react';
 
 let config = require('../../config.json');
@@ -122,16 +125,39 @@ const Contributing = props => (
 );
 
 const Resource = props => (
-  <div className="bx--col-lg-8">
-    <ClickableTile
-      className="resource-card-inner"
-      href={props.props.link}
-      target="_blank">
-      <div style={{ padding: '10px' }}>
-        <p style={{ fontSize: 'inherit' }}> {props.props.name} </p>
-      </div>
-    </ClickableTile>
-  </div>
+  <>
+    {props.props.children && (
+      <Tile className="resource-card-inner">
+        <div style={{ padding: '10px' }}>
+          <p style={{ fontSize: 'inherit' }}> {props.props.name} </p>
+        </div>
+        {props.props.children.map(item => {
+          return (
+            <>
+              <Link href={item.link} target="_blank" className="no-decoration">
+                <Button
+                  kind="ghost"
+                  size="small"
+                  className="bx--btn--ghost--resource">
+                  {item.name}
+                </Button>
+              </Link>
+            </>
+          );
+        })}
+      </Tile>
+    )}
+    {!props.props.children && (
+      <ClickableTile
+        className="resource-card-inner"
+        href={props.props.link}
+        target="_blank">
+        <div style={{ padding: '10px' }}>
+          <p style={{ fontSize: 'inherit' }}> {props.props.name} </p>
+        </div>
+      </ClickableTile>
+    )}
+  </>
 );
 
 class DataTableElement extends React.Component {
