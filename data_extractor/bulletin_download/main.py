@@ -7,6 +7,7 @@ from bulletin_download.states.MH import Maharashtra
 from bulletin_download.states.TG import Telangana
 from bulletin_download.states.UK import Uttarakhand
 from bulletin_download.states.WB import WestBengal
+from bulletin_download.states.KL import Kerala
 
 
 def run(basedir, state_to_execute=None):
@@ -15,6 +16,7 @@ def run(basedir, state_to_execute=None):
         'DL': Delhi,
         'HR': Haryana,
         'KA': Karnataka,
+        'KL': Kerala,
         'MH': Maharashtra,
         'TG': Telangana,
         'UK': Uttarakhand,

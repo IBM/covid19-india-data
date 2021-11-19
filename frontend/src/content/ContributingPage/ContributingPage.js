@@ -7,11 +7,24 @@ let config = require('../../config.json');
 let resource_list = [
   {
     name: 'COVID 19 India',
-    link: 'https://www.covid19india.org/',
-  },
-  {
-    name: 'COVID 19 Tracker | Followup to COVID19India',
-    link: 'https://covid19tracker.in',
+    children: [
+      {
+        name: <>OG &#128583;</>,
+        link: 'https://www.covid19india.org/',
+      },
+      {
+        name: 'IIT-Hyderabad',
+        link: 'https://covid19tracker.in',
+      },
+      {
+        name: 'ITT-Madras',
+        link: 'https://www.incovid19.org/',
+      },
+      {
+        name: 'DataKind',
+        link: 'https://github.com/DataKind-BLR',
+      },
+    ],
   },
   {
     name: 'COVID Today',
@@ -46,8 +59,17 @@ let resource_list = [
     link: 'https://ourworldindata.org',
   },
   {
-    name: 'DataKind',
-    link: 'https://www.datakind.org',
+    name: 'Kaggle Challenges',
+    children: [
+      {
+        name: 'Report',
+        link: 'https://www.kaggle.com/imdevskp/corona-virus-report',
+      },
+      {
+        name: 'Uncover',
+        link: 'https://www.kaggle.com/roche-data-science-coalition/uncover',
+      },
+    ],
   },
 ];
 
@@ -162,14 +184,28 @@ class ContributingPage extends React.Component {
           <br />
 
           <div className="bx--row" style={{ marginBottom: '100px' }}>
-            {resource_list.map(function(item, key) {
-              return (
-                <Resource
-                  key={key}
-                  props={{ link: item.link, name: item.name }}
-                />
-              );
-            })}
+            <div className="bx--col-lg-8">
+              {resource_list.map((item, key) => {
+                return (
+                  <>
+                    {key <= resource_list.length / 2 && (
+                      <Resource key={key} props={item} />
+                    )}
+                  </>
+                );
+              })}
+            </div>
+            <div className="bx--col-lg-8">
+              {resource_list.map((item, key) => {
+                return (
+                  <>
+                    {key > resource_list.length / 2 && (
+                      <Resource key={key} props={item} />
+                    )}
+                  </>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>

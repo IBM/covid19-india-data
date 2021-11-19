@@ -19,3 +19,21 @@
 .bx--data-table--short .bx--table-header-label {
   width: max-content;
 }
+
+.bx--btn--ghost--resource {
+  color: black !important;
+  background-color: #e5e5e5 !important;
+  margin-left: 10px !important;
+}
+
+.bx--btn--ghost--resource:hover {
+  background-color: #d5d5d5 !important;
+}
+
+.no-decoration {
+  text-decoration: none !important;
+}
+
+.no-decoration:hover {
+  text-decoration: none !important;
+}

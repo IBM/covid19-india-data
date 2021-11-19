@@ -1,19 +1,19 @@
 const QUERIES = [
   {
     subject: 'Daily new cases',
-    description: <></>,
+    description: null,
     query:
       'SELECT date, cases_new FROM WB_case_info WHERE cases_new is NOT NULL ORDER BY date',
   },
   {
     subject: 'Daily new fatalities',
-    description: <></>,
+    description: null,
     query:
       'SELECT date, deaths_new FROM WB_case_info WHERE deaths_new is NOT NULL ORDER BY date',
   },
   {
     subject: 'Cases in home isolation',
-    description: <></>,
+    description: null,
     query:
       'SELECT date, current_patients_home_isolation FROM WB_hospital WHERE current_patients_home_isolation is NOT NULL ORDER BY date',
   },
@@ -56,7 +56,7 @@ const QUERIES = [
   },
   {
     subject: 'Ratio of RT-PCR to Antigen tests',
-    description: <></>,
+    description: null,
     query:
       'SELECT date, rtpcr_antigen_ratio FROM WB_testing WHERE rtpcr_antigen_ratio is NOT NULL ORDER BY date ASC',
   },
