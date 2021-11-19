@@ -4,13 +4,13 @@ import { Link } from 'carbon-components-react';
 const references = {
   1: 'https://www.cdc.gov/mmwr/volumes/70/wr/mm7019e3.htm',
   2: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7685335',
-  3: 'https://pubmed.ncbi.nlm.nih.gov/33144763',
-  4: 'https://europepmc.org/article/PPR/PPR276812',
-  5: 'https://pubmed.ncbi.nlm.nih.gov/32995829',
-  6: 'https://epubs.siam.org/doi/abs/10.1137/s0036144500371907',
-  7: 'https://pubmed.ncbi.nlm.nih.gov/34173439',
-  8: 'https://pubmed.ncbi.nlm.nih.gov/32607504',
-  9: 'https://dl.acm.org/doi/10.5555/3463952.3464047',
+  3: 'https://dl.acm.org/doi/10.5555/3463952.3464047',
+  4: 'https://pubmed.ncbi.nlm.nih.gov/33144763',
+  5: 'https://europepmc.org/article/PPR/PPR276812',
+  6: 'https://pubmed.ncbi.nlm.nih.gov/32995829',
+  7: 'https://epubs.siam.org/doi/abs/10.1137/s0036144500371907',
+  8: 'https://pubmed.ncbi.nlm.nih.gov/34173439',
+  9: 'https://pubmed.ncbi.nlm.nih.gov/32607504',
 };
 
 const Reference = props => (
@@ -126,11 +126,11 @@ const TASKS = [
         <br />
         You can use this data to validate or extend models developed for other
         countries to India <Reference href={1} /> <Reference href={2} />{' '}
-        <Reference href={9} />; developing epidemiological models which
-        integrate additional variables <Reference href={3} />{' '}
-        <Reference href={4} /> <Reference href={5} /> <Reference href={6} />;
+        <Reference href={3} />; developing epidemiological models which
+        integrate additional variables <Reference href={4} />{' '}
+        <Reference href={5} /> <Reference href={6} /> <Reference href={7} />;
         understanding various aspects of the pandemic in detail{' '}
-        <Reference href={7} /> <Reference href={8} />, among others.
+        <Reference href={8} /> <Reference href={9} />, among others.
       </>
     ),
     imageURL: 'aa',
