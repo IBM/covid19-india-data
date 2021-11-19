@@ -6,7 +6,7 @@ class ContainmentZonesTable(DB):
 
     def __init__(self):
         self.table_name = 'PB_containment_zone'
-        self.table_desc = 'Punjab larger containment zones. Tables on page 5, which can extend over pages.'
+        self.table_desc = 'Details about larger containment zones, with population contained in each. Table starting from Page 4 or 5 and can extend over multiple pages'
         self.cols = self.getcolumns()
 
     def getcolumns(self):

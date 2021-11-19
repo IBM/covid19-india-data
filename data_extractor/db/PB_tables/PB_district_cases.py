@@ -8,7 +8,7 @@ class DistrictDetailsTable(DB):
         super().__init__()
 
         self.table_name = 'PB_district_cases'
-        self.table_desc = 'Punjab district wise case info'
+        self.table_desc = 'Daily and total district wise info. Multiple tables starting on page 2 and continuing page 4 or 5.'
         self.cols = self.getcolumns()
 
     def getcolumns(self):

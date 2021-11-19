@@ -6,7 +6,7 @@ class CaseInfoTable(DB):
 
     def __init__(self):
         self.table_name = 'PB_mucormycosis_cases'
-        self.table_desc = 'Punjab mucormycosis cases daily and total information. Table on the second last page of bulletins since June 2021.'
+        self.table_desc = 'Mucormycosis daily cases and cumulative information. Table on the second last page of bulletins since June 2021.'
         self.cols = self.getcolumns()
 
     def getcolumns(self):

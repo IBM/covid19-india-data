@@ -6,7 +6,7 @@ class OutStateTable(DB):
 
     def __init__(self):
         self.table_name = 'PB_mucormycosis_out_of_state_details'
-        self.table_desc = 'Punjab mucormycosis details of patients from out of state. Table on the last page of bulletins from June 2021'
+        self.table_desc = 'Details of mucormycosis patients from out of state. Table on the last page of bulletins from June 2021'
         self.cols = self.getcolumns()
 
     def getcolumns(self):

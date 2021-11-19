@@ -6,7 +6,7 @@ class DistrictInfoTable(DB):
 
     def __init__(self):
         self.table_name = 'PB_mucormycosis_district_cases'
-        self.table_desc = 'Punjab mucormycosis district wise details for total, deaths etc. Table on the last page of bulletins from June 2021'
+        self.table_desc = 'Mucormycosis district-wise details for total cases, deaths, under treatment etc. Table on the last page of bulletins from June 2021'
         self.cols = self.getcolumns()
 
     def getcolumns(self):
