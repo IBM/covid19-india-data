@@ -13,7 +13,7 @@ class CumulativeSummary(DB):
 
     def getcolumns(self):
         cols = {
-            'date': 'DATE NOT NULL',
+            'date': 'DATE NOT NULL PRIMARY KEY',
             'total_positive_cases': 'INT',
             'active_cases': 'INT',
             'total_recovered': 'INT',

@@ -13,7 +13,7 @@ class PsychosocialSupport(DB):
 
     def getcolumns(self):
         cols = {
-            'date': 'DATE NOT NULL',
+            'date': 'DATE NOT NULL PRIMARY KEY',
             'psychosocial_workers': 'INT',
             'calls_to_persons_in_surveillance': 'INT',
             'followup_calls': 'INT',

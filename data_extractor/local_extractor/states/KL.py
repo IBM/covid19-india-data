@@ -2,9 +2,11 @@ import locale
 locale.setlocale( locale.LC_ALL, 'en_US.UTF-8' )
 
 import re
+import dateparser
 
 try:
     from local_extractor.utils import common_utils
+    from local_extractor.utils.table_concatenation import concatenate_tables
 except ImportError:
     import sys, os, pathlib
     path = pathlib.Path(__file__).absolute().parents[2]
@@ -12,6 +14,7 @@ except ImportError:
     if path not in sys.path:
         sys.path.insert(0, path)
     from utils import common_utils
+    from utils.table_concatenation import concatenate_tables
 
 
 class KeralaExtractor(object):
@@ -116,18 +119,18 @@ class KeralaExtractor(object):
 
     def extract_cumulative_summary_t_minus_one(self, tables):
 
-        keywords = {'no of deaths declared as per appeal'}
+        keywords = {'positive', 'case', 'recovered', 'quarantine', 'isolation', 'home', 'hospital', 'death'}
         datatables = common_utils.find_all_tables_by_keywords(tables, keywords)
 
         keymap = {
-            'positive_cases': ['positive cases'],
+            'positive_cases': ['positive', 'cases'],
             'recovered': ['recovered'],
-            'new_persons_in_surveillance': ['persons in quarantine'],
-            'new_persons_in_home_ins_isolation': ['persons in home'],
-            'new_persons_in_hospital_isolation': ['persons in hospital'],
-            'daily_deaths': ['no of deaths reported daily'],
-            'deaths_declared_as_per_appeal': ['no of deaths declared as per appeal'],
-            'pending_deaths': ['no of pending deaths']
+            'new_persons_in_surveillance': ['new', 'person', 'quarantine', 'isolation'],
+            'new_persons_in_home_ins_isolation': ['new', 'person', 'home', 'quarantine'],
+            'new_persons_in_hospital_isolation': ['new', 'person', 'hospital', 'isolation'],
+            'daily_deaths': ['deaths'],
+            'deaths_declared_as_per_appeal': ['deaths declared as per appeal'],
+            'pending_deaths': ['pending deaths']
         }
 
         return self.__extract_generic_datatables(datatables, 0, keymap, transpose=True)
@@ -135,18 +138,18 @@ class KeralaExtractor(object):
 
     def extract_daily_summary(self, tables):
 
-        keywords = {'no of deaths declared as per appeal'}
+        keywords = {'positive', 'case', 'recovered', 'quarantine', 'isolation', 'home', 'hospital', 'death'}
         datatables = common_utils.find_all_tables_by_keywords(tables, keywords)
 
         keymap = {
-            'positive_cases': ['positive cases'],
+            'positive_cases': ['positive', 'cases'],
             'recovered': ['recovered'],
-            'new_persons_in_surveillance': ['persons in quarantine'],
-            'new_persons_in_home_ins_isolation': ['persons in home'],
-            'new_persons_in_hospital_isolation': ['persons in hospital'],
-            'daily_deaths': ['no of deaths reported daily'],
-            'deaths_declared_as_per_appeal': ['no of deaths declared as per appeal'],
-            'pending_deaths': ['no of pending deaths']
+            'new_persons_in_surveillance': ['new', 'person', 'quarantine', 'isolation'],
+            'new_persons_in_home_ins_isolation': ['new', 'person', 'home', 'quarantine'],
+            'new_persons_in_hospital_isolation': ['new', 'person', 'hospital', 'isolation'],
+            'daily_deaths': ['deaths'],
+            'deaths_declared_as_per_appeal': ['deaths declared as per appeal'],
+            'pending_deaths': ['pending deaths']
         }
 
         return self.__extract_generic_datatables(datatables, 1, keymap, transpose=True)
@@ -154,19 +157,19 @@ class KeralaExtractor(object):
 
     def extract_cumulative_summary(self, tables):
 
-        keywords = {'no of deaths declared as per appeal'}
+        keywords = {'positive', 'case', 'recovered', 'quarantine', 'isolation', 'home', 'hospital', 'death'}
         datatables = common_utils.find_all_tables_by_keywords(tables, keywords)
 
         keymap = {
-            'total_positive_cases': ['positive cases'],
-            'active_cases': ['active cases'],
+            'total_positive_cases': ['positive', 'cases'],
+            'active_cases': ['active', 'cases'],
             'total_recovered': ['recovered'],
-            'total_persons_in_surveillance': ['persons in quarantine'],
-            'total_persons_in_home_ins_isolation': ['persons in home'],
-            'total_persons_in_hospital_isolation': ['persons in hospital'],
-            'total_deaths': ['total no of deaths', '(d)'],
-            'total_deaths_declared_as_per_appeal': ['no of deaths declared as per appeal'],
-            'total_pending_deaths': ['no of pending deaths']
+            'total_persons_in_surveillance': ['persons', 'quarantine', 'isolation'],
+            'total_persons_in_home_ins_isolation': ['persons', 'home', 'institution', 'quarantine'],
+            'total_persons_in_hospital_isolation': ['persons', 'hospital'],
+            'total_deaths': ['deaths'],
+            'total_deaths_declared_as_per_appeal': ['deaths declared as per appeal'],
+            'total_pending_deaths': ['pending deaths']
         }
 
         return self.__extract_generic_datatables(datatables, 2, keymap, transpose=True)
@@ -204,13 +207,13 @@ class KeralaExtractor(object):
 
     def extract_contact_travel_cumulative(self, tables):
         
-        keywords = {'history of international/interstate travel'}
+        keywords = {'international', 'interstate', 'travel', 'contact', 'history'}
         datatables = common_utils.find_all_tables_by_keywords(tables, keywords)
 
         keymap = {
             'total_cases': ['total cases'],
-            'history_of_travel': ['history of international/interstate travel'],
-            'history_of_contact': ['history of contact']
+            'history_of_travel': ['history', 'international/interstate', 'travel'],
+            'history_of_contact': ['history', 'contact']
         }
 
         return self.__extract_generic_datatables(datatables, 0, keymap)
@@ -218,14 +221,14 @@ class KeralaExtractor(object):
 
     def extract_contact_travel_new(self, tables):
 
-        keywords = {'history of international/interstate travel'}
+        keywords = {'international', 'interstate', 'travel', 'contact', 'history'}
         datatables = common_utils.find_all_tables_by_keywords(tables, keywords)
 
         keymap = {
             'total_cases': ['total cases'],
-            'history_of_travel': ['history of international/interstate travel'],
-            'history_of_contact': ['history of contact'],
-            'no_history': ['no history']
+            'history_of_travel': ['history', 'international/interstate', 'travel'],
+            'history_of_contact': ['history', 'contact'],
+            'no_history': ['no', 'history', 'travel']
         }
 
         return self.__extract_generic_datatables(datatables, 1, keymap)
@@ -233,33 +236,86 @@ class KeralaExtractor(object):
 
     def extract_individual_death_info(self, tables):
 
-        keywords = {'gender', 'death date'}
+        def convert_header_text_to_colname(datadict, keymap):
+            datadict_new = {}
+            processed_colnames = []
+
+            for text, val in datadict.items():
+                for colname, keys in keymap:
+
+                    if False in [key in text.lower() for key in keys] or colname in processed_colnames:
+                        continue
+                        
+                    datadict_new[colname] = val
+                    processed_colnames.append(colname)
+                
+            return datadict_new
+
+
+        keywords = {'district', 'age', 'date', 'death'}
         datatable = common_utils.find_table_by_keywords(tables, keywords)
 
-        if datatable is not None:
-            result = []
+        if datatable is None:
+            return None
 
-            for index, row in datatable.iterrows():
-                result.append({
-                        'name': row[2],
-                        'district': row[1],
-                        'place': row[3],
-                        'age': row[4],
-                        'gender': row[5],
-                        'death_date': row[6]
-                    })
+        # convert dataframe into a dictionary
+        datalist = [list(row) for _, row in datatable.iterrows()]
+        datadict = {}
+        cols = datalist[0]
 
-            return result
+        for rownum in range(1, len(datalist)):
+            for colnum, col in enumerate(cols):
+                if col not in datadict:
+                    datadict[col] = []
+
+                datadict[col].append(datalist[rownum][colnum])
+
+
+        header_keymap = [
+            ('district', ['district']),
+            ('name', ['name']),
+            ('place', ['place']),
+            ('age', ['age']),
+            ('gender', ['gender']),
+            ('gender', ['sex']),
+            ('death_date', ['date', 'death'])
+        ]
+
+        datadict = convert_header_text_to_colname(datadict, header_keymap)
+
+        result = []
+        cols = list(datadict.keys())
+        n = len(datadict[cols[0]])
+
+        for i in range(n):
+
+            try:
+                row = {col: datadict[col][i] for col in cols}
+
+                row['date'] = self.date
+
+                if 'death_date' in row:
+                    date = dateparser.parse(row['death_date'].strip(), ['%d-%m-%Y'])
+                    row['death_date'] = f'{date.year}-{date.month:02d}-{date.day:02d}'
+
+                if 'age' in row:
+                    row['age'] = locale.atoi(row['age'].strip())
+            except:
+                pass
+            else:
+                result.append(row)
+
+        return result
 
 
     def extract_critical_patients(self, tables):
 
-        keywords = {'icus', 'ventilator support'}
+        keywords = {'icus', 'ventilator', 'support', 'patient'}
         datatable = common_utils.find_table_by_keywords(tables, keywords)
 
         keymap = {
             'patients_in_icu': ['icus'],
-            'patients_on_ventillation': ['ventilator support']
+            'patients_on_ventillation': ['ventilator', 'support']
         }
 
         return self.__extract_generic_datatable(datatable, keymap)
@@ -267,17 +323,17 @@ class KeralaExtractor(object):
 
     def extract_cumulative_tests(self, tables):
 
-        keywords = {'samples sent', 'cb naat'}
+        keywords = {'samples', 'sent', 'naat', 'antigen'}
         datatables = common_utils.find_all_tables_by_keywords(tables, keywords)
 
         keymap = {
             'samples_sent': ['samples sent'],
             'routine_sentinel_samples_pcr': ['sentinel'],
             'airport_surveillance': ['surveillance'],
-            'CB_NAAT': ['cb naat'],
-            'True_NAT': ['true nat'],
-            'POCT_PCR': ['poct pcr'],
-            'RT_LAMP': ['rl lamp'],
+            'CB_NAAT': ['cb', 'naat'],
+            'True_NAT': ['true', 'nat'],
+            'POCT_PCR': ['poct', 'pcr'],
+            'RT_LAMP': ['lamp'],
             'Antigen_Assay': ['assay']
         }
 
@@ -286,17 +342,17 @@ class KeralaExtractor(object):
 
     def extract_new_tests(self, tables):
 
-        keywords = {'samples sent', 'cb naat'}
+        keywords = {'samples', 'sent', 'naat', 'antigen'}
         datatables = common_utils.find_all_tables_by_keywords(tables, keywords)
 
         keymap = {
             'samples_sent': ['samples sent'],
             'routine_sentinel_samples_pcr': ['sentinel'],
             'airport_surveillance': ['surveillance'],
-            'CB_NAAT': ['cb naat'],
-            'True_NAT': ['true nat'],
-            'POCT_PCR': ['poct pcr'],
-            'RT_LAMP': ['rl lamp'],
+            'CB_NAAT': ['cb', 'naat'],
+            'True_NAT': ['true', 'nat'],
+            'POCT_PCR': ['poct', 'pcr'],
+            'RT_LAMP': ['lamp'],
             'Antigen_Assay': ['assay']
         }
 
@@ -320,7 +376,7 @@ class KeralaExtractor(object):
 
     def extract_travel_surveillance(self, tables):
 
-        keywords = {'mode of travel'}
+        keywords = {'travel', 'mode'}
         datatable = common_utils.find_table_by_keywords(tables, keywords)
 
         keymap = {
@@ -338,14 +394,14 @@ class KeralaExtractor(object):
         datatable = common_utils.find_table_by_keywords(tables, keywords)
 
         keymap = {
-            'psychosocial_workers': ['psychosocial', 'workers', 'no.'],
+            'psychosocial_workers': ['psychosocial', 'workers', 'no'],
             'calls_to_persons_in_surveillance': ['quarantine', 'isolation'],
-            'followup_calls': ['follow-up'],
-            'post_covid_calls': ['post covid'],
-            'calls_special': ['migrant', 'alone'],
-            'calls_to_school_children': ['school'],
-            'calls_to_health_care_workers': ['health care workers'],
-            'calls_received_helpline': ['helpline'],
+            'followup_calls': ['follow', 'up', 'calls'],
+            'post_covid_calls': ['post', 'covid', 'calls'],
+            'calls_special': ['migrant', 'alone', 'mental', 'illness', 'different', 'able'],
+            'calls_to_school_children': ['school', 'children'],
+            'calls_to_health_care_workers': ['health', 'care', 'workers'],
+            'calls_received_helpline': ['calls', 'received', 'helpline'],
             'calls_total': ['all categories']
         }
 
@@ -370,7 +426,13 @@ class KeralaExtractor(object):
 
     def extract(self):
 
-        all_tables_camelot = common_utils.get_tables_from_pdf(library='camelot', pdf_fpath=self.report_fpath)
+        # do not parse bulletins prior to June 1st, 2020
+        if self.date < "2020-06-01":
+            return dict()
+
+        all_tables_camelot = common_utils.get_tables_from_pdf(library='camelot', pdf_fpath=self.report_fpath, split_text=False)
+        all_tables_camelot_joined = concatenate_tables.concatenate_tables(all_tables_camelot, 'same-table-width')
+
         result = {
             'contact-travel-cumulative': self.extract_contact_travel_cumulative(all_tables_camelot),
             'contact-travel-new': self.extract_contact_travel_new(all_tables_camelot),
@@ -378,10 +440,10 @@ class KeralaExtractor(object):
             'cumulative-summary-t-minus-one': self.extract_cumulative_summary_t_minus_one(all_tables_camelot),
             'cumulative-summary': self.extract_cumulative_summary(all_tables_camelot),
             'daily-summary': self.extract_daily_summary(all_tables_camelot),
-            'district-abstract': self.extract_district_abstract(all_tables_camelot),
+            'district-abstract': self.extract_district_abstract(all_tables_camelot_joined),
             'district-case-info': self.extract_district_case_info(all_tables_camelot),
-            'district-death-info': self.extract_district_death_info(all_tables_camelot),
-            'individual-death-info': self.extract_individual_death_info(all_tables_camelot),
+            'district-death-info': self.extract_district_death_info(all_tables_camelot),        # not available in all bulletins (29-Oct-2021)
+            'individual-death-info': self.extract_individual_death_info(all_tables_camelot_joined),
             'psychosocial-support': self.extract_psychosocial_support(all_tables_camelot),
             'surveillance-info': self.extract_surveillance_info(all_tables_camelot),
             'testing-cumulative': self.extract_cumulative_tests(all_tables_camelot),
@@ -395,7 +457,7 @@ class KeralaExtractor(object):
 if __name__ == '__main__':
 
     date = '2021-10-29'
-    path = "../localstore_KL/bulletins/KL/KL-Bulletin-2021-10-01.pdf"
+    path = "../localstore_KL/bulletins/KL/KL-Bulletin-2020-10-01.pdf"
 
     obj = KeralaExtractor(date, path)
 

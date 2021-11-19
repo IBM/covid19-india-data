@@ -13,7 +13,7 @@ class TestingCumulative(DB):
 
     def getcolumns(self):
         cols = {
-            'date': 'DATE NOT NULL',
+            'date': 'DATE NOT NULL PRIMARY KEY',
             'samples_sent': 'INT',
             'routine_sentinel_samples_pcr': 'INT',
             'airport_surveillance': 'INT',

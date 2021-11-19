@@ -13,7 +13,7 @@ class ContactTravelCumulative(DB):
 
     def getcolumns(self):
         cols = {
-            'date': 'DATE NOT NULL',
+            'date': 'DATE NOT NULL PRIMARY KEY',
             'total_cases': 'INT',
             'history_of_travel': 'INT',
             'history_of_contact': 'INT'

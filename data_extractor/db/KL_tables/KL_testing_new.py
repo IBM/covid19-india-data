@@ -13,13 +13,13 @@ class TestingNew(DB):
 
     def getcolumns(self):
         cols = {
-            'date': 'DATE NOT NULL',
+            'date': 'DATE NOT NULL PRIMARY KEY',
             'samples_sent': 'INT',
             'routine_sentinel_samples_pcr': 'INT',
             'CB_NAAT': 'INT',
             'True_NAT': 'INT',
             'POCT_PCR': 'INT',
             'RT_LAMP': 'INT',
-            'Antigen Assay': 'INT'
+            'Antigen_Assay': 'INT'
         }
         return cols

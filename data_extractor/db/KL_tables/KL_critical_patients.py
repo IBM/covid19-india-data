@@ -13,7 +13,7 @@ class CriticalPatients(DB):
 
     def getcolumns(self):
         cols = {
-            'date': 'DATE NOT NULL',
+            'date': 'DATE NOT NULL PRIMARY KEY',
             'patients_in_icu': 'INT',
             'patients_on_ventillation': 'INT'
         }

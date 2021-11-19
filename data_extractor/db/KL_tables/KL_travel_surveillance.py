@@ -13,7 +13,7 @@ class TravelSurveillance(DB):
 
     def getcolumns(self):
         cols = {
-            'date': 'DATE NOT NULL',
+            'date': 'DATE NOT NULL PRIMARY KEY',
             'international_cumulative': 'INT',
             'domestic_cumulative': 'INT',
             'total': 'INT'
