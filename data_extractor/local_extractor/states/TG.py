@@ -275,7 +275,9 @@ class TelanganaExtractor(object):
         pages = list(range(4))
 
         all_tables_camelot_tabnet = common_utils.get_tables_from_pdf(
-            library='camelot', pdf_fpath=self.report_fpath, smart_boundary_detection=True, pages=pages
+            library='camelot', pdf_fpath=self.report_fpath, 
+            smart_boundary_detection=True, pages=pages,
+            flavor='stream'
         )
 
         # daily case information extraction
@@ -313,7 +315,7 @@ class TelanganaExtractor(object):
     
 if __name__ == '__main__':
     date = '2021-01-01'
-    path = "/home/mayankag/covid19-india-data/localstore/bulletins/TG/TG-Bulletin-2021-09-23.pdf"
+    path = "/Users/mayank/Documents/projects/opensource/covid19-india-data/localstore/bulletins/TG/TG-Bulletin-2021-09-23.pdf"
     # path = "/home/mayankag/covid19-india-data/localstore/bulletins/TG/TG-Bulletin-2020-09-01.pdf"
     obj = TelanganaExtractor(date, path)
     

@@ -1,7 +1,7 @@
 import sqlite3
 
 from .db import Database
-from .KA_tables import KA_case_info, KA_district_cases
+from .KA_tables import KA_case_info, KA_district_cases, KA_individual_fatalities
 
 class KarnatakaDB(Database):
 
@@ -19,5 +19,6 @@ class KarnatakaDB(Database):
         self.tables = {
             'case-info': KA_case_info.CaseInfoTable(),
             'district-cases': KA_district_cases.DistrictCasesTable(),
+            'individual-fatalities': KA_individual_fatalities.FatalitiesTable()
         }
         
