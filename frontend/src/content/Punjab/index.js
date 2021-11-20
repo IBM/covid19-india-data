@@ -1,2 +1,2 @@
-import NewStatePage from './NewStatePage';
-export default NewStatePage;
+import Punjab from './Punjab';
+export default Punjab;

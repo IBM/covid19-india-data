@@ -512,6 +512,8 @@ class PunjabExtractor(object):
             if col in result:
                 result[col] = locale.atoi(result[col])
 
+        result['date'] = self.date
+
         return result
 
     def extract_mucormycosis_district_info(self, tables):
@@ -602,17 +604,18 @@ class PunjabExtractor(object):
         return result
 
     def extract(self):
-        n = common_utils.n_pages_in_pdf(self.report_fpath)
-        args = {
+        
+        kwargs = {
             "split_text": True,
             "strip_text": "\n"
         }
-        _pages = range(0, n)
-        tables = common_utils.get_tables_from_pdf_with_smart_boundary_detection( \
-            library='camelot', pdf_fpath=self.report_fpath, pages=_pages, \
-            kwargs=args)
-        # tables = common_utils.get_tables_from_pdf(library='camelot', \
-        #    pdf_fpath=self.report_fpath)
+        
+        tables = common_utils.get_tables_from_pdf(
+            library='camelot', pdf_fpath=self.report_fpath, 
+            smart_boundary_detection=False,
+            **kwargs
+        )
+
         self.number_of_tables = len(tables)
         case_vaccination_info = self.extract_cases_info(tables)
         patients_info = self.extract_patient_info(tables)
@@ -638,6 +641,6 @@ class PunjabExtractor(object):
         
 if __name__ == '__main__':
     date = '2020-06-25'
-    path = "../../../downloads/bulletins/PB/PB-Bulletin-2020-06-25.pdf"
+    path = "/Users/mayank/Documents/projects/opensource/covid19-india-data/localstore_PB/bulletins/PB/PB-Bulletin-2021-06-25.pdf"
     obj = PunjabExtractor(date, path)
     print(obj.extract())

@@ -87,7 +87,7 @@ class Punjab(Bulletin):
         obj = json.loads(html_str)
         anchor = BeautifulSoup(obj["html"], "html.parser").find_all("a")[0]
         link = self.root_url + anchor.get("href")
-        datestr = self.get_date_str(obj["date"]) # original dd-mm-yyyy format
+        datestr = self.get_date_str(obj["date"], ['%d-%m-%Y']) # original dd-mm-yyyy format
 
         return datestr, link
 
