@@ -306,6 +306,9 @@ class LandingPage extends React.Component {
             </>
           )}
         </div>
+        <br />
+        <br />
+        <br />
       </div>
     );
   }

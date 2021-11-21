@@ -140,7 +140,7 @@ frontend/build
 
 !frontend/.env
 
-*/*.DS_Store
+*.DS_Store
 
 frontend/.eslintcache
 

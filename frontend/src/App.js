@@ -12,6 +12,7 @@ import DataAccessPage from './content/DataAccessPage';
 
 import AnalysisPage from './content/AnalysisPage';
 import AnomaliesPage from './content/AnomaliesPage';
+import TasksPage from './content/TasksPage';
 
 import Delhi from './content/Delhi';
 import WestBengal from './content/WestBengal';
@@ -47,6 +48,7 @@ class App extends Component {
 
             <Route exact path="/analysis" component={AnalysisPage} />
             <Route exact path="/anomalies" component={AnomaliesPage} />
+            <Route exact path="/tasks" component={TasksPage} />
 
             <Route exact path="/Delhi" component={Delhi} />
             <Route exact path="/Haryana" component={Haryana} />
