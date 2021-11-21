@@ -75,6 +75,20 @@
             ]
         },
         {
+            "state.full.name": "Punjab",
+            "state.short.name": "PB",
+            "query": [
+                "SELECT P1.date, P2.cases_total, NULL, P1.discharged_total, NULL,",
+                "P1.deaths_total, NULL, P1.active_cases, NULL, P1.first_vaccination_today,",
+                "NULL, P1.second_vaccination_today, P1.samples_total, P1.samples_new, P1.isolation, MD.bulletin_link",
+                "FROM PB_cases P1",
+                "LEFT OUTER JOIN Metadata_Bulletin_Links MD ON MD.date == P1.date AND MD.state == \"PB\"",
+                "LEFT OUTER JOIN PB_district_cases P2 ON P1.date == P2.date WHERE LOWER(P2.district) == \"total\"",
+                "ORDER BY P1.date",
+                "DESC LIMIT 1"
+            ]
+        },
+        {
             "state.full.name": "Telangana",
             "state.short.name": "TG",
             "query": [
