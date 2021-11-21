@@ -31,13 +31,13 @@ const TASKS = [
       'Classic PDF parsers fail when tablular and textual data are embedded as images inside the document. Help enrich the data by extending the automated data extraction pipeline with open-sourced OCR techniques to parse data inside images as well.',
     imageURL: 'cv',
     url:
-      'https://github.com/IBM/covid19-india-data/wiki/Challenge-Tasks#ocr-on-health-bulletins',
+      'https://github.com/IBM/covid19-india-data/wiki/Challenge-Tasks#-ocr-on-health-bulletins',
     difficulty: {
       level: 'Beginner',
       color: 'green',
     },
-    topics: ['Computer Vision'],
-    states: ['GA', 'KN'],
+    topics: ['CV'],
+    states: ['GA', 'KN', 'RJ'],
   },
   {
     column: 1,
@@ -46,7 +46,7 @@ const TASKS = [
       'Not all Indian states report their data in English. Help enrich the COVID-19 India data by creating translation models and parsers that work with Hindi and other regional languages, and extend the state of the art in "natural language" processing.',
     imageURL: 'translation',
     url:
-      'https://github.com/IBM/covid19-india-data/wiki/Challenge-Tasks#translating-health-bulletins-from-regional-languages',
+      'https://github.com/IBM/covid19-india-data/wiki/Challenge-Tasks#-translating-health-bulletins',
     difficulty: {
       level: 'Advanced',
       color: 'red',
@@ -61,7 +61,7 @@ const TASKS = [
       'In this task, you are required to model a domain-dependent precision parser to extract patient and pandemic data from plain text information in health bulletins.',
     imageURL: 'parse',
     url:
-      'https://github.com/IBM/covid19-india-data/wiki/Challenge-Tasks#positional-entity-parser',
+      'https://github.com/IBM/covid19-india-data/wiki/Challenge-Tasks#-positional-entity-parser',
     difficulty: {
       level: 'Intermediate',
       color: 'blue',
@@ -76,7 +76,7 @@ const TASKS = [
       'Make it easier for everyone to interface with the data through automated Q&A and natural language to SQL translation.',
     imageURL: 'nl2',
     url:
-      'https://github.com/IBM/covid19-india-data/wiki/Challenge-Tasks#speak-to-the-data',
+      'https://github.com/IBM/covid19-india-data/wiki/Challenge-Tasks#-speak-to-the-data',
     difficulty: {
       level: 'Beginner',
       color: 'green',
@@ -104,12 +104,12 @@ const TASKS = [
     ),
     imageURL: 'aggr',
     url:
-      'https://github.com/IBM/covid19-india-data/wiki/Challenge-Tasks#data-aggregation',
+      'https://github.com/IBM/covid19-india-data/wiki/Challenge-Tasks#-data-aggregation',
     difficulty: {
       level: 'Intermediate',
       color: 'blue',
     },
-    topics: ['NLP', 'Computer Vision'],
+    topics: ['NLP', 'CV'],
     states: ['ALL'],
   },
   {

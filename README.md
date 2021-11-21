@@ -80,6 +80,7 @@ For general instructions on how to contribute to the landing page, see [here](./
 | Kerala (KL) | [Link](https://dhs.kerala.gov.in/%e0%b4%a1%e0%b5%86%e0%b4%af%e0%b4%bf%e0%b4%b2%e0%b4%bf-%e0%b4%ac%e0%b5%81%e0%b4%b3%e0%b5%8d%e0%b4%b3%e0%b4%b1%e0%b5%8d%e0%b4%b1%e0%b4%bf%e0%b4%a8%e0%b5%8d%e2%80%8d/) | [Tathagata Chakraborti](https://github.com/TathagataChakraborti) | [Tathagata Chakraborti](https://github.com/TathagataChakraborti) | :construction: &nbsp; IN PROGRESS ([#7](https://github.com/IBM/covid19-india-data/issues/7)) |
 | Madhya Pradesh (MP) | [Link](http://sarthak.nhmmp.gov.in/covid/health-bulletin/) | [Tathagata Chakraborti](https://github.com/TathagataChakraborti) | [Tathagata Chakraborti](https://github.com/TathagataChakraborti) | :construction: &nbsp; IN PROGRESS ([#5](https://github.com/IBM/covid19-india-data/issues/8)) |
 | Goa (GA) | [Link](https://www.goa.gov.in/covid-19/) | [Tathagata Chakraborti](https://github.com/TathagataChakraborti) | [Tathagata Chakraborti](https://github.com/TathagataChakraborti) | :construction: &nbsp; IN PROGRESS ([#77](https://github.com/IBM/covid19-india-data/issues/77)) |
+| Rajasthan (RJ) | [Link](http://rajswasthya.nic.in/) | | | ⌛ Own it! ([#98](https://github.com/IBM/covid19-india-data/issues/98)) |
 | [`Add new state`](https://github.com/IBM/covid19-india-data/issues/new?assignees=&labels=new+state&template=new-state-template.md&title=New+State%3A+%5BENTER+NAME+HERE%5D) | |  |  | |  |
 
 As you might have noticed, this is an incomplete list of Indian states. 
