@@ -99,7 +99,7 @@ class KarnatakaExtractor(object):
         tables = common_utils.get_tables_from_pdf(library='camelot',
                                                     pdf_fpath=self.report_fpath,
                                                     smart_boundary_detection=True,
-                                                    pages=[pageno], split_text=False)
+                                                    pages=[pageno - 1], split_text=False)
 
         if tables is None:
             return None
@@ -234,6 +234,6 @@ class KarnatakaExtractor(object):
 if __name__ == '__main__':
     import os
     date = '08-oct-2021'
-    path = '/home/mayankag/covid19-india-data/localstore/bulletins/KA/KA-Bulletin-2021-05-15.pdf'
+    path = '/home/mayankag/covid19-india-data/localstore/bulletins/KA/KA-Bulletin-2021-11-15.pdf'
     obj = KarnatakaExtractor(date, path)
     print(obj.extract())
