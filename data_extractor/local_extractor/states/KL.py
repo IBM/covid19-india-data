@@ -128,12 +128,23 @@ class KeralaExtractor(object):
             'new_persons_in_surveillance': ['new', 'person', 'quarantine', 'isolation'],
             'new_persons_in_home_ins_isolation': ['new', 'person', 'home', 'quarantine'],
             'new_persons_in_hospital_isolation': ['new', 'person', 'hospital', 'isolation'],
-            'daily_deaths': ['deaths'],
+            # 'daily_deaths': ['deaths'],
             'deaths_declared_as_per_appeal': ['deaths declared as per appeal'],
             'pending_deaths': ['pending deaths']
         }
 
-        return self.__extract_generic_datatables(datatables, 0, keymap, transpose=True)
+        result = self.__extract_generic_datatables(datatables, 0, keymap, transpose=True)
+        
+        # TODO: Cheap fix. Need to modify
+        result['daily_deaths'] = None
+        tbl = datatables[0]
+        daily_deaths_header = tbl[5][0]
+        daily_deaths_val = tbl[5][1]
+
+        if 'deaths' in daily_deaths_header.lower():
+            result['daily_deaths'] = locale.atoi(daily_deaths_val)
+
+        return result
 
 
     def extract_daily_summary(self, tables):
@@ -147,12 +158,23 @@ class KeralaExtractor(object):
             'new_persons_in_surveillance': ['new', 'person', 'quarantine', 'isolation'],
             'new_persons_in_home_ins_isolation': ['new', 'person', 'home', 'quarantine'],
             'new_persons_in_hospital_isolation': ['new', 'person', 'hospital', 'isolation'],
-            'daily_deaths': ['deaths'],
+            # 'daily_deaths': ['deaths'],
             'deaths_declared_as_per_appeal': ['deaths declared as per appeal'],
             'pending_deaths': ['pending deaths']
         }
 
-        return self.__extract_generic_datatables(datatables, 1, keymap, transpose=True)
+        result = self.__extract_generic_datatables(datatables, 1, keymap, transpose=True)
+
+        # TODO: Cheap fix. Need to modify
+        result['daily_deaths'] = None
+        tbl = datatables[1]
+        daily_deaths_header = tbl[5][0]
+        daily_deaths_val = tbl[5][1]
+
+        if 'deaths' in daily_deaths_header.lower():
+            result['daily_deaths'] = locale.atoi(daily_deaths_val)
+
+        return result
 
 
     def extract_cumulative_summary(self, tables):
@@ -167,12 +189,23 @@ class KeralaExtractor(object):
             'total_persons_in_surveillance': ['persons', 'quarantine', 'isolation'],
             'total_persons_in_home_ins_isolation': ['persons', 'home', 'institution', 'quarantine'],
             'total_persons_in_hospital_isolation': ['persons', 'hospital'],
-            'total_deaths': ['deaths'],
+            # 'total_deaths': ['deaths'],
             'total_deaths_declared_as_per_appeal': ['deaths declared as per appeal'],
             'total_pending_deaths': ['pending deaths']
         }
 
-        return self.__extract_generic_datatables(datatables, 2, keymap, transpose=True)
+        result = self.__extract_generic_datatables(datatables, 2, keymap, transpose=True)
+
+        # TODO: Cheap fix. Need to modify
+        result['total_deaths'] = None
+        tbl = datatables[2]
+        daily_deaths_header = tbl[6][0]
+        daily_deaths_val = tbl[6][1]
+
+        if 'deaths' in daily_deaths_header.lower():
+            result['total_deaths'] = locale.atoi(daily_deaths_val)
+
+        return result
 
 
     def extract_district_case_info(self, tables):
@@ -457,7 +490,7 @@ class KeralaExtractor(object):
 if __name__ == '__main__':
 
     date = '2021-10-29'
-    path = "../localstore_KL/bulletins/KL/KL-Bulletin-2020-10-01.pdf"
+    path = "/home/mayankag/covid19-india-data/localstore/bulletins/KL/KL-Bulletin-2021-11-21.pdf"
 
     obj = KeralaExtractor(date, path)
 
