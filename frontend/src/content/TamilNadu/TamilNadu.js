@@ -4,9 +4,9 @@ import { HighlightsElement } from '../../components/HighlightsElement';
 import { QUERIES } from './query.js';
 
 let config = require('../../config.json');
-let state_config = config['states'][ENTER_STATE_KEY_HERE];
+let state_config = config['states']['TN'];
 
-class NewStatePage extends React.Component {
+class TamilNadu extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -24,4 +24,4 @@ class NewStatePage extends React.Component {
   }
 }
 
-export default NewStatePage;
+export default TamilNadu;

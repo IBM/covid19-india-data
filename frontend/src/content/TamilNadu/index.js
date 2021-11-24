@@ -1,2 +1,2 @@
-import NewStatePage from './NewStatePage';
-export default NewStatePage;
+import TamilNadu from './TamilNadu';
+export default TamilNadu;
