@@ -4,13 +4,13 @@ import { Link } from 'carbon-components-react';
 const QUERIES = [
   {
     subject: 'Daily new cases',
-    description: <></>,
+    description: null,
     query:
       'SELECT date, cases_positive from DL_case_info WHERE cases_positive is NOT NULL ORDER BY date ASC',
   },
   {
     subject: 'Daily new fatalities',
-    description: <></>,
+    description: null,
     query:
       'SELECT date, deaths from DL_case_info WHERE deaths is NOT NULL ORDER BY date ASC',
   },
@@ -68,7 +68,7 @@ const QUERIES = [
   },
   {
     subject: 'Number of containment zones',
-    description: <></>,
+    description: null,
     query:
       'SELECT date, containment_zones FROM DL_containment WHERE containment_zones is NOT NULL ORDER BY date ASC',
   },

@@ -9,3 +9,4 @@ dateparser
 tqdm
 tabula-py
 pydecor
+lxml

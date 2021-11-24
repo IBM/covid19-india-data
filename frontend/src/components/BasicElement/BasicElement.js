@@ -26,6 +26,7 @@ import {
   TableHeader,
   TableBody,
   TableCell,
+  ToastNotification,
 } from 'carbon-components-react';
 
 let config = require('../../config.json');
@@ -88,6 +89,7 @@ class BasicElement extends React.Component {
       name: props.props.name,
       short_name: props.props.short_name,
       link_to_db_schema: props.props.link_to_db_schema,
+      link_to_govt_dashboard: props.props.link_to_govt_dashboard,
       dashboard_data: {},
       data: [],
       dataOnDate: [],
@@ -526,6 +528,38 @@ class BasicElement extends React.Component {
                         View Bulletin
                       </Button>
                     </Link>
+                  )}
+
+                  {this.state.link_to_govt_dashboard && (
+                    <>
+                      <br />
+                      <br />
+                      <ToastNotification
+                        kind="info"
+                        hideCloseButton
+                        lowContrast
+                        caption={
+                          <Link
+                            href={this.state.link_to_govt_dashboard}
+                            target="_blank">
+                            #KeralaFightsCorona
+                          </Link>
+                        }
+                        subtitle={
+                          <span>
+                            Check out the efforts of the state government on
+                            their website{' '}
+                            <Link
+                              href={this.state.link_to_govt_dashboard}
+                              target="_blank">
+                              here
+                            </Link>
+                            .
+                          </span>
+                        }
+                        title="Official Dashboard"
+                      />
+                    </>
                   )}
                 </div>
               </div>

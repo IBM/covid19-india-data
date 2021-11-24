@@ -2,6 +2,7 @@ import numpy as np
 import dateparser
 import camelot
 import tabula
+import pdfplumber
 import pandas as pd
 import math
 import gc
@@ -138,12 +139,15 @@ def get_tables_from_pdf_camelot(pdf_fpath, pages=None, strip_text='\n', split_te
     pagerange = "1-end" if pages is None else ','.join(map(str, pages))
     _flavor = "stream" if use_stream else "lattice"
     tables = camelot.read_pdf(pdf_fpath, pages=pagerange, flavor=_flavor, strip_text=strip_text, split_text=split_text)
+    tables = camelot.read_pdf(pdf_fpath, pages=pagerange, strip_text=strip_text, split_text=split_text)
+    gc.collect()
     return tables
 
 
 def get_tables_from_pdf_tabula(pdf_fpath, pages=None):
     pagerange = "all" if pages is None else pages
     tables = tabula.read_pdf(pdf_fpath, pages=pagerange)
+    gc.collect()
     return tables
 
 
@@ -162,15 +166,27 @@ def get_tables_from_pdf_with_smart_boundary_detection(library, pdf_fpath, pages,
         gc.collect()
 
         camelot_splittext = kwargs.get('split_text', True)
+        camelot_flavor = kwargs.get('flavor', 'lattice')
+
+        camelot_kwargs = {
+            'split_text': camelot_splittext,
+            'flavor': camelot_flavor,
+            'strip_text': '\n'
+        }
 
         for pageno, table_bounds in tablesdict.items():
             bound_str = [','.join(map(str, bound)) for bound in table_bounds]
-            pagetables = camelot.read_pdf(
-                pdf_fpath, pages=f'{pageno+1}', strip_text='\n', split_text=camelot_splittext, table_regions=bound_str
-            )
+
+            if camelot_flavor == 'stream':
+                camelot_kwargs['table_areas'] = bound_str
+            elif camelot_flavor == 'lattice':
+                camelot_kwargs['table_regions'] = bound_str
+
+            pagetables = camelot.read_pdf(pdf_fpath, pages=f'{pageno+1}', **camelot_kwargs)
             result.extend(pagetables._tables)
 
         result = TableList(result)
+        gc.collect()
         return result
 
     elif library.lower().strip() == 'tabula':
@@ -189,7 +205,8 @@ def get_tables_from_pdf_with_smart_boundary_detection(library, pdf_fpath, pages,
                 pdf_fpath, pages=pageno+1, area=tabula_bounds
             )
             result.extend(pagetables)
-            
+        
+        gc.collect()
         return result
 
     else:
@@ -207,3 +224,27 @@ def get_tables_from_pdf(library, pdf_fpath, pages=None, smart_boundary_detection
             return get_tables_from_pdf_camelot(pdf_fpath, pages, **kwargs)
         elif library.lower().strip() == 'tabula':
             return get_tables_from_pdf_tabula(pdf_fpath, pages)
+
+
+def get_pageno_with_text(pdf_fpath, keywords, start_page=None, end_page=None):
+
+    with pdfplumber.open(pdf_fpath) as pdf:
+        for page in pdf.pages:
+
+            pageno = page.page_number
+
+            if start_page is not None and pageno < start_page:
+                continue
+            if end_page is not None and pageno > end_page:
+                continue
+
+            pagetext = page.extract_text().lower()
+            keywords_found = [
+                keyword.lower() in pagetext 
+                for keyword in keywords
+            ]
+
+            if False not in keywords_found:     # all keywords found:
+                return pageno
+
+    return None
