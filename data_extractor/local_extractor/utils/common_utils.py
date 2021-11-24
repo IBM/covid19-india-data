@@ -139,7 +139,6 @@ def get_tables_from_pdf_camelot(pdf_fpath, pages=None, strip_text='\n', split_te
     pagerange = "1-end" if pages is None else ','.join(map(str, pages))
     _flavor = "stream" if use_stream else "lattice"
     tables = camelot.read_pdf(pdf_fpath, pages=pagerange, flavor=_flavor, strip_text=strip_text, split_text=split_text)
-    tables = camelot.read_pdf(pdf_fpath, pages=pagerange, strip_text=strip_text, split_text=split_text)
     gc.collect()
     return tables
 

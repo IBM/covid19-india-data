@@ -20,7 +20,7 @@ class TamilNaduDB(Database):
 
         self.tables = {
             'case-info': TN_case_info.CumulativeInfoTable(),
-            'detail-info': TN_detailed_cases.DetailedInfoTable(),
+            'detailed-info': TN_detailed_cases.DetailedInfoTable(),
             'district-info': TN_district_detailed_cases.DistrictDetailsTable(),
             'district-bed-info': TN_bed_vacancy_details.DistrictHospitalBedDetailsTable(),
             'death-info': TN_detailed_deaths.DeathMorbiditiesTable(),

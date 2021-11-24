@@ -136,17 +136,21 @@ class TamilNaduExtractor(object):
         return result
 
     def extract_detailed_cases(self, tables):
-        detailed_info_table = None
-        if len(tables) == 1:
-            detailed_info_table = tables[0].df
-        else:
-            keywords = {'positive', 'deaths', 'rt-pcr', 'isolation', 'transgender', 'male', 'female'}
-            detailed_info_table = common_utils.find_table_by_keywords(tables, keywords)
+        # detailed_info_table = None
+        # if len(tables) == 1:
+        #     detailed_info_table = tables[0].df
+        # else:
+        keywords = {'positive', 'deaths', 'rt-pcr', 'isolation', 'transgender', 'male', 'female'}
+        detailed_info_table = common_utils.find_table_by_keywords(tables, keywords)
 
         #print(detailed_info_table.size, detailed_info_table.shape)
         # in case no such table found
-        if detailed_info_table is None:
-            return None
+        # if detailed_info_table is None:
+        #     return None
+
+        for table in tables:
+            print(table.df)
+
 
         df_dict = common_utils.convert_df_to_dict(detailed_info_table, key_idx=1, val_idx=2)
         df_dict = common_utils.add_values_from_neighbors(detailed_info_table, df_dict, key_idx=1, val_idx=2)
@@ -451,7 +455,7 @@ class TamilNaduExtractor(object):
                     print("district not found page 8", district)
                     tmp['district'] = district
                     tmp['date'] = self.date
-                    distrct_numbers[district] = tmp
+                    district_numbers[district] = tmp
 
         stop_loop = False
         if df_page9 is not None:
@@ -759,8 +763,10 @@ class TamilNaduExtractor(object):
                 tmp = {
                     "airport": "other",
                     "flight": row[0].strip().lower(),
-                    "positive_during_entry_screening": row[1 + counter_other].strip(),
-                    "positive_during_exit_screening": row[2 + counter_other].strip()
+                    # "positive_during_entry_screening": row[1 + counter_other].strip(),
+                    # "positive_during_exit_screening": row[2 + counter_other].strip()
+                    "positive_during_entry_screening": row[1].strip(),
+                    "positive_during_exit_screening": row[2].strip()
                 }
             else:
                 tmp = {
@@ -948,7 +954,7 @@ class TamilNaduExtractor(object):
         #print("number of pages ", n)
         # file consists of a table on page 1 and an advertisement :D
         tables_page1 = common_utils.get_tables_from_pdf(library='camelot', pdf_fpath=self.report_fpath, pages=[1])
-        tables_page2 = common_utils.get_tables_from_pdf(library='camelot', pdf_fpath=self.report_fpath, pages=[2], use_stream=True)
+        # tables_page2 = common_utils.get_tables_from_pdf(library='tabula', pdf_fpath=self.report_fpath, pages=[2], smart_boundary_detection=True)
         # gettting all district case tables
         """
         pd.set_option('display.max_columns', None)
@@ -960,7 +966,7 @@ class TamilNaduExtractor(object):
 
         # send first table to extract the cummulative case details
         cummulative_case_info = self.extract_case_info(tables_page1)
-        detailed_case_info = self.extract_detailed_cases(tables_page2)
+        # detailed_case_info = self.extract_detailed_cases(tables_page2)
         district_cases = self.extract_district_cases(tables_district)
         bed_details = self.extract_district_facilities_details(tables_district)
         death_details = self.extract_death_comorbidities_table(tables_comorbidities)
@@ -970,11 +976,11 @@ class TamilNaduExtractor(object):
         train_details = self.extract_train_surveillance_table(tables_travel_data)
         seaport_details = self.extract_seaport_surveillance_table(tables_travel_data)
 
-        individual_case_info = self.extract_individual_case_info()
+        # individual_case_info = self.extract_individual_case_info()
 
         result = {
             'case-info': cummulative_case_info,
-            'detailed-info': detailed_case_info,
+            # 'detailed-info': detailed_case_info,
             'district-info': district_cases,
             'district-bed-info': bed_details,
             'death-info': death_details,
@@ -983,10 +989,9 @@ class TamilNaduExtractor(object):
             'flights': flight_details,
             'trains': train_details,
             'ships': seaport_details,
-            'individual-case-info': individual_case_info
+            # 'individual-case-info': individual_case_info
         }
 
-        #print(result)
         return result
 
 
@@ -995,14 +1000,20 @@ if __name__ == "__main__":
     # date = "17-sep-2021"
     # path = "../../../downloads/bulletins/TN/TN-Bulletin-2021-09-17.pdf"
 
-    date = "07-nov-2021"
+    date = "2021-11-07"
     path = "/Users/tchakra2/Desktop/bulletins/Media-Bulletin-07-11-21-COVID-19.pdf"
 
-    # date = "07-nov-2021"
+    # date = "2021-09-08"
     # path = "/Users/tchakra2/Desktop/bulletins/Media-Bulletin-08-09-21-COVID-19.pdf"
+
+    # date = "2021-11-23"
+    # path = "/Users/tchakra2/Desktop/bulletins/Media-Bulletin-23-11-21-COVID-19-1.pdf"
 
     reader = TamilNaduExtractor(date, path)
 
     from pprint import pprint
     pprint(reader.extract())
+
+
+
 
