@@ -28,11 +28,24 @@
       "is_complete": false,
       "link_to_db_schema": "https://raw.githubusercontent.com/IBM/covid19-india-data/main/docs/images/KA_tables.png"
     },
+    "KL": {
+      "name": "Kerala",
+      "short_name": "KL",
+      "is_complete": false,
+      "link_to_db_schema": "https://raw.githubusercontent.com/IBM/covid19-india-data/main/docs/images/KL_tables.png",
+      "link_to_govt_dashboard": "https://dashboard.kerala.gov.in/covid"
+    },
     "MH": {
       "name": "Maharashtra",
       "short_name": "MH",
       "is_complete": true,
       "link_to_db_schema": "https://raw.githubusercontent.com/IBM/covid19-india-data/main/docs/images/MH_tables.png"
+    },
+    "PB": {
+      "name" : "Punjab",
+      "short_name" : "PB",
+      "is_complete": true,
+      "link_to_db_schema" : "https://raw.githubusercontent.com/IBM/covid19-india-data/main/docs/images/PB_tables.png"
     },
     "TG": {
       "name": "Telangana",
@@ -40,17 +53,17 @@
       "is_complete": true,
       "link_to_db_schema": "https://raw.githubusercontent.com/IBM/covid19-india-data/main/docs/images/TG_tables.png"
     },
-    "WB": {
-      "name" : "West Bengal",
-      "short_name" : "WB",
-      "is_complete": true,
-      "link_to_db_schema" : "https://raw.githubusercontent.com/IBM/covid19-india-data/main/docs/images/WB_tables.png"
-    },
     "UK": {
       "name" : "Uttarakhand",
       "short_name" : "UK",
       "is_complete": true,
       "link_to_db_schema" : "https://raw.githubusercontent.com/IBM/covid19-india-data/main/docs/images/UK_tables.png"
+    },
+    "WB": {
+      "name" : "West Bengal",
+      "short_name" : "WB",
+      "is_complete": true,
+      "link_to_db_schema" : "https://raw.githubusercontent.com/IBM/covid19-india-data/main/docs/images/WB_tables.png"
     }
   }
 }

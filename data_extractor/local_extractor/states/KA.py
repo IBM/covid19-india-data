@@ -1,9 +1,15 @@
 import locale
+import dateparser
+import gc
+
+from camelot.utils import split_textline
 locale.setlocale(locale.LC_ALL, 'en_US.UTF-8')
 
 
 try:
     from local_extractor.utils import common_utils
+    from local_extractor.utils.table_concatenation import concatenate_tables
+    from local_extractor.states.state_utils import KA_utils
 except ImportError:
     import sys
     import os
@@ -12,7 +18,10 @@ except ImportError:
     path = os.path.join(path, 'local_extractor')
     if path not in sys.path:
         sys.path.insert(0, path)
+    
     from utils import common_utils
+    from utils.table_concatenation import concatenate_tables
+    from state_utils import KA_utils
 
 
 class KarnatakaExtractor(object):
@@ -79,7 +88,19 @@ class KarnatakaExtractor(object):
                         return t
         return None
 
-    def extract_district_case_information(self, tables):
+    def extract_district_case_information(self):
+
+        page_keywords = {'district', 'abstract', 'wise'}
+        pageno = common_utils.get_pageno_with_text(self.report_fpath, page_keywords)
+
+        if pageno is None:
+            return None
+
+        tables = common_utils.get_tables_from_pdf(library='camelot',
+                                                    pdf_fpath=self.report_fpath,
+                                                    smart_boundary_detection=True,
+                                                    pages=[pageno - 1], split_text=False)
+
         if tables is None:
             return None
             
@@ -119,6 +140,64 @@ class KarnatakaExtractor(object):
             result.append(tmp)
         return result
 
+    def extract_individual_fatalities_data(self):
+
+        page_keywords = {'covid', 'death', 'symptom', 'today'}
+        pageno = common_utils.get_pageno_with_text(self.report_fpath, page_keywords)
+
+        if pageno is None:
+            return None
+
+        gc.collect()
+
+        tables_all = common_utils.get_tables_from_pdf(library='camelot', 
+                                                        pdf_fpath=self.report_fpath, 
+                                                        split_text=False,
+                                                        pages=[f'{pageno}-end'])
+
+        gc.collect()
+
+        tables = concatenate_tables.concatenate_tables(tables_all, heuristic='same-table-width')
+
+        keywords = {'dod', 'doa', 'symptom', 'morbidities'}
+        datatable = common_utils.find_table_by_keywords(tables, keywords)
+
+        if datatable is None:
+            return None
+
+        result = KA_utils.process_individual_fatality_info(datatable)
+
+        for row in result:
+
+            row['date'] = self.date
+
+            if row['district_name']:
+                row['district_name'] = common_utils.clean_numbers_str(row['district_name'])
+
+            if row['age']:
+                row['age'] = locale.atoi(common_utils.clean_numbers_str(row['age']))
+
+            if row['doa']:
+                try:
+                    date = dateparser.parse(row['doa'], ['%d-%m-%Y'])
+                    row['doa'] = f'{date.year}-{date.month:02d}-{date.day:02d}'
+                except:
+                    row['notes'] = row.get('notes', '') + '/doa:' + str(row['doa'])
+                    row['doa'] = None
+                    
+
+            if row['dod']:
+                try:
+                    date = dateparser.parse(row['dod'], ['%d-%m-%Y'])
+                    row['dod'] = f'{date.year}-{date.month:02d}-{date.day:02d}'
+                except:
+                    row['notes'] = row.get('notes', '') + '/dod:' + str(row['dod'])
+                    row['dod'] = None
+
+
+        return result
+        
+
     def extract(self):
         n = common_utils.n_pages_in_pdf(self.report_fpath)
 
@@ -133,18 +212,20 @@ class KarnatakaExtractor(object):
                                                         pages=[1])
         case_info = self.extract_case_info(tables_page0)
 
+        gc.collect()
+
         # Then, we get the district-wise numbers. This needs smart boundary detection.
         # Since bulletins have this on different pages, we extract tables from multiple pages
-        tables_page4 = common_utils.get_tables_from_pdf(library='camelot',
-                                                        pdf_fpath=self.report_fpath,
-                                                        smart_boundary_detection=True,
-                                                        pages=[2, 3, 4, 5], split_text=False)  
-        
-        districtwise_info = self.extract_district_case_information(tables_page4)
+        districtwise_info = self.extract_district_case_information()
+        gc.collect()
+
+        individual_fatality_info = self.extract_individual_fatalities_data()
+
 
         result = {
             'case-info': case_info,
-            'district-cases': districtwise_info
+            'district-cases': districtwise_info,
+            'individual-fatalities': individual_fatality_info
         }
 
         return result
@@ -153,7 +234,6 @@ class KarnatakaExtractor(object):
 if __name__ == '__main__':
     import os
     date = '08-oct-2021'
-    path = os.getenv("HOME") + \
-        '/covlocal/bulletins/KA/KA-Bulletin-2021-10-12.pdf'
+    path = '/home/mayankag/covid19-india-data/localstore/bulletins/KA/KA-Bulletin-2021-11-15.pdf'
     obj = KarnatakaExtractor(date, path)
     print(obj.extract())

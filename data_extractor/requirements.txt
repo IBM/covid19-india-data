@@ -10,3 +10,5 @@ pydecor
 requests
 tabula-py
 tqdm
+pydecor
+lxml

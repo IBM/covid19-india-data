@@ -54,8 +54,12 @@ class Bulletin(object):
         html = page.content
         return html
 
-    def get_date_str(self, datestr):
-        date = dateparser.parse(datestr)
+    def get_date_str(self, datestr, datefmts=None):
+
+        if datefmts is None:
+            date = dateparser.parse(datestr)
+        else:
+            date = dateparser.parse(datestr, date_formats=datefmts)
 
         if date is None:
             return None

@@ -1,4 +1,5 @@
 import React from 'react';
+import GitHubButton from 'react-github-btn';
 import { generateStateID } from '../../components/Info';
 import { Link } from 'react-router-dom';
 import { Tag } from 'carbon-components-react';
@@ -11,6 +12,7 @@ import {
   SideNavItems,
   SideNavLink,
   SideNavDivider,
+  SideNavMenuItem,
 } from 'carbon-components-react/lib/components/UIShell';
 
 import HeaderContainer from 'carbon-components-react/lib/components/UIShell/HeaderContainer';
@@ -75,7 +77,7 @@ class PageHeader extends React.Component {
                     href="/#/introduction"
                     onClick={this.onClickTab.bind(this, 'introduction')}
                     isActive={this.state.introduction}>
-                    Introduction
+                    Dashboard
                   </SideNavLink>
 
                   <SideNavDivider />
@@ -91,6 +93,15 @@ class PageHeader extends React.Component {
                     onClick={this.onClickTab.bind(this, 'data')}
                     isActive={this.state.data}>
                     Data Access
+                  </SideNavLink>
+                  <SideNavLink
+                    href="/#/tasks"
+                    onClick={this.onClickTab.bind(this, 'tasks')}
+                    isActive={this.state.tasks}>
+                    Datathon{' '}
+                    <Tag type="green" className="compressed-tag">
+                      new
+                    </Tag>
                   </SideNavLink>
 
                   <SideNavDivider />
@@ -140,6 +151,17 @@ class PageHeader extends React.Component {
                       </SideNavLink>
                     </React.Fragment>
                   ))}
+
+                  <SideNavDivider />
+                  <SideNavMenuItem>
+                    <GitHubButton
+                      href="https://github.com/IBM/covid19-india-data"
+                      data-size="large"
+                      data-show-count="true"
+                      aria-label="Star IBM/covid19-india-data on GitHub">
+                      Star
+                    </GitHubButton>
+                  </SideNavMenuItem>
                 </SideNavItems>
               </SideNav>
             </Header>

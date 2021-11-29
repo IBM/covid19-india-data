@@ -12,14 +12,17 @@ import DataAccessPage from './content/DataAccessPage';
 
 import AnalysisPage from './content/AnalysisPage';
 import AnomaliesPage from './content/AnomaliesPage';
+import TasksPage from './content/TasksPage';
 
 import Delhi from './content/Delhi';
 import WestBengal from './content/WestBengal';
 import Telangana from './content/Telangana';
 import Haryana from './content/Haryana';
 import Maharashtra from './content/Maharashtra/Maharashtra';
+import Kerala from './content/Kerala';
 import Karnataka from './content/Karnataka/Karnataka';
 import Uttarakhand from './content/Uttarakhand';
+import Punjab from './content/Punjab';
 
 // let config = require('./config.json');
 // let states = config['states'];
@@ -45,14 +48,17 @@ class App extends Component {
 
             <Route exact path="/analysis" component={AnalysisPage} />
             <Route exact path="/anomalies" component={AnomaliesPage} />
+            <Route exact path="/tasks" component={TasksPage} />
 
             <Route exact path="/Delhi" component={Delhi} />
             <Route exact path="/Haryana" component={Haryana} />
             <Route exact path="/Telangana" component={Telangana} />
             <Route exact path="/WestBengal" component={WestBengal} />
             <Route exact path="/Maharashtra" component={Maharashtra} />
+            <Route exact path="/Kerala" component={Kerala} />
             <Route exact path="/Karnataka" component={Karnataka} />
             <Route exact path="/Uttarakhand" component={Uttarakhand} />
+            <Route exact path="/Punjab" component={Punjab} />
 
             {/*
               {Object.keys(states).map((key, index) => (
