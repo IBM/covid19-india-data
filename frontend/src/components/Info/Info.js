@@ -131,6 +131,7 @@ const Resource = props => (
         <div style={{ padding: '10px' }}>
           <p style={{ fontSize: 'inherit' }}> {props.props.name} </p>
         </div>
+        <br />
         {props.props.children.map(item => {
           return (
             <>
