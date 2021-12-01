@@ -1,5 +1,6 @@
 from os import link
-from .bulletin import Bulletin
+# from .bulletin import Bulletin
+from bulletin import Bulletin
 from bs4 import BeautifulSoup
 
 import re
@@ -49,11 +50,20 @@ class TamilNadu(Bulletin):
         print(f'\t Downloading Tamil Nadu bulletins')
 
         linkdict1 = self.get_bulletin_links(self.bulletin_url)
-        linkdict2 = self.get_bulletin_links(self.archive_bulletin_url)
+        # linkdict2 = self.get_bulletin_links(self.archive_bulletin_url)
         
-        linkdict1.update(linkdict2)
+        # linkdict1.update(linkdict2)
         bulletin_links = linkdict1
         self.download_bulletins(bulletin_links)
-        self._save_state_()
+        # self._save_state_()
 
         return bulletin_links
+
+
+tn = TamilNadu("")
+tn_bulletins = tn.run()
+
+for b in tn_bulletins:
+    print(f"{b} : {tn_bulletins[b]}")
+
+
