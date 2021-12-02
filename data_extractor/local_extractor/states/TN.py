@@ -726,7 +726,7 @@ class TamilNaduExtractor(object):
 
         # this ensures that the footer data is new and no same
         # rows are being parsed
-        if df_footer is not None and df_body.size != df_footer.size:
+        if df_footer is not None and df_body is not None and df_body.size != df_footer.size:
             for i, row in df_footer.iterrows():
                 row = [x for x in list(row) if x]
                 if len(row) == 1:
@@ -1003,11 +1003,14 @@ if __name__ == "__main__":
     date = "2021-11-07"
     path = "/Users/tchakra2/Desktop/bulletins/Media-Bulletin-07-11-21-COVID-19.pdf"
 
-    # date = "2021-09-08"
-    # path = "/Users/tchakra2/Desktop/bulletins/Media-Bulletin-08-09-21-COVID-19.pdf"
+    date = "2021-09-08"
+    path = "/Users/tchakra2/Desktop/bulletins/Media-Bulletin-08-09-21-COVID-19.pdf"
 
     # date = "2021-11-23"
     # path = "/Users/tchakra2/Desktop/bulletins/Media-Bulletin-23-11-21-COVID-19-1.pdf"
+
+    # date = "2021-12-01"
+    # path = "/Users/tchakra2/Desktop/bulletins/Media-Bulletin-01-12-21-COVID-19.pdf"
 
     reader = TamilNaduExtractor(date, path)
 

@@ -45,6 +45,12 @@ class Bulletin(object):
         req = requests.get(link)
         req.raise_for_status()
 
+        if "text/html" in req.headers.get('content-type'):
+            link = link.replace("http://", "https://")
+
+            req = requests.get(link)
+            req.raise_for_status()
+            
         with open(fpath, 'wb') as f:
             f.write(req.content)
 
