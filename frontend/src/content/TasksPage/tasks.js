@@ -113,7 +113,7 @@ const TASKS = [
     states: ['ALL'],
   },
   {
-    column: 3,
+    column: 2,
     title: 'Flex Your Brains',
     description: (
       <>
@@ -137,6 +137,25 @@ const TASKS = [
     difficulty: {
       level: 'Advanced',
       color: 'red',
+    },
+    topics: [],
+    states: ['ALL'],
+  },
+  {
+    column: 0,
+    title: 'Data Validation',
+    description: (
+      <>
+        Validate the data automatcially extracted from public health bulletins
+        with manually kept maintained data sources.
+      </>
+    ),
+    imageURL: 'validate',
+    url:
+      'https://github.com/IBM/covid19-india-data/wiki/Challenge-Tasks#-data-validation',
+    difficulty: {
+      level: 'Beginner',
+      color: 'green',
     },
     topics: [],
     states: ['ALL'],
