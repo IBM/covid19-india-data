@@ -54,7 +54,7 @@ def hello():
 
 @app.route("/covid19-india.sqlite")
 def download_db():
-    return send_file(__path_to_db_file, as_attachment=True)
+    return send_file(__path_to_db_file, as_attachment=True, download_name="covid19-india.sqlite")
 
 
 @app.route("/last_updated", methods=['POST'])
