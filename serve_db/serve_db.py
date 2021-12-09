@@ -52,7 +52,7 @@ def hello():
     return "COVID-19 Data from India. 8/15"
 
 
-@app.route("/covid19-india.db")
+@app.route("/covid19-india.sqlite")
 def download_db():
     return send_file(__path_to_db_file, as_attachment=True)
 
