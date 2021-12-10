@@ -13,7 +13,7 @@ class Overview(DB):
 
     def getcolumns(self):
         cols = {
-            'date': 'DATE NOT NULL',
+            'date': 'DATE NOT NULL PRIMARY KEY',
             'recovery_rate': 'INT',
             'recovered_patients': 'INT',
             'recovery_in_last_24_hrs': 'INT',

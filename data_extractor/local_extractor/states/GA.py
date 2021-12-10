@@ -2,6 +2,7 @@ import locale
 locale.setlocale( locale.LC_ALL, 'en_US.UTF-8' )
 
 import re
+import pdfplumber
 
 try:
     from local_extractor.utils import common_utils
@@ -22,6 +23,12 @@ class GoaExtractor(object):
         self.date = date
         self.report_fpath = report_fpath
 
+    def __get_text__(self, page):
+
+        with pdfplumber.open(self.report_fpath) as pdf:
+            first_page = pdf.pages[page]
+            text = first_page.extract_text()
+        return text
 
     def extract_active_cases(self, tables):
         datatable = common_utils.find_table_by_keywords(tables, {"travellers", "road", "flight", "train"})
@@ -67,6 +74,9 @@ class GoaExtractor(object):
         if datatable is None:
             return None
 
+        if datatable.shape[1] < 3:
+            return None
+
         result = []
 
         for idx, row in datatable.iterrows():
@@ -99,6 +109,7 @@ class GoaExtractor(object):
             active_cases += item["cases"]
 
         return {
+            "date": self.date,
             "active_cases" : active_cases,
         }
 
@@ -109,6 +120,7 @@ class GoaExtractor(object):
             return dict()
 
         all_tables_camelot = common_utils.get_tables_from_pdf(library='camelot', pdf_fpath=self.report_fpath)
+
         result = {
             'overview': self.extract_overview(all_tables_camelot),
             'active-cases': self.extract_active_cases(all_tables_camelot),
@@ -121,7 +133,7 @@ class GoaExtractor(object):
 if __name__ == '__main__':
 
     date = '2021-09-05'
-    path = "../localstore_GA/bulletins/GA/GA-Bulletin-2020-11-05.pdf"
+    path = "/home/mayankag/test/covid19-india-data/localstor_GA/bulletins/GA/GA-Bulletin-2021-07-15.pdf"
 
     obj = GoaExtractor(date, path)
 
