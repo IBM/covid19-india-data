@@ -24,44 +24,69 @@ class GoaExtractor(object):
 
 
     def extract_active_cases(self, tables):
-        datatable = common_utils.find_table_by_keywords(tables, {"travellers by (road,flight,train)"})
+        datatable = common_utils.find_table_by_keywords(tables, {"travellers", "road", "flight", "train"})
 
-        if datatable is not None:
+        if datatable is None:
+            return None
 
-            datatable = datatable.iloc[1:]
-            result = list()
 
-            df_dict_north = common_utils.convert_df_to_dict(datatable, key_idx=0, val_idx=1)
-            df_dict_south = common_utils.convert_df_to_dict(datatable, key_idx=2, val_idx=3)
+        datatable = datatable.iloc[1:]
+        result = list()
 
-            for item in df_dict_north:
+        df_dict_north = common_utils.convert_df_to_dict(datatable, key_idx=0, val_idx=1)
+        df_dict_south = common_utils.convert_df_to_dict(datatable, key_idx=2, val_idx=3)
 
-                district = "NORTH"
+        for item in df_dict_north:
 
-                if "travellers" in item.lower():
-                    district = None
+            district = "NORTH"
 
-                result.append({
-                    "date"     : self.date,
-                    "location" : item, 
-                    "district" : district, 
-                    "cases"    : locale.atoi(df_dict_north[item]), 
-                })
+            if "travellers" in item.lower():
+                district = None
 
-            for item in df_dict_south:
-                result.append({
-                    "date"     : self.date,
-                    "location" : item, 
-                    "district" : "SOUTH", 
-                    "cases"    : locale.atoi(df_dict_south[item]), 
-                })
+            result.append({
+                "date"     : self.date,
+                "location" : item, 
+                "district" : district, 
+                "cases"    : locale.atoi(df_dict_north[item]), 
+            })
 
-            return result
+        for item in df_dict_south:
+            result.append({
+                "date"     : self.date,
+                "location" : item, 
+                "district" : "SOUTH", 
+                "cases"    : locale.atoi(df_dict_south[item]), 
+            })
+
+        return result
 
 
     def extract_bed_capacity(self, tables):
-        # NEEDS IMAGE EXTRACTION #
-        pass
+        datatable = common_utils.find_table_by_keywords(tables, {"total", "capacity", "vacant", "current"})
+
+        if datatable is None:
+            return None
+
+        result = []
+
+        for idx, row in datatable.iterrows():
+            if idx == 0:
+                continue
+
+            district = row[0].lower().strip()
+            total_capacity = locale.atoi(row[1].strip())
+            vacant_capacity = locale.atoi(row[2].strip())
+
+            tmp = {
+                'date': self.date,
+                'district': district,
+                'total_capacity': total_capacity,
+                'vacant_capacity': vacant_capacity 
+            }
+
+            result.append(tmp)
+
+        return result
 
 
     def extract_overview(self, tables):
@@ -80,6 +105,9 @@ class GoaExtractor(object):
 
     def extract(self):
 
+        if self.date < "2020-09-15":
+            return dict()
+
         all_tables_camelot = common_utils.get_tables_from_pdf(library='camelot', pdf_fpath=self.report_fpath)
         result = {
             'overview': self.extract_overview(all_tables_camelot),
@@ -92,14 +120,10 @@ class GoaExtractor(object):
 
 if __name__ == '__main__':
 
-    date = '2020-10-10'
-    path = "/Users/tchakra2/Desktop/Media-Bulletin-10-October-2020.pdf"
-
-    # date = '2021-11-07'
-    # path = "/Users/tchakra2/Desktop/Media-Bulletin-3RD-AUG-2021.pdf"
+    date = '2021-09-05'
+    path = "../localstore_GA/bulletins/GA/GA-Bulletin-2020-11-05.pdf"
 
     obj = GoaExtractor(date, path)
 
     from pprint import pprint
     pprint(obj.extract())
-

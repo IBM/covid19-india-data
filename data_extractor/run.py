@@ -11,9 +11,10 @@ from local_extractor.utils import custom_exceptions
 
 
 STATES = [
-    'DL', 'HR', 'KA',
-    'KL', 'MH', 'PB',
-    'TG', 'UK', 'WB'
+    'DL', 'GA', 'HR', 
+    'KA', 'KL', 'MH', 
+    'PB', 'TG', 'UK', 
+    'WB'
 ]
 
 DOWNLOADED_BULLETINS_STR = 'downloaded-bulletins'
