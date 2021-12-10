@@ -102,16 +102,18 @@ class GoaExtractor(object):
     def extract_overview(self, tables):
         # NEEDS IMAGE EXTRACTION #
 
-        active_cases_info = self.extract_active_cases(tables)
-        active_cases = 0 
+        return None
 
-        for item in active_cases_info:
-            active_cases += item["cases"]
+        # active_cases_info = self.extract_active_cases(tables)
+        # active_cases = 0 
 
-        return {
-            "date": self.date,
-            "active_cases" : active_cases,
-        }
+        # for item in active_cases_info:
+        #     active_cases += item["cases"]
+
+        # return {
+        #     "date": self.date,
+        #     "active_cases" : active_cases,
+        # }
 
 
     def extract(self):
