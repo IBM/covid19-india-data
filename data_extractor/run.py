@@ -28,6 +28,10 @@ def get_parser():
     parser.add_argument('--run_only', type=str, required=False, default=None, help='Comma-separated values of states to run data extraction for')
     parser.add_argument('--force_run_states', type=str, required=False, default=None, help='Comma-separated values of states to force re-run data extraction procedure for')
 
+    parser.add_argument('--skip_bulletin_downloader', default=False, action='store_true', help='Should the procedure execute bulletin downloader or not?')
+    parser.add_argument('--skip_db_setup', default=False, action='store_true', help='Should the procedure execute DB setup or not?')
+    parser.add_argument('--skip_bulletin_parser', default=False, action='store_true', help='Should the procedure execute bulletin parser or not?')
+
     return parser
 
 
@@ -43,54 +47,66 @@ def run(args):
     if args.force_run_states is not None:
         force_rerun_states = [x.strip() for x in args.force_run_states.split(',')]
     
+    bulletin_links = None
     # Download bulletins
-    bulletin_links = bulletin_downloader.run(args.datadir, state_to_execute=states_to_execute)
+    if args.skip_bulletin_downloader:
+        print('Skipping bulletin downloader section')
+    else:
+        bulletin_links = bulletin_downloader.run(args.datadir, state_to_execute=states_to_execute)
 
     # Setup tables
-    db_obj = DBMain(args.datadir)
-    db_obj.record_bulletin_links(bulletin_links)
-    db_obj.record_db_metadata()
+    if args.skip_db_setup:
+        print('Skipping DB setup')
+    else:
+        db_obj = DBMain(args.datadir)
+        db_obj.record_db_metadata()
+
+        if bulletin_links is not None:
+            db_obj.record_bulletin_links(bulletin_links)
 
     # Start extraction
-    state_pbar = tqdm(STATES, desc="States")
-    for state in state_pbar:
+    if args.skip_bulletin_parser:
+        print('Skipping bulletin parser routine')
+    else:
+        state_pbar = tqdm(STATES, desc="States")
+        for state in state_pbar:
 
-        if states_to_execute is not None and state not in states_to_execute:
-            continue
-
-        state_pbar.set_description(f'State: {state}')
-
-        metadata_path = os.path.join(args.datadir, 'metadata', 'bulletins', f'{state}.json')
-        with open(metadata_path, 'r') as f:
-            data = json.load(f)
-
-        if PROCESSED_DATES_STR not in data:
-            data[PROCESSED_DATES_STR] = []
-
-        date_pbar = tqdm(data[BULLETIN_PATH_STR].items(), desc="Dates", leave=False)
-        for date, fpath in date_pbar:
-
-            date_pbar.set_description(f'Date: {date}')
-
-            if state not in force_rerun_states and date in data[PROCESSED_DATES_STR]:
+            if states_to_execute is not None and state not in states_to_execute:
                 continue
-            
-            try:
-                stateinfo = extractor_main.extract_info(state, date, fpath)
-                db_obj.insert_for_state(state, stateinfo)
-            except custom_exceptions.UnprocessedBulletinException as err:
-                # Bulletin failed validation checks. Remove from metadata
-                print(f'{state} Bulletin for date {date} failed validation checks')
 
-                if date in data[DOWNLOADED_BULLETINS_STR]:
-                    data[DOWNLOADED_BULLETINS_STR].remove(date)
-            except Exception as err:
-                print(f'Error in parsing date: {date}. Error: {err}')
-            else:
-                data[PROCESSED_DATES_STR].append(date)
-        
-        with open(metadata_path, 'w') as f:
-            json.dump(data, f)
+            state_pbar.set_description(f'State: {state}')
+
+            metadata_path = os.path.join(args.datadir, 'metadata', 'bulletins', f'{state}.json')
+            with open(metadata_path, 'r') as f:
+                data = json.load(f)
+
+            if PROCESSED_DATES_STR not in data:
+                data[PROCESSED_DATES_STR] = []
+
+            date_pbar = tqdm(data[BULLETIN_PATH_STR].items(), desc="Dates", leave=False)
+            for date, fpath in date_pbar:
+
+                date_pbar.set_description(f'Date: {date}')
+
+                if state not in force_rerun_states and date in data[PROCESSED_DATES_STR]:
+                    continue
+                
+                try:
+                    stateinfo = extractor_main.extract_info(state, date, fpath)
+                    db_obj.insert_for_state(state, stateinfo)
+                except custom_exceptions.UnprocessedBulletinException as err:
+                    # Bulletin failed validation checks. Remove from metadata
+                    print(f'{state} Bulletin for date {date} failed validation checks')
+
+                    if date in data[DOWNLOADED_BULLETINS_STR]:
+                        data[DOWNLOADED_BULLETINS_STR].remove(date)
+                except Exception as err:
+                    print(f'Error in parsing date: {date}. Error: {err}')
+                else:
+                    data[PROCESSED_DATES_STR].append(date)
+            
+            with open(metadata_path, 'w') as f:
+                json.dump(data, f)
 
 
 if __name__ == '__main__':

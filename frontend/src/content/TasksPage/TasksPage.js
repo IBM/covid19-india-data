@@ -61,16 +61,41 @@ class TasksPage extends React.Component {
             <br />
 
             <div className="bx--row">
-              {Array.from(Array(4).keys()).map(e => {
-                return (
-                  <div key={e} className="bx--col-lg-4">
-                    {TASKS.map((item, index) => {
-                      if (item.column === e)
-                        return <Task key={index} props={item} />;
-                    })}
-                  </div>
-                );
-              })}
+              <div className="bx--col-lg-12">
+                <div className="bx--row">
+                  {Array.from(Array(4).keys()).map(e => {
+                    return (
+                      <div key={e} className="bx--col-lg-5">
+                        {TASKS.map((item, index) => {
+                          if (item.column === e)
+                            return <Task key={index} props={item} />;
+                        })}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+              <div className="bx--col-lg-4">
+                <h3>Datathon @ IndoML 2021</h3>
+                <hr />
+
+                <p>
+                  IndoML is a pan-India symposium aimed at undergraduate and
+                  graduate students in Indian universities to participate in
+                  structured artificial intelligence, machine learning, and data
+                  science tasks.
+                </p>
+
+                <br />
+                <Link
+                  href="https://www.kaggle.com/dataset/cb06e66c26c46ed9e701be6750e08f956d63c91d1be2bc633d19e201c7704c5b"
+                  target="_blank"
+                  className="no-decoration">
+                  <Button kind="secondary" size="small">
+                    Participate
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
