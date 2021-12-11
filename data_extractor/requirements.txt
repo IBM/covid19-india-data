@@ -4,11 +4,10 @@ camelot-py[cv]
 dateparser
 dateutil
 jupyterlab
+lxml
 pandas
 pdfminer.six
 pydecor
 requests
 tabula-py
 tqdm
-pydecor
-lxml
