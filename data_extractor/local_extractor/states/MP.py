@@ -271,6 +271,9 @@ class MadhyaPradeshExtractor(object):
 
     def extract(self):
 
+        if self.date <= "2020-05-20":
+            return dict()
+
         all_tables_camelot = common_utils.get_tables_from_pdf(library='camelot', pdf_fpath=self.report_fpath)
         result = {
             'overview': self.extract_overview(all_tables_camelot),

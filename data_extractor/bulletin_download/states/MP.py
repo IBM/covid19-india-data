@@ -37,14 +37,15 @@ class MadhyaPradesh(Bulletin):
                     date_time_str = date_time_str.replace("202020", "2020")
 
                     if len(date_time_str) == 8:
-                        date_time_str = "{}.{}.{}".format(date_time_str[:2], date_time_str[2:4], date_time_str[4:])
+                        date_time_str = "{}.{}.{}".format(date_time_str[0:2], date_time_str[2:4], date_time_str[4:])
 
                     try:
-
-                        date_time_obj = parser.parse(date_time_str)
+                        
+                        parserinfo = parser.parserinfo(dayfirst=True)
+                        date_time_obj = parser.parse(date_time_str, parserinfo=parserinfo)
                         datestr = self.get_date_str(str(date_time_obj))
 
-                        if datestr in bulletin_links and "hindi" in anchor_href.lower():
+                        if datestr in bulletin_links or "hindi" in anchor_href.lower():
                             continue
 
                         bulletin_links[datestr] = anchor_href
