@@ -19,8 +19,8 @@ STATE_LIST = {
     'UK': UttarakhandExtractor,
     'WB': WestBengalExtractor,
     'TN': TamilNaduExtractor,
-    'TG': TelanganaExtractor
     'PB': PunjabExtractor,
+    'TG': TelanganaExtractor
 }
 
 

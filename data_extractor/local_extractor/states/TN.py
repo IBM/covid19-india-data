@@ -32,7 +32,7 @@ class TamilNaduExtractor(object):
     def __init__(self, date, report_fpath):
         self.date = date
         self.report_fpath = report_fpath
-        self.case_parser = TN_utils.CaseInfo
+        self.case_parser = TN_utils.read_file
 
         # for matching facilities string -- example 269 (69 Govt+200 Private)
         self.facilities_nums_regex = re.compile(r'([\d,]+)[ ]*[\(]*([\d,]+)[ ]*([\D]+)[ ]*([\d,]+)[ ]*([\D]+)[\)]*')
@@ -916,38 +916,7 @@ class TamilNaduExtractor(object):
         return result
 
     def extract_individual_case_info(self):
-
-        with pdfplumber.open(self.report_fpath) as pdf:
-            result = []
-            category = None
-
-            for i, page in enumerate(pdf.pages):
-                text = page.extract_text()
-
-                if "Death Case" in text:
-                    match = re.split(r"Death\s+in", text)
-
-                    for item in match:
-
-                        new_category = item.lower().split("death case")[0]
-                        new_category = " ".join(new_category.split())
-
-                        if not new_category:
-                            new_category = category
-
-                        item = re.split(r"\s*\n+\s*\n+\s*", item)
-
-                        for i in item:
-
-                            i = " ".join(i.split("  "))
-
-                            try: result.append(self.case_parser.extract(i, category=new_category))
-                            except: pass
-
-                        category = new_category
-
-            return result
-
+        return self.case_parser(self.report_fpath)
 
     def extract(self):
         n = common_utils.n_pages_in_pdf(self.report_fpath)
@@ -976,7 +945,9 @@ class TamilNaduExtractor(object):
         train_details = self.extract_train_surveillance_table(tables_travel_data)
         seaport_details = self.extract_seaport_surveillance_table(tables_travel_data)
 
+        # TODO: Need to save this
         # individual_case_info = self.extract_individual_case_info()
+        # print(individual_case_info)
 
         result = {
             'case-info': cummulative_case_info,
@@ -988,8 +959,7 @@ class TamilNaduExtractor(object):
             'airport': airport_details,
             'flights': flight_details,
             'trains': train_details,
-            'ships': seaport_details,
-            # 'individual-case-info': individual_case_info
+            'ships': seaport_details
         }
 
         return result

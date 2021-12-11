@@ -20,7 +20,6 @@ def run(basedir, state_to_execute=None):
         'KA': Karnataka,
         'KL': Kerala,
         'MH': Maharashtra,
-        'PB': Punjab,
         'TG': Telangana,
         'UK': Uttarakhand,
         'WB': WestBengal,
