@@ -6,13 +6,16 @@ import pdfplumber
 
 try:
     from local_extractor.utils import common_utils
+    from local_extractor.states.state_utils import GA_utils
 except ImportError:
     import sys, os, pathlib
     path = pathlib.Path(__file__).absolute().parents[2]
     path = os.path.join(path, 'local_extractor')
     if path not in sys.path:
         sys.path.insert(0, path)
+    
     from utils import common_utils
+    from state_utils import GA_utils
 
 
 class GoaExtractor(object):
@@ -100,7 +103,10 @@ class GoaExtractor(object):
 
 
     def extract_overview(self, tables):
-        # NEEDS IMAGE EXTRACTION #
+        
+        overview_text = GA_utils.parse_overview_info(self.report_fpath)
+
+        # TODO: parse data from extracted text
 
         return None
 
