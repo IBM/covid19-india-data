@@ -13,8 +13,8 @@ from local_extractor.utils import custom_exceptions
 STATES = [
     'DL', 'GA', 'HR', 
     'KA', 'KL', 'MH', 
-    'PB', 'TG', 'UK', 
-    'WB'
+    'PB', 'TG', 'TN', 
+    'UK', 'WB'
 ]
 
 DOWNLOADED_BULLETINS_STR = 'downloaded-bulletins'
@@ -47,7 +47,7 @@ def run(args):
     force_rerun_states = []
     if args.force_run_states is not None:
         force_rerun_states = [x.strip() for x in args.force_run_states.split(',')]
-    
+
     bulletin_links = None
     # Download bulletins
     if args.skip_bulletin_downloader:

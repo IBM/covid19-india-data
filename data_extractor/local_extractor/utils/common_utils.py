@@ -74,7 +74,40 @@ def convert_df_to_dict(df, key_idx, val_idx, remove_nan=True):
             df_dict[k] = v
     else:
         df_dict = {k:v for (k, v) in zip(keys, vals)}
-    
+
+    return df_dict
+
+def add_values_from_neighbors(df, df_dict, key_idx, val_idx):
+    # idea is to check till when is the value empty and all hose indices
+    # in value should go to the current index
+    # for example consider key list ["", "total number #", ""]
+    # and value list ["", "", "12345"]
+    # it is happening in case of Tamil Nadu table on Page number 2
+    # consider this to be a sort of a patch
+    keys = df.values[:, key_idx]
+    vals = df.values[:, val_idx]
+    keys_list = keys.tolist()
+    length = len(keys)
+
+    for k, v in df_dict.items():
+        # check if the dict doesnt have any value
+        if k in df_dict and df_dict[k] == "":
+            value = ""
+            index = keys_list.index(k)
+            # check previous neighbors
+            counter = 1
+            check_previous_neighbor = True
+            if index - 1 > 0 and keys[index - 1] == "":
+                # prepend the value
+                value = vals[index - counter] + value
+
+            # check next neighbors
+            if index + 1 < length and keys[index + counter] == "":
+               # append the value
+               value += vals[index + counter]
+
+            df_dict[k] = value
+
     return df_dict
 
 
@@ -102,9 +135,10 @@ def n_pages_in_pdf(pdf_fpath):
     return len(pages)
 
 
-def get_tables_from_pdf_camelot(pdf_fpath, pages=None, strip_text='\n', split_text=True):
+def get_tables_from_pdf_camelot(pdf_fpath, pages=None, strip_text='\n', split_text=True, use_stream=False):
     pagerange = "1-end" if pages is None else ','.join(map(str, pages))
-    tables = camelot.read_pdf(pdf_fpath, pages=pagerange, strip_text=strip_text, split_text=split_text)
+    _flavor = "stream" if use_stream else "lattice"
+    tables = camelot.read_pdf(pdf_fpath, pages=pagerange, flavor=_flavor, strip_text=strip_text, split_text=split_text)
     gc.collect()
     return tables
 

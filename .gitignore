@@ -140,6 +140,7 @@ frontend/build
 
 !frontend/.env
 
+*.idea
 *.DS_Store
 
 frontend/.eslintcache
@@ -148,5 +149,5 @@ frontend/.eslintcache
 # Skip database file
 serve_db/covid-india.db
 
-
-.idea
+# skip vim swap files
+.*.*.swp

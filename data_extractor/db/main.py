@@ -11,6 +11,7 @@ from .MH import MaharashtraDB
 from .MP import MadhyaPradeshDB
 from .PB import PunjabDB
 from .TG import TelanganaDB
+from .TN import TamilNaduDB
 from .UK import UttarakhandDB
 from .WB import WestBengalDB
 
@@ -36,6 +37,7 @@ class DBMain(object):
             'MP': MadhyaPradeshDB(datadir=self.datadir),
             'PB': PunjabDB(datadir=self.datadir),
             'TG': TelanganaDB(datadir=self.datadir),
+            'TN': TamilNaduDB(datadir=self.datadir),
             'UK': UttarakhandDB(datadir=self.datadir),
             'WB': WestBengalDB(datadir=self.datadir),
         }
