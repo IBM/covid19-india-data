@@ -18,6 +18,7 @@ class Database(object):
     def create_tables(self):
         cursor = self.conn.cursor()
         for table_obj in self.tables.values():
+            print(f'Creating table : {table_obj.table_name}')
             create_query = table_obj.create_table()
             cursor.execute(create_query)
             self.conn.commit()

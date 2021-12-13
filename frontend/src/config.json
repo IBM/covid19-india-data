@@ -47,6 +47,11 @@
       "is_complete": true,
       "link_to_db_schema" : "https://raw.githubusercontent.com/IBM/covid19-india-data/main/docs/images/PB_tables.png"
     },
+    "TN": {
+      "name" : "Tamil Nadu",
+      "short_name" : "TN",
+      "link_to_db_schema" : "https://raw.githubusercontent.com/IBM/covid19-india-data/main/docs/images/TN_tables.png"
+    },
     "TG": {
       "name": "Telangana",
       "short_name": "TG",

@@ -16,6 +16,7 @@ import TasksPage from './content/TasksPage';
 
 import Delhi from './content/Delhi';
 import WestBengal from './content/WestBengal';
+import TamilNadu from './content/TamilNadu';
 import Telangana from './content/Telangana';
 import Haryana from './content/Haryana';
 import Maharashtra from './content/Maharashtra/Maharashtra';
@@ -51,6 +52,7 @@ class App extends Component {
             <Route exact path="/tasks" component={TasksPage} />
 
             <Route exact path="/Delhi" component={Delhi} />
+            <Route exact path="/TamilNadu" component={TamilNadu} />
             <Route exact path="/Haryana" component={Haryana} />
             <Route exact path="/Telangana" component={Telangana} />
             <Route exact path="/WestBengal" component={WestBengal} />
