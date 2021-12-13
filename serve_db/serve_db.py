@@ -1,7 +1,7 @@
 from typing import List, Tuple, Union
 from schemas import *
 
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, send_file
 from flask_cors import CORS, cross_origin
 
 import json
@@ -50,6 +50,11 @@ def __scale_down_data(records: List[Tuple], scale_down: int) -> List:
 @app.route("/")
 def hello():
     return "COVID-19 Data from India. 8/15"
+
+
+@app.route("/covid19-india.sqlite")
+def download_db():
+    return send_file(__path_to_db_file, as_attachment=True, download_name="covid19-india.sqlite")
 
 
 @app.route("/last_updated", methods=['POST'])
