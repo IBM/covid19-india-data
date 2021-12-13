@@ -1,9 +1,9 @@
 import locale
 locale.setlocale( locale.LC_ALL, 'en_US.UTF-8' )
 
-import pdfplumber
 import re
-import pandas as pd
+import collections
+import dateparser
 
 try:
     from local_extractor.states.state_utils import TN_utils
@@ -92,9 +92,8 @@ class TamilNaduExtractor(object):
         return data, parsing_successful
 
     def extract_case_info(self, tables):
+        
         caseinfo_table = None
-        # there is only one table in this page
-        # checking just to be sure
         if len(tables) == 1:
             caseinfo_table = tables[0].df
         else:
@@ -225,44 +224,45 @@ class TamilNaduExtractor(object):
         return result
 
     def extract_district_cases(self, district_tables, is_page5_present=False):
-        df_page3 = None
-        df_page4 = None
-        df_page6 = None
-        keywords_page3 = ["home",  "death", "treatment", "discharged"]
-        df_page3 = common_utils.find_table_by_keywords(district_tables, keywords_page3)
+        
+        district_hometreatment_table = None
+        district_indigenous_imported_table = None
+        district_caseinfo_table = None
+        
+        keywords = ["home",  "death", "treatment", "discharged", "district"]
+        district_hometreatment_table = common_utils.find_table_by_keywords(district_tables, keywords)
 
-        keywords_page4 = ["indigenous", "imported"]
-        df_page4 = common_utils.find_table_by_keywords(district_tables, keywords_page4)
+        keywords = ["indigenous", "imported", "district"]
+        district_indigenous_imported_table = common_utils.find_table_by_keywords(district_tables, keywords)
 
-        keywords_page6 = ["positive", "discharged", "active", "death"]
-        df_page6 = common_utils.find_table_by_keywords(district_tables, keywords_page6)
+        keywords = ["positive", "discharged", "active", "death", "district"]
+        district_caseinfo_table = common_utils.find_table_by_keywords(district_tables, keywords)
 
         result = []
         district_numbers = dict()
-        stop_loop = False
 
         # parsing table 3
-        if df_page3 is not None:
-            df_page3 = df_page3.iloc[1:]
-            for i, row in df_page3.iterrows():
-                if stop_loop:
+        if district_hometreatment_table is not None:
+
+            # find header row
+            for rowidx, row in district_hometreatment_table.iterrows():
+                if row[0].strip() == '1':
                     break
+            district_hometreatment_table = district_hometreatment_table.iloc[rowidx:]
 
-                row = [x for x in list(row) if x]
+            for i, row in district_hometreatment_table.iterrows():
 
-                if row[0].strip().lower() == 'grand total':
-                    counter = 0
-                    stop_loop = True
-                else:
-                    counter = 1
+                row = list(row)
 
-                district = row[0 + counter].strip().lower()
+                district = ' '.join(row[:2])
+                district = ''.join([ch for ch in district if ch and not ch.isdigit()])
+                district = district.strip().lower()
 
-                active_cases_till_yesterday = row[1 + counter].strip()
-                new_cases_today = row[2 + counter].strip()
-                discharged_cases_today = row[3 + counter].strip()
-                deaths_today = row[4 + counter].strip()
-                total_active_cases = row[5 + counter].strip()
+                active_cases_till_yesterday = row[-5].strip()
+                new_cases_today = row[-4].strip()
+                discharged_cases_today = row[-3].strip()
+                deaths_today = row[-2].strip()
+                total_active_cases = row[-1].strip()
 
                 tmp = {
                     'date': self.date,
@@ -276,33 +276,35 @@ class TamilNaduExtractor(object):
 
                 district_numbers[district] = tmp
 
-        stop_loop = False
-        if df_page4 is not None:
-            df_page4 = df_page4.iloc[2:]
-            for i, row in df_page4.iterrows():
-                if stop_loop:
+
+        if district_indigenous_imported_table is not None:
+
+            # find header row
+            for rowidx, row in district_indigenous_imported_table.iterrows():
+                if row[0].strip() == '1':
                     break
+            district_indigenous_imported_table = district_indigenous_imported_table.iloc[rowidx:]
+            
+            for i, row in district_indigenous_imported_table.iterrows():
+                
+                row = list(row)
+                
+                district = ' '.join(row[:2])
+                district = ''.join([ch for ch in district if ch and not ch.isdigit()])
+                district = district.strip().lower()
 
-                row = [x for x in list(row) if x]
+                indegenous_cases_yesterday = row[-5].strip()
+                indegenous_cases_today = row[-4].strip()
+                imported_cases_yesterday = row[-3].strip()
+                imported_cases_today = row[-2].strip()
+                total_cases_cumulative = row[-1].strip()
 
-                if row[0].strip().lower() == 'grand total':
-                    counter = 0
-                    stop_loop = True
-                else:
-                    counter = 1
-
-                district = row[0 + counter].strip().lower()
-                indegenous_cases_yesterday = row[1 + counter].strip()
-                indegenous_cases_today = row[2 + counter].strip()
-                imported_cases_yesterday = row[3 + counter].strip()
-                imported_cases_today = row[4 + counter].strip()
-                total_cases_today = row[5 + counter].strip()
                 tmp = {
                     'total_indegenous_cases_till_yesterday': indegenous_cases_yesterday,
                     'indegenous_cases_today': indegenous_cases_today,
                     'total_imported_cases_till_yesterday': imported_cases_yesterday,
                     'imported_cases_today': imported_cases_today,
-                    'total_cases_till_today': total_cases_today
+                    'total_cases_till_today': total_cases_cumulative
                 }
 
                 if district in district_numbers:
@@ -312,26 +314,27 @@ class TamilNaduExtractor(object):
                     print("district not found page 4", district)
                     tmp['district'] = district
                     tmp['date'] = self.date
-                    distrct_numbers[district] = tmp
+                    district_numbers[district] = tmp
 
-        stop_loop = False
-        if df_page6 is not None:
-            df_page6 = df_page6.iloc[1:]
-            for i, row in df_page6.iterrows():
-                if stop_loop:
+        
+        if district_caseinfo_table is not None:
+
+            # find header row
+            for rowidx, row in district_caseinfo_table.iterrows():
+                if row[0].strip() == '1':
                     break
+            district_caseinfo_table = district_caseinfo_table.iloc[rowidx:]
 
-                row = [x for x in list(row) if x]
+            for i, row in district_caseinfo_table.iterrows():
+                
+                row = list(row)
 
-                if row[0].strip().lower() == 'grand total':
-                    counter = 0
-                    stop_loop = True
-                else:
-                    counter = 1
+                district = ' '.join(row[:2])
+                district = ''.join([ch for ch in district if ch and not ch.isdigit()])
+                district = district.strip().lower()
 
-                district = row[0 + counter].strip().lower()
-                total_discharged = row[2 + counter].strip()
-                total_deaths = row[4 + counter].strip()
+                total_discharged = row[-3].strip()
+                total_deaths = row[-1].strip()
 
                 tmp = {
                     'total_cases_discharged': total_discharged,
@@ -516,16 +519,18 @@ class TamilNaduExtractor(object):
 
         return result
 
-    def extract_death_comorbidities_table(self, death_detail_tables):
-        df_page10a = None
-        df_page10b = None
-        keywords = ["no", "comorbidities"]
-        df_page10a = common_utils.find_table_by_keywords(death_detail_tables, keywords)
+    def extract_death_comorbidities_table(self, tables):
 
-        keywords = ["with", "comorbidities"]
-        df_page10b = common_utils.find_table_by_keywords(death_detail_tables, keywords)
+        nocomorbidities_summary_tbl = None
+        comorbidities_summary_tbl = None
 
-        if df_page10a is None and df_page10b is None:
+        keywords = ["no", "comorbidities", "health", "facility"]
+        nocomorbidities_summary_tbl = common_utils.find_table_by_keywords(tables, keywords)
+
+        keywords = ["with", "comorbidities", "health", "facility"]
+        comorbidities_summary_tbl = common_utils.find_table_by_keywords(tables, keywords)
+
+        if nocomorbidities_summary_tbl is None and comorbidities_summary_tbl is None:
             return None
 
         keymap_no_comorbidities = {
@@ -544,17 +549,17 @@ class TamilNaduExtractor(object):
             "comorbidities_total": ["total"]
         }
 
-        if df_page10a is not None:
-            df_dict_page10a = common_utils.convert_df_to_dict(df_page10a, key_idx=0, val_idx=1)
-            result = common_utils.extract_info_from_table_by_keywords(df_dict_page10a, keymap_no_comorbidities)
+        if nocomorbidities_summary_tbl is not None:
+            nocomorbidities_summary_dict = common_utils.convert_df_to_dict(nocomorbidities_summary_tbl, key_idx=0, val_idx=1)
+            result = common_utils.extract_info_from_table_by_keywords(nocomorbidities_summary_dict, keymap_no_comorbidities)
 
-        if df_page10b is not None:
-            df_dict_page10b = common_utils.convert_df_to_dict(df_page10b, key_idx=0, val_idx=1)
-            tmp = common_utils.extract_info_from_table_by_keywords(df_dict_page10b, keymap_comorbidities)
+        if comorbidities_summary_tbl is not None:
+            comorbidities_summary_dict = common_utils.convert_df_to_dict(comorbidities_summary_tbl, key_idx=0, val_idx=-1)
+            tmp = common_utils.extract_info_from_table_by_keywords(comorbidities_summary_dict, keymap_comorbidities)
 
-        if df_page10a is None:
+        if nocomorbidities_summary_tbl is None:
             result = tmp
-        elif df_page10b is None:
+        elif comorbidities_summary_tbl is None:
             result = result
         else:
             result.update(tmp)
@@ -570,13 +575,22 @@ class TamilNaduExtractor(object):
 
         return result
 
-    def extract_travel_mode_table(self, travel_info_tables):
+    def extract_travel_mode_table(self, tables):
         df = None
-        keywords = ["mode", "travel", "since"]
-        df = common_utils.find_table_by_keywords(travel_info_tables, keywords)
+        keywords = ["mode", "travel", "since", "passenger", "airport", "flight", "road", "train"]
+        df = common_utils.find_table_by_keywords(tables, keywords)
 
         if df is None:
             return None
+
+        keymap = {
+            'airport_domestic': ['airport', 'domestic'],
+            'airport_international': ['airport', 'international'],
+            'train': ['train'],
+            'road_own': ['road', 'own', 'vehicle'],
+            'road_bus': ['road', 'bus'],
+            'sea_port': ['sea', 'port']
+        }
 
         stop_loop = False
         result = list()
@@ -596,6 +610,11 @@ class TamilNaduExtractor(object):
             else:
                 counter = 1
                 travel_mode = row[1].strip().lower()
+
+                for k, v in keymap.items():
+                    if False not in [x in travel_mode for x in v]:
+                        travel_mode = k
+                        break
 
             passengers = row[1 + counter].strip()
 
@@ -619,36 +638,34 @@ class TamilNaduExtractor(object):
 
         return result
 
-    def extract_airport_surveillance_table(self, travel_info_tables):
+    def extract_airport_surveillance_table(self, tables):
+
         df = None
-        keywords = ["flights", "arrived", "passengers"]
-        df = common_utils.find_table_by_keywords(travel_info_tables, keywords)
+        keywords = ["flights", "arrived", "passengers", "airport"]
+        df = common_utils.find_table_by_keywords(tables, keywords)
 
         if df is None:
             return None
 
-        stop_loop = False
-        result = list()
-        df = df.iloc[1:]
-        for i, row in df.iterrows():
-            if stop_loop:
+        # find header row
+        for rowidx, row in df.iterrows():
+            if row[0].strip().startswith('1'):
                 break
+        df = df.iloc[rowidx:]
+        
+        result = list()
+        for i, row in df.iterrows():
 
-            row = [x for x in list(row) if x]
+            row = list(row)
 
-            if row[0].strip().lower() == 'total':
-                counter = 0
-                stop_loop = True
-                # keeping the same name for total in case something comes up
-                # later
-                airport = "grand total"
-            else:
-                counter = 1
-                airport = row[1].strip().lower()
+            airport = ' '.join(row[:2])
+            airport = ''.join([ch for ch in airport if ch and not ch.isdigit()])
+            airport = airport.strip().lower()
 
-            flights = row[1 + counter].strip()
-            passengers = row[2 + counter].strip()
-            positive = row[3 + counter].strip()
+            flights = row[-3].strip()
+            passengers = row[-2].strip()
+            positive = row[-1].strip()
+
             tmp = {
                 'airport': airport,
                 'flights_arrived': flights,
@@ -817,7 +834,7 @@ class TamilNaduExtractor(object):
 
     def extract_train_surveillance_table(self, travel_info_tables):
         df = None
-        keywords = ["trains", "negative", "positive"]
+        keywords = ["trains", "negative", "positive", "passengers", "screen"]
         df = common_utils.find_table_by_keywords(travel_info_tables, keywords)
 
         # null check
@@ -868,34 +885,32 @@ class TamilNaduExtractor(object):
 
     def extract_seaport_surveillance_table(self, travel_info_tables):
         df = None
-        keywords = ["sea", "port", "ships", "arrived"]
+        keywords = ["sea", "port", "ships", "arrived", "passenger", "screen"]
         df = common_utils.find_table_by_keywords(travel_info_tables, keywords)
 
         if df is None:
             return None
 
-        df = df.iloc[1:]
-        result = list()
-        stop_loop = False
-        for i, row in df.iterrows():
-            if stop_loop:
+        # find header row
+        for rowidx, row in df.iterrows():
+            if row[0].strip().startswith('1'):
                 break
+        df = df.iloc[rowidx:]
 
-            row = [x for x in list(row) if x]
+        result = list()
 
-            if row[0].strip().lower() == 'total':
-                counter = 0
-                stop_loop = True
-                # keeping the same name for total in case something comes up
-                # later
-                seaport = "grand total"
-            else:
-                counter = 1
-                seaport = row[1].strip().lower()
+        for i, row in df.iterrows():
 
-            ships = row[1 + counter].strip()
-            passengers = row[2 + counter].strip()
-            positive = row[3 + counter].strip()
+            row = list(row)
+
+            seaport = ' '.join(row[:2])
+            seaport = ''.join([ch for ch in seaport if ch and not ch.isdigit()])
+            seaport = seaport.strip().lower()
+
+            ships = row[-3].strip()
+            passengers = row[-2].strip()
+            positive = row[-1].strip()
+
             tmp = {
                 'seaport': seaport,
                 'ships_arrived': ships,
@@ -916,42 +931,52 @@ class TamilNaduExtractor(object):
         return result
 
     def extract_individual_case_info(self):
-        return self.case_parser(self.report_fpath)
+
+        def flatten(d, parent_key='', sep='_'):
+            items = []
+            for k, v in d.items():
+                new_key = parent_key + sep + k if parent_key else k
+                if isinstance(v, collections.MutableMapping):
+                    items.extend(flatten(v, new_key, sep=sep).items())
+                else:
+                    items.append((new_key, v))
+            return dict(items)
+
+        data_flat = []
+        data = self.case_parser(self.report_fpath, self.date)
+
+        for datum in data:
+            datum_flat = flatten(datum)
+
+            for key, val in datum_flat.items():
+                if key != 'date' and 'date' in key:
+                    date = dateparser.parse(val, ['%d.%m.%Y'])
+                    datum_flat[key] = f'{date.year}-{date.month:02d}-{date.day:02d}'
+
+            data_flat.append(datum_flat)
+
+        return data_flat
 
     def extract(self):
-        n = common_utils.n_pages_in_pdf(self.report_fpath)
-        #print("number of pages ", n)
-        # file consists of a table on page 1 and an advertisement :D
-        tables_page1 = common_utils.get_tables_from_pdf(library='camelot', pdf_fpath=self.report_fpath, pages=[1])
-        # tables_page2 = common_utils.get_tables_from_pdf(library='tabula', pdf_fpath=self.report_fpath, pages=[2], smart_boundary_detection=True)
-        # gettting all district case tables
-        """
-        pd.set_option('display.max_columns', None)
-        pd.set_option('display.width', None)
-        """
-        tables_district = common_utils.get_tables_from_pdf(library='camelot', pdf_fpath=self.report_fpath, pages=[3, 4, 5, 7, 9, 10], use_stream=False)
-        tables_comorbidities = common_utils.get_tables_from_pdf(library='camelot', pdf_fpath=self.report_fpath, pages=[10], use_stream=False)
-        tables_travel_data = common_utils.get_tables_from_pdf(library='camelot', pdf_fpath=self.report_fpath, pages=[n-2, n-1, n], use_stream=False)
 
-        # send first table to extract the cummulative case details
-        cummulative_case_info = self.extract_case_info(tables_page1)
-        # detailed_case_info = self.extract_detailed_cases(tables_page2)
-        district_cases = self.extract_district_cases(tables_district)
-        bed_details = self.extract_district_facilities_details(tables_district)
-        death_details = self.extract_death_comorbidities_table(tables_comorbidities)
-        travel_mode_details = self.extract_travel_mode_table(tables_travel_data)
-        airport_details = self.extract_airport_surveillance_table(tables_travel_data)
-        flight_details = self.extract_airport_flight_table(tables_travel_data)
-        train_details = self.extract_train_surveillance_table(tables_travel_data)
-        seaport_details = self.extract_seaport_surveillance_table(tables_travel_data)
+        if self.date < "2020-06-01":
+            return dict()
 
-        # TODO: Need to save this
-        # individual_case_info = self.extract_individual_case_info()
-        # print(individual_case_info)
+        tables = common_utils.get_tables_from_pdf(library='camelot', pdf_fpath=self.report_fpath, split_text=False)
+        
+        case_info = self.extract_case_info(tables)
+        district_cases = self.extract_district_cases(tables)
+        bed_details = None # TODO: Fix self.extract_district_facilities_details(tables)
+        death_details = self.extract_death_comorbidities_table(tables)
+        travel_mode_details = self.extract_travel_mode_table(tables)
+        airport_details = self.extract_airport_surveillance_table(tables)
+        flight_details = None # TODO: self.extract_airport_flight_table(tables)
+        train_details = self.extract_train_surveillance_table(tables)
+        seaport_details = self.extract_seaport_surveillance_table(tables)
+        individual_case_info = self.extract_individual_case_info()
 
         result = {
-            'case-info': cummulative_case_info,
-            # 'detailed-info': detailed_case_info,
+            'case-info': case_info,
             'district-info': district_cases,
             'district-bed-info': bed_details,
             'death-info': death_details,
@@ -959,7 +984,8 @@ class TamilNaduExtractor(object):
             'airport': airport_details,
             'flights': flight_details,
             'trains': train_details,
-            'ships': seaport_details
+            'ships': seaport_details,
+            'individual-fatalities': individual_case_info,
         }
 
         return result
@@ -967,26 +993,10 @@ class TamilNaduExtractor(object):
 
 if __name__ == "__main__":
 
-    # date = "17-sep-2021"
-    # path = "../../../downloads/bulletins/TN/TN-Bulletin-2021-09-17.pdf"
-
-    date = "2021-11-07"
-    path = "/Users/tchakra2/Desktop/bulletins/Media-Bulletin-07-11-21-COVID-19.pdf"
-
-    date = "2021-09-08"
-    path = "/Users/tchakra2/Desktop/bulletins/Media-Bulletin-08-09-21-COVID-19.pdf"
-
-    # date = "2021-11-23"
-    # path = "/Users/tchakra2/Desktop/bulletins/Media-Bulletin-23-11-21-COVID-19-1.pdf"
-
-    # date = "2021-12-01"
-    # path = "/Users/tchakra2/Desktop/bulletins/Media-Bulletin-01-12-21-COVID-19.pdf"
+    date = "2021-01-01"
+    path = "/home/mayankag/test/covid19-india-data/localstore_TN/bulletins/TN/TN-Bulletin-2021-07-01.pdf"
 
     reader = TamilNaduExtractor(date, path)
 
     from pprint import pprint
     pprint(reader.extract())
-
-
-
-
