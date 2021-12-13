@@ -10,7 +10,7 @@ There are 10 tables containing information for the state of Tamil Nadu. All the 
 
 A brief description of these tables is as follows:
 
-1. `TN_cumulative_info`: Daily cases info for the state
+1. `TN_case_info`: Daily cases info for the state
 2. `TN_positive_cases_detail`: Positive case numbers, with total testing and categorization based on gender
 3. `TN_district_details`: District wise daily numbers
 4. `TN_district_hospital_bed_details`: District wise hospital bed availability
@@ -20,6 +20,7 @@ A brief description of these tables is as follows:
 8. `TN_flight_details`: Flight wise testing details
 9. `TN_railway_surveillance`: Testing details of people travelling through train
 10. `TN_seaport_surveillance`: Testing details of people travelling through ship
+11. `TN_individual_fatalities`: Individual diagnosis data for each fatality due to COVID-19
 
 
 ![test](./images/TN_tables.png)
