@@ -48,7 +48,7 @@ def read_text(test_text: str, category: str = None, date: str = None) -> CaseInf
     return return_dict["result"]
 
 
-def read_file(filename: str) -> List[CaseInfo]:
+def read_file(filename: str, date: str = None) -> List[CaseInfo]:
 
     result = list()
 
@@ -59,16 +59,17 @@ def read_file(filename: str) -> List[CaseInfo]:
         with pdfplumber.open(filename) as pdf:
             last_match = ""
             category = None
-            date = None
 
             for i, page in enumerate(pdf.pages):
                 text = page.extract_text()
 
-                template = re.compile(r".*Media\s+Bulletin\s+(?P<date>((?!\n).)+)\n.*$", re.DOTALL)
-                matches = re.match(template, text)
+                if date is None:
+                    # Find date from bulletin if not provided through arguments
+                    template = re.compile(r".*Media\s+Bulletin\s+(?P<date>((?!\n).)+)\n.*$", re.DOTALL)
+                    matches = re.match(template, text)
 
-                if matches:
-                    date = matches.groupdict()["date"]
+                    if matches:
+                        date = matches.groupdict()["date"]
 
                 if "death case" in text.lower():
                     text = last_match + text

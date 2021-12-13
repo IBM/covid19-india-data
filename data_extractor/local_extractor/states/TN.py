@@ -1,9 +1,9 @@
 import locale
 locale.setlocale( locale.LC_ALL, 'en_US.UTF-8' )
 
-import pdfplumber
 import re
-import pandas as pd
+import collections
+import dateparser
 
 try:
     from local_extractor.states.state_utils import TN_utils
@@ -931,7 +931,31 @@ class TamilNaduExtractor(object):
         return result
 
     def extract_individual_case_info(self):
-        return self.case_parser(self.report_fpath)
+
+        def flatten(d, parent_key='', sep='_'):
+            items = []
+            for k, v in d.items():
+                new_key = parent_key + sep + k if parent_key else k
+                if isinstance(v, collections.MutableMapping):
+                    items.extend(flatten(v, new_key, sep=sep).items())
+                else:
+                    items.append((new_key, v))
+            return dict(items)
+
+        data_flat = []
+        data = self.case_parser(self.report_fpath, self.date)
+
+        for datum in data:
+            datum_flat = flatten(datum)
+
+            for key, val in datum_flat.items():
+                if key != 'date' and 'date' in key:
+                    date = dateparser.parse(val, ['%d.%m.%Y'])
+                    datum_flat[key] = f'{date.year}-{date.month:02d}-{date.day:02d}'
+
+            data_flat.append(datum_flat)
+
+        return data_flat
 
     def extract(self):
 
@@ -949,7 +973,7 @@ class TamilNaduExtractor(object):
         flight_details = None # TODO: self.extract_airport_flight_table(tables)
         train_details = self.extract_train_surveillance_table(tables)
         seaport_details = self.extract_seaport_surveillance_table(tables)
-
+        individual_case_info = self.extract_individual_case_info()
 
         result = {
             'case-info': case_info,
@@ -958,43 +982,10 @@ class TamilNaduExtractor(object):
             'death-info': death_details,
             'travel-info': travel_mode_details,
             'airport': airport_details,
-
-            'trains': train_details,
-            'ships': seaport_details
-        }
-
-        # return result
-
-        n = common_utils.n_pages_in_pdf(self.report_fpath)
-        # tables_page2 = common_utils.get_tables_from_pdf(library='tabula', pdf_fpath=self.report_fpath, pages=[2], smart_boundary_detection=True)
-        # gettting all district case tables
-        
-        tables_travel_data = common_utils.get_tables_from_pdf(library='camelot', pdf_fpath=self.report_fpath, pages=[n-2, n-1, n], use_stream=False)
-
-        # send first table to extract the cummulative case details
-        
-        # detailed_case_info = self.extract_detailed_cases(tables_page2)
-        
-        flight_details = self.extract_airport_flight_table(tables_travel_data)
-        
-
-        # TODO: Need to save this
-        # individual_case_info = self.extract_individual_case_info()
-        # print(individual_case_info)
-
-        result = {
-            'case-info': cummulative_case_info,
-            # 'detailed-info': detailed_case_info,
-            'district-info': district_cases,
-            'district-bed-info': bed_details,
-            'death-info': death_details,
-            'travel-info': travel_mode_details,
-            'airport': airport_details,
-
             'flights': flight_details,
-
             'trains': train_details,
-            'ships': seaport_details
+            'ships': seaport_details,
+            'individual-fatalities': individual_case_info,
         }
 
         return result
@@ -1002,29 +993,10 @@ class TamilNaduExtractor(object):
 
 if __name__ == "__main__":
 
-    # date = "17-sep-2021"
-    # path = "../../../downloads/bulletins/TN/TN-Bulletin-2021-09-17.pdf"
-
     date = "2021-01-01"
     path = "/home/mayankag/test/covid19-india-data/localstore_TN/bulletins/TN/TN-Bulletin-2021-07-01.pdf"
-
-    # date = "2021-11-07"
-    # path = "/Users/tchakra2/Desktop/bulletins/Media-Bulletin-07-11-21-COVID-19.pdf"
-
-    # date = "2021-09-08"
-    # path = "/Users/tchakra2/Desktop/bulletins/Media-Bulletin-08-09-21-COVID-19.pdf"
-
-    # date = "2021-11-23"
-    # path = "/Users/tchakra2/Desktop/bulletins/Media-Bulletin-23-11-21-COVID-19-1.pdf"
-
-    # date = "2021-12-01"
-    # path = "/Users/tchakra2/Desktop/bulletins/Media-Bulletin-01-12-21-COVID-19.pdf"
 
     reader = TamilNaduExtractor(date, path)
 
     from pprint import pprint
     pprint(reader.extract())
-
-
-
-
