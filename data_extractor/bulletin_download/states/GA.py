@@ -1,7 +1,5 @@
 from .bulletin import Bulletin
-
 from bs4 import BeautifulSoup
-from dateutil import parser
 
 class Goa(Bulletin):
 
@@ -39,10 +37,9 @@ class Goa(Bulletin):
                                 "-".join(date_time_str.split("-")[:-1])
 
                         date_time_str = date_time_str.replace("-", " ")
-                        date_time_str = date_time_str.replace("_", " ")
+                        date_time_str = date_time_str.replace("_", "-")
 
-                        date_time_obj = parser.parse(date_time_str)
-                        datestr = self.get_date_str(str(date_time_obj))
+                        datestr = self.get_date_str(date_time_str)
 
                         bulletin_links[datestr] = anchor_href
 
@@ -72,4 +69,3 @@ class Goa(Bulletin):
         self._save_state_()
 
         return bulletin_links
-
