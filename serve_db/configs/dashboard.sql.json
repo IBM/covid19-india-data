@@ -22,6 +22,18 @@
             ]
         },
         {
+            "state.full.name": "Goa",
+            "state.short.name": "GA",
+            "query": [
+                "SELECT G1.date, G1.total_cases_cunulative, G1.total_cases_new, G1.recovered_patients, G1.recovery_in_last_24_hrs,",
+                "G1.deaths_cumulative, G1.deaths_new, G1.active_cases, NULL, NULL, NULL, NULL,",
+                "G1.samples_tested_cumulative, G1.samples_tested_new, NULL, MD.bulletin_link",
+                "FROM GA_overview G1",
+                "LEFT OUTER JOIN Metadata_Bulletin_Links MD ON MD.date == G1.date AND MD.state == \"GA\" ORDER BY G1.date",
+                "DESC LIMIT 1"
+            ]
+        },
+        {
             "state.full.name": "Haryana",
             "state.short.name": "HR",
             "query": [
