@@ -91,32 +91,48 @@ integrate additional variables [[4](https://pubmed.ncbi.nlm.nih.gov/33144763)] [
 understanding various aspects of the pandemic in detail [[8](https://pubmed.ncbi.nlm.nih.gov/34173439)] [[1]()] [[9]()], among others.
 
 💡 💡 💡 If you are looking for some concrete tasks to get started, 
-find out more about "Challenge Tasks" [here](https://india-covid-19-data.mybluemix.net/#/tasks).
+find out more about **Challenge Tasks** [here](https://india-covid-19-data.mybluemix.net/#/tasks).
 
 
 ## Current state roster
 
-| State | Link to Daily Bulletin | Owner | Status |
-|-------|------------------------|-------|--------|
-| Delhi `DL` | [Link](http://health.delhigovt.nic.in/wps/wcm/connect/doit_health/Health/Home/Covid19/Bulletin+August+2021) | [Mayank](https://github.com/MayankAgarwal) | :white_check_mark: &nbsp; COMPLETE ([Wiki](https://github.com/IBM/covid19-india-data/wiki/States#delhi-dl)) |
-| Goa `GA` | [Link](https://www.goa.gov.in/covid-19/) | [Tathagata](https://github.com/TathagataChakraborti) \| [Mayank](https://github.com/MayankAgarwal) | :white_check_mark: &nbsp; COMPLETE ([Wiki](https://github.com/IBM/covid19-india-data/wiki/States#goa-ga)) |
-| Haryana `HR` | [Link](http://nhmharyana.gov.in/page?id=208) | [Mayank](https://github.com/MayankAgarwal) | :white_check_mark: &nbsp; COMPLETE ([Wiki](https://github.com/IBM/covid19-india-data/wiki/States#haryana-hr)) | 
-| Karnataka `KA` | [Link](https://covid19.karnataka.gov.in/govt_bulletin/en) | [Sushovan De](https://github.com/sushovande) \| [Mayank](https://github.com/MayankAgarwal) | :construction: &nbsp; IN PROGRESS ([Wiki](https://github.com/IBM/covid19-india-data/wiki/States#karnataka-ka)) |
-| Kerala `KL` | [Link](https://dhs.kerala.gov.in/%e0%b4%a1%e0%b5%86%e0%b4%af%e0%b4%bf%e0%b4%b2%e0%b4%bf-%e0%b4%ac%e0%b5%81%e0%b4%b3%e0%b5%8d%e0%b4%b3%e0%b4%b1%e0%b5%8d%e0%b4%b1%e0%b4%bf%e0%b4%a8%e0%b5%8d%e2%80%8d/) | [Tathagata](https://github.com/TathagataChakraborti) | :construction: &nbsp; IN PROGRESS ([Wiki](https://github.com/IBM/covid19-india-data/wiki/States#kerala-kl)) |
-| Madhya Pradesh `MP` | [Link](http://sarthak.nhmmp.gov.in/covid/health-bulletin/) | [Tathagata](https://github.com/TathagataChakraborti) | :construction: &nbsp; IN PROGRESS ([Wiki](https://github.com/IBM/covid19-india-data/wiki/States#madhya-pradesh-mp)) |
-| Maharashtra `MH` | [Link](http://arogya.maharashtra.gov.in/1175/Novel--Corona-Virus) | [Mayank](https://github.com/MayankAgarwal) | :white_check_mark: &nbsp; COMPLETE ([Wiki](https://github.com/IBM/covid19-india-data/wiki/States#maharashtra-mh)) | 
-| Punjab `PB` | [Link](http://covaprod.punjab.gov.in/covid-response.html?language=e) | [Sachin](https://github.com/sachingrover211) | :white_check_mark: &nbsp; COMPLETE ([Wiki](https://github.com/IBM/covid19-india-data/wiki/States#punjab-pb)) |
-| Rajasthan `RJ` | [Link](http://rajswasthya.nic.in/) | | | ⌛ Own it! ([#98](https://github.com/IBM/covid19-india-data/issues/98)) |
-| Tamil Nadu `TN` | [Link](https://stopcorona.tn.gov.in/daily-bulletin/) | [Sachin](https://github.com/sachingrover211) \| [Tathagata](https://github.com/TathagataChakraborti) | :white_check_mark: &nbsp; COMPLETE ([Wiki](https://github.com/IBM/covid19-india-data/wiki/States#tamil-nadu-tn)) |
-| Telengana `TG` | [Link](https://covid19.telangana.gov.in/announcements/media-bulletins/) | [Mayank](https://github.com/MayankAgarwal) | :white_check_mark: &nbsp; COMPLETE ([Wiki](https://github.com/IBM/covid19-india-data/wiki/States#telangana-tg)) | 
-| Uttarakhand `UK` | [Link](https://health.uk.gov.in/pages/view/134-covid19-health-bulletin-for-uttarakhand-page-01) \| [Link](https://health.uk.gov.in/pages/view/151-covid19-health-bulletin-for-uttarakhand-page-10)| [Arunima](https://github.com/arunima-chaudhary) | :white_check_mark: &nbsp; COMPLETE ([Wiki](https://github.com/IBM/covid19-india-data/wiki/States#uttarakhand-uk)) |
-| West Bengal `WB` | [Link](https://www.wbhealth.gov.in/pages/corona/bulletin) | [Mayank](https://github.com/MayankAgarwal) | :white_check_mark: &nbsp; COMPLETE ([Wiki](https://github.com/IBM/covid19-india-data/wiki/States#west-bengal-wb)) | 
+| State | Link to Bulletin | Owner | Status |
+|-------|------------------|-------|--------|
+| Andaman and Nicobar `AN` | [Link](https://dhs.andaman.gov.in/) | | :hourglass: Own it! [#113](https://github.com/IBM/covid19-india-data/issues/113) 
+| Arunachal Pradesh	`AR` | [Link](https://twitter.com/DirHealth_ArPr) | | :hourglass: Own it! [#129](https://github.com/IBM/covid19-india-data/issues/129) 
+| Assam	`AS` | [Link](https://twitter.com/nhm_assam) | | :hourglass: Own it! [#130](https://github.com/IBM/covid19-india-data/issues/130) 
+| Bihar `BR` | [Link](https://twitter.com/BiharHealthDept) | | :hourglass: Own it! [#126](https://github.com/IBM/covid19-india-data/issues/126) 
+| Chhattisgarh	`CT` | [Link](https://twitter.com/HealthCgGov) | | :hourglass: Own it! [#131](https://github.com/IBM/covid19-india-data/issues/131) 
+| Dadra and Nagar Haveli and Daman and Diu `DH` | [Link](https://twitter.com/collectordaman) | | :hourglass: Own it! [#125](https://github.com/IBM/covid19-india-data/issues/125) 
+| Delhi `DL` | [Link](http://health.delhigovt.nic.in/wps/wcm/connect/doit_health/Health/Home/Covid19/Bulletin+August+2021) | [Mayank](https://github.com/MayankAgarwal) | :white_check_mark: &nbsp; COMPLETE [Wiki](https://github.com/IBM/covid19-india-data/wiki/States#delhi-dl) |
+| Goa `GA` | [Link](https://www.goa.gov.in/covid-19/) | [Tathagata](https://github.com/TathagataChakraborti) \| [Mayank](https://github.com/MayankAgarwal) | :white_check_mark: &nbsp; COMPLETE [Wiki](https://github.com/IBM/covid19-india-data/wiki/States#goa-ga) |
+| Gujarat `GJ` | [Link](https://gujcovid19.gujarat.gov.in/) | | :hourglass: Own it! [#121](https://github.com/IBM/covid19-india-data/issues/121) 
+| Haryana `HR` | [Link](http://nhmharyana.gov.in/page?id=208) | [Mayank](https://github.com/MayankAgarwal) | :white_check_mark: &nbsp; COMPLETE [Wiki](https://github.com/IBM/covid19-india-data/wiki/States#haryana-hr) | 
+| Himachal Pradesh	`HP` | [Link](https://twitter.com/nhm_hp) | | :hourglass: Own it! [#132](https://github.com/IBM/covid19-india-data/issues/132) 
+| Jammu and Kashmir	`JK` | [Link](https://twitter.com/diprjk) | | :hourglass: Own it! [#133](https://github.com/IBM/covid19-india-data/issues/133) 
+| Karnataka `KA` | [Link](https://covid19.karnataka.gov.in/govt_bulletin/en) | [Sushovan De](https://github.com/sushovande) \| [Mayank](https://github.com/MayankAgarwal) | :construction: &nbsp; IN PROGRESS [Wiki](https://github.com/IBM/covid19-india-data/wiki/States#karnataka-ka) |
+| Kerala `KL` | [Link](https://dhs.kerala.gov.in/%e0%b4%a1%e0%b5%86%e0%b4%af%e0%b4%bf%e0%b4%b2%e0%b4%bf-%e0%b4%ac%e0%b5%81%e0%b4%b3%e0%b5%8d%e0%b4%b3%e0%b4%b1%e0%b5%8d%e0%b4%b1%e0%b4%bf%e0%b4%a8%e0%b5%8d%e2%80%8d/) | [Tathagata](https://github.com/TathagataChakraborti) | :construction: &nbsp; IN PROGRESS [Wiki](https://github.com/IBM/covid19-india-data/wiki/States#kerala-kl) |
+| Ladakh `LA` | [Link](https://covid.ladakh.gov.in/) | | :hourglass: Own it! [#114](https://github.com/IBM/covid19-india-data/issues/114) 
+| Madhya Pradesh `MP` | [Link](http://sarthak.nhmmp.gov.in/covid/health-bulletin/) | [Tathagata](https://github.com/TathagataChakraborti) | :construction: &nbsp; IN PROGRESS [Wiki](https://github.com/IBM/covid19-india-data/wiki/States#madhya-pradesh-mp) |
+| Maharashtra `MH` | [Link](http://arogya.maharashtra.gov.in/1175/Novel--Corona-Virus) | [Mayank](https://github.com/MayankAgarwal) | :white_check_mark: &nbsp; COMPLETE [Wiki](https://github.com/IBM/covid19-india-data/wiki/States#maharashtra-mh) | 
+| Manipur	`MN` | [Link](https://nrhmmanipur.org/?page_id=4137) \| [Link](https://twitter.com/imphalrob) | | :hourglass: Own it! [#116](https://github.com/IBM/covid19-india-data/issues/116) 
+| Meghalaya `ML` | [Link](https://meghalaya.gov.in/announce/announcements) | | :hourglass: Own it! [#111](https://github.com/IBM/covid19-india-data/issues/111) 
+| Mizoram	`MZ` | [Link](https://twitter.com/dipr_mizoram) | | :hourglass: Own it! [#135](https://github.com/IBM/covid19-india-data/issues/135) 
+| Nagaland `NL` | [Link](https://twitter.com/mygovnagaland) | | :hourglass: Own it! [#124](https://github.com/IBM/covid19-india-data/issues/124) 
+| Puducherry `PY` | [Link](https://twitter.com/PdyHealthDept) | | :hourglass: Own it! [#128](https://github.com/IBM/covid19-india-data/issues/128) 
+| Punjab `PB` | [Link](http://covaprod.punjab.gov.in/covid-response.html?language=e) | [Sachin](https://github.com/sachingrover211) | :white_check_mark: &nbsp; COMPLETE [Wiki](https://github.com/IBM/covid19-india-data/wiki/States#punjab-pb) |
+| Odisha `OR` | [Link](https://statedashboard.odisha.gov.in/Pages/ImpInfo/patientHistory) | | :hourglass: Own it! [#115](https://github.com/IBM/covid19-india-data/issues/115) 
+| Rajasthan `RJ` | [Link](http://rajswasthya.nic.in/) | | | :hourglass: Own it! [#98](https://github.com/IBM/covid19-india-data/issues/98) |
+| Tamil Nadu `TN` | [Link](https://stopcorona.tn.gov.in/daily-bulletin/) | [Sachin](https://github.com/sachingrover211) \| [Tathagata](https://github.com/TathagataChakraborti) | :white_check_mark: &nbsp; COMPLETE [Wiki](https://github.com/IBM/covid19-india-data/wiki/States#tamil-nadu-tn) |
+| Telengana `TG` | [Link](https://covid19.telangana.gov.in/announcements/media-bulletins/) | [Mayank](https://github.com/MayankAgarwal) | :white_check_mark: &nbsp; COMPLETE [Wiki](https://github.com/IBM/covid19-india-data/wiki/States#telangana-tg) | 
+| Uttarakhand `UK` | [Link](https://health.uk.gov.in/pages/view/134-covid19-health-bulletin-for-uttarakhand-page-01) \| [Link](https://health.uk.gov.in/pages/view/151-covid19-health-bulletin-for-uttarakhand-page-10)| [Arunima](https://github.com/arunima-chaudhary) | :white_check_mark: &nbsp; COMPLETE [Wiki](https://github.com/IBM/covid19-india-data/wiki/States#uttarakhand-uk) |
+| Uttar Pradesh `UP` | [Link](https://twitter.com/JournoVipin) | | :hourglass: Own it! [#127](https://github.com/IBM/covid19-india-data/issues/127) 
+| West Bengal `WB` | [Link](https://www.wbhealth.gov.in/pages/corona/bulletin) | [Mayank](https://github.com/MayankAgarwal) | :white_check_mark: &nbsp; COMPLETE [Wiki](https://github.com/IBM/covid19-india-data/wiki/States#west-bengal-wb) | 
 |||||
 | [`Add new state`](https://github.com/IBM/covid19-india-data/issues/new?assignees=&labels=new+state&template=new-state-template.md&title=New+State%3A+%5BENTER+NAME+HERE%5D) | |  |  | |  |
 
 As you might have noticed, this is an incomplete list of Indian states. 
-Not all states produce this form of data. ☹️
-&nbsp; We will continue adding new sources over time. A comprehensive list of sources can be found at [https://api.covid19india.org/csv/latest/sources_list.csv](https://api.covid19india.org/csv/latest/sources_list.csv)
+Not all states produce this form of data and not all bulletins are accessible. ☹️ We will continue adding new sources over time.
 
 
 ### Interested? Join the Community 
