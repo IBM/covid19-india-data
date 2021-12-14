@@ -5,6 +5,7 @@ import cv2
 import io
 import math
 import os
+import re
 import pdfplumber
 import tempfile
 from wand.image import Image
@@ -100,7 +101,7 @@ def clean_text(text):
     return text
 
 
-def parse_overview_info(pdf_fpath):
+def read_overview_info(pdf_fpath):
     
     with pdfplumber.open(pdf_fpath) as pdf:
         first_page = pdf.pages[0]
@@ -124,5 +125,118 @@ def parse_overview_info(pdf_fpath):
             if bbox_text is not None:
                 bbox_text = clean_text(bbox_text)
                 result.append(bbox_text)
+
+    return result
+
+
+def filter_data(alldata, keywords):
+    for data in alldata:
+        data = data.lower()
+        if False not in [keyword.lower() in data for keyword in keywords]:
+            return data
+    return None
+
+def get_all_nums(string):
+    if string is None:
+        return None
+
+    nums = re.findall(r'[\d\.,\-\+]+', string)
+    return nums
+
+def parse_overview_info(pdf_fpath):
+
+    result = {}
+    overview_data = read_overview_info(pdf_fpath)
+
+    # filter content with more than 15 words
+    overview_data = [x for x in overview_data if len(x.split(' ')) < 15]
+
+    # recovery rate
+    data = filter_data(overview_data, ['recovery', 'rate'])
+    nums = get_all_nums(data)
+    if nums:
+        result['recovery_rate'] = locale.atof(nums[0])
+
+    # recovered patients
+    data = filter_data(overview_data, ['recovered', 'patient'])
+    nums = get_all_nums(data)
+    if nums:
+        result['recovered_patients'] = locale.atoi(nums[0])
+
+    # recoveries last 24 hours
+    data = filter_data(overview_data, ['recovery', '24', 'hour'])
+    nums = [num for num in get_all_nums(data) if num != '24']
+    if nums:
+        result['recovery_in_last_24_hrs'] = locale.atoi(nums[0])
+
+    # home isolation
+    data = filter_data(overview_data, ['home', 'isolation'])
+    nums = get_all_nums(data)
+    if nums:
+        nums = [locale.atoi(x) for x in nums]
+        if len(nums) == 2:
+            result['home_isolation_cumulative'] = max(nums)
+            result['home_isolation_new'] = min(nums)
+
+    
+    # hospitalized patients
+    data = filter_data(overview_data, ['hospital', 'patient'])
+    nums = get_all_nums(data)
+    if nums:
+        nums = [locale.atoi(x) for x in nums]
+        if len(nums) == 2:
+            result['hospitalized_patients_cumulative'] = max(nums)
+            result['hospitalized_patients_new'] = min(nums)
+
+
+    # Samples tested
+    data = filter_data(overview_data, ['sample', 'tested'])
+    nums = get_all_nums(data)
+    if nums:
+        nums = [locale.atoi(x) for x in nums]
+        if len(nums) == 2:
+            result['samples_tested_cumulative'] = max(nums)
+            result['samples_tested_new'] = min(nums)
+
+
+    # tests per million
+    data = filter_data(overview_data, ['test', 'per', 'million'])
+    nums = get_all_nums(data)
+    if nums:
+        result['tests_per_million'] = locale.atoi(nums[0])
+
+
+    # total cases
+    data = filter_data(overview_data, ['total', 'case'])
+    nums = get_all_nums(data)
+    if nums:
+        nums = [locale.atoi(x) for x in nums]
+        if len(nums) == 2:
+            result['total_cases_cunulative'] = max(nums)
+            result['total_cases_new'] = min(nums)
+
+
+    # total cases
+    data = filter_data(overview_data, ['deaths'])
+    nums = get_all_nums(data)
+    if nums:
+        nums = [locale.atoi(x) for x in nums]    
+        if len(nums) == 2:
+            result['deaths_cumulative'] = max(nums)
+            result['deaths_new'] = min(nums)
+
+    # active cases
+    data = filter_data(overview_data, ['active', 'case'])
+    nums = get_all_nums(data)
+    if nums:
+        result['active_cases'] = locale.atoi(nums[0])
+
+
+    # hospital discharges
+    data = filter_data(overview_data, ['hospital', 'discharge'])
+    nums = get_all_nums(data)
+    if nums:
+        result['hospital_discharged'] = locale.atoi(nums[0])
+
 
     return result

@@ -103,23 +103,9 @@ class GoaExtractor(object):
 
 
     def extract_overview(self, tables):
-        
-        overview_text = GA_utils.parse_overview_info(self.report_fpath)
-
-        # TODO: parse data from extracted text
-
-        return None
-
-        # active_cases_info = self.extract_active_cases(tables)
-        # active_cases = 0 
-
-        # for item in active_cases_info:
-        #     active_cases += item["cases"]
-
-        # return {
-        #     "date": self.date,
-        #     "active_cases" : active_cases,
-        # }
+        overview_data = GA_utils.parse_overview_info(self.report_fpath)
+        overview_data['date'] = self.date
+        return overview_data
 
 
     def extract(self):
