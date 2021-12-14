@@ -10,8 +10,13 @@ class Goa(Bulletin):
 
 
     def get_urls(self, url: str):
-
-        html = self.get_url_html(url)
+        
+        try:
+            html = self.get_url_html(url)
+        except:
+            print(f'ERROR: Downloading Goa bulletins from url {url} failed')
+            return dict()
+             
         soup = BeautifulSoup(html, 'html.parser')
 
         baseurl = 'https://www.goa.gov.in/wp-content/uploads'
@@ -54,8 +59,8 @@ class Goa(Bulletin):
         archive_url = "https://www.goa.gov.in/covid-19-archives/"
         current_url = "https://www.goa.gov.in/covid-19/"
 
-        current_urls = self.get_urls(archive_url)
-        archived_urls = self.get_urls(current_url)
+        current_urls = self.get_urls(current_url)
+        archived_urls = self.get_urls(archive_url)
 
         return {**archived_urls, **current_urls}
 
