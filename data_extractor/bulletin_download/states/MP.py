@@ -1,7 +1,5 @@
 from .bulletin import Bulletin
-
 from bs4 import BeautifulSoup
-from dateutil import parser
 
 import re
 
@@ -40,11 +38,8 @@ class MadhyaPradesh(Bulletin):
                         date_time_str = "{}.{}.{}".format(date_time_str[0:2], date_time_str[2:4], date_time_str[4:])
 
                     try:
-                        
-                        parserinfo = parser.parserinfo(dayfirst=True)
-                        date_time_obj = parser.parse(date_time_str, parserinfo=parserinfo)
-                        datestr = self.get_date_str(str(date_time_obj))
 
+                        datestr = self.get_date_str(date_time_str, datefmts=['%d.%m.%Y'])
                         if datestr in bulletin_links or "hindi" in anchor_href.lower():
                             continue
 
@@ -64,4 +59,3 @@ class MadhyaPradesh(Bulletin):
         self._save_state_()
 
         return bulletin_links
-
