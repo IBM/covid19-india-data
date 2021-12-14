@@ -36,6 +36,9 @@ def __scale_down_data(records: List[Tuple], scale_down: int) -> List:
     log_record = True
     day_count = 0 
 
+    if not records:
+        return new_records
+
     for record in records[:-1]: 
 
         if day_count % scale_down == 0:

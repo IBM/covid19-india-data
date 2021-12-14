@@ -22,6 +22,18 @@
             ]
         },
         {
+            "state.full.name": "Goa",
+            "state.short.name": "GA",
+            "query": [
+                "SELECT G1.date, G1.total_cases_cunulative, G1.total_cases_new, G1.recovered_patients, G1.recovery_in_last_24_hrs,",
+                "G1.deaths_cumulative, G1.deaths_new, G1.active_cases, NULL, NULL, NULL, NULL,",
+                "G1.samples_tested_cumulative, G1.samples_tested_new, NULL, MD.bulletin_link",
+                "FROM GA_overview G1",
+                "LEFT OUTER JOIN Metadata_Bulletin_Links MD ON MD.date == G1.date AND MD.state == \"GA\" ORDER BY G1.date",
+                "DESC LIMIT 1"
+            ]
+        },
+        {
             "state.full.name": "Haryana",
             "state.short.name": "HR",
             "query": [
@@ -85,6 +97,20 @@
                 "LEFT OUTER JOIN Metadata_Bulletin_Links MD ON MD.date == P1.date AND MD.state == \"PB\"",
                 "LEFT OUTER JOIN PB_district_cases P2 ON P1.date == P2.date WHERE LOWER(P2.district) == \"total\"",
                 "ORDER BY P1.date",
+                "DESC LIMIT 1"
+            ]
+        },
+        {
+            "state.full.name": "Tamil Nadu",
+            "state.short.name": "TN",
+            "query": [
+                "SELECT T1.date, T2.total_cases_till_today, T2.new_cases_today,  T2.total_cases_discharged, T2.discharged_cases_today,",
+                "T2.total_deaths, T2.deaths_today, T2.total_active_cases_including_today,  NULL, NULL, NULL, NULL,",
+                "NULL, NULL, NULL, MD.bulletin_link",
+                "FROM TN_case_info T1",
+                "LEFT OUTER JOIN TN_district_details T2 ON T1.date == T2.date",
+                "LEFT OUTER JOIN Metadata_Bulletin_Links MD ON MD.date == T1.date AND MD.state == \"TN\" ",
+                "WHERE  LOWER(T2.district) == \"grand total\" ORDER BY T1.date",
                 "DESC LIMIT 1"
             ]
         },
