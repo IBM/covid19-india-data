@@ -101,6 +101,20 @@
             ]
         },
         {
+            "state.full.name": "Tamil Nadu",
+            "state.short.name": "TN",
+            "query": [
+                "SELECT T1.date, T2.total_cases_till_today, T2.new_cases_today,  T2.total_cases_discharged, T2.discharged_cases_today,",
+                "T2.total_deaths, T2.deaths_today, T2.total_active_cases_including_today,  NULL, NULL, NULL, NULL,",
+                "NULL, NULL, NULL, MD.bulletin_link",
+                "FROM TN_case_info T1",
+                "LEFT OUTER JOIN TN_district_details T2 ON T1.date == T2.date",
+                "LEFT OUTER JOIN Metadata_Bulletin_Links MD ON MD.date == T1.date AND MD.state == \"TN\" ",
+                "WHERE  LOWER(T2.district) == \"grand total\" ORDER BY T1.date",
+                "DESC LIMIT 1"
+            ]
+        },
+        {
             "state.full.name": "Telangana",
             "state.short.name": "TG",
             "query": [
