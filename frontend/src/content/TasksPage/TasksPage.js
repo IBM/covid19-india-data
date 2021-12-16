@@ -2,6 +2,7 @@ import React from 'react';
 import { TASKS } from './tasks.js';
 import { generateURL } from '../../components/Info';
 import { Link, Button, Tile, Tag } from 'carbon-components-react';
+import { TrophyFilled16 } from '@carbon/icons-react';
 
 const Task = props => (
   <Tile className="task-tile">
@@ -76,25 +77,70 @@ class TasksPage extends React.Component {
                 </div>
               </div>
               <div className="bx--col-lg-4">
-                <h3>Datathon @ IndoML 2021</h3>
-                <hr />
+                <div>
+                  <h3>Datathon @ IndoML 2021</h3>
+                  <hr />
 
-                <p>
-                  IndoML is a pan-India symposium aimed at undergraduate and
-                  graduate students in Indian universities to participate in
-                  structured artificial intelligence, machine learning, and data
-                  science tasks.
-                </p>
+                  <h6>Dec 01, 2021 - Jan 31, 2022</h6>
+                  <br />
+
+                  <div style={{ marginBottom: '5px' }}>
+                    <TrophyFilled16 style={{ fill: 'gold' }} />
+                    <TrophyFilled16 style={{ fill: 'silver' }} />
+                    <TrophyFilled16 style={{ fill: 'brown' }} />
+                  </div>
+                  <div>
+                    <h6 style={{ fontWeight: 'normal' }}>
+                      Top 3 submissions win cash awards!
+                    </h6>
+                  </div>
+                  <br />
+
+                  <p>
+                    IndoML is a pan-India symposium aimed at undergraduate and
+                    graduate students in Indian universities to participate in
+                    structured artificial intelligence, machine learning, and
+                    data science tasks.
+                  </p>
+
+                  <br />
+                  <Link
+                    href="https://www.kaggle.com/dataset/cb06e66c26c46ed9e701be6750e08f956d63c91d1be2bc633d19e201c7704c5b"
+                    target="_blank"
+                    className="no-decoration">
+                    <Button kind="secondary" size="small">
+                      Participate
+                    </Button>
+                  </Link>
+                </div>
 
                 <br />
-                <Link
-                  href="https://www.kaggle.com/dataset/cb06e66c26c46ed9e701be6750e08f956d63c91d1be2bc633d19e201c7704c5b"
-                  target="_blank"
-                  className="no-decoration">
-                  <Button kind="secondary" size="small">
-                    Participate
-                  </Button>
-                </Link>
+                <br />
+                <br />
+
+                <div>
+                  <h3>Fridays at PROTO</h3>
+                  <hr />
+
+                  <h6>Dec 17 -18, 2021</h6>
+                  <br />
+
+                  <p>
+                    PROTO is a learning community of journalists, developers,
+                    designers and researchers who come together every Friday to
+                    get to the heart of the challenges facing civic media.
+                  </p>
+
+                  <br />
+                  <Link
+                    href="https://www.pro.to/"
+                    target="_blank"
+                    className="no-decoration">
+                    <Button kind="secondary" size="small">
+                      Learn More
+                    </Button>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
