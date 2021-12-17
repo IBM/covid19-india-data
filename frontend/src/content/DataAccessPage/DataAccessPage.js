@@ -185,6 +185,21 @@ class DataAccessPage extends React.Component {
                 case data for Tamil Nadu. For full access to data, we recommend
                 using the APIs or the SQL DB.
               </p>
+              <br />
+              <p>
+                <strong>
+                  You can also download the entire state data as an Excel
+                  spreadsheet or as a single JSON file by clicking on the
+                  corresponding download option on each state-level page.
+                </strong>{' '}
+                All the files are also available together{' '}
+                <Link
+                  href="https://github.com/IBM/covid19-india-data/raw/main/data"
+                  target="_blank">
+                  here
+                </Link>
+                .
+              </p>
             </div>
           </div>
         </div>

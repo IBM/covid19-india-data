@@ -355,8 +355,8 @@ class BasicElement extends React.Component {
   };
 
   downloadData = e => {
-    console.log(this.state.data)
-  }
+    console.log(this.state.data);
+  };
 
   downloadAsSpreadsheet = e => {
     this.setState({
@@ -385,7 +385,6 @@ class BasicElement extends React.Component {
         }
       );
     });
-
   };
 
   render() {
@@ -529,7 +528,7 @@ class BasicElement extends React.Component {
                   <br />
                   <br />
 
-                  <h4>Fetch {this.state.name} data on a particular date</h4>
+                  <h4>Fetch {this.state.name} bulletin on a particular date</h4>
                   <hr />
 
                   <DatePicker
@@ -572,31 +571,39 @@ class BasicElement extends React.Component {
                   <h4>Download full data</h4>
                   <hr />
 
-                  <a href={"https://github.com/IBM/covid19-india-data/raw/main/data/"+this.state.short_name+".xlsx"} download={this.state.short_name+"_data.xlsx"}
+                  <a
+                    href={
+                      'https://github.com/IBM/covid19-india-data/raw/main/data/' +
+                      this.state.short_name +
+                      '.xlsx'
+                    }
+                    download={this.state.short_name + '_data.xlsx'}
                     className="button-generic">
-                  <Button
-                    kind="secondary"
-                    size="sm">
-                    Excel
-                  </Button>
+                    <Button kind="secondary" size="sm">
+                      Excel
+                    </Button>
                   </a>
 
-                  <a href={"https://github.com/IBM/covid19-india-data/raw/main/data/"+this.state.short_name+".xlsx"} download={this.state.short_name+"_data.xlsx"}
+                  <a
+                    href={
+                      'https://github.com/IBM/covid19-india-data/raw/main/data/' +
+                      this.state.short_name +
+                      '.json'
+                    }
+                    download={this.state.short_name + '_data.json'}
                     className="button-generic">
-                  <Button
-                    kind="secondary"
-                    size="sm">
-                    JSON
-                  </Button>
+                    <Button kind="secondary" size="sm">
+                      JSON
+                    </Button>
                   </a>
 
-                  <a href={"https://github.com/IBM/covid19-india-data/raw/main/data/"+this.state.short_name+".xlsx"} download={this.state.short_name+"_data.xlsx"}
+                  <a
+                    href={'https://ibm.biz/covid19-india-db'}
+                    download="covid19-india-db"
                     className="button-generic">
-                  <Button
-                    kind="secondary"
-                    size="sm">
-                    SQL
-                  </Button>
+                    <Button kind="secondary" size="sm">
+                      SQL
+                    </Button>
                   </a>
 
                   {this.state.link_to_govt_dashboard && (
