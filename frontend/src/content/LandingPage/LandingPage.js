@@ -263,15 +263,13 @@ class LandingPage extends React.Component {
             </p>
 
             <Link href="/#/contributing" className="button-generic">
-              <Button size="field">
-                Contribute &nbsp; <Download16 />
-              </Button>
+              <Button size="field">Contribute</Button>
             </Link>
             <Link
               href="https://ibm.biz/covid19-india-db"
               className="button-generic">
               <Button size="field" kind="secondary">
-                Download data
+                Download data &nbsp; <Download16 />
               </Button>
             </Link>
             <Link

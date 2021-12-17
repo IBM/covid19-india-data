@@ -5,8 +5,8 @@
 [![Database](https://img.shields.io/badge/database-download-blue)](https://ibm.biz/covid19-india-db)
 [![Slack](https://img.shields.io/badge/community-slack-red)](https://join.slack.com/t/covid-19-india-data/shared_invite/zt-uej5v98i-mjggggkLMASKFbZRXzq4xw)
 
-| Download data | [`Microsoft Excel`](./data) | [`SQLite`](https://ibm.biz/covid19-india-db) |
-|---------------|-----------------|--------|
+| Download data | [`CSV`](./data/csv) | [`JSON`](./data/json) | [`Microsoft Excel`](./data/xlsx) | [`SQLite`](https://ibm.biz/covid19-india-db) |
+|---------------|---------------------|-----------------------|----------------------------------|----------------------------------------------|
 
 Availability of COVID-19 data is crucial for researchers and policy makers to understand the progression of the pandemic and react to it in real time. [Here is recent plea](https://www.sciencemag.org/news/2021/05/there-are-so-many-hurdles-indian-scientists-plead-government-unlock-covid-19-data) from researchers in India for they urgent access to COVID data collected by government agencies. Individual states and cities in India provide detailed information in their daily media bulletins about the current situation of COVID-19 in their respective locations. However, such data (usually in the form of PDF documents) is not readily accessible in structured form.
 
