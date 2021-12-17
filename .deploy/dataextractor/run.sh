@@ -60,3 +60,13 @@ DB_PATH="${LOCALSTORE_DIR}/covid-india.db"
 cd "${CURR_DIR}"
 
 python3 upload_to_dropbox.py "${DB_PATH}"
+
+
+# Convert db to csv, json, xlsx files and update github
+DATADIR_PATH="${HOME_DIR}/data"
+python3 convert_db_to_formats.py "${DB_PATH}" "${DATADIR_PATH}"
+
+cd ${HOME_DIR}
+git add "${DATADIR_PATH}"
+git commit -m "data: update csv, json, xlsx data"
+git push origin main

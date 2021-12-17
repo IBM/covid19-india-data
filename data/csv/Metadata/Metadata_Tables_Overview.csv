@@ -1,0 +1,80 @@
+table_name,state,description
+DL_patient_mgmt,DL,Patient management table containing hospital occupany information for Delhi
+DL_testing_status,DL,RTPCR / Rapid Antigen test information table for Delhi state
+DL_vaccination,DL,Delhi state vaccination status
+DL_case_info,DL,"Delhi state case, recovered, and death information"
+DL_containment,DL,Delhi state containment zones
+DL_cumulative,DL,"Delhi state cumulative positive, recovered, fatalities data"
+WB_case_info,WB,"West Bengal case, discharge, and fatality information"
+WB_testing,WB,West Bengal testing snapshot
+WB_hospital,WB,West Bengal hospital infrastructure snapshot
+WB_district_cases,WB,West Bengal district wise case info
+WB_testing_labs,WB,West Bengal testing laboratories information
+WB_equipment,WB,West Bengal protective gear equipment details
+WB_vaccination,WB,West Bengal vaccination information
+WB_counselling,WB,West Bengal ambulance and tele-counselling information
+TG_symptomatic,TG,Telangana status of asymptomatic / symptomatic cases
+TG_comorbidities_fatalities,TG,Telangana percentage of deaths due to COVID-19 or comorbidities
+TG_age_gender_dist,TG,Telangana age and gender distribution of positive cases
+TG_case_info,TG,"Telangana daily new cases, recoveries, deaths information"
+TG_testing_info,TG,Telangana daily testing information
+TG_contact_testing,TG,Telangana primary and secondary contact testing
+TG_district_cases_info,TG,Telangana daily new cases in districts
+HR_case_info,HR,"Haryana daily new cases, recoveries, deaths information"
+HR_district_info,HR,Haryana district-wise case information
+HR_critical_case_info,HR,Haryana critical cases (patients on O2 support / ventilator) information
+MH_case_info,MH,Maharashtra daily new cases information
+MH_district_caseinfo,MH,Maharashtra daily district level case information
+MH_corporation_caseinfo,MH,Maharashtra daily municipal corporation level case information
+KA_case_info,KA,"Karnataka overall case, discharge, fatality info"
+KA_district_cases,KA,Karnataka districtwise abstract
+UK_district_cases,UK,Uttarakhand district wise case info
+UK_mucormycosis_cases,UK,Uttarakhand mucormycosis case info
+UK_testing,UK,Uttarakhand district wise testing snapshot
+UK_vaccination,UK,Uttarakhand district wise vaccination snapshot
+UK_case_info,UK,Uttarakhand daily and cumulative state-level case information
+KA_individual_fatalities,KA,Karnataka individual fatality diagnosis
+KL_contact_travel_cumulative,KL,Summary of contact or travel history of COVID-19 cases since 4th May 2020
+KL_contact_travel_new,KL,Details of COVID-19 positive deaths in the last 24 hours
+KL_critical_patients,KL,Summary of critical patients
+KL_cumulative_summary_t_minus_one,KL,Summary of COVID-19 cases till T Minus One
+KL_cumulative_summary,KL,Cumulative summary
+KL_daily_summary,KL,Summary of new COVID-19 cases (last 24 hours)
+KL_district_abstract,KL,District wise abstract of number of LSGs and Wards with WISP > 10
+KL_district_case_info,KL,"District wise summary of Cumulative cases, Active cases, and New positive cases"
+KL_district_death_info,KL,District wise Death Cases through online and offline mode - post scrutiny status
+KL_individual_death_info,KL,Details of COVID-19 positive deaths in the last 24 hours
+KL_psychosocial_support,KL,Psychosocial support provided through the program Ottakalla Oppamundu
+KL_surveillance_info,KL,District wise distribution of persons under surveillance (quarantine and isolation)
+KL_cumulative_tests,KL,Cumulative number of samples tested
+KL_new_tests,KL,Details of new COVID-19 samples in the last 24 hours
+KL_travel_surveillance,KL,Summary of Travel Surveillance
+PB_cases,PB,"Punjab samples, cases, and vaccination information. Table page 1"
+PB_case_details,PB,"Punjab patients discharged, ventilators, icu and death details. Table page 1 or 2"
+PB_district_cases,PB,Daily and total district wise info. Multiple tables starting on page 2 and continuing page 4 or 5.
+PB_containment_zone,PB,"Details about larger containment zones, with population contained in each. Table starting from Page 4 or 5 and can extend over multiple pages"
+PB_micro_containment_zone,PB,"Details about micro containment zones in a district, with population contained. Table starting on page 4 or 5 and can extend over multiple pages."
+PB_mucormycosis_cases,PB,Mucormycosis daily cases and cumulative information. Table on the second last page of bulletins since June 2021.
+PB_mucormycosis_district_cases,PB,"Mucormycosis district-wise details for total cases, deaths, under treatment etc. Table on the last page of bulletins from June 2021"
+PB_mucormycosis_out_of_state_details,PB,Details of mucormycosis patients from out of state. Table on the last page of bulletins from June 2021
+GA_overview,GA,CASE INFO
+GA_active_cases,GA,BREAKUP OF ACTIVE POSITIVE CASES
+GA_bed_capacity,GA,BED CAPACITY IN COVID CARE CENTRES
+MP_overview,MP,Overview
+MP_district_info,MP,District level information
+MP_calls,MP,Toll free helplines of COVID.
+MP_centers,MP,"Government and private institutions have been identified                            as Dedicated COVID Care Center (DCCC), Dedicated COVID                            Health Center (DCHC), and Dedicated Covid Hospital (DCH)                            by the government for the treatment of corona positive                            persons, in which the treatment of corona infected persons                            is being done on the basis of symptoms and severity."
+MP_teams,MP,"Community, block, and district level teams formed to investigate patients on the basis of symptoms."
+MP_testing,MP,Advanced testing reports.
+MP_vaccination_coverage,MP,Vaccination Coverage
+TN_case_info,TN,"Tamil Nadu cumulative info, table 1 on page 1 of bulletin"
+TN_positive_cases_detail,TN,"Tamil Nadu positive cases details by sex, table 1 on page 2 of bulletin"
+TN_district_details,TN,"Tamil Nadu district wise details, table on pages 3, 4 and 6"
+TN_district_hospital_bed_details,TN,"Tamil Nadu hospital bed district wise details, table on pages 7, 8 and 9"
+TN_comorbidities_deaths,TN,"Tamil Nadu comorbidities or non comorbidities death facilitiestype, two tables on page 10"
+TN_incoming_people_till_yesterday,TN,"Tamil Nadu incoming people from various mode of transport, first table from the top on third last page of bulletin"
+TN_airport_surveillance,TN,"Tamil Nadu 4 airports domestic flights passenger testing details till previous day, table number 2 from the top on third last page"
+TN_flight_details,TN,"Tamil Nadu 4 airports domestic flights passenger testing details till previous day, table number 3 from the top on third last page which continues to second last page"
+TN_railway_surveillance,TN,"Tamil Nadu Railway station surveillance details till previous day, table number from the top last page"
+TN_seaport_surveillance,TN,"Tamil Nadu seaport surveillance till the day before, table number 2 from the top on last page"
+TN_individual_fatalities,TN,Tamil Nadu individual fatality diagnosis data
