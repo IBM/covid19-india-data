@@ -4,6 +4,7 @@ camelot-py[cv]
 dateparser
 jupyterlab
 lxml
+openpyxl
 pandas
 pdfminer.six
 pydecor
