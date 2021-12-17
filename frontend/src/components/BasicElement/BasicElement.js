@@ -354,6 +354,39 @@ class BasicElement extends React.Component {
     });
   };
 
+  downloadData = e => {
+    console.log(this.state.data);
+  };
+
+  downloadAsSpreadsheet = e => {
+    this.setState({
+      ...this.state,
+      status_flags: {
+        ...this.state.status_flags,
+        fetching_data: true,
+        fetched_data: false,
+        tables_selected: [],
+      },
+    });
+
+    fetchData({
+      URL: 'fetch_data',
+      short_name: this.state.short_name,
+      sampling_rate: 1,
+    }).then(data => {
+      this.setState(
+        {
+          ...this.state,
+          data: data['data'],
+        },
+        () => {
+          this.resetRefresh();
+          this.downloadData();
+        }
+      );
+    });
+  };
+
   render() {
     return (
       <div
@@ -495,7 +528,7 @@ class BasicElement extends React.Component {
                   <br />
                   <br />
 
-                  <h4>Fetch {this.state.name} data on a particular date</h4>
+                  <h4>Fetch {this.state.name} bulletin on a particular date</h4>
                   <hr />
 
                   <DatePicker
@@ -529,6 +562,36 @@ class BasicElement extends React.Component {
                       </Button>
                     </Link>
                   )}
+
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+
+                  <h4>Download full data</h4>
+                  <hr />
+
+                  <a
+                    href={
+                      'https://github.com/IBM/covid19-india-data/raw/main/data/' +
+                      this.state.short_name +
+                      '.xlsx'
+                    }
+                    download={this.state.short_name + '_data.xlsx'}
+                    className="button-generic">
+                    <Button kind="secondary" size="sm">
+                      Excel
+                    </Button>
+                  </a>
+
+                  <a
+                    href={'https://ibm.biz/covid19-india-db'}
+                    download="covid19-india-db"
+                    className="button-generic">
+                    <Button kind="secondary" size="sm">
+                      SQL
+                    </Button>
+                  </a>
 
                   {this.state.link_to_govt_dashboard && (
                     <>

@@ -268,6 +268,13 @@ class LandingPage extends React.Component {
               </Button>
             </Link>
             <Link
+              href="https://ibm.biz/covid19-india-db"
+              className="button-generic">
+              <Button size="field" kind="secondary">
+                Download data
+              </Button>
+            </Link>
+            <Link
               href="https://arxiv.org/abs/2110.02311"
               target="_blank"
               className="button-generic">
