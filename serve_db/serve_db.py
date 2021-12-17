@@ -4,6 +4,8 @@ from schemas import *
 from flask import Flask, request, render_template, send_file
 from flask_cors import CORS, cross_origin
 
+import openpyxl
+
 import json
 import sqlite3
 import os
@@ -354,6 +356,40 @@ def fetch_dashboard_data() -> DashboardData:
 
     con.close()
     return json.dumps(response, indent=4)
+
+
+def create_downloadable_files(state_short_names: List[str]):
+
+    for state_short_name in state_short_names:
+        print(f"Writing {state_short_name}")
+
+        response = json.loads(fetch_data(state_short_name, scale_down=1.0))
+        data = response["data"]
+
+        open(f"../data/{state_short_name}.json", 'w').write(json.dumps(data, indent=4))
+
+        wb = create_spreadsheet(data)
+        wb.save(f"../data/{state_short_name}.xlsx")
+
+
+def create_spreadsheet(data: StateData):
+
+    wb = openpyxl.Workbook()
+
+    for item in data:
+        new_sheet = wb.create_sheet(index = data.index(item), title = item["title"])
+
+        new_page_columns = item["columns"]
+        new_page_data = item["data"]
+
+        for col, val in enumerate(new_page_columns, start=1):
+            new_sheet.cell(row=1, column=col).value = val
+
+        for data_item in new_page_data:
+            for col, val in enumerate(data_item, start=1):
+                new_sheet.cell(row=new_page_data.index(data_item)+2, column=col).value = val
+  
+    return wb
 
 
 if __name__ == "__main__":
