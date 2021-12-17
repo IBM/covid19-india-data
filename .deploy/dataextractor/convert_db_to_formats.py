@@ -24,6 +24,17 @@ def get_tables(db_fpath):
     return table_names
 
 
+def read_table(table, conn):
+    try:
+        query = f'SELECT * FROM {table} ORDER BY date ASC;'
+        df = pd.read_sql_query(query, conn)
+    except:
+        query = f'SELECT * FROM {table};'
+        df = pd.read_sql_query(query, conn)
+    
+    return df
+
+
 def export_tables_to_excel(db_fpath, output_fname, tables):
 
     wb = Workbook()
@@ -33,9 +44,7 @@ def export_tables_to_excel(db_fpath, output_fname, tables):
 
     for idx, table in enumerate(sorted(tables)):
         sheet = wb.create_sheet(table[:31], index=idx)
-
-        query = f'SELECT * FROM {table};'
-        df = pd.read_sql_query(query, con)
+        df = read_table(table, con)
 
         for r in dataframe_to_rows(df, index=False, header=True):
             sheet.append(r)
@@ -50,8 +59,7 @@ def export_tables_to_csv(db_fpath, output_folder, tables):
                             detect_types=sqlite3.PARSE_COLNAMES)
 
     for table in sorted(tables):
-        query = f'SELECT * FROM {table};'
-        df = pd.read_sql_query(query, con)
+        df = read_table(table, con)
         df.to_csv(os.path.join(output_folder, f'{table}.csv'), index=False)
 
 
@@ -62,9 +70,8 @@ def export_tables_to_json(db_fpath, output_folder, tables):
                             detect_types=sqlite3.PARSE_COLNAMES)
 
     for table in sorted(tables):
-        query = f'SELECT * FROM {table};'
-        df = pd.read_sql_query(query, con)
-        df.to_json(os.path.join(output_folder, f'{table}.json'))
+        df = read_table(table, con)
+        df.to_json(os.path.join(output_folder, f'{table}.json'), orient='records')
 
 
 def convert_db_to_other_formats(db_fpath, output_dir):
