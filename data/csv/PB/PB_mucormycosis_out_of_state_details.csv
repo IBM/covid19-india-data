@@ -1,961 +1,530 @@
 date,city,patients,deaths
-2021-07-25,ambala,4,1
-2021-07-25,bhiwani,1,0
-2021-07-25,bikaner,1,0
-2021-07-25,central,1,1
-2021-07-25,chandigarh,5,0
-2021-07-25,dehradun,3,0
-2021-07-25,fatehabad,4,0
-2021-07-25,ganganagar,1,0
-2021-07-25,gautam buddha nagar,1,0
-2021-07-25,hanumangarh,1,0
-2021-07-25,hisar,1,0
-2021-07-25,jaipur,1,0
-2021-07-25,jammu,9,0
-2021-07-25,kaithal,3,0
-2021-07-25,karnal,4,0
-2021-07-25,kathua,3,0
-2021-07-25,kurukshetra,2,0
-2021-07-25,mandi,1,0
-2021-07-25,meerut,1,0
-2021-07-25,nanded,1,0
-2021-07-25,new delhi,2,1
-2021-07-25,panchkula,1,0
-2021-07-25,saharanpur,2,0
-2021-07-25,shahjahanpur,2,0
-2021-07-25,sirmaur,1,0
-2021-07-25,sirsa,12,2
-2021-07-25,sonipat,1,1
-2021-07-25,west,1,0
-2021-07-25,grand total,70,6
-2021-07-24,ambala,4,1
-2021-07-24,bhiwani,1,0
-2021-07-24,bikaner,1,0
-2021-07-24,central,1,1
-2021-07-24,chandigarh,5,0
-2021-07-24,dehradun,3,0
-2021-07-24,fatehabad,4,0
-2021-07-24,ganganagar,1,0
-2021-07-24,gautam buddha nagar,1,0
-2021-07-24,hanumangarh,1,0
-2021-07-24,hisar,1,0
-2021-07-24,jaipur,1,0
-2021-07-24,jammu,9,0
-2021-07-24,kaithal,3,0
-2021-07-24,karnal,4,0
-2021-07-24,kathua,3,0
-2021-07-24,kurukshetra,2,0
-2021-07-24,mandi,1,0
-2021-07-24,meerut,1,0
-2021-07-24,nanded,1,0
-2021-07-24,new delhi,2,1
-2021-07-24,panchkula,1,0
-2021-07-24,saharanpur,2,0
-2021-07-24,shahjahanpur,2,0
-2021-07-24,sirmaur,1,0
-2021-07-24,sirsa,12,2
-2021-07-24,sonipat,1,1
-2021-07-24,west,1,0
-2021-07-24,grand total,70,6
-2021-07-23,ambala,4,1
-2021-07-23,bhiwani,1,0
-2021-07-23,bikaner,1,0
-2021-07-23,central,1,1
-2021-07-23,chandigarh,5,0
-2021-07-23,dehradun,3,0
-2021-07-23,fatehabad,4,0
-2021-07-23,ganganagar,1,0
-2021-07-23,gautam buddha nagar,1,0
-2021-07-23,hanumangarh,1,0
-2021-07-23,hisar,1,0
-2021-07-23,jaipur,1,0
-2021-07-23,jammu,9,0
-2021-07-23,kaithal,3,0
-2021-07-23,karnal,4,0
-2021-07-23,kathua,3,0
-2021-07-23,kurukshetra,2,0
-2021-07-23,mandi,1,0
-2021-07-23,meerut,1,0
-2021-07-23,nanded,1,0
-2021-07-23,new delhi,2,1
-2021-07-23,panchkula,1,0
-2021-07-23,saharanpur,2,0
-2021-07-23,shahjahanpur,2,0
-2021-07-23,sirmaur,1,0
-2021-07-23,sirsa,12,2
-2021-07-23,sonipat,1,1
-2021-07-23,west,1,0
-2021-07-23,grand total,70,6
-2021-07-22,ambala,4,1
-2021-07-22,bhiwani,1,0
-2021-07-22,bikaner,1,0
-2021-07-22,central,1,1
-2021-07-22,chandigarh,5,0
-2021-07-22,dehradun,3,0
-2021-07-22,fatehabad,4,0
-2021-07-22,ganganagar,1,0
-2021-07-22,gautam buddha nagar,1,0
-2021-07-22,hanumangarh,1,0
-2021-07-22,hisar,1,0
-2021-07-22,jaipur,1,0
-2021-07-22,jammu,9,0
-2021-07-22,kaithal,3,0
-2021-07-22,karnal,4,0
-2021-07-22,kathua,3,0
-2021-07-22,kurukshetra,2,0
-2021-07-22,mandi,1,0
-2021-07-22,meerut,1,0
-2021-07-22,nanded,1,0
-2021-07-22,new delhi,2,1
-2021-07-22,panchkula,1,0
-2021-07-22,saharanpur,2,0
-2021-07-22,shahjahanpur,2,0
-2021-07-22,sirmaur,1,0
-2021-07-22,sirsa,12,2
-2021-07-22,sonipat,1,1
-2021-07-22,west,1,0
-2021-07-22,grand total,70,6
-2021-07-21,ambala,4,1
-2021-07-21,bhiwani,1,0
-2021-07-21,bikaner,1,0
-2021-07-21,central,1,1
-2021-07-21,chandigarh,5,0
-2021-07-21,dehradun,3,0
-2021-07-21,fatehabad,4,0
-2021-07-21,ganganagar,1,0
-2021-07-21,gautam buddha nagar,1,0
-2021-07-21,hanumangarh,1,0
-2021-07-21,hisar,1,0
-2021-07-21,jaipur,1,0
-2021-07-21,jammu,9,0
-2021-07-21,kaithal,3,0
-2021-07-21,karnal,4,0
-2021-07-21,kathua,3,0
-2021-07-21,kurukshetra,2,0
-2021-07-21,mandi,1,0
-2021-07-21,meerut,1,0
-2021-07-21,nanded,1,0
-2021-07-21,new delhi,2,1
-2021-07-21,panchkula,1,0
-2021-07-21,saharanpur,2,0
-2021-07-21,shahjahanpur,2,0
-2021-07-21,sirmaur,1,0
-2021-07-21,sirsa,12,2
-2021-07-21,sonipat,1,1
-2021-07-21,west,1,0
-2021-07-21,grand total,70,6
-2021-07-20,ambala,4,1
-2021-07-20,bhiwani,1,0
-2021-07-20,bikaner,1,0
-2021-07-20,central,1,1
-2021-07-20,chandigarh,5,0
-2021-07-20,dehradun,3,0
-2021-07-20,fatehabad,4,0
-2021-07-20,ganganagar,1,0
-2021-07-20,gautam buddha nagar,1,0
-2021-07-20,hanumangarh,1,0
-2021-07-20,hisar,1,0
-2021-07-20,jaipur,1,0
-2021-07-20,jammu,9,0
-2021-07-20,kaithal,3,0
-2021-07-20,karnal,4,0
-2021-07-20,kathua,3,0
-2021-07-20,kurukshetra,2,0
-2021-07-20,mandi,1,0
-2021-07-20,meerut,1,0
-2021-07-20,nanded,1,0
-2021-07-20,new delhi,2,1
-2021-07-20,panchkula,1,0
-2021-07-20,saharanpur,2,0
-2021-07-20,shahjahanpur,2,0
-2021-07-20,sirmaur,1,0
-2021-07-20,sirsa,12,2
-2021-07-20,sonipat,1,1
-2021-07-20,west,1,0
-2021-07-20,grand total,70,6
-2021-07-19,ambala,4,1
-2021-07-19,bhiwani,1,0
-2021-07-19,bikaner,1,0
-2021-07-19,central,1,1
-2021-07-19,chandigarh,5,0
-2021-07-19,dehradun,3,0
-2021-07-19,fatehabad,4,0
-2021-07-19,ganganagar,1,0
-2021-07-19,gautam buddha nagar,1,0
-2021-07-19,hanumangarh,1,0
-2021-07-19,hisar,1,0
-2021-07-19,jaipur,1,0
-2021-07-19,jammu,9,0
-2021-07-19,kaithal,3,0
-2021-07-19,karnal,4,0
-2021-07-19,kathua,3,0
-2021-07-19,kurukshetra,2,0
-2021-07-19,mandi,1,0
-2021-07-19,meerut,1,0
-2021-07-19,nanded,1,0
-2021-07-19,new delhi,2,1
-2021-07-19,panchkula,1,0
-2021-07-19,saharanpur,2,0
-2021-07-19,shahjahanpur,2,0
-2021-07-19,sirmaur,1,0
-2021-07-19,sirsa,12,2
-2021-07-19,sonipat,1,1
-2021-07-19,west,1,0
-2021-07-19,grand total,70,6
-2021-07-18,ambala,4,1
-2021-07-18,bhiwani,1,0
-2021-07-18,bikaner,1,0
-2021-07-18,central,1,1
-2021-07-18,chandigarh,5,0
-2021-07-18,dehradun,3,0
-2021-07-18,fatehabad,4,0
-2021-07-18,ganganagar,1,0
-2021-07-18,gautam buddha nagar,1,0
-2021-07-18,hanumangarh,1,0
-2021-07-18,hisar,1,0
-2021-07-18,jaipur,1,0
-2021-07-18,jammu,9,0
-2021-07-18,kaithal,3,0
-2021-07-18,karnal,3,0
-2021-07-18,kathua,3,0
-2021-07-18,kurukshetra,2,0
-2021-07-18,mandi,1,0
-2021-07-18,meerut,1,0
-2021-07-18,nanded,1,0
-2021-07-18,new delhi,2,1
-2021-07-18,panchkula,1,0
-2021-07-18,saharanpur,2,0
-2021-07-18,shahjahanpur,2,0
-2021-07-18,sirmaur,1,0
-2021-07-18,sirsa,12,2
-2021-07-18,sonipat,1,1
-2021-07-18,west,1,0
-2021-07-18,grand total,69,6
-2021-07-17,ambala,4,1
-2021-07-17,bhiwani,1,0
-2021-07-17,bikaner,1,0
-2021-07-17,central,1,1
-2021-07-17,chandigarh,5,0
-2021-07-17,dehradun,3,0
-2021-07-17,fatehabad,4,0
-2021-07-17,ganganagar,1,0
-2021-07-17,gautam buddha nagar,1,0
-2021-07-17,hanumangarh,1,0
-2021-07-17,hisar,1,0
-2021-07-17,jaipur,1,0
-2021-07-17,jammu,9,0
-2021-07-17,kaithal,3,0
-2021-07-17,karnal,3,0
-2021-07-17,kathua,3,0
-2021-07-17,kurukshetra,2,0
-2021-07-17,mandi,1,0
-2021-07-17,meerut,1,0
-2021-07-17,nanded,1,0
-2021-07-17,new delhi,2,1
-2021-07-17,panchkula,1,0
-2021-07-17,saharanpur,2,0
-2021-07-17,shahjahanpur,2,0
-2021-07-17,sirmaur,1,0
-2021-07-17,sirsa,12,2
-2021-07-17,sonipat,1,1
-2021-07-17,west,1,0
-2021-07-17,grand total,69,6
-2021-07-16,ambala,4,1
-2021-07-16,bhiwani,1,0
-2021-07-16,bikaner,1,0
-2021-07-16,central,1,1
-2021-07-16,chandigarh,5,0
-2021-07-16,dehradun,3,0
-2021-07-16,fatehabad,4,0
-2021-07-16,ganganagar,1,0
-2021-07-16,gautam buddha nagar,1,0
-2021-07-16,hanumangarh,1,0
-2021-07-16,hisar,1,0
-2021-07-16,jaipur,1,0
-2021-07-16,jammu,9,0
-2021-07-16,kaithal,3,0
-2021-07-16,karnal,3,0
-2021-07-16,kathua,3,0
-2021-07-16,kurukshetra,2,0
-2021-07-16,mandi,1,0
-2021-07-16,meerut,1,0
-2021-07-16,nanded,1,0
-2021-07-16,new delhi,2,1
-2021-07-16,panchkula,1,0
-2021-07-16,saharanpur,2,0
-2021-07-16,shahjahanpur,2,0
-2021-07-16,sirmaur,1,0
-2021-07-16,sirsa,12,2
-2021-07-16,sonipat,1,1
-2021-07-16,west,1,0
-2021-07-16,grand total,69,6
-2021-07-15,ambala,4,1
-2021-07-15,bhiwani,1,0
-2021-07-15,bikaner,1,0
-2021-07-15,central,1,1
-2021-07-15,chandigarh,5,0
-2021-07-15,dehradun,3,0
-2021-07-15,fatehabad,4,0
-2021-07-15,ganganagar,1,0
-2021-07-15,gautam buddha nagar,1,0
-2021-07-15,hanumangarh,1,0
-2021-07-15,hisar,1,0
-2021-07-15,jaipur,1,0
-2021-07-15,jammu,9,0
-2021-07-15,kaithal,3,0
-2021-07-15,karnal,3,0
-2021-07-15,kathua,3,0
-2021-07-15,kurukshetra,2,0
-2021-07-15,mandi,1,0
-2021-07-15,meerut,1,0
-2021-07-15,nanded,1,0
-2021-07-15,new delhi,2,1
-2021-07-15,panchkula,1,0
-2021-07-15,saharanpur,2,0
-2021-07-15,shahjahanpur,2,0
-2021-07-15,sirmaur,1,0
-2021-07-15,sirsa,12,2
-2021-07-15,sonipat,1,1
-2021-07-15,west,1,0
-2021-07-15,grand total,69,6
-2021-07-14,ambala,4,1
-2021-07-14,bhiwani,1,0
-2021-07-14,bikaner,1,0
-2021-07-14,central,1,1
-2021-07-14,chandigarh,5,0
-2021-07-14,dehradun,3,0
-2021-07-14,fatehabad,4,0
-2021-07-14,ganganagar,1,0
-2021-07-14,gautam buddha nagar,1,0
-2021-07-14,hanumangarh,1,0
-2021-07-14,hisar,1,0
-2021-07-14,jaipur,1,0
-2021-07-14,jammu,9,0
-2021-07-14,kaithal,3,0
-2021-07-14,karnal,3,0
-2021-07-14,kathua,3,0
-2021-07-14,kurukshetra,2,0
-2021-07-14,mandi,1,0
-2021-07-14,meerut,1,0
-2021-07-14,nanded,1,0
-2021-07-14,new delhi,2,1
-2021-07-14,panchkula,1,0
-2021-07-14,saharanpur,2,0
-2021-07-14,shahjahanpur,2,0
-2021-07-14,sirmaur,1,0
-2021-07-14,sirsa,12,2
-2021-07-14,sonipat,1,1
-2021-07-14,west,1,0
-2021-07-14,grand total,69,6
-2021-07-13,ambala,4,1
-2021-07-13,bhiwani,1,0
-2021-07-13,bikaner,1,0
-2021-07-13,central,1,1
-2021-07-13,chandigarh,5,0
-2021-07-13,dehradun,3,0
-2021-07-13,fatehabad,4,0
-2021-07-13,ganganagar,1,0
-2021-07-13,gautam buddha nagar,1,0
-2021-07-13,hanumangarh,1,0
-2021-07-13,hisar,1,0
-2021-07-13,jaipur,1,0
-2021-07-13,jammu,9,0
-2021-07-13,kaithal,3,0
-2021-07-13,karnal,3,0
-2021-07-13,kathua,3,0
-2021-07-13,kurukshetra,2,0
-2021-07-13,mandi,1,0
-2021-07-13,meerut,1,0
-2021-07-13,nanded,1,0
-2021-07-13,new delhi,2,1
-2021-07-13,panchkula,1,0
-2021-07-13,saharanpur,2,0
-2021-07-13,shahjahanpur,2,0
-2021-07-13,sirmaur,1,0
-2021-07-13,sirsa,12,2
-2021-07-13,sonipat,1,1
-2021-07-13,west,1,0
-2021-07-13,grand total,69,6
-2021-07-11,ambala,4,1
-2021-07-11,bhiwani,1,0
-2021-07-11,bikaner,1,0
-2021-07-11,central,1,1
-2021-07-11,chandigarh,4,0
-2021-07-11,dehradun,3,0
-2021-07-11,fatehabad,4,0
-2021-07-11,ganganagar,1,0
-2021-07-11,gautam buddha nagar,1,0
-2021-07-11,hanumangarh,1,0
-2021-07-11,hisar,1,0
-2021-07-11,jaipur,1,0
-2021-07-11,jammu,8,0
-2021-07-11,kaithal,3,0
-2021-07-11,karnal,3,0
-2021-07-11,kathua,3,0
-2021-07-11,kurukshetra,2,0
-2021-07-11,mandi,1,0
-2021-07-11,meerut,1,0
-2021-07-11,nanded,1,0
-2021-07-11,new delhi,2,1
-2021-07-11,panchkula,1,0
-2021-07-11,saharanpur,2,0
-2021-07-11,shahjahanpur,2,0
-2021-07-11,sirmaur,1,0
-2021-07-11,sirsa,13,2
-2021-07-11,sonipat,1,1
-2021-07-11,west,1,0
-2021-07-11,grand total,68,6
-2021-07-10,ambala,4,1
-2021-07-10,bhiwani,1,0
-2021-07-10,bikaner,1,0
-2021-07-10,central,1,1
-2021-07-10,chandigarh,4,0
-2021-07-10,dehradun,3,0
-2021-07-10,fatehabad,4,0
-2021-07-10,ganganagar,1,0
-2021-07-10,gautam buddha nagar,1,0
-2021-07-10,hanumangarh,1,0
-2021-07-10,hisar,1,0
-2021-07-10,jaipur,1,0
-2021-07-10,jammu,7,0
-2021-07-10,kaithal,3,0
-2021-07-10,karnal,3,0
-2021-07-10,kathua,3,0
-2021-07-10,kurukshetra,2,0
-2021-07-10,mandi,1,0
-2021-07-10,meerut,1,0
-2021-07-10,nanded,1,0
-2021-07-10,new delhi,2,1
-2021-07-10,panchkula,1,0
-2021-07-10,saharanpur,2,0
-2021-07-10,shahjahanpur,2,0
-2021-07-10,sirmaur,1,0
-2021-07-10,sirsa,13,2
-2021-07-10,sonipat,1,1
-2021-07-10,west,1,0
-2021-07-10,grand total,67,6
-2021-07-09,ambala,4,1
-2021-07-09,bhiwani,1,0
-2021-07-09,bikaner,1,0
-2021-07-09,central,1,1
-2021-07-09,chandigarh,4,0
-2021-07-09,dehradun,3,0
-2021-07-09,fatehabad,4,0
-2021-07-09,ganganagar,1,0
-2021-07-09,gautam buddha nagar,1,0
-2021-07-09,hanumangarh,1,0
-2021-07-09,hisar,1,0
-2021-07-09,jaipur,1,0
-2021-07-09,jammu,7,0
-2021-07-09,kaithal,3,0
-2021-07-09,karnal,3,0
-2021-07-09,kathua,3,0
-2021-07-09,kurukshetra,2,0
-2021-07-09,mandi,1,0
-2021-07-09,meerut,1,0
-2021-07-09,nanded,1,0
-2021-07-09,new delhi,2,1
-2021-07-09,panchkula,1,0
-2021-07-09,saharanpur,2,0
-2021-07-09,shahjahanpur,2,0
-2021-07-09,sirmaur,1,0
-2021-07-09,sirsa,13,2
-2021-07-09,sonipat,1,1
-2021-07-09,west,1,0
-2021-07-09,grand total,67,6
-2021-07-08,ambala,4,1
-2021-07-08,bhiwani,1,0
-2021-07-08,bikaner,1,0
-2021-07-08,central,1,1
-2021-07-08,chandigarh,4,0
-2021-07-08,dehradun,3,0
-2021-07-08,fatehabad,4,0
-2021-07-08,ganganagar,1,0
-2021-07-08,gautam buddha nagar,1,0
-2021-07-08,hanumangarh,1,0
-2021-07-08,hisar,1,0
-2021-07-08,jaipur,1,0
-2021-07-08,jammu,7,0
-2021-07-08,kaithal,3,0
-2021-07-08,karnal,3,0
-2021-07-08,kathua,3,0
-2021-07-08,kurukshetra,2,0
-2021-07-08,mandi,1,0
-2021-07-08,meerut,1,0
-2021-07-08,nanded,1,0
-2021-07-08,new delhi,2,1
-2021-07-08,panchkula,1,0
-2021-07-08,saharanpur,2,0
-2021-07-08,shahjahanpur,2,0
-2021-07-08,sirmaur,1,0
-2021-07-08,sirsa,13,2
-2021-07-08,sonipat,1,1
-2021-07-08,west,1,0
-2021-07-08,grand total,67,6
-2021-07-07,ambala,4,1
-2021-07-07,bhiwani,1,0
-2021-07-07,bikaner,1,0
-2021-07-07,central,1,1
-2021-07-07,chandigarh,4,0
-2021-07-07,dehradun,3,0
-2021-07-07,fatehabad,4,0
-2021-07-07,ganganagar,1,0
-2021-07-07,gautam buddha nagar,1,0
-2021-07-07,hanumangarh,1,0
-2021-07-07,hisar,1,0
-2021-07-07,jaipur,1,0
-2021-07-07,jammu,7,0
-2021-07-07,kaithal,3,0
-2021-07-07,karnal,3,0
-2021-07-07,kathua,3,0
-2021-07-07,kurukshetra,2,0
-2021-07-07,mandi,1,0
-2021-07-07,meerut,1,0
-2021-07-07,nanded,1,0
-2021-07-07,new delhi,2,1
-2021-07-07,panchkula,1,0
-2021-07-07,saharanpur,2,0
-2021-07-07,shahjahanpur,2,0
-2021-07-07,sirmaur,1,0
-2021-07-07,sirsa,13,2
-2021-07-07,sonipat,1,1
-2021-07-07,west,1,0
-2021-07-07,grand total,67,6
-2021-07-06,ambala,4,1
-2021-07-06,bhiwani,1,0
-2021-07-06,bikaner,1,0
-2021-07-06,central,1,1
-2021-07-06,chandigarh,4,0
-2021-07-06,dehradun,3,0
-2021-07-06,fatehabad,4,0
-2021-07-06,ganganagar,1,0
-2021-07-06,gautam buddha nagar,1,0
-2021-07-06,hanumangarh,1,0
-2021-07-06,hisar,1,0
-2021-07-06,jaipur,1,0
-2021-07-06,jammu,7,0
-2021-07-06,kaithal,3,0
-2021-07-06,karnal,3,0
-2021-07-06,kathua,3,0
-2021-07-06,kurukshetra,2,0
-2021-07-06,mandi,1,0
-2021-07-06,meerut,1,0
-2021-07-06,nanded,1,0
-2021-07-06,new delhi,2,1
-2021-07-06,panchkula,1,0
-2021-07-06,saharanpur,2,0
-2021-07-06,shahjahanpur,2,0
-2021-07-06,sirmaur,1,0
-2021-07-06,sirsa,13,2
-2021-07-06,sonipat,1,1
-2021-07-06,west,1,0
-2021-07-06,grand total,67,6
-2021-07-05,ambala,4,1
-2021-07-05,bhiwani,1,0
-2021-07-05,bikaner,1,0
-2021-07-05,central,1,1
-2021-07-05,chandigarh,3,0
-2021-07-05,dehradun,3,0
-2021-07-05,fatehabad,4,0
-2021-07-05,ganganagar,1,0
-2021-07-05,gautam buddha nagar,1,0
-2021-07-05,hanumangarh,1,0
-2021-07-05,hisar,1,0
-2021-07-05,jaipur,1,0
-2021-07-05,jammu,7,0
-2021-07-05,kaithal,3,0
-2021-07-05,karnal,3,0
-2021-07-05,kathua,3,0
-2021-07-05,kurukshetra,2,0
-2021-07-05,mandi,1,0
-2021-07-05,meerut,1,0
-2021-07-05,nanded,1,0
-2021-07-05,new delhi,2,1
-2021-07-05,panchkula,1,0
-2021-07-05,saharanpur,2,0
-2021-07-05,shahjahanpur,2,0
-2021-07-05,sirmaur,1,0
-2021-07-05,sirsa,13,2
-2021-07-05,sonipat,1,1
-2021-07-05,west,1,0
-2021-07-05,grand total,66,6
-2021-07-04,ambala,4,1
-2021-07-04,bhiwani,1,0
-2021-07-04,bikaner,1,0
-2021-07-04,central,1,1
-2021-07-04,chandigarh,3,0
-2021-07-04,dehradun,3,0
-2021-07-04,fatehabad,4,0
-2021-07-04,ganganagar,1,0
-2021-07-04,gautam buddha nagar,1,0
-2021-07-04,hanumangarh,1,0
-2021-07-04,hisar,1,0
-2021-07-04,jaipur,1,0
-2021-07-04,jammu,7,0
-2021-07-04,kaithal,3,0
-2021-07-04,karnal,3,0
-2021-07-04,kathua,3,0
-2021-07-04,kurukshetra,2,0
-2021-07-04,mandi,1,0
-2021-07-04,meerut,1,0
-2021-07-04,nanded,1,0
-2021-07-04,new delhi,2,1
-2021-07-04,panchkula,1,0
-2021-07-04,saharanpur,2,0
-2021-07-04,shahjahanpur,2,0
-2021-07-04,sirmaur,1,0
-2021-07-04,sirsa,13,2
-2021-07-04,sonipat,1,1
-2021-07-04,west,1,0
-2021-07-04,grand total,66,6
-2021-07-03,ambala,4,1
-2021-07-03,bhiwani,1,0
-2021-07-03,bikaner,1,0
-2021-07-03,central,1,1
-2021-07-03,chandigarh,3,0
-2021-07-03,dehradun,3,0
-2021-07-03,fatehabad,4,0
-2021-07-03,ganganagar,1,0
-2021-07-03,gautam buddha nagar,1,0
-2021-07-03,hanumangarh,1,0
-2021-07-03,hisar,1,0
-2021-07-03,jaipur,1,0
-2021-07-03,jammu,7,0
-2021-07-03,kaithal,3,0
-2021-07-03,karnal,3,0
-2021-07-03,kathua,3,0
-2021-07-03,kurukshetra,2,0
-2021-07-03,mandi,1,0
-2021-07-03,meerut,1,0
-2021-07-03,nanded,1,0
-2021-07-03,new delhi,2,1
-2021-07-03,panchkula,1,0
-2021-07-03,saharanpur,2,0
-2021-07-03,shahjahanpur,2,0
-2021-07-03,sirmaur,1,0
-2021-07-03,sirsa,13,2
-2021-07-03,sonipat,1,1
-2021-07-03,west,1,0
-2021-07-03,grand total,66,6
-2021-07-02,ambala,4,1
-2021-07-02,bhiwani,1,0
-2021-07-02,bikaner,1,0
-2021-07-02,central,1,1
-2021-07-02,chandigarh,3,0
-2021-07-02,dehradun,3,0
-2021-07-02,fatehabad,4,0
-2021-07-02,ganganagar,1,0
-2021-07-02,gautam buddha nagar,1,0
-2021-07-02,hanumangarh,1,0
-2021-07-02,hisar,1,0
-2021-07-02,jaipur,1,0
-2021-07-02,jammu,7,0
-2021-07-02,kaithal,3,0
-2021-07-02,karnal,3,0
-2021-07-02,kathua,3,0
-2021-07-02,kurukshetra,2,0
-2021-07-02,mandi,1,0
-2021-07-02,meerut,1,0
-2021-07-02,nanded,1,0
-2021-07-02,new delhi,1,1
-2021-07-02,panchkula,1,0
-2021-07-02,saharanpur,2,0
-2021-07-02,shahjahanpur,2,0
-2021-07-02,sirmaur,1,0
-2021-07-02,sirsa,13,2
-2021-07-02,sonipat,1,1
-2021-07-02,west,1,0
-2021-07-02,grand total,65,6
-2021-07-01,ambala,4,1
-2021-07-01,bhiwani,1,0
-2021-07-01,bikaner,1,0
-2021-07-01,central,1,1
-2021-07-01,chandigarh,3,0
-2021-07-01,dehradun,3,0
-2021-07-01,fatehabad,4,0
-2021-07-01,ganganagar,1,0
-2021-07-01,gautam buddha nagar,1,0
-2021-07-01,hanumangarh,1,0
-2021-07-01,hisar,1,0
-2021-07-01,jaipur,1,0
-2021-07-01,jammu,7,0
-2021-07-01,kaithal,3,0
-2021-07-01,karnal,3,0
-2021-07-01,kathua,3,0
-2021-07-01,kurukshetra,2,0
-2021-07-01,mandi,1,0
-2021-07-01,meerut,1,0
-2021-07-01,nanded,1,0
-2021-07-01,new delhi,1,1
-2021-07-01,panchkula,1,0
-2021-07-01,saharanpur,2,0
-2021-07-01,shahjahanpur,2,0
-2021-07-01,sirmaur,1,0
-2021-07-01,sirsa,13,2
-2021-07-01,sonipat,1,1
-2021-07-01,west,1,0
-2021-07-01,grand total,65,6
-2021-06-30,ambala,4,1
-2021-06-30,bhiwani,1,0
-2021-06-30,bikaner,1,0
-2021-06-30,central,1,1
-2021-06-30,chandigarh,2,0
-2021-06-30,dehradun,3,0
-2021-06-30,fatehabad,4,0
-2021-06-30,ganganagar,1,0
-2021-06-30,gautam buddha nagar,1,0
-2021-06-30,hanumangarh,1,0
-2021-06-30,hisar,1,0
-2021-06-30,jaipur,1,0
-2021-06-30,jammu,7,0
-2021-06-30,kaithal,3,0
-2021-06-30,karnal,3,0
-2021-06-30,kathua,3,0
-2021-06-30,kurukshetra,2,0
-2021-06-30,mandi,1,0
-2021-06-30,meerut,1,0
-2021-06-30,nanded,1,0
-2021-06-30,new delhi,1,1
-2021-06-30,panchkula,1,0
-2021-06-30,saharanpur,2,0
-2021-06-30,shahjahanpur,2,0
-2021-06-30,sirmaur,1,0
-2021-06-30,sirsa,13,2
-2021-06-30,sonipat,1,1
-2021-06-30,west,1,0
-2021-06-30,grand total,64,6
-2021-06-29,ambala,4,1
-2021-06-29,bhiwani,1,0
-2021-06-29,bikaner,1,0
-2021-06-29,central,1,1
-2021-06-29,chandigarh,2,0
-2021-06-29,dehradun,3,0
-2021-06-29,fatehabad,4,0
-2021-06-29,ganganagar,1,0
-2021-06-29,gautam buddha nagar,1,0
-2021-06-29,hanumangarh,1,0
-2021-06-29,hisar,1,0
-2021-06-29,jaipur,1,0
-2021-06-29,jammu,7,0
-2021-06-29,kaithal,3,0
-2021-06-29,karnal,3,0
-2021-06-29,kathua,2,0
-2021-06-29,kurukshetra,2,0
-2021-06-29,mandi,1,0
-2021-06-29,meerut,1,0
-2021-06-29,nanded,1,0
-2021-06-29,new delhi,1,1
-2021-06-29,panchkula,1,0
-2021-06-29,saharanpur,2,0
-2021-06-29,shahjahanpur,2,0
-2021-06-29,sirmaur,1,0
-2021-06-29,sirsa,13,2
-2021-06-29,sonipat,1,1
-2021-06-29,west,1,0
-2021-06-29,grand total,63,6
-2021-06-28,ambala,4,1
-2021-06-28,bhiwani,1,0
-2021-06-28,bikaner,1,0
-2021-06-28,central,1,1
-2021-06-28,chandigarh,2,0
-2021-06-28,dehradun,3,0
-2021-06-28,fatehabad,4,0
-2021-06-28,ganganagar,1,0
-2021-06-28,gautam buddha nagar,1,0
-2021-06-28,hanumangarh,1,0
-2021-06-28,hisar,1,0
-2021-06-28,jaipur,1,0
-2021-06-28,jammu,6,0
-2021-06-28,kaithal,3,0
-2021-06-28,karnal,3,0
-2021-06-28,kathua,2,0
-2021-06-28,kurukshetra,2,0
-2021-06-28,mandi,1,0
-2021-06-28,meerut,1,0
-2021-06-28,nanded,1,0
-2021-06-28,new delhi,1,1
-2021-06-28,panchkula,1,0
-2021-06-28,saharanpur,2,0
-2021-06-28,shahjahanpur,2,0
-2021-06-28,sirmaur,1,0
-2021-06-28,sirsa,13,2
-2021-06-28,sonipat,1,1
-2021-06-28,west,1,0
-2021-06-28,grand total,62,6
-2021-06-27,ambala,4,1
-2021-06-27,bhiwani,1,0
-2021-06-27,bikaner,1,0
-2021-06-27,central,1,1
-2021-06-27,chandigarh,2,0
-2021-06-27,dehradun,3,0
-2021-06-27,fatehabad,3,0
-2021-06-27,ganganagar,1,0
-2021-06-27,gautam buddha nagar,1,0
-2021-06-27,hanumangarh,1,0
-2021-06-27,hisar,1,0
-2021-06-27,jaipur,1,0
-2021-06-27,jammu,6,0
-2021-06-27,kaithal,3,0
-2021-06-27,karnal,3,0
-2021-06-27,kathua,2,0
-2021-06-27,kurukshetra,2,0
-2021-06-27,mandi,1,0
-2021-06-27,meerut,1,0
-2021-06-27,nanded,1,0
-2021-06-27,new delhi,1,1
-2021-06-27,panchkula,1,0
-2021-06-27,saharanpur,2,0
-2021-06-27,shahjahanpur,2,0
-2021-06-27,sirmaur,1,0
-2021-06-27,sirsa,13,2
-2021-06-27,sonipat,1,1
-2021-06-27,west,1,0
-2021-06-27,grand total,61,6
-2021-06-26,ambala,4,1
-2021-06-26,bhiwani,1,0
-2021-06-26,bikaner,1,0
-2021-06-26,central,1,1
-2021-06-26,chandigarh,2,0
-2021-06-26,dehradun,3,0
-2021-06-26,fatehabad,3,0
-2021-06-26,ganganagar,1,0
-2021-06-26,gautam buddha nagar,1,0
-2021-06-26,hanumangarh,1,0
-2021-06-26,hisar,1,0
-2021-06-26,jaipur,1,0
-2021-06-26,jammu,6,0
-2021-06-26,kaithal,3,0
-2021-06-26,karnal,3,0
-2021-06-26,kathua,2,0
-2021-06-26,kurukshetra,2,0
-2021-06-26,mandi,1,0
-2021-06-26,meerut,1,0
-2021-06-26,nanded,1,0
-2021-06-26,new delhi,1,1
-2021-06-26,panchkula,1,0
-2021-06-26,saharanpur,2,0
-2021-06-26,shahjahanpur,2,0
-2021-06-26,sirmaur,1,0
-2021-06-26,sirsa,12,2
-2021-06-26,sonipat,1,1
-2021-06-26,west,1,0
-2021-06-26,grand total,60,6
-2021-06-25,ambala,4,1
-2021-06-25,bhiwani,1,0
-2021-06-25,bikaner,1,0
-2021-06-25,central,1,1
-2021-06-25,chandigarh,2,0
-2021-06-25,dehradun,3,0
-2021-06-25,fatehabad,3,0
-2021-06-25,ganganagar,1,0
-2021-06-25,gautam buddha nagar,1,0
-2021-06-25,hanumangarh,1,0
-2021-06-25,hisar,1,0
-2021-06-25,jaipur,1,0
-2021-06-25,jammu,5,0
-2021-06-25,kaithal,3,0
-2021-06-25,karnal,3,0
-2021-06-25,kathua,2,0
-2021-06-25,kurukshetra,2,0
-2021-06-25,mandi,1,0
-2021-06-25,meerut,1,0
-2021-06-25,nanded,1,0
-2021-06-25,new delhi,1,1
-2021-06-25,panchkula,1,0
-2021-06-25,saharanpur,2,0
-2021-06-25,shahjahanpur,2,0
-2021-06-25,sirmaur,1,0
-2021-06-25,sirsa,12,2
-2021-06-25,sonipat,1,1
-2021-06-25,west,1,0
-2021-06-25,grand total,59,6
-2021-06-24,ambala,4,1
-2021-06-24,bhiwani,1,0
-2021-06-24,bikaner,1,0
-2021-06-24,central delhi,1,1
-2021-06-24,chandigarh,3,0
-2021-06-24,dehradun,3,0
-2021-06-24,fatehabad,3,0
-2021-06-24,ganganagar,1,0
-2021-06-24,gautam buddha nagar,1,0
-2021-06-24,hanumangarh,1,0
-2021-06-24,hisar,1,0
-2021-06-24,jaipur,1,0
-2021-06-24,jammu,5,0
-2021-06-24,kaithal,3,0
-2021-06-24,karnal,3,0
-2021-06-24,kathua,2,0
-2021-06-24,kurukshetra,2,0
-2021-06-24,mandi,1,0
-2021-06-24,meerut,1,0
-2021-06-24,nanded,1,0
-2021-06-24,new delhi,1,1
-2021-06-24,panchkula,1,0
-2021-06-24,saharanpur,2,0
-2021-06-24,shahjahanpur,2,0
-2021-06-24,sirmaur,1,0
-2021-06-24,sirsa,12,2
-2021-06-24,sonipat,1,1
-2021-06-24,west delhi,1,0
-2021-06-24,grand total,60,6
-2021-06-23,ambala,4,1
-2021-06-23,bhiwani,1,0
-2021-06-23,bikaner,1,0
-2021-06-23,central delhi,1,1
-2021-06-23,chandigarh,3,0
-2021-06-23,dehradun,3,0
-2021-06-23,fatehabad,3,0
-2021-06-23,ganganagar,1,0
-2021-06-23,gautam buddha nagar,1,0
-2021-06-23,hanumangarh,1,0
-2021-06-23,hisar,1,0
-2021-06-23,jaipur,1,0
-2021-06-23,jammu,5,0
-2021-06-23,kaithal,3,0
-2021-06-23,karnal,3,0
-2021-06-23,kathua,2,0
-2021-06-23,kurukshetra,2,0
-2021-06-23,mandi,1,0
-2021-06-23,meerut,1,0
-2021-06-23,nanded,1,0
-2021-06-23,new delhi,1,1
-2021-06-23,panchkula,1,0
-2021-06-23,saharanpur,2,0
-2021-06-23,shahjahanpur,2,0
-2021-06-23,sirmaur,1,0
-2021-06-23,sirsa,12,2
-2021-06-23,sonipat,1,1
-2021-06-23,west delhi,1,0
-2021-06-23,grand total,60,6
-2021-06-22,ambala,4,1
-2021-06-22,bhiwani,1,0
-2021-06-22,bikaner,1,0
-2021-06-22,central delhi,1,1
-2021-06-22,chandigarh,3,0
-2021-06-22,dehradun,3,0
-2021-06-22,fatehabad,3,0
-2021-06-22,ganganagar,1,0
-2021-06-22,gautam buddha nagar,1,0
-2021-06-22,hanumangarh,1,0
-2021-06-22,hisar,1,0
-2021-06-22,jaipur,1,0
-2021-06-22,jammu,5,0
-2021-06-22,kaithal,3,0
-2021-06-22,karnal,3,0
-2021-06-22,kathua,2,0
-2021-06-22,kurukshetra,2,0
-2021-06-22,mandi,1,0
-2021-06-22,meerut,1,0
-2021-06-22,nanded,1,0
-2021-06-22,new delhi,1,1
-2021-06-22,panchkula,1,0
-2021-06-22,saharanpur,2,0
-2021-06-22,shahjahanpur,2,0
-2021-06-22,sirmaur,1,0
-2021-06-22,sirsa,12,2
-2021-06-22,sonipat,1,1
-2021-06-22,west delhi,1,0
-2021-06-22,grand total,60,6
+2021-05-30,ambala,1,0
+2021-05-30,bhiwani,1,0
+2021-05-30,central delhi,1,0
+2021-05-30,chandigarh,2,0
+2021-05-30,dehradun,1,0
+2021-05-30,fatehabad,1,0
+2021-05-30,ganganagar,1,0
+2021-05-30,gautam buddhanagar,1,0
+2021-05-30,grand total,35,2
+2021-05-30,jammu,2,0
+2021-05-30,kaithal,2,0
+2021-05-30,karnal,2,0
+2021-05-30,kathua,2,0
+2021-05-30,kurukshetra,1,0
+2021-05-30,mandi,1,0
+2021-05-30,meerut,1,0
+2021-05-30,nanded,1,0
+2021-05-30,new delhi,1,1
+2021-05-30,panchkula,1,0
+2021-05-30,saharanpur,2,0
+2021-05-30,shahjahanpur,1,0
+2021-05-30,sirsa,8,1
+2021-05-30,west delhi,1,0
+2021-05-31,ambala,1,0
+2021-05-31,bhiwani,1,0
+2021-05-31,central delhi,1,0
+2021-05-31,chandigarh,3,0
+2021-05-31,dehradun,2,0
+2021-05-31,fatehabad,1,0
+2021-05-31,ganganagar,1,0
+2021-05-31,gautam buddha nagar,1,0
+2021-05-31,grand total,41,2
+2021-05-31,jammu,2,0
+2021-05-31,kaithal,2,0
+2021-05-31,karnal,3,0
+2021-05-31,kathua,2,0
+2021-05-31,kurukshetra,1,0
+2021-05-31,mandi,1,0
+2021-05-31,meerut,1,0
+2021-05-31,nanded,1,0
+2021-05-31,new delhi,1,1
+2021-05-31,panchkula,1,0
+2021-05-31,saharanpur,2,0
+2021-05-31,shahjahanpur,2,0
+2021-05-31,sirsa,9,1
+2021-05-31,sonipat,1,0
+2021-05-31,west delhi,1,0
+2021-06-01,ambala,1,0
+2021-06-01,bhiwani,1,0
+2021-06-01,central delhi,1,0
+2021-06-01,chandigarh,3,0
+2021-06-01,dehradun,2,0
+2021-06-01,fatehabad,1,0
+2021-06-01,ganganagar,1,0
+2021-06-01,gautam buddhanagar,1,0
+2021-06-01,grand total,41,2
+2021-06-01,jammu,2,0
+2021-06-01,kaithal,2,0
+2021-06-01,karnal,3,0
+2021-06-01,kathua,2,0
+2021-06-01,kurukshetra,1,0
+2021-06-01,mandi,1,0
+2021-06-01,meerut,1,0
+2021-06-01,nanded,1,0
+2021-06-01,new delhi,1,1
+2021-06-01,panchkula,1,0
+2021-06-01,saharanpur,2,0
+2021-06-01,shahjahanpur,2,0
+2021-06-01,sirsa,9,1
+2021-06-01,sonipat,1,0
+2021-06-01,west delhi,1,0
+2021-06-03,ambala,2,0
+2021-06-03,bhiwani,1,0
+2021-06-03,bikaner,1,0
+2021-06-03,central delhi,1,0
+2021-06-03,chandigarh,3,1
+2021-06-03,dehradun,2,0
+2021-06-03,fatehabad,1,0
+2021-06-03,ganganagar,1,0
+2021-06-03,gautam buddha nagar,1,0
+2021-06-03,grand total,46,6
+2021-06-03,hisar,1,0
+2021-06-03,jammu,3,0
+2021-06-03,kaithal,2,0
+2021-06-03,karnal,3,1
+2021-06-03,kathua,2,0
+2021-06-03,kurukshetra,1,0
+2021-06-03,mandi,1,0
+2021-06-03,meerut,1,0
+2021-06-03,nanded,1,0
+2021-06-03,new delhi,1,1
+2021-06-03,panchkula,1,0
+2021-06-03,saharanpur,2,0
+2021-06-03,shahjahanpur,2,0
+2021-06-03,sirsa,10,2
+2021-06-03,sonipat,1,1
+2021-06-03,west delhi,1,0
+2021-06-04,ambala,2,0
+2021-06-04,bhiwani,1,0
+2021-06-04,bikaner,1,0
+2021-06-04,central delhi,1,0
+2021-06-04,chandigarh,3,1
+2021-06-04,dehradun,2,0
+2021-06-04,fatehabad,1,0
+2021-06-04,ganganagar,1,0
+2021-06-04,gautam buddha nagar,1,0
+2021-06-04,grand total,46,6
+2021-06-04,hisar,1,0
+2021-06-04,jammu,3,0
+2021-06-04,kaithal,2,0
+2021-06-04,karnal,3,1
+2021-06-04,kathua,2,0
+2021-06-04,kurukshetra,1,0
+2021-06-04,mandi,1,0
+2021-06-04,meerut,1,0
+2021-06-04,nanded,1,0
+2021-06-04,new delhi,1,1
+2021-06-04,panchkula,1,0
+2021-06-04,saharanpur,2,0
+2021-06-04,shahjahanpur,2,0
+2021-06-04,sirsa,10,2
+2021-06-04,sonipat,1,1
+2021-06-04,west delhi,1,0
+2021-06-06,ambala,3,0
+2021-06-06,bhiwani,1,0
+2021-06-06,bikaner,1,0
+2021-06-06,central delhi,1,1
+2021-06-06,chandigarh,3,1
+2021-06-06,dehradun,2,0
+2021-06-06,fatehabad,1,0
+2021-06-06,ganganagar,1,0
+2021-06-06,gautam buddha nagar,1,0
+2021-06-06,grand total,47,7
+2021-06-06,hisar,1,0
+2021-06-06,jammu,3,0
+2021-06-06,kaithal,2,0
+2021-06-06,karnal,3,1
+2021-06-06,kathua,2,0
+2021-06-06,kurukshetra,1,0
+2021-06-06,mandi,1,0
+2021-06-06,meerut,1,0
+2021-06-06,nanded,1,0
+2021-06-06,new delhi,1,1
+2021-06-06,panchkula,1,0
+2021-06-06,saharanpur,2,0
+2021-06-06,shahjahanpur,2,0
+2021-06-06,sirsa,10,2
+2021-06-06,sonipat,1,1
+2021-06-06,west delhi,1,0
+2021-06-07,ambala,4,0
+2021-06-07,bhiwani,1,0
+2021-06-07,bikaner,1,0
+2021-06-07,central,1,1
+2021-06-07,chandigarh,3,0
+2021-06-07,dehradun,2,0
+2021-06-07,fatehabad,1,0
+2021-06-07,ganganagar,1,0
+2021-06-07,gautam buddha nagar,1,0
+2021-06-07,grand total,48,5
+2021-06-07,hisar,1,0
+2021-06-07,jammu,3,0
+2021-06-07,kaithal,2,0
+2021-06-07,karnal,3,0
+2021-06-07,kathua,2,0
+2021-06-07,kurukshetra,1,0
+2021-06-07,mandi,1,0
+2021-06-07,meerut,1,0
+2021-06-07,nanded,1,0
+2021-06-07,new delhi,1,1
+2021-06-07,panchkula,1,0
+2021-06-07,saharanpur,2,0
+2021-06-07,shahjahanpur,2,0
+2021-06-07,sirsa,10,2
+2021-06-07,sonipat,1,1
+2021-06-07,west,1,0
+2021-06-08,ambala,4,0
+2021-06-08,bhiwani,1,0
+2021-06-08,bikaner,1,0
+2021-06-08,central delhi,1,1
+2021-06-08,chandigarh,3,0
+2021-06-08,dehradun,2,0
+2021-06-08,fatehabad,1,0
+2021-06-08,ganganagar,1,0
+2021-06-08,gautam buddha nagar,1,0
+2021-06-08,grand total,49,5
+2021-06-08,hanumangarh,1,0
+2021-06-08,hisar,1,0
+2021-06-08,jammu,3,0
+2021-06-08,kaithal,2,0
+2021-06-08,karnal,3,0
+2021-06-08,kathua,2,0
+2021-06-08,kurukshetra,1,0
+2021-06-08,mandi,1,0
+2021-06-08,meerut,1,0
+2021-06-08,nanded,1,0
+2021-06-08,new delhi,1,1
+2021-06-08,panchkula,1,0
+2021-06-08,saharanpur,2,0
+2021-06-08,shahjahanpur,2,0
+2021-06-08,sirsa,10,2
+2021-06-08,sonipat,1,1
+2021-06-08,west delhi,1,0
+2021-06-09,ambala,4,0
+2021-06-09,bhiwani,1,0
+2021-06-09,bikaner,1,0
+2021-06-09,central delhi,1,1
+2021-06-09,chandigarh,3,0
+2021-06-09,dehradun,2,0
+2021-06-09,fatehabad,1,0
+2021-06-09,ganganagar,1,0
+2021-06-09,gautam buddha nagar,1,0
+2021-06-09,grand total,46,4
+2021-06-09,hisar,1,0
+2021-06-09,jammu,3,0
+2021-06-09,kaithal,2,0
+2021-06-09,karnal,3,0
+2021-06-09,kathua,2,0
+2021-06-09,kurukshetra,1,0
+2021-06-09,mandi,1,0
+2021-06-09,meerut,1,0
+2021-06-09,nanded,1,0
+2021-06-09,new delhi,1,1
+2021-06-09,panchkula,1,0
+2021-06-09,saharanpur,2,0
+2021-06-09,shahjahanpur,2,0
+2021-06-09,sirsa,8,1
+2021-06-09,sonipat,1,1
+2021-06-09,west delhi,1,0
+2021-06-10,ambala,4,0
+2021-06-10,bhiwani,1,0
+2021-06-10,bikaner,1,0
+2021-06-10,central delhi,1,1
+2021-06-10,chandigarh,3,0
+2021-06-10,dehradun,2,0
+2021-06-10,fatehabad,2,0
+2021-06-10,ganganagar,1,0
+2021-06-10,gautam buddha nagar,1,0
+2021-06-10,grand total,47,4
+2021-06-10,hisar,1,0
+2021-06-10,jammu,3,0
+2021-06-10,kaithal,2,0
+2021-06-10,karnal,3,0
+2021-06-10,kathua,2,0
+2021-06-10,kurukshetra,1,0
+2021-06-10,mandi,1,0
+2021-06-10,meerut,1,0
+2021-06-10,nanded,1,0
+2021-06-10,new delhi,1,1
+2021-06-10,panchkula,1,0
+2021-06-10,saharanpur,2,0
+2021-06-10,shahjahanpur,2,0
+2021-06-10,sirsa,8,1
+2021-06-10,sonipat,1,1
+2021-06-10,west delhi,1,0
+2021-06-11,ambala,4,0
+2021-06-11,bhiwani,1,0
+2021-06-11,bikaner,1,0
+2021-06-11,central,1,1
+2021-06-11,chandigarh,3,0
+2021-06-11,dehradun,3,0
+2021-06-11,fatehabad,3,0
+2021-06-11,ganganagar,1,0
+2021-06-11,gautam buddha nagar,1,0
+2021-06-11,grand total,50,4
+2021-06-11,hisar,1,0
+2021-06-11,jammu,3,0
+2021-06-11,kaithal,2,0
+2021-06-11,karnal,3,0
+2021-06-11,kathua,2,0
+2021-06-11,kurukshetra,2,0
+2021-06-11,mandi,1,0
+2021-06-11,meerut,1,0
+2021-06-11,nanded,1,0
+2021-06-11,new delhi,1,1
+2021-06-11,panchkula,1,0
+2021-06-11,saharanpur,2,0
+2021-06-11,shahjahanpur,2,0
+2021-06-11,sirsa,8,1
+2021-06-11,sonipat,1,1
+2021-06-11,west,1,0
+2021-06-12,ambala,4,0
+2021-06-12,bhiwani,1,0
+2021-06-12,bikaner,1,0
+2021-06-12,central,1,1
+2021-06-12,chandigarh,3,0
+2021-06-12,dehradun,3,0
+2021-06-12,fatehabad,3,0
+2021-06-12,ganganagar,1,0
+2021-06-12,gautam buddha nagar,1,0
+2021-06-12,grand total,50,4
+2021-06-12,hisar,1,0
+2021-06-12,jammu,3,0
+2021-06-12,kaithal,2,0
+2021-06-12,karnal,3,0
+2021-06-12,kathua,2,0
+2021-06-12,kurukshetra,2,0
+2021-06-12,mandi,1,0
+2021-06-12,meerut,1,0
+2021-06-12,nanded,1,0
+2021-06-12,new delhi,1,1
+2021-06-12,panchkula,1,0
+2021-06-12,saharanpur,2,0
+2021-06-12,shahjahanpur,2,0
+2021-06-12,sirsa,8,1
+2021-06-12,sonipat,1,1
+2021-06-12,west,1,0
+2021-06-13,ambala,4,0
+2021-06-13,bhiwani,1,0
+2021-06-13,bikaner,1,0
+2021-06-13,central,1,1
+2021-06-13,chandigarh,3,0
+2021-06-13,dehradun,3,0
+2021-06-13,fatehabad,3,0
+2021-06-13,ganganagar,1,0
+2021-06-13,gautam buddha nagar,1,0
+2021-06-13,grand total,51,4
+2021-06-13,hisar,1,0
+2021-06-13,jammu,3,0
+2021-06-13,kaithal,2,0
+2021-06-13,karnal,3,0
+2021-06-13,kathua,2,0
+2021-06-13,kurukshetra,2,0
+2021-06-13,mandi,1,0
+2021-06-13,meerut,1,0
+2021-06-13,nanded,1,0
+2021-06-13,new delhi,1,1
+2021-06-13,panchkula,1,0
+2021-06-13,saharanpur,1,0
+2021-06-13,shahjahanpur,2,0
+2021-06-13,sirsa,10,1
+2021-06-13,sonipat,1,1
+2021-06-13,west,1,0
+2021-06-14,ambala,4,0
+2021-06-14,bhiwani,1,0
+2021-06-14,bikaner,1,0
+2021-06-14,central,1,1
+2021-06-14,chandigarh,3,0
+2021-06-14,dehradun,3,0
+2021-06-14,fatehabad,3,0
+2021-06-14,ganganagar,1,0
+2021-06-14,gautam buddha nagar,1,0
+2021-06-14,grand total,53,4
+2021-06-14,hanumangarh,1,0
+2021-06-14,hisar,1,0
+2021-06-14,jammu,3,0
+2021-06-14,kaithal,2,0
+2021-06-14,karnal,3,0
+2021-06-14,kathua,2,0
+2021-06-14,kurukshetra,2,0
+2021-06-14,mandi,1,0
+2021-06-14,meerut,1,0
+2021-06-14,nanded,1,0
+2021-06-14,new delhi,1,1
+2021-06-14,panchkula,1,0
+2021-06-14,saharanpur,1,0
+2021-06-14,shahjahanpur,2,0
+2021-06-14,sirsa,11,0
+2021-06-14,sonipat,1,1
+2021-06-14,west,1,1
+2021-06-15,ambala,4,0
+2021-06-15,bhiwani,1,0
+2021-06-15,bikaner,1,0
+2021-06-15,central,1,1
+2021-06-15,chandigarh,3,0
+2021-06-15,dehradun,3,0
+2021-06-15,fatehabad,3,0
+2021-06-15,ganganagar,1,0
+2021-06-15,gautam buddha nagar,1,0
+2021-06-15,grand total,54,5
+2021-06-15,hanumangarh,1,0
+2021-06-15,hisar,1,0
+2021-06-15,jammu,4,0
+2021-06-15,kaithal,2,0
+2021-06-15,karnal,3,0
+2021-06-15,kathua,2,0
+2021-06-15,kurukshetra,2,0
+2021-06-15,mandi,1,0
+2021-06-15,meerut,1,0
+2021-06-15,nanded,1,0
+2021-06-15,new delhi,1,1
+2021-06-15,panchkula,1,0
+2021-06-15,saharanpur,2,0
+2021-06-15,shahjahanpur,2,0
+2021-06-15,sirsa,10,0
+2021-06-15,sonipat,1,2
+2021-06-15,west,1,1
+2021-06-16,ambala,4,0
+2021-06-16,bhiwani,1,0
+2021-06-16,bikaner,1,0
+2021-06-16,central,1,1
+2021-06-16,chandigarh,3,0
+2021-06-16,dehradun,3,0
+2021-06-16,fatehabad,3,0
+2021-06-16,ganganagar,1,0
+2021-06-16,gautam buddha nagar,1,0
+2021-06-16,grand total,57,5
+2021-06-16,hanumangarh,1,0
+2021-06-16,hisar,1,0
+2021-06-16,jammu,5,0
+2021-06-16,kaithal,2,0
+2021-06-16,karnal,3,0
+2021-06-16,kathua,2,0
+2021-06-16,kurukshetra,2,0
+2021-06-16,mandi,1,0
+2021-06-16,meerut,1,0
+2021-06-16,nanded,1,0
+2021-06-16,new delhi,1,1
+2021-06-16,panchkula,1,0
+2021-06-16,saharanpur,2,0
+2021-06-16,shahjahanpur,2,0
+2021-06-16,sirmaur,1,0
+2021-06-16,sirsa,11,2
+2021-06-16,sonipat,1,1
+2021-06-16,west,1,0
+2021-06-17,ambala,4,1
+2021-06-17,bhiwani,1,0
+2021-06-17,bikaner,1,0
+2021-06-17,central,1,1
+2021-06-17,chandigarh,3,0
+2021-06-17,dehradun,3,0
+2021-06-17,fatehabad,3,0
+2021-06-17,ganganagar,1,0
+2021-06-17,gautam buddha nagar,1,0
+2021-06-17,grand total,57,6
+2021-06-17,hanumangarh,1,0
+2021-06-17,hisar,1,0
+2021-06-17,jammu,5,0
+2021-06-17,kaithal,2,0
+2021-06-17,karnal,3,0
+2021-06-17,kathua,2,0
+2021-06-17,kurukshetra,2,0
+2021-06-17,mandi,1,0
+2021-06-17,meerut,1,0
+2021-06-17,nanded,1,0
+2021-06-17,new delhi,1,1
+2021-06-17,panchkula,1,0
+2021-06-17,saharanpur,2,0
+2021-06-17,shahjahanpur,2,0
+2021-06-17,sirmaur,1,0
+2021-06-17,sirsa,11,2
+2021-06-17,sonipat,1,1
+2021-06-17,west,1,0
+2021-06-18,ambala,4,1
+2021-06-18,bhiwani,1,0
+2021-06-18,bikaner,1,0
+2021-06-18,central delhi,1,1
+2021-06-18,chandigarh,3,0
+2021-06-18,dehradun,3,0
+2021-06-18,fatehabad,3,0
+2021-06-18,ganganagar,1,0
+2021-06-18,gautam buddha nagar,1,0
+2021-06-18,grand total,58,6
+2021-06-18,hanumangarh,1,0
+2021-06-18,hisar,1,0
+2021-06-18,jammu,5,0
+2021-06-18,kaithal,3,0
+2021-06-18,karnal,3,0
+2021-06-18,kathua,2,0
+2021-06-18,kurukshetra,2,0
+2021-06-18,mandi,1,0
+2021-06-18,meerut,1,0
+2021-06-18,nanded,1,0
+2021-06-18,new delhi,1,1
+2021-06-18,panchkula,1,0
+2021-06-18,saharanpur,2,0
+2021-06-18,shahjahanpur,2,0
+2021-06-18,sirmaur,1,0
+2021-06-18,sirsa,11,2
+2021-06-18,sonipat,1,1
+2021-06-18,west delhi,1,0
+2021-06-19,ambala,4,1
+2021-06-19,bhiwani,1,0
+2021-06-19,bikaner,1,0
+2021-06-19,central delhi,1,1
+2021-06-19,chandigarh,3,0
+2021-06-19,dehradun,3,0
+2021-06-19,fatehabad,3,0
+2021-06-19,ganganagar,1,0
+2021-06-19,gautam buddha nagar,1,0
+2021-06-19,grand total,58,6
+2021-06-19,hanumangarh,1,0
+2021-06-19,hisar,1,0
+2021-06-19,jammu,5,0
+2021-06-19,kaithal,3,0
+2021-06-19,karnal,3,0
+2021-06-19,kathua,2,0
+2021-06-19,kurukshetra,2,0
+2021-06-19,mandi,1,0
+2021-06-19,meerut,1,0
+2021-06-19,nanded,1,0
+2021-06-19,new delhi,1,1
+2021-06-19,panchkula,1,0
+2021-06-19,saharanpur,2,0
+2021-06-19,shahjahanpur,2,0
+2021-06-19,sirmaur,1,0
+2021-06-19,sirsa,11,2
+2021-06-19,sonipat,1,1
+2021-06-19,west delhi,1,0
+2021-06-20,ambala,4,1
+2021-06-20,bhiwani,1,0
+2021-06-20,bikaner,1,0
+2021-06-20,central delhi,1,1
+2021-06-20,chandigarh,3,0
+2021-06-20,dehradun,3,0
+2021-06-20,fatehabad,3,0
+2021-06-20,ganganagar,1,0
+2021-06-20,gautam buddha nagar,1,0
+2021-06-20,grand total,58,6
+2021-06-20,hanumangarh,1,0
+2021-06-20,hisar,1,0
+2021-06-20,jammu,5,0
+2021-06-20,kaithal,3,0
+2021-06-20,karnal,3,0
+2021-06-20,kathua,2,0
+2021-06-20,kurukshetra,2,0
+2021-06-20,mandi,1,0
+2021-06-20,meerut,1,0
+2021-06-20,nanded,1,0
+2021-06-20,new delhi,1,1
+2021-06-20,panchkula,1,0
+2021-06-20,saharanpur,2,0
+2021-06-20,shahjahanpur,2,0
+2021-06-20,sirmaur,1,0
+2021-06-20,sirsa,11,2
+2021-06-20,sonipat,1,1
+2021-06-20,west delhi,1,0
 2021-06-21,ambala,4,1
 2021-06-21,bhiwani,1,0
 2021-06-21,bikaner,1,0
@@ -965,6 +534,7 @@ date,city,patients,deaths
 2021-06-21,fatehabad,3,0
 2021-06-21,ganganagar,1,0
 2021-06-21,gautam buddha nagar,1,0
+2021-06-21,grand total,60,6
 2021-06-21,hanumangarh,1,0
 2021-06-21,hisar,1,0
 2021-06-21,jaipur,1,0
@@ -984,530 +554,960 @@ date,city,patients,deaths
 2021-06-21,sirsa,12,2
 2021-06-21,sonipat,1,1
 2021-06-21,west,1,0
-2021-06-21,grand total,60,6
-2021-06-20,ambala,4,1
-2021-06-20,bhiwani,1,0
-2021-06-20,bikaner,1,0
-2021-06-20,central delhi,1,1
-2021-06-20,chandigarh,3,0
-2021-06-20,dehradun,3,0
-2021-06-20,fatehabad,3,0
-2021-06-20,ganganagar,1,0
-2021-06-20,gautam buddha nagar,1,0
-2021-06-20,hanumangarh,1,0
-2021-06-20,hisar,1,0
-2021-06-20,jammu,5,0
-2021-06-20,kaithal,3,0
-2021-06-20,karnal,3,0
-2021-06-20,kathua,2,0
-2021-06-20,kurukshetra,2,0
-2021-06-20,mandi,1,0
-2021-06-20,meerut,1,0
-2021-06-20,nanded,1,0
-2021-06-20,new delhi,1,1
-2021-06-20,panchkula,1,0
-2021-06-20,saharanpur,2,0
-2021-06-20,shahjahanpur,2,0
-2021-06-20,sirmaur,1,0
-2021-06-20,sirsa,11,2
-2021-06-20,sonipat,1,1
-2021-06-20,west delhi,1,0
-2021-06-20,grand total,58,6
-2021-06-19,ambala,4,1
-2021-06-19,bhiwani,1,0
-2021-06-19,bikaner,1,0
-2021-06-19,central delhi,1,1
-2021-06-19,chandigarh,3,0
-2021-06-19,dehradun,3,0
-2021-06-19,fatehabad,3,0
-2021-06-19,ganganagar,1,0
-2021-06-19,gautam buddha nagar,1,0
-2021-06-19,hanumangarh,1,0
-2021-06-19,hisar,1,0
-2021-06-19,jammu,5,0
-2021-06-19,kaithal,3,0
-2021-06-19,karnal,3,0
-2021-06-19,kathua,2,0
-2021-06-19,kurukshetra,2,0
-2021-06-19,mandi,1,0
-2021-06-19,meerut,1,0
-2021-06-19,nanded,1,0
-2021-06-19,new delhi,1,1
-2021-06-19,panchkula,1,0
-2021-06-19,saharanpur,2,0
-2021-06-19,shahjahanpur,2,0
-2021-06-19,sirmaur,1,0
-2021-06-19,sirsa,11,2
-2021-06-19,sonipat,1,1
-2021-06-19,west delhi,1,0
-2021-06-19,grand total,58,6
-2021-06-18,ambala,4,1
-2021-06-18,bhiwani,1,0
-2021-06-18,bikaner,1,0
-2021-06-18,central delhi,1,1
-2021-06-18,chandigarh,3,0
-2021-06-18,dehradun,3,0
-2021-06-18,fatehabad,3,0
-2021-06-18,ganganagar,1,0
-2021-06-18,gautam buddha nagar,1,0
-2021-06-18,hanumangarh,1,0
-2021-06-18,hisar,1,0
-2021-06-18,jammu,5,0
-2021-06-18,kaithal,3,0
-2021-06-18,karnal,3,0
-2021-06-18,kathua,2,0
-2021-06-18,kurukshetra,2,0
-2021-06-18,mandi,1,0
-2021-06-18,meerut,1,0
-2021-06-18,nanded,1,0
-2021-06-18,new delhi,1,1
-2021-06-18,panchkula,1,0
-2021-06-18,saharanpur,2,0
-2021-06-18,shahjahanpur,2,0
-2021-06-18,sirmaur,1,0
-2021-06-18,sirsa,11,2
-2021-06-18,sonipat,1,1
-2021-06-18,west delhi,1,0
-2021-06-18,grand total,58,6
-2021-06-17,ambala,4,1
-2021-06-17,bhiwani,1,0
-2021-06-17,bikaner,1,0
-2021-06-17,central,1,1
-2021-06-17,chandigarh,3,0
-2021-06-17,dehradun,3,0
-2021-06-17,fatehabad,3,0
-2021-06-17,ganganagar,1,0
-2021-06-17,gautam buddha nagar,1,0
-2021-06-17,hanumangarh,1,0
-2021-06-17,hisar,1,0
-2021-06-17,jammu,5,0
-2021-06-17,kaithal,2,0
-2021-06-17,karnal,3,0
-2021-06-17,kathua,2,0
-2021-06-17,kurukshetra,2,0
-2021-06-17,mandi,1,0
-2021-06-17,meerut,1,0
-2021-06-17,nanded,1,0
-2021-06-17,new delhi,1,1
-2021-06-17,panchkula,1,0
-2021-06-17,saharanpur,2,0
-2021-06-17,shahjahanpur,2,0
-2021-06-17,sirmaur,1,0
-2021-06-17,sirsa,11,2
-2021-06-17,sonipat,1,1
-2021-06-17,west,1,0
-2021-06-17,grand total,57,6
-2021-06-16,ambala,4,0
-2021-06-16,bhiwani,1,0
-2021-06-16,bikaner,1,0
-2021-06-16,central,1,1
-2021-06-16,chandigarh,3,0
-2021-06-16,dehradun,3,0
-2021-06-16,fatehabad,3,0
-2021-06-16,ganganagar,1,0
-2021-06-16,gautam buddha nagar,1,0
-2021-06-16,hanumangarh,1,0
-2021-06-16,hisar,1,0
-2021-06-16,jammu,5,0
-2021-06-16,kaithal,2,0
-2021-06-16,karnal,3,0
-2021-06-16,kathua,2,0
-2021-06-16,kurukshetra,2,0
-2021-06-16,mandi,1,0
-2021-06-16,meerut,1,0
-2021-06-16,nanded,1,0
-2021-06-16,new delhi,1,1
-2021-06-16,panchkula,1,0
-2021-06-16,saharanpur,2,0
-2021-06-16,shahjahanpur,2,0
-2021-06-16,sirmaur,1,0
-2021-06-16,sirsa,11,2
-2021-06-16,sonipat,1,1
-2021-06-16,west,1,0
-2021-06-16,grand total,57,5
-2021-06-15,ambala,4,0
-2021-06-15,bhiwani,1,0
-2021-06-15,bikaner,1,0
-2021-06-15,central,1,1
-2021-06-15,chandigarh,3,0
-2021-06-15,dehradun,3,0
-2021-06-15,fatehabad,3,0
-2021-06-15,ganganagar,1,0
-2021-06-15,gautam buddha nagar,1,0
-2021-06-15,hanumangarh,1,0
-2021-06-15,hisar,1,0
-2021-06-15,jammu,4,0
-2021-06-15,kaithal,2,0
-2021-06-15,karnal,3,0
-2021-06-15,kathua,2,0
-2021-06-15,kurukshetra,2,0
-2021-06-15,mandi,1,0
-2021-06-15,meerut,1,0
-2021-06-15,nanded,1,0
-2021-06-15,new delhi,1,1
-2021-06-15,panchkula,1,0
-2021-06-15,saharanpur,2,0
-2021-06-15,shahjahanpur,2,0
-2021-06-15,sirsa,10,0
-2021-06-15,sonipat,1,2
-2021-06-15,west,1,1
-2021-06-15,grand total,54,5
-2021-06-14,ambala,4,0
-2021-06-14,bhiwani,1,0
-2021-06-14,bikaner,1,0
-2021-06-14,central,1,1
-2021-06-14,chandigarh,3,0
-2021-06-14,dehradun,3,0
-2021-06-14,fatehabad,3,0
-2021-06-14,ganganagar,1,0
-2021-06-14,gautam buddha nagar,1,0
-2021-06-14,hanumangarh,1,0
-2021-06-14,hisar,1,0
-2021-06-14,jammu,3,0
-2021-06-14,kaithal,2,0
-2021-06-14,karnal,3,0
-2021-06-14,kathua,2,0
-2021-06-14,kurukshetra,2,0
-2021-06-14,mandi,1,0
-2021-06-14,meerut,1,0
-2021-06-14,nanded,1,0
-2021-06-14,new delhi,1,1
-2021-06-14,panchkula,1,0
-2021-06-14,saharanpur,1,0
-2021-06-14,shahjahanpur,2,0
-2021-06-14,sirsa,11,0
-2021-06-14,sonipat,1,1
-2021-06-14,west,1,1
-2021-06-14,grand total,53,4
-2021-06-13,ambala,4,0
-2021-06-13,bhiwani,1,0
-2021-06-13,bikaner,1,0
-2021-06-13,central,1,1
-2021-06-13,chandigarh,3,0
-2021-06-13,dehradun,3,0
-2021-06-13,fatehabad,3,0
-2021-06-13,ganganagar,1,0
-2021-06-13,gautam buddha nagar,1,0
-2021-06-13,hisar,1,0
-2021-06-13,jammu,3,0
-2021-06-13,kaithal,2,0
-2021-06-13,karnal,3,0
-2021-06-13,kathua,2,0
-2021-06-13,kurukshetra,2,0
-2021-06-13,mandi,1,0
-2021-06-13,meerut,1,0
-2021-06-13,nanded,1,0
-2021-06-13,new delhi,1,1
-2021-06-13,panchkula,1,0
-2021-06-13,saharanpur,1,0
-2021-06-13,shahjahanpur,2,0
-2021-06-13,sirsa,10,1
-2021-06-13,sonipat,1,1
-2021-06-13,west,1,0
-2021-06-13,grand total,51,4
-2021-06-12,ambala,4,0
-2021-06-12,bhiwani,1,0
-2021-06-12,bikaner,1,0
-2021-06-12,central,1,1
-2021-06-12,chandigarh,3,0
-2021-06-12,dehradun,3,0
-2021-06-12,fatehabad,3,0
-2021-06-12,ganganagar,1,0
-2021-06-12,gautam buddha nagar,1,0
-2021-06-12,hisar,1,0
-2021-06-12,jammu,3,0
-2021-06-12,kaithal,2,0
-2021-06-12,karnal,3,0
-2021-06-12,kathua,2,0
-2021-06-12,kurukshetra,2,0
-2021-06-12,mandi,1,0
-2021-06-12,meerut,1,0
-2021-06-12,nanded,1,0
-2021-06-12,new delhi,1,1
-2021-06-12,panchkula,1,0
-2021-06-12,saharanpur,2,0
-2021-06-12,shahjahanpur,2,0
-2021-06-12,sirsa,8,1
-2021-06-12,sonipat,1,1
-2021-06-12,west,1,0
-2021-06-12,grand total,50,4
-2021-06-11,ambala,4,0
-2021-06-11,bhiwani,1,0
-2021-06-11,bikaner,1,0
-2021-06-11,central,1,1
-2021-06-11,chandigarh,3,0
-2021-06-11,dehradun,3,0
-2021-06-11,fatehabad,3,0
-2021-06-11,ganganagar,1,0
-2021-06-11,gautam buddha nagar,1,0
-2021-06-11,hisar,1,0
-2021-06-11,jammu,3,0
-2021-06-11,kaithal,2,0
-2021-06-11,karnal,3,0
-2021-06-11,kathua,2,0
-2021-06-11,kurukshetra,2,0
-2021-06-11,mandi,1,0
-2021-06-11,meerut,1,0
-2021-06-11,nanded,1,0
-2021-06-11,new delhi,1,1
-2021-06-11,panchkula,1,0
-2021-06-11,saharanpur,2,0
-2021-06-11,shahjahanpur,2,0
-2021-06-11,sirsa,8,1
-2021-06-11,sonipat,1,1
-2021-06-11,west,1,0
-2021-06-11,grand total,50,4
-2021-06-10,ambala,4,0
-2021-06-10,bhiwani,1,0
-2021-06-10,bikaner,1,0
-2021-06-10,central delhi,1,1
-2021-06-10,chandigarh,3,0
-2021-06-10,dehradun,2,0
-2021-06-10,fatehabad,2,0
-2021-06-10,ganganagar,1,0
-2021-06-10,gautam buddha nagar,1,0
-2021-06-10,hisar,1,0
-2021-06-10,jammu,3,0
-2021-06-10,kaithal,2,0
-2021-06-10,karnal,3,0
-2021-06-10,kathua,2,0
-2021-06-10,kurukshetra,1,0
-2021-06-10,mandi,1,0
-2021-06-10,meerut,1,0
-2021-06-10,nanded,1,0
-2021-06-10,new delhi,1,1
-2021-06-10,panchkula,1,0
-2021-06-10,saharanpur,2,0
-2021-06-10,shahjahanpur,2,0
-2021-06-10,sirsa,8,1
-2021-06-10,sonipat,1,1
-2021-06-10,west delhi,1,0
-2021-06-10,grand total,47,4
-2021-06-09,ambala,4,0
-2021-06-09,bhiwani,1,0
-2021-06-09,bikaner,1,0
-2021-06-09,central delhi,1,1
-2021-06-09,chandigarh,3,0
-2021-06-09,dehradun,2,0
-2021-06-09,fatehabad,1,0
-2021-06-09,ganganagar,1,0
-2021-06-09,gautam buddha nagar,1,0
-2021-06-09,hisar,1,0
-2021-06-09,jammu,3,0
-2021-06-09,kaithal,2,0
-2021-06-09,karnal,3,0
-2021-06-09,kathua,2,0
-2021-06-09,kurukshetra,1,0
-2021-06-09,mandi,1,0
-2021-06-09,meerut,1,0
-2021-06-09,nanded,1,0
-2021-06-09,new delhi,1,1
-2021-06-09,panchkula,1,0
-2021-06-09,saharanpur,2,0
-2021-06-09,shahjahanpur,2,0
-2021-06-09,sirsa,8,1
-2021-06-09,sonipat,1,1
-2021-06-09,west delhi,1,0
-2021-06-09,grand total,46,4
-2021-06-08,ambala,4,0
-2021-06-08,bhiwani,1,0
-2021-06-08,bikaner,1,0
-2021-06-08,central delhi,1,1
-2021-06-08,chandigarh,3,0
-2021-06-08,dehradun,2,0
-2021-06-08,fatehabad,1,0
-2021-06-08,ganganagar,1,0
-2021-06-08,gautam buddha nagar,1,0
-2021-06-08,hanumangarh,1,0
-2021-06-08,hisar,1,0
-2021-06-08,jammu,3,0
-2021-06-08,kaithal,2,0
-2021-06-08,karnal,3,0
-2021-06-08,kathua,2,0
-2021-06-08,kurukshetra,1,0
-2021-06-08,mandi,1,0
-2021-06-08,meerut,1,0
-2021-06-08,nanded,1,0
-2021-06-08,new delhi,1,1
-2021-06-08,panchkula,1,0
-2021-06-08,saharanpur,2,0
-2021-06-08,shahjahanpur,2,0
-2021-06-08,sirsa,10,2
-2021-06-08,sonipat,1,1
-2021-06-08,west delhi,1,0
-2021-06-08,grand total,49,5
-2021-06-07,ambala,4,0
-2021-06-07,bhiwani,1,0
-2021-06-07,bikaner,1,0
-2021-06-07,central,1,1
-2021-06-07,chandigarh,3,0
-2021-06-07,dehradun,2,0
-2021-06-07,fatehabad,1,0
-2021-06-07,ganganagar,1,0
-2021-06-07,gautam buddha nagar,1,0
-2021-06-07,hisar,1,0
-2021-06-07,jammu,3,0
-2021-06-07,kaithal,2,0
-2021-06-07,karnal,3,0
-2021-06-07,kathua,2,0
-2021-06-07,kurukshetra,1,0
-2021-06-07,mandi,1,0
-2021-06-07,meerut,1,0
-2021-06-07,nanded,1,0
-2021-06-07,new delhi,1,1
-2021-06-07,panchkula,1,0
-2021-06-07,saharanpur,2,0
-2021-06-07,shahjahanpur,2,0
-2021-06-07,sirsa,10,2
-2021-06-07,sonipat,1,1
-2021-06-07,west,1,0
-2021-06-07,grand total,48,5
-2021-06-06,ambala,3,0
-2021-06-06,bhiwani,1,0
-2021-06-06,bikaner,1,0
-2021-06-06,central delhi,1,1
-2021-06-06,chandigarh,3,1
-2021-06-06,dehradun,2,0
-2021-06-06,fatehabad,1,0
-2021-06-06,ganganagar,1,0
-2021-06-06,gautam buddha nagar,1,0
-2021-06-06,hisar,1,0
-2021-06-06,jammu,3,0
-2021-06-06,kaithal,2,0
-2021-06-06,karnal,3,1
-2021-06-06,kathua,2,0
-2021-06-06,kurukshetra,1,0
-2021-06-06,mandi,1,0
-2021-06-06,meerut,1,0
-2021-06-06,nanded,1,0
-2021-06-06,new delhi,1,1
-2021-06-06,panchkula,1,0
-2021-06-06,saharanpur,2,0
-2021-06-06,shahjahanpur,2,0
-2021-06-06,sirsa,10,2
-2021-06-06,sonipat,1,1
-2021-06-06,west delhi,1,0
-2021-06-06,grand total,47,7
-2021-06-04,ambala,2,0
-2021-06-04,bhiwani,1,0
-2021-06-04,bikaner,1,0
-2021-06-04,central delhi,1,0
-2021-06-04,chandigarh,3,1
-2021-06-04,dehradun,2,0
-2021-06-04,fatehabad,1,0
-2021-06-04,ganganagar,1,0
-2021-06-04,gautam buddha nagar,1,0
-2021-06-04,hisar,1,0
-2021-06-04,jammu,3,0
-2021-06-04,kaithal,2,0
-2021-06-04,karnal,3,1
-2021-06-04,kathua,2,0
-2021-06-04,kurukshetra,1,0
-2021-06-04,mandi,1,0
-2021-06-04,meerut,1,0
-2021-06-04,nanded,1,0
-2021-06-04,new delhi,1,1
-2021-06-04,panchkula,1,0
-2021-06-04,saharanpur,2,0
-2021-06-04,shahjahanpur,2,0
-2021-06-04,sirsa,10,2
-2021-06-04,sonipat,1,1
-2021-06-04,west delhi,1,0
-2021-06-04,grand total,46,6
-2021-06-03,ambala,2,0
-2021-06-03,bhiwani,1,0
-2021-06-03,bikaner,1,0
-2021-06-03,central delhi,1,0
-2021-06-03,chandigarh,3,1
-2021-06-03,dehradun,2,0
-2021-06-03,fatehabad,1,0
-2021-06-03,ganganagar,1,0
-2021-06-03,gautam buddha nagar,1,0
-2021-06-03,hisar,1,0
-2021-06-03,jammu,3,0
-2021-06-03,kaithal,2,0
-2021-06-03,karnal,3,1
-2021-06-03,kathua,2,0
-2021-06-03,kurukshetra,1,0
-2021-06-03,mandi,1,0
-2021-06-03,meerut,1,0
-2021-06-03,nanded,1,0
-2021-06-03,new delhi,1,1
-2021-06-03,panchkula,1,0
-2021-06-03,saharanpur,2,0
-2021-06-03,shahjahanpur,2,0
-2021-06-03,sirsa,10,2
-2021-06-03,sonipat,1,1
-2021-06-03,west delhi,1,0
-2021-06-03,grand total,46,6
-2021-06-01,ambala,1,0
-2021-06-01,bhiwani,1,0
-2021-06-01,central delhi,1,0
-2021-06-01,chandigarh,3,0
-2021-06-01,dehradun,2,0
-2021-06-01,fatehabad,1,0
-2021-06-01,ganganagar,1,0
-2021-06-01,gautam buddhanagar,1,0
-2021-06-01,jammu,2,0
-2021-06-01,kaithal,2,0
-2021-06-01,karnal,3,0
-2021-06-01,kathua,2,0
-2021-06-01,kurukshetra,1,0
-2021-06-01,mandi,1,0
-2021-06-01,meerut,1,0
-2021-06-01,nanded,1,0
-2021-06-01,new delhi,1,1
-2021-06-01,panchkula,1,0
-2021-06-01,saharanpur,2,0
-2021-06-01,shahjahanpur,2,0
-2021-06-01,sirsa,9,1
-2021-06-01,sonipat,1,0
-2021-06-01,west delhi,1,0
-2021-06-01,grand total,41,2
-2021-05-31,ambala,1,0
-2021-05-31,bhiwani,1,0
-2021-05-31,central delhi,1,0
-2021-05-31,chandigarh,3,0
-2021-05-31,dehradun,2,0
-2021-05-31,fatehabad,1,0
-2021-05-31,ganganagar,1,0
-2021-05-31,gautam buddha nagar,1,0
-2021-05-31,jammu,2,0
-2021-05-31,kaithal,2,0
-2021-05-31,karnal,3,0
-2021-05-31,kathua,2,0
-2021-05-31,kurukshetra,1,0
-2021-05-31,mandi,1,0
-2021-05-31,meerut,1,0
-2021-05-31,nanded,1,0
-2021-05-31,new delhi,1,1
-2021-05-31,panchkula,1,0
-2021-05-31,saharanpur,2,0
-2021-05-31,shahjahanpur,2,0
-2021-05-31,sirsa,9,1
-2021-05-31,sonipat,1,0
-2021-05-31,west delhi,1,0
-2021-05-31,grand total,41,2
-2021-05-30,ambala,1,0
-2021-05-30,bhiwani,1,0
-2021-05-30,central delhi,1,0
-2021-05-30,chandigarh,2,0
-2021-05-30,dehradun,1,0
-2021-05-30,fatehabad,1,0
-2021-05-30,ganganagar,1,0
-2021-05-30,gautam buddhanagar,1,0
-2021-05-30,jammu,2,0
-2021-05-30,kaithal,2,0
-2021-05-30,karnal,2,0
-2021-05-30,kathua,2,0
-2021-05-30,kurukshetra,1,0
-2021-05-30,mandi,1,0
-2021-05-30,meerut,1,0
-2021-05-30,nanded,1,0
-2021-05-30,new delhi,1,1
-2021-05-30,panchkula,1,0
-2021-05-30,saharanpur,2,0
-2021-05-30,shahjahanpur,1,0
-2021-05-30,sirsa,8,1
-2021-05-30,west delhi,1,0
-2021-05-30,grand total,35,2
+2021-06-22,ambala,4,1
+2021-06-22,bhiwani,1,0
+2021-06-22,bikaner,1,0
+2021-06-22,central delhi,1,1
+2021-06-22,chandigarh,3,0
+2021-06-22,dehradun,3,0
+2021-06-22,fatehabad,3,0
+2021-06-22,ganganagar,1,0
+2021-06-22,gautam buddha nagar,1,0
+2021-06-22,grand total,60,6
+2021-06-22,hanumangarh,1,0
+2021-06-22,hisar,1,0
+2021-06-22,jaipur,1,0
+2021-06-22,jammu,5,0
+2021-06-22,kaithal,3,0
+2021-06-22,karnal,3,0
+2021-06-22,kathua,2,0
+2021-06-22,kurukshetra,2,0
+2021-06-22,mandi,1,0
+2021-06-22,meerut,1,0
+2021-06-22,nanded,1,0
+2021-06-22,new delhi,1,1
+2021-06-22,panchkula,1,0
+2021-06-22,saharanpur,2,0
+2021-06-22,shahjahanpur,2,0
+2021-06-22,sirmaur,1,0
+2021-06-22,sirsa,12,2
+2021-06-22,sonipat,1,1
+2021-06-22,west delhi,1,0
+2021-06-23,ambala,4,1
+2021-06-23,bhiwani,1,0
+2021-06-23,bikaner,1,0
+2021-06-23,central delhi,1,1
+2021-06-23,chandigarh,3,0
+2021-06-23,dehradun,3,0
+2021-06-23,fatehabad,3,0
+2021-06-23,ganganagar,1,0
+2021-06-23,gautam buddha nagar,1,0
+2021-06-23,grand total,60,6
+2021-06-23,hanumangarh,1,0
+2021-06-23,hisar,1,0
+2021-06-23,jaipur,1,0
+2021-06-23,jammu,5,0
+2021-06-23,kaithal,3,0
+2021-06-23,karnal,3,0
+2021-06-23,kathua,2,0
+2021-06-23,kurukshetra,2,0
+2021-06-23,mandi,1,0
+2021-06-23,meerut,1,0
+2021-06-23,nanded,1,0
+2021-06-23,new delhi,1,1
+2021-06-23,panchkula,1,0
+2021-06-23,saharanpur,2,0
+2021-06-23,shahjahanpur,2,0
+2021-06-23,sirmaur,1,0
+2021-06-23,sirsa,12,2
+2021-06-23,sonipat,1,1
+2021-06-23,west delhi,1,0
+2021-06-24,ambala,4,1
+2021-06-24,bhiwani,1,0
+2021-06-24,bikaner,1,0
+2021-06-24,central delhi,1,1
+2021-06-24,chandigarh,3,0
+2021-06-24,dehradun,3,0
+2021-06-24,fatehabad,3,0
+2021-06-24,ganganagar,1,0
+2021-06-24,gautam buddha nagar,1,0
+2021-06-24,grand total,60,6
+2021-06-24,hanumangarh,1,0
+2021-06-24,hisar,1,0
+2021-06-24,jaipur,1,0
+2021-06-24,jammu,5,0
+2021-06-24,kaithal,3,0
+2021-06-24,karnal,3,0
+2021-06-24,kathua,2,0
+2021-06-24,kurukshetra,2,0
+2021-06-24,mandi,1,0
+2021-06-24,meerut,1,0
+2021-06-24,nanded,1,0
+2021-06-24,new delhi,1,1
+2021-06-24,panchkula,1,0
+2021-06-24,saharanpur,2,0
+2021-06-24,shahjahanpur,2,0
+2021-06-24,sirmaur,1,0
+2021-06-24,sirsa,12,2
+2021-06-24,sonipat,1,1
+2021-06-24,west delhi,1,0
+2021-06-25,ambala,4,1
+2021-06-25,bhiwani,1,0
+2021-06-25,bikaner,1,0
+2021-06-25,central,1,1
+2021-06-25,chandigarh,2,0
+2021-06-25,dehradun,3,0
+2021-06-25,fatehabad,3,0
+2021-06-25,ganganagar,1,0
+2021-06-25,gautam buddha nagar,1,0
+2021-06-25,grand total,59,6
+2021-06-25,hanumangarh,1,0
+2021-06-25,hisar,1,0
+2021-06-25,jaipur,1,0
+2021-06-25,jammu,5,0
+2021-06-25,kaithal,3,0
+2021-06-25,karnal,3,0
+2021-06-25,kathua,2,0
+2021-06-25,kurukshetra,2,0
+2021-06-25,mandi,1,0
+2021-06-25,meerut,1,0
+2021-06-25,nanded,1,0
+2021-06-25,new delhi,1,1
+2021-06-25,panchkula,1,0
+2021-06-25,saharanpur,2,0
+2021-06-25,shahjahanpur,2,0
+2021-06-25,sirmaur,1,0
+2021-06-25,sirsa,12,2
+2021-06-25,sonipat,1,1
+2021-06-25,west,1,0
+2021-06-26,ambala,4,1
+2021-06-26,bhiwani,1,0
+2021-06-26,bikaner,1,0
+2021-06-26,central,1,1
+2021-06-26,chandigarh,2,0
+2021-06-26,dehradun,3,0
+2021-06-26,fatehabad,3,0
+2021-06-26,ganganagar,1,0
+2021-06-26,gautam buddha nagar,1,0
+2021-06-26,grand total,60,6
+2021-06-26,hanumangarh,1,0
+2021-06-26,hisar,1,0
+2021-06-26,jaipur,1,0
+2021-06-26,jammu,6,0
+2021-06-26,kaithal,3,0
+2021-06-26,karnal,3,0
+2021-06-26,kathua,2,0
+2021-06-26,kurukshetra,2,0
+2021-06-26,mandi,1,0
+2021-06-26,meerut,1,0
+2021-06-26,nanded,1,0
+2021-06-26,new delhi,1,1
+2021-06-26,panchkula,1,0
+2021-06-26,saharanpur,2,0
+2021-06-26,shahjahanpur,2,0
+2021-06-26,sirmaur,1,0
+2021-06-26,sirsa,12,2
+2021-06-26,sonipat,1,1
+2021-06-26,west,1,0
+2021-06-27,ambala,4,1
+2021-06-27,bhiwani,1,0
+2021-06-27,bikaner,1,0
+2021-06-27,central,1,1
+2021-06-27,chandigarh,2,0
+2021-06-27,dehradun,3,0
+2021-06-27,fatehabad,3,0
+2021-06-27,ganganagar,1,0
+2021-06-27,gautam buddha nagar,1,0
+2021-06-27,grand total,61,6
+2021-06-27,hanumangarh,1,0
+2021-06-27,hisar,1,0
+2021-06-27,jaipur,1,0
+2021-06-27,jammu,6,0
+2021-06-27,kaithal,3,0
+2021-06-27,karnal,3,0
+2021-06-27,kathua,2,0
+2021-06-27,kurukshetra,2,0
+2021-06-27,mandi,1,0
+2021-06-27,meerut,1,0
+2021-06-27,nanded,1,0
+2021-06-27,new delhi,1,1
+2021-06-27,panchkula,1,0
+2021-06-27,saharanpur,2,0
+2021-06-27,shahjahanpur,2,0
+2021-06-27,sirmaur,1,0
+2021-06-27,sirsa,13,2
+2021-06-27,sonipat,1,1
+2021-06-27,west,1,0
+2021-06-28,ambala,4,1
+2021-06-28,bhiwani,1,0
+2021-06-28,bikaner,1,0
+2021-06-28,central,1,1
+2021-06-28,chandigarh,2,0
+2021-06-28,dehradun,3,0
+2021-06-28,fatehabad,4,0
+2021-06-28,ganganagar,1,0
+2021-06-28,gautam buddha nagar,1,0
+2021-06-28,grand total,62,6
+2021-06-28,hanumangarh,1,0
+2021-06-28,hisar,1,0
+2021-06-28,jaipur,1,0
+2021-06-28,jammu,6,0
+2021-06-28,kaithal,3,0
+2021-06-28,karnal,3,0
+2021-06-28,kathua,2,0
+2021-06-28,kurukshetra,2,0
+2021-06-28,mandi,1,0
+2021-06-28,meerut,1,0
+2021-06-28,nanded,1,0
+2021-06-28,new delhi,1,1
+2021-06-28,panchkula,1,0
+2021-06-28,saharanpur,2,0
+2021-06-28,shahjahanpur,2,0
+2021-06-28,sirmaur,1,0
+2021-06-28,sirsa,13,2
+2021-06-28,sonipat,1,1
+2021-06-28,west,1,0
+2021-06-29,ambala,4,1
+2021-06-29,bhiwani,1,0
+2021-06-29,bikaner,1,0
+2021-06-29,central,1,1
+2021-06-29,chandigarh,2,0
+2021-06-29,dehradun,3,0
+2021-06-29,fatehabad,4,0
+2021-06-29,ganganagar,1,0
+2021-06-29,gautam buddha nagar,1,0
+2021-06-29,grand total,63,6
+2021-06-29,hanumangarh,1,0
+2021-06-29,hisar,1,0
+2021-06-29,jaipur,1,0
+2021-06-29,jammu,7,0
+2021-06-29,kaithal,3,0
+2021-06-29,karnal,3,0
+2021-06-29,kathua,2,0
+2021-06-29,kurukshetra,2,0
+2021-06-29,mandi,1,0
+2021-06-29,meerut,1,0
+2021-06-29,nanded,1,0
+2021-06-29,new delhi,1,1
+2021-06-29,panchkula,1,0
+2021-06-29,saharanpur,2,0
+2021-06-29,shahjahanpur,2,0
+2021-06-29,sirmaur,1,0
+2021-06-29,sirsa,13,2
+2021-06-29,sonipat,1,1
+2021-06-29,west,1,0
+2021-06-30,ambala,4,1
+2021-06-30,bhiwani,1,0
+2021-06-30,bikaner,1,0
+2021-06-30,central,1,1
+2021-06-30,chandigarh,2,0
+2021-06-30,dehradun,3,0
+2021-06-30,fatehabad,4,0
+2021-06-30,ganganagar,1,0
+2021-06-30,gautam buddha nagar,1,0
+2021-06-30,grand total,64,6
+2021-06-30,hanumangarh,1,0
+2021-06-30,hisar,1,0
+2021-06-30,jaipur,1,0
+2021-06-30,jammu,7,0
+2021-06-30,kaithal,3,0
+2021-06-30,karnal,3,0
+2021-06-30,kathua,3,0
+2021-06-30,kurukshetra,2,0
+2021-06-30,mandi,1,0
+2021-06-30,meerut,1,0
+2021-06-30,nanded,1,0
+2021-06-30,new delhi,1,1
+2021-06-30,panchkula,1,0
+2021-06-30,saharanpur,2,0
+2021-06-30,shahjahanpur,2,0
+2021-06-30,sirmaur,1,0
+2021-06-30,sirsa,13,2
+2021-06-30,sonipat,1,1
+2021-06-30,west,1,0
+2021-07-01,ambala,4,1
+2021-07-01,bhiwani,1,0
+2021-07-01,bikaner,1,0
+2021-07-01,central,1,1
+2021-07-01,chandigarh,3,0
+2021-07-01,dehradun,3,0
+2021-07-01,fatehabad,4,0
+2021-07-01,ganganagar,1,0
+2021-07-01,gautam buddha nagar,1,0
+2021-07-01,grand total,65,6
+2021-07-01,hanumangarh,1,0
+2021-07-01,hisar,1,0
+2021-07-01,jaipur,1,0
+2021-07-01,jammu,7,0
+2021-07-01,kaithal,3,0
+2021-07-01,karnal,3,0
+2021-07-01,kathua,3,0
+2021-07-01,kurukshetra,2,0
+2021-07-01,mandi,1,0
+2021-07-01,meerut,1,0
+2021-07-01,nanded,1,0
+2021-07-01,new delhi,1,1
+2021-07-01,panchkula,1,0
+2021-07-01,saharanpur,2,0
+2021-07-01,shahjahanpur,2,0
+2021-07-01,sirmaur,1,0
+2021-07-01,sirsa,13,2
+2021-07-01,sonipat,1,1
+2021-07-01,west,1,0
+2021-07-02,ambala,4,1
+2021-07-02,bhiwani,1,0
+2021-07-02,bikaner,1,0
+2021-07-02,central,1,1
+2021-07-02,chandigarh,3,0
+2021-07-02,dehradun,3,0
+2021-07-02,fatehabad,4,0
+2021-07-02,ganganagar,1,0
+2021-07-02,gautam buddha nagar,1,0
+2021-07-02,grand total,65,6
+2021-07-02,hanumangarh,1,0
+2021-07-02,hisar,1,0
+2021-07-02,jaipur,1,0
+2021-07-02,jammu,7,0
+2021-07-02,kaithal,3,0
+2021-07-02,karnal,3,0
+2021-07-02,kathua,3,0
+2021-07-02,kurukshetra,2,0
+2021-07-02,mandi,1,0
+2021-07-02,meerut,1,0
+2021-07-02,nanded,1,0
+2021-07-02,new delhi,1,1
+2021-07-02,panchkula,1,0
+2021-07-02,saharanpur,2,0
+2021-07-02,shahjahanpur,2,0
+2021-07-02,sirmaur,1,0
+2021-07-02,sirsa,13,2
+2021-07-02,sonipat,1,1
+2021-07-02,west,1,0
+2021-07-03,ambala,4,1
+2021-07-03,bhiwani,1,0
+2021-07-03,bikaner,1,0
+2021-07-03,central,1,1
+2021-07-03,chandigarh,3,0
+2021-07-03,dehradun,3,0
+2021-07-03,fatehabad,4,0
+2021-07-03,ganganagar,1,0
+2021-07-03,gautam buddha nagar,1,0
+2021-07-03,grand total,66,6
+2021-07-03,hanumangarh,1,0
+2021-07-03,hisar,1,0
+2021-07-03,jaipur,1,0
+2021-07-03,jammu,7,0
+2021-07-03,kaithal,3,0
+2021-07-03,karnal,3,0
+2021-07-03,kathua,3,0
+2021-07-03,kurukshetra,2,0
+2021-07-03,mandi,1,0
+2021-07-03,meerut,1,0
+2021-07-03,nanded,1,0
+2021-07-03,new delhi,2,1
+2021-07-03,panchkula,1,0
+2021-07-03,saharanpur,2,0
+2021-07-03,shahjahanpur,2,0
+2021-07-03,sirmaur,1,0
+2021-07-03,sirsa,13,2
+2021-07-03,sonipat,1,1
+2021-07-03,west,1,0
+2021-07-04,ambala,4,1
+2021-07-04,bhiwani,1,0
+2021-07-04,bikaner,1,0
+2021-07-04,central,1,1
+2021-07-04,chandigarh,3,0
+2021-07-04,dehradun,3,0
+2021-07-04,fatehabad,4,0
+2021-07-04,ganganagar,1,0
+2021-07-04,gautam buddha nagar,1,0
+2021-07-04,grand total,66,6
+2021-07-04,hanumangarh,1,0
+2021-07-04,hisar,1,0
+2021-07-04,jaipur,1,0
+2021-07-04,jammu,7,0
+2021-07-04,kaithal,3,0
+2021-07-04,karnal,3,0
+2021-07-04,kathua,3,0
+2021-07-04,kurukshetra,2,0
+2021-07-04,mandi,1,0
+2021-07-04,meerut,1,0
+2021-07-04,nanded,1,0
+2021-07-04,new delhi,2,1
+2021-07-04,panchkula,1,0
+2021-07-04,saharanpur,2,0
+2021-07-04,shahjahanpur,2,0
+2021-07-04,sirmaur,1,0
+2021-07-04,sirsa,13,2
+2021-07-04,sonipat,1,1
+2021-07-04,west,1,0
+2021-07-05,ambala,4,1
+2021-07-05,bhiwani,1,0
+2021-07-05,bikaner,1,0
+2021-07-05,central,1,1
+2021-07-05,chandigarh,3,0
+2021-07-05,dehradun,3,0
+2021-07-05,fatehabad,4,0
+2021-07-05,ganganagar,1,0
+2021-07-05,gautam buddha nagar,1,0
+2021-07-05,grand total,66,6
+2021-07-05,hanumangarh,1,0
+2021-07-05,hisar,1,0
+2021-07-05,jaipur,1,0
+2021-07-05,jammu,7,0
+2021-07-05,kaithal,3,0
+2021-07-05,karnal,3,0
+2021-07-05,kathua,3,0
+2021-07-05,kurukshetra,2,0
+2021-07-05,mandi,1,0
+2021-07-05,meerut,1,0
+2021-07-05,nanded,1,0
+2021-07-05,new delhi,2,1
+2021-07-05,panchkula,1,0
+2021-07-05,saharanpur,2,0
+2021-07-05,shahjahanpur,2,0
+2021-07-05,sirmaur,1,0
+2021-07-05,sirsa,13,2
+2021-07-05,sonipat,1,1
+2021-07-05,west,1,0
+2021-07-06,ambala,4,1
+2021-07-06,bhiwani,1,0
+2021-07-06,bikaner,1,0
+2021-07-06,central,1,1
+2021-07-06,chandigarh,4,0
+2021-07-06,dehradun,3,0
+2021-07-06,fatehabad,4,0
+2021-07-06,ganganagar,1,0
+2021-07-06,gautam buddha nagar,1,0
+2021-07-06,grand total,67,6
+2021-07-06,hanumangarh,1,0
+2021-07-06,hisar,1,0
+2021-07-06,jaipur,1,0
+2021-07-06,jammu,7,0
+2021-07-06,kaithal,3,0
+2021-07-06,karnal,3,0
+2021-07-06,kathua,3,0
+2021-07-06,kurukshetra,2,0
+2021-07-06,mandi,1,0
+2021-07-06,meerut,1,0
+2021-07-06,nanded,1,0
+2021-07-06,new delhi,2,1
+2021-07-06,panchkula,1,0
+2021-07-06,saharanpur,2,0
+2021-07-06,shahjahanpur,2,0
+2021-07-06,sirmaur,1,0
+2021-07-06,sirsa,13,2
+2021-07-06,sonipat,1,1
+2021-07-06,west,1,0
+2021-07-07,ambala,4,1
+2021-07-07,bhiwani,1,0
+2021-07-07,bikaner,1,0
+2021-07-07,central,1,1
+2021-07-07,chandigarh,4,0
+2021-07-07,dehradun,3,0
+2021-07-07,fatehabad,4,0
+2021-07-07,ganganagar,1,0
+2021-07-07,gautam buddha nagar,1,0
+2021-07-07,grand total,67,6
+2021-07-07,hanumangarh,1,0
+2021-07-07,hisar,1,0
+2021-07-07,jaipur,1,0
+2021-07-07,jammu,7,0
+2021-07-07,kaithal,3,0
+2021-07-07,karnal,3,0
+2021-07-07,kathua,3,0
+2021-07-07,kurukshetra,2,0
+2021-07-07,mandi,1,0
+2021-07-07,meerut,1,0
+2021-07-07,nanded,1,0
+2021-07-07,new delhi,2,1
+2021-07-07,panchkula,1,0
+2021-07-07,saharanpur,2,0
+2021-07-07,shahjahanpur,2,0
+2021-07-07,sirmaur,1,0
+2021-07-07,sirsa,13,2
+2021-07-07,sonipat,1,1
+2021-07-07,west,1,0
+2021-07-08,ambala,4,1
+2021-07-08,bhiwani,1,0
+2021-07-08,bikaner,1,0
+2021-07-08,central,1,1
+2021-07-08,chandigarh,4,0
+2021-07-08,dehradun,3,0
+2021-07-08,fatehabad,4,0
+2021-07-08,ganganagar,1,0
+2021-07-08,gautam buddha nagar,1,0
+2021-07-08,grand total,67,6
+2021-07-08,hanumangarh,1,0
+2021-07-08,hisar,1,0
+2021-07-08,jaipur,1,0
+2021-07-08,jammu,7,0
+2021-07-08,kaithal,3,0
+2021-07-08,karnal,3,0
+2021-07-08,kathua,3,0
+2021-07-08,kurukshetra,2,0
+2021-07-08,mandi,1,0
+2021-07-08,meerut,1,0
+2021-07-08,nanded,1,0
+2021-07-08,new delhi,2,1
+2021-07-08,panchkula,1,0
+2021-07-08,saharanpur,2,0
+2021-07-08,shahjahanpur,2,0
+2021-07-08,sirmaur,1,0
+2021-07-08,sirsa,13,2
+2021-07-08,sonipat,1,1
+2021-07-08,west,1,0
+2021-07-09,ambala,4,1
+2021-07-09,bhiwani,1,0
+2021-07-09,bikaner,1,0
+2021-07-09,central,1,1
+2021-07-09,chandigarh,4,0
+2021-07-09,dehradun,3,0
+2021-07-09,fatehabad,4,0
+2021-07-09,ganganagar,1,0
+2021-07-09,gautam buddha nagar,1,0
+2021-07-09,grand total,67,6
+2021-07-09,hanumangarh,1,0
+2021-07-09,hisar,1,0
+2021-07-09,jaipur,1,0
+2021-07-09,jammu,7,0
+2021-07-09,kaithal,3,0
+2021-07-09,karnal,3,0
+2021-07-09,kathua,3,0
+2021-07-09,kurukshetra,2,0
+2021-07-09,mandi,1,0
+2021-07-09,meerut,1,0
+2021-07-09,nanded,1,0
+2021-07-09,new delhi,2,1
+2021-07-09,panchkula,1,0
+2021-07-09,saharanpur,2,0
+2021-07-09,shahjahanpur,2,0
+2021-07-09,sirmaur,1,0
+2021-07-09,sirsa,13,2
+2021-07-09,sonipat,1,1
+2021-07-09,west,1,0
+2021-07-10,ambala,4,1
+2021-07-10,bhiwani,1,0
+2021-07-10,bikaner,1,0
+2021-07-10,central,1,1
+2021-07-10,chandigarh,4,0
+2021-07-10,dehradun,3,0
+2021-07-10,fatehabad,4,0
+2021-07-10,ganganagar,1,0
+2021-07-10,gautam buddha nagar,1,0
+2021-07-10,grand total,67,6
+2021-07-10,hanumangarh,1,0
+2021-07-10,hisar,1,0
+2021-07-10,jaipur,1,0
+2021-07-10,jammu,7,0
+2021-07-10,kaithal,3,0
+2021-07-10,karnal,3,0
+2021-07-10,kathua,3,0
+2021-07-10,kurukshetra,2,0
+2021-07-10,mandi,1,0
+2021-07-10,meerut,1,0
+2021-07-10,nanded,1,0
+2021-07-10,new delhi,2,1
+2021-07-10,panchkula,1,0
+2021-07-10,saharanpur,2,0
+2021-07-10,shahjahanpur,2,0
+2021-07-10,sirmaur,1,0
+2021-07-10,sirsa,13,2
+2021-07-10,sonipat,1,1
+2021-07-10,west,1,0
+2021-07-11,ambala,4,1
+2021-07-11,bhiwani,1,0
+2021-07-11,bikaner,1,0
+2021-07-11,central,1,1
+2021-07-11,chandigarh,4,0
+2021-07-11,dehradun,3,0
+2021-07-11,fatehabad,4,0
+2021-07-11,ganganagar,1,0
+2021-07-11,gautam buddha nagar,1,0
+2021-07-11,grand total,68,6
+2021-07-11,hanumangarh,1,0
+2021-07-11,hisar,1,0
+2021-07-11,jaipur,1,0
+2021-07-11,jammu,8,0
+2021-07-11,kaithal,3,0
+2021-07-11,karnal,3,0
+2021-07-11,kathua,3,0
+2021-07-11,kurukshetra,2,0
+2021-07-11,mandi,1,0
+2021-07-11,meerut,1,0
+2021-07-11,nanded,1,0
+2021-07-11,new delhi,2,1
+2021-07-11,panchkula,1,0
+2021-07-11,saharanpur,2,0
+2021-07-11,shahjahanpur,2,0
+2021-07-11,sirmaur,1,0
+2021-07-11,sirsa,13,2
+2021-07-11,sonipat,1,1
+2021-07-11,west,1,0
+2021-07-13,ambala,4,1
+2021-07-13,bhiwani,1,0
+2021-07-13,bikaner,1,0
+2021-07-13,central,1,1
+2021-07-13,chandigarh,5,0
+2021-07-13,dehradun,3,0
+2021-07-13,fatehabad,4,0
+2021-07-13,ganganagar,1,0
+2021-07-13,gautam buddha nagar,1,0
+2021-07-13,grand total,69,6
+2021-07-13,hanumangarh,1,0
+2021-07-13,hisar,1,0
+2021-07-13,jaipur,1,0
+2021-07-13,jammu,9,0
+2021-07-13,kaithal,3,0
+2021-07-13,karnal,3,0
+2021-07-13,kathua,3,0
+2021-07-13,kurukshetra,2,0
+2021-07-13,mandi,1,0
+2021-07-13,meerut,1,0
+2021-07-13,nanded,1,0
+2021-07-13,new delhi,2,1
+2021-07-13,panchkula,1,0
+2021-07-13,saharanpur,2,0
+2021-07-13,shahjahanpur,2,0
+2021-07-13,sirmaur,1,0
+2021-07-13,sirsa,12,2
+2021-07-13,sonipat,1,1
+2021-07-13,west,1,0
+2021-07-14,ambala,4,1
+2021-07-14,bhiwani,1,0
+2021-07-14,bikaner,1,0
+2021-07-14,central,1,1
+2021-07-14,chandigarh,5,0
+2021-07-14,dehradun,3,0
+2021-07-14,fatehabad,4,0
+2021-07-14,ganganagar,1,0
+2021-07-14,gautam buddha nagar,1,0
+2021-07-14,grand total,69,6
+2021-07-14,hanumangarh,1,0
+2021-07-14,hisar,1,0
+2021-07-14,jaipur,1,0
+2021-07-14,jammu,9,0
+2021-07-14,kaithal,3,0
+2021-07-14,karnal,3,0
+2021-07-14,kathua,3,0
+2021-07-14,kurukshetra,2,0
+2021-07-14,mandi,1,0
+2021-07-14,meerut,1,0
+2021-07-14,nanded,1,0
+2021-07-14,new delhi,2,1
+2021-07-14,panchkula,1,0
+2021-07-14,saharanpur,2,0
+2021-07-14,shahjahanpur,2,0
+2021-07-14,sirmaur,1,0
+2021-07-14,sirsa,12,2
+2021-07-14,sonipat,1,1
+2021-07-14,west,1,0
+2021-07-15,ambala,4,1
+2021-07-15,bhiwani,1,0
+2021-07-15,bikaner,1,0
+2021-07-15,central,1,1
+2021-07-15,chandigarh,5,0
+2021-07-15,dehradun,3,0
+2021-07-15,fatehabad,4,0
+2021-07-15,ganganagar,1,0
+2021-07-15,gautam buddha nagar,1,0
+2021-07-15,grand total,69,6
+2021-07-15,hanumangarh,1,0
+2021-07-15,hisar,1,0
+2021-07-15,jaipur,1,0
+2021-07-15,jammu,9,0
+2021-07-15,kaithal,3,0
+2021-07-15,karnal,3,0
+2021-07-15,kathua,3,0
+2021-07-15,kurukshetra,2,0
+2021-07-15,mandi,1,0
+2021-07-15,meerut,1,0
+2021-07-15,nanded,1,0
+2021-07-15,new delhi,2,1
+2021-07-15,panchkula,1,0
+2021-07-15,saharanpur,2,0
+2021-07-15,shahjahanpur,2,0
+2021-07-15,sirmaur,1,0
+2021-07-15,sirsa,12,2
+2021-07-15,sonipat,1,1
+2021-07-15,west,1,0
+2021-07-16,ambala,4,1
+2021-07-16,bhiwani,1,0
+2021-07-16,bikaner,1,0
+2021-07-16,central,1,1
+2021-07-16,chandigarh,5,0
+2021-07-16,dehradun,3,0
+2021-07-16,fatehabad,4,0
+2021-07-16,ganganagar,1,0
+2021-07-16,gautam buddha nagar,1,0
+2021-07-16,grand total,69,6
+2021-07-16,hanumangarh,1,0
+2021-07-16,hisar,1,0
+2021-07-16,jaipur,1,0
+2021-07-16,jammu,9,0
+2021-07-16,kaithal,3,0
+2021-07-16,karnal,3,0
+2021-07-16,kathua,3,0
+2021-07-16,kurukshetra,2,0
+2021-07-16,mandi,1,0
+2021-07-16,meerut,1,0
+2021-07-16,nanded,1,0
+2021-07-16,new delhi,2,1
+2021-07-16,panchkula,1,0
+2021-07-16,saharanpur,2,0
+2021-07-16,shahjahanpur,2,0
+2021-07-16,sirmaur,1,0
+2021-07-16,sirsa,12,2
+2021-07-16,sonipat,1,1
+2021-07-16,west,1,0
+2021-07-17,ambala,4,1
+2021-07-17,bhiwani,1,0
+2021-07-17,bikaner,1,0
+2021-07-17,central,1,1
+2021-07-17,chandigarh,5,0
+2021-07-17,dehradun,3,0
+2021-07-17,fatehabad,4,0
+2021-07-17,ganganagar,1,0
+2021-07-17,gautam buddha nagar,1,0
+2021-07-17,grand total,69,6
+2021-07-17,hanumangarh,1,0
+2021-07-17,hisar,1,0
+2021-07-17,jaipur,1,0
+2021-07-17,jammu,9,0
+2021-07-17,kaithal,3,0
+2021-07-17,karnal,3,0
+2021-07-17,kathua,3,0
+2021-07-17,kurukshetra,2,0
+2021-07-17,mandi,1,0
+2021-07-17,meerut,1,0
+2021-07-17,nanded,1,0
+2021-07-17,new delhi,2,1
+2021-07-17,panchkula,1,0
+2021-07-17,saharanpur,2,0
+2021-07-17,shahjahanpur,2,0
+2021-07-17,sirmaur,1,0
+2021-07-17,sirsa,12,2
+2021-07-17,sonipat,1,1
+2021-07-17,west,1,0
+2021-07-18,ambala,4,1
+2021-07-18,bhiwani,1,0
+2021-07-18,bikaner,1,0
+2021-07-18,central,1,1
+2021-07-18,chandigarh,5,0
+2021-07-18,dehradun,3,0
+2021-07-18,fatehabad,4,0
+2021-07-18,ganganagar,1,0
+2021-07-18,gautam buddha nagar,1,0
+2021-07-18,grand total,69,6
+2021-07-18,hanumangarh,1,0
+2021-07-18,hisar,1,0
+2021-07-18,jaipur,1,0
+2021-07-18,jammu,9,0
+2021-07-18,kaithal,3,0
+2021-07-18,karnal,3,0
+2021-07-18,kathua,3,0
+2021-07-18,kurukshetra,2,0
+2021-07-18,mandi,1,0
+2021-07-18,meerut,1,0
+2021-07-18,nanded,1,0
+2021-07-18,new delhi,2,1
+2021-07-18,panchkula,1,0
+2021-07-18,saharanpur,2,0
+2021-07-18,shahjahanpur,2,0
+2021-07-18,sirmaur,1,0
+2021-07-18,sirsa,12,2
+2021-07-18,sonipat,1,1
+2021-07-18,west,1,0
+2021-07-19,ambala,4,1
+2021-07-19,bhiwani,1,0
+2021-07-19,bikaner,1,0
+2021-07-19,central,1,1
+2021-07-19,chandigarh,5,0
+2021-07-19,dehradun,3,0
+2021-07-19,fatehabad,4,0
+2021-07-19,ganganagar,1,0
+2021-07-19,gautam buddha nagar,1,0
+2021-07-19,grand total,70,6
+2021-07-19,hanumangarh,1,0
+2021-07-19,hisar,1,0
+2021-07-19,jaipur,1,0
+2021-07-19,jammu,9,0
+2021-07-19,kaithal,3,0
+2021-07-19,karnal,4,0
+2021-07-19,kathua,3,0
+2021-07-19,kurukshetra,2,0
+2021-07-19,mandi,1,0
+2021-07-19,meerut,1,0
+2021-07-19,nanded,1,0
+2021-07-19,new delhi,2,1
+2021-07-19,panchkula,1,0
+2021-07-19,saharanpur,2,0
+2021-07-19,shahjahanpur,2,0
+2021-07-19,sirmaur,1,0
+2021-07-19,sirsa,12,2
+2021-07-19,sonipat,1,1
+2021-07-19,west,1,0
+2021-07-20,ambala,4,1
+2021-07-20,bhiwani,1,0
+2021-07-20,bikaner,1,0
+2021-07-20,central,1,1
+2021-07-20,chandigarh,5,0
+2021-07-20,dehradun,3,0
+2021-07-20,fatehabad,4,0
+2021-07-20,ganganagar,1,0
+2021-07-20,gautam buddha nagar,1,0
+2021-07-20,grand total,70,6
+2021-07-20,hanumangarh,1,0
+2021-07-20,hisar,1,0
+2021-07-20,jaipur,1,0
+2021-07-20,jammu,9,0
+2021-07-20,kaithal,3,0
+2021-07-20,karnal,4,0
+2021-07-20,kathua,3,0
+2021-07-20,kurukshetra,2,0
+2021-07-20,mandi,1,0
+2021-07-20,meerut,1,0
+2021-07-20,nanded,1,0
+2021-07-20,new delhi,2,1
+2021-07-20,panchkula,1,0
+2021-07-20,saharanpur,2,0
+2021-07-20,shahjahanpur,2,0
+2021-07-20,sirmaur,1,0
+2021-07-20,sirsa,12,2
+2021-07-20,sonipat,1,1
+2021-07-20,west,1,0
+2021-07-21,ambala,4,1
+2021-07-21,bhiwani,1,0
+2021-07-21,bikaner,1,0
+2021-07-21,central,1,1
+2021-07-21,chandigarh,5,0
+2021-07-21,dehradun,3,0
+2021-07-21,fatehabad,4,0
+2021-07-21,ganganagar,1,0
+2021-07-21,gautam buddha nagar,1,0
+2021-07-21,grand total,70,6
+2021-07-21,hanumangarh,1,0
+2021-07-21,hisar,1,0
+2021-07-21,jaipur,1,0
+2021-07-21,jammu,9,0
+2021-07-21,kaithal,3,0
+2021-07-21,karnal,4,0
+2021-07-21,kathua,3,0
+2021-07-21,kurukshetra,2,0
+2021-07-21,mandi,1,0
+2021-07-21,meerut,1,0
+2021-07-21,nanded,1,0
+2021-07-21,new delhi,2,1
+2021-07-21,panchkula,1,0
+2021-07-21,saharanpur,2,0
+2021-07-21,shahjahanpur,2,0
+2021-07-21,sirmaur,1,0
+2021-07-21,sirsa,12,2
+2021-07-21,sonipat,1,1
+2021-07-21,west,1,0
+2021-07-22,ambala,4,1
+2021-07-22,bhiwani,1,0
+2021-07-22,bikaner,1,0
+2021-07-22,central,1,1
+2021-07-22,chandigarh,5,0
+2021-07-22,dehradun,3,0
+2021-07-22,fatehabad,4,0
+2021-07-22,ganganagar,1,0
+2021-07-22,gautam buddha nagar,1,0
+2021-07-22,grand total,70,6
+2021-07-22,hanumangarh,1,0
+2021-07-22,hisar,1,0
+2021-07-22,jaipur,1,0
+2021-07-22,jammu,9,0
+2021-07-22,kaithal,3,0
+2021-07-22,karnal,4,0
+2021-07-22,kathua,3,0
+2021-07-22,kurukshetra,2,0
+2021-07-22,mandi,1,0
+2021-07-22,meerut,1,0
+2021-07-22,nanded,1,0
+2021-07-22,new delhi,2,1
+2021-07-22,panchkula,1,0
+2021-07-22,saharanpur,2,0
+2021-07-22,shahjahanpur,2,0
+2021-07-22,sirmaur,1,0
+2021-07-22,sirsa,12,2
+2021-07-22,sonipat,1,1
+2021-07-22,west,1,0
+2021-07-23,ambala,4,1
+2021-07-23,bhiwani,1,0
+2021-07-23,bikaner,1,0
+2021-07-23,central,1,1
+2021-07-23,chandigarh,5,0
+2021-07-23,dehradun,3,0
+2021-07-23,fatehabad,4,0
+2021-07-23,ganganagar,1,0
+2021-07-23,gautam buddha nagar,1,0
+2021-07-23,grand total,70,6
+2021-07-23,hanumangarh,1,0
+2021-07-23,hisar,1,0
+2021-07-23,jaipur,1,0
+2021-07-23,jammu,9,0
+2021-07-23,kaithal,3,0
+2021-07-23,karnal,4,0
+2021-07-23,kathua,3,0
+2021-07-23,kurukshetra,2,0
+2021-07-23,mandi,1,0
+2021-07-23,meerut,1,0
+2021-07-23,nanded,1,0
+2021-07-23,new delhi,2,1
+2021-07-23,panchkula,1,0
+2021-07-23,saharanpur,2,0
+2021-07-23,shahjahanpur,2,0
+2021-07-23,sirmaur,1,0
+2021-07-23,sirsa,12,2
+2021-07-23,sonipat,1,1
+2021-07-23,west,1,0
+2021-07-24,ambala,4,1
+2021-07-24,bhiwani,1,0
+2021-07-24,bikaner,1,0
+2021-07-24,central,1,1
+2021-07-24,chandigarh,5,0
+2021-07-24,dehradun,3,0
+2021-07-24,fatehabad,4,0
+2021-07-24,ganganagar,1,0
+2021-07-24,gautam buddha nagar,1,0
+2021-07-24,grand total,70,6
+2021-07-24,hanumangarh,1,0
+2021-07-24,hisar,1,0
+2021-07-24,jaipur,1,0
+2021-07-24,jammu,9,0
+2021-07-24,kaithal,3,0
+2021-07-24,karnal,4,0
+2021-07-24,kathua,3,0
+2021-07-24,kurukshetra,2,0
+2021-07-24,mandi,1,0
+2021-07-24,meerut,1,0
+2021-07-24,nanded,1,0
+2021-07-24,new delhi,2,1
+2021-07-24,panchkula,1,0
+2021-07-24,saharanpur,2,0
+2021-07-24,shahjahanpur,2,0
+2021-07-24,sirmaur,1,0
+2021-07-24,sirsa,12,2
+2021-07-24,sonipat,1,1
+2021-07-24,west,1,0
+2021-07-25,ambala,4,1
+2021-07-25,bhiwani,1,0
+2021-07-25,bikaner,1,0
+2021-07-25,central,1,1
+2021-07-25,chandigarh,5,0
+2021-07-25,dehradun,3,0
+2021-07-25,fatehabad,4,0
+2021-07-25,ganganagar,1,0
+2021-07-25,gautam buddha nagar,1,0
+2021-07-25,grand total,70,6
+2021-07-25,hanumangarh,1,0
+2021-07-25,hisar,1,0
+2021-07-25,jaipur,1,0
+2021-07-25,jammu,9,0
+2021-07-25,kaithal,3,0
+2021-07-25,karnal,4,0
+2021-07-25,kathua,3,0
+2021-07-25,kurukshetra,2,0
+2021-07-25,mandi,1,0
+2021-07-25,meerut,1,0
+2021-07-25,nanded,1,0
+2021-07-25,new delhi,2,1
+2021-07-25,panchkula,1,0
+2021-07-25,saharanpur,2,0
+2021-07-25,shahjahanpur,2,0
+2021-07-25,sirmaur,1,0
+2021-07-25,sirsa,12,2
+2021-07-25,sonipat,1,1
+2021-07-25,west,1,0
