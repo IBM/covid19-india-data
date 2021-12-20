@@ -40,8 +40,12 @@ def run(basedir, state_to_execute=None):
 
         print(f'Downloading bulletins for state {state_name}')
         obj = state_obj(basedir)
-        state_bulletin_links = obj.run()
-        bulletin_links[state_name] = state_bulletin_links
+        try:
+            state_bulletin_links = obj.run()
+        except Exception as err:
+            print(f'Error in executing bulletin downloader for state {state_name}. Error: {err}')
+        else:
+            bulletin_links[state_name] = state_bulletin_links
 
     return bulletin_links
 
