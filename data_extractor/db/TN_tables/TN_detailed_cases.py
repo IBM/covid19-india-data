@@ -8,28 +8,28 @@ class DetailedInfoTable(DB):
         self.cols = self.getcolumns()
 
     def getcolumns(self):
-        # total means value till date
+        
         cols = {
             'date': 'DATE NOT NULL PRIMARY KEY',
-            'total_active_cases': 'INT',
+            'active_cases': 'INT',
             'tested_positive_today': 'INT',
-            'returned_road_positive_today': 'STRING',
-            'total_tested_positive': 'INT',
-            'rt_pcr_today': 'INT',
-            'total_rt_pcr': 'INT',
+            'tested_positive_till_date': 'INT',
+            'rtpcr_samples_tested_today': 'INT',
+            'rtpcr_samples_tested_till_date': 'INT',
             'persons_tested_rt_pcr_today': 'INT',
-            'total_persons_tested_rt_pcr': 'INT',
-            'male_positive_tests': 'INT',
-            'female_positive_tests': 'INT',
-            'transgender_positive_tests': 'INT',
-            'total_male_positive_tests': 'INT',
-            'total_female_positive_tests': 'INT',
-            'total_transgender_positive_tests': 'INT',
-            'total_discharged': 'INT',
+            'persons_tested_rt_pcr_till_date': 'INT',
+            'male_positive_tests_today': 'INT',
+            'female_positive_tests_today': 'INT',
+            'transgender_positive_tests_today': 'INT',
+            'male_positive_tests_till_date': 'INT',
+            'female_positive_tests_till_date': 'INT',
+            'transgender_positive_tests_till_date': 'INT',
+            'discharged_today': 'INT',
+            'discharged_total': 'INT',
             'deaths_today': 'INT',
+            'deaths_total': 'INT',
             'deaths_private_hospitals': 'INT',
             'deaths_government_hopitals': 'INT',
-            'total_deaths': 'INT'
         }
 
         return cols

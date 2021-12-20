@@ -68,14 +68,14 @@ class TamilNaduExtractor(object):
 
         return data, parsing_successful
 
-    def _parse_num_(self, data, col, new_cols):
+    def _parse_num_(self, data, col, new_cols, remove_old=False):
         """
         this parses string like "### / ###", takes data from col and saves it
         in order to new_cols.
         """
         delimeter = "/"
         parsing_successful = False
-        #print(data[col])
+
         if col in data and delimeter in data[col]:
             numbers = data[col].split(delimeter)
             for index, num in enumerate(numbers):
@@ -88,6 +88,9 @@ class TamilNaduExtractor(object):
             for column in new_cols:
                 if ")" in data[column]:
                     data[column] = data[column].replace(")", "")
+
+        if parsing_successful and remove_old:
+            del data[col]
 
         return data, parsing_successful
 
@@ -135,36 +138,26 @@ class TamilNaduExtractor(object):
         return result
 
     def extract_detailed_cases(self, tables):
-        # detailed_info_table = None
-        # if len(tables) == 1:
-        #     detailed_info_table = tables[0].df
-        # else:
+        
         keywords = {'positive', 'deaths', 'rt-pcr', 'isolation', 'transgender', 'male', 'female'}
         detailed_info_table = common_utils.find_table_by_keywords(tables, keywords)
 
-        #print(detailed_info_table.size, detailed_info_table.shape)
-        # in case no such table found
-        # if detailed_info_table is None:
-        #     return None
-
-        for table in tables:
-            print(table.df)
+        if detailed_info_table is None:
+            return None
 
 
         df_dict = common_utils.convert_df_to_dict(detailed_info_table, key_idx=1, val_idx=2)
         df_dict = common_utils.add_values_from_neighbors(detailed_info_table, df_dict, key_idx=1, val_idx=2)
 
         keymap = {
-            "total_active_cases": ["active", "including", "isolation"],
+            "active_cases": ["active", "including", "isolation"],
             "tested_positive_today": ["persons", "tested", "positive", "tamil"],
-            "returned_road_positive_today": ["passengers", "returned", "other", "states", "road"],
-            "total_tested_positive": ["persons", "tested", "positive", "till"],
+            "tested_positive_till_date": ["persons", "tested", "positive", "till"],
             "rt_pcr_today": ["rt-pcr", "samples"],
             "persons_tested_rt_pcr_today": ["persons", "rt-pcr", "tested"],
             "male_positive_tests": ["male", "transgender", "positive", "today"],
-            "total_male_positive_tests": ["male", "transgender", "positive", "till"],
-            "discharged_today": ["positive", "patients", "discharged", "following"],
-            "total_discharged": ["treatment", "today", "till"],
+            "male_positive_tests_till_date": ["male", "transgender", "positive", "till"],
+            "discharged_today": ["positive", "patients", "discharged", "following", "treatment"],
             "deaths_today": ["deaths", "today", "till"]
         }
 
@@ -172,54 +165,41 @@ class TamilNaduExtractor(object):
         # copying a specific case which is not being copied
         result['date'] = self.date
 
-        # cleaning up numbers
-        atoi_cols = list(dict.keys(keymap))
-        atoi_cols.remove("returned_road_positive_today")
-
         # first rtcpr samples tested row 4
-        new_cols = ["rt_pcr_today", "total_rt_pcr"]
-        result, parsing_successful = self._parse_num_(result, "rt_pcr_today", new_cols)
-        if parsing_successful:
-            atoi_cols.append(new_cols[1])
+        new_cols = ["rtpcr_samples_tested_today", "rtpcr_samples_tested_till_date"]
+        result, parsing_successful = self._parse_num_(result, "rt_pcr_today", new_cols, remove_old=True)
 
-            if "@" in result["total_rt_pcr"]:
-                result["total_rt_pcr"] = result["total_rt_pcr"].replace("@", "")
+        if "@" in result.get("rtpcr_samples_tested_till_date", ''):
+            result["rtpcr_samples_tested_till_date"] = result["rtpcr_samples_tested_till_date"].replace("@", "")
 
         # rtpcr persons tested row 5
-        new_cols = ["persons_tested_rt_pcr_today", "total_persons_tested_rt_pcr"]
-        result, parsing_successful = self._parse_num_(result, new_cols[0], new_cols)
-        if parsing_successful: atoi_cols.append(new_cols[1])
+        new_cols = ["persons_tested_rt_pcr_today", "persons_tested_rt_pcr_till_date"]
+        result, parsing_successful = self._parse_num_(result, 'persons_tested_rt_pcr_today', new_cols, remove_old=False)
 
         # gender tested positive today row 6
-        new_cols = ["male_positive_tests", "female_positive_tests", "transgender_positive_tests"]
-        result, parsing_successful = self._parse_num_(result, new_cols[0], new_cols)
-        if parsing_successful: atoi_cols.extend([new_cols[1], new_cols[2]])
+        new_cols = ["male_positive_tests_today", "female_positive_tests_today", "transgender_positive_tests_today"]
+        result, parsing_successful = self._parse_num_(result, 'male_positive_tests', new_cols, remove_old=True)
 
         # gender tested positive till date row 7
-        new_cols = ["total_male_positive_tests", "total_female_positive_tests", "total_transgender_positive_tests"]
-        result, parsing_successful = self._parse_num_(result, new_cols[0], new_cols)
-        if parsing_successful: atoi_cols.extend([new_cols[1], new_cols[2]])
+        new_cols = ["male_positive_tests_till_date", "female_positive_tests_till_date", "transgender_positive_tests_till_date"]
+        result, parsing_successful = self._parse_num_(result, 'male_positive_tests_till_date', new_cols)
 
         # discharged numbers row 9
-        new_cols = ["discharged_today", "total_discharged"]
-        result, parsing_successful = self._parse_num_(result, new_cols[0], new_cols)
-        if parsing_successful: atoi_cols.append(new_cols[1])
+        new_cols = ["discharged_today", "discharged_total"]
+        result, parsing_successful = self._parse_num_(result, 'discharged_today', new_cols)
 
         # deaths row 10
-        new_cols = ["deaths_today", "total_deaths"]
-        result, parsing_successful = self._parse_num_(result, new_cols[0], new_cols)
-        if parsing_successful: atoi_cols.append(new_cols[1])
+        new_cols = ["deaths_today", "deaths_total"]
+        result, parsing_successful = self._parse_num_(result, 'deaths_today', new_cols)
 
         new_cols = ["deaths_government_hopitals", "deaths_private_hospitals"]
         result, parsing_succesful = self._parse_facilities_num_(result, "deaths_today", new_cols)
-        if parsing_successful: atoi_cols.extend(new_cols)
 
-        # converting from strings to numbers
-        for col in atoi_cols:
-            if isinstance(result[col], int):
+        for key, val in result.items():
+            if key == 'date': 
                 continue
-
-            result[col] = locale.atoi(result[col])
+            
+            result[key] = locale.atoi(val)
 
         return result
 
@@ -947,11 +927,14 @@ class TamilNaduExtractor(object):
 
         for datum in data:
             datum_flat = flatten(datum)
-
+            
             for key, val in datum_flat.items():
                 if key != 'date' and 'date' in key:
-                    date = dateparser.parse(val, ['%d.%m.%Y'])
-                    datum_flat[key] = f'{date.year}-{date.month:02d}-{date.day:02d}'
+                    try:
+                        date = dateparser.parse(val, ['%d.%m.%Y'])
+                        datum_flat[key] = f'{date.year}-{date.month:02d}-{date.day:02d}'
+                    except:
+                        pass
 
             data_flat.append(datum_flat)
 
@@ -965,6 +948,7 @@ class TamilNaduExtractor(object):
         tables = common_utils.get_tables_from_pdf(library='camelot', pdf_fpath=self.report_fpath, split_text=False)
         
         case_info = self.extract_case_info(tables)
+        detailed_info = self.extract_detailed_cases(tables)
         district_cases = self.extract_district_cases(tables)
         bed_details = None # TODO: Fix self.extract_district_facilities_details(tables)
         death_details = self.extract_death_comorbidities_table(tables)
@@ -977,6 +961,7 @@ class TamilNaduExtractor(object):
 
         result = {
             'case-info': case_info,
+            'detailed-info': detailed_info,
             'district-info': district_cases,
             'district-bed-info': bed_details,
             'death-info': death_details,
