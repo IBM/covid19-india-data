@@ -10,14 +10,17 @@ import dateparser
 try:
     from local_extractor.utils import common_utils
     from local_extractor.utils import custom_exceptions
+    from local_extractor.utils.table_concatenation import concatenate_tables
 except ImportError:
     import sys, os, pathlib
     path = pathlib.Path(__file__).absolute().parents[2]
     path = os.path.join(path, 'local_extractor')
     if path not in sys.path:
         sys.path.insert(0, path)
+        
     from utils import common_utils
     from utils import custom_exceptions
+    from utils.table_concatenation import concatenate_tables
 
 
 class MaharashtraExtractor(object):
@@ -64,33 +67,6 @@ class MaharashtraExtractor(object):
             first_page = pdf.pages[page]
             text = first_page.extract_text()
         return text
-
-    def join_tables(self, tables):
-        
-        ntables = len(tables)
-        result = [ [] ]
-
-        for i in range(ntables):
-            
-            tbl = tables[i].df
-            lastrow = list(tbl.iloc[-1])
-            
-            # end of table found
-            if 'total' in lastrow[1].lower():
-                result[-1].append(tbl)
-                result.append([])
-            else:
-                result[-1].append(tbl)
-
-        tables_concatenated = []
-        for tablelist in result:
-            if len(tablelist) == 0:
-                continue
-
-            table = pd.concat(tablelist)
-            tables_concatenated.append(table)
-
-        return tables_concatenated
 
     def get_regex_match(self, text, regex):
 
@@ -162,7 +138,7 @@ class MaharashtraExtractor(object):
     def extract_citycase_info(self, tables):
 
         datatable = None
-        keywords = {'recovered', 'active'}
+        keywords = {'recovered', 'active', 'death', 'other', 'cause', 'case', 'district'}
         datatable = common_utils.find_table_by_keywords(tables, keywords)
 
         if datatable is None:
@@ -210,7 +186,7 @@ class MaharashtraExtractor(object):
     def extract_district_level_info(self, tables):
 
         datatable = None
-        keywords = {'prog', 'daily', 'case'}
+        keywords = {'prog', 'daily', 'case', 'district'}
         datatable = common_utils.find_table_by_keywords(tables, keywords)
 
         if datatable is None:
@@ -263,7 +239,7 @@ class MaharashtraExtractor(object):
             raise custom_exceptions.UnprocessedBulletinException('Bulletin failed to match current date')
 
         all_tables = common_utils.get_tables_from_pdf(library='camelot', pdf_fpath=self.report_fpath)
-        all_tables = self.join_tables(all_tables)
+        all_tables = concatenate_tables.concatenate_tables(all_tables, heuristic='same-table-width')
 
         case_info = self.get_case_info()
         active_case_info = self.extract_citycase_info(all_tables)
@@ -281,7 +257,7 @@ class MaharashtraExtractor(object):
 if __name__ == '__main__':
 
     date = '2021-01-01'
-    path = "/Users/mayank/Documents/projects/opensource/covid19-india-data/localstore/bulletins/MH/MH-Bulletin-2021-10-30.pdf"
+    path = "../localstore/bulletins/MH/MH-Bulletin-2021-10-30.pdf"
 
     obj = MaharashtraExtractor(date, path)
 
