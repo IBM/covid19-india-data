@@ -6563,6 +6563,7 @@ date,state,bulletin_link
 2021-12-14,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-DEC21//14-12-2021 HMB English.pdf
 2021-12-14,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/12/Bulletin-HFWD-English-December-14.pdf
 2021-12-14,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotedecember14.pdf
+2021-12-14,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/12/Letter_Health_Bulletin_14.12.2021_V3.pdf
 2021-12-14,TG,https://covid19.telangana.gov.in/wp-content/uploads/2021/12/Media-Bulletin-14-12-2021.pdf
 2021-12-14,TN,http://stopcorona.tn.gov.in/wp-content/uploads/2020/03/Media-Bulletin-14-12-21-COVID-19.pdf
 2021-12-14,UK,https://health.uk.gov.in/files/2021.12.14_Health_Bulletin.pdf
@@ -6571,6 +6572,7 @@ date,state,bulletin_link
 2021-12-15,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 15-12-2021.pdf
 2021-12-15,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-DEC21//15-12-2021 HMB English.pdf
 2021-12-15,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotedecember15.pdf
+2021-12-15,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/12/Letter_Health_Bulletin_15.12.2021_V3.pdf
 2021-12-15,TG,https://covid19.telangana.gov.in/wp-content/uploads/2021/12/Media-Bulletin-15-12-2021.pdf
 2021-12-15,TN,http://stopcorona.tn.gov.in/wp-content/uploads/2020/03/Media-Bulletin-15-12-21-COVID-19.pdf
 2021-12-15,UK,https://health.uk.gov.in/files/2021.12.15_Health_Bulletin.pdf
@@ -6579,7 +6581,43 @@ date,state,bulletin_link
 2021-12-16,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 16-12-2021.pdf
 2021-12-16,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-DEC21//16-12-2021 HMB English.pdf
 2021-12-16,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotedecember16.pdf
+2021-12-16,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/12/Letter_Health_Bulletin_16.12.2021_V3.pdf
 2021-12-16,TG,https://covid19.telangana.gov.in/wp-content/uploads/2021/12/Media-Bulletin-16-12-2021.pdf
 2021-12-16,TN,http://stopcorona.tn.gov.in/wp-content/uploads/2020/03/Media-Bulletin-16-12-21-COVID-19.pdf
 2021-12-16,UK,https://health.uk.gov.in/files/2021.12.16_Health_Bulletin.pdf
 2021-12-16,WB,https://www.wbhealth.gov.in/uploaded_files/corona/WB_DHFW_Bulletin_16TH_DEC_REPORT_FINAL.pdf
+2021-12-17,GA,https://www.goa.gov.in/wp-content/uploads/2021/12/Media-Bulletin-17th-December-2021.pdf
+2021-12-17,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 17-12-2021.pdf
+2021-12-17,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-DEC21//17-12-2021 HMB English.pdf
+2021-12-17,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotedecember17.pdf
+2021-12-17,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/12/Letter_Health_Bulletin_17.12.2021_V3.pdf
+2021-12-17,TG,https://covid19.telangana.gov.in/wp-content/uploads/2021/12/Media-Bulletin-17-12-2021.pdf
+2021-12-17,TN,http://stopcorona.tn.gov.in/wp-content/uploads/2020/03/Media-Bulletin-17-12-21-COVID-19.pdf
+2021-12-17,UK,https://health.uk.gov.in/files/2021.12.17_Health_Bulletin.pdf
+2021-12-17,WB,https://www.wbhealth.gov.in/uploaded_files/corona/WB_DHFW_Bulletin_17TH_DEC_REPORT_FINAL.pdf
+2021-12-18,GA,https://www.goa.gov.in/wp-content/uploads/2021/12/Media-Bulletin-18th-December-2021.pdf
+2021-12-18,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 18-12-2021.pdf
+2021-12-18,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-DEC21//18-12-2021 HMB English.pdf
+2021-12-18,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotedecember18.pdf
+2021-12-18,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/12/Letter_Health_Bulletin_18.12.2021_V3.pdf
+2021-12-18,TG,https://covid19.telangana.gov.in/wp-content/uploads/2021/12/Media-Bulletin-18-12-2021.pdf
+2021-12-18,TN,http://stopcorona.tn.gov.in/wp-content/uploads/2020/03/Media-Bulletin-18-12-21-COVID-19.pdf
+2021-12-18,UK,https://health.uk.gov.in/files/2021.12.18_Health_Bulletin.pdf
+2021-12-18,WB,https://www.wbhealth.gov.in/uploaded_files/corona/WB_DHFW_Bulletin_18TH_DEC_REPORT_FINAL.pdf
+2021-12-19,GA,https://www.goa.gov.in/wp-content/uploads/2021/12/Media-Bulletin-19th-December-2021.pdf
+2021-12-19,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 19-12-2021.pdf
+2021-12-19,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-DEC21//19-12-2021 HMB English.pdf
+2021-12-19,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotedecember19.pdf
+2021-12-19,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/12/Letter_Health_Bulletin_19.12.2021_V3.pdf
+2021-12-19,TG,https://covid19.telangana.gov.in/wp-content/uploads/2021/12/Media-Bulletin-19-12-2021.pdf
+2021-12-19,TN,http://stopcorona.tn.gov.in/wp-content/uploads/2020/03/Media-Bulletin-20-12-21-COVID-19.pdf
+2021-12-19,UK,https://health.uk.gov.in/files/2021.12.19_Health_Bulletin.pdf
+2021-12-19,WB,https://www.wbhealth.gov.in/uploaded_files/corona/WB_DHFW_Bulletin_19TH_DEC_REPORT_FINAL.pdf
+2021-12-20,GA,https://www.goa.gov.in/wp-content/uploads/2021/12/Media-Bulletin-20th-December-2021.pdf
+2021-12-20,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 20-12-2021.pdf
+2021-12-20,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-DEC21//20-12-2021 HMB English.pdf
+2021-12-20,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotedecember20.pdf
+2021-12-20,TG,https://covid19.telangana.gov.in/wp-content/uploads/2021/12/Media-Bulletin-20-12-2021.pdf
+2021-12-20,TN,http://stopcorona.tn.gov.in/wp-content/uploads/2020/03/Media-Bulletin-20-12-21-COVID-19.pdf
+2021-12-20,UK,https://health.uk.gov.in/files/2021.12.20_Health_Bulletin.pdf
+2021-12-20,WB,https://www.wbhealth.gov.in/uploaded_files/corona/WB_DHFW_Bulletin_20TH_DEC_REPORT_FINAL.pdf
