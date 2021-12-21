@@ -1,9 +1,6 @@
 from .bulletin import Bulletin
 from bs4 import BeautifulSoup
 
-import datetime
-import re
-
 
 class Kerala(Bulletin):
 
@@ -12,31 +9,36 @@ class Kerala(Bulletin):
         statename = 'KL'
         super().__init__(basedir, statename)
 
+        self.bulletin_page_url = u'https://dhs.kerala.gov.in/%e0%b4%a1%e0%b5%86%e0%b4%af%e0%b4%bf%e0%b4%b2%e0%b4%bf-%e0%b4%ac%e0%b5%81%e0%b4%b3%e0%b5%8d%e0%b4%b3%e0%b4%b1%e0%b5%8d%e0%b4%b1%e0%b4%bf%e0%b4%a8%e0%b5%8d%e2%80%8d/'
         self.baseurl = 'https://dhs.kerala.gov.in'
-        self.startdate = datetime.date(2020, 1, 31) # January 31 2020
         
+    def get_bulletin_page_links(self):
+        
+        html = self.get_url_html(self.bulletin_page_url)
+        soup = BeautifulSoup(html, 'html.parser')
+        result = {}
 
-    def get_website_html(self, date):
+        for anchor in soup.find_all('a', href=True):
+            text = anchor.text.strip()
+            href = anchor['href']
 
-        day = '{:02d}'.format(date.day)
-        month = '{:02d}'.format(date.month)
-        year = date.year
+            try:
+                if len(text.split('/')) != 3:
+                    continue
 
-        if date < datetime.date(2020, 3, 13):
-            dummy_month = "03"
-            dummy_day = "12"
+                datestr = self.get_date_str(text, ['%d/%m/%Y'])
+            except Exception:
+                continue
+            else:
+                if datestr is not None:
+                    result[datestr] = self.baseurl + href
 
-        else:
-            dummy_month = month
-            dummy_day = day
+        return result
 
-        url = self.baseurl + f'/{year}/{dummy_month}/{dummy_day}/{day}-{month}-{year}'
+
+    def parse_url(self, url):
+
         html = self.get_url_html(url)
-        return html
-
-
-    def parse_url(self, html):
-
         soup = BeautifulSoup(html, 'html.parser')
 
         for anchor in soup.find_all('a'):
@@ -48,20 +50,13 @@ class Kerala(Bulletin):
 
     def get_bulletin_links(self):
 
-        today = datetime.date.today()
-        currdate = self.startdate
+        bulletin_page_links = self.get_bulletin_page_links()
         bulletin_links = {}
 
-        while currdate <= today:
-            html = self.get_website_html(currdate)
-            url = self.parse_url(html)
-
-            if url:
-                url = self.baseurl + self.parse_url(html)
-                datestr = self.get_date_str(str(currdate))
-                bulletin_links[datestr] = url
-
-            currdate = currdate + datetime.timedelta(days=1)
+        for date, url in bulletin_page_links.items():
+            bulletin_url = self.parse_url(url)
+            if bulletin_url:
+                bulletin_links[date] = self.baseurl + bulletin_url
         
         return bulletin_links
 
@@ -74,4 +69,3 @@ class Kerala(Bulletin):
         self._save_state_()
 
         return bulletin_links
-
