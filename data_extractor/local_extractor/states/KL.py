@@ -59,11 +59,10 @@ class KeralaExtractor(object):
                 for key in keyidxmap:
 
                     minor_key = keyidxmap[key]
-                    df_dict = common_utils.convert_df_to_dict(datatable, key_idx=major_key, val_idx=minor_key)
-
-                    new_result[key] = common_utils.extract_info_from_table_by_keywords(df_dict, keymap).get(district, None)
-
-                    try: new_result[key] = locale.atoi(new_result[key])
+                    try:
+                        df_dict = common_utils.convert_df_to_dict(datatable, key_idx=major_key, val_idx=minor_key)
+                        new_result[key] = common_utils.extract_info_from_table_by_keywords(df_dict, keymap).get(district, None)
+                        new_result[key] = locale.atoi(new_result[key])
                     except: pass
 
                 result.append(new_result)
@@ -82,11 +81,10 @@ class KeralaExtractor(object):
                 for key in keyidxmap:
 
                     minor_key = keyidxmap[key]
-                    df_dict = common_utils.convert_df_to_dict(datatable, key_idx=major_key, val_idx=minor_key)
-
-                    new_result[key] = common_utils.extract_info_from_table_by_keywords(df_dict, keymap).get(total_key, None)
-
-                    try: new_result[key] = locale.atoi(new_result[key])
+                    try:
+                        df_dict = common_utils.convert_df_to_dict(datatable, key_idx=major_key, val_idx=minor_key)
+                        new_result[key] = common_utils.extract_info_from_table_by_keywords(df_dict, keymap).get(total_key, None)
+                        new_result[key] = locale.atoi(new_result[key])
                     except: pass
 
                 result.append(new_result)
@@ -490,7 +488,7 @@ class KeralaExtractor(object):
 if __name__ == '__main__':
 
     date = '2021-10-29'
-    path = "/home/mayankag/covid19-india-data/localstore/bulletins/KL/KL-Bulletin-2021-11-21.pdf"
+    path = "/home/mayankag/covid19-india-data/localstore/bulletins/KL/KL-Bulletin-2021-12-20.pdf"
 
     obj = KeralaExtractor(date, path)
 
