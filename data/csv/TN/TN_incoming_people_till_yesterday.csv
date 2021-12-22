@@ -3338,3 +3338,10 @@ date,travel_mode,passengers,positive_cases
 2021-12-20,road_own,354865,6147.0
 2021-12-20,sea_port,2447,34.0
 2021-12-20,train,35374,428.0
+2021-12-21,airport_domestic,6210835,1086.0
+2021-12-21,airport_international,607224,1053.0
+2021-12-21,grand total,7252171,8748.0
+2021-12-21,road_bus,41416,
+2021-12-21,road_own,354875,6147.0
+2021-12-21,sea_port,2447,34.0
+2021-12-21,train,35374,428.0

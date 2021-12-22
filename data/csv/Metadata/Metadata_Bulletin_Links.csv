@@ -4,6 +4,7 @@ date,state,bulletin_link
 2020-01-07,MP,http://mphealthresponse.nhmmp.gov.in/covid/wp-content/uploads/2020/07/01-07-2020-Health-Bulletin.pdf
 2020-01-08,GA,https://www.goa.gov.in/wp-content/uploads/2020/08/media-bulletin-01.08.2020.pdf
 2020-01-20,TN,https://stopcorona.tn.gov.in/wp-content/uploads/2021/01/Media-Bulletin-20.01.2020-15-Pages-English-428-KB.pdf
+2020-01-25,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/01/Bulletin-HFWD-English-January-25.pdf
 2020-01-31,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/03/bule_31012020_eng.pdf
 2020-02-01,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/03/bule_01022020_eng.pdf
 2020-02-02,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/03/bule_02022020_eng.pdf
@@ -102,19 +103,25 @@ date,state,bulletin_link
 2020-03-18,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/03/bule_18032020.pdf
 2020-03-18,UK,https://health.uk.gov.in/files/Health_Bulletin__Uttarakhand_Novel_Corona_Virus_18_march_2020__8.00_PM_1.pdf
 2020-03-18,WB,https://www.wbhealth.gov.in/uploaded_files/corona/Bulletin_West_Bengal_18.03_.2020(1)_.pdf
+2020-03-19,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/03/bule_19032020.pdf
 2020-03-19,MP,http://mphealthresponse.nhmmp.gov.in/covid/wp-content/uploads/2020/03/Health-Bulletine-19-03-2020-English.pdf
 2020-03-19,UK,https://health.uk.gov.in/files/Health_Bulletin__Uttarakhand_Novel_Corona_Virus_19_march_2020__8.00_PM_1.pdf
+2020-03-20,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/03/bule_20032020.pdf
 2020-03-20,MP,http://mphealthresponse.nhmmp.gov.in/covid/wp-content/uploads/2020/03/Health-bulletin-20-03-2020.pdf
 2020-03-20,UK,https://health.uk.gov.in/files/Health_Bulletin__Uttarakhand_Novel_Corona_Virus_20_March_2020__8.00_PM_1.pdf
 2020-03-20,WB,https://www.wbhealth.gov.in/uploaded_files/corona/Bulletin_West_Bengal_20.03_.2020_.pdf
+2020-03-21,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/03/bule_21032020.pdf
 2020-03-21,MP,http://mphealthresponse.nhmmp.gov.in/covid/wp-content/uploads/2020/03/Health-bulletin-21-03-2020-English.pdf
 2020-03-21,UK,https://health.uk.gov.in/files/Health_Bulletin__Uttarakhand_Novel_Corona_Virus_21_March_2020__8.00_PM_1.pdf
 2020-03-21,WB,https://www.wbhealth.gov.in/uploaded_files/corona/Bulletin_West_Bengal_21.03_.2020_.pdf
+2020-03-22,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/03/bule_22032020.pdf
 2020-03-22,MP,http://mphealthresponse.nhmmp.gov.in/covid/wp-content/uploads/2020/03/Health-Bulletine-22-03-2020-English.pdf
 2020-03-22,UK,https://health.uk.gov.in/files/Health_Bulletin_22.03.2020_1.pdf
 2020-03-22,WB,https://www.wbhealth.gov.in/uploaded_files/corona/Bulletin_West_Bengal_22.03_.2020_.pdf
+2020-03-23,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/03/bule_24032020.pdf
 2020-03-23,UK,https://health.uk.gov.in/files/Health_Bulletin__Uttarakhand_Novel_Corona_Virus_23_march_2020__7.30_PM.pdf
 2020-03-23,WB,https://www.wbhealth.gov.in/uploaded_files/corona/Bulletin_West_Bengal_23.03_.2020_.pdf
+2020-03-24,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/03/bule_24032020-1.pdf
 2020-03-24,UK,https://health.uk.gov.in/files/Health_Bulletin__Uttarakhand_Novel_Corona_Virus_24_march_2020__8.00_PM.pdf
 2020-03-24,WB,https://www.wbhealth.gov.in/uploaded_files/corona/33445566-converted_(1)1.pdf
 2020-03-25,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/03/bule_25032020.pdf
@@ -136,6 +143,7 @@ date,state,bulletin_link
 2020-03-29,TN,https://stopcorona.tn.gov.in/wp-content/uploads/2020/03/Media-Bulletin-29-03-20-2-PM-COVID-19.pdf
 2020-03-29,UK,https://health.uk.gov.in/files/Health_Bulletin_Uttarakhand_Novel_Corona_Virus_29_March_2020__7.00_PM.pdf
 2020-03-29,WB,https://www.wbhealth.gov.in/uploaded_files/corona/Bulletin_West_Bengal_29.03_.2020_.pdf
+2020-03-30,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/03/Daily-Bulletin-HFWD-English-30th-March.pdf
 2020-03-30,MP,http://mphealthresponse.nhmmp.gov.in/covid/wp-content/uploads/2020/04/HealthBulletin30032020.pdf
 2020-03-30,TN,https://stopcorona.tn.gov.in/wp-content/uploads/2020/03/Media_Bulletin_30_03_2020_5_Pages_English_226_KB.pdf
 2020-03-30,UK,https://health.uk.gov.in/files/Health_Bulletin__Uttarakhand_Novel_Corona_Virus30_march_2020__6.00_PM.pdf
@@ -149,6 +157,7 @@ date,state,bulletin_link
 2020-04-01,TN,https://stopcorona.tn.gov.in/wp-content/uploads/2020/03/Media_Bulletin_01.04.2020_6_Pages_English_318_KB.pdf
 2020-04-01,UK,https://health.uk.gov.in/files/Health_Bulletin_Uttarakhand_Novel_Corona_Virus_1_April_2020__7.00_PM.pdf
 2020-04-01,WB,https://www.wbhealth.gov.in/uploaded_files/corona/Bulletin_West_Bengal_01.04_.2020_.pdf
+2020-04-02,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/04/Daily-Bulletin-HFWD-English-April-2nd.pdf
 2020-04-02,TN,https://stopcorona.tn.gov.in/wp-content/uploads/2020/03/Media-Bulletin-02-04-20-COVID-19-6-PM.pdf
 2020-04-02,UK,https://health.uk.gov.in/files/Health_Bulletin_Uttarakhand_Novel_Corona_Virus_2_April_2020__9.00_PM.pdf
 2020-04-03,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/04/Daily-Bulletin-HFWD-English-April-3rd.pdf
@@ -242,10 +251,12 @@ date,state,bulletin_link
 2020-04-21,TN,https://stopcorona.tn.gov.in/wp-content/uploads/2020/03/Media-Bulletin-21.04.2020.pdf
 2020-04-21,UK,https://health.uk.gov.in/files/2020.04.21_Health_Bulletin.pdf
 2020-04-21,WB,https://www.wbhealth.gov.in/uploaded_files/corona/Bulletin_West_Bengal_21.04_.2020_.pdf
+2020-04-22,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/04/Daily-Bulletin-HFWD-English-April-22.pdf
 2020-04-22,MP,http://mphealthresponse.nhmmp.gov.in/covid/wp-content/uploads/2020/04/22.4.2020-Health-Bullatin.pdf
 2020-04-22,TN,https://stopcorona.tn.gov.in/wp-content/uploads/2020/03/Media-Bulletin-22.04.2020.pdf
 2020-04-22,UK,https://health.uk.gov.in/files/2020.04.22_Health_Bulletin.pdf
 2020-04-22,WB,https://www.wbhealth.gov.in/uploaded_files/corona/Bulletin_West_Bengal_22.04_.2020_.pdf
+2020-04-23,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/04/Daily-Bulletin-HFWD-English-April-23.pdf
 2020-04-23,MP,http://mphealthresponse.nhmmp.gov.in/covid/wp-content/uploads/2020/04/23.4.2020-Health-Bullatin.pdf
 2020-04-23,TN,https://stopcorona.tn.gov.in/wp-content/uploads/2020/03/Media-Bulletin-23.04.2020.pdf
 2020-04-23,UK,https://health.uk.gov.in/files/2020.04.23_Health_Bulletin.pdf
@@ -303,6 +314,7 @@ date,state,bulletin_link
 2020-05-03,TN,https://stopcorona.tn.gov.in/wp-content/uploads/2020/03/Media-Bulletin-03.05.2020.pdf
 2020-05-03,UK,https://health.uk.gov.in/files/2020.05.03_Health_Bulletin.pdf
 2020-05-03,WB,https://www.wbhealth.gov.in/uploaded_files/corona/Bulletin_West_Bengal_03.05_.2020_.pdf
+2020-05-04,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/05/Daily-Bulletin-HFWD-English-May-04.pdf
 2020-05-04,MP,http://mphealthresponse.nhmmp.gov.in/covid/wp-content/uploads/2020/05/04-05-2020-Health-Bulletin.pdf
 2020-05-04,TG,https://covid19.telangana.gov.in/wp-content/uploads/2020/05/Media-Bulletin-04-05-2020.pdf
 2020-05-04,TN,https://stopcorona.tn.gov.in/wp-content/uploads/2020/03/Media-Bulletin-04.05.2020-1.pdf
@@ -458,6 +470,7 @@ date,state,bulletin_link
 2020-05-28,TN,https://stopcorona.tn.gov.in/wp-content/uploads/2020/03/Media-Bulletin-28.05.2020.pdf
 2020-05-28,UK,https://health.uk.gov.in/files/2020.05.28_Health_Bulletin.pdf
 2020-05-28,WB,https://www.wbhealth.gov.in/uploaded_files/corona/WB_DHFW_Bulletin_28th_MAY_REPORT_DRAFT.pdf
+2020-05-29,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/05/Daily-Bulletin-HFWD-English-May-29.pdf
 2020-05-29,MP,http://mphealthresponse.nhmmp.gov.in/covid/wp-content/uploads/2020/05/29-05-2020-Health-Bulletin.pdf
 2020-05-29,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin29May.pdf
 2020-05-29,TG,https://covid19.telangana.gov.in/wp-content/uploads/2020/05/Media-Bulletin-29-05-2020.pdf
@@ -479,6 +492,7 @@ date,state,bulletin_link
 2020-05-31,UK,https://health.uk.gov.in/files/2020.05.31_Health_Bulletin.pdf
 2020-05-31,WB,https://www.wbhealth.gov.in/uploaded_files/corona/WB_DHFW_Bulletin_31st_MAY_REPORT_FINAL.pdf
 2020-06-01,DL,http://health.delhigovt.nic.in/wps/wcm/connect/5b3193804e81442a89e4ebd194e333e1/DHB01J.pdf?MOD=AJPERES&lmod=1959955013&CACHEID=5b3193804e81442a89e4ebd194e333e1
+2020-06-01,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/06/Daily-Bulletin-HFWD-English-June-1.pdf
 2020-06-01,MP,http://mphealthresponse.nhmmp.gov.in/covid/wp-content/uploads/2020/06/01-06-2020-Health-Bulletin.pdf
 2020-06-01,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin01June.pdf
 2020-06-01,TG,https://covid19.telangana.gov.in/wp-content/uploads/2020/06/Media-Bulletin-01-06-2020.pdf
@@ -510,6 +524,7 @@ date,state,bulletin_link
 2020-06-04,UK,https://health.uk.gov.in/files/2020.06.04_Health_Bulletin.pdf
 2020-06-04,WB,https://www.wbhealth.gov.in/uploaded_files/corona/WB_DHFW_Bulletin_4th_JUNE_REPORT_FINAL.pdf
 2020-06-05,DL,http://health.delhigovt.nic.in/wps/wcm/connect/245ea7004e8cdd889ff1ffd194e333e1/DHB05J.pdf?MOD=AJPERES&lmod=-2008540381&CACHEID=245ea7004e8cdd889ff1ffd194e333e1
+2020-06-05,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/06/Daily-Bulletin-HFWD-English-June-05.pdf
 2020-06-05,MP,http://mphealthresponse.nhmmp.gov.in/covid/wp-content/uploads/2020/06/05-06-2020-Health-Bulletin.pdf
 2020-06-05,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin05June.pdf
 2020-06-05,TG,https://covid19.telangana.gov.in/wp-content/uploads/2020/06/Media-Bulletin-05-06-2020.pdf
@@ -525,6 +540,7 @@ date,state,bulletin_link
 2020-06-06,UK,https://health.uk.gov.in/files/2020.06.06_Health_Bulletin.pdf
 2020-06-06,WB,https://www.wbhealth.gov.in/uploaded_files/corona/WB_DHFW_Bulletin_6th_JUNE_REPORT_FINAL1.pdf
 2020-06-07,DL,http://health.delhigovt.nic.in/wps/wcm/connect/e75c0f004e931f6ca9b6ebd194e333e1/DHB07J.pdf?MOD=AJPERES&lmod=-1802446708&CACHEID=e75c0f004e931f6ca9b6ebd194e333e1
+2020-06-07,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/06/Daily-Bulletin-HFWD-English-June-07.pdf
 2020-06-07,MP,http://mphealthresponse.nhmmp.gov.in/covid/wp-content/uploads/2020/06/07-06-2020-Health-Bulletin.pdf
 2020-06-07,TG,https://covid19.telangana.gov.in/wp-content/uploads/2020/06/Media-Bulletin-07-06-2020.pdf
 2020-06-07,TN,https://stopcorona.tn.gov.in/wp-content/uploads/2020/03/Media-Bulletin-07.06.2020.pdf
@@ -562,6 +578,7 @@ date,state,bulletin_link
 2020-06-11,UK,https://health.uk.gov.in/files/2020.06.11_Health_Bulletin.pdf
 2020-06-11,WB,https://www.wbhealth.gov.in/uploaded_files/corona/WB_DHFW_Bulletin_11th_JUNE_REPORT_FINAL.pdf
 2020-06-12,DL,http://health.delhigovt.nic.in/wps/wcm/connect/6c553e004ea841b0a86cad5dc9149193/DHB12J.pdf?MOD=AJPERES&lmod=-1237545353&CACHEID=6c553e004ea841b0a86cad5dc9149193
+2020-06-12,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/06/Daily-Bulletin-HFWD-English-June-12.pdf
 2020-06-12,MP,http://mphealthresponse.nhmmp.gov.in/covid/wp-content/uploads/2020/06/12-06-2020-Health-Bulletin.pdf
 2020-06-12,TG,https://covid19.telangana.gov.in/wp-content/uploads/2020/06/Media-Bulletin-12-06-2020.pdf
 2020-06-12,TN,https://stopcorona.tn.gov.in/wp-content/uploads/2020/03/Media-Bulletin-12.06.2020.pdf
@@ -607,6 +624,7 @@ date,state,bulletin_link
 2020-06-17,UK,https://health.uk.gov.in/files/2020.06.17_Health_Bulletin.pdf
 2020-06-17,WB,https://www.wbhealth.gov.in/uploaded_files/corona/WB_DHFW_Bulletin_17th_JUNE_REPORT_FINAL.pdf
 2020-06-18,DL,http://health.delhigovt.nic.in/wps/wcm/connect/cdd947804ed36579bb15bf5dc9149193/DHB18M.pdf?MOD=AJPERES&lmod=91707263&CACHEID=cdd947804ed36579bb15bf5dc9149193
+2020-06-18,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/06/Bulletin-HFWD-English-June-18.pdf
 2020-06-18,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin18june.pdf
 2020-06-18,TG,https://covid19.telangana.gov.in/wp-content/uploads/2020/06/Media-Bulletin-18-06-2020.pdf
 2020-06-18,TN,https://stopcorona.tn.gov.in/wp-content/uploads/2020/06/Media-Bulletin-18.06.2020-19-Pages-English-425.2-KB.pdf
@@ -620,12 +638,14 @@ date,state,bulletin_link
 2020-06-19,UK,https://health.uk.gov.in/files/2020.06.19_Health_Bulletin.pdf
 2020-06-19,WB,https://www.wbhealth.gov.in/uploaded_files/corona/WB_DHFW_Bulletin_19th_JUNE_REPORT_FINAL.pdf
 2020-06-20,DL,http://health.delhigovt.nic.in/wps/wcm/connect/676145804ebb9a018d15ad5dc9149193/DHB20M.pdf?MOD=AJPERES&lmod=-692988182&CACHEID=676145804ebb9a018d15ad5dc9149193
+2020-06-20,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/06/Bulletin-HFWD-English-June-20.pdf
 2020-06-20,MP,http://mphealthresponse.nhmmp.gov.in/covid/wp-content/uploads/2020/06/20-06-2020-Health-Bulletin.pdf
 2020-06-20,TG,https://covid19.telangana.gov.in/wp-content/uploads/2020/06/Media-Bulletin-20-06-2020.pdf
 2020-06-20,TN,https://stopcorona.tn.gov.in/wp-content/uploads/2020/03/Media-Bulletin-20-06-20-COVID-19-6-PM.pdf
 2020-06-20,UK,https://health.uk.gov.in/files/2020.06.20_Health_Bulletin.pdf
 2020-06-20,WB,https://www.wbhealth.gov.in/uploaded_files/corona/WB_DHFW_Bulletin_20th_JUNE_REPORT_FINAL.pdf
 2020-06-21,DL,http://health.delhigovt.nic.in/wps/wcm/connect/c99c98004ed36986bb41bf5dc9149193/DHB21M.pdf?MOD=AJPERES&lmod=91719541&CACHEID=c99c98004ed36986bb41bf5dc9149193
+2020-06-21,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/06/Bulletin-HFWD-English-June-21-1.pdf
 2020-06-21,MP,http://mphealthresponse.nhmmp.gov.in/covid/wp-content/uploads/2020/06/21-06-2020-Health-Bulletin.pdf
 2020-06-21,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin21june.pdf
 2020-06-21,TG,https://covid19.telangana.gov.in/wp-content/uploads/2020/06/Media-Bulletin-21-06-2020.pdf
@@ -633,6 +653,7 @@ date,state,bulletin_link
 2020-06-21,UK,https://health.uk.gov.in/files/2020.06.21_Health_Bulletin.pdf
 2020-06-21,WB,https://www.wbhealth.gov.in/uploaded_files/corona/WB_DHFW_Bulletin_21st_JUNE_REPORT_FINAL2.pdf
 2020-06-22,DL,http://health.delhigovt.nic.in/wps/wcm/connect/1a2424804ec1f3849921bd5dc9149193/DHB22M.pdf?MOD=AJPERES&lmod=-507187888&CACHEID=1a2424804ec1f3849921bd5dc9149193
+2020-06-22,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/06/Bulletin-HFWD-English-June-22.pdf
 2020-06-22,MP,http://mphealthresponse.nhmmp.gov.in/covid/wp-content/uploads/2020/06/22-06-2020-Health-Bulletin.pdf
 2020-06-22,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin22june.pdf
 2020-06-22,TG,https://covid19.telangana.gov.in/wp-content/uploads/2020/06/Media-Bulletin-22-06-2020.pdf
@@ -655,6 +676,7 @@ date,state,bulletin_link
 2020-06-24,UK,https://health.uk.gov.in/files/2020.06.24_Health_Bulletin.pdf
 2020-06-24,WB,https://www.wbhealth.gov.in/uploaded_files/corona/WB_DHFW_Bulletin_24th_JUNE_REPORT_FINAL.pdf
 2020-06-25,DL,http://health.delhigovt.nic.in/wps/wcm/connect/e4ef6c804ecdcf6db20bb75dc9149193/DHB25M.pdf?MOD=AJPERES&lmod=-164019477&CACHEID=e4ef6c804ecdcf6db20bb75dc9149193
+2020-06-25,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/06/Bulletin-HFWD-English-June-25.pdf
 2020-06-25,MP,http://mphealthresponse.nhmmp.gov.in/covid/wp-content/uploads/2020/06/25-06-2020-Health-Bulletin.pdf
 2020-06-25,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin25june.pdf
 2020-06-25,TG,https://covid19.telangana.gov.in/wp-content/uploads/2020/06/Media-Bulletin-25-06-2020.pdf
@@ -686,6 +708,7 @@ date,state,bulletin_link
 2020-06-28,UK,https://health.uk.gov.in/files/2020.06.28_Health_Bulletin.pdf
 2020-06-28,WB,https://www.wbhealth.gov.in/uploaded_files/corona/WB_DHFW_Bulletin_28th_JUNE_REPORT_FINAL.pdf
 2020-06-29,DL,http://health.delhigovt.nic.in/wps/wcm/connect/839100804ed61550817aa55dc9149193/DHB29J.pdf?MOD=AJPERES&lmod=91751963&CACHEID=839100804ed61550817aa55dc9149193
+2020-06-29,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/06/Bulletin-HFWD-English-June-29.pdf
 2020-06-29,MP,http://mphealthresponse.nhmmp.gov.in/covid/wp-content/uploads/2020/06/29-06-2020-Health-Bulletin.pdf
 2020-06-29,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin29june.pdf
 2020-06-29,TG,https://covid19.telangana.gov.in/wp-content/uploads/2020/06/Media-Bulletin-29-06-2020.pdf
@@ -738,6 +761,7 @@ date,state,bulletin_link
 2020-07-04,WB,https://www.wbhealth.gov.in/uploaded_files/corona/WB_DHFW_Bulletin_4th_JULY_REPORT_FINAL.pdf
 2020-07-05,DL,http://health.delhigovt.nic.in/wps/wcm/connect/7fa71b804ee9a016a73ea75dc9149193/DHB5JU.pdf?MOD=AJPERES&lmod=620098706&CACHEID=7fa71b804ee9a016a73ea75dc9149193
 2020-07-05,KA,https://covid19.karnataka.gov.in/pdfs/july20/en/05-07-2020 HMB English.pdf
+2020-07-05,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/07/Bulletin-HFWD-English-July-5.pdf
 2020-07-05,MP,http://mphealthresponse.nhmmp.gov.in/covid/wp-content/uploads/2020/07/05-07-2020-Health-Bulletin.pdf
 2020-07-05,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin5july.pdf
 2020-07-05,TG,https://covid19.telangana.gov.in/wp-content/uploads/2020/07/Media-Bulletin-05-07-2020.pdf
@@ -767,6 +791,7 @@ date,state,bulletin_link
 2020-07-08,DL,http://health.delhigovt.nic.in/wps/wcm/connect/dd1c5c004ef555dab677b75dc9149193/DHB8JU.pdf?MOD=AJPERES&lmod=932483178&CACHEID=dd1c5c004ef555dab677b75dc9149193
 2020-07-08,GA,https://www.goa.gov.in/wp-content/uploads/2020/07/Media-Bulletin-08-Jul-2020.pdf
 2020-07-08,KA,https://covid19.karnataka.gov.in/pdfs/july20/en/08-07-2020 HMB English.pdf
+2020-07-08,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/07/Bulletin-HFWD-English-July-08.pdf
 2020-07-08,MP,http://mphealthresponse.nhmmp.gov.in/covid/wp-content/uploads/2020/07/08-07-2020-Health-Bulletin.pdf
 2020-07-08,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin8july.pdf
 2020-07-08,TG,https://covid19.telangana.gov.in/wp-content/uploads/2020/07/Media-Bulletin-08-07-2020.pdf
@@ -785,6 +810,7 @@ date,state,bulletin_link
 2020-07-10,DL,http://health.delhigovt.nic.in/wps/wcm/connect/2fb670804efe780b8471a55dc9149193/DHB10JU.pdf?MOD=AJPERES&lmod=1302459498&CACHEID=2fb670804efe780b8471a55dc9149193
 2020-07-10,GA,https://www.goa.gov.in/wp-content/uploads/2020/07/Media-Bulletin-10-Jul-2020.pdf
 2020-07-10,KA,https://covid19.karnataka.gov.in/pdfs/july20/en/10-07-2020 HMB English.pdf
+2020-07-10,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/07/Bulletin-HFWD-English-July-10-1.pdf
 2020-07-10,MP,http://mphealthresponse.nhmmp.gov.in/covid/wp-content/uploads/2020/07/10-07-2020-Health-Bulletin-1.pdf
 2020-07-10,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin10july.pdf
 2020-07-10,TG,https://covid19.telangana.gov.in/wp-content/uploads/2020/07/Media-Bulletin-10-07-2020.pdf
@@ -853,6 +879,7 @@ date,state,bulletin_link
 2020-07-17,GA,https://www.goa.gov.in/wp-content/uploads/2020/07/Media-Bulletin-17th-July-2020.pdf
 2020-07-17,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 17-07-20.pdf
 2020-07-17,KA,https://covid19.karnataka.gov.in/pdfs/july20/en/17-07-2020 HMB English.pdf
+2020-07-17,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/07/Bulletin-HFWD-English-July-17.pdf
 2020-07-17,MP,http://mphealthresponse.nhmmp.gov.in/covid/wp-content/uploads/2020/07/17-07-2020-Health-Bulletin.pdf
 2020-07-17,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin17july.pdf
 2020-07-17,TG,https://covid19.telangana.gov.in/wp-content/uploads/2020/07/Media-Bulletin-17-07-2020.pdf
@@ -938,6 +965,7 @@ date,state,bulletin_link
 2020-07-25,GA,https://www.goa.gov.in/wp-content/uploads/2020/07/Media-bulletin-07-25-20.pdf
 2020-07-25,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 25-07-20.pdf
 2020-07-25,KA,https://covid19.karnataka.gov.in/pdfs/july20/en/25-07-2020 HMB English.pdf
+2020-07-25,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/07/Bulletin-HFWD-English-July-25.pdf
 2020-07-25,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2020/07/25-07-2020-Health-Bulletin.pdf
 2020-07-25,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin25july.pdf
 2020-07-25,TG,https://covid19.telangana.gov.in/wp-content/uploads/2020/07/Media-Bulletin-25-07-2020.pdf
@@ -969,6 +997,7 @@ date,state,bulletin_link
 2020-07-28,GA,https://www.goa.gov.in/wp-content/uploads/2020/07/Media-Bulletin-28-Jul-2020.pdf
 2020-07-28,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 28-07-20.pdf
 2020-07-28,KA,https://covid19.karnataka.gov.in/pdfs/july20/en/28-07-2020 HMB English.pdf
+2020-07-28,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/07/Bulletin-HFWD-English-July-28.pdf
 2020-07-28,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2020/07/28-07-2020-Health-Bulletin.pdf
 2020-07-28,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin28july.pdf
 2020-07-28,TG,https://covid19.telangana.gov.in/wp-content/uploads/2020/07/Media-Bulletin-28-07-2020.pdf
@@ -979,6 +1008,7 @@ date,state,bulletin_link
 2020-07-29,GA,https://www.goa.gov.in/wp-content/uploads/2020/07/Media-Bulletin-29-Jul-2020.pdf
 2020-07-29,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 29-07-20.pdf
 2020-07-29,KA,https://covid19.karnataka.gov.in/pdfs/july20/en/29-07-2020 HMB English.pdf
+2020-07-29,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/07/Bulletin-HFWD-English-July-29.pdf
 2020-07-29,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2020/07/29-07-2020-Health-Bulletin.pdf
 2020-07-29,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin29july.pdf
 2020-07-29,TG,https://covid19.telangana.gov.in/wp-content/uploads/2020/07/Media-Bulletin-29-07-2020.pdf
@@ -1010,6 +1040,7 @@ date,state,bulletin_link
 2020-08-01,DL,http://health.delhigovt.nic.in/wps/wcm/connect/5aa55b804f3f5c2791adb5a50c073453/DHB01AU.pdf?MOD=AJPERES&lmod=94469211&CACHEID=5aa55b804f3f5c2791adb5a50c073453
 2020-08-01,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 01-08-20.pdf
 2020-08-01,KA,https://covid19.karnataka.gov.in/pdfs/aug20/en/01-08-2020 HMB English.pdf
+2020-08-01,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/08/Bulletin-HFWD-English-August-01.pdf
 2020-08-01,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2020/08/Health-Bulletin-01.08.2020.pdf
 2020-08-01,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin1aug.pdf
 2020-08-01,TG,https://covid19.telangana.gov.in/wp-content/uploads/2020/08/Media-Bulletin-01-08-2020.pdf
@@ -1051,6 +1082,7 @@ date,state,bulletin_link
 2020-08-05,GA,https://www.goa.gov.in/wp-content/uploads/2020/08/Media-Bulletin-05-Aug-2020.pdf
 2020-08-05,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 05-08-20.pdf
 2020-08-05,KA,https://covid19.karnataka.gov.in/pdfs/aug20/en/05-08-2020 HMB English.pdf
+2020-08-05,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/08/Bulletin-HFWD-English-August-05.pdf
 2020-08-05,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2020/08/Letter-Health-Bulletin-05.08.2020.pdf
 2020-08-05,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin5aug.pdf
 2020-08-05,TG,https://covid19.telangana.gov.in/wp-content/uploads/2020/08/Media-Bulletin-05-08-2020.pdf
@@ -1103,6 +1135,7 @@ date,state,bulletin_link
 2020-08-10,GA,https://www.goa.gov.in/wp-content/uploads/2020/08/Media-Bulletin-10th-August-2020.pdf
 2020-08-10,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 10-08-20.pdf
 2020-08-10,KA,https://covid19.karnataka.gov.in/pdfs/aug20/en/10-08-2020 HMB English.pdf
+2020-08-10,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/08/Bulletin-HFWD-English-August-10.pdf
 2020-08-10,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2020/08/Health-Bulletin-10.08.2020.pdf
 2020-08-10,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin10aug.pdf
 2020-08-10,TG,https://covid19.telangana.gov.in/wp-content/uploads/2020/08/Media-Bulletin-10-08-2020.pdf
@@ -1113,6 +1146,7 @@ date,state,bulletin_link
 2020-08-11,GA,https://www.goa.gov.in/wp-content/uploads/2020/08/Media-Bulletin-11th-August-2020.pdf
 2020-08-11,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 11-08-20.pdf
 2020-08-11,KA,https://covid19.karnataka.gov.in/pdfs/aug20/en/11-08-2020 HMB English.pdf
+2020-08-11,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/08/Bulletin-HFWD-English-August-11.pdf
 2020-08-11,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2020/08/Health-Bulletin-11.08.2020.pdf
 2020-08-11,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin11aug.pdf
 2020-08-11,TG,https://covid19.telangana.gov.in/wp-content/uploads/2020/08/Media-Bulletin-11-08-2020.pdf
@@ -1123,6 +1157,7 @@ date,state,bulletin_link
 2020-08-12,GA,https://www.goa.gov.in/wp-content/uploads/2020/08/Media-Bulletin-12-Aug-2020.pdf
 2020-08-12,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 12-08-20.pdf
 2020-08-12,KA,https://covid19.karnataka.gov.in/pdfs/aug20/en/12-08-2020 HMB English.pdf
+2020-08-12,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/08/Bulletin-HFWD-English-August-12-1.pdf
 2020-08-12,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2020/08/Health-Bulletin-12.08.2020.pdf
 2020-08-12,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin12aug.pdf
 2020-08-12,TG,https://covid19.telangana.gov.in/wp-content/uploads/2020/08/Media-Bulletin-12-08-2020.pdf
@@ -1133,6 +1168,7 @@ date,state,bulletin_link
 2020-08-13,GA,https://www.goa.gov.in/wp-content/uploads/2020/08/MEDIA-BULLETIN-13TH-AUGUST-2020.pdf
 2020-08-13,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 13-08-20.pdf
 2020-08-13,KA,https://covid19.karnataka.gov.in/pdfs/aug20/en/13-08-2020 HMB English.pdf
+2020-08-13,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/08/Bulletin-HFWD-English-August-13.pdf
 2020-08-13,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2020/08/Health-Bulletin-13.08.2020.pdf
 2020-08-13,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin13aug.pdf
 2020-08-13,TG,https://covid19.telangana.gov.in/wp-content/uploads/2020/08/Media-Bulletin-13-08-2020.pdf
@@ -1142,6 +1178,7 @@ date,state,bulletin_link
 2020-08-14,DL,http://health.delhigovt.nic.in/wps/wcm/connect/857abe004f6a859faa62bea50c073453/DHB14AU.pdf?MOD=AJPERES&lmod=695602697&CACHEID=857abe004f6a859faa62bea50c073453
 2020-08-14,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 14-08-20.pdf
 2020-08-14,KA,https://covid19.karnataka.gov.in/pdfs/aug20/en/14-08-2020 HMB English.pdf
+2020-08-14,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/08/Bulletin-HFWD-English-August-14.pdf
 2020-08-14,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2020/08/Health-Bulletin-14.08.2020.pdf
 2020-08-14,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin14aug.pdf
 2020-08-14,TG,https://covid19.telangana.gov.in/wp-content/uploads/2020/08/Media-Bulletin-14-08-2020.pdf
@@ -1151,6 +1188,7 @@ date,state,bulletin_link
 2020-08-15,DL,http://health.delhigovt.nic.in/wps/wcm/connect/8e54a9804f6a860aaa68bea50c073453/DHB15AU.pdf?MOD=AJPERES&lmod=695612183&CACHEID=8e54a9804f6a860aaa68bea50c073453
 2020-08-15,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 15-08-20.pdf
 2020-08-15,KA,https://covid19.karnataka.gov.in/pdfs/aug20/en/15-08-2020 HMB English.pdf
+2020-08-15,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/08/Bulletin-HFWD-English-August-15.pdf
 2020-08-15,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2020/08/Health-Bulletin-15.08.2020.pdf
 2020-08-15,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin15aug.pdf
 2020-08-15,TG,https://covid19.telangana.gov.in/wp-content/uploads/2020/08/Media-Bulletin-15-08-2020.pdf
@@ -1243,6 +1281,7 @@ date,state,bulletin_link
 2020-08-24,DL,http://health.delhigovt.nic.in/wps/wcm/connect/464c2b004f830d50a2d2b6a50c073453/DHB24AU.pdf?MOD=AJPERES&lmod=626029332&CACHEID=464c2b004f830d50a2d2b6a50c073453
 2020-08-24,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 24-08-20.pdf
 2020-08-24,KA,https://covid19.karnataka.gov.in/pdfs/aug20/en/24-08-2020 HMB English.pdf
+2020-08-24,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/08/Bulletin-HFWD-English-August-24.pdf
 2020-08-24,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2020/08/Health-Bulletin-24.08.2020.pdf
 2020-08-24,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin24aug.pdf
 2020-08-24,TG,https://covid19.telangana.gov.in/wp-content/uploads/2020/08/Media-Bulletin-24-08-2020.pdf
@@ -1296,6 +1335,7 @@ date,state,bulletin_link
 2020-08-29,GA,https://www.goa.gov.in/wp-content/uploads/2020/08/Media-Bulletin-29-August-2020.pdf
 2020-08-29,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 29-08-20.pdf
 2020-08-29,KA,https://covid19.karnataka.gov.in/pdfs/aug20/en/29-08-2020 HMB English.pdf
+2020-08-29,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/08/Bulletin-HFWD-English-August-29.pdf
 2020-08-29,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2020/08/Health-Bulletin-29.08.2020.pdf
 2020-08-29,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin29aug.pdf
 2020-08-29,TG,https://covid19.telangana.gov.in/wp-content/uploads/2020/08/Media-Bulletin-29-08-2020.pdf
@@ -1339,6 +1379,7 @@ date,state,bulletin_link
 2020-09-02,GA,https://www.goa.gov.in/wp-content/uploads/2020/09/Media-Bulletin-02nd-September-2020.pdf
 2020-09-02,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 02-09-20.pdf
 2020-09-02,KA,https://covid19.karnataka.gov.in/pdfs/sep20/en/02-09-2020 HMB English.pdf
+2020-09-02,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/09/Bulletin-HFWD-English-September-02.pdf
 2020-09-02,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2020/09/Letter-Health-Bulletin-2.09.2020WSS.pdf
 2020-09-02,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin2sep.pdf
 2020-09-02,TG,https://covid19.telangana.gov.in/wp-content/uploads/2020/09/Media-Bulletin-02-09-2020.pdf
@@ -1433,6 +1474,7 @@ date,state,bulletin_link
 2020-09-11,DL,http://health.delhigovt.nic.in/wps/wcm/connect/418175004fc022b0a036b4a50c073453/DHB11SP.pdf?MOD=AJPERES&lmod=-1844598834&CACHEID=418175004fc022b0a036b4a50c073453
 2020-09-11,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 11-09-20.pdf
 2020-09-11,KA,https://covid19.karnataka.gov.in/pdfs/sep20/en/11-09-2020 HMB English.pdf
+2020-09-11,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/09/Bulletin-HFWD-English-September-11.pdf
 2020-09-11,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2020/09/Health-Bulletin-11.09.2020.pdf
 2020-09-11,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin11sep.pdf
 2020-09-11,TG,https://covid19.telangana.gov.in/wp-content/uploads/2020/09/Media-Bulletin-11-09-2020.pdf
@@ -1464,6 +1506,7 @@ date,state,bulletin_link
 2020-09-14,GA,https://www.goa.gov.in/wp-content/uploads/2020/09/Media-Bulletin-14-September-2020.pdf
 2020-09-14,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 14-09-20.pdf
 2020-09-14,KA,https://covid19.karnataka.gov.in/pdfs/sep20/en/14-09-2020 HMB English.pdf
+2020-09-14,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/09/Bulletin-HFWD-English-September-14.pdf
 2020-09-14,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2020/09/Letter-Health-Bulletin-14.09.2020.pdf
 2020-09-14,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletinsep14.pdf
 2020-09-14,TG,https://covid19.telangana.gov.in/wp-content/uploads/2020/09/Media-Bulletin-14-09-2020.pdf
@@ -1507,6 +1550,7 @@ date,state,bulletin_link
 2020-09-18,GA,https://www.goa.gov.in/wp-content/uploads/2020/09/Media-Bulletin-18-September-2020.pdf
 2020-09-18,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 18-09-20.pdf
 2020-09-18,KA,https://covid19.karnataka.gov.in/pdfs/sep20/en/18-09-2020 HMB English.pdf
+2020-09-18,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/09/Bulletin-HFWD-English-September-18.pdf
 2020-09-18,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2020/09/Letter-Health-Bulletin-18.09.2020.pdf
 2020-09-18,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletinsep18.pdf
 2020-09-18,TG,https://covid19.telangana.gov.in/wp-content/uploads/2020/09/Media-Bulletin-18-09-2020.pdf
@@ -1550,6 +1594,7 @@ date,state,bulletin_link
 2020-09-22,GA,https://www.goa.gov.in/wp-content/uploads/2020/09/Media-Bulletin-22-September-2020.pdf
 2020-09-22,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 22-09-20.pdf
 2020-09-22,KA,https://covid19.karnataka.gov.in/pdfs/sep20/en/22-09-2020 HMB English.pdf
+2020-09-22,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/09/Bulletin-HFWD-English-September-22-.pdf
 2020-09-22,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2020/09/Letter-Health-Bulletin-22.09.2020.pdf
 2020-09-22,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin22sep.pdf
 2020-09-22,TG,https://covid19.telangana.gov.in/wp-content/uploads/2020/09/Media-Bulletin-22-09-2020.pdf
@@ -1626,6 +1671,7 @@ date,state,bulletin_link
 2020-09-29,GA,https://www.goa.gov.in/wp-content/uploads/2020/09/Media-Bulletin-29-September-2020.pdf
 2020-09-29,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 29-09-20.pdf
 2020-09-29,KA,https://covid19.karnataka.gov.in/pdfs/sep20/en/29-09-2020 HMB English.pdf
+2020-09-29,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/09/Bulletin-HFWD-English-September-29.pdf
 2020-09-29,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2020/09/Letter-Health-Bulletin-29.09.2020.pdf
 2020-09-29,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin29sep.pdf
 2020-09-29,TG,https://covid19.telangana.gov.in/wp-content/uploads/2020/09/Media-Bulletin-29-09-2020.pdf
@@ -1710,6 +1756,7 @@ date,state,bulletin_link
 2020-10-07,GA,https://www.goa.gov.in/wp-content/uploads/2020/10/Media-Bulletin-07-October-2020.pdf
 2020-10-07,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 07-10-20.pdf
 2020-10-07,KA,https://covid19.karnataka.gov.in/pdfs/oct20/en/07-10-2020 HMB English.pdf
+2020-10-07,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/10/Bulletin-HFWD-English-October-07.pdf
 2020-10-07,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2020/10/Letter-Health-Bulletin-07.10.2020.pdf
 2020-10-07,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin7oct.pdf
 2020-10-07,TG,https://covid19.telangana.gov.in/wp-content/uploads/2020/10/Media-Bulletin-07-10-2020.pdf
@@ -1720,6 +1767,7 @@ date,state,bulletin_link
 2020-10-08,GA,https://www.goa.gov.in/wp-content/uploads/2020/10/Media-Bulletin-08-October-2020.pdf
 2020-10-08,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 08-10-20.pdf
 2020-10-08,KA,https://covid19.karnataka.gov.in/pdfs/oct20/en/08-10-2020 HMB English.pdf
+2020-10-08,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/10/Bulletin-HFWD-English-October-08-1.pdf
 2020-10-08,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2020/10/Letter-Health-Bulletin-08.10.2020.pdf
 2020-10-08,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin8oct.pdf
 2020-10-08,TG,https://covid19.telangana.gov.in/wp-content/uploads/2020/10/Media-Bulletin-08-10-2020.pdf
@@ -1730,6 +1778,7 @@ date,state,bulletin_link
 2020-10-09,GA,https://www.goa.gov.in/wp-content/uploads/2020/10/Media-Bulletin-09-October-2020.pdf
 2020-10-09,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 09-10-20.pdf
 2020-10-09,KA,https://covid19.karnataka.gov.in/pdfs/oct20/en/09-10-2020 HMB English.pdf
+2020-10-09,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/10/Bulletin-HFWD-English-October-09.pdf
 2020-10-09,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2020/10/Letter-Health-Bulletin-09.10.2020.pdf
 2020-10-09,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin9oct.pdf
 2020-10-09,TG,https://covid19.telangana.gov.in/wp-content/uploads/2020/10/Media-Bulletin-09-10-2020.pdf
@@ -1740,6 +1789,7 @@ date,state,bulletin_link
 2020-10-10,GA,https://www.goa.gov.in/wp-content/uploads/2020/10/Media-Bulletin-10-October-2020.pdf
 2020-10-10,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 10-10-20.pdf
 2020-10-10,KA,https://covid19.karnataka.gov.in/pdfs/oct20/en/10-10-2020 HMB English.pdf
+2020-10-10,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/10/Bulletin-HFWD-English-October-10.pdf
 2020-10-10,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2020/10/Letter-Health-Bulletin-10.10.2020.pdf
 2020-10-10,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin10oct.pdf
 2020-10-10,TG,https://covid19.telangana.gov.in/wp-content/uploads/2020/10/Media-Bulletin-10-10-2020.pdf
@@ -1761,6 +1811,7 @@ date,state,bulletin_link
 2020-10-12,GA,https://www.goa.gov.in/wp-content/uploads/2020/10/Media-Bulletin-12-October-2020.pdf
 2020-10-12,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 12-10-20.pdf
 2020-10-12,KA,https://covid19.karnataka.gov.in/pdfs/oct20/en/12-10-2020 HMB English.pdf
+2020-10-12,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/10/Bulletin-HFWD-English-October-12.pdf
 2020-10-12,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2020/10/Letter-Health-Bulletin-12.10.2020.pdf
 2020-10-12,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin12oct.pdf
 2020-10-12,TG,https://covid19.telangana.gov.in/wp-content/uploads/2020/10/Media-Bulletin-12-10-2020.pdf
@@ -1877,6 +1928,7 @@ date,state,bulletin_link
 2020-10-23,DL,http://health.delhigovt.nic.in/wps/wcm/connect/23186c0040408cd8bf76bfa50c073453/DHB23OC.pdf?MOD=AJPERES&lmod=1762209009&CACHEID=23186c0040408cd8bf76bfa50c073453
 2020-10-23,GA,https://www.goa.gov.in/wp-content/uploads/2020/10/Media-Bulletin-23rd-October-2020.pdf
 2020-10-23,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 23-10-20.pdf
+2020-10-23,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/10/Bulletin-HFWD-English-October-23.pdf
 2020-10-23,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2020/10/Letter-Health-Bulletin-23.10.2020.pdf
 2020-10-23,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin23oct.pdf
 2020-10-23,TG,https://covid19.telangana.gov.in/wp-content/uploads/2020/10/Media-Bulletin-23-10-2020.pdf
@@ -1920,6 +1972,7 @@ date,state,bulletin_link
 2020-10-27,GA,https://www.goa.gov.in/wp-content/uploads/2020/10/Media-Bulletin-27th-October-2020.pdf
 2020-10-27,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 27-10-20.pdf
 2020-10-27,KA,https://covid19.karnataka.gov.in/pdfs/oct20/en/27-10-2020 HMB English.pdf
+2020-10-27,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/10/Bulletin-HFWD-English-October-27.pdf
 2020-10-27,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2020/10/Letter-Health-Bulletin-27.10.2020.pdf
 2020-10-27,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin27oct.pdf
 2020-10-27,TG,https://covid19.telangana.gov.in/wp-content/uploads/2020/10/Media-Bulletin-27-10-2020.pdf
@@ -1930,6 +1983,7 @@ date,state,bulletin_link
 2020-10-28,GA,https://www.goa.gov.in/wp-content/uploads/2020/10/Media-Bulletin-28th-October-2020-converted.pdf
 2020-10-28,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 28-10-20.pdf
 2020-10-28,KA,https://covid19.karnataka.gov.in/pdfs/oct20/en/28-10-2020 HMB English.pdf
+2020-10-28,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/10/Bulletin-HFWD-English-October-28.pdf
 2020-10-28,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2020/10/Letter-Health-Bulletin-28.10.2020.pdf
 2020-10-28,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin28oct.pdf
 2020-10-28,TG,https://covid19.telangana.gov.in/wp-content/uploads/2020/10/Media-Bulletin-28-10-2020.pdf
@@ -1995,6 +2049,7 @@ date,state,bulletin_link
 2020-11-03,DL,http://health.delhigovt.nic.in/wps/wcm/connect/70e4ed80405c6ec3b330b7a50c073453/DHB03NV.pdf?MOD=AJPERES&lmod=-1845189973&CACHEID=70e4ed80405c6ec3b330b7a50c073453
 2020-11-03,GA,https://www.goa.gov.in/wp-content/uploads/2020/11/Media-Bulletin-03rd-November-2020.pdf
 2020-11-03,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 03-11-20.pdf
+2020-11-03,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/11/Bulletin-HFWD-English-November-03.pdf
 2020-11-03,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotenovember03.pdf
 2020-11-03,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2020/11/Letter-Health-Bulletin-03.11.2020.pdf
 2020-11-03,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin3nov.pdf
@@ -2136,6 +2191,7 @@ date,state,bulletin_link
 2020-11-16,DL,http://health.delhigovt.nic.in/wps/wcm/connect/88cb46804087d606b283b6a50c073453/DHB16NV.pdf?MOD=AJPERES&lmod=-623495995&CACHEID=88cb46804087d606b283b6a50c073453
 2020-11-16,GA,https://www.goa.gov.in/wp-content/uploads/2020/11/Media-Bulletin-16-th-November-2020-.pdf
 2020-11-16,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 16-11-20.pdf
+2020-11-16,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/11/Bulletin-HFWD-English-November-16.pdf
 2020-11-16,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotenovember16.pdf
 2020-11-16,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2020/11/Letter-Health-Bulletin-16.11.2020-1.pdf
 2020-11-16,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin16nov.pdf
@@ -2179,6 +2235,7 @@ date,state,bulletin_link
 2020-11-20,DL,http://health.delhigovt.nic.in/wps/wcm/connect/9eee8a004097705a8a9fbea50c073453/DHB20NV.pdf?MOD=AJPERES&lmod=-104244985&CACHEID=9eee8a004097705a8a9fbea50c073453
 2020-11-20,GA,https://www.goa.gov.in/wp-content/uploads/2020/11/Media-Bulletin-20th-November-2020-.pdf
 2020-11-20,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 20-11-20.pdf
+2020-11-20,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/11/Bulletin-HFWD-English-November-20.pdf
 2020-11-20,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotenovember20.pdf
 2020-11-20,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2020/11/Letter-Health-Bulletin-20.11.2020.pdf
 2020-11-20,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin20nov.pdf
@@ -2200,6 +2257,7 @@ date,state,bulletin_link
 2020-11-22,DL,http://health.delhigovt.nic.in/wps/wcm/connect/20a2fc80409771ae8aabbea50c073453/DHB22NV.pdf?MOD=AJPERES&lmod=-112213328&CACHEID=20a2fc80409771ae8aabbea50c073453
 2020-11-22,GA,https://www.goa.gov.in/wp-content/uploads/2020/11/Media-Bulletin-22nd-November-2020.pdf
 2020-11-22,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 22-11-20.pdf
+2020-11-22,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/11/Bulletin-HFWD-English-November-22.pdf
 2020-11-22,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotenovember22.pdf
 2020-11-22,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2020/11/Letter-Health-Bulletin-22.11.2020.pdf
 2020-11-22,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin22nov.pdf
@@ -2323,6 +2381,7 @@ date,state,bulletin_link
 2020-12-03,GA,https://www.goa.gov.in/wp-content/uploads/2020/12/Media-Bulletin-03rd-December-2020.pdf
 2020-12-03,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 03-12-20.pdf
 2020-12-03,KA,https://covid19.karnataka.gov.in/pdfs/nov20/en/03-12-2020 HMB English.pdf
+2020-12-03,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/12/Bulletin-HFWD-English-December-03.pdf
 2020-12-03,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotedecember03.pdf
 2020-12-03,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2020/12/Letter-Health-Bulletin-03.12.2020.pdf
 2020-12-03,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin3dec.pdf
@@ -2346,6 +2405,7 @@ date,state,bulletin_link
 2020-12-05,GA,https://www.goa.gov.in/wp-content/uploads/2020/12/Media-Bulletin-05th-December-2020.pdf
 2020-12-05,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 05-12-20.pdf
 2020-12-05,KA,https://covid19.karnataka.gov.in/pdfs/nov20/en/05-12-2020 HMB English.pdf
+2020-12-05,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/12/Bulletin-HFWD-English-December-05.pdf
 2020-12-05,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotedecember05.pdf
 2020-12-05,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2020/12/Letter-Health-Bulletin-05.12.2020.pdf
 2020-12-05,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin5dec.pdf
@@ -2405,6 +2465,7 @@ date,state,bulletin_link
 2020-12-10,GA,https://www.goa.gov.in/wp-content/uploads/2020/12/Media-Bulletin-10th-December-2020.pdf
 2020-12-10,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 10-12-20.pdf
 2020-12-10,KA,https://covid19.karnataka.gov.in/pdfs/nov20/en/10-12-2020 HMB English.pdf
+2020-12-10,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/12/Bulletin-HFWD-English-December-10.pdf
 2020-12-10,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotedecember10.pdf
 2020-12-10,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2020/12/Letter-Health-Bulletin-10.12.2020.pdf
 2020-12-10,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin10dec.pdf
@@ -2416,6 +2477,7 @@ date,state,bulletin_link
 2020-12-11,GA,https://www.goa.gov.in/wp-content/uploads/2020/12/Media-Bulletin-11th-December-2020.pdf
 2020-12-11,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 11-12-20.pdf
 2020-12-11,KA,https://covid19.karnataka.gov.in/pdfs/nov20/en/11-12-2020 HMB English.pdf
+2020-12-11,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/12/Bulletin-HFWD-English-December-11.pdf
 2020-12-11,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotedecember11.pdf
 2020-12-11,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2020/12/Letter-Health-Bulletin-11.12.2020.pdf
 2020-12-11,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin11dec.pdf
@@ -2475,6 +2537,7 @@ date,state,bulletin_link
 2020-12-16,GA,https://www.goa.gov.in/wp-content/uploads/2020/12/Media-Bulletin-16-December-2020.pdf
 2020-12-16,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 16-12-20.pdf
 2020-12-16,KA,https://covid19.karnataka.gov.in/pdfs/nov20/en/16-12-2020 HMB English.pdf
+2020-12-16,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/12/Bulletin-HFWD-English-December-16.pdf
 2020-12-16,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotedecember16.pdf
 2020-12-16,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2020/12/Letter-Health-Bulletin-16.12.2020.pdf
 2020-12-16,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin16dec.pdf
@@ -2618,6 +2681,7 @@ date,state,bulletin_link
 2020-12-28,GA,https://www.goa.gov.in/wp-content/uploads/2020/12/Media-Bulletin-28-December-2020.pdf
 2020-12-28,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 28-12-20.pdf
 2020-12-28,KA,https://covid19.karnataka.gov.in/pdfs/nov20/en/28-12-2020 HMB English.pdf
+2020-12-28,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/12/Bulletin-HFWD-English-December-28.pdf
 2020-12-28,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotedecember28.pdf
 2020-12-28,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2020/12/Letter-Health-Bulletin-28.12.2020.pdf
 2020-12-28,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin28dec.pdf
@@ -2641,6 +2705,7 @@ date,state,bulletin_link
 2020-12-30,GA,https://www.goa.gov.in/wp-content/uploads/2020/12/Media-Bulletin-30-December-2020.pdf
 2020-12-30,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 30-12-20.pdf
 2020-12-30,KA,https://covid19.karnataka.gov.in/pdfs/nov20/en/30-12-2020 HMB English.pdf
+2020-12-30,KL,https://dhs.kerala.gov.in/wp-content/uploads/2020/12/Bulletin-HFWD-English-December-30.pdf
 2020-12-30,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotedecember30.pdf
 2020-12-30,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/01/Letter-Health-Bulletin-30.12.2020.pdf
 2020-12-30,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin30dec.pdf
@@ -2686,6 +2751,7 @@ date,state,bulletin_link
 2021-01-03,GA,https://www.goa.gov.in/wp-content/uploads/2021/01/Media-Bulletin-03rd-January-2021.pdf
 2021-01-03,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 03-01-2021.pdf
 2021-01-03,KA,https://covid19.karnataka.gov.in/pdfs/jan21/en/03-01-2021 HMB English.pdf
+2021-01-03,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/01/Bulletin-HFWD-English-January-03.pdf
 2021-01-03,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotejanuary03.pdf
 2021-01-03,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/01/Letter-Health-Bulletin-03.01.2021.pdf
 2021-01-03,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin3jan2021.pdf
@@ -2697,6 +2763,7 @@ date,state,bulletin_link
 2021-01-04,GA,https://www.goa.gov.in/wp-content/uploads/2021/01/Media-Bulletin-04th-January-2021.pdf
 2021-01-04,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 04-01-2021.pdf
 2021-01-04,KA,https://covid19.karnataka.gov.in/pdfs/jan21/en/04-01-2021 HMB English.pdf
+2021-01-04,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/01/Bulletin-HFWD-English-January-04.pdf
 2021-01-04,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotejanuary04.pdf
 2021-01-04,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/01/Letter-Health-Bulletin-04.01.2021.pdf
 2021-01-04,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin4jan2021.pdf
@@ -2756,6 +2823,7 @@ date,state,bulletin_link
 2021-01-09,GA,https://www.goa.gov.in/wp-content/uploads/2021/01/Media-Bulletin-09th-January-2021.pdf
 2021-01-09,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 09-01-2021.pdf
 2021-01-09,KA,https://covid19.karnataka.gov.in/pdfs/jan21/en/09-01-2021 HMB English.pdf
+2021-01-09,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/01/Bulletin-HFWD-English-January-09.pdf
 2021-01-09,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotejanuary09.pdf
 2021-01-09,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/01/Letter-Health-Bulletin-09.01.2021.pdf
 2021-01-09,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin9jan2021.pdf
@@ -2779,6 +2847,7 @@ date,state,bulletin_link
 2021-01-11,GA,https://www.goa.gov.in/wp-content/uploads/2021/01/Media-Bulletin-11-th-January-2021.pdf
 2021-01-11,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 11-01-2021.pdf
 2021-01-11,KA,https://covid19.karnataka.gov.in/pdfs/jan21/en/11-01-2021 HMB English.pdf
+2021-01-11,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/01/Bulletin-HFWD-English-January-11.pdf
 2021-01-11,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotejanuary11.pdf
 2021-01-11,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/01/Letter-Health-Bulletin-11.01.2021.pdf
 2021-01-11,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin11jan2021.pdf
@@ -2873,6 +2942,7 @@ date,state,bulletin_link
 2021-01-19,GA,https://www.goa.gov.in/wp-content/uploads/2021/01/Media-Bulletin-19-th-January-2021.pdf
 2021-01-19,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 19-01-2021.pdf
 2021-01-19,KA,https://covid19.karnataka.gov.in/pdfs/jan21/en/19-01-2021 HMB English.pdf
+2021-01-19,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/01/Bulletin-HFWD-English-January-19.pdf
 2021-01-19,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotejanuary19.pdf
 2021-01-19,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/01/Letter-Health-Bulletin-19.01.2021-1.pdf
 2021-01-19,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin19jan2021.pdf
@@ -2965,6 +3035,7 @@ date,state,bulletin_link
 2021-01-27,GA,https://www.goa.gov.in/wp-content/uploads/2021/01/Media-Bulletin-27th-January-2021-1.pdf
 2021-01-27,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 27-01-2021.pdf
 2021-01-27,KA,https://covid19.karnataka.gov.in/pdfs/jan21/en/27-01-2021 HMB English.pdf
+2021-01-27,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/01/Bulletin-HFWD-English-January-27.pdf
 2021-01-27,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotejanuary27.pdf
 2021-01-27,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/01/Letter-Health-Bulletin-27.01.2021.pdf
 2021-01-27,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin27jan2021.pdf
@@ -3000,6 +3071,7 @@ date,state,bulletin_link
 2021-01-30,GA,https://www.goa.gov.in/wp-content/uploads/2021/01/Media-Bulletin-30th-January-2021.pdf
 2021-01-30,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 30-01-2021.pdf
 2021-01-30,KA,https://covid19.karnataka.gov.in/pdfs/jan21/en/30-01-2021 HMB English.pdf
+2021-01-30,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/01/Bulletin-HFWD-English-January-30.pdf
 2021-01-30,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotejanuary30.pdf
 2021-01-30,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/02/Letter-Health-Bulletin-30.01.2021.pdf
 2021-01-30,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin30jan2021.pdf
@@ -3047,6 +3119,7 @@ date,state,bulletin_link
 2021-02-03,GA,https://www.goa.gov.in/wp-content/uploads/2021/02/Media-Bulletin-3-rd-February-2021.pdf
 2021-02-03,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 03-02-2021.pdf
 2021-02-03,KA,https://covid19.karnataka.gov.in/pdfs/feb21/en/03-02-2021 HMB English.pdf
+2021-02-03,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/02/Bulletin-HFWD-English-February-03.pdf
 2021-02-03,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotefebruary03.pdf
 2021-02-03,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/02/Letter-Health-Bulletin-03.02.2021.pdf
 2021-02-03,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin3feb2021.pdf
@@ -3285,6 +3358,7 @@ date,state,bulletin_link
 2021-02-23,GA,https://www.goa.gov.in/wp-content/uploads/2021/02/Media-Bulletin-23rd-February-2021.pdf
 2021-02-23,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 23-02-2021.pdf
 2021-02-23,KA,https://covid19.karnataka.gov.in/pdfs/feb21/en/23-02-2021 HMB English.pdf
+2021-02-23,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/02/Bulletin-HFWD-English-February-23.pdf
 2021-02-23,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotefebruary23.pdf
 2021-02-23,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/02/Letter-Health-Bulletin-23.02.2021.pdf
 2021-02-23,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin23feb2021.pdf
@@ -3391,6 +3465,7 @@ date,state,bulletin_link
 2021-03-04,GA,https://www.goa.gov.in/wp-content/uploads/2021/03/Media-Bulletin-04th-March-2021.pdf
 2021-03-04,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 04-03-2021.pdf
 2021-03-04,KA,https://covid19.karnataka.gov.in/pdfs/mar21/en/04-03-2021 HMB English.pdf
+2021-03-04,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/03/Bulletin-HFWD-English-March-04.pdf
 2021-03-04,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotemarch04.pdf
 2021-03-04,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/03/Letter_Health_Bulletin_04.03.2021-3.pdf
 2021-03-04,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin4mar2021.pdf
@@ -3461,6 +3536,7 @@ date,state,bulletin_link
 2021-03-10,GA,https://www.goa.gov.in/wp-content/uploads/2021/03/Media-Bulletin-10th-March-2021.pdf
 2021-03-10,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 10-03-2021.pdf
 2021-03-10,KA,https://covid19.karnataka.gov.in/pdfs/mar21/en/10-03-2021 HMB English.pdf
+2021-03-10,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/03/Bulletin-HFWD-English-March-10.pdf
 2021-03-10,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotemarch10.pdf
 2021-03-10,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/03/Letter_Health_Bulletin_10.03.2021.pdf
 2021-03-10,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin10mar2021.pdf
@@ -3472,6 +3548,7 @@ date,state,bulletin_link
 2021-03-11,GA,https://www.goa.gov.in/wp-content/uploads/2021/03/Media-Bulletin-11th-March-2021.pdf
 2021-03-11,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 11-03-2021.pdf
 2021-03-11,KA,https://covid19.karnataka.gov.in/pdfs/mar21/en/11-03-2021 HMB English.pdf
+2021-03-11,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/03/Bulletin-HFWD-English-March-11.pdf
 2021-03-11,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotemarch11.pdf
 2021-03-11,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/03/Letter_Health_Bulletin_11.03.2021-without-Vaccination.pdf
 2021-03-11,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin11mar2021.pdf
@@ -3519,6 +3596,7 @@ date,state,bulletin_link
 2021-03-15,GA,https://www.goa.gov.in/wp-content/uploads/2021/03/Media-Bulletin-15th-March-2021.pdf
 2021-03-15,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 15-03-2021.pdf
 2021-03-15,KA,https://covid19.karnataka.gov.in/pdfs/mar21/en/15-03-2021 HMB English.pdf
+2021-03-15,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/03/Bulletin-HFWD-English-March-15.pdf
 2021-03-15,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotemarch15.pdf
 2021-03-15,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/03/Letter_Health_Bulletin_15.03.2021.pdf
 2021-03-15,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin15mar2021.pdf
@@ -3554,6 +3632,7 @@ date,state,bulletin_link
 2021-03-18,GA,https://www.goa.gov.in/wp-content/uploads/2021/03/Media-Bulletin-18th-March-2021.pdf
 2021-03-18,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 18-03-2021.pdf
 2021-03-18,KA,https://covid19.karnataka.gov.in/pdfs/mar21/en/18-03-2021 HMB English.pdf
+2021-03-18,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/03/Bulletin-HFWD-English-March-18.pdf
 2021-03-18,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotemarch18.pdf
 2021-03-18,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/03/Letter_Health_Bulletin_18.03.2021.pdf
 2021-03-18,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin18mar2021.pdf
@@ -3565,6 +3644,7 @@ date,state,bulletin_link
 2021-03-19,GA,https://www.goa.gov.in/wp-content/uploads/2021/03/Media-Bulletin-19th-March-2021.pdf
 2021-03-19,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 19-03-2021.pdf
 2021-03-19,KA,https://covid19.karnataka.gov.in/pdfs/mar21/en/19-03-2021 HMB English.pdf
+2021-03-19,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/03/Bulletin-HFWD-English-March-19.pdf
 2021-03-19,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotemarch19.pdf
 2021-03-19,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/03/Letter_Health_Bulletin_19.03.2021.pdf
 2021-03-19,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin19mar2021.pdf
@@ -3624,6 +3704,7 @@ date,state,bulletin_link
 2021-03-24,GA,https://www.goa.gov.in/wp-content/uploads/2021/03/Media-Bulletin-24th-March-2021.pdf
 2021-03-24,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 24-03-2021.pdf
 2021-03-24,KA,https://covid19.karnataka.gov.in/pdfs/mar21/en/24-03-2021 HMB English.pdf
+2021-03-24,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/03/Bulletin-HFWD-English-March-24-1.pdf
 2021-03-24,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotemarch24.pdf
 2021-03-24,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/03/Letter_Health_Bulletin_24.03.2021.pdf
 2021-03-24,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin24mar2021.pdf
@@ -3740,6 +3821,7 @@ date,state,bulletin_link
 2021-04-03,GA,https://www.goa.gov.in/wp-content/uploads/2021/04/Media-Bulletin-3rd-April-2021.pdf
 2021-04-03,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 03-04-2021.pdf
 2021-04-03,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-APR21/03-04-2021 HMB English.pdf
+2021-04-03,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/04/Bulletin-HFWD-English-April-03.pdf
 2021-04-03,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnoteapril03.pdf
 2021-04-03,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/04/Letter_Health_Bulletin_03.04.2021.pdf
 2021-04-03,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin3apr2021.pdf
@@ -3787,6 +3869,7 @@ date,state,bulletin_link
 2021-04-07,GA,https://www.goa.gov.in/wp-content/uploads/2021/04/Media-Bulletin-07th-April-2021.pdf
 2021-04-07,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 07-04-2021.pdf
 2021-04-07,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-APR21/07-04-2021 HMB English.pdf
+2021-04-07,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/04/Bulletin-HFWD-English-April-07.pdf
 2021-04-07,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnoteapril07.pdf
 2021-04-07,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/04/Letter_Health_Bulletin_07_04_2021.pdf
 2021-04-07,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin7apr2021.pdf
@@ -3798,6 +3881,7 @@ date,state,bulletin_link
 2021-04-08,GA,https://www.goa.gov.in/wp-content/uploads/2021/04/Media-Bulletin-08th-April-2021.pdf
 2021-04-08,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 08-04-2021.pdf
 2021-04-08,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-APR21/08-04-2021 HMB English.pdf
+2021-04-08,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/04/Bulletin-HFWD-English-April-08.pdf
 2021-04-08,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnoteapril08.pdf
 2021-04-08,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/04/Letter_Health_Bulletin_08.04.2021-1.pdf
 2021-04-08,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin8apr2021.pdf
@@ -3809,6 +3893,7 @@ date,state,bulletin_link
 2021-04-09,GA,https://www.goa.gov.in/wp-content/uploads/2021/04/Media-Bulletin-09th-April-2021.pdf
 2021-04-09,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 09-04-2021.pdf
 2021-04-09,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-APR21/09-04-2021 HMB English.pdf
+2021-04-09,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/04/Bulletin-HFWD-English-April-09.pdf
 2021-04-09,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnoteapril09.pdf
 2021-04-09,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/04/Letter_Health_Bulletin_09.04.2021-1.pdf
 2021-04-09,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin9apr2021.pdf
@@ -3901,6 +3986,7 @@ date,state,bulletin_link
 2021-04-17,GA,https://www.goa.gov.in/wp-content/uploads/2021/04/Media-Bulletin-17th-April-2021.pdf
 2021-04-17,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 17-04-2021.pdf
 2021-04-17,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-APR21/17-04-2021 HMB English.pdf
+2021-04-17,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/04/Bulletin-HFWD-English-April-17.pdf
 2021-04-17,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnoteapril17.pdf
 2021-04-17,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/04/Letter_Health_Bulletin_17.04.2021.pdf
 2021-04-17,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin17apr2021.pdf
@@ -3924,6 +4010,7 @@ date,state,bulletin_link
 2021-04-19,GA,https://www.goa.gov.in/wp-content/uploads/2021/04/Media-Bulletin-19th-April-2021.pdf
 2021-04-19,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 19-04-2021.pdf
 2021-04-19,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-APR21/19-04-2021 HMB English.pdf
+2021-04-19,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/04/Bulletin-HFWD-English-April-19-1.pdf
 2021-04-19,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnoteapril19.pdf
 2021-04-19,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/04/Letter_Health_Bulletin_19.04.2021.pdf
 2021-04-19,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin19apr2021.pdf
@@ -3947,6 +4034,7 @@ date,state,bulletin_link
 2021-04-21,GA,https://www.goa.gov.in/wp-content/uploads/2021/04/Media-Bulletin-21st-April-2021.pdf
 2021-04-21,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 21-04-2021.pdf
 2021-04-21,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-APR21/21-04-2021 HMB English.pdf
+2021-04-21,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/04/Bulletin-HFWD-English-April-21.pdf
 2021-04-21,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnoteapril21.pdf
 2021-04-21,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/04/Letter_Health_Bulletin_21.04.2021.pdf
 2021-04-21,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin21apr2021.pdf
@@ -3958,6 +4046,7 @@ date,state,bulletin_link
 2021-04-22,GA,https://www.goa.gov.in/wp-content/uploads/2021/04/Media-Bulletin-22nd-April-2021.pdf
 2021-04-22,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 22-04-2021.pdf
 2021-04-22,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-APR21/22-04-2021 HMB English.pdf
+2021-04-22,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/04/Bulletin-HFWD-English-April-22.pdf
 2021-04-22,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnoteapril22.pdf
 2021-04-22,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/04/Letter_Health_Bulletin_22.04.2021-1-1.pdf
 2021-04-22,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin22apr2021.pdf
@@ -3969,6 +4058,7 @@ date,state,bulletin_link
 2021-04-23,GA,https://www.goa.gov.in/wp-content/uploads/2021/04/Media-Bulletin-23rd-April-2021.pdf
 2021-04-23,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 23-04-2021.pdf
 2021-04-23,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-APR21/23-04-2021 HMB English.pdf
+2021-04-23,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/04/Bulletin-HFWD-English-April-23.pdf
 2021-04-23,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnoteapril23.pdf
 2021-04-23,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/04/Letter_Health_Bulletin_23.04.2021.pdf
 2021-04-23,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin23apr2021.pdf
@@ -4004,6 +4094,7 @@ date,state,bulletin_link
 2021-04-26,GA,https://www.goa.gov.in/wp-content/uploads/2021/04/Media-Bulletin-26th-April-2021.pdf
 2021-04-26,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 26-04-2021.pdf
 2021-04-26,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-APR21/26-04-2021 HMB English.pdf
+2021-04-26,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/04/Bulletin-HFWD-English-April-26.pdf
 2021-04-26,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnoteapril26.pdf
 2021-04-26,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/04/Letter_Health_Bulletin_26.04.2021-1.pdf
 2021-04-26,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin26apr2021.pdf
@@ -4015,6 +4106,7 @@ date,state,bulletin_link
 2021-04-27,GA,https://www.goa.gov.in/wp-content/uploads/2021/04/Media-Bulletin-27th-April-2021.pdf
 2021-04-27,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 27-04-2021.pdf
 2021-04-27,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-APR21/27-04-2021 HMB English.pdf
+2021-04-27,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/04/Bulletin-HFWD-English-April-27.pdf
 2021-04-27,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnoteapril27.pdf
 2021-04-27,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/04/Letter_Health_Bulletin_27.04.2021.pdf
 2021-04-27,TG,https://covid19.telangana.gov.in/wp-content/uploads/2021/04/Media-Bulletin-27-04-2021.pdf
@@ -4025,6 +4117,7 @@ date,state,bulletin_link
 2021-04-28,GA,https://www.goa.gov.in/wp-content/uploads/2021/04/Media-Bulletin-28th-April-2021.pdf
 2021-04-28,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 28-04-2021.pdf
 2021-04-28,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-APR21/28-04-2021 HMB English.pdf
+2021-04-28,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/04/Bulletin-HFWD-English-April-28.pdf
 2021-04-28,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnoteapril28.pdf
 2021-04-28,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/04/Letter_Health_Bulletin_28.04.2021.pdf
 2021-04-28,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin28apr2021.pdf
@@ -4036,6 +4129,7 @@ date,state,bulletin_link
 2021-04-29,GA,https://www.goa.gov.in/wp-content/uploads/2021/04/Media-Bulletin-29th-April-2021.pdf
 2021-04-29,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 29-04-2021.pdf
 2021-04-29,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-APR21/29-04-2021 HMB English.pdf
+2021-04-29,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/04/Bulletin-HFWD-English-April-29.pdf
 2021-04-29,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnoteapril29.pdf
 2021-04-29,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/04/Letter_Health_Bulletin_29.04.2021-1.pdf
 2021-04-29,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin29apr2021.pdf
@@ -4047,6 +4141,7 @@ date,state,bulletin_link
 2021-04-30,GA,https://www.goa.gov.in/wp-content/uploads/2021/04/Media-Bulletin-30th-April-2021.pdf
 2021-04-30,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 30-04-2021.pdf
 2021-04-30,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-APR21/30-04-2021 HMB English.pdf
+2021-04-30,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/04/Bulletin-HFWD-English-April-30.pdf
 2021-04-30,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnoteapril30.pdf
 2021-04-30,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/05/Letter_Health_Bulletin_30.04.2021.pdf
 2021-04-30,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin30apr2021.pdf
@@ -4094,6 +4189,7 @@ date,state,bulletin_link
 2021-05-04,GA,https://www.goa.gov.in/wp-content/uploads/2021/05/Media-Bulletin-04th-May-2021.pdf
 2021-05-04,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 04-05-2021.pdf
 2021-05-04,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-MAY21/04-05-2021 HMB English.pdf
+2021-05-04,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/05/Bulletin-HFWD-English-May-04.pdf
 2021-05-04,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotemay04.pdf
 2021-05-04,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/05/Letter_Health_Bulletin_04.05.2021.pdf
 2021-05-04,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin4may2021.pdf
@@ -4129,6 +4225,7 @@ date,state,bulletin_link
 2021-05-07,GA,https://www.goa.gov.in/wp-content/uploads/2021/05/Media-Bulletin-07th-May-2021.pdf
 2021-05-07,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 07-05-2021.pdf
 2021-05-07,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-MAY21/07-05-2021 HMB English.pdf
+2021-05-07,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/05/Bulletin-HFWD-English-May-07.pdf
 2021-05-07,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotemay07.pdf
 2021-05-07,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/05/Letter_Health_Bulletin_07.05.2021-without.pdf
 2021-05-07,TG,https://covid19.telangana.gov.in/wp-content/uploads/2021/05/Media-Bulletin-07-05-2021.pdf
@@ -4255,6 +4352,7 @@ date,state,bulletin_link
 2021-05-18,GA,https://www.goa.gov.in/wp-content/uploads/2021/05/Media-Bulletin-18th-May-2021.pdf
 2021-05-18,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 18-05-2021.pdf
 2021-05-18,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-MAY21/18-05-2021 HMB English.pdf
+2021-05-18,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/05/Bulletin-HFWD-English-May-18.pdf
 2021-05-18,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotemay18.pdf
 2021-05-18,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/05/Letter_Health_Bulletin_18.05.2021.pdf
 2021-05-18,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin18may2021.pdf
@@ -4596,6 +4694,7 @@ date,state,bulletin_link
 2021-06-16,GA,https://www.goa.gov.in/wp-content/uploads/2021/06/Media-Bulletin-16th-June-2021.pdf
 2021-06-16,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 16-06-2021.pdf
 2021-06-16,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB--JUN21//16-06-2021 HMB English.pdf
+2021-06-16,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/06/Bulletin-HFWD-English-June-16.pdf
 2021-06-16,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotejune16.pdf
 2021-06-16,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/06/Letter_Health_Bulletin_16.06.2021.pdf
 2021-06-16,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin16june2021.pdf
@@ -4780,6 +4879,7 @@ date,state,bulletin_link
 2021-07-02,GA,https://www.goa.gov.in/wp-content/uploads/2021/07/Media-Bulletin-02nd-July-2021.pdf
 2021-07-02,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 02-07-2021.pdf
 2021-07-02,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-JUL21//02-07-2021 HMB English.pdf
+2021-07-02,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/07/Bulletin-HFWD-English-July-02.pdf
 2021-07-02,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotejuly02.pdf
 2021-07-02,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/07/Letter_Health_Bulletin_02.07.2021.pdf
 2021-07-02,PB,http://covaprod.punjab.gov.in/covid19img/MediaBulletin2july2021.pdf
@@ -4958,6 +5058,7 @@ date,state,bulletin_link
 2021-07-17,GA,https://www.goa.gov.in/wp-content/uploads/2021/07/Media-Bulletin-17-th-july-2021.pdf
 2021-07-17,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 17-07-2021.pdf
 2021-07-17,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-JUL21//17-07-2021 HMB English.pdf
+2021-07-17,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/07/Bulletin-HFWD-English-July-17.pdf
 2021-07-17,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotejuly17.pdf
 2021-07-17,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/07/Letter_Health_Bulletin_17.07.2021_V3.pdf
 2021-07-17,PB,http://covaprod.punjab.gov.in/covid19img/Media Bulletin COVID-19_ 17-July-2021.pdf
@@ -5003,6 +5104,7 @@ date,state,bulletin_link
 2021-07-21,GA,https://www.goa.gov.in/wp-content/uploads/2021/07/MEDIA-BULLETIN-21ST-JULY-2021.pdf
 2021-07-21,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 21-07-2021.pdf
 2021-07-21,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-JUL21//21-07-2021 HMB English.pdf
+2021-07-21,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/07/Bulletin-HFWD-English-July-21.pdf
 2021-07-21,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotejuly21.pdf
 2021-07-21,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/07/Letter_Health_Bulletin_21.07.2021_V3.pdf
 2021-07-21,PB,http://covaprod.punjab.gov.in/covid19img/Media Bulletin COVID-19_ 21-July-2021.pdf
@@ -5149,6 +5251,7 @@ date,state,bulletin_link
 2021-08-03,GA,https://www.goa.gov.in/wp-content/uploads/2021/08/Media-Bulletin-3RD-AUG-2021.pdf
 2021-08-03,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 03-08-2021.pdf
 2021-08-03,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-AUG21//03-08-2021 HMB English.pdf
+2021-08-03,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/08/Bulletin-HFWD-English-August-03.pdf
 2021-08-03,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnoteaugust03.pdf
 2021-08-03,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/08/Letter_Health_Bulletin_03.08.2021_V3.pdf
 2021-08-03,TG,https://covid19.telangana.gov.in/wp-content/uploads/2021/08/Media-Bulletin-03-08-2021.pdf
@@ -5169,6 +5272,7 @@ date,state,bulletin_link
 2021-08-05,GA,https://www.goa.gov.in/wp-content/uploads/2021/08/Media-Bulletin-05th-August-2021.pdf
 2021-08-05,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 05-08-2021.pdf
 2021-08-05,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-AUG21//05-08-2021 HMB English.pdf
+2021-08-05,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/08/Bulletin-HFWD-English-August-5.pdf
 2021-08-05,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnoteaugust05.pdf
 2021-08-05,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/08/Letter_Health_Bulletin_05.08.2021_V3.pdf
 2021-08-05,TG,https://covid19.telangana.gov.in/wp-content/uploads/2021/08/Media-Bulletin-05-08-2021.pdf
@@ -5190,6 +5294,7 @@ date,state,bulletin_link
 2021-08-07,GA,https://www.goa.gov.in/wp-content/uploads/2021/08/Media-Bulletin-07-th-August-2021.pdf
 2021-08-07,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 07-08-2021.pdf
 2021-08-07,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-AUG21//07-08-2021 HMB English.pdf
+2021-08-07,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/08/Bulletin-HFWD-English-August-07.pdf
 2021-08-07,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnoteaugust07.pdf
 2021-08-07,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/08/Letter_Health_Bulletin_07.08.2021_V3.pdf
 2021-08-07,TG,https://covid19.telangana.gov.in/wp-content/uploads/2021/08/Media-Bulletin-07-08-2021.pdf
@@ -5233,6 +5338,7 @@ date,state,bulletin_link
 2021-08-11,GA,https://www.goa.gov.in/wp-content/uploads/2021/08/Media-Bulletin-11th-AUG-2021.pdf
 2021-08-11,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 11-08-2021.pdf
 2021-08-11,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-AUG21//11-08-2021 HMB English.pdf
+2021-08-11,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/08/Bulletin-HFWD-English-August-11.pdf
 2021-08-11,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnoteaugust11.pdf
 2021-08-11,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/08/Letter_Health_Bulletin_11.08.2021_V3.pdf
 2021-08-11,TG,https://covid19.telangana.gov.in/wp-content/uploads/2021/08/Media-Bulletin-11-08-2021.pdf
@@ -5363,6 +5469,7 @@ date,state,bulletin_link
 2021-08-23,GA,https://www.goa.gov.in/wp-content/uploads/2021/08/Media-Bulletin-23rd-August-2021.pdf
 2021-08-23,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 23-08-2021.pdf
 2021-08-23,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-AUG21//23-08-2021 HMB English.pdf
+2021-08-23,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/08/Bulletin-HFWD-English-August-23.pdf
 2021-08-23,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnoteaugust23.pdf
 2021-08-23,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/08/Letter_Health_Bulletin_23.08.2021_V3-1.pdf
 2021-08-23,TG,https://covid19.telangana.gov.in/wp-content/uploads/2021/08/Media-Bulletin-23-08-2021.pdf
@@ -5373,6 +5480,7 @@ date,state,bulletin_link
 2021-08-24,GA,https://www.goa.gov.in/wp-content/uploads/2021/08/Media-Bulletin-24th-August-2021.pdf
 2021-08-24,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 24-08-2021.pdf
 2021-08-24,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-AUG21//24-08-2021 HMB English.pdf
+2021-08-24,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/08/Bulletin-HFWD-English-August-24.pdf
 2021-08-24,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnoteaugust24.pdf
 2021-08-24,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/08/Letter_Health_Bulletin_24.08.2021_V3.pdf
 2021-08-24,TG,https://covid19.telangana.gov.in/wp-content/uploads/2021/08/Media-Bulletin-24-08-2021.pdf
@@ -5468,6 +5576,7 @@ date,state,bulletin_link
 2021-09-02,GA,https://www.goa.gov.in/wp-content/uploads/2021/09/Media-Bulletin-02nd-September-2021.pdf
 2021-09-02,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 02-09-2021.pdf
 2021-09-02,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-SEP21//02-09-2021 HMB English.pdf
+2021-09-02,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/09/Bulletin-HFWD-English-September-02.pdf
 2021-09-02,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnoteseptember02.pdf
 2021-09-02,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/09/Letter_Health_Bulletin_02.09.2021_V3-Autosaved.pdf
 2021-09-02,TG,https://covid19.telangana.gov.in/wp-content/uploads/2021/09/Media-Bulletin-02-09-2021.pdf
@@ -5511,6 +5620,7 @@ date,state,bulletin_link
 2021-09-06,GA,https://www.goa.gov.in/wp-content/uploads/2021/09/Media-Bulletin-06th-September-2021.pdf
 2021-09-06,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 06-09-2021.pdf
 2021-09-06,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-SEP21//06-09-2021 HMB English.pdf
+2021-09-06,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/09/Bulletin-HFWD-English-September-06-NEW-Revised.pdf
 2021-09-06,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnoteseptember06.pdf
 2021-09-06,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/09/Letter_Health_Bulletin_06.09.2021_V3.pdf
 2021-09-06,TG,https://covid19.telangana.gov.in/wp-content/uploads/2021/09/Media-Bulletin-06-09-2021.pdf
@@ -5543,6 +5653,7 @@ date,state,bulletin_link
 2021-09-09,GA,https://www.goa.gov.in/wp-content/uploads/2021/09/Media-Bulletin-09th-September-2021.pdf
 2021-09-09,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 09-09-2021.pdf
 2021-09-09,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-SEP21//09-09-2021 HMB English.pdf
+2021-09-09,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/09/Bulletin-HFWD-English-September-09.pdf
 2021-09-09,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnoteseptember09.pdf
 2021-09-09,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/09/Letter_Health_Bulletin_09.09.2021_V3.pdf
 2021-09-09,TG,https://covid19.telangana.gov.in/wp-content/uploads/2021/09/Media-Bulletin-09-09-2021.pdf
@@ -5597,6 +5708,7 @@ date,state,bulletin_link
 2021-09-14,GA,https://www.goa.gov.in/wp-content/uploads/2021/09/Media-Bulletin-14th-September-2021.pdf
 2021-09-14,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 14-09-2021.pdf
 2021-09-14,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-SEP21//14-09-2021 HMB English.pdf
+2021-09-14,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/09/Bulletin-HFWD-English-September-14.pdf
 2021-09-14,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnoteseptember14.pdf
 2021-09-14,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/09/Letter_Health_Bulletin_14.09.2021_V3.pdf
 2021-09-14,TG,https://covid19.telangana.gov.in/wp-content/uploads/2021/09/Media-Bulletin-14-09-2021.pdf
@@ -5618,6 +5730,7 @@ date,state,bulletin_link
 2021-09-16,GA,https://www.goa.gov.in/wp-content/uploads/2021/09/Media-Bulletin-16th-September-2021.pdf
 2021-09-16,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 16-09-2021.pdf
 2021-09-16,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-SEP21//16-09-2021 HMB English.pdf
+2021-09-16,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/09/Bulletin-HFWD-English-September-16.pdf
 2021-09-16,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnoteseptember16.pdf
 2021-09-16,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/09/Letter_Health_Bulletin_16.09.2021_V3.pdf
 2021-09-16,TG,https://covid19.telangana.gov.in/wp-content/uploads/2021/09/Media-Bulletin-16-09-2021.pdf
@@ -5639,6 +5752,7 @@ date,state,bulletin_link
 2021-09-18,GA,https://www.goa.gov.in/wp-content/uploads/2021/09/Media-Bulletin-18th-september-2021.pdf
 2021-09-18,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 18-09-2021.pdf
 2021-09-18,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-SEP21//18-09-2021 HMB English.pdf
+2021-09-18,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/09/Bulletin-HFWD-English-September-18.pdf
 2021-09-18,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnoteseptember18.pdf
 2021-09-18,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/09/Letter_Health_Bulletin_18.09.2021_V3.pdf
 2021-09-18,TG,https://covid19.telangana.gov.in/wp-content/uploads/2021/09/Media-Bulletin-18-09-2021.pdf
@@ -5715,6 +5829,7 @@ date,state,bulletin_link
 2021-09-25,GA,https://www.goa.gov.in/wp-content/uploads/2021/09/Media-Bulletin-25th-September-2021.pdf
 2021-09-25,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 25-09-2021.pdf
 2021-09-25,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-SEP21//25-09-2021 HMB English.pdf
+2021-09-25,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/09/Bulletin-HFWD-English-September-25-Revised.pdf
 2021-09-25,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnoteseptember25.pdf
 2021-09-25,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/09/Letter_Health_Bulletin_25.09.2021_V3.pdf
 2021-09-25,TG,https://covid19.telangana.gov.in/wp-content/uploads/2021/09/Media-Bulletin-25-09-2021.pdf
@@ -5824,6 +5939,7 @@ date,state,bulletin_link
 2021-10-05,GA,https://www.goa.gov.in/wp-content/uploads/2021/10/Media-Bulletin-05th-October-2021.pdf
 2021-10-05,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 05-10-2021.pdf
 2021-10-05,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-OCT21//05-10-2021 HMB English.pdf
+2021-10-05,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/10/Bulletin-HFWD-English-October-05.pdf
 2021-10-05,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnoteoctober05.pdf
 2021-10-05,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/10/Letter_Health_Bulletin_05.10.2021_V3.pdf
 2021-10-05,TG,https://covid19.telangana.gov.in/wp-content/uploads/2021/10/Media-Bulletin-05-10-2021.pdf
@@ -5856,6 +5972,7 @@ date,state,bulletin_link
 2021-10-08,GA,https://www.goa.gov.in/wp-content/uploads/2021/10/Media-Bulletin-08th-October-2021.pdf
 2021-10-08,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 08-10-2021.pdf
 2021-10-08,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-OCT21//08-10-2021 HMB English.pdf
+2021-10-08,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/10/Bulletin-HFWD-English-October-08.pdf
 2021-10-08,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnoteoctober08.pdf
 2021-10-08,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/10/Letter_Health_Bulletin_08.10.2021_V3.pdf
 2021-10-08,TG,https://covid19.telangana.gov.in/wp-content/uploads/2021/10/Media-Bulletin-08-10-2021.pdf
@@ -5898,6 +6015,7 @@ date,state,bulletin_link
 2021-10-12,GA,https://www.goa.gov.in/wp-content/uploads/2021/10/Media-Bulletin-12th-October-2021.pdf
 2021-10-12,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 12-10-2021.pdf
 2021-10-12,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-OCT21//12-10-2021 HMB English.pdf
+2021-10-12,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/10/Bulletin-HFWD-English-October-12.pdf
 2021-10-12,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnoteoctober12.pdf
 2021-10-12,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/10/Letter_Health_Bulletin_12.10.2021_V3.pdf
 2021-10-12,TG,https://covid19.telangana.gov.in/wp-content/uploads/2021/10/Media-Bulletin-12-10-2021.pdf
@@ -5941,6 +6059,7 @@ date,state,bulletin_link
 2021-10-16,GA,https://www.goa.gov.in/wp-content/uploads/2021/10/Media-Bulletin-16th-October-2021.pdf
 2021-10-16,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 16-10-2021.pdf
 2021-10-16,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-OCT21//16-10-2021 HMB English.pdf
+2021-10-16,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/10/Bulletin-HFWD-English-October-16.pdf
 2021-10-16,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnoteoctober16.pdf
 2021-10-16,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/10/Letter_Health_Bulletin_16.10.2021_V3.pdf
 2021-10-16,TG,https://covid19.telangana.gov.in/wp-content/uploads/2021/10/Media-Bulletin-16-10-2021.pdf
@@ -5962,6 +6081,7 @@ date,state,bulletin_link
 2021-10-18,GA,https://www.goa.gov.in/wp-content/uploads/2021/10/Media-Bulletin-18th-October-2021.pdf
 2021-10-18,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 18-10-2021.pdf
 2021-10-18,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-OCT21//18-10-2021 HMB English.pdf
+2021-10-18,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/10/Bulletin-HFWD-English-October-18.pdf
 2021-10-18,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnoteoctober18.pdf
 2021-10-18,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/10/Letter_Health_Bulletin_18.10.2021_V3.pdf
 2021-10-18,TG,https://covid19.telangana.gov.in/wp-content/uploads/2021/10/Media-Bulletin-18-10-2021.pdf
@@ -6115,6 +6235,7 @@ date,state,bulletin_link
 2021-11-01,GA,https://www.goa.gov.in/wp-content/uploads/2021/11/Media-Bulletin-1st-November-2021.pdf
 2021-11-01,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 01-11-2021.pdf
 2021-11-01,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-NOV21//01-11-2021 HMB English.pdf
+2021-11-01,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/11/Bulletin-HFWD-English-November-1.pdf
 2021-11-01,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotenovember01.pdf
 2021-11-01,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/11/Letter_Health_Bulletin_01.11.2021_V3.pdf
 2021-11-01,TG,https://covid19.telangana.gov.in/wp-content/uploads/2021/11/Media-Bulletin-01-11-2021.pdf
@@ -6191,6 +6312,7 @@ date,state,bulletin_link
 2021-11-08,GA,https://www.goa.gov.in/wp-content/uploads/2021/11/Media-Bulletin-08th-November-2021.pdf
 2021-11-08,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 08-11-2021.pdf
 2021-11-08,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-NOV21//08-11-2021 HMB English.pdf
+2021-11-08,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/11/Bulletin-HFWD-English-November-8.pdf
 2021-11-08,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotenovember08.pdf
 2021-11-08,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/11/Letter_Health_Bulletin_08.11.2021_V3.pdf
 2021-11-08,TG,https://covid19.telangana.gov.in/wp-content/uploads/2021/11/Media-Bulletin-08-11-2021.pdf
@@ -6201,6 +6323,7 @@ date,state,bulletin_link
 2021-11-09,GA,https://www.goa.gov.in/wp-content/uploads/2021/11/Media-Bulletin-09th-November-2021.pdf
 2021-11-09,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 09-11-2021.pdf
 2021-11-09,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-NOV21//09-11-2021 HMB English.pdf
+2021-11-09,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/11/Bulletin-HFWD-English-November-9.pdf
 2021-11-09,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotenovember09.pdf
 2021-11-09,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/11/Letter_Health_Bulletin_09.11.2021_V3.pdf
 2021-11-09,TG,https://covid19.telangana.gov.in/wp-content/uploads/2021/11/Media-Bulletin-09-11-2021.pdf
@@ -6211,6 +6334,7 @@ date,state,bulletin_link
 2021-11-10,GA,https://www.goa.gov.in/wp-content/uploads/2021/11/Media-Bulletin-10th-November-2021.pdf
 2021-11-10,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 10-11-2021.pdf
 2021-11-10,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-NOV21//10-11-2021 HMB English.pdf
+2021-11-10,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/11/Bulletin-HFWD-English-November-10.pdf
 2021-11-10,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotenovember10.pdf
 2021-11-10,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/11/Letter_Health_Bulletin_10.11.2021_V3.pdf
 2021-11-10,TG,https://covid19.telangana.gov.in/wp-content/uploads/2021/11/Media-Bulletin-10-11-2021.pdf
@@ -6254,6 +6378,7 @@ date,state,bulletin_link
 2021-11-14,GA,https://www.goa.gov.in/wp-content/uploads/2021/11/Media-Bulletin-14th-November-2021.pdf
 2021-11-14,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 14-11-2021.pdf
 2021-11-14,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-NOV21//14-11-2021 HMB English.pdf
+2021-11-14,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/11/Bulletin-HFWD-English-November-14.pdf
 2021-11-14,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotenovember14.pdf
 2021-11-14,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/11/Letter_Health_Bulletin_14.11.2021_V3.pdf
 2021-11-14,TG,https://covid19.telangana.gov.in/wp-content/uploads/2021/11/Media-Bulletin-14-11-2021.pdf
@@ -6264,6 +6389,7 @@ date,state,bulletin_link
 2021-11-15,GA,https://www.goa.gov.in/wp-content/uploads/2021/11/Media-Bulletin-15th-November-2021.pdf
 2021-11-15,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 15-11-2021.pdf
 2021-11-15,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-NOV21//15-11-2021 HMB English.pdf
+2021-11-15,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/11/Bulletin-HFWD-English-November-15.pdf
 2021-11-15,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotenovember15.pdf
 2021-11-15,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/11/Letter_Health_Bulletin_15.11.2021_V3.pdf
 2021-11-15,TG,https://covid19.telangana.gov.in/wp-content/uploads/2021/11/Media-Bulletin-15-11-2021.pdf
@@ -6296,6 +6422,7 @@ date,state,bulletin_link
 2021-11-18,GA,https://www.goa.gov.in/wp-content/uploads/2021/11/Media-Bulletin-18th-November-2021.pdf
 2021-11-18,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 18-11-2021.pdf
 2021-11-18,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-NOV21//18-11-2021 HMB English.pdf
+2021-11-18,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/11/Bulletin-HFWD-English-November-18.pdf
 2021-11-18,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotenovember18.pdf
 2021-11-18,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/11/Letter_Health_Bulletin_18.11.2021_V3.pdf
 2021-11-18,TG,https://covid19.telangana.gov.in/wp-content/uploads/2021/11/Media-Bulletin-18-11-2021.pdf
@@ -6306,6 +6433,7 @@ date,state,bulletin_link
 2021-11-19,GA,https://www.goa.gov.in/wp-content/uploads/2021/11/Media-Bulletin-19th-November-2021.pdf
 2021-11-19,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 19-11-2021.pdf
 2021-11-19,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-NOV21//19-11-2021 HMB English.pdf
+2021-11-19,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/11/Bulletin-HFWD-English-November-19.pdf
 2021-11-19,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotenovember19.pdf
 2021-11-19,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/11/Letter_Health_Bulletin_19.11.2021_V3.pdf
 2021-11-19,TG,https://covid19.telangana.gov.in/wp-content/uploads/2021/11/Media-Bulletin-19-11-2021.pdf
@@ -6316,6 +6444,7 @@ date,state,bulletin_link
 2021-11-20,GA,https://www.goa.gov.in/wp-content/uploads/2021/11/Media-Bulletin-20th-November-2021.pdf
 2021-11-20,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 20-11-2021.pdf
 2021-11-20,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-NOV21//20-11-2021 HMB English.pdf
+2021-11-20,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/11/Bulletin-HFWD-English-November-20.pdf
 2021-11-20,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotenovember20.pdf
 2021-11-20,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/11/Letter_Health_Bulletin_20.11.2021_V3-1.pdf
 2021-11-20,TG,https://covid19.telangana.gov.in/wp-content/uploads/2021/11/Media-Bulletin-20-11-2021.pdf
@@ -6336,6 +6465,7 @@ date,state,bulletin_link
 2021-11-22,GA,https://www.goa.gov.in/wp-content/uploads/2021/11/Media-Bulletin-22nd-November-2021.pdf
 2021-11-22,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 22-11-2021.pdf
 2021-11-22,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-NOV21//22-11-2021 HMB English.pdf
+2021-11-22,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/11/Bulletin-HFWD-English-November-22.pdf
 2021-11-22,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotenovember22.pdf
 2021-11-22,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/11/Letter_Health_Bulletin_22.11.2021_V3.pdf
 2021-11-22,TG,https://covid19.telangana.gov.in/wp-content/uploads/2021/11/Media-Bulletin-22-11-2021.pdf
@@ -6357,6 +6487,7 @@ date,state,bulletin_link
 2021-11-24,GA,https://www.goa.gov.in/wp-content/uploads/2021/11/Media-Bulletin-24th-November-2021.pdf
 2021-11-24,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 24-11-2021.pdf
 2021-11-24,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-NOV21//24-11-2021 HMB English.pdf
+2021-11-24,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/11/Bulletin-HFWD-English-November-24.pdf
 2021-11-24,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotenovember24.pdf
 2021-11-24,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/11/Letter_Health_Bulletin_24.11.2021_V3.pdf
 2021-11-24,TG,https://covid19.telangana.gov.in/wp-content/uploads/2021/11/Media-Bulletin-24-11-2021.pdf
@@ -6400,6 +6531,7 @@ date,state,bulletin_link
 2021-11-28,GA,https://www.goa.gov.in/wp-content/uploads/2021/11/Media-Bulletin-28th-November-2021.pdf
 2021-11-28,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 28-11-2021.pdf
 2021-11-28,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-NOV21//28-11-2021 HMB English.pdf
+2021-11-28,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/11/Bulletin-HFWD-Malayalam-November-28.pdf
 2021-11-28,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotenovember28.pdf
 2021-11-28,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/11/Letter_Health_Bulletin_28.11.2021_V3-3.pdf
 2021-11-28,TG,https://covid19.telangana.gov.in/wp-content/uploads/2021/11/Media-Bulletin-28-11-2021.pdf
@@ -6463,6 +6595,7 @@ date,state,bulletin_link
 2021-12-04,GA,https://www.goa.gov.in/wp-content/uploads/2021/12/Media-Bulletin-04th-December-2021.pdf
 2021-12-04,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 04-12-2021.pdf
 2021-12-04,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-dec21//04-12-2021 HMB English.pdf
+2021-12-04,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/12/Bulletin-HFWD-English-December-4.pdf
 2021-12-04,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotedecember04.pdf
 2021-12-04,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/12/Letter_Health_Bulletin_04.12.2021_V3.pdf
 2021-12-04,TG,https://covid19.telangana.gov.in/wp-content/uploads/2021/12/Media-Bulletin-04-12-2021.pdf
@@ -6484,6 +6617,7 @@ date,state,bulletin_link
 2021-12-06,GA,https://www.goa.gov.in/wp-content/uploads/2021/12/Media-Bulletin-06th-December-2021.pdf
 2021-12-06,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 06-12-2021.pdf
 2021-12-06,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-dec21//06-12-2021 HMB English.pdf
+2021-12-06,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/12/Bulletin-HFWD-English-December-6.pdf
 2021-12-06,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotedecember06.pdf
 2021-12-06,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/12/Letter_Health_Bulletin_06.12.2021_V3-1-1.pdf
 2021-12-06,TG,https://covid19.telangana.gov.in/wp-content/uploads/2021/12/Media-Bulletin-06-12-2021.pdf
@@ -6505,6 +6639,7 @@ date,state,bulletin_link
 2021-12-08,GA,https://www.goa.gov.in/wp-content/uploads/2021/12/Media-Bulletin-08th-December-2021.pdf
 2021-12-08,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 08-12-2021.pdf
 2021-12-08,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-dec21//08-12-2021 HMB English.pdf
+2021-12-08,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/12/Bulletin-HFWD-English-December-8.pdf
 2021-12-08,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotedecember08.pdf
 2021-12-08,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/12/Letter_Health_Bulletin_08.12.2021_V3.pdf
 2021-12-08,TG,https://covid19.telangana.gov.in/wp-content/uploads/2021/12/Media-Bulletin-08-12-2021.pdf
@@ -6515,6 +6650,7 @@ date,state,bulletin_link
 2021-12-09,GA,https://www.goa.gov.in/wp-content/uploads/2021/12/Media-Bulletin-09th-December-2021.pdf
 2021-12-09,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 09-12-2021.pdf
 2021-12-09,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-dec21//09-12-2021 HMB English.pdf
+2021-12-09,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/12/Bulletin-HFWD-English-December-9.pdf
 2021-12-09,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotedecember09.pdf
 2021-12-09,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/12/Letter_Health_Bulletin_09.12.2021_V3.pdf
 2021-12-09,TG,https://covid19.telangana.gov.in/wp-content/uploads/2021/12/Media-Bulletin-09-12-2021.pdf
@@ -6534,6 +6670,7 @@ date,state,bulletin_link
 2021-12-11,GA,https://www.goa.gov.in/wp-content/uploads/2021/12/Media-Bulletin-11th-December-2021.pdf
 2021-12-11,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 11-12-2021.pdf
 2021-12-11,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-DEC21//11-12-2021 HMB English.pdf
+2021-12-11,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/12/Bulletin-HFWD-English-December-11.pdf
 2021-12-11,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotedecember11.pdf
 2021-12-11,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/12/Letter_Health_Bulletin_11.12.2021_V3.pdf
 2021-12-11,TG,https://covid19.telangana.gov.in/wp-content/uploads/2021/12/Media-Bulletin-11-12-2021.pdf
@@ -6543,6 +6680,7 @@ date,state,bulletin_link
 2021-12-12,GA,https://www.goa.gov.in/wp-content/uploads/2021/12/Media-Bulletin-12th-December-2021.pdf
 2021-12-12,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 12-12-2021.pdf
 2021-12-12,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-DEC21//12-12-2021 HMB English.pdf
+2021-12-12,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/12/Bulletin-HFWD-English-December-12.pdf
 2021-12-12,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotedecember12.pdf
 2021-12-12,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/12/Letter_Health_Bulletin_12.12.2021_V3.pdf
 2021-12-12,TG,https://covid19.telangana.gov.in/wp-content/uploads/2021/12/Media-Bulletin-12-12-2021.pdf
@@ -6571,6 +6709,7 @@ date,state,bulletin_link
 2021-12-15,GA,https://www.goa.gov.in/wp-content/uploads/2021/12/Media-Bulletin-15th-December-2021.pdf
 2021-12-15,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 15-12-2021.pdf
 2021-12-15,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-DEC21//15-12-2021 HMB English.pdf
+2021-12-15,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/12/Bulletin-HFWD-English-December-15.pdf
 2021-12-15,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotedecember15.pdf
 2021-12-15,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/12/Letter_Health_Bulletin_15.12.2021_V3.pdf
 2021-12-15,TG,https://covid19.telangana.gov.in/wp-content/uploads/2021/12/Media-Bulletin-15-12-2021.pdf
@@ -6580,6 +6719,7 @@ date,state,bulletin_link
 2021-12-16,GA,https://www.goa.gov.in/wp-content/uploads/2021/12/Media-Bulletin-16th-December-2021.pdf
 2021-12-16,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 16-12-2021.pdf
 2021-12-16,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-DEC21//16-12-2021 HMB English.pdf
+2021-12-16,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/12/Bulletin-HFWD-English-December-16.pdf
 2021-12-16,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotedecember16.pdf
 2021-12-16,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/12/Letter_Health_Bulletin_16.12.2021_V3.pdf
 2021-12-16,TG,https://covid19.telangana.gov.in/wp-content/uploads/2021/12/Media-Bulletin-16-12-2021.pdf
@@ -6589,6 +6729,7 @@ date,state,bulletin_link
 2021-12-17,GA,https://www.goa.gov.in/wp-content/uploads/2021/12/Media-Bulletin-17th-December-2021.pdf
 2021-12-17,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 17-12-2021.pdf
 2021-12-17,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-DEC21//17-12-2021 HMB English.pdf
+2021-12-17,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/12/Bulletin-HFWD-English-December-17.pdf
 2021-12-17,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotedecember17.pdf
 2021-12-17,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/12/Letter_Health_Bulletin_17.12.2021_V3.pdf
 2021-12-17,TG,https://covid19.telangana.gov.in/wp-content/uploads/2021/12/Media-Bulletin-17-12-2021.pdf
@@ -6598,6 +6739,7 @@ date,state,bulletin_link
 2021-12-18,GA,https://www.goa.gov.in/wp-content/uploads/2021/12/Media-Bulletin-18th-December-2021.pdf
 2021-12-18,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 18-12-2021.pdf
 2021-12-18,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-DEC21//18-12-2021 HMB English.pdf
+2021-12-18,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/12/Bulletin-HFWD-English-December-18.pdf
 2021-12-18,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotedecember18.pdf
 2021-12-18,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/12/Letter_Health_Bulletin_18.12.2021_V3.pdf
 2021-12-18,TG,https://covid19.telangana.gov.in/wp-content/uploads/2021/12/Media-Bulletin-18-12-2021.pdf
@@ -6607,6 +6749,7 @@ date,state,bulletin_link
 2021-12-19,GA,https://www.goa.gov.in/wp-content/uploads/2021/12/Media-Bulletin-19th-December-2021.pdf
 2021-12-19,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 19-12-2021.pdf
 2021-12-19,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-DEC21//19-12-2021 HMB English.pdf
+2021-12-19,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/12/Bulletin-HFWD-English-December-19.pdf
 2021-12-19,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotedecember19.pdf
 2021-12-19,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2021/12/Letter_Health_Bulletin_19.12.2021_V3.pdf
 2021-12-19,TG,https://covid19.telangana.gov.in/wp-content/uploads/2021/12/Media-Bulletin-19-12-2021.pdf
@@ -6616,8 +6759,19 @@ date,state,bulletin_link
 2021-12-20,GA,https://www.goa.gov.in/wp-content/uploads/2021/12/Media-Bulletin-20th-December-2021.pdf
 2021-12-20,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 20-12-2021.pdf
 2021-12-20,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-DEC21//20-12-2021 HMB English.pdf
+2021-12-20,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/12/Bulletin-HFWD-English-December-20.pdf
 2021-12-20,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotedecember20.pdf
 2021-12-20,TG,https://covid19.telangana.gov.in/wp-content/uploads/2021/12/Media-Bulletin-20-12-2021.pdf
 2021-12-20,TN,http://stopcorona.tn.gov.in/wp-content/uploads/2020/03/Media-Bulletin-20-12-21-COVID-19.pdf
 2021-12-20,UK,https://health.uk.gov.in/files/2021.12.20_Health_Bulletin.pdf
 2021-12-20,WB,https://www.wbhealth.gov.in/uploaded_files/corona/WB_DHFW_Bulletin_20TH_DEC_REPORT_FINAL.pdf
+2021-12-21,GA,https://www.goa.gov.in/wp-content/uploads/2021/12/Media-Bulletin-21st-December-2021.pdf
+2021-12-21,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 21-12-2021.pdf
+2021-12-21,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/12/Bulletin-HFWD-English-December-21.pdf
+2021-12-21,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotedecember21.pdf
+2021-12-21,TG,https://covid19.telangana.gov.in/wp-content/uploads/2021/12/Media-Bulletin-21-12-2021.pdf
+2021-12-21,TN,http://stopcorona.tn.gov.in/wp-content/uploads/2020/03/Media-Bulletin-21-12-21-COVID-19.pdf
+2021-12-21,WB,https://www.wbhealth.gov.in/uploaded_files/corona/WB_DHFW_Bulletin_21ST_DEC_REPORT_FINAL.pdf
+2021-12-22,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 22-12-2021.pdf
+2021-12-22,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotedecember22.pdf
+2021-12-22,TG,https://covid19.telangana.gov.in/wp-content/uploads/2021/12/Media-Bulletin-22-12-2021.pdf
