@@ -26160,3 +26160,7 @@ date,patient_no,district_name,age,sex,description,symptoms,comorbidities,doa,dod
 2021-12-19,100004056,udupi,74,F,SARI,"Breathlessness, Cough, Fever",-,2021-12-18,2021-12-19,Designated Hospital,
 2021-12-20,3040912,hassan,52,M,SARI,"Breathlessness, Cough, Fever",-,2021-12-06,2021-12-18,Designated Hospital,
 2021-12-20,3042795,bengaluru urban,97,F,SARI,"Breathlessness, Cough, Fever",HTN,2021-12-12,2021-12-19,Private Hospital,
+2021-12-22,3042731,belgavi,66,M,ILI,"Cough, Fever","DM, HTN",2021-12-12,2021-12-22,Private Hospital,
+2021-12-22,3043235,kolar,72,M,ILI,"Cough, Fever",-,2021-12-14,2021-12-19,Designated Hospital,
+2021-12-22,3043969,kodagu,82,M,SARI,"Breathlessness, Cough",-,2021-12-21,2021-12-21,Designated Hospital,
+2021-12-22,100004055,dakshina kannada,47,M,ILI,"Cough, Fever",-,2021-12-18,2021-12-22,Private Hospital,
