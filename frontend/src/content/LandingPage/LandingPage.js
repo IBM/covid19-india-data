@@ -1,6 +1,14 @@
 import React from 'react';
-import { Download16 } from '@carbon/icons-react';
+import {
+  Download16,
+  Csv16,
+  Json16,
+  Sql16,
+  Collaborate16,
+  Document16,
+} from '@carbon/icons-react';
 import { LineChart } from '@carbon/charts-react';
+import DWChart from 'react-datawrapper-chart';
 import { fetchData, generateStateID } from '../../components/Info';
 import {
   Link,
@@ -13,6 +21,7 @@ import {
   TableBody,
   TableCell,
   Loading,
+  ButtonSet,
 } from 'carbon-components-react';
 
 const axis_plot_options = {
@@ -161,159 +170,232 @@ class LandingPage extends React.Component {
           minHeight: '100vh',
         }}>
         <div className="bx--row">
-          <div className="bx--col-lg-10 state-header">
-            <h1 className="title">
-              COVID-19 Data <br />
-              from <span className="text-blue">India</span>
-            </h1>
-            <br />
-            <span>
-              &nbsp;&nbsp;Last Updated:{' '}
-              <span className="text-blue">{this.state.last_updated}</span>
-            </span>
+          <div className="bx--col-lg-12">
+            <div className="bx--row">
+              <div className="bx--col-lg-14">
+                <h1 className="title">
+                  COVID-19 Data from <span className="text-blue">India</span>
+                </h1>
+                <h3 className="text-gray">
+                  <span style={{ color: '#c15a5a' }}>
+                    Mining daily health bulletins{' '}
+                  </span>
+                  to create a{' '}
+                  <span style={{ color: '#c15a5a' }}>comprehensive</span>{' '}
+                  COVID-19 India Dataset
+                </h3>
+              </div>
+            </div>
 
-            {Object.keys(this.state.dashboard_table_data).length > 0 && (
-              <>
-                <DataTable
-                  rows={this.state.dashboard_table_data.rowData}
-                  headers={this.state.dashboard_table_data.headerData}
-                  isSortable>
-                  {({ rows, headers, getHeaderProps, getTableProps }) => (
-                    <Table
-                      {...getTableProps()}
-                      size="short"
-                      style={{ marginTop: '35px' }}>
-                      <TableHead>
-                        <TableRow>
-                          {headers.map(header => (
-                            <TableHeader
-                              key={header.key}
-                              {...getHeaderProps({ header })}>
-                              {header.header}
-                            </TableHeader>
-                          ))}
-                        </TableRow>
-                      </TableHead>
-                      <TableBody>
-                        {rows.map(row => (
-                          <TableRow key={row.id}>
-                            {row.cells.map(cell => (
-                              <TableCell key={cell.id}>{cell.value}</TableCell>
-                            ))}
-                          </TableRow>
-                        ))}
-                      </TableBody>
-                    </Table>
-                  )}
-                </DataTable>
-                <br />
-                <span style={{ color: 'gray' }}>
-                  Scroll right to see more data. &#x1f449;
-                </span>
-              </>
-            )}
+            <br />
+            <br />
+
+            <p>
+              Detailed COVID-19 data from India is currently inaccessible to
+              researchers, policymakers, and people interested in understanding
+              and modeling the progression of the pandemic in the country. While
+              crowd-sourced efforts [
+              <Link href="https://www.covid19india.org/" target="_blank">
+                1
+              </Link>
+              ,
+              <Link href="https://www.covid19bharat.org/" target="_blank">
+                2
+              </Link>
+              ] have done an exceptional job filling this gap, they provide
+              limited data about daily cases, testing, and vaccination.
+              <br />
+              <br />
+              However, Indian states have been releasing a daily health bulletin
+              containing detailed information about the pandemic in the
+              respective state [
+              <Link
+                href="https://dhs.kerala.gov.in/wp-content/uploads/2021/12/Bulletin-HFWD-English-December-20.pdf"
+                target="_blank">
+                1
+              </Link>
+              ,
+              <Link
+                href="http://stopcorona.tn.gov.in/wp-content/uploads/2020/03/Media-Bulletin-20-12-21-COVID-19.pdf"
+                target="_blank">
+                2
+              </Link>
+              ,
+              <Link
+                href="http://health.delhigovt.nic.in/wps/wcm/connect/31f0d680452be162aac5ee6876edb3cf/DHB09D.pdf?MOD=AJPERES&lmod=-1285421395&CACHEID=31f0d680452be162aac5ee6876edb3cf"
+                target="_blank">
+                3
+              </Link>
+              ]. These bulletins include hospitalization data, age, and gender
+              distribution, and some states report a summary of each fatality
+              due to COVID-19. However, these{' '}
+              <em>
+                bulletins are provided in an unstructured format, such as PDF or
+                images, thus making it very difficult to extract and aggregate
+                data over time.
+              </em>
+              <br />
+              <br />
+              In this project, we automate the extraction of data provided in
+              these bulletins to create a comprehensive, structured dataset.
+              This allows easy extraction and transformation of data. This
+              dataset is freely available for further research and analysis, and
+              we welcome contributions in any form! &#129303;
+            </p>
           </div>
 
-          <div className="bx--col-lg-6">
-            <p>
-              Availability of COVID-19 data is crucial for researchers and
-              policy makers to understand the progression of the pandemic and
-              react to it in real time.{' '}
-              <Link
-                href="https://www.sciencemag.org/news/2021/05/there-are-so-many-hurdles-indian-scientists-plead-government-unlock-covid-19-data"
-                target="_blank">
-                Here is recent plea
-              </Link>{' '}
-              from researchers in India for they urgent access to COVID data
-              collected by government agencies. Individual states and cities in
-              India provide detailed information in their daily media bulletins
-              about the current situation of COVID-19 in their respective
-              locations. However, such data (usually in the form of PDF
-              documents) is not readily accessible in structured form. While
-              there are fantastic{' '}
-              <Link href="https://www.covid19india.org/" target="_blank">
-                crowd-sourced efforts
-              </Link>{' '}
-              underway to curate such data, manual approaches cannot scale to
-              the volume of the data produced over the long term. Unfortunately,
-              although this project originally began anticipating this outcome,
-              this eventuality has already{' '}
-              <Link
-                href="https://blog.covid19india.org/2021/08/07/end/"
-                target="_blank">
-                come to pass
-              </Link>
-              .
-              <br />
-              <br />
-              In this project, we use AI-assisted document and image extraction
-              techniques to automate the extraction of such data in structured
-              (SQL) form from the state-level daily health bulletins; and aim to
-              make this data readily (and freely) available for further research
-              and analysis. The target is to automate the data extraction and
-              curation for each Indian state, so that once the extraction
-              process of each state is complete, we can be on "autopilot" for
-              that state, requiring little to none continued manual curation
-              (other than to respond to changes in schema).
-              <br />
-              <br />
-              Contributions are most welcome! &#129303;
-              <br />
-              <br />
-            </p>
+          <div className="bx--col-lg-4">
+            {/* <DWChart title="Map" src="https://datawrapper.dwcdn.net/wfgr2/1/" /> */}
 
-            <Link href="/#/contributing" className="button-generic">
-              <Button size="field">Contribute</Button>
-            </Link>
-            <Link
-              href="https://ibm.biz/covid19-india-db"
-              className="button-generic">
-              <Button size="field" kind="secondary">
-                Download data &nbsp; <Download16 />
+            <h5>Download data</h5>
+            <hr />
+            <br />
+
+            <ButtonSet stacked>
+              <Button
+                href="https://github.com/IBM/covid19-india-data/tree/main/data/csv"
+                renderIcon={Csv16}
+                iconDescription="Download"
+                kind="primary"
+                size="lg">
+                CSV data
               </Button>
-            </Link>
-            <Link
+
+              <Button
+                href="https://github.com/IBM/covid19-india-data/tree/main/data/json"
+                renderIcon={Json16}
+                iconDescription="Download"
+                kind="secondary--tertiary">
+                JSON data
+              </Button>
+
+              <Button
+                href="https://ibm.biz/covid19-india-db"
+                renderIcon={Sql16}
+                iconDescription="Download"
+                kind="secondary--tertiary">
+                SQLite data
+              </Button>
+            </ButtonSet>
+
+            <br />
+            <br />
+
+            <h5>Contribute to the project</h5>
+            <hr />
+            <br />
+
+            <Button
+              href="/#/contributing"
+              renderIcon={Collaborate16}
+              iconDescription="Contribute"
+              size="default"
+              kind="tertiary">
+              Contribute
+            </Button>
+
+            <br />
+            <br />
+            <br />
+
+            <h5>Read our methodology</h5>
+            <hr />
+            <br />
+
+            <Button
               href="https://arxiv.org/abs/2110.02311"
-              target="_blank"
-              className="button-generic">
-              <Button size="field" kind="secondary">
-                Read
-              </Button>
-            </Link>
+              renderIcon={Document16}
+              iconDescription="Paper"
+              size="default"
+              kind="tertiary">
+              Read paper
+            </Button>
           </div>
         </div>
 
         <br />
         <br />
+        <div className="bx--col-lg-16">
+          <div>
+            <h3>Dataset characteristics</h3>
+            <hr />
+          </div>
+
+          <p>
+            Currently, we index health bulletins provided by 11 states. Some
+            states provide very detailed health bulletins -- some including a
+            brief summary of all individual fatalities due to COVID-19, and
+            hospitalization statistics. The information available for the
+            currently indexed states is shown in the following table:
+          </p>
+
+          <DWChart
+            title="data-comparison"
+            src="https://datawrapper.dwcdn.net/dHVe5/1/"
+          />
+        </div>
+
+        <br />
+        <br />
+
+        <div className="bx--col-lg-16">
+          <div>
+            <h3>Dashboard</h3>
+            <hr />
+          </div>
+
+          <span>
+            &nbsp;&nbsp;Last Updated:{' '}
+            <span className="text-blue">{this.state.last_updated}</span>
+          </span>
+          <br />
+          {Object.keys(this.state.dashboard_table_data).length > 0 && (
+            <>
+              <DataTable
+                rows={this.state.dashboard_table_data.rowData}
+                headers={this.state.dashboard_table_data.headerData}
+                isSortable>
+                {({ rows, headers, getHeaderProps, getTableProps }) => (
+                  <Table
+                    {...getTableProps()}
+                    size="short"
+                    style={{ marginTop: '35px' }}>
+                    <TableHead>
+                      <TableRow>
+                        {headers.map(header => (
+                          <TableHeader
+                            key={header.key}
+                            {...getHeaderProps({ header })}>
+                            {header.header}
+                          </TableHeader>
+                        ))}
+                      </TableRow>
+                    </TableHead>
+                    <TableBody>
+                      {rows.map(row => (
+                        <TableRow key={row.id}>
+                          {row.cells.map(cell => (
+                            <TableCell key={cell.id}>{cell.value}</TableCell>
+                          ))}
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                )}
+              </DataTable>
+              <br />
+              <span style={{ color: 'gray' }}>
+                Scroll right to see more data. &#x1f449;
+              </span>
+            </>
+          )}
+        </div>
         <br />
         <br />
 
         {this.state.dashboard_graph_data.length === 0 && (
           <Loading description="Loading highlights" withOverlay />
         )}
-
-        <div className="bx--row">
-          {this.state.dashboard_graph_data.length > 0 && (
-            <>
-              {this.state.dashboard_graph_data.map(function(e, i) {
-                return (
-                  <div className="bx--col-lg-4">
-                    <br />
-                    <hr />
-                    <LineChart
-                      key={i}
-                      data={e.data}
-                      options={prepareOptions(e.title, e.title)}></LineChart>
-                    <br />
-                  </div>
-                );
-              })}
-            </>
-          )}
-        </div>
-        <br />
-        <br />
-        <br />
       </div>
     );
   }
