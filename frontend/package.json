@@ -28,6 +28,7 @@
     "react": "^16.8.6",
     "react-datawrapper-chart": "^1.1.1",
     "react-dom": "^16.8.6",
+    "react-ga": "^3.3.0",
     "react-router-dom": "^5.0.0",
     "react-scripts": "4.0.3"
   },

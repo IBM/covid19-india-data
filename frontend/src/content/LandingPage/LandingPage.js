@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  Download16,
   Csv16,
   Json16,
   Sql16,

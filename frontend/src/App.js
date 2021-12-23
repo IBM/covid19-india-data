@@ -26,6 +26,11 @@ import Karnataka from './content/Karnataka/Karnataka';
 import Uttarakhand from './content/Uttarakhand';
 import Punjab from './content/Punjab';
 
+// Initialize Google Analytics
+import ReactGA from 'react-ga';
+ReactGA.initialize('UA-215838753-1');
+ReactGA.pageview(window.location.pathname + window.location.search);
+
 // let config = require('./config.json');
 // let states = config['states'];
 
