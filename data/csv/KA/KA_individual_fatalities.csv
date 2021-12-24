@@ -26164,3 +26164,5 @@ date,patient_no,district_name,age,sex,description,symptoms,comorbidities,doa,dod
 2021-12-22,3043235,kolar,72,M,ILI,"Cough, Fever",-,2021-12-14,2021-12-19,Designated Hospital,
 2021-12-22,3043969,kodagu,82,M,SARI,"Breathlessness, Cough",-,2021-12-21,2021-12-21,Designated Hospital,
 2021-12-22,100004055,dakshina kannada,47,M,ILI,"Cough, Fever",-,2021-12-18,2021-12-22,Private Hospital,
+2021-12-23,3034285,bengaluru urban,60,M,SARI,"Breathlessness, Cough",HTN,2021-11-15,2021-12-01,Private Hospital,
+2021-12-23,3045451,kodagu,94,F,ILI,Fever,-,2021-12-22,2021-12-22,Designated Hospital,
