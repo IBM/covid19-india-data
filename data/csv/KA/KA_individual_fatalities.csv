@@ -26166,3 +26166,7 @@ date,patient_no,district_name,age,sex,description,symptoms,comorbidities,doa,dod
 2021-12-22,100004055,dakshina kannada,47,M,ILI,"Cough, Fever",-,2021-12-18,2021-12-22,Private Hospital,
 2021-12-23,3034285,bengaluru urban,60,M,SARI,"Breathlessness, Cough",HTN,2021-11-15,2021-12-01,Private Hospital,
 2021-12-23,3045451,kodagu,94,F,ILI,Fever,-,2021-12-22,2021-12-22,Designated Hospital,
+2021-12-24,3034216,bengaluru urban,62,M,SARI,"Breathlessnes, Cough",HTN,2021-11-15,2021-11-15,Private Hospital,
+2021-12-24,3039544,bengaluru urban,80,M,SARI,"Breathlessnes, Cough",DM,2021-12-01,2021-12-06,Private Hospital,
+2021-12-24,3041906,belagavi,11,F,ILI,"Cough, Fever",-,2021-12-09,2021-12-10,Private Hospital,
+2021-12-24,3045260,mysuru,86,F,SARI,"Breathlessnes, Cough",HTN,2021-12-22,2021-12-23,Private Hospital,
