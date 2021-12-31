@@ -26189,3 +26189,6 @@ date,patient_no,district_name,age,sex,description,symptoms,comorbidities,doa,dod
 2021-12-29,3046865,bengaluru urban,52,M,SARI,"Breathlessness, Cough, Fever",DM,2021-12-24,2021-12-25,Designated Hospital,
 2021-12-29,3047872,bengaluru urban,82,M,SARI,"Breathlessness, Cough, Fever",HTN,2021-12-20,2021-12-27,Private Hospital,
 2021-12-29,100003137,chitradurga,49,F,SARI,"Breathlessness, Cough, Fever",-,2021-07-18,2021-08-08,Designated Hospital,
+2021-12-30,2743792,bengaluru urban,63,F,SARI,"Breathlessness, Cough, Fever","DM, HTN",2021-06-06,2021-06-10,Private Hospital,
+2021-12-30,3045177,bengaluru urban,96,F,SARI,"Breathlessness, Cough, Fever",-,2021-12-14,2021-12-19,Private Hospital,
+2021-12-30,3047545,bengaluru urban,72,M,SARI,"Breathlessness, Cough, Fever","DM, HTN",2021-04-18,2021-04-19,Private Hospital,

@@ -3401,3 +3401,10 @@ date,travel_mode,passengers,positive_cases
 2021-12-29,road_own,354912,6163.0
 2021-12-29,sea_port,2447,34.0
 2021-12-29,train,35374,428.0
+2021-12-30,airport_domestic,6407028,1087.0
+2021-12-30,airport_international,620319,1110.0
+2021-12-30,grand total,7461504,8824.0
+2021-12-30,road_bus,41416,
+2021-12-30,road_own,354920,6165.0
+2021-12-30,sea_port,2447,34.0
+2021-12-30,train,35374,428.0
