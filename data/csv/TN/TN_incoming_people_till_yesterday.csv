@@ -3415,3 +3415,10 @@ date,travel_mode,passengers,positive_cases
 2021-12-31,road_own,354933,6166.0
 2021-12-31,sea_port,2447,34.0
 2021-12-31,train,35374,428.0
+2022-01-01,airport_domestic,6446237,1090.0
+2022-01-01,airport_international,623366,1125.0
+2022-01-01,grand total,7503782,8854.0
+2022-01-01,road_bus,41416,
+2022-01-01,road_own,354942,6177.0
+2022-01-01,sea_port,2447,34.0
+2022-01-01,train,35374,428.0

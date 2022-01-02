@@ -26200,3 +26200,8 @@ date,patient_no,district_name,age,sex,description,symptoms,comorbidities,doa,dod
 2021-12-31,3046087,bengaluru urban,76,M,ILI,Cough,"DM, HTN",2021-09-14,2021-09-19,Private Hospital,
 2021-12-31,3047976,dakishna kannada,68,M,ILI,Cough,HTN,2021-12-27,2021-12-30,Private Hospital,
 2021-12-31,3049769,uttara kannada,63,F,SARI,"Breathlessness, Cough, Fever",HTN,2021-12-18,2021-12-30,Designated Hospital,
+2022-01-01,2923394,tumakuru,45,F,ILI,Cough,-,,,,/doa:Died at residence on 06-05-2021
+2022-01-01,2937362,mandya,60,F,ILI,"Cough, Fever",HTN,2021-07-26,2021-07-29,Private Hospital,
+2022-01-01,2975560,uttara kannada,60,F,SARI,"Breathlessness, Cough, Fever",HTN,2021-08-17,2021-08-18,Private Hospital,
+2022-01-01,3040458,bengaluru urban,48,F,SARI,Breathlessness,-,2021-12-05,2021-12-27,Private Hospital,
+2022-01-01,3044425,bengaluru urban,66,M,ILI,Cough,HTN,2021-12-07,2021-12-23,Designated Hospital,
