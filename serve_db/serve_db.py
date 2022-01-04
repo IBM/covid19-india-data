@@ -1,13 +1,14 @@
 from typing import List, Tuple, Union
 from schemas import *
 
-from flask import Flask, request, render_template, send_file
+from flask import Flask, request, render_template, send_file, Response
 from flask_cors import CORS, cross_origin
 
 import json
 import sqlite3
 import os
 import dateparser
+import vizapi
 
 __path_to_db_file = "covid-india.db"
 __db_uri = f'file:{__path_to_db_file}?mode=ro'
@@ -356,6 +357,23 @@ def fetch_dashboard_data() -> DashboardData:
     return json.dumps(response, indent=4)
 
 
+@app.route("/vizdata", methods=['GET'])
+def get_viz_data() -> str:
+    
+    viz_id = request.args.get('viz_id')
+    
+    datamap = {
+        'hospitalization': vizapi.hospitalization,
+        'hospitalization_60days': vizapi.hospitalization_last60days
+    }
+
+    csv_data = datamap[viz_id](__db_uri)
+    response = Response(
+        csv_data,
+        mimetype="text/csv"
+    )
+    return response
+
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=int(os.getenv('PORT', 3456)))
-

@@ -1,0 +1,13 @@
+{
+    "hospitalizations.queries": {
+        "DL": "SELECT date, hospital_beds_occupied AS val FROM DL_patient_mgmt WHERE val IS NOT NULL ORDER BY date ASC;",
+        "KL": "SELECT date, total_persons_in_hospital_isolation AS val FROM KL_cumulative_summary WHERE val IS NOT NULL ORDER BY date ASC;",
+        "WB": "SELECT date, current_patients_hospital as val FROM WB_hospital WHERE val IS NOT NULL ORDER BY date ASC;"
+    },
+
+    "hospitalizations.queries.60days": {
+        "DL": "SELECT date, hospital_beds_occupied AS val FROM DL_patient_mgmt WHERE val IS NOT NULL AND date >= DATETIME('now', '-60 day') ORDER BY date ASC;",
+        "KL": "SELECT date, total_persons_in_hospital_isolation AS val FROM KL_cumulative_summary WHERE val IS NOT NULL AND date >= DATETIME('now', '-60 day') ORDER BY date DESC LIMIT 60;",
+        "WB": "SELECT date, current_patients_hospital as val FROM WB_hospital WHERE val IS NOT NULL AND date >= DATETIME('now', '-60 day') ORDER BY date ASC;"
+    }
+}

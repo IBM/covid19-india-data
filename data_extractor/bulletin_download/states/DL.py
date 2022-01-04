@@ -1,4 +1,6 @@
 import re
+import dateparser
+import datetime
 
 from .bulletin import Bulletin
 from bs4 import BeautifulSoup
@@ -17,14 +19,14 @@ class Delhi(Bulletin):
         
         self._months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 
                         'September', 'October', 'November', 'December']
-        self._years = ['2020', '2021']
+        self._years = ['2020', '2021', '2022']
 
     def get_website_html(self, month, year):
         url = self.bulletin_url.format(month, year)
         html = self.get_url_html(url)
         return html
 
-    def get_bulletin_links(self, html):
+    def get_bulletin_links(self, html, year):
 
         soup = BeautifulSoup(html, 'html.parser')
         link_dict = {}
@@ -37,7 +39,9 @@ class Delhi(Bulletin):
                 continue
 
             date = match.group(1)
-            datestr = self.get_date_str(date)
+            dateobj = dateparser.parse(date)
+            dateobj = datetime.datetime(int(year), dateobj.month, dateobj.day)
+            datestr = f'{dateobj.year}-{dateobj.month:02d}-{dateobj.day:02d}'
 
             try:
                 href = anchor['href']
@@ -64,7 +68,7 @@ class Delhi(Bulletin):
                 print(f'\t Downloading Delhi bulletins for year {year} and month {month}')
 
                 html = self.get_website_html(month, year)
-                bulletin_links = self.get_bulletin_links(html)
+                bulletin_links = self.get_bulletin_links(html, year)
                 self.download_bulletins(bulletin_links)
 
                 all_links.update(bulletin_links)
