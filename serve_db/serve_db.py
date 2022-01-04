@@ -361,13 +361,13 @@ def fetch_dashboard_data() -> DashboardData:
 def get_viz_data() -> str:
     
     viz_id = request.args.get('viz_id')
-    param = request.args.get('param')
     
     datamap = {
-        'hospitalization': vizapi.hospitalization
+        'hospitalization': vizapi.hospitalization,
+        'hospitalization_60days': vizapi.hospitalization_last60days
     }
-    
-    csv_data = datamap[viz_id](__db_uri, param)
+
+    csv_data = datamap[viz_id](__db_uri)
     response = Response(
         csv_data,
         mimetype="text/csv"
