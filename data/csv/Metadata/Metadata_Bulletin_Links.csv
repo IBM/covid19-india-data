@@ -6881,6 +6881,7 @@ date,state,bulletin_link
 2021-12-30,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-DEC21//30-12-2021 HMB English.pdf
 2021-12-30,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/12/Bulletin-HFWD-English-December-30.pdf
 2021-12-30,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotedecember30.pdf
+2021-12-30,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2022/01/Letter_Health_Bulletin_30.12.2021_V3.pdf
 2021-12-30,TG,https://covid19.telangana.gov.in/wp-content/uploads/2021/12/Media-Bulletin-30-12-2021.pdf
 2021-12-30,TN,http://stopcorona.tn.gov.in/wp-content/uploads/2020/03/Media-Bulletin-30-12-21-COVID-19.pdf
 2021-12-30,UK,https://health.uk.gov.in/files/2021.12.30_Health_Bulletin.pdf
@@ -6890,6 +6891,7 @@ date,state,bulletin_link
 2021-12-31,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-DEC21//31-12-2021 HMB English.pdf
 2021-12-31,KL,https://dhs.kerala.gov.in/wp-content/uploads/2021/12/Bulletin-HFWD-English-December-31.pdf
 2021-12-31,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotedecember31.pdf
+2021-12-31,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2022/01/Letter_Health_Bulletin_31.12.2021_V3.pdf
 2021-12-31,TG,https://covid19.telangana.gov.in/wp-content/uploads/2021/12/Media-Bulletin-31-12-2021.pdf
 2021-12-31,TN,http://stopcorona.tn.gov.in/wp-content/uploads/2020/03/Media-Bulletin-31-12-21-COVID-19.pdf
 2021-12-31,UK,https://health.uk.gov.in/files/2021.12.31_Health_Bulletin.pdf
@@ -6899,6 +6901,7 @@ date,state,bulletin_link
 2022-01-01,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-JAN22//01-01-2022 HMB English.pdf
 2022-01-01,KL,https://dhs.kerala.gov.in/wp-content/uploads/2022/01/Bulletin-HFWD-English-January-1.pdf
 2022-01-01,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotejanuary01.pdf
+2022-01-01,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2022/01/Letter_Health_Bulletin_01.01.2022_V3-1.pdf
 2022-01-01,TG,https://covid19.telangana.gov.in/wp-content/uploads/2022/01/Media-Bulletin-01-01-2022.pdf
 2022-01-01,TN,http://stopcorona.tn.gov.in/wp-content/uploads/2020/03/Media-Bulletin-01-01-22-COVID-19.pdf
 2022-01-01,UK,https://health.uk.gov.in/files/2022.01.01_Health_Bulletin.pdf
@@ -6908,6 +6911,7 @@ date,state,bulletin_link
 2022-01-02,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-JAN22//02-01-2022 HMB English.pdf
 2022-01-02,KL,https://dhs.kerala.gov.in/wp-content/uploads/2022/01/Bulletin-HFWD-English-January-2.pdf
 2022-01-02,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotejanuary02.pdf
+2022-01-02,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2022/01/Letter_Health_Bulletin_02.01.2022_V3-1.pdf
 2022-01-02,TG,https://covid19.telangana.gov.in/wp-content/uploads/2022/01/Media-Bulletin-02-01-2022.pdf
 2022-01-02,TN,http://stopcorona.tn.gov.in/wp-content/uploads/2020/03/Media-Bulletin-02-01-22-COVID-19.pdf
 2022-01-02,UK,https://health.uk.gov.in/files/2022.01.02_Health_Bulletin.pdf
@@ -6917,6 +6921,7 @@ date,state,bulletin_link
 2022-01-03,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-JAN22//03-01-2022 HMB English.pdf
 2022-01-03,KL,https://dhs.kerala.gov.in/wp-content/uploads/2022/01/Bulletin-HFWD-English-January-3.pdf
 2022-01-03,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotejanuary03.pdf
+2022-01-03,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2022/01/Letter_Health_Bulletin_03.01.2022_V3-1.pdf
 2022-01-03,TG,https://covid19.telangana.gov.in/wp-content/uploads/2022/01/Media-Bulletin-03-01-2022.pdf
 2022-01-03,TN,http://stopcorona.tn.gov.in/wp-content/uploads/2020/03/Media-Bulletin-03-01-22-COVID-19.pdf
 2022-01-03,UK,https://health.uk.gov.in/files/2022.01.03_Health_Bulletin.pdf
@@ -6926,8 +6931,10 @@ date,state,bulletin_link
 2022-01-04,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-JAN22//04-01-2022 HMB English.pdf
 2022-01-04,KL,https://dhs.kerala.gov.in/wp-content/uploads/2022/01/Bulletin-HFWD-English-January-4.pdf
 2022-01-04,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotejanuary04.pdf
+2022-01-04,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2022/01/Letter_Health_Bulletin_04.01.2022_V3-1.pdf
 2022-01-04,TG,https://covid19.telangana.gov.in/wp-content/uploads/2022/01/Media-Bulletin-04-01-2022.pdf
 2022-01-04,TN,http://stopcorona.tn.gov.in/wp-content/uploads/2020/03/Media-Bulletin-04-01-22-COVID-19.pdf
+2022-01-04,UK,https://health.uk.gov.in/files/2022.01.04_Health_Bulletin.pdf
 2022-01-04,WB,https://www.wbhealth.gov.in/uploaded_files/corona/WB_DHFW_Bulletin_4TH_JAN_REPORT_FINAL.pdf
 2022-01-05,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 05-01-2022.pdf
 2022-01-05,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotejanuary05.pdf
