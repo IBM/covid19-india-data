@@ -78,3 +78,4 @@ TN_flight_details,TN,"Tamil Nadu 4 airports domestic flights passenger testing d
 TN_railway_surveillance,TN,"Tamil Nadu Railway station surveillance details till previous day, table number from the top last page"
 TN_seaport_surveillance,TN,"Tamil Nadu seaport surveillance till the day before, table number 2 from the top on last page"
 TN_individual_fatalities,TN,Tamil Nadu individual fatality diagnosis data
+DL_hospitalizations,DL,"Delhi state asymptomatic, moderate, and severe patient numbers"

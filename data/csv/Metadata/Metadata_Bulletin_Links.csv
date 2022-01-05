@@ -6886,6 +6886,7 @@ date,state,bulletin_link
 2021-12-30,TN,http://stopcorona.tn.gov.in/wp-content/uploads/2020/03/Media-Bulletin-30-12-21-COVID-19.pdf
 2021-12-30,UK,https://health.uk.gov.in/files/2021.12.30_Health_Bulletin.pdf
 2021-12-30,WB,https://www.wbhealth.gov.in/uploaded_files/corona/WB_DHFW_Bulletin_30TH_DEC_REPORT_FINAL.pdf
+2021-12-31,DL,http://health.delhigovt.nic.in/wps/wcm/connect/396068804575730f981afe6876edb3cf/DHB31D.pdf?MOD=AJPERES&lmod=605876254&CACHEID=396068804575730f981afe6876edb3cf
 2021-12-31,GA,https://www.goa.gov.in/wp-content/uploads/2021/12/Media-Bulletin-31st-December-2021.pdf
 2021-12-31,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 31-12-2021.pdf
 2021-12-31,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-DEC21//31-12-2021 HMB English.pdf
@@ -6896,49 +6897,64 @@ date,state,bulletin_link
 2021-12-31,TN,http://stopcorona.tn.gov.in/wp-content/uploads/2020/03/Media-Bulletin-31-12-21-COVID-19.pdf
 2021-12-31,UK,https://health.uk.gov.in/files/2021.12.31_Health_Bulletin.pdf
 2021-12-31,WB,https://www.wbhealth.gov.in/uploaded_files/corona/WB_DHFW_Bulletin_31ST_DEC_REPORT_FINAL.pdf
+2022-01-01,DL,http://health.delhigovt.nic.in/wps/wcm/connect/c1ed3c004575758f9821fe6876edb3cf/DHB01J.pdf?MOD=AJPERES&lmod=605899155&CACHEID=c1ed3c004575758f9821fe6876edb3cf
 2022-01-01,GA,https://www.goa.gov.in/wp-content/uploads/2022/01/Media-Bulletin-1st-January-2022.pdf
 2022-01-01,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 01-01-2022.pdf
 2022-01-01,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-JAN22//01-01-2022 HMB English.pdf
 2022-01-01,KL,https://dhs.kerala.gov.in/wp-content/uploads/2022/01/Bulletin-HFWD-English-January-1.pdf
 2022-01-01,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotejanuary01.pdf
 2022-01-01,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2022/01/Letter_Health_Bulletin_01.01.2022_V3-1.pdf
+2022-01-01,PB,http://covaprod.punjab.gov.in/covid19img/Media Bulletin COVID19_ 1-January-2022.pdf
 2022-01-01,TG,https://covid19.telangana.gov.in/wp-content/uploads/2022/01/Media-Bulletin-01-01-2022.pdf
 2022-01-01,TN,http://stopcorona.tn.gov.in/wp-content/uploads/2020/03/Media-Bulletin-01-01-22-COVID-19.pdf
 2022-01-01,UK,https://health.uk.gov.in/files/2022.01.01_Health_Bulletin.pdf
 2022-01-01,WB,https://www.wbhealth.gov.in/uploaded_files/corona/WB_DHFW_Bulletin_1ST_JAN_REPORT_FINAL.pdf
+2022-01-02,DL,http://health.delhigovt.nic.in/wps/wcm/connect/91c3200045757bc3983dfe6876edb3cf/DHB02J.pdf?MOD=AJPERES&lmod=605937926&CACHEID=91c3200045757bc3983dfe6876edb3cf
 2022-01-02,GA,https://www.goa.gov.in/wp-content/uploads/2022/01/Media-Bulletin-2nd-January-2022.pdf
 2022-01-02,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 02-01-2022.pdf
 2022-01-02,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-JAN22//02-01-2022 HMB English.pdf
 2022-01-02,KL,https://dhs.kerala.gov.in/wp-content/uploads/2022/01/Bulletin-HFWD-English-January-2.pdf
 2022-01-02,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotejanuary02.pdf
 2022-01-02,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2022/01/Letter_Health_Bulletin_02.01.2022_V3-1.pdf
+2022-01-02,PB,http://covaprod.punjab.gov.in/covid19img/Media Bulletin COVID19_ 2-January-2022.pdf
 2022-01-02,TG,https://covid19.telangana.gov.in/wp-content/uploads/2022/01/Media-Bulletin-02-01-2022.pdf
 2022-01-02,TN,http://stopcorona.tn.gov.in/wp-content/uploads/2020/03/Media-Bulletin-02-01-22-COVID-19.pdf
 2022-01-02,UK,https://health.uk.gov.in/files/2022.01.02_Health_Bulletin.pdf
 2022-01-02,WB,https://www.wbhealth.gov.in/uploaded_files/corona/WB_DHFW_Bulletin_2ND_JAN_REPORT_FINAL.pdf
+2022-01-03,DL,http://health.delhigovt.nic.in/wps/wcm/connect/2f0ccb004578b4fa9dcdff6876edb3cf/DHB03JA.pdf?MOD=AJPERES&lmod=619720639&CACHEID=2f0ccb004578b4fa9dcdff6876edb3cf
 2022-01-03,GA,https://www.goa.gov.in/wp-content/uploads/2022/01/Media-Bulletin-3rd-January-2022.pdf
 2022-01-03,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 03-01-2022.pdf
 2022-01-03,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-JAN22//03-01-2022 HMB English.pdf
 2022-01-03,KL,https://dhs.kerala.gov.in/wp-content/uploads/2022/01/Bulletin-HFWD-English-January-3.pdf
 2022-01-03,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotejanuary03.pdf
 2022-01-03,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2022/01/Letter_Health_Bulletin_03.01.2022_V3-1.pdf
+2022-01-03,PB,http://covaprod.punjab.gov.in/covid19img/Media Bulletin COVID19_ 3-January-2022.pdf
 2022-01-03,TG,https://covid19.telangana.gov.in/wp-content/uploads/2022/01/Media-Bulletin-03-01-2022.pdf
 2022-01-03,TN,http://stopcorona.tn.gov.in/wp-content/uploads/2020/03/Media-Bulletin-03-01-22-COVID-19.pdf
 2022-01-03,UK,https://health.uk.gov.in/files/2022.01.03_Health_Bulletin.pdf
 2022-01-03,WB,https://www.wbhealth.gov.in/uploaded_files/corona/WB_DHFW_Bulletin_3RD_JAN_REPORT_FINAL.pdf
+2022-01-04,DL,http://health.delhigovt.nic.in/wps/wcm/connect/3ba92180457bb5c7a265ee6876edb3cf/DHB04JA.pdf?MOD=AJPERES&lmod=719165645&CACHEID=3ba92180457bb5c7a265ee6876edb3cf
 2022-01-04,GA,https://www.goa.gov.in/wp-content/uploads/2022/01/Media-Bulletin-4th-January-2022.pdf
 2022-01-04,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 04-01-2022.pdf
 2022-01-04,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-JAN22//04-01-2022 HMB English.pdf
 2022-01-04,KL,https://dhs.kerala.gov.in/wp-content/uploads/2022/01/Bulletin-HFWD-English-January-4.pdf
 2022-01-04,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotejanuary04.pdf
 2022-01-04,MP,http://sarthak.nhmmp.gov.in/covid/wp-content/uploads/2022/01/Letter_Health_Bulletin_04.01.2022_V3-1.pdf
+2022-01-04,PB,http://covaprod.punjab.gov.in/covid19img/Media Bulletin COVID19_ 4-January-2022.pdf
 2022-01-04,TG,https://covid19.telangana.gov.in/wp-content/uploads/2022/01/Media-Bulletin-04-01-2022.pdf
 2022-01-04,TN,http://stopcorona.tn.gov.in/wp-content/uploads/2020/03/Media-Bulletin-04-01-22-COVID-19.pdf
 2022-01-04,UK,https://health.uk.gov.in/files/2022.01.04_Health_Bulletin.pdf
 2022-01-04,WB,https://www.wbhealth.gov.in/uploaded_files/corona/WB_DHFW_Bulletin_4TH_JAN_REPORT_FINAL.pdf
+2022-01-05,GA,https://www.goa.gov.in/wp-content/uploads/2022/01/Media-Bulletin-5th-January-2022.pdf
 2022-01-05,HR,http://www.nhmharyana.gov.in/WriteReadData/userfiles/file/CoronaVirus/Daily Bulletin of COVID 19 as on 05-01-2022.pdf
+2022-01-05,KA,https://covid19.karnataka.gov.in/storage/pdf-files/EMB-JAN22//05-01-2022 HMB English.pdf
+2022-01-05,KL,https://dhs.kerala.gov.in/wp-content/uploads/2022/01/Bulletin-HFWD-English-January-5.pdf
 2022-01-05,MH,https://arogya.maharashtra.gov.in/pdf/ncovidepressnotejanuary05.pdf
+2022-01-05,PB,http://covaprod.punjab.gov.in/covid19img/Media Bulletin COVID19_ 5-January-2022.pdf
 2022-01-05,TG,https://covid19.telangana.gov.in/wp-content/uploads/2022/01/Media-Bulletin-05-01-2022.pdf
+2022-01-05,TN,http://stopcorona.tn.gov.in/wp-content/uploads/2020/03/Media-Bulletin-05-01-22-COVID-19.pdf
+2022-01-05,UK,https://health.uk.gov.in/files/2022.01.05_Health_Bulletin.pdf
+2022-01-05,WB,https://www.wbhealth.gov.in/uploaded_files/corona/WB_DHFW_Bulletin_5TH_JAN_REPORT_FINAL.pdf
 2022-07-11,GA,https://www.goa.gov.in/wp-content/uploads/2021/07/Media-Bulletin-11-th-july.pdf
 2022-07-13,GA,https://www.goa.gov.in/wp-content/uploads/2020/07/media-bulletin-13-July.pdf
 2022-08-18,GA,https://www.goa.gov.in/wp-content/uploads/2020/08/Media-Bulletin-18th-August.pdf

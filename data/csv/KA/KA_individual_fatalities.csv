@@ -26220,3 +26220,5 @@ date,patient_no,district_name,age,sex,description,symptoms,comorbidities,doa,dod
 2022-01-04,3046444,bengaluru urban,64,F,SARI,Breathlessness,"DM, HTN",2021-12-23,2022-01-02,Private Hospital,
 2022-01-04,3050366,bengaluru urban,88,M,ILI,Fever,HTN,2021-12-31,2022-01-01,Private Hospital,
 2022-01-04,3051263,dakshina kannada,88,M,ILI,"Cough, Fever",-,2022-01-01,2022-01-03,Private Hospital,
+2022-01-05,3053514,bengaluru urban,72,F,SARI,"Breathlessness, Cough, Fever","DM, HTN",2022-01-01,2022-01-04,Private Hospital,
+2022-01-05,3056358,bengaluru urban,15,F,ILI,Fever,-,2022-01-03,2022-01-03,Private Hospital,

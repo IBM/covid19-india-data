@@ -8229,3 +8229,123 @@ date,district,cases_today,percentage_tests_positive,outside_source_details,case_
 2021-07-25,sbs nagar,0.0,0.0,,,982 samplestested,11422.0,2.0,11049.0,371.0
 2021-07-25,tarn taran,0.0,0.0,,,976 samplestested,7966.0,13.0,7583.0,370.0
 2021-07-25,total,,,,,,598794.0,699.0,581829.0,16266.0
+2022-01-01,amritsar,9.0,0.42,,9 new cases,,47480.0,24.0,45857.0,1599.0
+2022-01-01,barnala,0.0,0.0,,,96 samplestested,5960.0,9.0,5707.0,244.0
+2022-01-01,bathinda,31.0,7.49,,31 new cases,414 samplestested,41889.0,72.0,40768.0,1049.0
+2022-01-01,faridkot,0.0,0.0,,,331 samplestested,13964.0,5.0,13639.0,320.0
+2022-01-01,fazilka,3.0,1.92,,3 new cases,156 samplestested,20295.0,9.0,19755.0,531.0
+2022-01-01,ferozepur,3.0,1.96,,3 new cases,153 samplestested,14485.0,4.0,13977.0,504.0
+2022-01-01,fg sahib,7.0,1.58,,7 new cases,444 samplestested,8926.0,15.0,8573.0,338.0
+2022-01-01,gurdaspur,6.0,0.59,,6 new cases,,22449.0,31.0,21614.0,804.0
+2022-01-01,hoshiarpur,3.0,0.46,,3 new cases,,31040.0,24.0,30019.0,997.0
+2022-01-01,jalandhar,36.0,1.74,,36 new cases,2071 samplestested,63682.0,112.0,62069.0,1501.0
+2022-01-01,kapurthala,8.0,1.55,,8 new cases,517 samplestested,17931.0,23.0,17352.0,556.0
+2022-01-01,ludhiana,37.0,1.71,,"11 contact of positivecase, 9 new cases(opd), 11 new cases(ili), 6 new cases",2163 samplestested,87845.0,110.0,85618.0,2117.0
+2022-01-01,mansa,0.0,0.0,,,121 samplestested,15612.0,2.0,15229.0,381.0
+2022-01-01,moga,1.0,0.25,,1 new case,,8689.0,4.0,8451.0,234.0
+2022-01-01,muktsar,1.0,0.2,,1 new case,,18810.0,3.0,18283.0,524.0
+2022-01-01,on the daypunjab,332.0,2.02,,,,,,,
+2022-01-01,pathankot,53.0,6.63,,53 new cases,800 samplestested,19237.0,211.0,18592.0,434.0
+2022-01-01,patiala,98.0,6.89,,98 new cases,1423 samplestested,49272.0,244.0,47664.0,1364.0
+2022-01-01,ropar,0.0,0.0,,,246 samplestested,13016.0,7.0,12581.0,428.0
+2022-01-01,sangrur,1.0,0.31,,1 new case,,15774.0,4.0,14895.0,875.0
+2022-01-01,sas nagar,31.0,2.15,,31 new cases,1441 samplestested,69191.0,114.0,68003.0,1074.0
+2022-01-01,sbs nagar,1.0,0.74,,1 new case,,11495.0,9.0,11096.0,390.0
+2022-01-01,tarn taran,3.0,0.34,,3 new cases,,8084.0,5.0,7698.0,381.0
+2022-01-01,total,,,,,,605126.0,1041.0,587440.0,16645.0
+2022-01-02,amritsar,19.0,1.21,,19 new cases,1566 samplestested,47499.0,42.0,45858.0,1599.0
+2022-01-02,barnala,1.0,1.12,,1 new case,89 samplestested,5961.0,10.0,5707.0,244.0
+2022-01-02,bathinda,7.0,1.58,,7 new cases,443 samplestested,41896.0,78.0,40769.0,1049.0
+2022-01-02,faridkot,0.0,0.0,,,233 samplestested,13964.0,5.0,13639.0,320.0
+2022-01-02,fazilka,1.0,0.58,,1 contact of positivecase,,20296.0,10.0,19755.0,531.0
+2022-01-02,ferozepur,0.0,0.0,,,148 samplestested,14485.0,3.0,13978.0,504.0
+2022-01-02,fg sahib,3.0,0.6,,3 new cases,,8929.0,18.0,8573.0,338.0
+2022-01-02,gurdaspur,14.0,1.22,,14 new cases,1148 samplestested,22463.0,44.0,21615.0,804.0
+2022-01-02,hoshiarpur,7.0,1.25,,7 new cases,559 samplestested,31047.0,27.0,30022.0,998.0
+2022-01-02,jalandhar,45.0,2.75,,45 new cases,1636 samplestested,63722.0,141.0,62080.0,1501.0
+2022-01-02,kapurthala,1.0,0.2,,1 new case,,17932.0,23.0,17353.0,556.0
+2022-01-02,ludhiana,40.0,2.63,,"5 contact of positivecase, 6 new cases(opd), 20 new cases(ili), 9 new cases",1521 samplestested,87885.0,144.0,85623.0,2118.0
+2022-01-02,mansa,0.0,0.0,,,117 samplestested,15611.0,0.0,15230.0,381.0
+2022-01-02,moga,1.0,0.25,,1 new case,,8690.0,5.0,8451.0,234.0
+2022-01-02,muktsar,0.0,0.0,,,396 samplestested,18809.0,2.0,18283.0,524.0
+2022-01-02,on the daypunjab,417.0,3.01,,,,,,,
+2022-01-02,pathankot,78.0,13.64,,78 new cases,572 samplestested,19309.0,265.0,18610.0,434.0
+2022-01-02,patiala,133.0,8.92,,133 new cases,1491 samplestested,49384.0,351.0,47669.0,1364.0
+2022-01-02,ropar,1.0,0.43,,1 new case,,13017.0,6.0,12583.0,428.0
+2022-01-02,sangrur,3.0,1.31,,3 new cases,229 samplestested,15777.0,7.0,14895.0,875.0
+2022-01-02,sas nagar,55.0,6.12,,55 new cases,898 samplestested,69246.0,166.0,68005.0,1075.0
+2022-01-02,sbs nagar,3.0,2.13,,3 new cases,141 samplestested,11498.0,12.0,11096.0,390.0
+2022-01-02,tarn taran,5.0,0.57,,5 new cases,,8089.0,10.0,7698.0,381.0
+2022-01-02,total,,,,,,605509.0,1369.0,587492.0,16648.0
+2022-01-03,amritsar,20.0,1.41,,20 new cases,1420 samplestested,47519.0,61.0,45859.0,1599.0
+2022-01-03,barnala,1.0,0.83,,1 new case,,5962.0,6.0,5710.0,246.0
+2022-01-03,bathinda,16.0,4.27,,16 new cases,375 samplestested,41912.0,94.0,40769.0,1049.0
+2022-01-03,faridkot,0.0,0.0,,,368 samplestested,13964.0,5.0,13639.0,320.0
+2022-01-03,fazilka,1.0,1.03,,1 new case (opd),97 samplestested,20297.0,11.0,19755.0,531.0
+2022-01-03,ferozepur,4.0,3.57,,4 new cases,112 samplestested,14489.0,7.0,13978.0,504.0
+2022-01-03,fg sahib,9.0,2.09,,9 new cases,431 samplestested,8938.0,25.0,8575.0,338.0
+2022-01-03,gurdaspur,10.0,1.21,,10 new cases,825 samplestested,22473.0,53.0,21616.0,804.0
+2022-01-03,hoshiarpur,13.0,6.67,,13 new cases,195 samplestested,31060.0,33.0,30029.0,998.0
+2022-01-03,jalandhar,24.0,2.95,,24 new cases,814 samplestested,63745.0,158.0,62086.0,1501.0
+2022-01-03,kapurthala,12.0,2.12,,12 new cases,567 samplestested,17944.0,35.0,17353.0,556.0
+2022-01-03,ludhiana,57.0,6.67,,57 new cases,854 samplestested,87942.0,199.0,85624.0,2119.0
+2022-01-03,mansa,0.0,0.0,,,9 samplestested,15611.0,0.0,15230.0,381.0
+2022-01-03,moga,5.0,0.96,,5 new cases,,8695.0,10.0,8451.0,234.0
+2022-01-03,muktsar,2.0,1.12,,2 new cases,178 samplestested,18811.0,4.0,18283.0,524.0
+2022-01-03,on the daypunjab,419.0,4.47,,,,,,,
+2022-01-03,pathankot,58.0,16.2,,58 new cases,358 samplestested,19360.0,306.0,18620.0,434.0
+2022-01-03,patiala,143.0,23.95,,"28 contact of positivecase, 115 new cases",597 samplestested,49524.0,491.0,47669.0,1364.0
+2022-01-03,ropar,5.0,2.22,,5 new cases,225 samplestested,13022.0,11.0,12583.0,428.0
+2022-01-03,sangrur,5.0,7.46,,5 new cases,67 samplestested,15789.0,16.0,14898.0,875.0
+2022-01-03,sas nagar,30.0,9.9,,30 new cases,303 samplestested,69274.0,191.0,68008.0,1075.0
+2022-01-03,sbs nagar,1.0,1.47,,1 new case,68 samplestested,11499.0,12.0,11097.0,390.0
+2022-01-03,tarn taran,3.0,0.34,,3 new cases,,8092.0,13.0,7698.0,381.0
+2022-01-03,total,,,,,,605922.0,1741.0,587530.0,16651.0
+2022-01-04,amritsar,33.0,2.35,,33 new cases,1405 samplestested,47552.0,93.0,45860.0,1599.0
+2022-01-04,barnala,3.0,3.9,,3 new cases,77 samplestested,5965.0,9.0,5710.0,246.0
+2022-01-04,bathinda,33.0,8.35,,33 new cases,395 samplestested,41945.0,127.0,40769.0,1049.0
+2022-01-04,faridkot,1.0,0.37,,1 new case,273 samplestested,13965.0,6.0,13639.0,320.0
+2022-01-04,fazilka,0.0,0.0,,,19 samplestested,20297.0,11.0,19755.0,531.0
+2022-01-04,ferozepur,10.0,3.41,,10 new cases,293 samplestested,14499.0,17.0,13978.0,504.0
+2022-01-04,fg sahib,42.0,8.45,,42 new cases,497 samplestested,8980.0,64.0,8578.0,338.0
+2022-01-04,gurdaspur,24.0,3.1,,24 new cases,775 samplestested,22497.0,74.0,21619.0,804.0
+2022-01-04,hoshiarpur,16.0,2.17,,16 new cases,738 samplestested,31076.0,47.0,30031.0,998.0
+2022-01-04,jalandhar,85.0,5.58,,85 new cases,1522 samplestested,63829.0,240.0,62088.0,1501.0
+2022-01-04,kapurthala,23.0,4.67,,23 new cases,493 samplestested,17967.0,56.0,17355.0,556.0
+2022-01-04,ludhiana,103.0,4.38,,"7 contacts, 15 opd, 47ili, 14 heath careworker, 20new cases",2353 samplestested,88045.0,295.0,85631.0,2119.0
+2022-01-04,mansa,6.0,3.21,,6 new case,187 samplestested,15617.0,6.0,15230.0,381.0
+2022-01-04,moga,6.0,1.08,,6 new cases,555 samplestested,8701.0,16.0,8451.0,234.0
+2022-01-04,muktsar,1.0,0.47,,1 new case,215 samplestested,18812.0,5.0,18283.0,524.0
+2022-01-04,on the daypunjab,1027.0,6.49,,,,,,,
+2022-01-04,pathankot,88.0,17.36,,88 new cases,507 samplestested,19442.0,375.0,18633.0,434.0
+2022-01-04,patiala,366.0,15.43,,366 new cases,2372 samplestested,49875.0,839.0,47671.0,1365.0
+2022-01-04,ropar,8.0,3.24,,8 new cases,247 samplestested,13030.0,19.0,12583.0,428.0
+2022-01-04,sangrur,11.0,3.75,,11 new cases,293 samplestested,15800.0,22.0,14902.0,876.0
+2022-01-04,sas nagar,149.0,8.33,,149 new cases,1789 samplestested,69423.0,321.0,68027.0,1075.0
+2022-01-04,sbs nagar,3.0,0.83,,3 new cases,361 samplestested,11502.0,15.0,11097.0,390.0
+2022-01-04,tarn taran,16.0,3.51,,16 new cases,456 samplestested,8108.0,29.0,7698.0,381.0
+2022-01-04,total,,,,,,606927.0,2686.0,587588.0,16653.0
+2022-01-05,amritsar,105.0,4.09,,105 new cases,2568 samplestested,47657.0,196.0,45862.0,1599.0
+2022-01-05,barnala,7.0,2.61,,7 new cases,268 samplestested,5972.0,15.0,5710.0,247.0
+2022-01-05,bathinda,26.0,3.28,,26 new cases,792 samplestested,41971.0,147.0,40775.0,1049.0
+2022-01-05,faridkot,4.0,0.6,,4 new cases,670 samplestested,13969.0,9.0,13639.0,321.0
+2022-01-05,fazilka,7.0,5.15,,7 new cases,136 samplestested,20304.0,16.0,19757.0,531.0
+2022-01-05,ferozepur,14.0,2.58,,14 new cases,542 samplestested,14513.0,31.0,13978.0,504.0
+2022-01-05,fg sahib,52.0,5.47,,52 new cases,950 samples,9032.0,116.0,8578.0,338.0
+2022-01-05,gurdaspur,40.0,2.77,,40 new cases,1442 samplestested,22537.0,112.0,21621.0,804.0
+2022-01-05,hoshiarpur,30.0,4.38,,30 new cases,685 samplestested,31106.0,77.0,30031.0,998.0
+2022-01-05,jalandhar,183.0,9.86,,183 new cases,1856 samplestested,64008.0,410.0,62096.0,1502.0
+2022-01-05,kapurthala,8.0,2.01,,8 new cases,399 samplestested,17975.0,64.0,17355.0,556.0
+2022-01-05,ludhiana,203.0,9.79,,203 new cases,2073 samplestested,88247.0,490.0,85638.0,2119.0
+2022-01-05,mansa,0.0,0.0,,,276 samplestested,15617.0,6.0,15230.0,381.0
+2022-01-05,moga,9.0,0.9,,9 new cases,1000 samplestested,8710.0,25.0,8451.0,234.0
+2022-01-05,muktsar,8.0,1.31,,8 new cases,613 samplestested,18820.0,11.0,18284.0,525.0
+2022-01-05,on the daypunjab,1811.0,7.95,,,,,,,
+2022-01-05,pathankot,163.0,14.35,,163 new cases,1136 samplestested,19595.0,525.0,18636.0,434.0
+2022-01-05,patiala,598.0,20.56,,598 new cases,2908 samplestested,50473.0,1431.0,47677.0,1365.0
+2022-01-05,ropar,21.0,4.94,,21 new cases,425 samplestested,13051.0,37.0,12586.0,428.0
+2022-01-05,sangrur,14.0,3.26,,14 new cases,429 samplestested,15814.0,36.0,14902.0,876.0
+2022-01-05,sas nagar,300.0,15.21,,300 new cases,1973 samplestested,69723.0,620.0,68028.0,1075.0
+2022-01-05,sbs nagar,4.0,0.7,,4 new cases,568 samplestested,11506.0,17.0,11099.0,390.0
+2022-01-05,tarn taran,15.0,1.38,,15 new cases,1085 samplestested,8123.0,43.0,7699.0,381.0
+2022-01-05,total,,,,,,608723.0,4434.0,587632.0,16657.0
