@@ -1,7 +1,8 @@
 import sqlite3
 
 from .db import Database
-from .DL_tables import DL_patient_mgmt, DL_testing_status, DL_vaccination, DL_case_info, DL_containment, DL_cumulative
+from .DL_tables import DL_patient_mgmt, DL_testing_status, DL_vaccination, \
+    DL_case_info, DL_containment, DL_cumulative, DL_hospitalizations
 
 class DelhiDB(Database):
 
@@ -22,7 +23,8 @@ class DelhiDB(Database):
             'vaccination': DL_vaccination.VaccinationTable(),
             'case-info': DL_case_info.CaseInfoTable(),
             'containment': DL_containment.ContainmentTable(),
-            'cumulative': DL_cumulative.CumulativeTable()
+            'cumulative': DL_cumulative.CumulativeTable(),
+            'hospitalizations': DL_hospitalizations.HospitalizationsTable()
         }
 
     def insert_row(self, data):
@@ -52,6 +54,10 @@ class DelhiDB(Database):
         cumulative_case_info = data.get('cumulative_case_info', None)
         if cumulative_case_info is not None:
             self.tables['cumulative'].insert_row(cursor=cursor, **cumulative_case_info)
+
+        hospitalization_info = data.get('hospitalizations_info', None)
+        if hospitalization_info is not None:
+            self.tables['hospitalizations'].insert_row(cursor=cursor, **hospitalization_info)
 
         self.conn.commit()
         
