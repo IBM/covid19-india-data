@@ -1,3 +1,6 @@
+import locale
+locale.setlocale( locale.LC_ALL, 'en_US.UTF-8' )
+
 import re
 import pandas as pd
 import camelot
@@ -325,14 +328,40 @@ class DelhiExtractor(object):
         return case_result, cumulative_result
 
 
+    def extract_moderate_severe_patient_nums(self, tables):
+
+        keywords = {'asymptomatic', 'moderate', 'severe', 'patient', 'hospital'}
+        datatable = common_utils.find_table_by_keywords(tables, keywords)
+
+        if datatable is None:
+            return None
+        
+        df_dict = common_utils.convert_df_to_dict(datatable, key_idx=0, val_idx=1)
+        keymap = {
+            'patients_in_hospital': ['patient', 'admit', 'hospital'],
+            'asymptomatic_patients': ['mild', 'asymptomatic', 'patient'],
+            'moderate_patients': ['moderate', 'patient'],
+            'severe_patients': ['severe', 'patient']
+        }
+
+        result = common_utils.extract_info_from_table_by_keywords(df_dict, keymap)
+
+        for k in result.keys():
+            result[k] = locale.atoi(result[k])
+        result['date'] = self.date
+        return result
+
+
     def extract(self):
-        tables = camelot.read_pdf(self.report_fpath, pages='0', strip_text='"\n')
+        tables = common_utils.get_tables_from_pdf('camelot', self.report_fpath)
+        # tables = camelot.read_pdf(self.report_fpath, strip_text='"\n')
 
         test_result = self.extract_testing_info(tables)
         vax_result = self.extract_vaccination_info(tables)
         hospital_result = self.extract_hospital_info(tables)
         containment_result = self.extract_containment_info()
         case_info_today, case_info_cumulative = self.extract_case_info(tables)
+        moderate_severe_patients_info = self.extract_moderate_severe_patient_nums(tables)
 
         result = {
             'testing_vals': test_result,
@@ -340,7 +369,8 @@ class DelhiExtractor(object):
             'hospital_vals': hospital_result,
             'containment_vals': containment_result,
             'case_info_vals': case_info_today,
-            'cumulative_case_info': case_info_cumulative
+            'cumulative_case_info': case_info_cumulative,
+            'hospitalizations_info': moderate_severe_patients_info
         }
         
         return result
