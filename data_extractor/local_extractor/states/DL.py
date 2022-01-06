@@ -88,7 +88,10 @@ class DelhiExtractor(object):
                 return True
             return False
 
-        order = ['vax_total_24h', 'vax_first_dose_24h', 'vax_sec_dose_24h', 'vax_cumulative', 'vax_cumulative_first_dose', 'vax_cumulative_sec_dose']
+        if self.date >= "2022-01-04":
+            order = ['vax_total_24h', 'vax_first_dose_24h', 'vax_sec_dose_24h', None, 'vax_cumulative', 'vax_cumulative_first_dose', 'vax_cumulative_sec_dose']
+        else:
+            order = ['vax_total_24h', 'vax_first_dose_24h', 'vax_sec_dose_24h', 'vax_cumulative', 'vax_cumulative_first_dose', 'vax_cumulative_sec_dose']
         result = {}
         result['date'] = self.date
 
@@ -102,8 +105,9 @@ class DelhiExtractor(object):
             return None
 
         for i, row in vax_table.iterrows():
-            val = row[1]
-            val = val.replace('*', '')
+            if order[i] is None:
+                continue
+            val = common_utils.clean_numbers_str(row[1])
             result[order[i]] = int(val.strip())
         
         return result
@@ -150,20 +154,28 @@ class DelhiExtractor(object):
                     result[order[i-1]] = int(val)
 
             elif hospital_table.shape == (5, 4):
-                if row[1].isdigit():
-                    result[order[i-1] + '_total'] = int(row[1])
-                if row[2].isdigit():
-                    result[order[i-1] + '_occupied'] = int(row[2])
-                if row[3].isdigit():
-                    result[order[i-1] + '_vacant'] = int(row[3])
+                try:
+                    result[order[i-1] + '_total'] = int(common_utils.clean_numbers_str(row[1]))
+                except:
+                    pass
+
+                try:
+                    result[order[i-1] + '_occupied'] = int(common_utils.clean_numbers_str(row[2]))
+                except:
+                    pass
+
+                try:
+                    result[order[i-1] + '_vacant'] = int(common_utils.clean_numbers_str(row[3]))
+                except:
+                    pass
             
             else:
                 vals = [x for x in row[1].split(' ') if x.strip().isdigit()]
                 
                 if len(vals) == 3:
-                    result[order[i-1] + '_total'] = int(vals[0]) 
-                    result[order[i-1] + '_occupied'] = int(vals[1]) 
-                    result[order[i-1] + '_vacant'] = int(vals[2]) 
+                    result[order[i-1] + '_total'] = int(common_utils.clean_numbers_str(vals[0]))
+                    result[order[i-1] + '_occupied'] = int(common_utils.clean_numbers_str(vals[1]))
+                    result[order[i-1] + '_vacant'] = int(common_utils.clean_numbers_str(vals[2])) 
                 
         
         return result
@@ -377,7 +389,7 @@ class DelhiExtractor(object):
 
 
 if __name__ == '__main__':
-    date = '01-may-2020'
+    date = '2022-01-04'
     path = "../../localstore/bulletins/delhi/Delhi-Bulletin-2020-8-18.pdf"
     obj = DelhiExtractor(date, path)
     print(obj.extract())
