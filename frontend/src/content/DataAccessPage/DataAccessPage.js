@@ -66,6 +66,8 @@ class DataAccessPage extends React.Component {
                 width="100%"
                 alt="DB Browser"
               />
+              <br />
+              <br />
             </div>
             <div className="bx--col-lg-8">
               <p>
@@ -165,6 +167,8 @@ class DataAccessPage extends React.Component {
                 width="100%"
                 alt="CSV export button"
               />
+              <br />
+              <br />
             </div>
 
             <div className="bx--col-lg-12">

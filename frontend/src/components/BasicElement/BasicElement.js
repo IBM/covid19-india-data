@@ -451,6 +451,8 @@ class BasicElement extends React.Component {
                       )}
                     </DataTable>
                   )}
+                  <br />
+                  <br />
                 </div>
                 <div className="bx--col-lg-7">
                   <h4>Visualize {this.state.name} data as time series</h4>

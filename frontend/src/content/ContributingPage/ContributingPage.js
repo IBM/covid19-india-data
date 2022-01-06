@@ -103,7 +103,9 @@ function filterContributors(contributorsList) {
 }
 
 const Contributor = props => (
-  <div className="bx--col-lg-2" style={{ padding: '10px' }}>
+  <div
+    className="bx--col-sm-1 bx--col-md-2 bx--col-lg-2"
+    style={{ padding: '10px' }}>
     <Link href={props.props.html_url} target="_blank">
       <img
         alt="Contributor Info"
@@ -182,10 +184,6 @@ class ContributingPage extends React.Component {
             />
           </div>
 
-          <br />
-          <br />
-          <br />
-
           <div className="bx--row">
             <div className="bx--col-lg-8">
               <h3>Read the Paper</h3>
@@ -216,7 +214,11 @@ class ContributingPage extends React.Component {
                   Read
                 </Button>
               </Link>
+              <br />
+              <br />
+              <br />
             </div>
+
             <div className="bx--col-lg-8">
               <h3>
                 Top Contributors{' '}
@@ -233,11 +235,7 @@ class ContributingPage extends React.Component {
 
               <div className="bx--row">
                 {this.state.contributors.map((item, index) => {
-                  return (
-                    <>
-                      <Contributor props={item} />
-                    </>
-                  );
+                  return <Contributor props={item} />;
                 })}
               </div>
             </div>

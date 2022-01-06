@@ -35,7 +35,21 @@ class PageHeader extends React.Component {
     if (!current_header) current_header = 'introduction';
 
     this.onClickTab(generateStateID(current_header));
+
+    window.addEventListener('resize', this.resize.bind(this));
+    this.resize();
   };
+
+  resize() {
+    this.setState({
+      ...this.state,
+      showNav: window.innerWidth > 1200,
+    });
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.resize.bind(this));
+  }
 
   onClickTab = (name, e) => {
     const old = this.state.current;
@@ -58,7 +72,7 @@ class PageHeader extends React.Component {
               <SkipToContent />
               <HeaderMenuButton
                 onClick={onClickSideNavExpand}
-                isActive={!isSideNavExpanded}
+                isActive={isSideNavExpanded}
                 aria-label="Toggle Contents"
               />
               <HeaderName element={Link} to="/" prefix="India">
@@ -66,10 +80,7 @@ class PageHeader extends React.Component {
               </HeaderName>
 
               <SideNav
-                isFixedNav
-                isChildOfHeader
-                expanded={!isSideNavExpanded}
-                isPersistent={true}
+                expanded={this.state.showNav || isSideNavExpanded}
                 aria-label="Side navigation">
                 <SideNavItems>
                   <SideNavLink
