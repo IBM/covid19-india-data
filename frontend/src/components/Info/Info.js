@@ -121,6 +121,8 @@ const Contributing = props => (
       </div>
       <div className="contributing-card">{props.props.icon}</div>
     </ClickableTile>
+    <br />
+    <br />
   </div>
 );
 

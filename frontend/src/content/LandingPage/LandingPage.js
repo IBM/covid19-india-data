@@ -1,4 +1,5 @@
 import React from 'react';
+import DWChart from 'react-datawrapper-chart';
 import {
   Csv16,
   Json16,
@@ -6,8 +7,6 @@ import {
   Collaborate16,
   Document16,
 } from '@carbon/icons-react';
-import { LineChart } from '@carbon/charts-react';
-import DWChart from 'react-datawrapper-chart';
 import { fetchData, generateStateID } from '../../components/Info';
 import {
   Link,
@@ -23,43 +22,43 @@ import {
   ButtonSet,
 } from 'carbon-components-react';
 
-const axis_plot_options = {
-  title: null,
-  axes: {
-    bottom: {
-      title: 'Date',
-      mapsTo: 'date',
-      scaleType: 'time',
-    },
-    left: {
-      mapsTo: 'value',
-      title: null,
-      scaleType: 'linear',
-    },
-  },
-  curve: 'curveMonotoneX',
-  points: {
-    radius: 1,
-  },
-  height: '300px',
-  width: '100%',
-};
+// const axis_plot_options = {
+//   title: null,
+//   axes: {
+//     bottom: {
+//       title: 'Date',
+//       mapsTo: 'date',
+//       scaleType: 'time',
+//     },
+//     left: {
+//       mapsTo: 'value',
+//       title: null,
+//       scaleType: 'linear',
+//     },
+//   },
+//   curve: 'curveMonotoneX',
+//   points: {
+//     radius: 1,
+//   },
+//   height: '300px',
+//   width: '100%',
+// };
 
-function prepareOptions(title, axis) {
-  var new_options = {
-    ...axis_plot_options,
-    title: title,
-    axes: {
-      ...axis_plot_options.axes,
-      left: {
-        ...axis_plot_options.axes.left,
-        title: axis,
-      },
-    },
-  };
+// function prepareOptions(title, axis) {
+//   var new_options = {
+//     ...axis_plot_options,
+//     title: title,
+//     axes: {
+//       ...axis_plot_options.axes,
+//       left: {
+//         ...axis_plot_options.axes.left,
+//         title: axis,
+//       },
+//     },
+//   };
 
-  return new_options;
-}
+//   return new_options;
+// }
 
 class LandingPage extends React.Component {
   constructor(props) {
@@ -172,16 +171,10 @@ class LandingPage extends React.Component {
           <div className="bx--col-lg-12">
             <div className="bx--row">
               <div className="bx--col-lg-14">
-                <h1 className="title">
-                  COVID-19 Data from <span className="text-blue">India</span>
-                </h1>
-                <h3 className="text-gray">
-                  <span style={{ color: '#c15a5a' }}>
-                    Mining daily health bulletins{' '}
-                  </span>
-                  to create a{' '}
-                  <span style={{ color: '#c15a5a' }}>comprehensive</span>{' '}
-                  COVID-19 India Dataset
+                <h1 className="title">The COVID-19 India Dataset</h1>
+                <h3 className="text-blue">
+                  Mined from public health bulletins daily for comprehensive
+                  COVID data from major Indian states
                 </h3>
               </div>
             </div>
@@ -239,7 +232,9 @@ class LandingPage extends React.Component {
               these bulletins to create a comprehensive, structured dataset.
               This allows easy extraction and transformation of data. This
               dataset is freely available for further research and analysis, and
-              we welcome contributions in any form! &#129303;
+              we welcome code contributions in any form! &#129303;
+              <br />
+              <br />
             </p>
           </div>
 
@@ -248,15 +243,13 @@ class LandingPage extends React.Component {
 
             <h5>Download data</h5>
             <hr />
-            <br />
 
             <ButtonSet stacked>
               <Button
                 href="https://github.com/IBM/covid19-india-data/tree/main/data/csv"
                 renderIcon={Csv16}
                 iconDescription="Download"
-                kind="primary"
-                size="lg">
+                kind="ghost">
                 CSV data
               </Button>
 
@@ -264,7 +257,7 @@ class LandingPage extends React.Component {
                 href="https://github.com/IBM/covid19-india-data/tree/main/data/json"
                 renderIcon={Json16}
                 iconDescription="Download"
-                kind="secondary--tertiary">
+                kind="ghost">
                 JSON data
               </Button>
 
@@ -272,7 +265,7 @@ class LandingPage extends React.Component {
                 href="https://ibm.biz/covid19-india-db"
                 renderIcon={Sql16}
                 iconDescription="Download"
-                kind="secondary--tertiary">
+                kind="ghost">
                 SQLite data
               </Button>
             </ButtonSet>
@@ -297,7 +290,7 @@ class LandingPage extends React.Component {
             <br />
             <br />
 
-            <h5>Read our methodology</h5>
+            <h5>Read about our methodology</h5>
             <hr />
             <br />
 

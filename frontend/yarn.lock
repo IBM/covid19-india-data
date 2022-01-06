@@ -10846,7 +10846,7 @@ react-app-polyfill@^2.0.0:
     regenerator-runtime "^0.13.7"
     whatwg-fetch "^3.4.1"
 
-react-datawrapper-chart@^1.1.1:
+react-datawrapper-chart@1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/react-datawrapper-chart/-/react-datawrapper-chart-1.1.1.tgz#b9e5bd856c375c45f870014ae4b123710a9553c7"
   integrity sha512-Br3XrN2uND7SbXxGNHpp7kppIXG9JhvuC8u1ESFSOyGIjX3lhVDDNxvDp3a9DHTUxvKSzlS9j/KxCOKbwQrZ0w==
