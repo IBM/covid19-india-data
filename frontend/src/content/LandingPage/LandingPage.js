@@ -20,6 +20,7 @@ import {
   TableCell,
   Loading,
   ButtonSet,
+  ToastNotification,
 } from 'carbon-components-react';
 
 // const axis_plot_options = {
@@ -236,6 +237,53 @@ class LandingPage extends React.Component {
               <br />
               <br />
             </p>
+
+            <div className="bx--row">
+              <div className="bx--col-md-8 bx--col-lg-6">
+                <ToastNotification
+                  kind="info"
+                  hideCloseButton
+                  lowContrast
+                  caption={
+                    <Link
+                      href="https://covid19bharat.org/analysis"
+                      target="_blank">
+                      View
+                    </Link>
+                  }
+                  subtitle={
+                    <span>
+                      We are delighted to collaborate with DataKind Bengaluru on
+                      the continued effort to keep detailed COVID-19 data from
+                      India accessible.
+                    </span>
+                  }
+                  title="Integration with covid19bharat"
+                />
+
+                <br />
+                <br />
+              </div>
+              <div className="bx--col-md-8 bx--col-lg-6">
+                <ToastNotification
+                  kind="success"
+                  hideCloseButton
+                  lowContrast
+                  caption={<Link href="/#/tasks">Compete</Link>}
+                  subtitle={
+                    <span>
+                      Join as at the virtual hackathon at IndoML 2021 and win
+                      cash prizes for your contributions. The competition
+                      concludes soon on Jan 31, 2022.
+                    </span>
+                  }
+                  title="Hackathon @ IndoML 2021"
+                />
+
+                <br />
+                <br />
+              </div>
+            </div>
           </div>
 
           <div className="bx--col-lg-4">
