@@ -51,8 +51,13 @@ a.bx--side-nav__link--current {
 }
 
 .bx--container {
-  padding-left: 18rem;
   padding-top: 1.5rem;
+}
+
+@media only screen and (min-width: 1056px) {
+  .bx--container {
+    padding-left: 18rem;
+  }
 }
 
 .bx--padder {
