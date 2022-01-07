@@ -3450,3 +3450,10 @@ date,travel_mode,passengers,positive_cases
 2022-01-05,road_own,355157,6256.0
 2022-01-05,sea_port,2447,34.0
 2022-01-05,train,35374,428.0
+2022-01-06,airport_domestic,6540561,1098.0
+2022-01-06,airport_international,629929,1158.0
+2022-01-06,grand total,7604981,9004.0
+2022-01-06,road_bus,41416,
+2022-01-06,road_own,355254,6286.0
+2022-01-06,sea_port,2447,34.0
+2022-01-06,train,35374,428.0
