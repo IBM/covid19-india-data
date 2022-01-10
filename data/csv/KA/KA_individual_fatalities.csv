@@ -26231,3 +26231,7 @@ date,patient_no,district_name,age,sex,description,symptoms,comorbidities,doa,dod
 2022-01-08,3045633,bengaluru urban,82,M,SARI,Breathlessness,-,2021-12-22,2022-01-04,Private Hospital,
 2022-01-08,3047574,bengaluru urban,61,F,ILI,"Cough, Fever","DM, HTN",2021-12-28,2022-01-04,Designated Hospital,
 2022-01-08,3057308,kalaburgi,40,M,SARI,Breathlessness,"CKD, IHD",,,,/doa:Died at residence on 06-01-2022
+2022-01-09,3047071,bengaluru urban,83,M,ILI,"Cough, Fever",CA,2021-12-25,2022-01-07,Private Hospital,
+2022-01-09,3045269,bengaluru urban,81,M,ILI,Fever,CVD,2021-12-29,2022-01-01,Private Hospital,
+2022-01-09,3070810,dakshina kannada,77,F,SARI,"Breathlessness, Fever",-,2022-01-06,2022-01-08,Designated Hospital,
+2022-01-09,3073871,ballari,50,M,ILI,Fever,-,2022-01-08,2022-01-09,Designated Hospital,
