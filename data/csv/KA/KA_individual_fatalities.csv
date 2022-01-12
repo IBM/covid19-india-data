@@ -26239,3 +26239,8 @@ date,patient_no,district_name,age,sex,description,symptoms,comorbidities,doa,dod
 2022-01-10,3067880,bengaluru urban,79,M,SARI,"Breathlessness, Cough, Fever",HTN,,,Private Hospital,/doa:Brought dead on 05-01-2022
 2022-01-10,3072868,bengaluru urban,88,M,SARI,"Breathlessness, Cough","DM, HTN",,,Designated Hospital,/doa:05-01-2022 07-01-2022
 2022-01-10,3088190,ramnagara,53,M,ILI,Fever,HTN,,,Private Hospital,/doa:08-01-2022 10-01-2022
+2022-01-11,3064216,uttar kannada,82,F,SARI,"Breathlessness, Fever",HTN,2022-01-05,2022-01-06,Private Hospital,
+2022-01-11,3099723,bengaluru urban,61,F,ILI,Fever,HTN,2022-01-09,2022-01-09,Designated Hospital,
+2022-01-11,3100586,bengaluru urban,66,M,ILI,Fever,"DM, HTN",2022-01-09,2022-01-09,Private Hospital,
+2022-01-11,3107063,bengaluru urban,72,F,ILI,Fever,-,2022-01-08,2022-01-09,Private Hospital,
+2022-01-11,3112594,kolara,86,F,SARI,"Breathlessness, Fever","DM, HTN",2021-12-25,2022-01-10,Designated Hospital,
