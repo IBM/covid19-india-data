@@ -26244,3 +26244,13 @@ date,patient_no,district_name,age,sex,description,symptoms,comorbidities,doa,dod
 2022-01-11,3100586,bengaluru urban,66,M,ILI,Fever,"DM, HTN",2022-01-09,2022-01-09,Private Hospital,
 2022-01-11,3107063,bengaluru urban,72,F,ILI,Fever,-,2022-01-08,2022-01-09,Private Hospital,
 2022-01-11,3112594,kolara,86,F,SARI,"Breathlessness, Fever","DM, HTN",2021-12-25,2022-01-10,Designated Hospital,
+2022-01-12,3047902,bengaluru urban,67,F,SARI,"Breathlessness, Cough",DM,2021-12-28,2022-01-10,Designated Hospital,
+2022-01-12,3086548,bengaluru urban,30,M,SARI,Breathlessness,-,2022-01-06,2022-01-10,Designated Hospital,
+2022-01-12,3095366,bengaluru urban,40,M,SARI,Breathlessness,-,2022-01-08,2022-01-11,Designated Hospital,
+2022-01-12,3098345,dakishna kannada,84,M,SARI,"Breathlessness, Cough",DM,2022-01-10,2022-01-11,Private Hospital,
+2022-01-12,3102685,bengaluru urban,90,M,SARI,Breathlessness,"DM, HTN",2022-01-08,2022-01-10,Private Hospital,
+2022-01-12,3106468,mysuru,53,F,ILI,Fever,-,2022-01-10,2022-01-11,Designated Hospital,
+2022-01-12,3117158,bengaluru urban,51,M,SARI,"Breathlessness, Cough","DM, HTN",,,,/doa:Died at residence on 10-01-2022
+2022-01-12,3118260,bengaluru urban,49,M,ILI,Fever,"DM, HTN",2022-01-10,2022-01-11,Designated Hospital,
+2022-01-12,3118741,ballaari,65,M,SARI,"Breathlessness, Cough",CLD,2022-01-11,2022-01-12,Designated Hospital,
+2022-01-12,3135977,kalaburgi,75,F,SARI,"Breathlessness, Cough",COPD,2022-01-05,2022-01-12,Private Hospital,
