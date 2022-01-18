@@ -364,7 +364,11 @@ def get_viz_data() -> str:
     
     datamap = {
         'hospitalization': vizapi.hospitalization,
-        'hospitalization_60days': vizapi.hospitalization_last60days
+        'hospitalization_60days': vizapi.hospitalization_last60days,
+        'DL.hospitalization.overall': vizapi.DL_hospitalization_overall,
+        'DL.hospitalization.60days': vizapi.DL_hospitalization_60days,
+        'DL.containment.zones': vizapi.DL_containment_zones,
+        'DL.rtpcr.percentage': vizapi.DL_rtpcr_percentage
     }
 
     csv_data = datamap[viz_id](__db_uri)
