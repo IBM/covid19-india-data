@@ -89,3 +89,15 @@ def DL_containment_zones(db_uri):
 def DL_rtpcr_percentage(db_uri):
     key = 'DL.rtpcr.percentage'
     return get_generic_query_result(db_uri, key)
+
+def GA_hospitalization(db_uri):
+    key = 'GA.hospitalization'
+    return get_generic_query_result(db_uri, key)
+
+def HR_gender_samples(db_uri):
+    key = 'HR.gender.wise.samples'
+    return get_generic_query_result(db_uri, key)
+
+def HR_homeisolation(db_uri):
+    key = 'HR.home.isolation'
+    return get_generic_query_result(db_uri, key)
