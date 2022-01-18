@@ -26,8 +26,23 @@
         "columns": ["date", "active cases", "containment zones"]
     },
 
-    "DL.rtcpr.percentage": {
+    "DL.rtpcr.percentage": {
         "query": "SELECT date, 100.0 * rtpcr_test_24h / (rtpcr_test_24h + antigen_test_24h) FROM DL_testing_status ORDER BY date ASC;",
-        "columns": ["date", "rtpcr_percentage"]
+        "columns": ["date", "RTPCR test percentage"]
+    },
+
+    "GA.hospitalization": {
+        "query": "SELECT date, home_isolation_new, hospitalized_patients_new,  hospital_discharged from GA_overview ORDER by date ASC;",
+        "columns": ["date", "Home isolaton (new)", "Hospitalization (New)", "Hospital discharges (new)"]
+    },
+
+    "HR.gender.wise.samples": {
+        "query": "SELECT date, samples_positive_cumulative_male, samples_positive_cumulative_female FROM HR_case_info ORDER BY date ASC;",
+        "columns": ["date", "Cumulative positive samples (Male)", "Cumulative positive samples (Female)"]
+    },
+
+    "HR.home.isolation": {
+        "query": "SELECT date, active_cases, people_home_isolation FROM HR_case_info ORDER BY date ASC;",
+        "columns": ["date", "Active cases", "People in home isolation"]
     }
 }
