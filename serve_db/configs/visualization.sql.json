@@ -47,22 +47,22 @@
     },
 
     "KA.gender.wise.fatalities": {
-        "query": "select strftime('%Y-%m', dod) as month, UPPER(sex) as sex_upper, count(*) from KA_individual_fatalities WHERE sex_upper in ('F', 'M') GROUP BY month, sex_upper ORDER BY month ASC;",
+        "query": "select strftime('%Y-%m', dod) as month, UPPER(sex) as sex_upper, count(*) from KA_individual_fatalities WHERE month >= '2020-05' AND month <= strftime('%Y-%m', DATE('now')) AND sex_upper in ('F', 'M') GROUP BY month, sex_upper ORDER BY month ASC;",
         "columns": ["month", "gender", "count"]
     },
 
     "KA.age.wise.fatalities": {
-        "query": "select strftime('%Y-%m', dod) as month, age from KA_individual_fatalities WHERE month >= '2020-05' ORDER BY month ASC;",
+        "query": "select strftime('%Y-%m', dod) as month, age from KA_individual_fatalities WHERE month >= '2020-05' AND month <= strftime('%Y-%m', DATE('now')) ORDER BY month ASC;",
         "columns": ["month", "age"]
     },
 
     "KL.gender.wise.fatalities": {
-        "query": "select strftime('%Y-%m', death_date) as month, LOWER(gender) as sex_lower, count(*) from KL_individual_death_info WHERE sex_lower in ('female', 'male') AND  month >= '2020-07' AND month <= '2023-12' GROUP BY month, sex_lower ORDER BY month ASC;",
+        "query": "select strftime('%Y-%m', death_date) as month, LOWER(gender) as sex_lower, count(*) from KL_individual_death_info WHERE sex_lower in ('female', 'male') AND  month >= '2020-07' AND month <= strftime('%Y-%m', DATE('now')) GROUP BY month, sex_lower ORDER BY month ASC;",
         "columns": ["month", "gender", "count"]
     },
 
     "KL.age.wise.fatalities": {
-        "query": "select strftime('%Y-%m', death_date) as month, age from KL_individual_death_info WHERE month >= '2020-07' AND month <= '2023-12' ORDER BY month ASC;",
+        "query": "select strftime('%Y-%m', death_date) as month, age from KL_individual_death_info WHERE month >= '2020-07' AND month <= strftime('%Y-%m', DATE('now')) ORDER BY month ASC;",
         "columns": ["month", "age"]
     }
 }
