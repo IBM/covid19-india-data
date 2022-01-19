@@ -44,5 +44,15 @@
     "HR.home.isolation": {
         "query": "SELECT date, active_cases, people_home_isolation FROM HR_case_info ORDER BY date ASC;",
         "columns": ["date", "Active cases", "People in home isolation"]
+    },
+
+    "KA.gender.wise.fatalities": {
+        "query": "select strftime('%Y-%m', date) as month, UPPER(sex) as sex_upper, count(*) from KA_individual_fatalities WHERE sex_upper in ('F', 'M') GROUP BY month, sex_upper ORDER BY month ASC;",
+        "columns": ["month", "gender", "count"]
+    },
+
+    "KA.age.wise.fatalities": {
+        "query": "select strftime('%Y-%m', dod) as month, age from KA_individual_fatalities WHERE month >= '2020-05' ORDER BY month ASC;",
+        "columns": ["month", "age"]
     }
 }
