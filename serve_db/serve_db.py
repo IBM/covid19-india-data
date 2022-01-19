@@ -377,7 +377,10 @@ def get_viz_data() -> str:
         'HR.home.isolation': vizapi.HR_homeisolation,
 
         'KA.gender.fatalities': vizapi.KA_gender_fatalities,
-        'KA.agewise.fatalities': vizapi.KA_agewise_fatalities
+        'KA.agewise.fatalities': vizapi.KA_agewise_fatalities,
+
+        'KL.gender.fatalities': vizapi.KL_gender_fatalities,
+        'KL.agewise.fatalities': vizapi.KL_agewise_fatalities
     }
 
     csv_data = datamap[viz_id](__db_uri)
