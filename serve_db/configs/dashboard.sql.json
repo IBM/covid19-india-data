@@ -43,7 +43,7 @@
                 "FROM HR_case_info H1",
                 "LEFT OUTER JOIN Metadata_Bulletin_Links MD ON MD.date == H1.date AND MD.state == \"HR\"",
                 "LEFT OUTER JOIN HR_district_info H2 ON H1.date == H2.date",
-                "WHERE LOWER(H2.district_name) == \"total\" ORDER BY H1.date",
+                "WHERE LOWER(H2.district_name) == \"haryana\" ORDER BY H1.date",
                 "DESC LIMIT 1"
             ]
         },
