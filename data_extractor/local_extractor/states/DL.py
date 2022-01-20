@@ -88,10 +88,6 @@ class DelhiExtractor(object):
                 return True
             return False
 
-        if self.date >= "2022-01-04":
-            order = ['vax_total_24h', 'vax_first_dose_24h', 'vax_sec_dose_24h', None, 'vax_cumulative', 'vax_cumulative_first_dose', 'vax_cumulative_sec_dose']
-        else:
-            order = ['vax_total_24h', 'vax_first_dose_24h', 'vax_sec_dose_24h', 'vax_cumulative', 'vax_cumulative_first_dose', 'vax_cumulative_sec_dose']
         result = {}
         result['date'] = self.date
 
@@ -104,6 +100,16 @@ class DelhiExtractor(object):
         if vax_table is None:
             return None
 
+
+        if self.date >= "2022-01-04":
+            preorder = ['vax_total_24h', 'vax_first_dose_24h', 'vax_sec_dose_24h']
+            postorder = ['vax_cumulative', 'vax_cumulative_first_dose', 'vax_cumulative_sec_dose']
+            midvals = [None] * max(0, (vax_table.shape[0] - len(preorder) - len(postorder)))
+            order = preorder + midvals + postorder
+            # order = ['vax_total_24h', 'vax_first_dose_24h', 'vax_sec_dose_24h', None, 'vax_cumulative', 'vax_cumulative_first_dose', 'vax_cumulative_sec_dose']
+        else:
+            order = ['vax_total_24h', 'vax_first_dose_24h', 'vax_sec_dose_24h', 'vax_cumulative', 'vax_cumulative_first_dose', 'vax_cumulative_sec_dose']
+
         for i, row in vax_table.iterrows():
             if order[i] is None:
                 continue
@@ -113,7 +119,7 @@ class DelhiExtractor(object):
         return result
 
     
-    def extract_hospital_info(self, tables):
+    def extract_hospital_info_pre_Jan62022(self, tables):
 
         def is_hospital_table(df):
             keywords = {'hospital', 'covid', 'health', 'home', 'isolation'}
@@ -178,6 +184,56 @@ class DelhiExtractor(object):
                     result[order[i-1] + '_vacant'] = int(common_utils.clean_numbers_str(vals[2])) 
                 
         
+        return result
+
+    def extract_hospital_info_post_Jan62022(self, tables):
+
+        # get home isolation numbers
+        keywords = {'patient', 'home', 'isolation', 'hospital', 'admit'}
+        table = common_utils.find_table_by_keywords(tables, keywords)
+
+        if table is not None:
+            keymap = {
+                'home_isolation_count': ['home', 'isolation']
+            }
+
+            df_dict = common_utils.convert_df_to_dict(table, key_idx=0, val_idx=1)
+            result = common_utils.extract_info_from_table_by_keywords(df_dict, keymap)
+        else:
+            result = {}
+
+        # get hospital stats table
+        keywords = {'hospital', 'covid', 'health', 'care'}
+        hospital_table = common_utils.find_table_by_keywords(tables, keywords)
+
+        if hospital_table is not None:
+            order = ['hospital_beds', 'covid_care_center_beds', 'covid_health_center_beds']
+
+            for i, row in hospital_table.iterrows():    
+                
+                # Skip header row
+                if i == 0:
+                    continue
+
+                try:
+                    result[order[i-1] + '_total'] = int(common_utils.clean_numbers_str(row[1].split(' ')[0]))
+                except:
+                    pass
+
+                try:
+                    result[order[i-1] + '_occupied'] = int(common_utils.clean_numbers_str(row[2].split(' ')[0]))
+                except:
+                    pass
+
+                try:
+                    result[order[i-1] + '_vacant'] = int(common_utils.clean_numbers_str(row[3].split(' ')[0]))
+                except:
+                    pass
+        
+        if len(result.keys()) == 0:
+            return None
+
+        result['date'] = self.date
         return result
 
     
@@ -342,19 +398,30 @@ class DelhiExtractor(object):
 
     def extract_moderate_severe_patient_nums(self, tables):
 
-        keywords = {'asymptomatic', 'moderate', 'severe', 'patient', 'hospital'}
+        if self.date < "2022-01-07":
+            keywords = {'asymptomatic', 'moderate', 'severe', 'patient', 'hospital'}
+        else:
+            keywords = {'oxygen', 'ventilator', 'hospital', 'patient'}
         datatable = common_utils.find_table_by_keywords(tables, keywords)
 
         if datatable is None:
             return None
         
         df_dict = common_utils.convert_df_to_dict(datatable, key_idx=0, val_idx=1)
-        keymap = {
-            'patients_in_hospital': ['patient', 'admit', 'hospital'],
-            'asymptomatic_patients': ['mild', 'asymptomatic', 'patient'],
-            'moderate_patients': ['moderate', 'patient'],
-            'severe_patients': ['severe', 'patient']
-        }
+
+        if self.date < "2022-01-07":
+            keymap = {
+                'patients_in_hospital': ['patient', 'admit', 'hospital'],
+                'asymptomatic_patients': ['mild', 'asymptomatic', 'patient'],
+                'moderate_patients': ['moderate', 'patient'],
+                'severe_patients': ['severe', 'patient']
+            }
+        else:
+            keymap = {
+                'patients_in_hospital': ['total patient', 'admit', 'hospital'],
+                'moderate_patients': ['on', 'oxygen', 'support', 'patient'],
+                'severe_patients': ['on', 'ventilator', 'patient']
+            }
 
         result = common_utils.extract_info_from_table_by_keywords(df_dict, keymap)
 
@@ -370,7 +437,12 @@ class DelhiExtractor(object):
 
         test_result = self.extract_testing_info(tables)
         vax_result = self.extract_vaccination_info(tables)
-        hospital_result = self.extract_hospital_info(tables)
+
+        if self.date <= "2022-01-07":
+            hospital_result = self.extract_hospital_info_pre_Jan62022(tables)
+        else:
+            hospital_result = self.extract_hospital_info_post_Jan62022(tables)
+            
         containment_result = self.extract_containment_info()
         case_info_today, case_info_cumulative = self.extract_case_info(tables)
         moderate_severe_patients_info = self.extract_moderate_severe_patient_nums(tables)
@@ -389,7 +461,7 @@ class DelhiExtractor(object):
 
 
 if __name__ == '__main__':
-    date = '2022-01-04'
-    path = "../../localstore/bulletins/delhi/Delhi-Bulletin-2020-8-18.pdf"
+    date = '2022-01-15'
+    path = "../localstore/bulletins/DL/DL-Bulletin-2022-01-15.pdf"
     obj = DelhiExtractor(date, path)
     print(obj.extract())
