@@ -9,5 +9,60 @@
         "DL": "SELECT date, hospital_beds_occupied AS val FROM DL_patient_mgmt WHERE val IS NOT NULL AND date >= DATETIME('now', '-60 day') ORDER BY date ASC;",
         "KL": "SELECT date, total_persons_in_hospital_isolation AS val FROM KL_cumulative_summary WHERE val IS NOT NULL AND date >= DATETIME('now', '-60 day') AND date NOT IN ('2020-10-05', '2020-10-25', '2020-12-08', '2021-05-18', '2021-06-25', '2022-01-01') ORDER BY date DESC LIMIT 60;",
         "WB": "SELECT date, current_patients_hospital as val FROM WB_hospital WHERE val IS NOT NULL AND date >= DATETIME('now', '-60 day') ORDER BY date ASC;"
+    },
+
+    "DL.hospitalization.overall": {
+        "query": "SELECT D1.date, D1.active_cases, D2.hospital_beds_occupied FROM DL_cumulative D1 LEFT OUTER JOIN DL_patient_mgmt D2 ON D1.date == D2.date ORDER BY D1.date ASC;",
+        "columns": ["date", "active cases", "hospitalizations"]
+    },
+
+    "DL.hospitalization.60days": {
+        "query": "SELECT D1.date, D1.hospital_beds_occupied, D2.moderate_patients, D2.severe_patients FROM DL_patient_mgmt D1 LEFT OUTER JOIN DL_hospitalizations D2 ON D1.date == D2.date WHERE D1.date >= DATETIME('now', '-30 day') ORDER BY D1.date;",
+        "columns": ["date", "hospitalizations", "patients on oxygen support", "patients in ICU"]
+    },
+
+    "DL.containment.zones": {
+        "query": "SELECT D1.date, D1.active_cases, D2.containment_zones FROM DL_cumulative D1 LEFT OUTER JOIN DL_containment D2 ON D1.date == D2.date ORDER BY D1.date;",
+        "columns": ["date", "active cases", "containment zones"]
+    },
+
+    "DL.rtpcr.percentage": {
+        "query": "SELECT date, 100.0 * rtpcr_test_24h / (rtpcr_test_24h + antigen_test_24h) FROM DL_testing_status ORDER BY date ASC;",
+        "columns": ["date", "RTPCR test percentage"]
+    },
+
+    "GA.hospitalization": {
+        "query": "SELECT date, home_isolation_new, hospitalized_patients_new,  hospital_discharged from GA_overview ORDER by date ASC;",
+        "columns": ["date", "Home isolaton (new)", "Hospitalization (New)", "Hospital discharges (new)"]
+    },
+
+    "HR.gender.wise.samples": {
+        "query": "SELECT date, samples_positive_cumulative_male, samples_positive_cumulative_female FROM HR_case_info ORDER BY date ASC;",
+        "columns": ["date", "Cumulative positive samples (Male)", "Cumulative positive samples (Female)"]
+    },
+
+    "HR.home.isolation": {
+        "query": "SELECT date, active_cases, people_home_isolation FROM HR_case_info ORDER BY date ASC;",
+        "columns": ["date", "Active cases", "People in home isolation"]
+    },
+
+    "KA.gender.wise.fatalities": {
+        "query": "select strftime('%Y-%m', dod) as month, UPPER(sex) as sex_upper, count(*) from KA_individual_fatalities WHERE month >= '2020-05' AND month <= strftime('%Y-%m', DATE('now')) AND sex_upper in ('F', 'M') GROUP BY month, sex_upper ORDER BY month ASC;",
+        "columns": ["month", "gender", "count"]
+    },
+
+    "KA.age.wise.fatalities": {
+        "query": "select strftime('%Y-%m', dod) as month, age from KA_individual_fatalities WHERE month >= '2020-05' AND month <= strftime('%Y-%m', DATE('now')) ORDER BY month ASC;",
+        "columns": ["month", "age"]
+    },
+
+    "KL.gender.wise.fatalities": {
+        "query": "select strftime('%Y-%m', death_date) as month, LOWER(gender) as sex_lower, count(*) from KL_individual_death_info WHERE sex_lower in ('female', 'male') AND  month >= '2020-07' AND month <= strftime('%Y-%m', DATE('now')) GROUP BY month, sex_lower ORDER BY month ASC;",
+        "columns": ["month", "gender", "count"]
+    },
+
+    "KL.age.wise.fatalities": {
+        "query": "select strftime('%Y-%m', death_date) as month, age from KL_individual_death_info WHERE month >= '2020-07' AND month <= strftime('%Y-%m', DATE('now')) ORDER BY month ASC;",
+        "columns": ["month", "age"]
     }
 }
