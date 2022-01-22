@@ -3541,6 +3541,13 @@ date,travel_mode,passengers,positive_cases
 2022-01-20,road_own,359910,6639.0
 2022-01-20,sea_port,2447,34.0
 2022-01-20,train,35374,428.0
+2022-01-21,airport_domestic,6731879,1104.0
+2022-01-21,airport_international,650363,1208.0
+2022-01-21,grand total,7821707,9434.0
+2022-01-21,road_bus,41416,
+2022-01-21,road_own,360228,6660.0
+2022-01-21,sea_port,2447,34.0
+2022-01-21,train,35374,428.0
 2022-02-13,airport_domestic,6642756,1104.0
 2022-02-13,airport_international,640826,1198.0
 2022-02-13,grand total,7720086,9281.0
