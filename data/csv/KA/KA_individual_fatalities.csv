@@ -26402,3 +26402,27 @@ date,patient_no,district_name,age,sex,description,symptoms,comorbidities,doa,dod
 2022-01-21,3440277,uttara kannada,85,F,SARI,"Breathlessness, Fever","DM, HTN",2022-01-19,2022-01-19,Designated Hospital,
 2022-01-21,3443315,ramanagara,73,M,ILI,"Cough, Fever",HTN,2022-01-20,2022-01-20,Private Hospital,
 2022-01-21,100004114,udupi,47,M,ILI,"Cough, Fever",-,2022-01-06,2022-01-19,Private Hospital,
+2022-01-22,3044451,bengaluru urban,77,F,SARI,"Breathlessness, Fever",CHD,2021-12-21,2022-01-08,Private Hospital,
+2022-01-22,3058720,bengaluru urban,88,M,SARI,"Breathlessness, Fever","DM, IHD",2022-01-04,2022-01-15,Private Hospital,
+2022-01-22,3110245,bengaluru urban,86,M,SARI,"Breathlessness, Cough",-,2022-01-10,2022-01-10,Private Hospital,
+2022-01-22,3118752,belagavi,85,M,ILI,"Cough, Fever","CHD, DM, HTN",,,,/doa:Died at residence on 19-01-2022
+2022-01-22,3119011,bengaluru urban,89,M,SARI,"Breathlessness, Cough, Fever",DM,2022-01-09,2022-01-13,Private Hospital,
+2022-01-22,3137958,dakshina kannada,86,F,ILI,"Cough, Fever",-,2022-01-10,2022-01-18,Private Hospital,
+2022-01-22,3163985,bengaluru urban,81,M,SARI,"Breathlessness, Fever",HTN,2022-01-12,2022-01-12,Private Hospital,
+2022-01-22,3180210,dakshina kannada,54,M,SARI,"Breathlessness, Cough",-,2022-01-13,2022-01-18,Private Hospital,
+2022-01-22,3206571,bengaluru urban,21,M,SARI,Breathlessness,-,2022-01-13,2022-01-13,Designated Hospital,
+2022-01-22,3236610,bagalkote,6,F,ILI,Fever,-,,,,/doa:Died at residence on 20-01-2022
+2022-01-22,3273811,kalaburgi,69,M,SARI,"Breathlessness, Fever",CA,2022-01-15,2022-01-20,Designated Hospital,
+2022-01-22,3279577,shivamogga,65,M,SARI,"Breathlessness, Fever",HTN,2022-01-16,2022-01-17,Designated Hospital,
+2022-01-22,3295685,kodagu,80,M,SARI,"Breathlessness, Fever",-,2022-01-16,2022-01-16,Designated Hospital,
+2022-01-22,3339346,dharawada,82,M,ILI,"Cough, Fever","CHD, DM, HTN",2022-01-19,2022-01-19,Designated Hospital,
+2022-01-22,3369115,mandya,65,M,ILI,Cough,-,2022-01-18,2022-01-21,Designated Hospital,
+2022-01-22,3391061,chamaraja nagara,45,M,ILI,Cough,-,2022-01-22,2022-01-22,Designated Hospital,
+2022-01-22,3406872,kalaburgi,70,F,SARI,"Breathlessness, Cough, Fever",HTN,2022-01-18,2022-01-21,Designated Hospital,
+2022-01-22,3448344,vijayapura,70,F,ILI,"Cough, Fever",-,2022-01-17,2022-01-17,Designated Hospital,
+2022-01-22,3459975,mysuru,68,F,SARI,"Breathlessness, Cough, Fever","CHD, HTN",2022-01-20,2022-01-22,Designated Hospital,
+2022-01-22,3480203,bagalkote,45,F,SARI,"Breathlessness, Cough","DM, HTN",,,,/doa:Died at residence on 20-01-2022
+2022-01-22,3490810,belagavi,71,F,ILI,"Cough, Fever",-,,,,/doa:Private 20-01-2022 22-01-2022 Hospital
+2022-01-22,3490863,belagavi,30,M,ILI,Fever,-,,,,/doa:Died at residence on 20-01-2022
+2022-01-22,3511587,dakshina kannada,64,F,ILI,Fever,-,,,,/doa:Designated 21-01-2022 21-01-2022 Hospital
+2022-01-22,3525234,bagalkote,60,M,SARI,"Breathlessness, Fever",HTN,,,,/doa:Died at residence on 21-01-2022
